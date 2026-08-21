@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>은마아파트 실거래가 리포트 | 국토교통부 공식 데이터</title>
+<style>
+  :root{
+    --navy:#1f3864; --blue:#2563eb; --blue-lt:#dbeafe; --orange:#f59e0b; --orange-lt:#fef3c7;
+    --red:#c2410c; --bg:#f4f6f9; --card:#ffffff; --line:#e5e7eb; --txt:#1f2937; --sub:#6b7280;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:32px 20px 64px}
+  header{background:linear-gradient(135deg,#1f3864 0%,#2a4a8a 100%);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:24px}
+  header .tag{display:inline-block;background:rgba(255,255,255,.16);padding:4px 12px;border-radius:99px;font-size:12.5px;letter-spacing:.4px;margin-bottom:12px}
+  header h1{font-size:26px;font-weight:800;margin-bottom:8px}
+  header .sub{font-size:14px;opacity:.85}
+  header .meta{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px;font-size:12.5px;opacity:.75}
+  header .meta span{display:inline-flex;align-items:center;gap:6px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-bottom:24px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+  .kpi .label{font-size:12.5px;color:var(--sub);font-weight:600}
+  .kpi .value{font-size:26px;font-weight:800;margin-top:6px;letter-spacing:-.5px}
+  .kpi .value small{font-size:13px;font-weight:600;color:var(--sub)}
+  .kpi .range{font-size:12px;color:var(--sub);margin-top:4px}
+  .kpi.down .value{color:var(--red)}
+  .kpi .badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin-left:8px;vertical-align:middle}
+  .badge.blue{background:var(--blue-lt);color:var(--blue)} .badge.orange{background:var(--orange-lt);color:#b45309}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin-bottom:24px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+  .card h2{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:4px}
+  .card .desc{font-size:13px;color:var(--sub);margin-bottom:18px}
+  .legend{display:flex;gap:18px;font-size:12.5px;color:var(--sub);margin-bottom:10px}
+  .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+  svg{display:block;width:100%;height:auto}
+  .note{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:16px 20px;font-size:13px;color:#78350f;margin-bottom:24px}
+  .note b{font-weight:800}
+  .tbl-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+  .chip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 14px;font-size:12.5px;font-weight:700;color:var(--sub);cursor:pointer}
+  .chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .chip.toggle{display:inline-flex;align-items:center;gap:8px}
+  .chip.toggle input{accent-color:var(--navy)}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+  table{width:100%;border-collapse:collapse;font-size:13px;white-space:nowrap}
+  thead th{background:#f8fafc;color:#374151;font-weight:700;padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;cursor:pointer;user-select:none;position:sticky;top:0}
+  thead th:first-child,thead th:nth-child(2),thead th:nth-child(4),thead th:nth-child(8),thead th:nth-child(9){text-align:left}
+  thead th .arr{font-size:10px;color:#9ca3af;margin-left:3px}
+  tbody td{padding:8px 12px;border-bottom:1px solid #f1f5f9;text-align:right}
+  tbody td:first-child,tbody td:nth-child(2),tbody td:nth-child(4),tbody td:nth-child(8),tbody td:nth-child(9){text-align:left}
+  tbody tr:hover{background:#f8fafc}
+  tr.cancel td{color:#9ca3af;text-decoration:line-through}
+  tr.cancel td.status{text-decoration:none;color:var(--red);font-weight:700}
+  .hl td{background:#eff6ff}
+  footer{font-size:12px;color:var(--sub);padding:0 8px}
+  footer p{margin-bottom:6px}
+  @media(max-width:640px){header{padding:26px 22px}header h1{font-size:20px}.kpi .value{font-size:21px}}
+  @media print{body{background:#fff}.card,.kpi,header{box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="tag">국토교통부 실거래가공개시스템 공식 데이터</div>
+    <h1>대치동 은마아파트 실거래가 리포트</h1>
+    <div class="sub">최근 1년 거래 전수 분석 (계약일 기준 2025-08-22 ~ 2026-08-21)</div>
+    <div class="meta">
+      <span>출처 rt.molit.go.kr 자료제공</span><span>|</span>
+      <span>다운로드 2026-08-21</span><span>|</span>
+      <span>신고 총 45건 · 유효 38건(해제 7건 제외)</span><span>|</span>
+      <span>준공 1980 · 서울 강남구 대치동</span>
+    </div>
+  </header>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="card">
+    <h2>월별 평균 거래가 추이</h2>
+    <div class="desc">평형별 월평균 실거래가(만원). 계약 후 해제된 건 제외. 점에 마우스를 올리면 상세 수치가 표시됩니다.</div>
+    <div class="legend"><span><i style="background:var(--blue)"></i>33PY형 (전용 76.79㎡)</span><span><i style="background:var(--orange)"></i>37PY형 (전용 84.43㎡)</span></div>
+    <div id="lineChart"></div>
+  </div>
+
+  <div class="card">
+    <h2>월별 거래 건수</h2>
+    <div class="desc">평형별 월 거래 건수. 2026년 들어 37PY형 거래가 늘고 33PY형 고점 대비 가격이 내려왔습니다.</div>
+    <div id="barChart"></div>
+  </div>
+
+  <div class="note" id="insight"></div>
+
+  <div class="card">
+    <h2>전체 거래 내역 (45건)</h2>
+    <div class="desc">국토교통부 원본 CSV 그대로. 열 제목을 클릭하면 정렬됩니다. 해제 건은 취소선 표시.</div>
+    <div class="tbl-bar">
+      <button class="chip on" data-f="all">전체</button>
+      <button class="chip" data-f="a33">33PY형만</button>
+      <button class="chip" data-f="a37">37PY형만</button>
+      <label class="chip toggle"><input type="checkbox" id="showCancel"> 해제건 표시</label>
+    </div>
+    <div class="tbl-wrap"><table id="tbl">
+      <thead><tr>
+        <th data-k="no">No<span class="arr"></span></th>
+        <th data-k="date">계약일<span class="arr"></span></th>
+        <th data-k="type">평형<span class="arr"></span></th>
+        <th data-k="area">전용면적<span class="arr"></span></th>
+        <th data-k="floor">층<span class="arr"></span></th>
+        <th data-k="price">거래금액(만원)<span class="arr"></span></th>
+        <th data-k="py">평단가(만원)<span class="arr"></span></th>
+        <th data-k="tradeType">거래유형<span class="arr"></span></th>
+        <th data-k="addr">지번<span class="arr"></span></th>
+        <th>상태</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </div>
+
+  <footer>
+    <p><b>출처</b> 국토교통부 실거래가공개시스템(rt.molit.go.kr) 자료제공 서비스에서 조건 검색 후 다운로드한 원본 CSV 기반. 다운로드 시점 2026-08-21.</p>
+    <p><b>유의사항</b> 본 자료는 계약일 기준이며 법적 효력이 없는 참고용 데이터입니다(국토교통부 고지). 신고 정보는 실시간 변경·해제될 수 있고, 계약 후 최대 30일 이내 신고되므로 최근 1~2개월 거래는 미신고분이 있을 수 있습니다.</p>
+  </footer>
+</div>
+
+<script>
+const DATA = [{"no":1,"ym":"202608","day":"01","area":76.79,"type":"a33","price":334000,"floor":"3","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":2,"ym":"202607","day":"20","area":84.43,"type":"a37","price":369500,"floor":"1","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":3,"ym":"202607","day":"18","area":76.79,"type":"a33","price":346000,"floor":"9","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":4,"ym":"202607","day":"15","area":76.79,"type":"a33","price":326000,"floor":"1","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":5,"ym":"202607","day":"07","area":84.43,"type":"a37","price":390000,"floor":"8","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":6,"ym":"202606","day":"30","area":84.43,"type":"a37","price":393000,"floor":"9","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":7,"ym":"202606","day":"23","area":76.79,"type":"a33","price":337000,"floor":"2","canceled":true,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":8,"ym":"202606","day":"20","area":76.79,"type":"a33","price":345000,"floor":"13","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":9,"ym":"202606","day":"12","area":76.79,"type":"a33","price":348000,"floor":"9","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":10,"ym":"202606","day":"03","area":84.43,"type":"a37","price":377000,"floor":"3","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":11,"ym":"202605","day":"30","area":84.43,"type":"a37","price":387500,"floor":"5","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":12,"ym":"202605","day":"21","area":76.79,"type":"a33","price":340000,"floor":"13","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":13,"ym":"202605","day":"07","area":84.43,"type":"a37","price":389000,"floor":"10","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":14,"ym":"202604","day":"30","area":84.43,"type":"a37","price":400000,"floor":"12","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":15,"ym":"202604","day":"21","area":84.43,"type":"a37","price":381000,"floor":"13","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":16,"ym":"202604","day":"11","area":84.43,"type":"a37","price":373000,"floor":"2","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":17,"ym":"202603","day":"27","area":76.79,"type":"a33","price":347000,"floor":"12","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":18,"ym":"202603","day":"27","area":76.79,"type":"a33","price":347000,"floor":"12","canceled":true,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":19,"ym":"202603","day":"21","area":76.79,"type":"a33","price":335000,"floor":"1","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":20,"ym":"202603","day":"07","area":76.79,"type":"a33","price":360000,"floor":"7","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":21,"ym":"202603","day":"07","area":76.79,"type":"a33","price":362500,"floor":"8","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":22,"ym":"202602","day":"26","area":76.79,"type":"a33","price":360000,"floor":"6","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":23,"ym":"202602","day":"13","area":76.79,"type":"a33","price":364000,"floor":"7","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":24,"ym":"202601","day":"07","area":84.43,"type":"a37","price":420000,"floor":"4","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":25,"ym":"202512","day":"12","area":76.79,"type":"a33","price":375000,"floor":"12","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":26,"ym":"202512","day":"06","area":76.79,"type":"a33","price":377000,"floor":"6","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":27,"ym":"202511","day":"18","area":76.79,"type":"a33","price":378500,"floor":"11","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":28,"ym":"202511","day":"06","area":76.79,"type":"a33","price":380000,"floor":"10","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":29,"ym":"202511","day":"03","area":84.43,"type":"a37","price":415000,"floor":"4","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":30,"ym":"202510","day":"31","area":84.43,"type":"a37","price":431000,"floor":"13","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":31,"ym":"202510","day":"31","area":84.43,"type":"a37","price":431000,"floor":"13","canceled":true,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":32,"ym":"202510","day":"31","area":76.79,"type":"a33","price":372500,"floor":"9","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":33,"ym":"202510","day":"30","area":76.79,"type":"a33","price":369000,"floor":"5","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":34,"ym":"202510","day":"29","area":76.79,"type":"a33","price":359000,"floor":"3","canceled":true,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":35,"ym":"202510","day":"29","area":76.79,"type":"a33","price":359000,"floor":"3","canceled":true,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":36,"ym":"202510","day":"23","area":76.79,"type":"a33","price":360000,"floor":"4","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":37,"ym":"202510","day":"14","area":84.43,"type":"a37","price":428000,"floor":"12","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":38,"ym":"202510","day":"02","area":76.79,"type":"a33","price":360000,"floor":"4","canceled":true,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":39,"ym":"202510","day":"01","area":76.79,"type":"a33","price":350000,"floor":"12","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":40,"ym":"202509","day":"30","area":84.43,"type":"a37","price":403000,"floor":"7","canceled":true,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":41,"ym":"202509","day":"30","area":76.79,"type":"a33","price":359000,"floor":"12","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":42,"ym":"202509","day":"20","area":76.79,"type":"a33","price":353000,"floor":"6","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":43,"ym":"202509","day":"17","area":84.43,"type":"a37","price":417000,"floor":"2","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":44,"ym":"202509","day":"08","area":84.43,"type":"a37","price":398000,"floor":"2","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"},{"no":45,"ym":"202509","day":"02","area":76.79,"type":"a33","price":338000,"floor":"9","canceled":false,"tradeType":"중개거래","addr":"대치동 316","road":"삼성로 212"}];
+const valid = DATA.filter(r => !r.canceled);
+const fmt = n => n.toLocaleString('ko-KR');
+const typeLabel = t => t === 'a33' ? '33PY형' : '37PY형';
+const MONTHS = ['202509','202510','202511','202512','202601','202602','202603','202604','202605','202606','202607','202608'];
+const MLAB = m => m.slice(2,4)+'.'+m.slice(4);
+
+function stats(list){
+  const p = list.map(r=>r.price);
+  return { n:list.length, avg:Math.round(p.reduce((a,b)=>a+b,0)/p.length), min:Math.min(...p), max:Math.max(...p) };
+}
+const s33 = stats(valid.filter(r=>r.type==='a33'));
+const s37 = stats(valid.filter(r=>r.type==='a37'));
+function halfStats(t,a,b){
+  const l = valid.filter(r=>r.type===t && r.ym>=a && r.ym<=b);
+  return l.length ? stats(l).avg : null;
+}
+const h1_33 = halfStats('a33','202509','202512'), h2_33 = halfStats('a33','202603','202608');
+const h1_37 = halfStats('a37','202509','202512'), h2_37 = halfStats('a37','202603','202608');
+const chg33 = ((h2_33-h1_33)/h1_33*100), chg37 = ((h2_37-h1_37)/h1_37*100);
+
+// KPI 카드
+document.getElementById('kpis').innerHTML = [
+  '<div class="kpi"><div class="label">유효 거래 (1년)</div><div class="value">38<small>건</small></div><div class="range">신고 45건 중 해제 7건 제외 · 33PY 23건 / 37PY 15건</div></div>',
+  '<div class="kpi"><div class="label">33PY형 평균가 <span class="badge blue">전용 76.79㎡</span></div><div class="value">'+fmt(s33.avg)+'<small>만원</small></div><div class="range">최저 '+fmt(s33.min)+' ~ 최고 '+fmt(s33.max)+' · 평단가 '+fmt(Math.round(s33.avg/(76.79/3.3)))+'만</div></div>',
+  '<div class="kpi"><div class="label">37PY형 평균가 <span class="badge orange">전용 84.43㎡</span></div><div class="value">'+fmt(s37.avg)+'<small>만원</small></div><div class="range">최저 '+fmt(s37.min)+' ~ 최고 '+fmt(s37.max)+' · 평단가 '+fmt(Math.round(s37.avg/(84.43/3.3)))+'만</div></div>',
+  '<div class="kpi down"><div class="label">반기 평균가 변화</div><div class="value">33PY '+chg33.toFixed(1)+'% / 37PY '+chg37.toFixed(1)+'%</div><div class="range">2025.9~12월 → 2026.3~8월 · 하락세</div></div>'
+].join('');
+
+// 인사이트 박스
+const lowest = [...valid].sort((a,b)=>a.price-b.price)[0];
+document.getElementById('insight').innerHTML =
+  '<b>핵심 요약</b> 두 평형 모두 반기 평균가가 내려왔습니다(33PY '+chg33.toFixed(1)+'%, 37PY '+chg37.toFixed(1)+'%). '
+  + '1년 최저 거래는 '+lowest.ym.slice(0,4)+'-'+lowest.ym.slice(4)+'-'+lowest.day+' '+typeLabel(lowest.type)+' '+lowest.floor+'층 '+fmt(lowest.price)+'만원이며, '
+  + '최근 거래(2026-08-01)는 33PY 3층 334,000만원입니다. 월 거래량은 3~7건 수준으로 유지되고 있습니다.';
+
+// ---- 라인 차트 ----
+(function(){
+  const W=1000,H=340,L=74,R=20,T=18,B=44;
+  const iw=W-L-R, ih=H-T-B, y0=30000, y1=44000;
+  const y = v => T+ih-(v-y0)/(y1-y0)*ih;
+  const x = i => L+(i+.5)*(iw/MONTHS.length);
+  function series(t){ return MONTHS.map(m=>{const l=valid.filter(r=>r.type===t&&r.ym===m);return l.length?stats(l).avg:null;}); }
+  const a=series('a33'), b=series('a37');
+  let g='';
+  for(let v=y0;v<=y1;v+=2000){
+    g+='<line x1="'+L+'" y1="'+y(v)+'" x2="'+(W-R)+'" y2="'+y(v)+'" stroke="#eef1f5"/>';
+    g+='<text x="'+(L-8)+'" y="'+(y(v)+4)+'" text-anchor="end" font-size="11" fill="#9ca3af">'+(v/10000).toFixed(1)+'억</text>';
+  }
+  MONTHS.forEach((m,i)=>{
+    g+='<text x="'+x(i)+'" y="'+(T+ih+18)+'" text-anchor="middle" font-size="11" fill="#6b7280">'+MLAB(m)+'</text>';
+  });
+  function path(arr,color){
+    let d='',pts=[];
+    arr.forEach((v,i)=>{ if(v!=null){const px=x(i),py=y(v); pts.push([px,py,v,i]); d+=(d?' L':'M')+px+' '+py;} });
+    let s='<path d="'+d+'" fill="none" stroke="'+color+'" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>';
+    pts.forEach(p=>{
+      s+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="4.5" fill="#fff" stroke="'+color+'" stroke-width="2.5"><title>'+MLAB(MONTHS[p[3]])+' · '+fmt(p[2])+'만원</title></circle>';
+    });
+    return s;
+  }
+  document.getElementById('lineChart').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img">'+g+path(b,'#f59e0b')+path(a,'#2563eb')+'</svg>';
+})();
+
+// ---- 바 차트 ----
+(function(){
+  const W=1000,H=240,L=40,R=20,T=14,B=44;
+  const iw=W-L-R, ih=H-T-B;
+  const max=Math.max(...MONTHS.map(m=>valid.filter(r=>r.ym===m).length))+1;
+  const bw=Math.min(30,(iw/MONTHS.length)*0.42);
+  const x=i=>L+(i+.5)*(iw/MONTHS.length);
+  let g='';
+  for(let v=0;v<=max;v++){const yy=T+ih-v/max*ih; g+='<line x1="'+L+'" y1="'+yy+'" x2="'+(W-R)+'" y2="'+yy+'" stroke="#eef1f5"/><text x="'+(L-8)+'" y="'+(yy+4)+'" text-anchor="end" font-size="11" fill="#9ca3af">'+v+'</text>';}
+  MONTHS.forEach((m,i)=>{
+    const c33=valid.filter(r=>r.type==='a33'&&r.ym===m).length, c37=valid.filter(r=>r.type==='a37'&&r.ym===m).length;
+    g+='<text x="'+x(i)+'" y="'+(T+ih+18)+'" text-anchor="middle" font-size="11" fill="#6b7280">'+MLAB(m)+'</text>';
+    if(c33){const h=c33/max*ih; g+='<rect x="'+(x(i)-bw-2)+'" y="'+(T+ih-h)+'" width="'+bw+'" height="'+h+'" rx="3" fill="#2563eb"><title>'+MLAB(m)+' 33PY형 '+c33+'건</title></rect>';}
+    if(c37){const h=c37/max*ih; g+='<rect x="'+(x(i)+2)+'" y="'+(T+ih-h)+'" width="'+bw+'" height="'+h+'" rx="3" fill="#f59e0b"><title>'+MLAB(m)+' 37PY형 '+c37+'건</title></rect>';}
+    if(c33+c37) g+='<text x="'+x(i)+'" y="'+(T+ih-Math.max(c33,c37)/max*ih-6)+'" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6b7280">'+(c33+c37)+'</text>';
+  });
+  document.getElementById('barChart').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img">'+g+'</svg>';
+})();
+
+// ---- 테이블 ----
+let fType='all', showCancel=false, sortK='date', sortDir=-1;
+const tbody=document.querySelector('#tbl tbody');
+function render(){
+  let list=DATA.slice();
+  if(!showCancel) list=list.filter(r=>!r.canceled);
+  if(fType!=='all') list=list.filter(r=>r.type===fType);
+  const keyMap={no:r=>r.no,date:r=>r.ym+r.day,type:r=>r.type,area:r=>r.area,floor:r=>+r.floor||0,price:r=>r.canceled?-r.price:r.price,py:r=>r.price/(r.area/3.3),tradeType:r=>r.tradeType,addr:r=>r.addr};
+  list.sort((a,b)=>{const ka=keyMap[sortK](a),kb=keyMap[sortK](b);return (ka>kb?1:ka<kb?-1:0)*sortDir;});
+  const maxP=Math.max(...DATA.map(r=>r.price));
+  tbody.innerHTML=list.map(r=>{
+    const cls=(r.canceled?'cancel ':'')+(r.price===maxP&&!r.canceled?'hl':'');
+    const date=r.ym.slice(0,4)+'-'+r.ym.slice(4)+'-'+r.day;
+    const py=Math.round(r.price/(r.area/3.3));
+    return '<tr class="'+cls+'"><td>'+r.no+'</td><td>'+date+'</td><td>'+typeLabel(r.type)+'</td><td>'+r.area.toFixed(2)+'㎡</td><td>'+r.floor+'</td><td><b>'+fmt(r.price)+'</b></td><td>'+fmt(py)+'</td><td>'+r.tradeType+'</td><td>'+r.addr+'</td><td class="status">'+(r.canceled?'해제':'정상')+'</td></tr>';
+  }).join('');
+  document.querySelectorAll('thead th .arr').forEach(a=>a.textContent='');
+  const th=document.querySelector('thead th[data-k="'+sortK+'"] .arr');
+  if(th) th.textContent=sortDir===1?'▲':'▼';
+}
+document.querySelectorAll('.chip[data-f]').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('.chip[data-f]').forEach(x=>x.classList.remove('on'));
+  c.classList.add('on'); fType=c.dataset.f; render();
+}));
+document.getElementById('showCancel').addEventListener('change',e=>{showCancel=e.target.checked;render();});
+document.querySelectorAll('thead th[data-k]').forEach(th=>th.addEventListener('click',()=>{
+  const k=th.dataset.k;
+  if(sortK===k) sortDir*=-1; else {sortK=k;sortDir=1;}
+  render();
+}));
+render();
+</script>
+</body>
+</html>
