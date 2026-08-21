@@ -874,7 +874,7 @@ window.addEventListener('resize', function(){
       btn.disabled = true; btn.style.background = '#238636';
       panel.style.display = 'none';
       document.getElementById('pkMsg').textContent = '';
-      if(typeof renderSim === 'function') renderSim();
+      ['simPmt','simRate','simYear'].forEach(function(id){ var el = document.getElementById(id); if(el) el.dispatchEvent(new Event('input')); });
       return true;
     }catch(e){ return false; }
   }
