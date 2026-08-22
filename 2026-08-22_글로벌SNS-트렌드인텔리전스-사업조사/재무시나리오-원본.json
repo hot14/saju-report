@@ -1,0 +1,500 @@
+{
+ "scenario": {
+  "보수": {
+   "monthly": [
+    {
+     "ym": "2026-09",
+     "revenue": 0,
+     "cost": 3,
+     "profit": -3,
+     "breakdown": {
+      "report": 0,
+      "subscription": 0,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2026-10",
+     "revenue": 0,
+     "cost": 1,
+     "profit": -1,
+     "breakdown": {
+      "report": 0,
+      "subscription": 0,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2026-11",
+     "revenue": 7.6,
+     "cost": 1.5,
+     "profit": 5.1,
+     "breakdown": {
+      "report": 7.6,
+      "subscription": 0,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2026-12",
+     "revenue": 15.3,
+     "cost": 2,
+     "profit": 11.3,
+     "breakdown": {
+      "report": 9.5,
+      "subscription": 5.8,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2027-01",
+     "revenue": 23,
+     "cost": 2,
+     "profit": 18,
+     "breakdown": {
+      "report": 11.4,
+      "subscription": 11.6,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2027-02",
+     "revenue": 25.9,
+     "cost": 2.5,
+     "profit": 20,
+     "breakdown": {
+      "report": 11.4,
+      "subscription": 14.5,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2027-03",
+     "revenue": 30.7,
+     "cost": 3,
+     "profit": 23.7,
+     "breakdown": {
+      "report": 13.3,
+      "subscription": 17.4,
+      "saas": 0,
+      "affiliate": 0
+     }
+    }
+   ],
+   "quarterly": {
+    "2026Q4(10-12)": 22.9,
+    "2027Q1(1-3)": 79.6
+   },
+   "cumulative": [
+    0,
+    0,
+    7.6,
+    22.9,
+    45.9,
+    71.8,
+    102.5
+   ],
+   "totals": {
+    "gross": 102.5,
+    "net": 74.1,
+    "cost": 15
+   },
+   "leads": [
+    200,
+    400,
+    650,
+    900,
+    1150,
+    1350,
+    1500
+   ],
+   "paid": [
+    0,
+    0,
+    4,
+    10,
+    16,
+    22,
+    29
+   ]
+  },
+  "현실": {
+   "monthly": [
+    {
+     "ym": "2026-09",
+     "revenue": 0,
+     "cost": 3,
+     "profit": -3,
+     "breakdown": {
+      "report": 0,
+      "subscription": 0,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2026-10",
+     "revenue": 9.5,
+     "cost": 3,
+     "profit": 5.3,
+     "breakdown": {
+      "report": 9.5,
+      "subscription": 0,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2026-11",
+     "revenue": 23.9,
+     "cost": 3,
+     "profit": 17.8,
+     "breakdown": {
+      "report": 15.2,
+      "subscription": 8.7,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2026-12",
+     "revenue": 39.3,
+     "cost": 3,
+     "profit": 31.2,
+     "breakdown": {
+      "report": 19,
+      "subscription": 20.3,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2027-01",
+     "revenue": 57.6,
+     "cost": 3.5,
+     "profit": 46.6,
+     "breakdown": {
+      "report": 22.8,
+      "subscription": 34.8,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2027-02",
+     "revenue": 99.2,
+     "cost": 4,
+     "profit": 82.3,
+     "breakdown": {
+      "report": 22.8,
+      "subscription": 46.4,
+      "saas": 0,
+      "affiliate": 30
+     }
+    },
+    {
+     "ym": "2027-03",
+     "revenue": 114.6,
+     "cost": 5,
+     "profit": 94.7,
+     "breakdown": {
+      "report": 26.6,
+      "subscription": 58,
+      "saas": 0,
+      "affiliate": 30
+     }
+    }
+   ],
+   "quarterly": {
+    "2026Q4(10-12)": 72.7,
+    "2027Q1(1-3)": 271.4
+   },
+   "cumulative": [
+    0,
+    9.5,
+    33.4,
+    72.7,
+    130.3,
+    229.5,
+    344.1
+   ],
+   "totals": {
+    "gross": 344.1,
+    "net": 274.9,
+    "cost": 24.5
+   },
+   "leads": [
+    300,
+    700,
+    1300,
+    2000,
+    2600,
+    3000,
+    3400
+   ],
+   "paid": [
+    0,
+    5,
+    16,
+    28,
+    40,
+    56,
+    74
+   ]
+  },
+  "공격": {
+   "monthly": [
+    {
+     "ym": "2026-09",
+     "revenue": 0,
+     "cost": 4,
+     "profit": -4,
+     "breakdown": {
+      "report": 0,
+      "subscription": 0,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2026-10",
+     "revenue": 11.4,
+     "cost": 4,
+     "profit": 5.9,
+     "breakdown": {
+      "report": 11.4,
+      "subscription": 0,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2026-11",
+     "revenue": 33.5,
+     "cost": 4,
+     "profit": 25.1,
+     "breakdown": {
+      "report": 19,
+      "subscription": 14.5,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2026-12",
+     "revenue": 92.6,
+     "cost": 5,
+     "profit": 75.6,
+     "breakdown": {
+      "report": 22.8,
+      "subscription": 34.8,
+      "saas": 0,
+      "affiliate": 35
+     }
+    },
+    {
+     "ym": "2027-01",
+     "revenue": 112,
+     "cost": 6,
+     "profit": 91.4,
+     "breakdown": {
+      "report": 19,
+      "subscription": 58,
+      "saas": 0,
+      "affiliate": 35
+     }
+    },
+    {
+     "ym": "2027-02",
+     "revenue": 135.2,
+     "cost": 7,
+     "profit": 110.6,
+     "breakdown": {
+      "report": 19,
+      "subscription": 81.2,
+      "saas": 0,
+      "affiliate": 35
+     }
+    },
+    {
+     "ym": "2027-03",
+     "revenue": 159.3,
+     "cost": 8,
+     "profit": 130.6,
+     "breakdown": {
+      "report": 22.8,
+      "subscription": 101.5,
+      "saas": 0,
+      "affiliate": 35
+     }
+    }
+   ],
+   "quarterly": {
+    "2026Q4(10-12)": 137.5,
+    "2027Q1(1-3)": 406.5
+   },
+   "cumulative": [
+    0,
+    11.4,
+    44.9,
+    137.5,
+    249.5,
+    384.7,
+    544
+   ],
+   "totals": {
+    "gross": 544,
+    "net": 435.2,
+    "cost": 38
+   },
+   "leads": [
+    500,
+    1200,
+    2200,
+    3200,
+    4200,
+    5200,
+    6200
+   ],
+   "paid": [
+    0,
+    11,
+    28,
+    48,
+    78,
+    110,
+    147
+   ]
+  },
+  "도전": {
+   "monthly": [
+    {
+     "ym": "2026-09",
+     "revenue": 0,
+     "cost": 4,
+     "profit": -4,
+     "breakdown": {
+      "report": 0,
+      "subscription": 0,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2026-10",
+     "revenue": 11.4,
+     "cost": 4,
+     "profit": 5.9,
+     "breakdown": {
+      "report": 11.4,
+      "subscription": 0,
+      "saas": 0,
+      "affiliate": 0
+     }
+    },
+    {
+     "ym": "2026-11",
+     "revenue": 71.4,
+     "cost": 4,
+     "profit": 58.1,
+     "breakdown": {
+      "report": 19,
+      "subscription": 17.4,
+      "saas": 0,
+      "affiliate": 35
+     }
+    },
+    {
+     "ym": "2026-12",
+     "revenue": 142.1,
+     "cost": 5,
+     "profit": 118.6,
+     "breakdown": {
+      "report": 22.8,
+      "subscription": 49.3,
+      "saas": 0,
+      "affiliate": 70
+     }
+    },
+    {
+     "ym": "2027-01",
+     "revenue": 261.5,
+     "cost": 7,
+     "profit": 220.5,
+     "breakdown": {
+      "report": 22.8,
+      "subscription": 84.1,
+      "saas": 0,
+      "affiliate": 154.6
+     }
+    },
+    {
+     "ym": "2027-02",
+     "revenue": 253.8,
+     "cost": 8,
+     "profit": 212.8,
+     "breakdown": {
+      "report": 22.8,
+      "subscription": 121.8,
+      "saas": 0,
+      "affiliate": 109.2
+     }
+    },
+    {
+     "ym": "2027-03",
+     "revenue": 292,
+     "cost": 10,
+     "profit": 244,
+     "breakdown": {
+      "report": 22.8,
+      "subscription": 145,
+      "saas": 0,
+      "affiliate": 124.2
+     }
+    }
+   ],
+   "quarterly": {
+    "2026Q4(10-12)": 224.9,
+    "2027Q1(1-3)": 807.3
+   },
+   "cumulative": [
+    0,
+    11.4,
+    82.8,
+    224.9,
+    486.4,
+    740.2,
+    1032.2
+   ],
+   "totals": {
+    "gross": 1032.2,
+    "net": 855.9,
+    "cost": 42
+   },
+   "leads": [
+    600,
+    1500,
+    2800,
+    4200,
+    5500,
+    6500,
+    7500
+   ],
+   "paid": [
+    0,
+    16,
+    39,
+    75,
+    115,
+    157,
+    207
+   ]
+  }
+ }
+}
