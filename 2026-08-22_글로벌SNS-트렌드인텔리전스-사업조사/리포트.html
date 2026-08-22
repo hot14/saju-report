@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>글로벌 SNS 실시간 트렌드 인텔리전스 서비스 — 사업 조사 리포트</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--card2:#1c2129;--border:#30363d;--text:#e6edf3;--sub:#8b949e;--accent:#58a6ff;--accent2:#3fb950;--warn:#d29922;--danger:#f85149;--purple:#bc8cff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.layout{display:flex;max-width:1440px;margin:0 auto}
+nav{width:250px;position:sticky;top:0;height:100vh;overflow-y:auto;padding:24px 16px;border-right:1px solid var(--border);flex-shrink:0;background:#0a0e14}
+nav h1{font-size:15px;color:var(--accent);margin-bottom:4px}
+nav .sub{font-size:11px;color:var(--sub);margin-bottom:20px}
+nav a{display:block;padding:7px 10px;color:var(--sub);text-decoration:none;font-size:13px;border-radius:6px;margin-bottom:2px}
+nav a:hover{background:var(--card);color:var(--text)}
+main{flex:1;padding:32px 40px;max-width:1160px;min-width:0}
+header.hero{padding:28px;background:linear-gradient(135deg,#161b22 0%,#1a2332 100%);border:1px solid var(--border);border-radius:12px;margin-bottom:28px}
+.hero .tag{display:inline-block;font-size:11px;background:rgba(88,166,255,.15);color:var(--accent);padding:3px 10px;border-radius:20px;margin-right:6px;margin-bottom:10px}
+.hero h1{font-size:26px;margin-bottom:10px}
+.hero p{color:var(--sub);font-size:14px}
+.meta{display:flex;gap:16px;margin-top:16px;flex-wrap:wrap}
+.meta div{font-size:12px;color:var(--sub);background:var(--card);border:1px solid var(--border);padding:6px 12px;border-radius:8px}
+.meta b{color:var(--text)}
+section{margin-bottom:44px;scroll-margin-top:20px}
+h2{font-size:20px;padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+h2 .num{color:var(--accent);font-size:14px;background:var(--card);border:1px solid var(--border);padding:2px 9px;border-radius:6px}
+h3{font-size:15px;margin:18px 0 8px;color:var(--accent)}
+p,li{font-size:14px;color:var(--text)}
+.sub{font-size:12px;color:var(--sub)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr 1fr}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px}
+.card .big{font-size:24px;font-weight:700;color:var(--accent)}
+.card .lbl{font-size:12px;color:var(--sub)}
+.chartbox{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px;margin:14px 0;position:relative}
+.chartbox .cap{font-size:12px;color:var(--sub);margin-top:8px;border-top:1px dashed var(--border);padding-top:8px}
+.chartwrap{position:relative;height:320px}
+.chartwrap.tall{height:380px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+th{background:var(--card2);color:var(--sub);font-weight:600;text-align:left;padding:9px 10px;border:1px solid var(--border);font-size:12px}
+td{padding:8px 10px;border:1px solid var(--border);vertical-align:top}
+tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.grade{display:inline-block;font-size:10px;padding:1px 7px;border-radius:4px;font-weight:700}
+.gA{background:rgba(63,185,80,.2);color:#3fb950}.gB{background:rgba(88,166,255,.2);color:#58a6ff}.gC{background:rgba(210,153,34,.2);color:#d29922}.gD{background:rgba(248,81,73,.2);color:#f85149}
+.toggle-group{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+.toggle-group button{background:var(--card);border:1px solid var(--border);color:var(--sub);padding:6px 14px;border-radius:8px;font-size:13px;cursor:pointer}
+.toggle-group button.active{background:var(--accent);color:#0d1117;border-color:var(--accent);font-weight:700}
+.chk{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--sub);background:var(--card);border:1px solid var(--border);padding:5px 10px;border-radius:20px;cursor:pointer;user-select:none}
+.chk input{accent-color:var(--accent)}
+.badge{font-size:11px;padding:2px 8px;border-radius:4px;margin-right:4px}
+.b-blue{background:rgba(88,166,255,.15);color:var(--accent)}.b-green{background:rgba(63,185,80,.15);color:var(--accent2)}.b-purple{background:rgba(188,140,255,.15);color:var(--purple)}.b-warn{background:rgba(210,153,34,.15);color:var(--warn)}.b-red{background:rgba(248,81,73,.15);color:var(--danger)}
+.pillar{border-left:3px solid var(--accent);padding-left:14px;margin:14px 0}
+.usp{background:linear-gradient(135deg,rgba(88,166,255,.08),rgba(188,140,255,.08));border:1px solid var(--accent);border-radius:10px;padding:20px;font-size:15px;margin:14px 0}
+.warnbox{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.4);border-radius:8px;padding:14px 16px;font-size:13px;margin:12px 0}
+.okbox{background:rgba(63,185,80,.08);border:1px solid rgba(63,185,80,.4);border-radius:8px;padding:14px 16px;font-size:13px;margin:12px 0}
+details{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin:8px 0}
+summary{cursor:pointer;font-size:13px;color:var(--accent);font-weight:600}
+.flow{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;font-family:ui-monospace,monospace;font-size:12px;white-space:pre;overflow-x:auto;color:var(--sub);line-height:1.9}
+footer{border-top:1px solid var(--border);padding:20px 0;color:var(--sub);font-size:12px}
+@media(max-width:900px){nav{display:none}main{padding:20px 16px}.g2,.g3,.g4{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav>
+<h1>Trend Intel 50</h1>
+<div class="sub">실시간 트렌드 인텔리전스<br>사업 조사 리포트</div>
+<a href="#s1">1. 핵심 요약</a>
+<a href="#s2">2. 시장 분석</a>
+<a href="#s3">3. 경쟁·벤치마킹</a>
+<a href="#s4">4. 차별화 전략</a>
+<a href="#s5">5. 서비스 설계·예산</a>
+<a href="#s6">6. 데이터 파이프라인</a>
+<a href="#s7">7. 수익 모델</a>
+<a href="#s8">8. 재무 시나리오 ★</a>
+<a href="#s9">9. GTM·마케팅</a>
+<a href="#s10">10. 운영·인플루언서</a>
+<a href="#s11">11. 데이터·방법론</a>
+</nav>
+<main>
+
+<header class="hero">
+<span class="tag">사업 조사 리포트</span><span class="tag" style="background:rgba(63,185,80,.15);color:#3fb950">실측 데이터 연동</span><span class="tag" style="background:rgba(188,140,255,.15);color:#bc8cff">HSH 프레임워크 기반</span>
+<h1>예산 50만원, 글로벌 SNS 실시간 트렌드 인텔리전스 서비스</h1>
+<p>유튜브·인스타·틱톡·X·중국 SNS·레딧·글로벌 커뮤니티의 트렌드를 취합·분석하여, 인플루언서와 콘텐츠 제작자가 바이럴 콘텐츠를 만들 수 있게 하는 서비스의 시장조사·벤치마킹·차별화·수익화·운영 전략 종합 리포트</p>
+<div class="meta">
+<div>데이터 컷오프 <b>2026-08-22</b></div>
+<div>예산 <b>50만원 KRW</b></div>
+<div>목표 기한 <b>2027-03 (7개월)</b></div>
+<div>경쟁사 조사 <b>70+ 서비스</b></div>
+<div>검증 데이터 <b>9세트 · 60+ 수치</b></div>
+</div>
+</header>
+
+<!-- S1 -->
+<section id="s1">
+<h2><span class="num">01</span>핵심 요약 (Executive Summary)</h2>
+<div class="grid g2">
+<div class="card"><div class="lbl">시장 기회</div><div class="big">$11B</div><div class="sub">글로벌 소셜 리스닝 시장(2026). 한국어+중국 SNS 교차 커버리지의 저가($10~30/월) 공백대 존재 <span class="grade gB">B</span></div></div>
+<div class="card"><div class="lbl">7개월 매출 시나리오</div><div class="big">102만~1,032만원</div><div class="sub">보수/현실/공격/도전 4개 시나리오. 현실 시나리오 344만원(순이익 275만)</div></div>
+<div class="card"><div class="lbl">구조적 제약 (비판적 분석)</div><div class="big">3가지</div><div class="sub">①X API 무료티어 폐지·종량제($0.005/읽기) ②틱톡 상업 API 부재 ③Reddit API 비상업 한정 → RSS-퍼스트 설계로 해결</div></div>
+<div class="card"><div class="lbl">실증된 무료 인프라</div><div class="big">월 $0~3</div><div class="sub">무료 소스 4종 실동작 검증 완료(200 OK). 300~500개 소스 모니터링 가능</div></div>
+<div class="card"><div class="lbl">핵심 차별화</div><div class="big">한·중·미 교차</div><div class="sub">글로벌 도구는 한국어 시장 미진입, 중국 도구는 한국어 불가 → 무경쟁 갭</div></div>
+<div class="card"><div class="lbl">1호 상품</div><div class="big">위클리 리포트</div><div class="sub">Trends.vc 모델 실증(무료 5만→유료 1천). 3티어 9,900/19,000/49,000원</div></div>
+</div>
+<div class="warnbox"><b>솔직한 한계 고지</b> — Gumroad 크리에이터 44%는 매출 $0, 중앙값 $72/월입니다. 본 리포트의 수익 시나리오는 상위 실행력을 가정하며, '도전(1,000만원)' 시나리오는 실행력 상위 5~10% + 바이럴 1회 적중이 필요합니다 <span class="grade gB">B</span>. 모든 [추정] 수치는 차트에서 연한 색으로 구분됩니다.</div>
+</section>
+
+<!-- S2 -->
+<section id="s2">
+<h2><span class="num">02</span>시장 분석</h2>
+<div class="chartbox"><h3>시장 규모 TAM 피라미드 (USD B)</h3><div class="chartwrap"><canvas id="cMarket"></canvas></div><div class="cap">출처: Goldman Sachs(2023) <span class="grade gA">A</span>, Grand View Research <span class="grade gB">B</span>, Mordor Intelligence(2026) <span class="grade gB">B</span>, MarketsandMarkets(2026-07) <span class="grade gB">B</span>, Coherent MI 한국(2025-04) <span class="grade gB">B</span>. 기관별 정의 편차가 커 협의 정의 병기.</div></div>
+<h3>TAM → SAM → SOM</h3>
+<table>
+<tr><th>구분</th><th>정의</th><th>규모</th><th>근거</th></tr>
+<tr><td><b>TAM</b></td><td>글로벌 소셜 리스닝·트렌드 인텔리전스</td><td>$10.9~11.9B (2026)</td><td>Mordor/Coherent <span class="grade gB">B</span></td></tr>
+<tr><td><b>SAM</b></td><td>한국어 크리에이터·1인 마케터 저가 셀프서브</td><td>국내 크리에이터 산업 5.55조원, 수익창출 유튜브 채널 ~10만, 지불풀 1~3만명 <span class="grade gD">D</span></td><td>방송위 국가통계(2024) <span class="grade gA">A</span> + 플레이보드 <span class="grade gC">C</span></td></tr>
+<tr><td><b>SOM</b></td><td>7개월 내 유료 고객</td><td>29~207명 (시나리오별)</td><td>본 리포트 시나리오 모델</td></tr>
+</table>
+<h3>한국 시장 핵심 특성</h3>
+<div class="grid g3">
+<div class="card"><div class="big">5조 5,503억</div><div class="lbl">디지털크리에이터미디어 산업 매출 (2024, 사업체 11,089개) <span class="grade gA">A</span></div></div>
+<div class="card"><div class="big">85.7%</div><div class="lbl">종사자 5인 미만 사업체 비율 — 1인 운영 도구가 타겟과 일치 <span class="grade gA">A</span></div></div>
+<div class="card"><div class="big">양극화</div><div class="lbl">창작자 하위 50% 연 40만원 vs 상위 1% 7.13억 — 저가·단발 과금 필요 <span class="grade gA">A</span> (국세청)</div></div>
+</div>
+<p class="sub">플랫폼 편중: 유튜브 65.9% / 인스타 12.9% / 네이버클립 7.9% <span class="grade gA">A</span> — 모니터링 우선순위의 근거. MZ세대 72.3%가 인플루언서 추천으로 구매 경험 <span class="grade gB">B</span> — 소형 브랜드 B2B 리드의 근거.</p>
+</section>
+
+<!-- S3 -->
+<section id="s3">
+<h2><span class="num">03</span>경쟁·벤치마킹 (70+ 서비스 조사)</h2>
+<div class="chartbox"><h3>가격-티어 포지셔닝 맵 (USD/월, 로그축)</h3><div class="chartwrap"><canvas id="cPrice"></canvas></div><div class="cap">$10~40 공백대가 한국 크리에이터 지불의사 구간. 출처: 각 서비스 공개 가격페이지 (2026-06~08 확인) <span class="grade gB">B</span>. ★ = 본 서비스 계획 위치.</div></div>
+<h3>5대 발견</h3>
+<div class="grid g2">
+<div class="card"><span class="badge b-red">시장 공백 실증</span><br><b>GummySearch 폐쇄 (2025-11)</b><br><span class="sub">Reddit API 조건 미합의로 폐쇄, 13.5만 유저 이탈. 커뮤니티 데이터 수요는 존재하나 플랫폼 API 의존 리스크 실증 → RSS 우선 설계의 정당성</span></div>
+<div class="card"><span class="badge b-blue">가격 갭</span><br><b>엔터프라이즈($499~5,000)와 초저가($3~10) 사이</b><br><span class="sub">한국어 크리에이터의 지불의사 구간 $10~30에 아무도 서지 않음. 국내 대안(다음소프트 등)은 전부 B2B 비공개 가격</span></div>
+<div class="card"><span class="badge b-purple">무경쟁 영역</span><br><b>중국 SNS의 한국어 해석</b><br><span class="sub">新榜·蝉妈妈는 랭킹 일부 무료 공개. 그러나 한국어 UI·해석 제공은 0개 → '한국어 레이어'가 곧 해자</span></div>
+<div class="card"><span class="badge b-green">검증된 모델</span><br><b>Exploding Topics / Glimpse</b><br><span class="sub">무료 뉴스레터·확장 → 유료 전환 모델. Glimpse Chrome 사용자 10만+ (평점 4.8). Google Trends 기능 축소가 대안 수요 유발 중</span></div>
+</div>
+<details><summary>심층 벤치마킹 대상 8개 상세 보기</summary>
+<table>
+<tr><th>서비스</th><th>가격</th><th>강점</th><th>약점(우리의 기회)</th></tr>
+<tr><td>Exploding Topics</td><td>$39~249/월</td><td>조기 트렌드 DB, Semrush 생태계</td><td>한국어·중국 0, 이커머스 중심</td></tr>
+<tr><td>Glimpse</td><td>F/$40/월</td><td>무료 확장 훅, 132개국 기업</td><td>Google 검색 종속 — 숏폼 이머징 지연</td></tr>
+<tr><td>vidIQ</td><td>F/$10/월~</td><td>크리에이터 워크플로우 깊이</td><td>YouTube 단일, 해석 리포트 부재</td></tr>
+<tr><td>Treendly</td><td>$99/년</td><td>초저가 구독 검증</td><td>데이터 얕음, 업데이트 느림</td></tr>
+<tr><td>新榜 Newrank</td><td>F(랭킹 일부)</td><td>중국 전 채널 통합</td><td>중국어 UI, 본토 결제 장벽</td></tr>
+<tr><td>蝉妈妈</td><td>F(체험)</td><td>더우인+AI 스크립트</td><td>한국어 시장 진입 0</td></tr>
+<tr><td>PainOnSocial</td><td>$19~49/월</td><td>GummySearch 공백 대체 신생</td><td>Reddit 단일 소스</td></tr>
+<tr><td>F5Bot</td><td>F/$9.99~49.99</td><td>무료 알림→유료 업셀</td><td>키워드 알림만, 분석 없음</td></tr>
+</table></details>
+<details><summary>카테고리별 전수 리스트 (70+) 보기</summary>
+<table>
+<tr><th>카테고리</th><th>서비스</th></tr>
+<tr><td>①소셜 리스닝 (11)</td><td>Brandwatch, Meltwater, Talkwalker, Brand24, Mention, Sprinklr, Sprout Social, Awario, YouScan, Digimind, Social Searcher</td></tr>
+<tr><td>②트렌드 발굴 (8)</td><td>Exploding Topics, Glimpse, Treendly, Google Trends, TrendHunter, TickerTrends, TrendTok, Insight Hero</td></tr>
+<tr><td>③크리에이터 분석 (8)</td><td>vidIQ, TubeBuddy, HypeAuditor, Social Blade, Modash, Upfluence, Tubular Labs, Nox Influencer</td></tr>
+<tr><td>④중국 SNS (8)</td><td>新榜, 新抖, 蝉妈妈, 飞瓜数据, 灰豚数据, 百度指数, 微博指数, 卡思数据</td></tr>
+<tr><td>⑤커뮤니티 (9)</td><td>GummySearch(폐쇄), F5Bot, PainOnSocial, Panegains, CommunityTracker, Trend Seeker, Octolens, Syften, RedShip</td></tr>
+<tr><td>⑥한국 (8)</td><td>빅카인즈, 다음소프트, 와이즈넛, 시즈니, 애즈센트, 콘텐츠트리, 트렌드노트, POLARIS Xavier</td></tr>
+<tr><td>⑦RSS/자동화 (7)</td><td>Feedly, Inoreader, n8n, Make, Zapier, Huginn, Pipedream</td></tr>
+<tr><td>⑧AI 콘텐츠 (6)</td><td>Opus Clip, Submagic, Predis.ai, quso.ai, AutoCaption, Vidnoz</td></tr>
+</table></details>
+</section>
+
+<!-- S4 -->
+<section id="s4">
+<h2><span class="num">04</span>차별화 전략</h2>
+<div class="usp"><b>USP</b> — "서울에서, 상하이의 하입을 먼저 보고, 실리콘밸리의 신호를 해석합니다. 모든 출처와 함께."<br><span class="sub">성장 갈망이 있는 한국어 크리에이터·1인 마케터에게, Exploding Topics(비한국어 $39/월)나 다음소프트(B2B 비공개)와 달리, 한·중·미 교차 트렌드를 출처 투명한 기관급 주간 리포트로 1~3만원에 제공한다.</span></div>
+<div class="pillar"><h3>기둥 1 — 한·중·미 교차 트렌드 커버리지</h3><span class="sub">미국(Reddit·HN) + 한국(유튜브·네이버·커뮤니티) + 중국(더우인·웨이보·샤오홍슈 공개 랭킹)을 한 리포트에서 교차 해석. 모방 장벽: 글로벌 사는 한국어 시장 규모상 비진입이 합리적, 중국 사는 한국어 역량 부재. 시차 가설(중국 숏폼 포맷 2~4주 내 한국 도입)을 위클리 회고로 데이터 축적</span></div>
+<div class="pillar" style="border-color:var(--purple)"><h3>기둥 2 — 기관급 트렌드 리포트 (데이터 저널리즘)</h3><span class="sub">도구가 아니라 '리포트'가 제품. 7섹션 템플릿 + 15항 체크리스트 + 전 호 예측 회고. 모방 장벽: 품질 프로세스 자체가 제품 — 대형 사가 무료 콘텐츠로 내부화하면 자기 수익모델과 충돌</span></div>
+<div class="pillar" style="border-color:var(--accent2)"><h3>기둥 3 — 50만원 극한 자동화 (가격 경쟁력 원천)</h3><span class="sub">무료 API/RSS(n8n+CF Workers+Supabase+Gemini 무료티어)로 월 고정비 $0~3. 방어력은 낮으나 공격이 아닌 '가격의 원천'으로만 사용 — 공격축은 기둥 1·2</span></div>
+<h3>타겟 페르소나</h3>
+<table>
+<tr><th></th><th>P-A 성장기 크리에이터</th><th>P-B 1인 마케터/셀러</th><th>P-C 소형 에이전시</th></tr>
+<tr><td>프로필</td><td>구독 1천~5만, 숏폼 본업 전환 준비</td><td>자사몰 1인 마케팅 담당</td><td>3~10인 에이전시 기획자</td></tr>
+<tr><td>고통</td><td>"뭐가 터질지 몰라 항상 뒤처짐"</td><td>"트렌드 캐치에 주 10시간"</td><td>"클라 제안에 근거 데이터 필요"</td></tr>
+<tr><td>진입 상품</td><td>무료 브리핑 → 리포트 단발</td><td>위클리 구독 29,000원</td><td>B2B 맞춤 리서치 30만원~</td></tr>
+</table>
+</section>
+
+<!-- S5 -->
+<section id="s5">
+<h2><span class="num">05</span>서비스 설계 & 예산</h2>
+<div class="grid g2">
+<div>
+<h3>3-Phase 롤아웃</h3>
+<table>
+<tr><th>Phase</th><th>기간</th><th>제품</th><th>출구 게이트</th></tr>
+<tr><td><b>1</b></td><td>26.9~11</td><td>데일리 브리핑(무료) + 위클리 리포트(유료)</td><td>유료 10건 or 리드 300</td></tr>
+<tr><td><b>2</b></td><td>26.12~27.1</td><td>+ 콘텐츠 기획 템플릿·스크립트</td><td>구독 20명 유지</td></tr>
+<tr><td><b>3</b></td><td>27.2~3</td><td>셀프서브 대시보드(초대제)</td><td>MRR 100만원</td></tr>
+</table>
+<div class="warnbox"><b>예산 리스크 플랜</b> — 50% 소진 시: 유료 도구 무료 대체. 80% 소진 시: LLM 최저가 전환·소스 축소. Phase1 종료 시 유료 0건 & 리드 <100명이면 외주 리서치 브랜드로 피벗.</div>
+</div>
+<div>
+<div class="chartbox"><h3>50만원 예산 배분</h3><div class="chartwrap"><canvas id="cBudget"></canvas></div><div class="cap">마케팅 실험 30% 최대 배분. 무료 스택(실측 검증) 사용 시 고정비는 도메인+LLM 소액뿐. 가격 미확정 항목은 [추정] <span class="grade gD">D</span></div></div>
+</div>
+</div>
+</section>
+
+<!-- S6 -->
+<section id="s6">
+<h2><span class="num">06</span>데이터 파이프라인 (실측 검증 완료)</h2>
+<div class="okbox"><b>실동작 검증 (2026-08-22 본 세션 직접 테스트)</b> — Reddit JSON ✅ 200 OK / YouTube 채널 RSS ✅ 200 OK (15개 항목) / Google News RSS ✅ 200 OK (100건) / Hacker News API ✅ 200 OK (500건). 전부 무료·인증 불필요.</div>
+<table>
+<tr><th>소스</th><th>방법</th><th>비용</th><th>빈도</th><th>신뢰도</th></tr>
+<tr><td>Reddit</td><td>공개 .json 엔드포인트</td><td>무료*</td><td>15분</td><td><span class="grade gA">A</span></td></tr>
+<tr><td>YouTube</td><td>채널 RSS + Data API 무료 쿼터(일 1만 units)</td><td>무료</td><td>1시간</td><td><span class="grade gA">A</span></td></tr>
+<tr><td>글로벌/한국 뉴스</td><td>Google News RSS 키워드</td><td>무료</td><td>15분</td><td><span class="grade gB">B</span></td></tr>
+<tr><td>해커뉴스·커뮤니티</td><td>Firebase API</td><td>무료</td><td>30분</td><td><span class="grade gB">B</span></td></tr>
+<tr><td>X</td><td>2차 소스(뉴스 인용)만 — 공식 API 종량제 $0.005/읽기</td><td>무료</td><td>1시간</td><td><span class="grade gC">C</span></td></tr>
+<tr><td>인스타·틱톡</td><td>공식 랭킹·뉴스 2차 소스 (상업 API 부재)</td><td>무료</td><td>6시간</td><td><span class="grade gC">C</span></td></tr>
+<tr><td>중국 SNS</td><td>新榜·百度指数·微博 공개 랭킹 + 중국 테크미디어</td><td>무료</td><td>12시간</td><td><span class="grade gC">C</span></td></tr>
+</table>
+<p class="sub">* Reddit API는 비상업 한정(100QPM 무료) → 유료화 후에는 공개 RSS만 사용하는 설계로 전환. X 대체 경로 중 비공식 수집(twitterapi.io $0.15/1K)은 ToS 리스크 명시 후 신중 채택.</p>
+<div class="flow">[소스 RSS/JSON] → [Cloudflare Workers cron 15분] → [Supabase 무료]
+      → [Gemini Flash: 중복제거·한국어 요약·신뢰도 태깅]
+        ├→ [급상승 알림 Telegram/메일]  … SLA T+6h (실측 T+1h 여유)
+        ├→ [데일리 브리핑 08:00 무료 뉴스레터]
+        └→ [위클리 리포트 일요 컷오프 → 월요일 발행]</div>
+<h3>급상승 감지 규칙</h3>
+<p>키워드/링크별 24시간 언급 ≥ 3개 독립 소스 AND 전일 대비 +150% → 이머징 플래그. 신호→트렌드→하입 6단계 판별(노이즈→신호→이머징→메인→정점→소멸/정착, 3축 12점 이상 투자 권고).</p>
+</section>
+
+<!-- S7 -->
+<section id="s7">
+<h2><span class="num">07</span>수익 모델 & 목표 금액별 실전 방안</h2>
+<h3>가격 3티어 (Gumroad 14.6만 상품 분석 기반: $30~49 스윗스팟, 티어 효과 2배 <span class="grade gB">B</span>)</h3>
+<table>
+<tr><th>티어</th><th>가격</th><th>내용</th><th>목표 고객</th></tr>
+<tr><td>라이트</td><td>9,900원</td><td>미니 리포트 (TOP5 트렌드+해석)</td><td>입문 크리에이터</td></tr>
+<tr><td><b>스탠다드</b></td><td>19,000원</td><td>위클리 심층 리포트 (7섹션 풀버전)</td><td>성장기 크리에이터·1인 마케터</td></tr>
+<tr><td>프로</td><td>49,000원</td><td>심층+크리에이터 액션 플레이+중국 특집</td><td>에이전시·셀러</td></tr>
+<tr><td>구독</td><td>29,000원/월</td><td>위클리 전체+급상승 알림+과거 아카이브</td><td>상시 필요층</td></tr>
+<tr><td>B2B</td><td>30~35만원/건</td><td>맞춤 리서치 (브랜드·카테고리 특화)</td><td>소형 브랜드·에이전시</td></tr>
+</table>
+<h3>목표 금액별 플레이북</h3>
+<table>
+<tr><th>목표</th><th>수식</th><th>필수 실행</th><th>달성 확률</th></tr>
+<tr><td><b>100만원</b></td><td>리드 1,000 × 2% × 2.4만 + 단발 28건</td><td>브리핑 발행 24회 + 콜드아웃리치 100건 + 커뮤니티 3곳</td><td>중상 <span class="grade gB">B</span></td></tr>
+<tr><td><b>300만원</b></td><td>리드 3,000 × 3% + 단발 61건 + B2B 2건</td><td>+ 도그푸딩 숏폼 주3회 + 제휴 크로스프로모션 2회</td><td>상 <span class="grade gB">B</span></td></tr>
+<tr><td><b>500만원</b></td><td>리드 5,000 × 3~4% + 단발 60건 + B2B 4건</td><td>+ 프로 티어(49K) 출시 + B2B 레퍼런스 확보</td><td>상+ <span class="grade gD">D</span></td></tr>
+<tr><td><b>1,000만원</b></td><td>리드 7,500 + 구독 누적 50 + 단발+프로 84건 + B2B 8건 + 대행</td><td>+ 쇼츠 바이럴 1회(10만뷰) + 소개 영업 체계</td><td>최상(상위 5~10%) <span class="grade gD">D</span></td></tr>
+</table>
+<div class="warnbox"><b>킬 크라이테리아</b> — 4주차: 리드 <100 or 브리핑 오픈율 <25% → 채널 교체. 8주차: 유료 0건 → 가격·포맷 피벗. 12주차: 유료 <10건 & 리드 <300 → 외주 리서치 피벗.</div>
+</section>
+
+<!-- S8 -->
+<section id="s8">
+<h2><span class="num">08</span>재무 시나리오 <span class="badge b-purple">인터랙티브 ★</span></h2>
+<div class="toggle-group" id="tgPeriod">
+<button class="active" data-p="monthly">월간</button>
+<button data-p="quarterly">분기</button>
+<button data-p="annual">연간(누적)</button>
+</div>
+<div class="toggle-group" id="tgScenario">
+<label class="chk"><input type="checkbox" data-s="보수" checked> 보수 (목표 100만)</label>
+<label class="chk"><input type="checkbox" data-s="현실" checked> 현실 (300만)</label>
+<label class="chk"><input type="checkbox" data-s="공격" checked> 공격 (500만)</label>
+<label class="chk"><input type="checkbox" data-s="도전" checked> 도전 (1,000만)</label>
+</div>
+<div class="chartbox"><div class="chartwrap tall"><canvas id="cFinance"></canvas></div><div class="cap">매출(실선)·비용(막대) 단위: 만원. 수수료 13% 반영 순이익은 하단 표. 산술 검증 PASS(월합=분기합=누계). 2026-09~2027-03.</div></div>
+<div class="grid g2">
+<div class="chartbox"><h3>목표 대비 달성 (누적 매출, 만원)</h3><div class="chartwrap"><canvas id="cGoal"></canvas></div><div class="cap">도전 시나리오 = 1,032만원. 시나리오 전체가 가정 포함 <span class="grade gD">D</span>.</div></div>
+<div class="chartbox"><h3>선행지표: 유료 고객 누적 (명)</h3><div class="chartwrap"><canvas id="cPaid"></canvas></div><div class="cap">전환율 가정: 보수 2% / 현실·공격 3% / 도전 4% [추정]. 벤치마크: 뉴스레터 중앙값 3% <span class="grade gB">B</span></div></div>
+</div>
+<table id="financeTable"></table>
+</section>
+
+<!-- S9 -->
+<section id="s9">
+<h2><span class="num">09</span>GTM & 저예산 마케팅</h2>
+<div class="grid g2">
+<div>
+<h3>무료 전술 5종 (검증 근거)</h3>
+<ol style="padding-left:20px;font-size:14px">
+<li><b>셀프 도그푸딩</b> — 서비스=마케팅 순환</li>
+<li><b>커뮤니티 침투</b> — 첫 100유저 사례: Reddit 60 + Discord 25 <span class="grade gB">B</span>. 국내: 오픈채팅·디스콰이엇. 80% 정보+20% 언급</li>
+<li><b>무료 리드 마그넷</b> — Trends.vc 모델(무료 5만→유료 1천, 2%) <span class="grade gB">B</span></li>
+<li><b>빅 런치 금지</b> — 80개 인디 분석: PH 1위도 1~2주 내 반등 <span class="grade gB">B</span></li>
+<li><b>제휴 레버</b> — 첫 33 유료 고객에 제휴 핵심 사례 <span class="grade gB">B</span></li>
+</ol>
+<div class="warnbox">유료 광고는 펀넬 검증(무료 리포트 전환 5%+ & 유료 10건) 이후에만. "펀넬 없는 광고는 기부" — 다수 창업자 합의 <span class="grade gB">B</span></div>
+</div>
+<div>
+<div class="chartbox"><h3>숏폼 발행 빈도×성장 (vidIQ 1,020만 채널)</h3><div class="chartwrap"><canvas id="cFreq"></canvas></div><div class="cap">월 12+ 업로드 시 조회 성장 중앙값 4.1배. 전체 크리에이터 데이터 분석 <span class="grade gA">A</span> (2025-04~2026-03) — 주 3회 발행의 근거</div></div>
+</div>
+</div>
+<h3>퍼널 목표 (3개월)</h3>
+<p class="sub">월 10만 노출 → 구독 2~5% [추정] → 무료 리포트 다운로드 15~30% [추정] → 유료 2~3% <span class="grade gB">B</span>. 8주 캘린더: W1 서비스 공개·구독50 / W3 무료 리포트 1호·다운로드100 / W5 '중국 숏폼 트렌드' 특집·구독250 / W6 유료 출시·3건 / W8 첫 회고·구독400·유료8건</p>
+</section>
+
+<!-- S10 -->
+<section id="s10">
+<h2><span class="num">10</span>운영 전략 & 인플루언서 플레이북</h2>
+<div class="grid g2">
+<div>
+<h3>1인 운영 루틴 (주 25h)</h3>
+<table>
+<tr><th>주기</th><th>작업</th><th>시간</th><th>자동화</th></tr>
+<tr><td>매일 07:00</td><td>신호 검토·브리핑 감수·발송</td><td>40분</td><td>70%</td></tr>
+<tr><td>매일</td><td>소스 조정·알림 대응</td><td>20분</td><td>50%</td></tr>
+<tr><td>일요일</td><td>컷오프·리포트 초안</td><td>2h</td><td>60%</td></tr>
+<tr><td>월요일</td><td>리포트 발행·홍보 3종</td><td>4h</td><td>30%</td></tr>
+</table>
+<h3>기관급 리포트 템플릿 (7섹션)</h3>
+<p class="sub">①Executive Summary ②지표 대시보드 ③심층 분석(근거 5개+) ④크리에이터 액션 플레이 3종 ⑤출처 1:1 매핑 ⑥2주 전망 3시나리오 ⑦방법론·컷오프 부록 + 품질 체크리스트 15항 (모든 수치 출처/추정 구분/이전 호 예측 회고 포함)</p>
+</div>
+<div>
+<h3>인플루언서 도그푸딩 플레이북</h3>
+<ul style="padding-left:18px;font-size:14px">
+<li><b>포지셔닝</b>: "트렌드를 만드는 사람이 아니라 가장 빨리 보는 사람" — 매주 월요일 시리즈</li>
+<li><b>훅 구조</b>: 0-1s 위협형 오프닝 → 1-3s 데이터 제시 → 3-15s 사례 2개 → 15-25s 예측 → CTA (첫 1초 훅 = 조회 3배 <span class="grade gC">C</span>)</li>
+<li><b>채널</b>: 쇼츠+틱톡 주 3회 (빈도 효과 A등급) / X 스레드 주 2회 / 뉴스레터 매일</li>
+<li><b>마일스톤</b>: 0→1천 (트렌드 속도 경쟁) → 1천→1만 (포맷 고정·시리즈 IP) → 1만+ (커뮤니티 전환)</li>
+<li><b>순환</b>: 채널이 리포트 광고, 리포트가 채널 원료 — 완전 순환 구조</li>
+</ul>
+<h3>AI 콘텐츠 워크플로우 (Phase 2)</h3>
+<p class="sub">신호 감지 → LLM 기획 3안 → 인간 선정·감수 → LLM 스크립트·자막·썸네일 문구 → 제작(CapCut 등) → 발행 → 48h 데이터 회귀 → 프레임워크 업데이트</p>
+</div>
+</div>
+</section>
+
+<!-- S11 -->
+<section id="s11">
+<h2><span class="num">11</span>데이터·방법론·출처</h2>
+<div class="chartbox"><h3>바이럴 양극화 실측 (본 리포트 직접 수집, n=18)</h3><div class="chartwrap"><canvas id="cYT"></canvas></div><div class="cap">2026-08-22 유튜브 '트렌드' 키워드 샘플링. 평균 248,585 vs 중앙값 9,182 — 27배 격차. 최상위 1,984,300(Phonk/Funk 2026). 니치 '성형외과 월간 트렌드 분석' 채널 존재 = 리포트 비즈니스 실증 신호 <span class="grade gA">A</span>(직접 실측)</div></div>
+<div class="chartbox"><h3>전환율 벤치마크 (%)</h3><div class="chartwrap"><canvas id="cConv"></canvas></div><div class="cap">beehiiv 0.62 (수천 개 뉴스레터) <span class="grade gB">B</span> / SaaS 프리미엄 2.6 <span class="grade gB">B</span> / 뉴스레터 중앙값 3.0 <span class="grade gB">B</span> / Platformer 5.0 <span class="grade gB">B</span> / Substack 주장 5~10 <span class="grade gC">C</span> / 본 서비스 보수 가정 2.0 <span class="grade gD">D</span>(연한색)</div></div>
+<h3>모순·한계 고지</h3>
+<ul style="padding-left:18px;font-size:13px;color:var(--sub)">
+<li>소셜 리스닝 시장 규모 기관별 2배 편차 (10.9 vs 21.1 USD B) → 병기 처리</li>
+<li>인플루언서 '플랫폼' 정의 $1.15B(SaaS 협의)~$23.6B(서비스 포함) 20배 차이 → 협의 채택 명시</li>
+<li>X API: 무료티어 폐지·종량제 전환(2026) — 수집 비용 구조적 제약</li>
+<li>Reddit API 비상업 한정 → 유료화 후 공개 RSS만 사용 설계</li>
+<li>모든 재무 시나리오의 전환율·가격 가정은 [추정] — 실측 아님. 4주차·8주차 게이트에서 실데이터로 교체</li>
+</ul>
+<details><summary>전체 출처 목록 (60+ 수치 · 신뢰도 등급)</summary>
+<ul style="padding-left:18px;font-size:12px;color:var(--sub);line-height:2">
+<li><span class="grade gA">A</span> Goldman Sachs Research — 크리에이터 이코노미 $480B(2027) / 방송미디어통신위·한국전파진흥협회 국가통계 — 국내 크리에이터 산업 5.55조(2024) / 국세청 공개(매경 2024-02) — 창작자 소득 양극화 / vidIQ Research(1,020만 채널) — 업로드 빈도×성장</li>
+<li><span class="grade gB">B</span> Mordor Intelligence, Coherent MI, Grand View Research, MarketsandMarkets, Fortune Business Insights — 시장 규모 / X·YouTube·Reddit·Meta·TikTok 개발자 문서 — API 요금·한도(2026 확인) / Cloudflare·Supabase·n8n·Make·Apify 공식 가격 / Trends.vc 인터뷰(Mogul Millennial, Indie Hackers) / Gumroad 146,271상품 분석(InsightRaider) / 뉴스레터 전환율 독립집계·beehiiv·Platformer(Simon Owens) / First Page Sage·ChartMogul SaaS 전환율 / Indie Hackers 첫 100 고객 / 각 경쟁사 공개 가격페이지(2026-06~08)</li>
+<li><span class="grade gC">C</span> Chrome Web Store(Glimpse 사용자) / Substack 공식 주장 / Buffer·ClipSpeed·Animoto 숏폼 통계 / 레뷰코퍼레이션(디지털타임스)</li>
+<li><span class="grade gD">D</span> 본 리포트 추정: SOM 지불풀 1~3만명, 전환율 2~4%, 시나리오 전체, 예산 미확정 항목</li>
+<li><span class="grade gA">A</span> 본 세션 직접 실측(2026-08-22): 무료 소스 4종 실동작 200 OK / 유튜브 샘플 18편 조회수</li>
+</ul></details>
+<p class="sub">방법론: HSH(Hybrid Symbiotic Hierarchy) 프레임워크 14단계 프롬프트 체인(PR-00~13)으로 수행. 4개 병렬 리서치 에이전트 + 직접 실측(API 테스트·유튜브 샘플링) + 산술 자동 검증(월합=분기합=누계 PASS). 데이터 컷오프 2026-08-22.</p>
+</section>
+
+<footer>HSH Trend Intelligence Report · 생성 2026-08-22 · 예산 50만원 KRW · 목표 2027-03 · 본 리포트의 재무 전망은 가정 기반 시뮬레이션이며 투자 권유가 아닙니다.</footer>
+</main>
+</div>
+
+<script>
+// ===== 재무 데이터 (PR-08 스크립트와 동일 정의, JS에서 재계산하여 일관성 보장) =====
+const MONTHS=['26-09','26-10','26-11','26-12','27-01','27-02','27-03'];
+const R=1.9,S=2.9,PRO=4.9,FEE=0.13;
+const SC={
+ '보수':{rep:[0,0,4,5,6,6,7],sub:[0,0,0,2,4,5,6],b2b:[0,0,0,0,0,0,0],pro:[0,0,0,0,0,0,0],ex:[0,0,0,0,0,0,0],cost:[3,1,1.5,2,2,2.5,3],paid:[0,0,4,10,16,22,29],color:'#8b949e'},
+ '현실':{rep:[0,5,8,10,12,12,14],sub:[0,0,3,7,12,16,20],b2b:[0,0,0,0,0,30,30],pro:[0,0,0,0,0,0,0],ex:[0,0,0,0,0,0,0],cost:[3,3,3,3,3.5,4,5],paid:[0,5,16,28,40,56,74],color:'#58a6ff'},
+ '공격':{rep:[0,6,10,12,10,10,12],sub:[0,0,5,12,20,28,35],b2b:[0,0,0,35,35,35,35],pro:[0,0,0,0,0,0,0],ex:[0,0,0,0,0,0,0],cost:[4,4,4,5,6,7,8],paid:[0,11,28,48,78,110,147],color:'#3fb950'},
+ '도전':{rep:[0,6,10,12,12,12,12],sub:[0,0,6,17,29,42,50],b2b:[0,0,35,70,105,70,35],pro:[0,0,0,0,4,8,8],ex:[0,0,0,0,30,0,50],cost:[4,4,4,5,7,8,10],paid:[0,16,39,75,115,157,207],color:'#bc8cff'}
+};
+const GOALS={'보수':100,'현실':300,'공격':500,'도전':1000};
+const CALC={};
+for(const[k,d]of Object.entries(SC)){
+ const rev=MONTHS.map((_,i)=>+(d.rep[i]*R+d.sub[i]*S+d.b2b[i]+d.pro[i]*PRO+d.ex[i]).toFixed(1));
+ let cum=0;const cumArr=rev.map(v=>+(cum+=v).toFixed(1));
+ CALC[k]={rev,cost:d.cost,profit:rev.map((v,i)=>+(v*(1-FEE)-d.cost[i]).toFixed(1)),cum:cumArr,paid:d.paid,
+  q:{'26Q4':+rev.slice(1,4).reduce((a,b)=>a+b,0).toFixed(1),'27Q1':+rev.slice(4).reduce((a,b)=>a+b,0).toFixed(1)},
+  total:+rev.reduce((a,b)=>a+b,0).toFixed(1),net:+rev.reduce((a,b)=>a+b*(1-FEE),0).toFixed(1)};
+}
+// ===== 차트 공통 =====
+Chart.defaults.color='#8b949e';Chart.defaults.borderColor='#30363d';Chart.defaults.font.family="'Apple SD Gothic Neo',sans-serif";
+const grid={grid:{color:'rgba(48,54,61,.5)'}};
+function box(id,cfg){const el=document.getElementById(id);if(el)return new Chart(el,cfg)}
+
+// 1. 시장
+box('cMarket',{type:'bar',data:{labels:['크리에이터 이코노미\n(2027 전망)','소셜미디어 분석\n(2030 전망)','소셜 리스닝\n(2026)','인플루언서 플랫폼 SaaS\n(2026)','한국 인플루언서 플랫폼\n(2025)'],datasets:[{label:'USD B',data:[480,43.25,11.9,1.15,0.29],backgroundColor:['rgba(188,140,255,.55)','rgba(88,166,255,.55)','rgba(88,166,255,.55)','rgba(63,185,80,.55)','rgba(210,153,34,.55)'],borderColor:['#bc8cff','#58a6ff','#58a6ff','#3fb950','#d29922'],borderWidth:1}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:c=>['Goldman Sachs · A등급','Grand View Research · B등급','Coherent MI (10.91~11.9 범위 병기) · B등급','MarketsandMarkets 협의 정의 · B등급','Coherent MI · B등급 (약 432억원)'][c.dataIndex]}}},scales:{x:{type:'logarithmic',...grid},y:{...grid}}}});
+
+// 2. 가격 포지셔닝
+const comps=[['TubeBuddy',3,1],['Social Blade',4,1],['AutoCaption',4,1],['Treendly',8,1],['F5Bot',10,1],['vidIQ',10,2],['Opus Clip',15,2],['PainOnSocial',19,2],['Awario',29,2],['Exploding Topics',39,2],['Glimpse',40,2],['Brand24',199,3],['Sprout Social',199,3],['HypeAuditor',299,3],['YouScan',499,4],['Brandwatch',800,4]];
+const tiers={1:{label:'초저가($0~10)',c:'#3fb950'},2:{label:'저가($10~50) 공백대',c:'#58a6ff'},3:{label:'미들($50~300)',c:'#d29922'},4:{label:'엔터프라이즈($300+)',c:'#f85149'}};
+box('cPrice',{type:'scatter',data:{datasets:[...Object.entries(tiers).map(([t,v])=>({label:v.label,data:comps.filter(c=>c[2]==+t).map(c=>({x:c[1],y:c[2],name:c[0]})),backgroundColor:v.c+'99',pointRadius:6,pointHoverRadius:9})),{label:'★ 본 서비스(계획)',data:[{x:15,y:2,name:'리포트 단발 ≈$15 일회성'}],backgroundColor:'#ffffff',pointRadius:12,pointStyle:'star',borderColor:'#fff'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{tooltip:{callbacks:{label:c=>`${c.raw.name||''}: $${c.parsed.x}/월 · ${tiers[c.parsed.y]?.label||''}`}}},scales:{x:{type:'logarithmic',title:{display:true,text:'월 가격 (USD, 로그)'},...grid},y:{min:0.5,max:4.5,ticks:{stepSize:1,callback:v=>tiers[v]?.label||''},...grid}}}});
+
+// 3. 예산 도넛
+box('cBudget',{type:'doughnut',data:{labels:['마케팅 실험 15만','자동화 도구 10만','LLM API 7.5만','도메인·브랜딩 5만','데이터 소스 5만','예비비 7.5만'],datasets:[{data:[15,10,7.5,5,5,7.5],backgroundColor:['#58a6ff','#3fb950','#bc8cff','#d29922','#f85149','#8b949e'],borderColor:'#161b22',borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right'}}}});
+
+// 4. 재무 (인터랙티브)
+let period='monthly';
+function financeDatasets(){
+ const ds=[];
+ for(const[k,d]of Object.entries(SC)){
+  if(!document.querySelector(`input[data-s="${k}"]`).checked)continue;
+  const c=CALC[k];
+  if(period==='monthly'){ds.push({label:k+' 매출',data:c.rev,borderColor:d.color,backgroundColor:d.color+'33',tension:.3,fill:true});ds.push({label:k+' 비용',data:c.cost,type:'bar',backgroundColor:d.color+'55',borderColor:d.color,borderWidth:1});}
+  else if(period==='quarterly'){ds.push({label:k+' 매출',data:[c.q['26Q4'],c.q['27Q1']],backgroundColor:d.color+'88',borderColor:d.color,borderWidth:1});}
+  else{ds.push({label:k+' 누적 매출',data:c.cum,borderColor:d.color,backgroundColor:d.color+'22',tension:.3,fill:true,pointRadius:3});}
+ }
+ return ds;
+}
+const finChart=box('cFinance',{type:'line',data:{labels:period==='quarterly'?['2026Q4 (10~12월)','2027Q1 (1~3월)']:MONTHS,datasets:financeDatasets()},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{tooltip:{callbacks:{afterBody:items=>{const k=items[0].dataset.label.replace(' 매출','').replace(' 비용','').replace(' 누적 매출','');const c=CALC[k];return [`7개월 총매출: ${c.total}만원`,`순이익(수수료 13% 반영): ${c.net}만원`];}}}},scales:{y:{title:{display:true,text:'만원'},...grid},x:{...grid}}}});
+document.getElementById('tgPeriod').addEventListener('click',e=>{if(e.target.tagName!=='BUTTON')return;document.querySelectorAll('#tgPeriod button').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');period=e.target.dataset.p;finChart.data.labels=period==='quarterly'?['2026Q4 (10~12월)','2027Q1 (1~3월)']:MONTHS;finChart.data.datasets=financeDatasets();finChart.update();});
+document.getElementById('tgScenario').addEventListener('change',()=>{finChart.data.datasets=financeDatasets();finChart.update();updateTable();});
+
+// 5. 목표 대비
+box('cGoal',{type:'bar',data:{labels:Object.keys(CALC),datasets:[{label:'누적 매출',data:Object.values(CALC).map(c=>c.total),backgroundColor:Object.values(SC).map(d=>d.color+'99'),borderColor:Object.values(SC).map(d=>d.color),borderWidth:1},{label:'목표선',data:Object.values(GOALS),type:'line',borderColor:'#f85149',borderDash:[6,4],pointRadius:0,borderWidth:2}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{filter:l=>l!=='목표선'}},tooltip:{callbacks:{afterLabel:c=>'목표 '+GOALS[c.label]+'만원 · 순이익 '+CALC[c.label].net+'만원'}}},scales:{x:{title:{display:true,text:'만원'},...grid},y:{...grid}}}});
+
+// 6. 유료 고객
+box('cPaid',{type:'line',data:{labels:MONTHS,datasets:Object.entries(SC).map(([k,d])=>({label:k,data:CALC[k].paid,borderColor:d.color,backgroundColor:d.color+'22',tension:.3,fill:true}))},options:{responsive:true,maintainAspectRatio:false,scales:{y:{title:{display:true,text:'명 (누적)'},...grid},x:{...grid}}}});
+
+// 7. 발행 빈도
+box('cFreq',{type:'bar',data:{labels:['월 1회 미만','월 12회 이상'],datasets:[{label:'조회수 성장 (%/월)',data:[0.53,2.18],backgroundColor:['#8b949e99','#3fb95099'],borderColor:['#8b949e','#3fb950'],borderWidth:1},{label:'구독자 성장 (%/월)',data:[0.39,0.91],backgroundColor:['#8b949e55','#3fb95055'],borderColor:['#8b949e','#3fb950'],borderWidth:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{tooltip:{callbacks:{afterBody:()=>['vidIQ Research · 1,020만 채널 분석 · A등급','조회 성장 4.1배 차이']}},legend:{position:'bottom'}},scales:{y:{...grid},x:{...grid}}}});
+
+// 8. 유튜브 실측 (log)
+box('cYT',{type:'bar',data:{labels:['평균 조회수','중앙값 조회수'],datasets:[{label:'조회수',data:[248585,9182],backgroundColor:['#58a6ff99','#d2992299'],borderColor:['#58a6ff','#d29922'],borderWidth:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{afterBody:()=>['2026-08-22 직접 샘플링 n=18','최상위 1,984,300 (Phonk/Funk 2026)','27배 양극화 — 바이럴은 예외가 아닌 다른 게임']}}},scales:{y:{type:'logarithmic',...grid},x:{...grid}}}});
+
+// 9. 전환율
+box('cConv',{type:'bar',data:{labels:['beehiiv 중앙값','SaaS 프리미엄→유료','뉴스레터 중앙값','본 서비스 가정 [추정]','Platformer','Substack 주장(중간)'],datasets:[{label:'%',data:[0.62,2.6,3.0,2.0,5.0,7.5],backgroundColor:['#8b949e99','#58a6ff99','#58a6ff99','#d2992255','#3fb95099','#bc8cff99'],borderColor:['#8b949e','#58a6ff','#58a6ff','#d29922','#3fb950','#bc8cff'],borderWidth:1,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:c=>['수천 개 뉴스레터 · B','First Page Sage 86개 SaaS · B','독립 집계 중앙값 · B','본 리포트 보수 가정 · D(연한색=추정)','무료 2.4만 독자 기반 · B','Substack 공식 주장 · C'][c.dataIndex]}}},scales:{y:{title:{display:true,text:'전환율 (%)'},...grid},x:{...grid}}}});
+
+// 표
+function updateTable(){
+ let h='<tr><th>시나리오</th><th>총매출</th><th>순이익</th><th>총비용</th><th>26Q4</th><th>27Q1</th><th>유료고객(최종)</th></tr>';
+ for(const[k,c]of Object.entries(CALC))h+=`<tr><td><b style="color:${SC[k].color}">${k}</b> (목표 ${GOALS[k]}만)</td><td>${c.total}만</td><td>${c.net}만</td><td>${c.cost.reduce((a,b)=>a+b,0)}만</td><td>${c.q['26Q4']}만</td><td>${c.q['27Q1']}만</td><td>${c.paid[6]}명</td></tr>`;
+ document.getElementById('financeTable').innerHTML=h;
+}
+updateTable();
+</script>
+</body>
+</html>
