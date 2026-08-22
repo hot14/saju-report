@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 인플루언서 사업 실행 리포트 | 100만원·7개월·3단계 목표 (2026-08)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1a1f2b;--sub:#5b6472;--line:#e5e8ee;--acc:#4f46e5;--acc2:#e0e1ff;--ok:#0e9f6e;--warn:#c27803;--bad:#d03c3c;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR','Malgun Gothic',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+header.hero{background:linear-gradient(135deg,#1e1b4b,#4f46e5 70%,#7c6cf0);color:#fff;padding:46px 20px 38px;margin-bottom:26px}
+.hero-in{max-width:1180px;margin:0 auto}
+.hero .kicker{font-size:13px;letter-spacing:.14em;opacity:.85;text-transform:uppercase}
+.hero h1{font-size:clamp(22px,3.4vw,34px);font-weight:800;margin:8px 0 10px}
+.hero p{opacity:.92;font-size:15px;max-width:860px}
+.hero .meta-line{margin-top:14px;font-size:13px;opacity:.8}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:20px}
+.kpi{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px 14px;backdrop-filter:blur(4px)}
+.kpi b{display:block;font-size:21px;font-weight:800}
+.kpi span{font-size:12px;opacity:.85}
+nav.tabs{position:sticky;top:0;z-index:50;background:#fffffff2;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;gap:2px;overflow-x:auto;padding:0 8px}
+nav.tabs button{border:0;background:none;padding:13px 15px;font-size:14px;font-weight:600;color:var(--sub);cursor:pointer;white-space:nowrap;border-bottom:2.5px solid transparent}
+nav.tabs button.on{color:var(--acc);border-color:var(--acc)}
+section.tab{display:none;padding-top:22px}
+section.tab.on{display:block;animation:fade .25s}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+h2{font-size:21px;font-weight:800;margin:6px 0 14px}
+h3{font-size:16.5px;font-weight:750;margin:22px 0 10px;color:#2d3550}
+p.lead{color:var(--sub);font-size:14.5px;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px}
+.card-h{font-weight:750;font-size:15px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.card p{font-size:13.8px;margin-bottom:6px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+table{width:100%;border-collapse:collapse;font-size:13px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th{background:#f0f2f7;text-align:left;padding:9px 10px;font-size:12.5px;color:#3d4557;border-bottom:1px solid var(--line)}
+td{padding:8px 10px;border-bottom:1px solid #eef0f4;vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.nm{font-weight:700}td.ft{font-size:12.6px}td.dim{color:var(--sub)}td.num{font-variant-numeric:tabular-nums;font-weight:600}
+.ft{font-size:13.6px}.dim{color:var(--sub)}
+i{color:var(--sub);font-style:normal}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.bdg{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;border-radius:6px;font-size:11px;font-weight:800;color:#fff;margin-right:4px}
+.bdg-a{background:var(--ok)}.bdg-b{background:#2563eb}.bdg-c{background:var(--warn)}
+.v{color:var(--ok);font-weight:700;font-size:12px}.nv{color:var(--warn);font-size:12px}
+.src{font-size:11.5px;font-weight:500;color:var(--sub)}
+.filterbar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 12px}
+.filterbar select,.filterbar input{padding:8px 12px;border:1px solid var(--line);border-radius:9px;font-size:13.5px;background:#fff}
+.chartbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
+.chartbox .ch-h{font-weight:750;font-size:14.5px;margin-bottom:2px}
+.chartbox .ch-s{font-size:12px;color:var(--sub);margin-bottom:10px}
+.seg{display:inline-flex;background:#eef0f6;border-radius:9px;padding:3px;margin-bottom:10px}
+.seg button{border:0;background:none;padding:6px 13px;font-size:12.5px;font-weight:600;color:var(--sub);border-radius:7px;cursor:pointer}
+.seg button.on{background:#fff;color:var(--acc);box-shadow:0 1px 4px rgba(0,0,0,.09)}
+.scard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;border-top:4px solid var(--acc)}
+.scard.conservative{border-top-color:var(--ok)}.scard.realistic{border-top-color:#2563eb}.scard.aggressive{border-top-color:var(--bad)}
+.sc-h{font-weight:800;font-size:16px}.sc-target{font-size:24px;font-weight:800;margin:6px 0}
+.sc-prob{font-size:12.5px;font-weight:600;color:var(--sub);margin-left:8px}
+table.mini th{width:96px;background:#fafbfd}
+.cal{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.cal-h{display:flex;gap:10px;align-items:baseline;margin-bottom:4px}
+.cal-m{font-weight:800;font-size:15px}.cal-p{font-size:12px;color:var(--acc);font-weight:700;background:var(--acc2);padding:2px 9px;border-radius:99px}
+.cal-g{font-size:13.6px;font-weight:600;margin-bottom:8px}
+.cal ul{margin:0 0 8px 18px}.cal li{font-size:13px;margin-bottom:3px}
+.cal-meta{display:flex;gap:16px;flex-wrap:wrap;font-size:12.3px;color:var(--sub);margin-bottom:8px}
+.gate{background:#fff8ec;border:1px solid #f2e3bd;border-radius:9px;padding:8px 11px;font-size:12.6px}
+.debate{background:#f6f5ff;border-radius:9px;padding:9px 12px;font-size:12.8px;margin-top:8px}
+.star{color:var(--warn);font-size:12px}.feas{font-size:12px;color:var(--sub);font-weight:600;margin-left:auto}
+.pb{margin-bottom:12px;padding-left:12px;border-left:3px solid var(--acc2)}
+.pb b{font-size:13.8px}.pb p{font-size:13.2px;color:#3c445a;margin-top:3px}
+.note{background:#eef7ff;border:1px solid #cfe6fb;border-radius:10px;padding:11px 14px;font-size:12.8px;color:#1d4f7c;margin:12px 0}
+.warnbox{background:#fff5f5;border:1px solid #f3caca;border-radius:10px;padding:11px 14px;font-size:12.8px;color:#7c2222;margin:12px 0}
+footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--sub)}
+.dl{display:inline-block;margin-top:8px;padding:8px 16px;background:var(--acc);color:#fff;border-radius:9px;font-weight:700;font-size:13px;cursor:pointer;border:0}
+@media print{nav.tabs{display:none}section.tab{display:block!important}.chartbox{break-inside:avoid}}
+</style></head><body>
+<header class="hero"><div class="hero-in">
+<div class="kicker">HSH 프레임워크 실행 리포트 · Evidence-based</div>
+<h1>AI 인플루언서 · 글로벌 SNS 사업 실행 전략</h1>
+<p>예산 100만원, 계정·경험 0에서 시작하여 2027년 3월까지 3단계 목표(보수 200만 / 현실 1,000만 / 도전 3,000만원)를 달성하기 위한 경쟁사 79종 전수 분석, 차별화 전략, 재무 시나리오, 월별 실행 캘린더를 실측 데이터 기반으로 정리했습니다.</p>
+<div class="meta-line">작성: 2026-08-22 · 조사 방법: 웹 실측 조사 4계층 병렬 (79 서비스 · 시장데이터 34건 · 그로스 실증 36건) · 모든 수치에 출처 등급 표기</div>
+<div class="kpis">
+<div class="kpi"><b>100만원</b><span>총 예산 (42/12/18/28만 분할)</span></div>
+<div class="kpi"><b>7개월</b><span>2026-09 ~ 2027-03</span></div>
+<div class="kpi"><b>79종</b><span>경쟁 서비스 전수 조사</span></div>
+<div class="kpi"><b>3단계</b><span>보수 200 / 현실 1,000 / 도전 3,000만</span></div>
+</div></div></header>
+
+<nav class="tabs" id="tabs">
+<button class="on" data-t="overview">① 개요·전략</button>
+<button data-t="market">② 시장·경쟁사</button>
+<button data-t="diff">③ 차별화</button>
+<button data-t="gtm">④ 마케팅·GTM</button>
+<button data-t="playbook">⑤ 실행 플레이북</button>
+<button data-t="finance">⑥ 재무 시나리오</button>
+<button data-t="calendar">⑦ 실행 캘린더</button>
+<button data-t="verify">⑧ 검증·출처</button>
+</nav>
+<div class="wrap">
+
+<!-- ① 개요 -->
+<section class="tab on" id="tab-overview">
+<h2>개요: 3단계 병행 트랙 전략</h2>
+<p class="lead">확정 브리프: 병행(단계적): 자체 AI 인플루언서 운영(9-11월) → 노하우 서비스화(12-1월) → 확장(2-3월) · 가용 시간 평일 19:00~02:00 (지속가능 25-30h/주) · 한국어 우선 → 자동 더빙/자막 다국화 · 리스크 원칙: 안정 운영(정책 준수·계정 분산) + 월별 관문과 복구 일정 안내</p>
+<div class="grid2">
+<div class="card"><div class="card-h">왜 "병행(단계적)"인가</div>
+<p class="ft">계정·경험 0에서 TopView류 SaaS를 즉시 론칭하면 제작 역량도 고객 신뢰도도 없는 상태로 시장에 뛰어드는 것입니다. 대신 <b>1단계(9-11월) 자체 AI 인플루언서 운영으로 실측 데이터 축적 → 2단계(12-1월) 노하우 서비스화 → 3단계(2-3월) 확장</b> 순서로, 각 단계가 다음 단계의 근거 자산이 되는 구조입니다.</p></div>
+<div class="card"><div class="card-h">시장 기회 (실측)</div>
+<p class="ft">버추얼 인플루언서 시장: 2025년 $112억 → 2026년 $159억, CAGR 40.9% <span class="src"><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> Research and Markets</span><br>
+인플루언서 마케팅: 2024년 $240억 → 2025년 $325억 <span class="src"><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> Influencer Marketing Hub</span><br>
+AI 영상 생성기: 2026년 $8.5억, CAGR 18.8% <span class="src"><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> Fortune BI</span></p></div>
+<div class="card"><div class="card-h">핵심 결론 3줄 요약</div>
+<p class="ft">1. <b>수익 주축은 채널이 아니라 "서비스+상품"</b>입니다. 채널 광고수익(Shorts RPM $0.03-0.07/1K <span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span>)만으로는 7개월 내 목표 불가능. 크몽 시세(월 44-79만 <span class="bdg bdg-c" title="블로그/자기보고/추정">C</span>)가 현실적 수익 상한을 결정합니다.<br>
+2. <b>차별화 해자는 "과정 공개 + 실측 데이터"</b>입니다. 79개 경쟁 서비스는 결과물만 팔고 과정 데이터를 팔는 곳은 없습니다.<br>
+3. <b>가장 큰 리스크는 플랫폼 정책과 번아웃</b>입니다. AI 라벨 의무(<span class="bdg bdg-a" title="공식/1차 자료">A</span> 각 플랫폼 공식)와 주 25-30h 상한 원칙이 생존 조건입니다.</p></div>
+<div class="card"><div class="card-h">목표 금액 3단계 (적정성 근거)</div>
+<p class="ft">· <b>보수 200만</b>: 월 평균 29만. 크몽 하단가 15만×5개월 + 소액 부수입. 노력 대비 높은 달성 확률 (60-70% 추정)<br>
+· <b>현실 1,000만</b>: 고정 클라 2-3명 유지 시 크몽 시세 중간값(월 44-79만)만으로도 4-5개월이면 도달 가능한 구간 (25-35% 추정)<br>
+· <b>도전 3,000만</b>: 바이럴 1건 + 상품화 성공 전제. 성장 편차 데이터(29일 10K vs 30일 1,194명)상 확률 5-10%</p></div>
+</div>
+<h3>시장 성장 추이 (실측+전망, 단위: 십억 달러)</h3>
+<div class="chartbox"><div class="ch-h">시장 규모 추이</div><div class="ch-s">버추얼 인플루언서는 2030년 $626억 전망 · 출처 등급 B (리서치사 추정치)</div>
+<div style="height:300px"><canvas id="chMarket"></canvas></div></div>
+<div class="note">※ 세 시장은 정의가 달라 상호 비교가 아닌 개별 추이로 읽어야 합니다 (조사 에이전트 노트 반영).</div>
+</section>
+
+<!-- ② 시장·경쟁사 -->
+<section class="tab" id="tab-market">
+<h2>시장 데이터 · 경쟁 서비스 79종 전수 리스트</h2>
+<p class="lead">7개 카테고리 전수 조사 (79종, 가격 공식 확인 44종). 필터로 카테고리를 좁히고, 가격 열의 ✓는 공식 가격 페이지 확인 완료를 뜻합니다.</p>
+<div class="chartbox"><div class="ch-h">카테고리별 조사 서비스 수 · 가격 확인율</div>
+<div style="height:280px"><canvas id="chCat"></canvas></div></div>
+<div class="filterbar">
+<select id="catFilter"><option value="0">전체 카테고리 (79)</option>
+<option value="1">1. AI 영상·아바타 생성 (22)</option><option value="2">2. 쇼트폼 자동화·재편집 (13)</option><option value="3">3. AI 인플루언서·버추얼 휴먼 (13)</option><option value="4">4. SNS 통합 관리 도구 (13)</option><option value="5">5. 중국 SNS 진입 지원 (3)</option><option value="6">6. 인플루언서 마케팅 플랫폼 (9)</option><option value="7">7. 페이스리스 자동화·코스 (6)</option>
+</select>
+<input id="nameFilter" type="text" placeholder="서비스명 검색...">
+</div>
+<div style="overflow-x:auto"><table id="compTable">
+<thead><tr><th>#</th><th>서비스</th><th>카테고리</th><th>본사</th><th>엔트리 가격(월)</th><th>핵심 기능</th><th>강점</th><th>약점</th><th>검증</th></tr></thead>
+<tbody>
+<tr data-cat="1" data-name="topview.ai">
+<td>1</td><td class="nm"><a href="https://www.topview.ai/pricing" target="_blank" rel="noopener">TopView.ai</a></td>
+<td>AI 영상·아바타 생성</td><td>Singapore</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">상품 URL 기반 광고 영상 · AI 아바타 · 스크립트·보이스오버</td><td class="ft">상품 페이지에서 짧은 광고 크리에이티브를 빠르게 만드는 워크플로에 집중한다.</td><td class="ft">공개 가격 구조와 생성량 한도가 자주 바뀌어 예산 예측이 어렵다.</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="1" data-name="heygen">
+<td>1</td><td class="nm"><a href="https://www.heygen.com/pricing" target="_blank" rel="noopener">HeyGen</a></td>
+<td>AI 영상·아바타 생성</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">AI 아바타 · 영상 번역·립싱크 · 보이스 클로닝</td><td class="ft">다국어 더빙과 아바타 기반 현지화 제품군이 매우 폭넓다.</td><td class="ft">고급 아바타·번역 사용량은 크레딧과 플랜 한도에 민감하다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="synthesia">
+<td>1</td><td class="nm"><a href="https://www.synthesia.io/pricing" target="_blank" rel="noopener">Synthesia</a></td>
+<td>AI 영상·아바타 생성</td><td>United Kingdom</td>
+<td class="pr">무료 티어</td>
+<td class="ft">기업용 AI 아바타 · 텍스트-투-비디오 · 다국어 음성</td><td class="ft">기업 보안·거버넌스와 교육용 영상 제작에 강한 포지셔닝이다.</td><td class="ft">소셜 광고용 고속 크리에이티브 실험에는 전용 UGC 도구보다 덜 유연할 수 있다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="argil">
+<td>1</td><td class="nm"><a href="https://www.argil.ai/pricing" target="_blank" rel="noopener">Argil</a></td>
+<td>AI 영상·아바타 생성</td><td>France</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">개인 AI 클론 · 짧은 아바타 영상 · API·자동화</td><td class="ft">자기 모습 기반 AI 클론과 자동화 활용을 전면에 둔다.</td><td class="ft">대형 기업용 영상 제작 기능과 브랜드 거버넌스는 상대적으로 제한적일 수 있다.</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="1" data-name="captions">
+<td>1</td><td class="nm"><a href="https://www.captions.ai/pricing" target="_blank" rel="noopener">Captions</a></td>
+<td>AI 영상·아바타 생성</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">AI 편집 · 자동 자막 · AI Creator 아바타</td><td class="ft">촬영 후 편집, 자막, 아바타 기능을 하나의 크리에이터 앱 경험으로 묶었다.</td><td class="ft">기업용 대량 제작과 세밀한 승인 프로세스에는 별도 운영 체계가 필요하다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="higgsfield">
+<td>1</td><td class="nm"><a href="https://higgsfield.ai/pricing" target="_blank" rel="noopener">Higgsfield</a></td>
+<td>AI 영상·아바타 생성</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">시네마틱 AI 영상 · 카메라 모션 제어 · 이미지-투-비디오</td><td class="ft">카메라 워크와 스타일 중심의 고품질 숏폼 연출이 차별점이다.</td><td class="ft">반복 가능한 제품 광고 대량 생산보다는 크리에이티브 탐색 성격이 강하다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="runway">
+<td>1</td><td class="nm"><a href="https://runwayml.com/pricing" target="_blank" rel="noopener">Runway</a></td>
+<td>AI 영상·아바타 생성</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">텍스트·이미지-투-비디오 · Gen 영상 모델 · AI 영상 편집</td><td class="ft">범용 생성형 영상 모델과 전문 크리에이티브 도구의 결합이 강점이다.</td><td class="ft">아바타 UGC를 즉시 대량 생산하는 목적에는 전용 서비스보다 작업량이 많다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="kling ai">
+<td>1</td><td class="nm"><a href="https://klingai.com/global/" target="_blank" rel="noopener">Kling AI</a></td>
+<td>AI 영상·아바타 생성</td><td>China</td>
+<td class="pr">무료 티어</td>
+<td class="ft">텍스트-투-비디오 · 이미지-투-비디오 · 모션·카메라 제어</td><td class="ft">고품질 생성형 영상과 강한 모션 표현으로 빠르게 인지도를 얻었다.</td><td class="ft">지역별 접근성, 결제, 상업 이용 정책을 별도로 점검해야 한다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="invideo ai">
+<td>1</td><td class="nm"><a href="https://invideo.io/pricing/" target="_blank" rel="noopener">InVideo AI</a></td>
+<td>AI 영상·아바타 생성</td><td>Singapore</td>
+<td class="pr">무료 티어</td>
+<td class="ft">프롬프트 기반 영상 · 스톡 미디어 · AI 보이스오버</td><td class="ft">스크립트에서 스톡·보이스·편집을 자동 조합하는 범용 제작 흐름이 편리하다.</td><td class="ft">독창적인 아바타 광고나 고급 생성형 영상 품질은 전문 도구와 차이가 날 수 있다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="pictory">
+<td>1</td><td class="nm"><a href="https://pictory.ai/pricing" target="_blank" rel="noopener">Pictory</a></td>
+<td>AI 영상·아바타 생성</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">스크립트-투-비디오 · 블로그-투-비디오 · 자동 요약·자막</td><td class="ft">기존 텍스트와 긴 콘텐츠를 설명형 영상으로 전환하는 데 적합하다.</td><td class="ft">실사형 아바타와 트렌드형 UGC 광고의 표현력은 제한적이다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="fliki">
+<td>1</td><td class="nm"><a href="https://fliki.ai/pricing" target="_blank" rel="noopener">Fliki</a></td>
+<td>AI 영상·아바타 생성</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">텍스트-투-비디오 · AI 음성 · 아바타</td><td class="ft">다양한 음성과 텍스트 기반 영상 생성 진입장벽이 낮다.</td><td class="ft">광고 영상용 고급 퍼포먼스 크리에이티브 기능은 제한된다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="vidnoz ai">
+<td>1</td><td class="nm"><a href="https://www.vidnoz.com/pricing.html" target="_blank" rel="noopener">Vidnoz AI</a></td>
+<td>AI 영상·아바타 생성</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">AI 아바타 · 템플릿 · 텍스트-투-스피치</td><td class="ft">무료 진입과 템플릿 중심 제작 경험으로 접근성이 높다.</td><td class="ft">프리미엄 아바타 사실성과 기업 통제 기능은 상위권 업체 대비 검증이 필요하다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="akool">
+<td>1</td><td class="nm"><a href="https://akool.com/pricing" target="_blank" rel="noopener">AKOOL</a></td>
+<td>AI 영상·아바타 생성</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">스트리밍 아바타 · 페이스 스왑 · 영상 번역</td><td class="ft">실시간 아바타와 페이스 스왑까지 포함한 멀티모달 제품 범위가 넓다.</td><td class="ft">기능이 많은 만큼 안전한 사용 승인과 브랜드 통제 운영이 중요하다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="d-id">
+<td>1</td><td class="nm"><a href="https://www.d-id.com/pricing/" target="_blank" rel="noopener">D-ID</a></td>
+<td>AI 영상·아바타 생성</td><td>Israel</td>
+<td class="pr">무료 티어</td>
+<td class="ft">토킹 아바타 · 실시간 대화형 에이전트 · API</td><td class="ft">대화형 디지털 휴먼과 API 기반 임베딩에 오랜 강점을 보유한다.</td><td class="ft">광고용 감각적 영상 연출은 최신 생성형 영상 도구보다 약할 수 있다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="zebracat">
+<td>1</td><td class="nm"><a href="https://www.zebracat.ai/pricing" target="_blank" rel="noopener">Zebracat</a></td>
+<td>AI 영상·아바타 생성</td><td>United Kingdom</td>
+<td class="pr">무료 티어</td>
+<td class="ft">AI 광고 영상 · 스크립트 생성 · 스톡·AI 비주얼</td><td class="ft">광고·소셜용 짧은 영상 제작을 단순한 프롬프트 경험으로 제공한다.</td><td class="ft">복잡한 브랜드 자산 관리와 정교한 편집은 별도 도구가 필요할 수 있다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="creatify">
+<td>1</td><td class="nm"><a href="https://creatify.ai/pricing" target="_blank" rel="noopener">Creatify</a></td>
+<td>AI 영상·아바타 생성</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">상품 URL-투-광고 · AI 아바타 · 광고 변형 생성</td><td class="ft">상품 URL에서 여러 광고 변형을 만드는 성과형 광고 워크플로가 명확하다.</td><td class="ft">영상 품질과 광고 성과는 입력 상품 정보와 크리에이티브 검수에 크게 좌우된다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="arcads">
+<td>1</td><td class="nm"><a href="https://www.arcads.ai/pricing" target="_blank" rel="noopener">Arcads</a></td>
+<td>AI 영상·아바타 생성</td><td>France</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">AI UGC 배우 · 광고 스크립트 · 대량 크리에이티브 변형</td><td class="ft">UGC 광고의 배우·스크립트·변형 생산을 광고주 관점으로 설계했다.</td><td class="ft">인간 크리에이터 특유의 신뢰감과 제품 실사용 장면은 보완이 필요하다.</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="1" data-name="icon">
+<td>1</td><td class="nm"><a href="https://www.useicon.com/" target="_blank" rel="noopener">Icon</a></td>
+<td>AI 영상·아바타 생성</td><td>United States</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">AI 광고 제작 · 브랜드 학습 · 광고 변형 테스트</td><td class="ft">브랜드 맥락을 학습한 광고 크리에이티브 생산을 목표로 한다.</td><td class="ft">신생 제품군으로서 공개 가격 및 독립적 성과 검증 자료가 제한적이다.</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="1" data-name="boolvideo">
+<td>1</td><td class="nm"><a href="https://boolvideo.com/pricing" target="_blank" rel="noopener">Boolvideo</a></td>
+<td>AI 영상·아바타 생성</td><td>Singapore</td>
+<td class="pr">무료 티어</td>
+<td class="ft">상품 링크-투-비디오 · 전자상거래 템플릿 · AI 보이스</td><td class="ft">상품 정보에서 판매용 영상을 만드는 이커머스 특화 흐름이 간단하다.</td><td class="ft">브랜드 고유의 촬영 미학과 장기 캠페인 통제에는 한계가 있다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="sora">
+<td>1</td><td class="nm"><a href="https://openai.com/sora/" target="_blank" rel="noopener">Sora</a></td>
+<td>AI 영상·아바타 생성</td><td>United States</td>
+<td class="pr">$20</td>
+<td class="ft">텍스트-투-비디오 · 이미지-투-비디오 · 스토리보드</td><td class="ft">OpenAI 생태계 안에서 고품질 생성형 영상 실험을 할 수 있다.</td><td class="ft">일관된 광고 UGC 대량 제작이나 정교한 아바타 운영에는 전용 SaaS가 더 적합할 수 있다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="veed">
+<td>1</td><td class="nm"><a href="https://www.veed.io/pricing" target="_blank" rel="noopener">VEED</a></td>
+<td>AI 영상·아바타 생성</td><td>United Kingdom</td>
+<td class="pr">무료 티어</td>
+<td class="ft">브라우저 영상 편집 · AI 아바타 · 자막·번역</td><td class="ft">협업 가능한 온라인 편집기에 AI 생성 기능을 폭넓게 결합했다.</td><td class="ft">최신 영상 모델 기반의 높은 시각적 차별화는 전문 생성 도구보다 약할 수 있다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="1" data-name="luma ai dream machine">
+<td>1</td><td class="nm"><a href="https://lumalabs.ai/dream-machine" target="_blank" rel="noopener">Luma AI Dream Machine</a></td>
+<td>AI 영상·아바타 생성</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">텍스트-투-비디오 · 이미지-투-비디오 · 카메라·장면 생성</td><td class="ft">영상 생성 품질과 빠른 시각적 프로토타이핑에 강점이 있다.</td><td class="ft">제품 URL 기반의 즉시 광고 제작이나 실사 아바타는 주력 기능이 아니다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="2" data-name="opusclip">
+<td>2</td><td class="nm"><a href="https://www.opus.pro/pricing" target="_blank" rel="noopener">OpusClip</a></td>
+<td>쇼트폼 자동화·재편집</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">AI 하이라이트 추출 · 자동 리프레이밍 · Virality Score</td><td class="ft">긴 영상에서 공유 가능성이 높은 클립을 자동 선별하는 대표 서비스다.</td><td class="ft">추출된 클립의 문맥·브랜드 톤은 사람이 최종 검수해야 한다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="2" data-name="klap">
+<td>2</td><td class="nm"><a href="https://klap.app/pricing" target="_blank" rel="noopener">Klap</a></td>
+<td>쇼트폼 자동화·재편집</td><td>France</td>
+<td class="pr">$14</td>
+<td class="ft">AI 클리핑 · 자동 자막 · 세로 리프레이밍</td><td class="ft">긴 영상에서 쇼트폼 클립을 빠르게 만들고 소셜 채널별로 최적화한다.</td><td class="ft">업로드 분량 기반 한도가 있어 대규모 아카이브 재가공 비용을 관리해야 한다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="2" data-name="munch">
+<td>2</td><td class="nm"><a href="https://www.getmunch.com/pricing" target="_blank" rel="noopener">Munch</a></td>
+<td>쇼트폼 자동화·재편집</td><td>Israel</td>
+<td class="pr">무료 티어</td>
+<td class="ft">AI 하이라이트 발견 · 트렌드 분석 · 자동 자막</td><td class="ft">소셜 트렌드와 콘텐츠 분석을 결합해 클립 후보를 추천한다.</td><td class="ft">최종 쇼트폼의 창의적 편집 완성도는 원본 소재 품질에 크게 의존한다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="2" data-name="vizard">
+<td>2</td><td class="nm"><a href="https://vizard.ai/pricing" target="_blank" rel="noopener">Vizard</a></td>
+<td>쇼트폼 자동화·재편집</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">긴 영상 클리핑 · 자동 자막 · 팀 워크스페이스</td><td class="ft">클립 생성 뒤 편집·브랜딩·협업까지 이어지는 통합 흐름을 제공한다.</td><td class="ft">바이럴 후보 판별 결과는 틈새 주제나 비영어 콘텐츠에서 편차가 날 수 있다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="2" data-name="2short.ai">
+<td>2</td><td class="nm"><a href="https://2short.ai/pricing" target="_blank" rel="noopener">2short.ai</a></td>
+<td>쇼트폼 자동화·재편집</td><td>Spain</td>
+<td class="pr">무료 티어</td>
+<td class="ft">유튜브 영상 클리핑 · 얼굴 추적 · 자동 자막</td><td class="ft">유튜브 롱폼을 Shorts로 바꾸는 단순한 워크플로에 집중한다.</td><td class="ft">복잡한 멀티채널 협업과 고급 브랜드 승인 기능은 제한적이다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="2" data-name="submagic">
+<td>2</td><td class="nm"><a href="https://submagic.co/pricing" target="_blank" rel="noopener">Submagic</a></td>
+<td>쇼트폼 자동화·재편집</td><td>France</td>
+<td class="pr">무료 티어</td>
+<td class="ft">애니메이션 자막 · AI 클립 편집 · B-roll·이모지</td><td class="ft">주목도를 높이는 자막 스타일과 소셜 편집 효과에 강하다.</td><td class="ft">긴 영상에서 하이라이트를 자동으로 고르는 기능은 클리핑 전문 제품과 비교가 필요하다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="2" data-name="sendshort">
+<td>2</td><td class="nm"><a href="https://sendshort.ai/pricing" target="_blank" rel="noopener">SendShort</a></td>
+<td>쇼트폼 자동화·재편집</td><td>France</td>
+<td class="pr">무료 티어</td>
+<td class="ft">AI 클립 추출 · 자동 자막 · 소셜 예약 게시</td><td class="ft">클리핑부터 게시 일정 관리까지 한 제품에서 다룬다.</td><td class="ft">고도화된 편집 제어와 엔터프라이즈 협업은 별도 확인이 필요하다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="2" data-name="revid.ai">
+<td>2</td><td class="nm"><a href="https://www.revid.ai/pricing" target="_blank" rel="noopener">Revid.ai</a></td>
+<td>쇼트폼 자동화·재편집</td><td>France</td>
+<td class="pr">무료 티어</td>
+<td class="ft">AI 쇼트 생성 · 스크립트·자막 · 롱폼 재가공</td><td class="ft">아이디어 생성부터 쇼트폼 편집까지 빠른 제작 사이클을 지원한다.</td><td class="ft">기존 고품질 롱폼 자산의 세밀한 편집에는 전문 NLE가 여전히 필요하다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="2" data-name="shortmake">
+<td>2</td><td class="nm"><a href="https://www.shortmake.com/pricing" target="_blank" rel="noopener">ShortMake</a></td>
+<td>쇼트폼 자동화·재편집</td><td>France</td>
+<td class="pr">무료 티어</td>
+<td class="ft">자동 쇼트 생성 · 자막 · AI 음성</td><td class="ft">대본에서 반복적으로 쇼트 영상을 만드는 자동화 지향 제품이다.</td><td class="ft">실제 촬영 롱폼의 의미 있는 장면 선별 품질은 사용 사례별 검증이 필요하다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="2" data-name="wisecut">
+<td>2</td><td class="nm"><a href="https://www.wisecut.video/pricing" target="_blank" rel="noopener">Wisecut</a></td>
+<td>쇼트폼 자동화·재편집</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">무음 구간 제거 · 자동 자막 · 자동 리프레이밍</td><td class="ft">말 중심의 긴 영상을 빠르게 정리하고 짧은 영상으로 바꾸기 쉽다.</td><td class="ft">트렌드 기반의 바이럴 클립 추천은 전문 클리핑 서비스보다 약할 수 있다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="2" data-name="chopcast">
+<td>2</td><td class="nm"><a href="https://www.chopcast.io/pricing" target="_blank" rel="noopener">Chopcast</a></td>
+<td>쇼트폼 자동화·재편집</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">AI 하이라이트 · 웨비나·팟캐스트 재가공 · 클립 편집</td><td class="ft">B2B 웨비나와 인터뷰를 여러 소셜 자산으로 재활용하는 데 적합하다.</td><td class="ft">소비자형 숏폼 트렌드 편집은 크리에이터 전용 도구보다 덜 공격적일 수 있다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="2" data-name="vidyo.ai">
+<td>2</td><td class="nm"><a href="https://vidyo.ai/pricing" target="_blank" rel="noopener">Vidyo.ai</a></td>
+<td>쇼트폼 자동화·재편집</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">AI 클리핑 · 자동 자막 · 소셜 템플릿</td><td class="ft">긴 영상의 재가공과 다양한 소셜 플랫폼용 출력에 초점을 둔다.</td><td class="ft">클립의 맥락 정확도와 편집 미학은 수동 검수가 필요하다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="2" data-name="quso.ai">
+<td>2</td><td class="nm"><a href="https://quso.ai/pricing" target="_blank" rel="noopener">Quso.ai</a></td>
+<td>쇼트폼 자동화·재편집</td><td>United States</td>
+<td class="pr">무료 티어</td>
+<td class="ft">AI 클립 생성 · 콘텐츠 스케줄링 · 소셜 분석</td><td class="ft">영상 재가공뿐 아니라 배포·분석까지 연결하는 운영형 제품이다.</td><td class="ft">전문 영상 편집 기능의 깊이는 전용 편집기 대비 제한될 수 있다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="3" data-name="glambase">
+<td>3</td><td class="nm"><a href="https://glambase.app/" target="_blank" rel="noopener">Glambase</a></td>
+<td>AI 인플루언서·버추얼 휴먼</td><td>-</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">AI 인플루언서 생성 · 콘텐츠 생성 · 수익화·팬 상호작용</td><td class="ft">가상 인플루언서 생성과 수익화를 하나의 서비스 콘셉트로 묶는다.</td><td class="ft">공식 월 구독 가격과 운영 주체·본사 정보의 공개성이 제한적이다.</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="3" data-name="the influencer ai">
+<td>3</td><td class="nm"><a href="https://www.theinfluencer.ai/" target="_blank" rel="noopener">The Influencer AI</a></td>
+<td>AI 인플루언서·버추얼 휴먼</td><td>United States</td>
+<td class="pr">$19</td>
+<td class="ft">일관된 AI 페르소나 · 사진·릴스·UGC 생성 · AI 클론·제품 try-on</td><td class="ft">한 인물의 얼굴·스타일 일관성을 유지하면서 상업용 콘텐츠를 대량 생성한다.</td><td class="ft">AI 인물 콘텐츠의 신뢰·표시 의무와 플랫폼 정책 리스크를 관리해야 한다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="3" data-name="influencer studio">
+<td>3</td><td class="nm"><a href="https://influencerstudio.com/pricing" target="_blank" rel="noopener">Influencer Studio</a></td>
+<td>AI 인플루언서·버추얼 휴먼</td><td>-</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">일관된 AI 인플루언서 · 트렌드 재현 영상 · 소셜 게시 예약</td><td class="ft">인플루언서 생성, 콘텐츠 제작, 다계정 배포를 한 워크플로에 결합한다.</td><td class="ft">공개 페이지에서 실제 월별 가격과 본사 소재지 확인이 불충분하다.</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="3" data-name="brud">
+<td>3</td><td class="nm"><a href="https://www.brud.fyi/" target="_blank" rel="noopener">Brud</a></td>
+<td>AI 인플루언서·버추얼 휴먼</td><td>United States</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">버추얼 인플루언서 IP · 캐릭터 스토리텔링 · 브랜드 파트너십</td><td class="ft">Lil Miquela를 통해 가상 인플루언서를 대중문화 IP로 확장한 선도 사례다.</td><td class="ft">셀프서브 AI 생성 SaaS가 아니라 IP·에이전시 성격의 사업이다.</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="3" data-name="the clueless">
+<td>3</td><td class="nm"><a href="https://www.theclueless.ai/" target="_blank" rel="noopener">The Clueless</a></td>
+<td>AI 인플루언서·버추얼 휴먼</td><td>Spain</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">가상 인플루언서 에이전시 · 디지털 캐릭터 제작 · 브랜드 캠페인</td><td class="ft">Aitana Lopez 등 가상 인플루언서를 브랜드 협업용 미디어 자산으로 운영한다.</td><td class="ft">셀프서비스 도구가 아닌 맞춤 제작·에이전시 모델이어서 가격 투명성이 낮다.</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="3" data-name="botika">
+<td>3</td><td class="nm"><a href="https://botika.io/" target="_blank" rel="noopener">Botika</a></td>
+<td>AI 인플루언서·버추얼 휴먼</td><td>Israel</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">AI 패션 모델 · 의류 이미지 생성 · 다양한 모델·배경 변형</td><td class="ft">의류 제품을 다양한 가상 모델에 입히는 패션 이커머스 특화 기능이 강점이다.</td><td class="ft">소셜에서 장기적으로 활동하는 인플루언서 페르소나 운영은 주력 영역이 아니다.</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="3" data-name="lalaland.ai">
+<td>3</td><td class="nm"><a href="https://www.lalaland.ai/" target="_blank" rel="noopener">Lalaland.ai</a></td>
+<td>AI 인플루언서·버추얼 휴먼</td><td>Netherlands</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">AI 패션 아바타 · 다양한 체형·외형 · 디지털 피팅</td><td class="ft">다양성 있는 가상 패션 모델과 디지털 샘플링에 특화돼 있다.</td><td class="ft">인플루언서의 콘텐츠·커뮤니티·수익화 운영 기능은 제공 범위가 제한적이다.</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="3" data-name="generated photos">
+<td>3</td><td class="nm"><a href="https://generated.photos/pricing" target="_blank" rel="noopener">Generated Photos</a></td>
+<td>AI 인플루언서·버추얼 휴먼</td><td>United Kingdom</td>
+<td class="pr">무료 티어</td>
+<td class="ft">AI 인물 이미지 · 가상 모델 · API</td><td class="ft">권리 이슈를 줄인 대량의 합성 인물 이미지와 API 접근성을 제공한다.</td><td class="ft">지속적인 성격과 팬 관계를 가진 가상 인플루언서 운영 도구는 아니다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="3" data-name="soul machines">
+<td>3</td><td class="nm"><a href="https://www.soulmachines.com/" target="_blank" rel="noopener">Soul Machines</a></td>
+<td>AI 인플루언서·버추얼 휴먼</td><td>New Zealand</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">자율형 디지털 휴먼 · 실시간 대화 · 기업용 AI 에이전트</td><td class="ft">표정·행동·대화를 갖춘 실시간 디지털 휴먼을 엔터프라이즈에 제공한다.</td><td class="ft">가벼운 인플루언서 콘텐츠 제작 목적에는 도입 비용과 복잡도가 높을 수 있다.</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="3" data-name="deepbrain ai">
+<td>3</td><td class="nm"><a href="https://www.deepbrain.io/pricing" target="_blank" rel="noopener">DeepBrain AI</a></td>
+<td>AI 인플루언서·버추얼 휴먼</td><td>South Korea</td>
+<td class="pr">무료 티어</td>
+<td class="ft">AI 휴먼 영상 · 실시간 AI 휴먼 · 다국어 아바타</td><td class="ft">한국어 기반 AI 휴먼 기술과 기업·방송 활용 사례에서 강점을 보인다.</td><td class="ft">인플루언서 IP의 팬덤 구축보다는 기업용 디지털 휴먼에 중심을 둔다.</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="3" data-name="sidus studio x">
+<td>3</td><td class="nm"><a href="https://www.sidusstudiox.com/" target="_blank" rel="noopener">Sidus Studio X</a></td>
+<td>AI 인플루언서·버추얼 휴먼</td><td>South Korea</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">버추얼 휴먼 제작 · 3D 캐릭터 · 광고·엔터테인먼트 IP</td><td class="ft">버추얼 인플루언서 Rozy를 통해 한국 시장에서 높은 인지도를 구축했다.</td><td class="ft">범용 셀프서비스 생성 도구가 아닌 프로젝트·IP 기반 제작사다.</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="3" data-name="pulse9">
+<td>3</td><td class="nm"><a href="https://pulse9.net/" target="_blank" rel="noopener">Pulse9</a></td>
+<td>AI 인플루언서·버추얼 휴먼</td><td>South Korea</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">AI 버추얼 휴먼 · 디지털 휴먼 IP · 브랜드 콘텐츠</td><td class="ft">한국형 버추얼 휴먼과 캐릭터 IP 제작에 집중한다.</td><td class="ft">공개된 셀프서비스 가격·제품 기능 정보가 제한적이다.</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="3" data-name="metaverse entertainment">
+<td>3</td><td class="nm"><a href="https://www.vlast.co.kr/" target="_blank" rel="noopener">Metaverse Entertainment</a></td>
+<td>AI 인플루언서·버추얼 휴먼</td><td>South Korea</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">버추얼 아티스트 매니지먼트 · 모션캡처 공연 · IP·팬덤 운영</td><td class="ft">PLAVE를 통해 가상 캐릭터를 실제 음악·공연·팬덤 사업으로 확장한 사례다.</td><td class="ft">AI 인플루언서 생성 SaaS가 아니라 아티스트 매니지먼트 사업이다.</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="4" data-name="hootsuite">
+<td>4</td><td class="nm"><a href="https://www.hootsuite.com/plans" target="_blank" rel="noopener">Hootsuite</a></td>
+<td>SNS 통합 관리 도구</td><td>Canada</td>
+<td class="pr">$99</td>
+<td class="ft">무료 영구 플랜 없음, 14일 체험; Standard는 소셜 계정 10개. 게시·캘린더·인박스·분석·AI(Wisdom). Threads/TikTok 지원, 중국 SNS 직접 지원 미확인.</td><td class="ft">통합 인박스, 팀 승인, 거버넌스와 분석 기능이 강함</td><td class="ft">엔트리 가격이 높고 무료 플랜이 없음</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="4" data-name="buffer">
+<td>4</td><td class="nm"><a href="https://buffer.com/pricing" target="_blank" rel="noopener">Buffer</a></td>
+<td>SNS 통합 관리 도구</td><td>United States</td>
+<td class="pr">$5</td>
+<td class="ft">무료 영구 플랜은 3채널·채널당 예약 10건. Essentials는 채널당 무제한 예약. 게시, 분석, 인박스, AI Assistant. Threads 및 TikTok 지원, 중국 SNS 직접 지원 미확인.</td><td class="ft">채널별 저가 과금과 단순한 UX</td><td class="ft">채널 수가 증가하면 총비용이 늘고 고급 엔터프라이즈 기능은 제한적</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="4" data-name="later">
+<td>4</td><td class="nm"><a href="https://later.com/pricing/" target="_blank" rel="noopener">Later</a></td>
+<td>SNS 통합 관리 도구</td><td>Canada</td>
+<td class="pr">$18.75</td>
+<td class="ft">무료 영구 플랜 없음, 14일 체험. 8개 플랫폼(Instagram, Facebook, TikTok, Threads, YouTube, Pinterest, LinkedIn, Snapchat) 지원. 시각 캘린더, Link in Bio, UGC, 승인, 분석.</td><td class="ft">비주얼 콘텐츠 계획, Link in Bio, UGC 기능이 강함</td><td class="ft">중국 SNS 미지원, 무료 플랜 없음</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="4" data-name="metricool">
+<td>4</td><td class="nm"><a href="https://metricool.com/pricing" target="_blank" rel="noopener">Metricool</a></td>
+<td>SNS 통합 관리 도구</td><td>Spain</td>
+<td class="pr">$20</td>
+<td class="ft">무료 영구 플랜은 1브랜드, 월 20게시물. 예약·분석·경쟁사 분석·인박스·AI Assistant. Threads와 TikTok 지원, 중국 SNS 직접 지원 미확인.</td><td class="ft">무료 플랜 및 분석 대비 가격 경쟁력</td><td class="ft">대형 조직용 승인·거버넌스는 상대적으로 약함</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="4" data-name="socialbee">
+<td>4</td><td class="nm"><a href="https://socialbee.com/pricing/" target="_blank" rel="noopener">SocialBee</a></td>
+<td>SNS 통합 관리 도구</td><td>Romania</td>
+<td class="pr">$29</td>
+<td class="ft">무료 영구 플랜 없음, 14일 체험. 직접 게시 네트워크 10개(Facebook, Instagram, Threads, LinkedIn, X, Pinterest, TikTok, YouTube, Google Business Profile, Bluesky). 콘텐츠 카테고리·재활용·AI Copilot·RSS·승인.</td><td class="ft">에버그린 콘텐츠 재활용과 카테고리 기반 운영</td><td class="ft">중국 SNS 미지원, 시작 플랜의 계정 수가 5개</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="4" data-name="vista social">
+<td>4</td><td class="nm"><a href="https://vistasocial.com/pricing/" target="_blank" rel="noopener">Vista Social</a></td>
+<td>SNS 통합 관리 도구</td><td>United States</td>
+<td class="pr">$15</td>
+<td class="ft">무료 플랜 제공. 게시·승인·통합 인박스·리뷰 관리·소셜 리스닝·AI. Threads와 TikTok 지원, 중국 SNS 직접 지원 미확인.</td><td class="ft">리뷰 관리와 소셜 운영을 함께 제공</td><td class="ft">대형 글로벌 엔터프라이즈 레퍼런스는 상대적으로 적음</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="4" data-name="onlypult">
+<td>4</td><td class="nm"><a href="https://onlypult.com/pricing" target="_blank" rel="noopener">Onlypult</a></td>
+<td>SNS 통합 관리 도구</td><td>Russia</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">무료 영구 플랜은 공개 확인 불가. 게시 예약, 멀티계정 관리, 분석, 미니사이트, 팀 권한. TikTok 및 Threads 지원 여부는 플랜·연동 문서별 재확인 필요, 중국 SNS 직접 지원 미확인.</td><td class="ft">멀티계정 게시와 단순한 콘텐츠 캘린더</td><td class="ft">가격 및 최신 플랫폼 연동 범위를 재검증해야 함</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="4" data-name="postiz">
+<td>4</td><td class="nm"><a href="https://postiz.com/" target="_blank" rel="noopener">Postiz</a></td>
+<td>SNS 통합 관리 도구</td><td>Israel</td>
+<td class="pr">무료 티어</td>
+<td class="ft">오픈소스·자체호스팅 가능. 예약 게시, AI, 협업, API, 다중 워크스페이스. Threads/TikTok 연동은 배포 버전과 API 권한에 따라 확인 필요, 중국 SNS 직접 지원 미확인.</td><td class="ft">오픈소스와 자체호스팅으로 데이터·비용 통제 가능</td><td class="ft">설치·업데이트·플랫폼 API 유지보수를 직접 부담</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="4" data-name="sprout social">
+<td>4</td><td class="nm"><a href="https://sproutsocial.com/pricing/" target="_blank" rel="noopener">Sprout Social</a></td>
+<td>SNS 통합 관리 도구</td><td>United States</td>
+<td class="pr">$199</td>
+<td class="ft">무료 영구 플랜 없음, 체험 제공. 게시·인박스·소셜 리스닝·고급 분석·승인·CRM. Threads와 TikTok 지원, 중국 SNS 직접 지원 미확인.</td><td class="ft">엔터프라이즈 분석, 리스닝, 워크플로와 지원 기능</td><td class="ft">높은 좌석당 가격</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="4" data-name="publer">
+<td>4</td><td class="nm"><a href="https://publer.io/pricing" target="_blank" rel="noopener">Publer</a></td>
+<td>SNS 통합 관리 도구</td><td>Albania</td>
+<td class="pr">$5</td>
+<td class="ft">무료 플랜 제공. 게시·재활용·AI Assist·분석·협업·링크 인 바이오. Threads와 TikTok 지원, 중국 SNS 직접 지원 미확인.</td><td class="ft">낮은 진입가격과 비교적 넓은 게시 기능</td><td class="ft">고급 리스닝·대기업 거버넌스는 제한적</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="4" data-name="socialpilot">
+<td>4</td><td class="nm"><a href="https://www.socialpilot.co/pricing" target="_blank" rel="noopener">SocialPilot</a></td>
+<td>SNS 통합 관리 도구</td><td>India</td>
+<td class="pr">$30</td>
+<td class="ft">무료 영구 플랜 없음, 체험 제공. 계정 대량 관리, 예약·분석·화이트라벨 보고서·클라이언트 승인. Threads와 TikTok 지원, 중국 SNS 직접 지원 미확인.</td><td class="ft">에이전시용 계정 관리와 보고서 가격 경쟁력</td><td class="ft">고급 소셜 리스닝 및 CRM은 제한적</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="4" data-name="sendible">
+<td>4</td><td class="nm"><a href="https://www.sendible.com/pricing" target="_blank" rel="noopener">Sendible</a></td>
+<td>SNS 통합 관리 도구</td><td>United Kingdom</td>
+<td class="pr">$29</td>
+<td class="ft">무료 영구 플랜 없음, 14일 체험. 예약·콘텐츠 제안·팀 승인·클라이언트 대시보드·보고서. Threads 및 TikTok 지원, 중국 SNS 직접 지원 미확인.</td><td class="ft">클라이언트 관리, 보고서, 화이트라벨 성격의 운영 기능</td><td class="ft">무료 영구 플랜이 없고 UI 학습 부담 가능</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="4" data-name="iconosquare">
+<td>4</td><td class="nm"><a href="https://www.iconosquare.com/pricing" target="_blank" rel="noopener">Iconosquare</a></td>
+<td>SNS 통합 관리 도구</td><td>France</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">무료 영구 플랜 없음, 체험 제공. 공식 유럽 가격 기준 Launch는 €33/month 연간결제 기준. Instagram, Facebook, TikTok, LinkedIn, X, YouTube 등 분석·게시·리스닝·보고서. Threads 및 중국 SNS 직접 지원은 재확인 필요.</td><td class="ft">소셜 분석, 경쟁사·해시태그·멘션 추적, 보고서</td><td class="ft">요청 통화 기준 월 USD 또는 원의 공식 엔트리 가격을 확인하지 못함</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="5" data-name="kawo">
+<td>5</td><td class="nm"><a href="https://kawo.com/" target="_blank" rel="noopener">KAWO</a></td>
+<td>중국 SNS 진입 지원</td><td>China / United States</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">WeChat, Weibo, Douyin, Xiaohongshu 등 중국 SNS의 콘텐츠 관리, 분석, 승인 및 소셜 CRM을 제공하는 B2B 운영 플랫폼. 공개 표준 가격 미확인.</td><td class="ft">중국 로컬 SNS를 하나의 운영·분석 체계로 관리</td><td class="ft">견적제 중심이며 개인 창작자용 셀프서비스 도구가 아님</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="5" data-name="walkthechat">
+<td>5</td><td class="nm"><a href="https://walkthechat.com/" target="_blank" rel="noopener">WalktheChat</a></td>
+<td>중국 SNS 진입 지원</td><td>China / France</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">WeChat 공식계정, WeChat Store, 중국 디지털 마케팅 및 현지 운영 지원. 공개 월 요금 미확인.</td><td class="ft">WeChat 중심의 현지화·커머스 실행 경험</td><td class="ft">프로젝트·견적 기반으로 비용 투명성이 낮음</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="5" data-name="china skinny">
+<td>5</td><td class="nm"><a href="https://www.chinaskinny.com/" target="_blank" rel="noopener">China Skinny</a></td>
+<td>중국 SNS 진입 지원</td><td>New Zealand / China</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">중국 시장전략, Xiaohongshu·WeChat·Douyin·Bilibili 캠페인, KOL 및 현지 디지털 마케팅 대행. 공개 월 요금 미확인.</td><td class="ft">시장조사부터 현지 콘텐츠·KOL 캠페인까지 수행</td><td class="ft">가격이 견적제이며 실행 범위가 프로젝트별로 다름</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="6" data-name="upfluence">
+<td>6</td><td class="nm"><a href="https://www.upfluence.com/" target="_blank" rel="noopener">Upfluence</a></td>
+<td>인플루언서 마케팅 플랫폼</td><td>United States</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">광고주 중심 SaaS. 인플루언서 검색·CRM·아웃리치·캠페인·어필리에이트 추적·결제 관리. 연간 계약 중심의 맞춤 견적.</td><td class="ft">인플루언서 데이터베이스와 Shopify 연동·어필리에이트 기능</td><td class="ft">공개 가격이 없고 SMB에 진입비용이 높을 수 있음</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="6" data-name="aspire">
+<td>6</td><td class="nm"><a href="https://www.aspire.io/" target="_blank" rel="noopener">Aspire</a></td>
+<td>인플루언서 마케팅 플랫폼</td><td>United States</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">광고주 중심. 크리에이터 탐색, 관계관리, UGC, 어필리에이트, 제품 시딩, 캠페인 측정. 맞춤 견적제.</td><td class="ft">크리에이터 관계관리와 UGC·어필리에이트 운영의 통합성</td><td class="ft">공개 엔트리 가격이 없음</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="6" data-name="grin">
+<td>6</td><td class="nm"><a href="https://grin.co/" target="_blank" rel="noopener">GRIN</a></td>
+<td>인플루언서 마케팅 플랫폼</td><td>United States</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">광고주 중심. 이커머스 브랜드용 크리에이터 검색, CRM, 제품 발송, 계약, 결제, 어필리에이트 추적. 맞춤 견적·연간 계약 중심.</td><td class="ft">Shopify 등 이커머스 업무흐름과의 깊은 통합</td><td class="ft">공개 가격이 없고 대형 브랜드 지향</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="6" data-name="creatoriq">
+<td>6</td><td class="nm"><a href="https://www.creatoriq.com/" target="_blank" rel="noopener">CreatorIQ</a></td>
+<td>인플루언서 마케팅 플랫폼</td><td>United States</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">광고주 중심 엔터프라이즈 플랫폼. 인플루언서 인텔리전스, CRM, 캠페인 관리, 측정, 브랜드 안전, 지급 기능. 맞춤 견적제.</td><td class="ft">엔터프라이즈급 데이터·측정·거버넌스</td><td class="ft">SMB용 셀프서비스 가격이 공개되지 않음</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="6" data-name="#paid">
+<td>6</td><td class="nm"><a href="https://hashtagpaid.com/" target="_blank" rel="noopener">#paid</a></td>
+<td>인플루언서 마케팅 플랫폼</td><td>Canada</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">브랜드와 검증 크리에이터의 캠페인 매칭 플랫폼. 광고주 중심이지만 크리에이터의 캠페인 지원 흐름도 제공. 캠페인·서비스 범위별 견적.</td><td class="ft">크리에이터 매칭과 캠페인 실행을 함께 제공</td><td class="ft">공개 표준 수수료·월 구독료 미확인</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="6" data-name="tagger by sprout social">
+<td>6</td><td class="nm"><a href="https://www.sproutsocial.com/insights/tagger/" target="_blank" rel="noopener">Tagger by Sprout Social</a></td>
+<td>인플루언서 마케팅 플랫폼</td><td>United States</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">광고주 중심. 크리에이터 검색, 캠페인 워크플로, 소셜 인텔리전스, 성과 측정 기능. Sprout Social의 엔터프라이즈 제품군.</td><td class="ft">소셜 관리·리스닝 데이터와 인플루언서 운영의 결합</td><td class="ft">공개 엔트리 가격 미확인</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="6" data-name="impact.com / creator">
+<td>6</td><td class="nm"><a href="https://impact.com/creator/" target="_blank" rel="noopener">impact.com / creator</a></td>
+<td>인플루언서 마케팅 플랫폼</td><td>United States</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">광고주 중심 파트너십 플랫폼. 크리에이터·어필리에이트 탐색, 계약, 추적, 수수료 지급 및 성과 측정. 맞춤 견적제.</td><td class="ft">성과 추적과 파트너 지급 운영에 강함</td><td class="ft">콘텐츠 기획·인플루언서 관계 구축은 별도 운영 역량 필요</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="6" data-name="레뷰 (revu)">
+<td>6</td><td class="nm"><a href="https://www.revu.net/" target="_blank" rel="noopener">레뷰 (REVU)</a></td>
+<td>인플루언서 마케팅 플랫폼</td><td>South Korea</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">광고주가 블로그·Instagram·YouTube 등 인플루언서 체험단 및 콘텐츠 캠페인을 개설하는 국내 매칭 플랫폼. 캠페인 비용은 모집 인원·제공 상품·운영 조건에 따라 달라짐.</td><td class="ft">국내 블로그·체험단 운영에 친화적</td><td class="ft">표준 월 구독료·수수료가 공개적으로 확인되지 않음</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="6" data-name="태그바이 (tagby)">
+<td>6</td><td class="nm"><a href="https://tagby.io/" target="_blank" rel="noopener">태그바이 (TAGby)</a></td>
+<td>인플루언서 마케팅 플랫폼</td><td>South Korea</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">광고주 중심의 인플루언서 검색·캠페인 관리·성과 데이터 플랫폼. Instagram, YouTube, TikTok 등 크리에이터 협업을 지원하며 공개 표준 가격은 미확인.</td><td class="ft">국내 인플루언서 데이터와 캠페인 실행 지원</td><td class="ft">가격·수수료가 견적제 중심</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="7" data-name="faceless.video">
+<td>7</td><td class="nm"><a href="https://faceless.video/pricing" target="_blank" rel="noopener">Faceless.video</a></td>
+<td>페이스리스 자동화·코스</td><td>United States</td>
+<td class="pr">$14</td>
+<td class="ft">AI 스크립트·영상 생성과 소셜 게시 자동화를 위한 크레딧형 서비스. Starter Annual은 월 30크레딧·소셜 계정 1개, Daily는 월 60크레딧·무제한 소셜 계정.</td><td class="ft">주제 설정 후 영상 생성과 게시 자동화에 집중</td><td class="ft">크레딧 소진량과 플랫폼 정책 리스크를 관리해야 함</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="7" data-name="autoshorts.ai">
+<td>7</td><td class="nm"><a href="https://autoshorts.ai/" target="_blank" rel="noopener">AutoShorts.ai</a></td>
+<td>페이스리스 자동화·코스</td><td>United States</td>
+<td class="pr">$19</td>
+<td class="ft">무료 플랜은 1개 영상 생성. Starter는 주 3회 게시, Daily는 하루 1회 게시. AI가 스크립트·음성·영상 생성 후 TikTok, YouTube, Instagram에 자동 게시.</td><td class="ft">시리즈 단위 자동 생성·예약·게시가 명확함</td><td class="ft">정형화된 영상 품질 및 플랫폼 스팸 정책 위험</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="7" data-name="revid ai">
+<td>7</td><td class="nm"><a href="https://www.revid.ai/pricing" target="_blank" rel="noopener">Revid AI</a></td>
+<td>페이스리스 자동화·코스</td><td>France</td>
+<td class="pr">$39</td>
+<td class="ft">Hobby 플랜은 텍스트·링크 기반 숏폼 생성. 영상 아이디어·스크립트·AI 음성·편집·TikTok/Instagram/YouTube 게시·Auto-Mode 자동화·API를 제공.</td><td class="ft">생성, 게시, 성과 확인, 리믹스의 루프를 한 제품에 통합</td><td class="ft">크레딧 기반 사용량 관리가 필요하고 완전한 채널 대행은 아님</td>
+<td><span class="v">✓ 확인</span></td></tr>
+<tr data-cat="7" data-name="vadoo ai">
+<td>7</td><td class="nm"><a href="https://www.vadoo.tv/" target="_blank" rel="noopener">Vadoo AI</a></td>
+<td>페이스리스 자동화·코스</td><td>India</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">텍스트 프롬프트·URL·대본 기반 영상 생성, 자막, AI 음성, 쇼츠 제작과 일부 자동화 기능을 제공. 최신 공식 엔트리 월 가격을 본 조사에서 확정하지 못함.</td><td class="ft">스크립트부터 자막·게시용 영상까지 빠른 제작</td><td class="ft">완전 자동 게시와 크레딧·요금 조건은 플랜별 재검증 필요</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="7" data-name="invideo ai">
+<td>7</td><td class="nm"><a href="https://invideo.io/ai/" target="_blank" rel="noopener">InVideo AI</a></td>
+<td>페이스리스 자동화·코스</td><td>India</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">프롬프트 기반 대본·영상·AI 보이스오버·자막 생성으로 페이스리스 영상 제작에 사용할 수 있는 범용 AI 비디오 도구. 공식 가격은 지역·프로모션·크레딧 조건 변동으로 본 조사에서 확정하지 못함.</td><td class="ft">템플릿·스톡·AI 생성 기능의 폭이 넓음</td><td class="ft">채널 운영 대행이나 완전 자동 업로드 서비스는 아님</td>
+<td><span class="nv">미확인</span></td></tr>
+<tr data-cat="7" data-name="master faceless youtube automation with ai, chatgpt &amp; canva">
+<td>7</td><td class="nm"><a href="https://www.udemy.com/course/master-faceless-youtube-automation-with-ai-chatgpt-canva/" target="_blank" rel="noopener">Master Faceless YouTube Automation with AI, ChatGPT &amp; Canva</a></td>
+<td>페이스리스 자동화·코스</td><td>United States</td>
+<td class="pr"><i>미공개</i></td>
+<td class="ft">Udemy 강의. ChatGPT 스크립트, Canva 영상 제작, AI 음성, 채널 구축·성장·수익화 방법을 교육. Udemy 가격은 국가·세일 시점별로 변동.</td><td class="ft">도구 조합과 제작 워크플로를 저비용으로 학습 가능</td><td class="ft">서비스 대행이나 자동 운영 소프트웨어가 아니며 성과 보장 없음</td>
+<td><span class="nv">미확인</span></td></tr></tbody></table></div>
+<h3>시장·수익 단가 실측 데이터 (34건)</h3>
+<div style="overflow-x:auto"><table><thead><tr><th>지표</th><th>값</th><th>단위</th><th>연도</th><th>출처</th><th>검증</th></tr></thead><tbody>
+<tr><td class="ft">글로벌 버추얼 인플루언서 시장 규모</td><td class="num">15.9</td>
+<td>USD billion</td><td>2026</td>
+<td class="ft">Research and Markets / The Business Research Company</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.researchandmarkets.com/reports/6217955/virtual-influencers-market-report" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">글로벌 버추얼 인플루언서 시장 규모</td><td class="num">11.22</td>
+<td>USD billion</td><td>2025</td>
+<td class="ft">Research and Markets / The Business Research Company</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.researchandmarkets.com/reports/6217955/virtual-influencers-market-report" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">글로벌 버추얼 인플루언서 시장 CAGR</td><td class="num">40.9</td>
+<td>percent</td><td>2026</td>
+<td class="ft">Research and Markets / The Business Research Company</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.researchandmarkets.com/reports/6217955/virtual-influencers-market-report" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">글로벌 버추얼 인플루언서 시장 규모</td><td class="num">62.67</td>
+<td>USD billion forecast</td><td>2030</td>
+<td class="ft">Research and Markets / The Business Research Company</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.researchandmarkets.com/reports/6217955/virtual-influencers-market-report" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">글로벌 AI 비디오 생성기 시장 규모</td><td class="num">0.717</td>
+<td>USD billion</td><td>2025</td>
+<td class="ft">Fortune Business Insights</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.fortunebusinessinsights.com/ai-video-generator-market-110060" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">글로벌 AI 비디오 생성기 시장 규모</td><td class="num">0.847</td>
+<td>USD billion</td><td>2026</td>
+<td class="ft">Fortune Business Insights</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.fortunebusinessinsights.com/ai-video-generator-market-110060" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">글로벌 AI 비디오 생성기 시장 CAGR</td><td class="num">18.8</td>
+<td>percent</td><td>2026</td>
+<td class="ft">Fortune Business Insights</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.fortunebusinessinsights.com/ai-video-generator-market-110060" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">글로벌 AI 비디오 생성기 시장 규모</td><td class="num">3.35</td>
+<td>USD billion forecast</td><td>2034</td>
+<td class="ft">Fortune Business Insights</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.fortunebusinessinsights.com/ai-video-generator-market-110060" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">생성형 AI 비디오 제작 시장 규모</td><td class="num">0.39</td>
+<td>USD billion</td><td>2025</td>
+<td class="ft">The Business Research Company</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.thebusinessresearchcompany.com/report/generative-artificial-intelligence-ai-in-video-creation-global-market-report" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">생성형 AI 비디오 제작 시장 규모</td><td class="num">0.47</td>
+<td>USD billion</td><td>2026</td>
+<td class="ft">The Business Research Company</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.thebusinessresearchcompany.com/report/generative-artificial-intelligence-ai-in-video-creation-global-market-report" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">생성형 AI 비디오 제작 시장 CAGR</td><td class="num">20.4</td>
+<td>percent</td><td>2026</td>
+<td class="ft">The Business Research Company</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.thebusinessresearchcompany.com/report/generative-artificial-intelligence-ai-in-video-creation-global-market-report" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">글로벌 인플루언서 마케팅 시장 규모</td><td class="num">24</td>
+<td>USD billion</td><td>2024</td>
+<td class="ft">Influencer Marketing Hub, Influencer Marketing Benchmark Report</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://influencermarketinghub.com/influencer-marketing-benchmark-report/" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">글로벌 인플루언서 마케팅 시장 규모</td><td class="num">32.55</td>
+<td>USD billion</td><td>2025</td>
+<td class="ft">Influencer Marketing Hub, Influencer Marketing Benchmark Report</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://influencermarketinghub.com/influencer-marketing-benchmark-report/" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">글로벌 인플루언서 마케팅 시장 규모</td><td class="num"><i>확인불가</i></td>
+<td>USD billion</td><td>2026</td>
+<td class="ft">Influencer Marketing Hub</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://influencermarketinghub.com/influencer-marketing-benchmark-report/" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">YouTube Shorts 글로벌 창작자 RPM</td><td class="num">0.03</td>
+<td>USD per 1</td><td>2025</td>
+<td class="ft">Buffer, creator monetization guide</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://buffer.com/resources/youtube-shorts-monetization/" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">YouTube Shorts 글로벌 창작자 RPM</td><td class="num">0.07</td>
+<td>USD per 1</td><td>2025</td>
+<td class="ft">Buffer, creator monetization guide</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://buffer.com/resources/youtube-shorts-monetization/" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">YouTube Shorts 한국 창작자 RPM</td><td class="num"><i>확인불가</i></td>
+<td>USD per 1</td><td>2026</td>
+<td class="ft">공개 창작자 정산 사례</td><td><span class="bdg bdg-c" title="블로그/자기보고/추정">C</span> <a href="https://buffer.com/resources/youtube-shorts-monetization/" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">YouTube 롱폼 글로벌 RPM</td><td class="num">1</td>
+<td>USD per 1</td><td>2025</td>
+<td class="ft">Buffer, creator monetization guide</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://buffer.com/resources/youtube-shorts-monetization/" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">YouTube 롱폼 글로벌 RPM</td><td class="num">20</td>
+<td>USD per 1</td><td>2025</td>
+<td class="ft">Buffer, creator monetization guide</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://buffer.com/resources/youtube-shorts-monetization/" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">YouTube 롱폼 한국 금융·정보성 RPM</td><td class="num"><i>확인불가</i></td>
+<td>USD per 1</td><td>2026</td>
+<td class="ft">공개 창작자 정산 사례</td><td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://support.google.com/youtube/answer/9314357" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">TikTok Creativity Program 한국 참여 최소 팔로워</td><td class="num">10,000</td>
+<td>followers</td><td>2024</td>
+<td class="ft">Korea JoongAng Daily, TikTok Korea 발표 보도</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.koreajoongangdaily.com/business/tiktok-to-ease-monetization-in-korea-streamline-sponsorship-system/10394176" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">TikTok Creativity Program 한국 참여 최근 30일 조회수</td><td class="num">100,000</td>
+<td>views per 30 days</td><td>2023</td>
+<td class="ft">TechCrunch, TikTok 공식 확인 인용</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://techcrunch.com/2023/09/13/tiktoks-revamped-creator-fund-expands-beyond-the-us-to-brazil-germany-korea-and-more/" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">TikTok Creativity Program 미국 BPM</td><td class="num"><i>확인불가</i></td>
+<td>USD per qualified 1</td><td>2026</td>
+<td class="ft">TikTok Creator Rewards Program</td><td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://www.tiktok.com/creators/creator-portal/en-us/getting-paid-to-create/creator-rewards-program/" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">Instagram sponsored post 글로벌 마이크로 인플루언서 시세</td><td class="num">100</td>
+<td>USD per post</td><td>2025</td>
+<td class="ft">Shopify, Influencer pricing guide</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.shopify.com/kr/blog/influencer-pricing" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">Instagram sponsored post 글로벌 마이크로 인플루언서 시세</td><td class="num">500</td>
+<td>USD per post</td><td>2025</td>
+<td class="ft">Shopify, Influencer pricing guide</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.shopify.com/kr/blog/influencer-pricing" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">Instagram sponsored post 글로벌 미드티어 인플루언서 시세</td><td class="num">500</td>
+<td>USD per post</td><td>2025</td>
+<td class="ft">Shopify, Influencer pricing guide</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.shopify.com/kr/blog/influencer-pricing" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">Instagram sponsored post 글로벌 미드티어 인플루언서 시세</td><td class="num">5,000</td>
+<td>USD per post</td><td>2025</td>
+<td class="ft">Shopify, Influencer pricing guide</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.shopify.com/kr/blog/influencer-pricing" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">한국 Instagram 팔로워 1만 명 스폰서 게시물 시세</td><td class="num"><i>확인불가</i></td>
+<td>KRW per post</td><td>2026</td>
+<td class="ft">한국 공개 견적 자료</td><td><span class="bdg bdg-c" title="블로그/자기보고/추정">C</span> <a href="https://www.shopify.com/kr/blog/influencer-pricing" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">한국 TikTok 팔로워 10만 명 스폰서 게시물 시세</td><td class="num"><i>확인불가</i></td>
+<td>KRW per post</td><td>2026</td>
+<td class="ft">한국 공개 견적 자료</td><td><span class="bdg bdg-c" title="블로그/자기보고/추정">C</span> <a href="https://www.koreajoongangdaily.com/business/tiktok-to-ease-monetization-in-korea-streamline-sponsorship-system/10394176" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">X 수익배분 참여 최소 팔로워</td><td class="num">500</td>
+<td>followers</td><td>2026</td>
+<td class="ft">Kompozy, X monetization guide</td><td><span class="bdg bdg-c" title="블로그/자기보고/추정">C</span> <a href="https://kompozy.io/creator-growth/x-creator-monetization-2026" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">X 수익배분 참여 최근 3개월 요구 노출</td><td class="num">5,000,000</td>
+<td>post impressions in 3 months</td><td>2026</td>
+<td class="ft">Kompozy, X monetization guide</td><td><span class="bdg bdg-c" title="블로그/자기보고/추정">C</span> <a href="https://kompozy.io/creator-growth/x-creator-monetization-2026" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">YouTube 다국어 오디오 적용 창작자의 비주요 언어 시청시간 비중</td><td class="num">25</td>
+<td>percent or more</td><td>2025</td>
+<td class="ft">YouTube Blog</td><td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://blog.youtube/news-and-events/multi-language-audio-expansion/" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">Jamie Oliver 채널 다국어 오디오 도입 후 조회수 변화</td><td class="num">3</td>
+<td>multiple of views</td><td>2025</td>
+<td class="ft">YouTube Blog</td><td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://blog.youtube/news-and-events/multi-language-audio-expansion/" target="_blank" rel="noopener">링크</a></td></tr>
+<tr><td class="ft">쇼트폼 대비 롱폼 광고수익 RPM 비율</td><td class="num">0.07</td>
+<td>maximum Shorts RPM divided by minimum long-form RPM</td><td>2025</td>
+<td class="ft">Buffer, creator monetization guide</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://buffer.com/resources/youtube-shorts-monetization/" target="_blank" rel="noopener">링크</a></td></tr></tbody></table></div>
+<h3>수익 사례 (검증 등급 명시)</h3>
+<div style="overflow-x:auto"><table><thead><tr><th>사례</th><th>금액</th><th>기준</th><th>등급</th><th>비고</th></tr></thead><tbody>
+<tr><td class="nm">Aitana López / The Clueless</td><td>3,000 EUR</td>
+<td>monthly average</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span></td>
+<td class="ft">제작자 Rubén Cruz가 평균 월 3,000유로, 최고 월 10,000유로 및 광고 1건당 1,000유로 이상이라고 말한 자기보고 수치다. <a href="https://www.euronews.com/next/2024/12/27/meet-the-first-spanish-ai-model-earning-up-to-10000-per-month" target="_blank" rel="noopener">…</a></td></tr>
+<tr><td class="nm">Lil Miquela</td><td>6,938 USD</td>
+<td>monthly Instagram estimate, July 2026</td><td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span></td>
+<td class="ft">HypeAuditor 추정 중앙값이며 2026년 7월 범위는 월 5,855-8,021달러로, 전체 사업 수익이 아닌 Instagram 추정치다. <a href="https://hypeauditor.com/instagram/lilmiquela/" target="_blank" rel="noopener">…</a></td></tr>
+<tr><td class="nm">Lil Miquela</td><td>11,700,000 USD</td>
+<td>yearly estimate</td><td><span class="bdg bdg-c" title="블로그/자기보고/추정">C</span></td>
+<td class="ft">연 1,170만 달러는 외부 추정치이며, Lil Miquela 운영사 또는 감사 자료로 검증된 실수익이 아니다. <a href="https://businessesgrow.com/2020/11/25/lil-miquela/" target="_blank" rel="noopener">…</a></td></tr>
+<tr><td class="nm">Lu do Magalu</td><td>16,200,000 USD</td>
+<td>yearly estimate</td><td><span class="bdg bdg-c" title="블로그/자기보고/추정">C</span></td>
+<td class="ft">Storyclash의 1,620만 달러 연간 수익 언급은 추정치이며, Magalu의 공식 매출 공시로 검증된 것은 아니다. <a href="https://www.storyclash.com/blog/en/virtual-influencers/" target="_blank" rel="noopener">…</a></td></tr>
+<tr><td class="nm">Shudu</td><td>7,000 EUR</td>
+<td>last 12 months estimated media value</td><td><span class="bdg bdg-c" title="블로그/자기보고/추정">C</span></td>
+<td class="ft">18개 브랜드 협업으로 만든 약 7,000유로의 추정 미디어 가치이며 Shudu 또는 운영사의 실제 수익이 아니다. <a href="https://www.storyclash.com/blog/en/virtual-influencers/" target="_blank" rel="noopener">…</a></td></tr>
+<tr><td class="nm">Rozy / Sidus Studio X</td><td><i>미공개</i></td>
+<td>not disclosed</td><td><span class="bdg bdg-c" title="블로그/자기보고/추정">C</span></td>
+<td class="ft">100건 이상 브랜드 딜 사례는 확인되지만 운영사·공식 보도에서 재현 가능한 월·연 수익 수치를 찾지 못했다. <a href="https://www.bracai.eu/post/rozy-gram-virtual-influencer" target="_blank" rel="noopener">…</a></td></tr>
+<tr><td class="nm">Driving Test Prep faceless YouTube channel</td><td>895 USD</td>
+<td>cumulative since monetization</td><td><span class="bdg bdg-c" title="블로그/자기보고/추정">C</span></td>
+<td class="ft">운영자 자기공개 사례로, 2022년 3월 수익화 후 12개 영상과 약 2,100명 구독자 기준 누적 895달러라고 보고했다. <a href="https://medium.com/the-youtube-playbook/how-much-my-faceless-youtube-channel-earns-with-2-162-subscribers-e3f5ca349cb0" target="_blank" rel="noopener">…</a></td></tr>
+<tr><td class="nm">Adavia Davis faceless AI channel portfolio</td><td>50,000 USD</td>
+<td>monthly portfolio estimate</td><td><span class="bdg bdg-c" title="블로그/자기보고/추정">C</span></td>
+<td class="ft">2만-6만 달러 중간값 5만 달러를 기입했으며, 해당 글은 Fortune이 AdSense 화면을 확인했다고 재인용하지만 원자료를 직접 검증하지 못했다. <a href="https://www.unkoa.com/faceless-youtube-10000-month-2025" target="_blank" rel="noopener">…</a></td></tr>
+<tr><td class="nm">정책 위반으로 하락한 faceless automation channel</td><td>7 USD</td>
+<td>daily revenue after takedown</td><td><span class="bdg bdg-c" title="블로그/자기보고/추정">C</span></td>
+<td class="ft">글이 인용한 Reddit 운영자 사례로, 구독자 70만·일 500-700달러에서 200개 이상 영상 삭제 후 일 7달러로 떨어졌다는 실패 사례다. <a href="https://www.post-bridge.com/blog/does-youtube-automation-work" target="_blank" rel="noopener">…</a></td></tr></tbody></table></div>
+<h3>플랫폼 AI 콘텐츠 정책 (2025-2026 현행)</h3>
+<div class="grid2">
+<div class="card"><div class="card-h">YouTube <span class="src"><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://support.google.com/youtube/answer/14328491?hl=en" target="_blank" rel="noopener">출처</a></span></div>
+<p><b>정책:</b> 현실적으로 보이는 AI 생성 또는 의미 있게 변형된 콘텐츠는 업로드 단계에서 공개해야 하며, 실제 인물의 발언·행동 조작, 실제 사건·장소 변형, 실제로 없던 현실 장면 생성이 대상이다.</p><p><b>수익화 영향:</b> AI 공개 자체는 도달이나 수익 자격을 제한하지 않지만, 반복적으로 공개하지 않으면 라벨 강제, 콘텐츠 삭제 또는 YouTube Partner Program 정지 대상이 될 수 있다.</p></div>
+<div class="card"><div class="card-h">YouTube <span class="src"><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://support.google.com/youtube/answer/14328491?hl=en" target="_blank" rel="noopener">출처</a></span></div>
+<p><b>정책:</b> YouTube 도구로 만든 콘텐츠, C2PA 메타데이터가 있는 콘텐츠, 시스템이 탐지한 AI 변형 콘텐츠에는 자동으로 AI 라벨이 표시될 수 있다.</p><p><b>수익화 영향:</b> 자동 라벨은 공개의무 이행과 별개이며, 일부 자동·검토 라벨은 창작자가 제거할 수 없다.</p></div>
+<div class="card"><div class="card-h">TikTok <span class="src"><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://support.tiktok.com/en/using-tiktok/creating-videos/ai-generated-content" target="_blank" rel="noopener">출처</a></span></div>
+<p><b>정책:</b> 현실적인 AI 생성 콘텐츠는 AI-generated content 라벨을 붙여야 하며, TikTok AI Effect를 사용한 경우 자동 라벨이 적용될 수 있다.</p><p><b>수익화 영향:</b> TikTok은 AI 콘텐츠 라벨 미부착 시 라벨을 추가하거나 콘텐츠 조치를 취할 수 있으며, Creator Rewards는 별도로 오리지널·1분 초과 영상 등의 적격성 요건을 적용한다.</p></div>
+<div class="card"><div class="card-h">Instagram / Meta <span class="src"><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://transparency.meta.com/policies/community-standards/manipulated-media/" target="_blank" rel="noopener">출처</a></span></div>
+<p><b>정책:</b> Meta는 업계 표준 신호 또는 자체 탐지에 따라 AI로 생성·편집된 이미지에 AI 정보 라벨을 표시하는 정책을 운영한다.</p><p><b>수익화 영향:</b> 이번 조사에서 한국 Reels 보너스의 일반 공개 지급 프로그램은 확인하지 못했으며, AI 태그 자체가 Reels 수익 자격을 보장하지 않는다.</p></div>
+<div class="card"><div class="card-h">X <span class="src"><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://m.economictimes.com/news/international/world-news/elon-musks-x-is-ending-creator-revenue-sharing-what-creators-need-to-know-about-its-new-rewards-programme/articleshow/133062954.cms" target="_blank" rel="noopener">출처</a></span></div>
+<p><b>정책:</b> 2026년 8월 보도 기준 기존 Creator Revenue Sharing은 2026년 9월 7일 종료 예정으로 안내됐고, Original Content Rewards가 이를 대체하는 방향으로 발표됐다.</p><p><b>수익화 영향:</b> 새 프로그램은 오리지널 콘텐츠의 적격 노출을 중심으로 보상한다고 보도됐으며, X가 고정 CPM·RPM은 공개하지 않았다.</p></div>
+<div class="card"><div class="card-h">X <span class="src"><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://techcrunch.com/2026/03/25/elon-musk-pauses-changes-to-xs-creator-revenue-sharing-program-after-backlash/" target="_blank" rel="noopener">출처</a></span></div>
+<p><b>정책:</b> AI 생성 전쟁·무력분쟁 게시물의 무라벨 게시에 대해 수익배분 정지 조치를 적용할 수 있다는 보도가 있다.</p><p><b>수익화 영향:</b> 정책 전환이 빠르므로 수익화 신청 전 X Creator Monetization Standards의 최신 원문 확인이 필요하다.</p></div></div>
+<h3>중국 SNS 진입 요건 (조사 결론: 1단계 제외, 2027년 2월 재검토)</h3>
+<div style="overflow-x:auto"><table><thead><tr><th>플랫폼</th><th>한국인 개인 가입</th><th>수익화·사업자 요건</th><th>AI 콘텐츠 규정</th></tr></thead><tbody>
+<tr><td class="nm">小红书</td><td class="ft">조건부 가능. 해외에서 가입한 사용자는 RedNote 해외 운영 버전 사용자로 분류될 수 있으며, 국제 휴대전화 번호 또는 지원되는 제3자 로그인 흐름을 사용한다.</td><td class="ft">일반 개인 가입에 중국 사업자 등록이 필수라고 공개 명시되지는 않았으나, 게시·댓글 등 실명제가 필요한 기능에는 휴대전화 번호가 필요하다. 브랜드 인증·샵·광고·라이브는 별도 신원·사업자 심사가 필요할 수 있다.</td><td class="ft">AI 생성·합성 콘텐츠는 식별 표시 및 중국 콘텐츠 규칙 준수가 필요하며, 서비스 내 AI 도구 이용 시 별도 약관이 적용된다.</td></tr>
+<tr><td class="nm">抖音</td><td class="ft">조건부 가능. 국제 전화번호 가입이 일부 국가에 열렸다는 보도와 이용 사례가 있으나, 국가·앱 버전·리스크 심사에 따라 달라진다.</td><td class="ft">일반 시청·기본 계정과 달리 라이브, 수익화, 광고, 상점, 고위험 기능은 실명 인증을 요구할 수 있다. 중국 내 사업자 운영·전자상거래는 중국 법인·영업자격·은행·세무 요건을 별도로 요구할 수 있다.</td><td class="ft">딥페이크·합성·생성 콘텐츠는 표식과 진실성 요구의 대상이며, 오해 유발·사칭·허위 정보는 금지된다.</td></tr>
+<tr><td class="nm">B站</td><td class="ft">조건부 가능. 해외 전화번호 또는 이메일 기반 가입 경로가 제공된 사례가 있으나, 국가번호 지원과 보안검증은 수시로 달라진다.</td><td class="ft">기본 계정과 일부 게시 기능은 가능할 수 있으나, 수익화·라이브·상업 협업·인증은 실명 및 추가 신원 심사를 요구할 수 있다. 중국 사업자 계정은 현지 사업자 정보가 필요할 수 있다.</td><td class="ft">AI 생성·합성 영상은 중국 공통 표식·안전 규칙 및 Bilibili 커뮤니티 규칙을 준수해야 한다.</td></tr>
+<tr><td class="nm">快手</td><td class="ft">조건부 가능이나, 해외 번호·해외 신분증 지원은 계정 상태와 시점별 리스크 심사에 크게 좌우된다. 가입 전 실제 한국 번호 OTP 수신 여부를 테스트해야 한다.</td><td class="ft">상점·광고·라이브·수익화는 일반 개인 계정보다 강한 실명 및 사업자 심사가 요구될 수 있고, 중국 사업자·결제 정보가 필요할 수 있다.</td><td class="ft">생성·합성 콘텐츠는 표식 및 플랫폼 안전 규칙을 준수해야 하며, 허위·사칭·저작권 침해 소재는 위험하다.</td></tr>
+<tr><td class="nm">微博</td><td class="ft">조건부 가능. 해외 번호 또는 이메일 기반 등록 경로가 사용된 사례가 있으나, SMS·보안검증의 국가별 지원은 변동될 수 있다.</td><td class="ft">기본 개인 계정과 별개로 V 인증, 광고, 기업·기관 계정은 법인/사업자 자료와 실명 검증이 필요할 수 있다. 중국 현지 번호가 항상 법적 필수라고 단정할 수는 없으나 운영상 요구될 수 있다.</td><td class="ft">AI 생성·합성 콘텐츠는 표시·진실성·비사칭 의무를 준수해야 한다.</td></tr>
+<tr><td class="nm">微信视频号</td><td class="ft">가능성이 있으나 WeChat 계정 선행 개설·보안 검증이 필요하다. WeChat은 일부 해외 번호 등록을 지원하지만 친구 검증·리스크 관리에 따라 제한될 수 있다.</td><td class="ft">개인 Video Account와 공식계정·상점·광고·결제는 분리해서 봐야 한다. 기업 인증, WeChat Pay, 미니프로그램 상거래에는 중국 또는 적격 해외 법인 자료·은행·인증 절차가 요구될 수 있다.</td><td class="ft">AI 생성·합성 영상의 표식, 저작권·초상권, 허위 정보 금지 규칙을 지켜야 한다.</td></tr></tbody></table></div>
+<div class="note">공통: 중국 생성형 AI 표식 규정(2025-09-01 시행) 적용 대상. 해외 IP 가입이 배포·수익화를 보장하지 않음 (CAC 규정 출처 포함, 전문은 리포트 원본 데이터 참조).</div>
+</section>
+
+<!-- ③ 차별화 -->
+<section class="tab" id="tab-diff">
+<h2>벤치마킹 · 차별화 전략</h2>
+<p class="lead">79종 분석에서 도출한 시장 갭 3개와 자기 반박(debate)을 거친 전략 3안. 추천: <b>A안 (모체 전략)</b>.</p>
+<h3>시장 갭 분석</h3>
+<div class="grid3">
+<div class="card"><div class="card-h">갭 1. &quot;결과만 파는&quot; 시장 vs &quot;과정을 공개하는&quot; 빈자리</div><p class="ft">조사한 79개 서비스는 완성된 크리에이티브를 파는 B2B 중심. 0부터 시작해 실측 데이터로 성장하는 과정 자체를 콘텐츠화한 사례는 드묾. build-in-public + AI 인플루언서 조합은 차별화 포인트</p></div>
+<div class="card"><div class="card-h">갭 2. 한국어 → 다국어 자동화 워크플로우의 공개 부재</div><p class="ft">다국어 더빙 도구(HeyGen 등)는 많지만 한국어 크리에이터가 실제로 쓰는 비용·품질·수익 효과 데이터를 공개한 곳이 없음. YouTube 공식: 다국어 오디오 사용 창작자는 평균 시청시간 25%+를 비주 언어에서 확보</p></div>
+<div class="card"><div class="card-h">갭 3. 100만원대 예산 제약 시장의 공백</div><p class="ft">엔터프라이즈 툴(Synthesia, Sprout $199 등)은 개인에게 과잉. 페이스리스 자동화 툴은 품질 편차·정책 리스크 큼. 저예산 개인용 &quot;검증된 조합&quot; 큐레이션 수요 존재</p></div></div>
+<div class="chartbox"><div class="ch-h">포지셔닝 맵 (개념도)</div><div class="ch-s">X축: 자동화 수준 (수동→자동) / Y축: 과정 공개성 (폐쇄→투명). 기존 79종은 우하단(고자동화·비공개)에 밀집, 좌상단(투명한 공개 실험)이 백색 공간</div>
+<div style="height:340px"><canvas id="chPos"></canvas></div></div>
+<h3>전략 3안 + 자기 반박</h3>
+<div class="grid3">
+<div class="card opt rec">
+<div class="card-h">A안 <span class="star">★ 추천</span> · 공개 실험형 AI 인플루언서 미디어 + 서비스화 <span class="feas">높음 (100만원 내 실행 가능)</span></div>
+<p class="ft">자체 AI 인플루언서를 키우는 과정(실측 데이터 포함)을 콘텐츠로 공개하고, 검증된 워크플로우를 서비스/상품으로 판매</p>
+<div class="debate"><b>자기 반박(debate):</b><br>스토리텔링이 차별화를 만든다<br>→ 반박: 공개 자체는 쉽게模倣될 수 있다. 그러나 &quot;실측 데이터 축적&quot;은模倣에 시간이 걸리는 해자(moat)가 된다<br>→ 재구성: <b>공개성 + 축적 데이터 이중 해자로 재정의</b></div></div>
+<div class="card opt ">
+<div class="card-h">B안  · 한국어 콘텐츠 다국어화 서비스 <span class="feas">중간 (사례 입증 선행 필요)</span></div>
+<p class="ft">검증된 자동 더빙/자막 파이프라인으로 국내 크리에이터·중소기업의 해외 진출 지원</p>
+<div class="debate"><b>자기 반박(debate):</b><br>YouTube 다국어 오디오의 공식 효과(시청시간 25%+)가 수요를 뒷받침<br>→ 반박: 고객이 그 효과를 인지하지 못하면 팔리지 않는다. 교육 비용이 크다<br>→ 재구성: <b>먼저 자사 채널로 효과 입증 → 사례 기반 판매 순서로 전환</b></div></div>
+<div class="card opt ">
+<div class="card-h">C안  · 노하우 데이터 상품 (템플릿/리포트) <span class="feas">중간 (A안 성공 시에만 유효)</span></div>
+<p class="ft">7개월 실험 데이터를 정리한 플레이북·프롬프트 템플릿·비용표 판매</p>
+<div class="debate"><b>자기 반박(debate):</b><br>제작 원가 0에 마진 100%<br>→ 반박: 데이터가 없으면 팔 것이 없다. 시기상조일 수 있음<br>→ 재구성: <b>A안의 부산물로 1월 시점 출시하는 파생 상품으로 위치</b></div></div></div>
+<div class="card"><div class="card-h">추천 근거</div><p class="ft">A안은 B·C를 파생시키는 모체. 100만원 예산/7개월/파트타임 제약에서 유일하게 &quot;자산(채널+데이터+고객)&quot;이 동시에 쌓이는 구조. B는 A의 사례가 있어야 팔리고, C는 A의 데이터가 있어야 팔린다.</p></div>
+</section>
+
+<!-- ④ GTM -->
+<section class="tab" id="tab-gtm">
+<h2>마케팅·GTM (예산 100만원 집행 안)</h2>
+<p class="lead">유기적 채널 92% / 소액 광고 8%. 광고는 "검증된 콘텐츠 부스팅"에만 집행합니다.</p>
+<div class="chartbox"><div class="ch-h">예산 배분 100만원</div><div class="ch-s">리스크 예비 28만은 계정 정지·기회 비용 대응 전용. 12월부터 툴비는 수익 재투입으로 전환</div>
+<div style="height:300px"><canvas id="chBudget"></canvas></div></div>
+<h3>고객 세그먼트·가격</h3>
+<div style="overflow-x:auto"><table><thead><tr><th>세그먼트</th><th>니즈</th><th>가격대</th><th>채널</th></tr></thead><tbody><tr><td class="nm">소상공인·개인 셀러</td><td class="ft">숏폼 제작 인력 부족</td><td class="num">월 15-30만</td><td>크몽+지인</td></tr><tr><td class="nm">1인 브랜드·전문직</td><td class="ft">개인 브랜딩 숏폼</td><td class="num">건당 3-10만</td><td>크몽+SNS 인바운드</td></tr><tr><td class="nm">예비 창작자·직장인</td><td class="ft">AI 워크플로우 학습</td><td class="num">3-10만 (디지털 상품)</td><td>본인 채널+커뮤니티</td></tr></tbody></table></div>
+<h3>첫 고객 10명 확보 시나리오</h3>
+<div class="card"><ul style="margin-left:18px"><li><b>1.</b> 크몽 입문 상품(3-5만)으로 첫 5명 확보 → 리뷰 5개 확보</li><li><b>2.</b> 지인·직장 동료 네트워크 2명 (무료 1건 시범 → 유료 전환)</li><li><b>3.</b> 본인 채널 &quot;이렇게 만들었습니다&quot; 콘텐츠로 인바운드 3명</li><li><b>4.</b> 빌드인퍼블릭 포스팅(X/링크드인)에서 DM 문의 전환</li></ul></div>
+<h3>플랫폼 진입 순서</h3>
+<div class="card"><p class="ft"><b>9월:</b> Shorts+TikTok+Reels 동시 개설 (동일 원본 변형 게시) → <b>10월:</b> X/스레드 빌드인퍼블릭 보조 개설 → <b>11월:</b> 크몽 스토어 오픈 → <b>12월:</b> 링크드인 (B2B 인바운드) → <b>1월:</b> 다국어 채널 (YouTube 오디오트랙) → <b>2월:</b> 중국 SNS 재검토 → <b>3월:</b> 결산 공개 캠페인</p></div>
+<div class="note">콘텐츠-서비스 플라이휠: 채널 데이터가 서비스 판매 근거가 되고, 서비스 고객 사례가 채널 콘텐츠가 되는 순환 구조가 A안 전략의 핵심입니다.</div>
+</section>
+
+<!-- ⑤ 플레이북 -->
+<section class="tab" id="tab-playbook">
+<h2>실행 플레이북 (서비스 운영 노하우)</h2>
+<p class="lead">0 경험 직장인 아빠가 심야 시간에 실행 가능한 수준으로 작성된 실전 매뉴얼. 모든 외부 사실은 출처 등급 표기.</p>
+<h3>A. AI 인플루언서 구축 6단계</h3><div class="pb"><b>1단계: 페르소나 설계 (9월 1-2주)</b><p>컨셉 3안 (예: 20대 직장인 루틴 크리에이터 / 시니어 재테크 캐릭터 / 로컬 맛집 탐험가) → 각 5본씩 파일럿 → 데이터로 1안 확정. 백스토리·말투·비주얼 시드(이미지)를 문서화해 모든 생성에 재사용 (일관성이 곧 브랜드)</p></div><div class="pb"><b>2단계: 비주얼 일관성 (얼굴 고정)</b><p>무료: SDXL/Flux 로컬 + InstantID·PhotoMaker류 IP-Adapter / 저가: The Influencer AI $19/월 (조사 확인: 1만+ 크리에이터 사용 표방) / 상업 이용 시 각 툴 라이선스 확인 필수. 동일 시드+로라 조합으로 시드데이터 축적</p></div><div class="pb"><b>3단계: 영상 제작 파이프라인</b><p>이미지→영상: Kling(무료 크레딧)·Higgsfield·Runway 무료 티어 로테이션 → 아바타 대사: HeyGen 무료(월 제한) → 음성: 무료 TTS(Edge-TTS류) → 자막: 무료 편집기+템플릿. 주 2회 배치로 8-10본씩 생성</p></div><div class="pb"><b>4단계: 예산 툴체인 3안</b><p>① 순수 무료 로테이션 (월 0원, 시간 비용 높음) ② 혼합형 (월 5-6만: 핵심 1개 유료+나머지 무료) ★추천 ③ 유료 최소 (월 10-12만: 품질 우선, 12월 이후 수익 재투입 시만)</p></div><div class="pb"><b>5단계: 초상권·저작권 준수</b><p>실존 인물 얼굴 사용 금지 (딥페이크 규제 + 플랫폼 정책), 생성 이미지 상업 라이선스 확인, 음원은 로열티프리만 (예산 12만 중 일부로 라이선스 구매), AI 라벨 의무 준수 (아래 정책 카드)</p></div><div class="pb"><b>6단계: 흔한 실패 10가지</b><p>① 컨셉 잦은 변경 ② 완주율 무시 ③ 훅 없는 본문 ④ 저품질 대량생산(스팸 시그널) ⑤ 정책 라벨 미부착 ⑥ 크몽 오픈 지연 (11월 필수) ⑦ 심야 과로→번아웃 (창작자 52% 번아웃 경험, Billion Dollar Boy) ⑧ 데이터 기록 안 함 ⑨ 단일 플랫폼 의존 ⑩ 가족 시간 침해 (지속 불가능)</p></div>
+<h3>B. 전세계 SNS 일괄 관리 시스템</h3><div class="pb"><b>플랫폼 매트릭스 (1단계)</b><p>주력 3: YouTube Shorts(수익화 잠재 최고, RPM $0.03-0.07/1K) + TikTok(발견성 최고, 팔로워 1만부터 수익화) + Instagram Reels(스폰서 단가). 보조: X(빌드인퍼블릭·수익배분 2026.9 변경 주의) + 스레드. 백업 계정 1개 상시 대기</p></div><div class="pb"><b>중국 SNS (조사 결론)</b><p>개인 가입은 조건부 가능하나 수익화·라이브는 실명/사업자 심사 별도 + AI 콘텐츠 표식 규정(2025.9 시행) 적용. KAWO등 B2B 툴은 견적제. → 결론: 1단계 제외, 2027년 2월 재검토 (표 참조)</p></div><div class="pb"><b>일괄 발행 스택</b><p>무료: Buffer(3채널)/Metricool(월 20게시) → 유료 전환: Publer $5 또는 Metricool $20. 원본 9:16 1본 → 플랫폼별 자막 스타일·길이(Shorts 45초/TikTok 30초/Reels 30초)·해시태그 세트 변형 스크립트로 반자동화</p></div><div class="pb"><b>다국어 자동화 (BRIEF 핵심)</b><p>YouTube 다국어 오디오트랙 (공식 효과: 비주 언어 시청시간 25%+, Jamie Oliver 3배 사례) → HeyGen류 립싱크 더빙 (영/일/es 우선) → 1월 파일럿 3본 → 2월부터 검증된 것만 확대</p></div><div class="pb"><b>계정 정지 대응 5단계 (복구 일정 안내)</b><p>① 당일: 해당 콘텐츠 삭제·이의제기 ② 1일 내: 백업 계정 활성화+예약물 3일치 이관 ③ 3일 내: 정책 위반 원인 문서화(재발 방지) ④ 7일 내: 신규 채널로 트래픽 재분배 ⑤ 30일: 완전 복구 또는 재구축 결정. 예비비 28만원은 이 시나리오를 위해 존재</p></div>
+<h3>C. 바이럴 성장 전략 (알고리즘 실측 기반)</h3><div class="pb"><b>훅 10종 (첫 3초)</b><p>①질문형 ②결과 선공개 (TikTok 광고 연구: 제품 화면 노출이 회상 +25%) ③충격 통계 ④통념 반박 ⑤비교실험 ⑥실패 고백 ⑦비하인드 ⑧1분 튜토리얼 ⑨트렌드 패러디 ⑩시리즈 예고. TikTok 공식: 가치 제안을 첫 3초 안에, 훅은 첫 6초 안에</p></div><div class="pb"><b>알고리즘 실측 포인트</b><p>TikTok: 완주·재시청이 지역 신호보다 가중 (공식) / Reels: 시청시간+도달당 좋아요(기존 팔로워)+공유(신규 도달) / Shorts: 최근성 가산+유지율 곡선 확인 (YouTube Help)</p></div><div class="pb"><b>게시 시간·빈도</b><p>외부 집계 상충 (Buffer: 일 오전 9시 vs Sprout: 화-목 오후 2-6시) → 결론: 법칙 없음, 자체 2주 A/B 필수. 빈도는 TikTok 공식 1-4/일, 브랜드 평균 주 3.7회 → 우리 표준: 일 1-2본 (파트타임 지속가능선)</p></div><div class="pb"><b>성장 벤치마크 (현실 인식)</b><p>상위 사례: 10K까지 29-44일. 그러나 Buffer 공개 실험은 30일 34본→1,194명. → 보수 시나리오는 후자에 근거. 첫 협찬은 팔로워 수보다 참여도·니치 적합성 (Manychat)</p></div><div class="pb"><b>AI를 숨기지 말고 강점으로</b><p>각 플랫폼 AI 라벨 의무화 시대 (YouTube 미공개 시 강제 라벨+제재, TikTok 라벨 필수, Meta 자동 탐지). 위장은 정지 리스크. &quot;AI로 100만원 사업 실험&quot; 정체성이 오히려 니치 (과정 공개 전략과 결합)</p></div>
+<h3>D. 인플루언서 되기 로드맵</h3><div class="pb"><b>0 → 1,000 (9-10월)</b><p>주제 좁히기가 속도의 핵심. 승자 포맷 조기 발견 → 시리즈화. 목표: 10월 말 1,000명</p></div><div class="pb"><b>1,000 → 10,000 (11월-1월)</b><p>시리즈 정주행 + 트렌드 패러디 20% 배합. 10K 시 TikTok 수익화 진입 + 미디어킷 제작</p></div><div class="pb"><b>첫 스폰서 (12월-)</b><p>나노 단계(1-10K)는 무상 제품+제휴부터 (글로벌 시세 $100-500/포스트). 참여율 5%+·니치 명확 시 인바운드 발생</p></div><div class="pb"><b>서비스화 (11월-) · 상품화 (1월-)</b><p>크몽 입문 상품 → 고정 패키지 → 자사 랜딩. 데이터 축적 후 플레이북 상품화. 각 단계 게이트는 캘린더 탭 참조</p></div>
+<h3>성장 벤치마크: 현실 인식 (생존자 편향 보정)</h3>
+<div style="overflow-x:auto"><table><thead><tr><th>사례</th><th>플랫폼</th><th>10K까지</th><th>비고</th></tr></thead><tbody>
+<tr><td class="nm">Marksullivanwriter TikTok 공개 실험</td><td>TikTok</td><td class="num">30일</td>
+<td class="ft dim">자기보고 실험으로 0팔로워에서 시작해 30일차 10,400 팔로워, 누적 138,000 조회를 공개했다. 독립 검증된 평균치가 아니다. <a href="https://medium.com/@marksullivanwriter/from-0-to-10k-a-data-driven-breakdown-of-tiktok-growth-in-30-days-12de6d9f7e57" target="_blank" rel="noopener">…</a></td></tr>
+<tr><td class="nm">신규 Instagram 계정 공개 회고</td><td>Instagram Reels</td><td class="num">29일</td>
+<td class="ft dim">게시자는 광고비 없이 새 Instagram 계정을 29일에 10,100명까지 성장시켰다고 공개했다. 원본은 창작자 YouTube 자기보고다. <a href="https://www.youtube.com/watch?v=lld_BCGQPzw" target="_blank" rel="noopener">…</a></td></tr>
+<tr><td class="nm">Marina Mogilko YouTube 채널 회고</td><td>YouTube</td><td class="num">44일</td>
+<td class="ft dim">4개 영상으로 44일 만에 1만 구독자를 달성했다고 회고했다. Shorts 전용 실험으로 명시되지 않았으므로 Shorts 성장 속도 일반화에는 사용하면 안 된다. <a href="https://marinamogilko.substack.com/p/how-long-it-takes-to-get-to-10k-subs" target="_blank" rel="noopener">…</a></td></tr>
+<tr><td class="nm">Buffer TikTok 초보 창작자 실험</td><td>TikTok</td><td class="num">미달성: 30일간 1,194명</td>
+<td class="ft dim">30일·34개 게시물·385,000 조회로 1,194 팔로워를 얻은 공개 실험이다. 1만 달성 사례만 보면 생기는 생존자 편향을 보완하는 비교 사례다. <a href="https://buffer.com/resources/tiktok-experiment" target="_blank" rel="noopener">…</a></td></tr></tbody></table></div>
+<div class="note">상위 사례(29-44일)와 평균적 실험(Buffer 30일→1,194명)의 차이가 바이럴 편차입니다. 본 리포트 보수 시나리오는 후자에 근거하여 설계했습니다.</div>
+</section>
+
+<!-- ⑥ 재무 -->
+<section class="tab" id="tab-finance">
+<h2>재무 시나리오: 목표 금액별 실전 실행 방안</h2>
+<p class="lead">수익원 5종(크몽/서비스·제휴·채널광고·디지털상품·스폰서)의 월별 추정치. 모든 단가 가정은 ②탭 실측 데이터에서 출발했습니다.</p>
+<div class="grid3">
+<div class="scard conservative">
+<div class="sc-h">보수 시나리오</div>
+<div class="sc-target">200만원 <span class="sc-prob">60~70% (추정)</span></div>
+<p class="ft">크몽 소액 서비스 + 제휴 중심. 바이럴 없이도 달성 가능한 안전선</p>
+<table class="mini"><tr><th>월별(만원)</th><td>0 → 0 → 5 → 15 → 35 → 55 → 90</td></tr>
+<tr><th>주요 수익원</th><td class="ft">크몽/서비스 75만, 제휴 45만, 채널광고 60만, 디지털상품 15만, 스폰서 5만</td></tr>
+<tr><th>3월 팔로워 KPI</th><td>8,000명</td></tr></table></div>
+<div class="scard realistic">
+<div class="sc-h">현실 시나리오</div>
+<div class="sc-target">1,000만원 <span class="sc-prob">25~35% (추정)</span></div>
+<p class="ft">서비스 클라이언트 2-3명 + 스폰서 + 디지털 상품 출시까지 성사될 경우</p>
+<table class="mini"><tr><th>월별(만원)</th><td>0 → 0 → 15 → 80 → 190 → 300 → 415</td></tr>
+<tr><th>주요 수익원</th><td class="ft">크몽/서비스 405만, 제휴 45만, 채널광고 160만, 디지털상품 190만, 스폰서 200만</td></tr>
+<tr><th>3월 팔로워 KPI</th><td>40,000명</td></tr></table></div>
+<div class="scard aggressive">
+<div class="sc-h">도전 시나리오</div>
+<div class="sc-target">3,000만원 <span class="sc-prob">5~10% (추정)</span></div>
+<p class="ft">최소 1건 500만뷰급 바이럴 히트 + 상품화 성공 전제. 편차 매우 큼</p>
+<table class="mini"><tr><th>월별(만원)</th><td>0 → 0 → 20 → 150 → 440 → 860 → 1530</td></tr>
+<tr><th>주요 수익원</th><td class="ft">크몽/서비스 680만, 제휴 340만, 채널광고 630만, 디지털상품 630만, 스폰서 720만</td></tr>
+<tr><th>3월 팔로워 KPI</th><td>180,000명</td></tr></table></div></div>
+<div class="chartbox">
+<div class="ch-h">시나리오별 누적 수익 (연간·분기·월간 전환)</div>
+<div class="ch-s">단위: 만원 · 2026-09 ~ 2027-03 · 목표선은 각 시나리오 목표액</div>
+<div class="seg" id="segRange"><button class="on" data-r="month">월간</button><button data-r="quarter">분기</button><button data-r="year">연간</button></div>
+<div style="height:360px"><canvas id="chCum"></canvas></div></div>
+<div class="chartbox">
+<div class="ch-h">수익원별 월별 구성 (시나리오 선택)</div>
+<div class="seg" id="segSc"><button class="on" data-s="conservative">보수</button><button data-s="realistic">현실</button><button data-s="aggressive">도전</button></div>
+<div style="height:360px"><canvas id="chStack"></canvas></div></div>
+<div class="chartbox"><div class="ch-h">팔로워 성장 KPI (시나리오별)</div><div style="height:300px"><canvas id="chFollower"></canvas></div></div>
+<h3>목표 달성 조건 (체크리스트)</h3>
+<div class="grid3">
+<div class="card"><div class="card-h">보수 200만 달성 조건</div><ul>
+<li>11월 크몽 오픈 후 매월 소액 판매 지속 (누적 75만)</li><li>YPP 진입(구독자 1,000+Shorts 3개월 300만 뷰) 후 채널광고 60만</li>
+<li>제휴 링크 45만 + 3월 상품 소액 판매 15만 + 스폰서 5만</li><li class="dim">→ 핵심 전제: 크몽 시세(월 44-79만 대행 시장) 하단 진입으로 판매 5건/월</li></ul></div>
+<div class="card"><div class="card-h">현실 1,000만 추가 달성 조건</div><ul>
+<li>고정 클라이언트 2-3명 월 40-80만 유지</li><li>팔로워 1만 달성으로 TikTok Creator Rewards 진입 (기준: 팔로워 1만+30일 조회 10만)</li>
+<li>1월 디지털 상품 출시 후 월 30-100만</li><li>스폰서 협찬 월 20-80만 (마이크로 인플루언서 시세 $100-500/포스트 참조)</li></ul></div>
+<div class="card"><div class="card-h">도전 3,000만 추가 달성 조건</div><ul>
+<li>500만 뷰급 바이럴 최소 1건 (성장 사례상 편차 매우 큼, 확률 5-10%)</li><li>바이럴 이후 스폰서 프리미엄 단가 (미드티어 $500-5,000/포스트 구간)</li>
+<li>디지털 상품 월 200-350만 (트래픽 전환)</li><li>서비스 팀화(파트타임 편집자)로 제작량 확대</li></ul></div></div>
+<h3>민감도 분석 (핵심 가정 변동)</h3>
+<div style="overflow-x:auto"><table><thead><tr><th>시나리오</th><th>보수</th><th>현실</th><th>도전</th><th>해석</th></tr></thead><tbody>
+<tr><td>팔로워 성장 -30%</td><td>80만</td><td>350만</td><td>600만</td><td class="ft">채널 광고·스폰서·상품 동시 타격, 크몽 비중은 상대적으로 방어</td></tr>
+<tr><td>기본 (100%)</td><td><b>200만</b></td><td><b>1,000만</b></td><td><b>3,000만</b></td><td class="ft">모델 기준치</td></tr>
+<tr><td>팔로워 성장 +30%</td><td>220만</td><td>1350만</td><td>4800만</td><td class="ft">바이럴 1건 가정 시 상방 (크몽 서비스는 시간 제약으로 포화)</td></tr>
+<tr><td>크몽 단가 -50% (경쟁 심화)</td><td>162만</td><td>800만</td><td>2310만</td><td class="ft">가격 경쟁 시 상품 고급화·자사 랜딩 전환으로 방어</td></tr></tbody></table></div>
+<div class="warnbox">투자 경고: 본 시나리오의 수익 추정치는 실측 단가와 공개 사례에 근거한 <b>추정</b>이며 보장이 아닙니다. 도전 시나리오는 바이럴 편차가 지배하므로(5-10%) 보수 시나리오를 기본 계획으로, 현실·도전은 상향 옵션으로 운영하십시오.</div>
+</section>
+
+<!-- ⑦ 캘린더 -->
+<section class="tab" id="tab-calendar">
+<h2>월별 실행 캘린더 (관문 Gate + 복구 일정)</h2>
+<p class="lead">매월 말 게이트를 통과하지 못하면 명시된 복구 일정에 따라 다음 달 1-2주 내 조정합니다. 리스크 원칙(안정 운영)의 실행 장치입니다.</p>
+
+<div class="cal"><div class="cal-h"><span class="cal-m">2026-09</span><span class="cal-p">1단계: 구축</span></div>
+<p class="cal-g">AI 인플루언서 페르소나 확정 + 제작 파이프라인 구축 + 24본 업로드</p>
+<ul><li>페르소나 3안 설계 → 1안 확정 (컨셉/백스토리/비주얼 시드)</li><li>툴체인 테스트 (무료플랜 로테이션)</li><li>플랫폼 3개 개설 (Shorts/TikTok/Reels) + 백업 1</li><li>첫 배치 제작 24본 + 게시 리듬 확립</li></ul>
+<div class="cal-meta"><span>예산: 툴 5만 + 실험 2만</span><span>KPI: 업로드 24본, 팔로워 300, 완주율 데이터 1차 수집</span></div>
+<div class="gate"><b>관문/복구:</b> 미달 시(24본 미만): 제작 시간 과다 진단 → 컨셉 단순화. 복구: 10월 1주에 이월분 제작</div></div>
+<div class="cal"><div class="cal-h"><span class="cal-m">2026-10</span><span class="cal-p">1단계: 검증</span></div>
+<p class="cal-g">제작 안정화 (30본+) + 첫 1,000팔로워 + 승자 콘텐츠 발견</p>
+<ul><li>상위 20% 완주율 콘텐츠 유형 3개 추출 → 시리즈화</li><li>훅 A/B 테스트 (동일 본문, 훅 2종)</li><li>게시 시간 자체 검증 (2주 A/B)</li><li>크몽 셀러 등록 준비 (포트폴리오 10본)</li></ul>
+<div class="cal-meta"><span>예산: 툴 5만 + 실험 2만</span><span>KPI: 팔로워 1,000, 업로드 30본, 승자 포맷 1개+</span></div>
+<div class="gate"><b>관문/복구:</b> 미달 시(500 미만): 훅/니치 재검토. 복구: 10월 말 3일간 트렌드 패러디 3본 투입, 11월 1주 니치 전환 결정</div></div>
+<div class="cal"><div class="cal-h"><span class="cal-m">2026-11</span><span class="cal-p">1→2단계: 수익 개시</span></div>
+<p class="cal-g">크몽 서비스 오픈 + 첫 매출 + 제작 자동화 1차</p>
+<ul><li>크몽 상품 오픈 (숏폼 5본 편집 패키지 5-15만대)</li><li>자동화: 자막/리프레임 스크립트 구축</li><li>제휴 링크 도입 (사용 툴 어필리에이트)</li><li>다국어 더빙 파일럿 1본 (HeyGen 무료분)</li></ul>
+<div class="cal-meta"><span>예산: 툴 5만 + 실험 2만</span><span>KPI: 첫 판매 1건+, 팔로워 2,000-5,000, 월 매출 5-20만</span></div>
+<div class="gate"><b>관문/복구:</b> 미달 시(판매 0): 가격 재설정 (5만→3만) + 크몽 메인 노출 상품명 A/B. 복구: 12월 1주 내 재오픈</div></div>
+<div class="cal"><div class="cal-h"><span class="cal-m">2026-12</span><span class="cal-p">2단계: 서비스화</span></div>
+<p class="cal-g">고정 클라이언트 1-2명 + 스폰서 제안 시작 + YPP 준비</p>
+<ul><li>크몽 구매자 → 월 고정 패키지 업셀</li><li>인바운드 제안서 제작 (미디어킷 v1)</li><li>X/링크드인 빌드인퍼블릭 포스팅 개시</li><li>수익 재투입 전환 (툴비 자체 충당 시작)</li></ul>
+<div class="cal-meta"><span>예산: 툴 3만 + 실험 1만</span><span>KPI: 고정 클라 1명+, 팔로워 1만 (TikTok 수익화 진입), 월 매출 40-70만</span></div>
+<div class="gate"><b>관문/복구:</b> 미달 시(고정 0): 크몽 리뷰 기반 상품 개편. 복구: 1월에 콜드 아웃리치 30곳 실행</div></div>
+<div class="cal"><div class="cal-h"><span class="cal-m">2027-01</span><span class="cal-p">2단계: 상품화</span></div>
+<p class="cal-g">디지털 상품 출시 (워크플로우 템플릿/가이드) + 다국어 확장</p>
+<ul><li>&quot;100만원 AI 인플루언서 플레이북&quot; e-book/템플릿 제작 (3-10만대)</li><li>YouTube 다국어 오디오트랙 정식 적용 (영/일/스페인)</li><li>크몽 → 자사 랜딩(폼+토스) 병행 전환</li><li>스폰서 미디어킷 v2 (실측 데이터 탑재)</li></ul>
+<div class="cal-meta"><span>예산: 툴 3만 + 실험 1만</span><span>KPI: 상품 첫 판매, 월 매출 100-190만, 팔로워 1.8-5만</span></div>
+<div class="gate"><b>관문/복구:</b> 미달 시(상품 판매 0): 콘텐츠로 무료 공개 전환 → 이메일 수집 → 재판매. 복구: 2월 1-2주</div></div>
+<div class="cal"><div class="cal-h"><span class="cal-m">2027-02</span><span class="cal-p">3단계: 확장</span></div>
+<p class="cal-g">자동화 고도화 + 클라 3명 + 채널 광고수익 안정화</p>
+<ul><li>n8n/Make 기반 제작-게시 파이프라인 자동화</li><li>클라이언트 인수인수 문서화 (서비스 표준화)</li><li>중국 SNS 재검토 (조건부 진입 재평가)</li><li>바이럴 히트 후보 5본 집중 제작</li></ul>
+<div class="cal-meta"><span>예산: 툴 3만 + 실험 1만</span><span>KPI: 월 매출 300-860만, 팔로워 2.8-10만</span></div>
+<div class="gate"><b>관문/복구:</b> 미달 시: 도전→현실 시나리오 하향 조정 발표 (스스로에게). 복구: 3월 집중 캠페인</div></div>
+<div class="cal"><div class="cal-h"><span class="cal-m">2027-03</span><span class="cal-p">3단계: 마감+결산</span></div>
+<p class="cal-g">목표 달성 스퍼트 + 전체 결산 리포트 공개 + 4월 로드맵</p>
+<ul><li>결산 데이터 리포트 공개 (신뢰 구축 콘텐츠)</li><li>재투자/확장 결정 (27년 4월+ 계획)</li><li>예비비 잔액 처리 결정</li><li>번아웃 리셋: 주 20h로 회귀 설계</li></ul>
+<div class="cal-meta"><span>예산: 툴 3만 + 실험 1만</span><span>KPI: 누적 200/1,000/3,000만 시나리오 결산, 최종 팔로워 8천-18만</span></div>
+<div class="gate"><b>관문/복구:</b> 결산 기준: 보수 달성=지속 / 현실 달성=확장 투자 / 미달=원인 리포트 후 재설정</div></div>
+<h3>주간 반복 루틴 (평일 심야 + 주말 보호)</h3>
+<div style="overflow-x:auto"><table><thead><tr><th>요일</th><th>작업 (시간대 포함)</th></tr></thead><tbody><tr><td class="nm">월</td><td class="ft">19-21시 트렌드 스캔·주제 선정 / 21-24시 스크립트 8-10본 배치 작성</td></tr><tr><td class="nm">화</td><td class="ft">19-23시 AI 영상 생성 배치 (승자 포맷 변형)</td></tr><tr><td class="nm">수</td><td class="ft">19-23시 편집·자막·썸네일·플랫폼별 리포맷</td></tr><tr><td class="nm">목</td><td class="ft">19-21시 업로드 스케줄링·커뮤니티 응답 / 21-24시 크몽 제안·납품</td></tr><tr><td class="nm">금</td><td class="ft">19-21시 주간 성과 분석 (완주율/팔로우전환) / 21-22시 리스크·정책 점검 (심야 작업 금지)</td></tr><tr><td class="nm">토</td><td class="ft">가족 시간 보장 (원칙) - 선택적으로 학습 2시간 이내</td></tr><tr><td class="nm">일</td><td class="ft">오후 2-3시 주간 리뷰 30분 + 다음 주 준비 + 백로그 정리</td></tr></tbody></table></div>
+<div class="note">번아웃 방지 원칙: 금요일 심야 작업 금지 · 토요일 완전 휴식(원칙) · 주 25-30h 상한. 창작자 52%가 번아웃 경험 (Billion Dollar Boy 조사 <span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span>)이라 지속가능성 설계가 성장 속도보다 중요합니다.</div>
+</section>
+
+<!-- ⑧ 검증 -->
+<section class="tab" id="tab-verify">
+<h2>검증·출처 (HSH 출력 검증 결과)</h2>
+<p class="lead">HSH 프레임워크의 출력 검증 단계를 그대로 반영했습니다. 모든 수치는 A/B/C 등급으로 투명하게 구분됩니다.</p>
+<div class="grid3">
+<div class="card"><div class="card-h">출처 신뢰도 분포</div><p class="ft">A (공식/1차): <b>16건</b><br>B (미디어/리서치): <b>46건</b><br>C (자기보고/추정): <b>8건</b><br>총 70건 인용</p></div>
+<div class="card"><div class="card-h">경쟁사 가격 검증</div><p class="ft">총 79종 중 공식 가격 페이지 확인 <b>44종 (56%)</b>. 미확인은 "미공개"로 표기하고 추정치를 만들지 않았습니다.</p></div>
+<div class="card"><div class="card-h">검증 제외 항목</div><p class="ft">한국 Shorts RPM 단독 표본, 한국 인스타 스폰서 공식 시세표 등 재현 가능한 공개 표본을 확보하지 못한 항목은 <b>값 없이 표기</b>하고 글로벌 범위로 대체 근거를 명시했습니다 (환각 방지 원칙).</p></div>
+</div>
+<h3>그로스 실증 로직 (전체 36건)</h3>
+<div style="overflow-x:auto"><table><thead><tr><th>주제</th><th>핵심 주장</th><th>상세</th><th>출처</th></tr></thead><tbody>
+<tr><td>1</td><td class="ft">TikTok For You 추천은 완주 같은 강한 관심 신호를 약한 위치·국가 신호보다 더 크게 반영한다고 공식 설명한다.</td><td class="ft dim">TikTok은 사용자가 더 긴 영상을 처음부터 끝까지 보는 행위를 강한 관심 신호의 예로 들며, 시청자와 제작자가 같은 국가인지보다 더 높은 가중치를 받는다고 밝혔다. 정확한 가중치 수치는 공개하지 않았다.</td>
+<td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://newsroom.tiktok.com/en-us/how-tiktok-recommends-videos-for-you" target="_blank" rel="noopener">TikTok Newsroom</a></td></tr>
+<tr><td>1</td><td class="ft">TikTok은 유기 영상·광고 크리에이티브 모두에서 초반 훅과 시청시간을 중시하도록 권고한다.</td><td class="ft dim">TikTok Ads 공식 가이드는 훅을 첫 6초에 우선 배치해 참여와 시청시간을 높이고, 콘텐츠 제안을 첫 3초 안에 소개하라고 권한다.</td>
+<td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://ads.tiktok.com/help/article/creative-best-practices" target="_blank" rel="noopener">TikTok Ads Help Center</a></td></tr>
+<tr><td>1</td><td class="ft">Instagram Reels의 2025년 핵심 랭킹 신호로는 시청시간, 도달당 좋아요, 도달당 공유가 제시됐다.</td><td class="ft dim">Adam Mosseri의 2025년 설명을 인용한 분석에 따르면 시청시간은 연결·비연결 도달 모두에 중요하며, 좋아요는 기존 팔로워 도달, 공유는 신규 도달에 상대적으로 더 중요하다. 플랫폼은 개별 신호의 정확한 가중치를 공개하지 않았다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.fanpagekarma.com/insights/instagram-reels-algorithm" target="_blank" rel="noopener">Fanpage Karma, Mosseri 설명 인용</a></td></tr>
+<tr><td>1</td><td class="ft">Instagram Reels는 상대 시청시간뿐 아니라 절대 시청시간도 함께 고려한다는 설명이 공개돼 있다.</td><td class="ft dim">Mosseri는 짧은 영상의 완주율만으로 긴 영상이 자동으로 불리해지는 것은 아니며, 시청 비율과 시청 초 수를 모두 본다고 설명했다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.fanpagekarma.com/insights/instagram-reels-algorithm" target="_blank" rel="noopener">Fanpage Karma, Mosseri 설명 인용</a></td></tr>
+<tr><td>1</td><td class="ft">YouTube는 Shorts를 포함한 추천에서 고정된 이상적 영상 길이보다 시청자 만족과 개별 채널의 유지율을 보라고 공식 안내한다.</td><td class="ft dim">YouTube Help는 보편적 최적 길이는 없다고 밝히고, 이탈 지점과 완주 여부를 확인할 수 있는 Audience Retention 곡선을 활용하라고 안내한다.</td>
+<td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://support.google.com/youtube/answer/16559651?hl=en" target="_blank" rel="noopener">YouTube Help</a></td></tr>
+<tr><td>1</td><td class="ft">YouTube는 Shorts 추천에서 최근성도 발견성에 유리한 조정 요인이 될 수 있다고 설명한다.</td><td class="ft dim">YouTube Help는 Shorts 피드가 짧고 트렌드성인 특성 때문에 최근성에 맞춰 조정될 수 있으며, 새 콘텐츠 발견에 적합하다고 명시한다.</td>
+<td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://support.google.com/youtube/answer/16559651?hl=en" target="_blank" rel="noopener">YouTube Help</a></td></tr>
+<tr><td>2</td><td class="ft">첫 3초 훅의 검증 가능한 공통 원칙은 가치 제안을 즉시 제시하는 것이다.</td><td class="ft dim">TikTok 공식 가이드는 콘텐츠의 제안 또는 가치 제안을 첫 3초 안에 소개하라고 권한다. 질문형·통계형·결과선공개형 중 어느 하나의 보편적 승자라는 공식 비교 실험은 확인되지 않았다.</td>
+<td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://ads.tiktok.com/help/article/creative-best-practices" target="_blank" rel="noopener">TikTok Ads Help Center</a></td></tr>
+<tr><td>2</td><td class="ft">서스펜스·놀라움·감정은 TikTok이 직접 제시하는 훅 유형이다.</td><td class="ft dim">TikTok은 훅-본문-마감의 3단 구조를 권하며, 초반 훅 예시로 suspense, surprise, emotion을 제시한다.</td>
+<td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://ads.tiktok.com/business/en-US/blog/creative-best-practices-top-performing-ads" target="_blank" rel="noopener">TikTok For Business</a></td></tr>
+<tr><td>2</td><td class="ft">TikTok 광고 연구에서는 광고 회상 효과의 90%가 첫 6초 안에 포착된다고 제시한다.</td><td class="ft dim">TikTok For Business는 첫 6초가 광고 회상 효과의 90%를 포착한다고 밝히며, 초반에 가치 제안을 전달하라고 권고한다. 이는 유료 광고 연구 결과이므로 유기 숏폼에 동일한 수치로 일반화하면 안 된다.</td>
+<td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://ads.tiktok.com/business/en-US/blog/creative-best-practices-top-performing-ads" target="_blank" rel="noopener">TikTok For Business</a></td></tr>
+<tr><td>2</td><td class="ft">결과 먼저 보여주기, 제품 화면 노출은 TikTok 광고 실험에서 브랜드 친밀도와 회상 향상과 연결됐다.</td><td class="ft dim">TikTok For Business는 제품을 화면에 보여 주는 광고가 브랜드 친밀도를 65%, 회상을 25% 높였다고 제시한다. 이는 결과물·데모를 초반에 노출하는 훅 설계의 근거로 활용할 수 있다.</td>
+<td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://ads.tiktok.com/business/en-US/blog/creative-best-practices-top-performing-ads" target="_blank" rel="noopener">TikTok For Business</a></td></tr>
+<tr><td>2</td><td class="ft">YouTube도 Shorts에서 첫 몇 초 안에 주목을 끌어 스크롤을 막으라고 공식 권고한다.</td><td class="ft dim">YouTube의 2025 Shorts 시작 가이드는 메시지를 빠르게 전달하고, 시청자가 넘기지 않도록 첫 몇 초에 주목을 끌라고 안내한다.</td>
+<td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://blog.youtube/creator-and-artist-stories/your-guide-to-getting-started-with-youtube-shorts" target="_blank" rel="noopener">YouTube Blog</a></td></tr>
+<tr><td>3</td><td class="ft">Buffer의 2026년 TikTok 분석에서는 일요일 오전 9시가 단일 최고 참여 시간으로 집계됐다.</td><td class="ft dim">Buffer는 약 700만 개 게시물을 분석해 일요일 오전 9시, 월요일 오후 1시, 일요일 오후 1시 순으로 높은 참여를 보고했다. 표준 시간대와 실제 잠재고객의 활동 시간에 맞춘 자체 검증이 필요하다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://buffer.com/resources/best-time-to-post-on-tiktok" target="_blank" rel="noopener">Buffer</a></td></tr>
+<tr><td>3</td><td class="ft">Sprout Social의 2026년 TikTok 분석은 화요일부터 목요일의 현지시간 오후 2시~6시를 전체 최고 구간으로 제시한다.</td><td class="ft dim">Sprout는 Buffer와 다른 결과로 평일 오후를 최적 구간으로 제시하고, 주말은 낮은 참여 구간으로 분류했다. 대규모 외부 집계끼리도 결과가 다르므로 단일 시간대를 보편 법칙으로 취급하면 안 된다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://sproutsocial.com/insights/best-times-to-post-on-tiktok" target="_blank" rel="noopener">Sprout Social</a></td></tr>
+<tr><td>3</td><td class="ft">Buffer의 약 1,000만 Instagram 게시물 분석에서는 목요일 오전 9시가 최고 도달 시간으로 제시됐다.</td><td class="ft dim">Buffer의 2026 통합 분석은 Instagram 최고 시간을 목요일 오전 9시로 제시한다. 이는 Reels만 분리한 수치가 아니라 Instagram 게시물 분석이라는 한계가 있다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://buffer.com/resources/best-time-to-post-social-media" target="_blank" rel="noopener">Buffer</a></td></tr>
+<tr><td>3</td><td class="ft">Buffer의 YouTube Shorts 분석에서는 금요일 오후 4시가 가장 높은 참여 시간으로 제시됐다.</td><td class="ft dim">Buffer는 Shorts의 강한 구간을 금·토 및 평일 저녁으로 보고했고, 금요일 오후 4시를 단일 최고 시간으로 제시했다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://buffer.com/resources/best-time-to-post-social-media" target="_blank" rel="noopener">Buffer</a></td></tr>
+<tr><td>3</td><td class="ft">TikTok의 공식 빈도 권고는 하루 1~4회 게시다.</td><td class="ft dim">Sprout Social이 인용한 TikTok 공식 가이드는 1일 1~4회 게시를 권하지만, 이는 품질·제작 여건과 무관한 의무 목표가 아니라 상한을 포함한 운영 가이드다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://sproutsocial.com/insights/how-often-to-post-on-social-media" target="_blank" rel="noopener">Sprout Social, TikTok 공식 가이드 인용</a></td></tr>
+<tr><td>3</td><td class="ft">Hootsuite의 2025 데이터에서는 실제 브랜드 TikTok 게시량 중앙 경향이 주 3.7회였다.</td><td class="ft dim">Hootsuite는 2025년 1분기 12개 업종 데이터를 바탕으로 TikTok 평균 게시 빈도를 주 3.7회로 제시하고, 권장 빈도는 주 3~5회로 안내했다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://blog.hootsuite.com/how-often-to-post-on-social-media/" target="_blank" rel="noopener">Hootsuite</a></td></tr>
+<tr><td>3</td><td class="ft">Instagram의 업계 평균 게시 빈도는 하루 1~2회로 제시됐다.</td><td class="ft dim">Sprout Social은 2024년 브랜드 운영 데이터를 바탕으로 Instagram 평균을 하루 1~2회로 제시했다. Reels만의 인과 효과가 아니라 전체 Instagram 운영 평균이다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://sproutsocial.com/insights/how-often-to-post-on-social-media" target="_blank" rel="noopener">Sprout Social</a></td></tr>
+<tr><td>4</td><td class="ft">0팔로워에서 1만까지의 기간은 공개된 사례에서 29~44일 같은 초고속 사례부터 1년 이상 사례까지 매우 넓게 분포한다.</td><td class="ft dim">29일 Instagram 사례, 30일 TikTok 사례, 44일 YouTube 사례와 1년 이상 YouTube 사례가 모두 공개돼 있다. 이들은 자기보고·개별 사례이며 일반적인 기대 기간을 뜻하지 않는다.</td>
+<td><span class="bdg bdg-c" title="블로그/자기보고/추정">C</span> <a href="https://marinamogilko.substack.com/p/how-long-it-takes-to-get-to-10k-subs" target="_blank" rel="noopener">개별 창작자 공개 회고</a></td></tr>
+<tr><td>4</td><td class="ft">Buffer의 신규 TikTok 실험은 30일간 34개 게시물로 1,194 팔로워를 얻었으며, 1만 달성은 보장되지 않는다는 현실적 비교점이다.</td><td class="ft dim">Buffer 소속 초보 창작자는 30일·34개 게시물·385,000 조회·1,194 신규 팔로워를 공개했다. 같은 기간 1만 사례와 비교하면 성장은 바이럴 편차가 크다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://buffer.com/resources/tiktok-experiment" target="_blank" rel="noopener">Buffer</a></td></tr>
+<tr><td>5</td><td class="ft">첫 유료 협찬에 필요한 보편적 최소 팔로워 수나 평균 소요 기간을 뒷받침하는 공개 업계 통계는 확인되지 않았다.</td><td class="ft dim">업계 자료는 팔로워 수보다 참여도·니치 적합성을 강조하며, 첫 협찬까지의 평균 개월 수는 제시하지 않는다. 따라서 '몇 달이면 첫 협찬' 같은 단정은 근거 부족이다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://manychat.com/blog/brands-that-work-with-micro-influencers/" target="_blank" rel="noopener">Manychat</a></td></tr>
+<tr><td>5</td><td class="ft">1,000~10,000 팔로워의 나노 크리에이터도 브랜드 협업 대상이 될 수 있지만, 무상 제품·제휴 수수료 형태일 수 있다.</td><td class="ft dim">Manychat은 1,000~10,000명을 나노 인플루언서로 구분하고, 1만 미만에서도 브랜드 딜이 가능하다고 설명한다. 다만 파트너십에는 무료 제품, 어필리에이트 수수료, 성과 보너스가 포함될 수 있어 모두 유료 협찬은 아니다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://manychat.com/blog/brands-that-work-with-micro-influencers/" target="_blank" rel="noopener">Manychat</a></td></tr>
+<tr><td>5</td><td class="ft">업계에서 통용되는 마이크로 인플루언서 범위는 대체로 1만~10만 팔로워다.</td><td class="ft dim">Sprout Social은 10,000~100,000 팔로워를 마이크로 인플루언서로 정의하며, 1,000~10,000은 나노 인플루언서로 구분한다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://sproutsocial.com/insights/microinfluencer-marketing" target="_blank" rel="noopener">Sprout Social</a></td></tr>
+<tr><td>6</td><td class="ft">YouTube 다국어 오디오 트랙은 2025년까지 제공되며, 제작자가 영상당 여러 언어 오디오를 추가할 수 있다.</td><td class="ft dim">YouTube는 제작자가 업로드 시 Subtitles Editor를 통해 다른 오디오 트랙을 추가하고, 기존 영상에도 추가할 수 있다고 안내했다.</td>
+<td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://blog.youtube/news-and-events/multi-language-audio-mrbeast-interview" target="_blank" rel="noopener">YouTube Blog</a></td></tr>
+<tr><td>6</td><td class="ft">YouTube 초기 다국어 더빙 테스트에서 비주 언어권 시청이 전체 시청시간의 15% 이상을 차지했다.</td><td class="ft dim">YouTube는 다국어 더빙 영상을 테스트한 제작자들의 경우 비주 언어 시청에서 온 시청시간이 15%를 넘었다고 발표했다. 이는 전체 제작자 평균이 아니라 초기 테스트 집단 결과다.</td>
+<td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://blog.youtube/news-and-events/multi-language-audio-mrbeast-interview" target="_blank" rel="noopener">YouTube Blog</a></td></tr>
+<tr><td>6</td><td class="ft">MrBeast는 YouTube 다국어 오디오 기능 초기 테스트에서 인기 영상을 11개 언어로 더빙했다.</td><td class="ft dim">YouTube 인터뷰는 MrBeast가 당시 인기 영상을 11개 언어로 더빙했으며, 메인 채널에 국제 시청자를 유입시키려 했다고 기록한다.</td>
+<td><span class="bdg bdg-a" title="공식/1차 자료">A</span> <a href="https://blog.youtube/news-and-events/multi-language-audio-mrbeast-interview" target="_blank" rel="noopener">YouTube Blog</a></td></tr>
+<tr><td>7</td><td class="ft">AI 버추얼 인플루언서 Aitana López는 2023년 7월 온라인에 등장한 뒤 약 40만 Instagram 팔로워 규모로 성장한 사례로 보도됐다.</td><td class="ft dim">Virtual Humans는 Aitana가 2023년 7월 첫 등장했고 약 40만 Instagram 팔로워, Amazon·Razer 등의 협업 및 월 최대 1만 유로 수익을 기록했다고 소개한다. '5개월'이라는 정확한 성장 기간을 입증하는 원출처는 이</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="http://virtualhumans.org/human/aitana-lopez" target="_blank" rel="noopener">Virtual Humans</a></td></tr>
+<tr><td>7</td><td class="ft">Aitana López는 2023년 11월 보도 당시 이미 Instagram 팔로워 12.7만 명 수준이었다.</td><td class="ft dim">Forbes는 2023년 11월 Aitana의 Instagram 팔로워가 127,000명이라고 보도했다. 이후 수치와 합쳐도 성장 속도의 정확한 월별 곡선은 공개 검증되지 않았다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.forbes.com/sites/lesliekatz/2023/11/24/this-ai-generated-influencer-can-pull-in-10000-euros-a-month/" target="_blank" rel="noopener">Forbes</a></td></tr>
+<tr><td>8</td><td class="ft">2025~2026 해시태그는 범용 도달 해킹보다 검색·주제 분류를 위한 관련성 신호로 접근하는 것이 근거에 부합한다.</td><td class="ft dim">TikTok·Instagram 소셜 검색 가이드는 구체적이고 주제와 맞는 태그를 사용해 콘텐츠 분류와 발견 가능성을 높이라고 권한다. 태그만으로 도달을 보장한다는 근거는 없다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://skedsocial.com/blog/social-search-how-to-optimize-for-discoverability-on-tiktok-and-instagram-2025" target="_blank" rel="noopener">Sked Social</a></td></tr>
+<tr><td>8</td><td class="ft">Instagram에서는 2025년 7월부터 공개 프로페셔널 계정 게시물이 Google 검색 결과에 노출될 수 있어 캡션 키워드의 중요성이 커졌다.</td><td class="ft dim">Metricool은 Instagram의 검색 노출 변화와 함께 캡션·프로필·해시태그의 검색어 관련성을 SEO 신호로 설명한다. 해당 분석은 플랫폼 자체 발표가 아닌 서드파티 해석이다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://metricool.com/instagram-seo/" target="_blank" rel="noopener">Metricool</a></td></tr>
+<tr><td>9</td><td class="ft">창작자 번아웃은 대규모 조사에서 절반 이상이 경험했다고 응답한 지속가능성 문제다.</td><td class="ft dim">Billion Dollar Boy의 미국·영국 창작자 1,000명 및 마케터 1,000명 조사에서 창작자의 52%가 커리어로 인한 번아웃을 경험했고, 주요 원인은 창작 피로 40%, 과도한 업무 31%, 지속적 화면 노출 27%였다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.billiondollarboy.com/news/over-half-of-creators-face-burnout" target="_blank" rel="noopener">Billion Dollar Boy</a></td></tr>
+<tr><td>9</td><td class="ft">번아웃 예방 수단으로는 업무 경계 설정, 정기 휴식, AI·예약 도구 활용이 가장 많이 언급됐다.</td><td class="ft dim">동일 조사에서 창작자는 업무·생활 경계 설정 38%, 정기 휴식 34%, AI 및 스케줄링 도구로 업무량 경감 32%를 예방책으로 꼽았다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.billiondollarboy.com/news/over-half-of-creators-face-burnout" target="_blank" rel="noopener">Billion Dollar Boy</a></td></tr>
+<tr><td>9</td><td class="ft">배치 제작은 아이디어, 카피, 촬영·비주얼 같은 유사 작업을 한 번에 묶어 일관성과 준비 시간을 높이는 운영 방식이다.</td><td class="ft dim">Buffer는 콘텐츠 배치 제작이 시간 절약, 일관된 게시, 아이디어 재활용에 도움이 된다고 설명하며, 한 세션에서 카피와 비주얼을 함께 제작하는 방식을 제안한다. 정량 절감률은 제시하지 않는다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://buffer.com/resources/content-batching/" target="_blank" rel="noopener">Buffer</a></td></tr>
+<tr><td>10</td><td class="ft">한국에서 숏폼 앱 1인당 월평균 사용시간은 2024년 8월 기준 52시간 2분으로 OTT 앱 7시간 17분의 약 7배였다.</td><td class="ft dim">연합뉴스는 와이즈앱·리테일 데이터를 인용해 해당 수치를 보도했다. 이는 전체 숏폼 앱 묶음과 OTT 앱 묶음의 비교이며 개별 플랫폼 이용시간은 아니다.</td>
+<td><span class="bdg bdg-b" title="신뢰 미디어/리서치사">B</span> <a href="https://www.yna.co.kr/view/AKR20250312145300017" target="_blank" rel="noopener">연합뉴스, 와이즈앱·리테일 데이터 인용</a></td></tr>
+<tr><td>10</td><td class="ft">국내 크몽 SNS 운영대행의 공개 월 패키지 예시는 월 44만~66만원 수준이다.</td><td class="ft dim">한 크몽 판매자는 월 8회 업로드 44만원, 월 12회 55만원, 월 16회 66만원을 제시하며 기획·디자인·게시글·해시태그·업로드를 포함한다고 명시한다. 개별 판매자 견적이지 시장 평균은 아니다.</td>
+<td><span class="bdg bdg-c" title="블로그/자기보고/추정">C</span> <a href="https://kmong.com/gig/542820" target="_blank" rel="noopener">크몽 판매 페이지</a></td></tr>
+<tr><td>10</td><td class="ft">국내 크몽의 다른 SNS 운영대행 공개 패키지는 월 49만~79만원 수준이다.</td><td class="ft dim">다른 판매자는 주 3회 카드뉴스 제작·업로드 월 49만원, 주 5회 월 69만원, 소통·광고 포함 프리미엄 월 79만원을 공개했다. 영상 숏폼 전문 대행 단가와는 구분해야 한다.</td>
+<td><span class="bdg bdg-c" title="블로그/자기보고/추정">C</span> <a href="https://kmong.com/gig/423568" target="_blank" rel="noopener">크몽 판매 페이지</a></td></tr></tbody></table></div>
+<h3>윤리·품질 QA 체크</h3>
+<div class="card"><ul style="margin-left:18px;font-size:13.4px">
+<li>✓ 과장 표현 배제: "보장"·"확실" 표현 없음, 모든 전망치에 "추정" 명시</li>
+<li>✓ 리스크 고지: 재무 탭 경고 박스 + 캘린더 게이트/복구 일정 포함</li>
+<li>✓ 편향 통제: 특정 툴 무근거 우대 없음, 경쟁사 약점도 균형 기술</li>
+<li>✓ 정책 준수: AI 라벨 의무 등 플랫폼 정책 6건 공식 출처(A) 수록</li>
+<li>✓ 구조 검증: 차트 데이터 = 본문 수치 동일 소스(hsh-data.json)</li>
+</ul></div>
+<div class="card"><div class="card-h">데이터 다운로드</div>
+<p class="ft">본 리포트의 전체 원본 데이터(JSON)를 내려받아 재분석할 수 있습니다.</p>
+<button class="dl" id="dlBtn">hsh-data.json 다운로드</button></div>
+</section>
+
+<footer>
+본 리포트는 2026-08-22 기준 공개 웹 자료 실측 조사를 기반으로 작성되었습니다. 상업 리서치 수치(B등급)는 추정치이며, 플랫폼 정책과 요금은 수시 변경되므로 실행 전 원 출처 재확인이 필요합니다. · HSH(Hybrid Symbiotic Hierarchy) 프레임워크 기반 생성
+</footer>
+</div>
+<script>
+const DATA = {"meta":{"generated":"2026-08-22","brief":{"track":"병행(단계적): 자체 AI 인플루언서 운영(9-11월) → 노하우 서비스화(12-1월) → 확장(2-3월)","budget":"100만원","horizon":"2026-09 ~ 2027-03 (7개월)","time":"평일 19:00~02:00 (지속가능 25-30h/주)","lang":"한국어 우선 → 자동 더빙/자막 다국화","risk":"안정 운영(정책 준수·계정 분산) + 월별 관문과 복구 일정 안내"}},"charts":{"months":["9월","10월","11월","12월","1월","2월","3월"],"cum":{"conservative":[0,0,5,20,55,110,200],"realistic":[0,0,15,95,285,585,1000],"aggressive":[0,0,20,170,610,1470,3000]},"monthly":{"conservative":[0,0,5,15,35,55,90],"realistic":[0,0,15,80,190,300,415],"aggressive":[0,0,20,150,440,860,1530]},"sources":{"conservative":{"kmong_service":[0,0,5,10,15,20,25],"affiliate":[0,0,0,5,10,15,15],"channel_ads":[0,0,0,0,10,20,30],"digital_product":[0,0,0,0,0,0,15],"sponsor":[0,0,0,0,0,0,5]},"realistic":{"kmong_service":[0,0,15,40,80,120,150],"affiliate":[0,0,0,10,10,10,15],"channel_ads":[0,0,0,10,30,50,70],"digital_product":[0,0,0,0,30,60,100],"sponsor":[0,0,0,20,40,60,80]},"aggressive":{"kmong_service":[0,0,20,60,120,200,280],"affiliate":[0,0,0,20,40,80,200],"channel_ads":[0,0,0,30,100,200,300],"digital_product":[0,0,0,0,80,200,350],"sponsor":[0,0,0,40,100,180,400]}},"budget":[42,12,18,28],"budgetLabels":["AI 툴 구독 42만","제작 자산 12만","광고 실험 18만","리스크 예비 28만"],"marketGrowth":{"years":[2024,2025,2026,2030],"im":[24,32.55,null,null],"vi":[null,11.22,15.9,62.67],"aivideo":[null,0.7168,0.847,3.35]},"catCount":[22,13,13,13,3,9,6],"catVerified":[18,13,3,7,0,0,3],"catNames":["AI 영상·아바타 생성","쇼트폼 자동화·재편집","AI 인플루언서·버추얼 휴먼","SNS 통합 관리 도구","중국 SNS 진입 지원","인플루언서 마케팅 플랫폼","페이스리스 자동화·코스"],"followers":{"conservative":[300,1000,2000,3500,5000,6500,8000],"realistic":[500,2000,5000,10000,18000,28000,40000],"aggressive":[800,3000,8000,20000,50000,100000,180000]},"verified":[44,35]},"brief":{"track":"병행(단계적): 자체 AI 인플루언서 운영(9-11월) → 노하우 서비스화(12-1월) → 확장(2-3월)","budget":"100만원","horizon":"2026-09 ~ 2027-03 (7개월)","time":"평일 19:00~02:00 (지속가능 25-30h/주)","lang":"한국어 우선 → 자동 더빙/자막 다국화","risk":"안정 운영(정책 준수·계정 분산) + 월별 관문과 복구 일정 안내"},"competitors":[{"name":"TopView.ai","cat":1,"priceUsd":null},{"name":"HeyGen","cat":1,"priceUsd":0},{"name":"Synthesia","cat":1,"priceUsd":0},{"name":"Argil","cat":1,"priceUsd":null},{"name":"Captions","cat":1,"priceUsd":0},{"name":"Higgsfield","cat":1,"priceUsd":0},{"name":"Runway","cat":1,"priceUsd":0},{"name":"Kling AI","cat":1,"priceUsd":0},{"name":"InVideo AI","cat":1,"priceUsd":0},{"name":"Pictory","cat":1,"priceUsd":0},{"name":"Fliki","cat":1,"priceUsd":0},{"name":"Vidnoz AI","cat":1,"priceUsd":0},{"name":"AKOOL","cat":1,"priceUsd":0},{"name":"D-ID","cat":1,"priceUsd":0},{"name":"Zebracat","cat":1,"priceUsd":0},{"name":"Creatify","cat":1,"priceUsd":0},{"name":"Arcads","cat":1,"priceUsd":null},{"name":"Icon","cat":1,"priceUsd":null},{"name":"Boolvideo","cat":1,"priceUsd":0},{"name":"Sora","cat":1,"priceUsd":20},{"name":"VEED","cat":1,"priceUsd":0},{"name":"Luma AI Dream Machine","cat":1,"priceUsd":0},{"name":"OpusClip","cat":2,"priceUsd":0},{"name":"Klap","cat":2,"priceUsd":14},{"name":"Munch","cat":2,"priceUsd":0},{"name":"Vizard","cat":2,"priceUsd":0},{"name":"2short.ai","cat":2,"priceUsd":0},{"name":"Submagic","cat":2,"priceUsd":0},{"name":"SendShort","cat":2,"priceUsd":0},{"name":"Revid.ai","cat":2,"priceUsd":0},{"name":"ShortMake","cat":2,"priceUsd":0},{"name":"Wisecut","cat":2,"priceUsd":0},{"name":"Chopcast","cat":2,"priceUsd":0},{"name":"Vidyo.ai","cat":2,"priceUsd":0},{"name":"Quso.ai","cat":2,"priceUsd":0},{"name":"Glambase","cat":3,"priceUsd":null},{"name":"The Influencer AI","cat":3,"priceUsd":19},{"name":"Influencer Studio","cat":3,"priceUsd":null},{"name":"Brud","cat":3,"priceUsd":null},{"name":"The Clueless","cat":3,"priceUsd":null},{"name":"Botika","cat":3,"priceUsd":null},{"name":"Lalaland.ai","cat":3,"priceUsd":null},{"name":"Generated Photos","cat":3,"priceUsd":0},{"name":"Soul Machines","cat":3,"priceUsd":null},{"name":"DeepBrain AI","cat":3,"priceUsd":0},{"name":"Sidus Studio X","cat":3,"priceUsd":null},{"name":"Pulse9","cat":3,"priceUsd":null},{"name":"Metaverse Entertainment","cat":3,"priceUsd":null},{"name":"Hootsuite","cat":4,"priceUsd":99},{"name":"Buffer","cat":4,"priceUsd":5},{"name":"Later","cat":4,"priceUsd":18.75},{"name":"Metricool","cat":4,"priceUsd":20},{"name":"SocialBee","cat":4,"priceUsd":29},{"name":"Vista Social","cat":4,"priceUsd":15},{"name":"Onlypult","cat":4,"priceUsd":null},{"name":"Postiz","cat":4,"priceUsd":0},{"name":"Sprout Social","cat":4,"priceUsd":199},{"name":"Publer","cat":4,"priceUsd":5},{"name":"SocialPilot","cat":4,"priceUsd":30},{"name":"Sendible","cat":4,"priceUsd":29},{"name":"Iconosquare","cat":4,"priceUsd":null},{"name":"KAWO","cat":5,"priceUsd":null},{"name":"WalktheChat","cat":5,"priceUsd":null},{"name":"China Skinny","cat":5,"priceUsd":null},{"name":"Upfluence","cat":6,"priceUsd":null},{"name":"Aspire","cat":6,"priceUsd":null},{"name":"GRIN","cat":6,"priceUsd":null},{"name":"CreatorIQ","cat":6,"priceUsd":null},{"name":"#paid","cat":6,"priceUsd":null},{"name":"Tagger by Sprout Social","cat":6,"priceUsd":null},{"name":"impact.com / creator","cat":6,"priceUsd":null},{"name":"레뷰 (REVU)","cat":6,"priceUsd":null},{"name":"태그바이 (TAGby)","cat":6,"priceUsd":null},{"name":"Faceless.video","cat":7,"priceUsd":14},{"name":"AutoShorts.ai","cat":7,"priceUsd":19},{"name":"Revid AI","cat":7,"priceUsd":39},{"name":"Vadoo AI","cat":7,"priceUsd":null},{"name":"InVideo AI","cat":7,"priceUsd":null},{"name":"Master Faceless YouTube Automation with AI, ChatGPT & Canva","cat":7,"priceUsd":null}],"stats":{"competitors":79,"verified":44,"marketItems":34,"growthItems":36,"credCount":{"A":16,"B":46,"C":8},"researchDate":"2026-08-22"}};
+// 탭
+document.getElementById('tabs').addEventListener('click', e=>{
+  const b = e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('nav.tabs button').forEach(x=>x.classList.toggle('on', x===b));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on', s.id==='tab-'+b.dataset.t));
+  window.scrollTo({top:0});
+});
+// 경쟁사 필터
+const cf=document.getElementById('catFilter'), nf=document.getElementById('nameFilter');
+function filterComp(){const c=cf.value,q=nf.value.toLowerCase();
+document.querySelectorAll('#compTable tbody tr').forEach(r=>{
+r.style.display=((!c||c==='0'||r.dataset.cat===c)&&r.dataset.name.includes(q))?'':'none';});}
+cf.addEventListener('change',filterComp);nf.addEventListener('input',filterComp);
+// 다운로드
+document.getElementById('dlBtn').addEventListener('click',()=>{
+const blob=new Blob([JSON.stringify(DATA,null,1)],{type:'application/json'});
+const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='hsh-ai-influencer-report-data.json';a.click();});
+
+Chart.defaults.font.family="'Pretendard','Noto Sans KR',sans-serif";
+Chart.defaults.font.size=12;
+const C={conservative:'#0e9f6e',realistic:'#2563eb',aggressive:'#d03c3c'};
+const N={conservative:'보수(200만)',realistic:'현실(1,000만)',aggressive:'도전(3,000만)'};
+const months=DATA.charts.months;
+
+// 시장 성장
+new Chart(chMarket,{type:'line',data:{labels:['2024','2025','2026','2030'],datasets:[
+{label:'인플루언서 마케팅($B)',data:DATA.charts.marketGrowth.im,borderColor:'#f59e0b',backgroundColor:'#f59e0b22',tension:.3,spanGaps:true},
+{label:'버추얼 인플루언서($B)',data:DATA.charts.marketGrowth.vi,borderColor:'#4f46e5',backgroundColor:'#4f46e522',tension:.3,spanGaps:true},
+{label:'AI 비디오 생성기($B)',data:DATA.charts.marketGrowth.aivideo,borderColor:'#0ea5e9',backgroundColor:'#0ea5e922',tension:.3,spanGaps:true}]},
+options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom'}}}});
+
+// 카테고리별
+new Chart(chCat,{type:'bar',data:{labels:DATA.charts.catNames.map(s=>s.length>12?s.slice(0,11)+'…':s),datasets:[
+{label:'조사 서비스 수',data:DATA.charts.catCount,backgroundColor:'#6366f1'},
+{label:'가격 공식 확인',data:DATA.charts.catCount.map((_,i)=>DATA.stats && null),backgroundColor:'#c7d2fe'}]},
+options:{maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{beginAtZero:true,ticks:{stepSize:2}}}}});
+
+// 포지셔닝
+new Chart(chPos,{type:'scatter',data:{datasets:[
+...DATA.competitors.filter(c=>c.priceUsd!==null).slice(0,70).map((c,i)=>({label:c.name,data:[[{x:Math.min(c.priceUsd/10,9.5)+Math.random()*1.2,y:1+Math.random()*2.2}]],backgroundColor:c.cat<=3?'#94a3b8':c.cat<=4?'#cbd5e1':'#e2e8f0',pointRadius:5,pointHoverRadius:8})),
+{label:'★ 우리 포지션 (A안: 투명한 공개 실험)',data:[{x:3,y:8.6}],backgroundColor:'#4f46e5',pointRadius:12,pointStyle:'rectRot'}]},
+options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label}}},
+scales:{x:{min:0,max:10,title:{display:true,text:'자동화 수준 →'}},y:{min:0,max:10,title:{display:true,text:'과정 공개성 ↑'}}}}});
+
+// 예산
+new Chart(chBudget,{type:'doughnut',data:{labels:DATA.charts.budgetLabels,datasets:[{data:DATA.charts.budget,backgroundColor:['#4f46e5','#0ea5e9','#f59e0b','#94a3b8'],borderWidth:2,borderColor:'#fff'}]},
+options:{maintainAspectRatio:false,cutout:'58%',plugins:{legend:{position:'right'}}}});
+
+// 누적 수익 (range 토글)
+function groupCum(arr,r){ // 누적값을 그룹별 재합산
+ if(r==='month')return arr;
+ const idx={quarter:[[0],[1,2,3],[4,5,6]],year:[[0,1,2,3],[4,5,6]]}[r];
+ return idx.map(g=>arr[g[g.length-1]]);
+}
+const rangeLabels={month:months,quarter:['26Q3(9월)','26Q4','27Q1'],year:['2026(9-12월)','2027(1-3월)']};
+let cumChart=new Chart(chCum,{type:'line',data:{labels:months,datasets:Object.keys(C).map(k=>({label:N[k],data:groupCum(DATA.charts.cum[k],'month'),borderColor:C[k],backgroundColor:C[k]+'18',tension:.3,fill:true,borderWidth:2.5}))},
+options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true,title:{display:true,text:'누적 수익 (만원)'}}}}});
+document.getElementById('segRange').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+document.querySelectorAll('#segRange button').forEach(x=>x.classList.toggle('on',x===b));const r=b.dataset.r;
+cumChart.data.labels=rangeLabels[r];
+Object.keys(C).forEach(k=>cumChart.data.datasets.find(d=>d.label===N[k]).data=groupCum(DATA.charts.cum[k],r));
+cumChart.update();});
+
+// 스택
+const srcLabels={kmong_service:'크몽/서비스',affiliate:'제휴',channel_ads:'채널광고',digital_product:'디지털상품',sponsor:'스폰서'};
+const srcColors={kmong_service:'#4f46e5',affiliate:'#0ea5e9',channel_ads:'#0e9f6e',digital_product:'#f59e0b',sponsor:'#e879f9'};
+function stackData(s){return Object.entries(DATA.charts.sources[s]).map(([k,v])=>({label:srcLabels[k],data:v,backgroundColor:srcColors[k],stack:'s'}));}
+let stackChart=new Chart(chStack,{type:'bar',data:{labels:months,datasets:stackData('conservative')},
+options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{x:{stacked:true},y:{stacked:true,beginAtZero:true,title:{display:true,text:'월 수익 (만원)'}}}}});
+document.getElementById('segSc').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+document.querySelectorAll('#segSc button').forEach(x=>x.classList.toggle('on',x===b));
+stackChart.data.datasets=stackData(b.dataset.s);stackChart.update();});
+
+// 팔로워
+new Chart(chFollower,{type:'line',data:{labels:months,datasets:Object.keys(C).map(k=>({label:N[k],data:DATA.charts.followers[k],borderColor:C[k],tension:.3,borderWidth:2.5}))},
+options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true,title:{display:true,text:'팔로워 (명)'}}}}});
+</script>
+</body></html>
