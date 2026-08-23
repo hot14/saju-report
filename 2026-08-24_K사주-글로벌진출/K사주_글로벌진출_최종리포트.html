@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-사주 글로벌 진출 최종 리포트 · HSH-P700 체인</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2129;--border:#30363d;--fg:#c9d1d9;--fg2:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#3fb950;--yellow:#d29922;--red:#f85149;--purple:#bc8cff;--pink:#ff7b72}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR","Apple SD Gothic Neo",Malgun Gothic,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1240px;margin:0 auto;padding:0 16px}
+header.hd{border-bottom:1px solid var(--border);background:linear-gradient(180deg,#161b22 0%,#0d1117 100%);padding:26px 0 18px}
+.hd .eyebrow{color:var(--accent);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.hd h1{color:var(--fg2);font-size:26px;margin:6px 0 4px;font-weight:700}
+.hd .sub{color:var(--muted);font-size:13px}
+.hero{background:linear-gradient(135deg,#1a2233 0%,#161b22 60%);border:1px solid var(--border);border-radius:10px;padding:20px 22px;margin-top:14px}
+.hero .en{font-size:22px;font-weight:700;color:var(--fg2)}
+.hero .ja{font-size:14px;color:var(--accent);margin-top:4px}
+.hero .roots{margin-top:10px;color:var(--purple);font-size:13.5px;font-weight:600}
+.hero .cat{margin-top:8px;color:var(--muted);font-size:12.5px}
+.badges{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.badge{display:inline-block;border:1px solid var(--border);border-radius:20px;padding:3px 11px;font-size:12px;color:var(--muted);background:var(--panel)}
+.badge b{color:var(--fg)}
+.badge.pass{border-color:rgba(63,185,80,.5);color:var(--green)}
+.badge.warn{border-color:rgba(210,153,34,.5);color:var(--yellow)}
+/* verdict banner */
+.verdicts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 4px}
+.vbox{border-radius:10px;padding:14px 16px;border:1px solid}
+.vbox .vt{font-size:12px;letter-spacing:.06em;font-weight:700;text-transform:uppercase}
+.vbox .vv{font-size:20px;font-weight:800;margin:2px 0 6px}
+.vbox p{font-size:12.5px;color:var(--muted)}
+.vbox.pass{border-color:rgba(63,185,80,.45);background:rgba(63,185,80,.07)}
+.vbox.pass .vt,.vbox.pass .vv{color:var(--green)}
+.vbox.no{border-color:rgba(248,81,73,.45);background:rgba(248,81,73,.06)}
+.vbox.no .vt,.vbox.no .vv{color:var(--red)}
+/* KPI */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+.kpi{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;position:relative}
+.kpi .k{font-size:12px;color:var(--muted)}
+.kpi .v{font-size:24px;font-weight:800;color:var(--fg2);margin:2px 0}
+.kpi .d{font-size:11.5px;color:var(--muted)}
+.kpi.g .v{color:var(--green)}.kpi.b .v{color:var(--accent)}.kpi.y .v{color:var(--yellow)}
+/* tabs */
+.tabbar{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--border);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+.tabbar .wrap{display:flex;gap:2px;padding:0 8px}
+.tab-btn{flex:0 0 auto;border:0;background:transparent;color:var(--muted);font-size:13px;padding:11px 12px;cursor:pointer;border-bottom:2px solid transparent;font-family:inherit}
+.tab-btn:hover{color:var(--fg)}
+.tab-btn.on{color:var(--fg2);border-bottom-color:#f78166;font-weight:600}
+.tab-btn .n{display:inline-block;min-width:18px;color:var(--accent);font-size:11px;font-weight:700}
+/* sections */
+main{padding:20px 0 60px}
+section.tab{display:none;animation:fadein .25s ease}
+section.tab.on{display:block}
+@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+h2.tt{color:var(--fg2);font-size:19px;margin:6px 0 4px;font-weight:700}
+h2.tt .no{color:var(--accent);font-size:13px;font-weight:700;margin-right:6px}
+.lead{color:var(--muted);font-size:13px;margin-bottom:16px}
+h3.th{color:var(--fg2);font-size:15px;margin:26px 0 10px;font-weight:700;border-left:3px solid var(--accent);padding-left:9px}
+h3.th:first-of-type{margin-top:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.card h4{color:var(--fg2);font-size:13.5px;margin-bottom:8px}
+.card p,.card li{font-size:13px;color:var(--fg)}
+.card ul{padding-left:18px}
+.card li{margin:4px 0}
+.hl{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:13px}
+.hl b{color:var(--fg2)}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+.callout{border-left:3px solid var(--accent);background:rgba(88,166,255,.06);border-radius:0 8px 8px 0;padding:11px 14px;font-size:13px;margin:12px 0}
+.callout.g{border-left-color:var(--green);background:rgba(63,185,80,.06)}
+.callout.y{border-left-color:var(--yellow);background:rgba(210,153,34,.06)}
+.callout.r{border-left-color:var(--red);background:rgba(248,81,73,.06)}
+/* table */
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:12.5px;min-width:640px}
+th{background:var(--panel2);color:var(--fg2);text-align:left;padding:8px 10px;border:1px solid var(--border);font-weight:600;white-space:nowrap}
+td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.pos{color:var(--green);font-weight:600}.neg{color:var(--red);font-weight:600}
+.tag{display:inline-block;font-size:10.5px;border-radius:10px;padding:1px 8px;font-weight:700;letter-spacing:.03em}
+.tag.A{background:rgba(63,185,80,.15);color:var(--green)}
+.tag.B{background:rgba(88,166,255,.15);color:var(--accent)}
+.tag.C{background:rgba(210,153,34,.15);color:var(--yellow)}
+.tag.est{background:rgba(188,140,255,.15);color:var(--purple)}
+.tag.pass{background:rgba(63,185,80,.15);color:var(--green)}
+.tag.no{background:rgba(248,81,73,.15);color:var(--red)}
+.tag.hold{background:rgba(139,148,158,.18);color:var(--muted)}
+/* chart */
+.chart{width:100%;height:380px;background:var(--panel);border:1px solid var(--border);border-radius:10px;margin:10px 0}
+.chart.tall{height:460px}
+.chart.short{height:300px}
+.chart.err{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
+.cap{font-size:11.5px;color:var(--muted);margin:-4px 0 12px}
+/* source tooltip */
+.st{display:inline-block;width:15px;height:15px;line-height:15px;text-align:center;border-radius:50%;background:var(--panel2);border:1px solid var(--border);color:var(--muted);font-size:10px;font-style:normal;cursor:help;position:relative;margin-left:4px}
+.st:hover::after{content:attr(data-t);position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:#010409;border:1px solid var(--accent);color:var(--fg2);padding:8px 11px;border-radius:8px;font-size:11.5px;white-space:normal;width:280px;z-index:99;box-shadow:0 8px 24px rgba(0,0,0,.5);line-height:1.5}
+.st:hover::before{content:"";position:absolute;bottom:115%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--accent);z-index:99}
+/* controls */
+.ctrl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0}
+.seg{display:inline-flex;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--panel)}
+.seg button{border:0;background:transparent;color:var(--muted);padding:7px 16px;font-size:13px;cursor:pointer;font-family:inherit;border-right:1px solid var(--border)}
+.seg button:last-child{border-right:0}
+.seg button.on{background:rgba(88,166,255,.15);color:var(--fg2);font-weight:700}
+.btn{border:1px solid var(--border);background:var(--panel);color:var(--fg);border-radius:8px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:inherit}
+.btn:hover{border-color:var(--accent);color:var(--fg2)}
+/* slider */
+.sliders{display:grid;grid-template-columns:1fr 1fr;gap:18px;background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin-bottom:10px}
+.sliders label{font-size:12.5px;color:var(--muted);display:block;margin-bottom:6px}
+.sliders label b{color:var(--fg2)}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.readout{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:13px;margin-top:10px}
+.readout .big{font-size:22px;font-weight:800}
+/* misc */
+.meter{height:10px;background:#21262d;border-radius:6px;overflow:hidden;border:1px solid var(--border)}
+.meter i{display:block;height:100%;border-radius:6px}
+.mrow{margin:8px 0}
+.mrow .lb{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:3px}
+.qbox{background:#010409;border:1px solid var(--border);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:10px 14px;margin:8px 0;font-size:12.5px}
+.qbox .qm{color:var(--fg2);font-style:italic}
+.qbox .qs{color:var(--muted);font-size:11.5px;margin-top:4px}
+.copybox{background:#010409;border:1px solid var(--accent);border-radius:8px;padding:12px 15px;font-size:13px;margin:8px 0;color:var(--fg2)}
+.copybox .lab{font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.05em;margin-bottom:4px;text-transform:uppercase}
+footer{border-top:1px solid var(--border);padding:26px 0 40px;color:var(--muted);font-size:12px}
+footer .vbadge{display:inline-block;margin-bottom:10px;border:1px solid rgba(63,185,80,.4);color:var(--green);border-radius:16px;padding:3px 12px;font-size:12px;font-weight:700}
+.pmap{position:relative;height:340px;background:var(--panel);border:1px solid var(--border);border-radius:10px;margin:10px 0}
+.pmap .axis-x,.pmap .axis-y{position:absolute;color:var(--muted);font-size:11px}
+.pmap .axis-x{bottom:6px;right:12px}.pmap .axis-y{top:8px;left:10px}
+.dot{position:absolute;transform:translate(-50%,-50%);border-radius:50%;background:var(--muted);opacity:.75}
+.dot.me{background:var(--green);box-shadow:0 0 0 5px rgba(63,185,80,.2);opacity:1}
+.dot .dl{position:absolute;top:-20px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:10.5px;color:var(--fg2)}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2,.grid3,.verdicts,.sliders{grid-template-columns:1fr}}
+@media(max-width:520px){.kpis{grid-template-columns:1fr 1fr}.hd h1{font-size:20px}.chart{height:300px}}
+</style>
+</head>
+<body>
+<header class="hd"><div class="wrap">
+<div class="eyebrow">HSH-P700 체인 · 최종 아카이브 리포트 · P712/P713</div>
+<h1>K-사주 글로벌 진출 최종 리포트</h1>
+<div class="sub">페이즈 1 하이퍼로컬라이즈 코어 · 일본 T1 + 영어권 오가닉 · 예산 300만원 · 주 20h · 기한 2027-03-31 · base_date 2026-08-24 · schema 3.8</div>
+<div class="hero">
+<div class="en">"Your Korean birth chart, explained clearly. Calculations shown." <span style="font-size:11px;color:#8b949e">(C26)</span></div>
+<div class="ja">「韓国式四柱推命を、わかりやすく。計算過程もすべて公開。」</div>
+<div class="roots">"Shared East Asian roots, interpreted through Korean Saju practice." <span style="font-size:11px;color:#8b949e">(C27)</span></div>
+<div class="cat">SajuRoot | Korean Four Pillars / 韓国式四柱推命 · 차트 근거 표기: "Chart basis / この読みの根拠" (C28)</div>
+</div>
+<div class="badges">
+<span class="badge">환율 <b>$1=₩1,384 · ¥1=₩8.72</b> (2026-08-21, C25 통일)</span>
+<span class="badge">엔진 <b>manseryeok 2.0.0</b> · 골든 테스트 11/11 (D2)</span>
+<span class="badge">정정 <b>C13~C30 18건</b> 반영</span>
+<span class="badge">요구 매핑 <b>R01~R22</b> 22/22</span>
+<span class="badge pass">G-1 · G-A · G-P · G-2A~D 전부 PASS</span>
+</div>
+</div></header>
+<nav class="tabbar"><div class="wrap" id="nav">
+<button class="tab-btn on" data-t="t01"><span class="n">1</span>실행요약</button>
+<button class="tab-btn" data-t="t02"><span class="n">2</span>시장·벤치마킹</button>
+<button class="tab-btn" data-t="t03"><span class="n">3</span>일본 시장</button>
+<button class="tab-btn" data-t="t04"><span class="n">4</span>국가 매트릭스</button>
+<button class="tab-btn" data-t="t05"><span class="n">5</span>커뮤니티 니즈</button>
+<button class="tab-btn" data-t="t06"><span class="n">6</span>코어 설계</button>
+<button class="tab-btn" data-t="t07"><span class="n">7</span>보안·법제</button>
+<button class="tab-btn" data-t="t08"><span class="n">8</span>신점 매칭</button>
+<button class="tab-btn" data-t="t09"><span class="n">9</span>그로스·발견</button>
+<button class="tab-btn" data-t="t10"><span class="n">10</span>사업모델</button>
+<button class="tab-btn" data-t="t11"><span class="n">11</span>재무 시나리오</button>
+<button class="tab-btn" data-t="t12"><span class="n">12</span>자동화</button>
+<button class="tab-btn" data-t="t13"><span class="n">13</span>플레이북</button>
+<button class="tab-btn" data-t="t14"><span class="n">14</span>운영 SOP·KPI</button>
+<button class="tab-btn" data-t="t15"><span class="n">15</span>QA·정정</button>
+<button class="tab-btn" data-t="t16"><span class="n">16</span>프롬프트 세트</button>
+<button class="tab-btn" data-t="t17"><span class="n">17</span>증거</button>
+</div></nav>
+<main class="wrap">
+
+<!-- ============ TAB 1 실행요약 ============ -->
+<section class="tab on" id="t01">
+<h2 class="tt"><span class="no">01</span>실행요약</h2>
+<p class="lead">HSH-P700 체인 전체(P700 차터 → L1 실측 9종 → 게이트 검증 → L2 설계 → 자동화 → QA 배터리 → 독립 검증 → 브랜딩 레드팀 정정 C26~C30)의 확정 산출물 요약. 모든 수치는 본문 <code>__DATASETS</code>(D01~D15)에서 파생되며 자가검증을 통과했습니다.</p>
+<div class="verdicts">
+<div class="vbox pass"><div class="vt">최종 QA 판정 (G-2A~G-2D)</div><div class="vv">G-2D PASS</div>
+<p>레드팀 45공격 치명타 0 · 루브릭 8축 66/80(최저 7) · 통계 오류율 3.1%&lt;5% · 결함 10건 전부 경미 · 요구 충족 22/22</p></div>
+<div class="vbox no"><div class="vt">브랜딩 레드팀 (독립)</div><div class="vv">CONDITIONAL NO-GO 4.2/10</div>
+<p>"계산 정확=구매" 착각 지적. 수술 5개(C26~C30) 체인 반영 <b style="color:#3fb950">완료</b> · 런칭 전 재검증 대기 · 타깃 J1∩J2로 축소</p></div>
+</div>
+<div class="kpis" id="kpiGrid"></div>
+<div class="grid2">
+<div class="card"><h4>핵심 전략 (P700 확정)</h4>
+<ul>
+<li><b>페이즈 1 = K-사주 하이퍼로컬라이즈 코어 초집중</b> → 페이즈 2 일본 집중+영어권 오가닉+매칭 베타 → 페이즈 3 티어 확장. T4 순차 하이브리드: 게이트 통과 시에만 다음 트랙 해금.</li>
+<li>브랜드 안 A(기본): "한국이 계승한 명리 체계를 세계 어디 출생자에게나 정확하게 계산, 사용자의 언어와 문화로 해석" + C26~C28 완화 카피.</li>
+<li>K-후킹 = K-테크 정확성 문법(진태양시·절기 공개). 시간대 3종 세트(KST 환산·진태양시·절기 연도 처리)를 명시하는 사주 앱 관측 0개 = 검증된 화이트스페이스.</li>
+<li>제약: 예산 300만원 상한 · 주 20h(피크 4주 25h) · 오가닉 트래픽만 · 6법권역 · CC-9 윤리 게이트.</li>
+<li>의사결정 기본값: 가격 JPY·USD 이중 표기(DP-1) · 상담사 후정산(DP-2) · 계정 EN/JA 분리(DP-3).</li>
+</ul></div>
+<div class="card"><h4>체인 검증 상태</h4>
+<div class="tw"><table style="min-width:0">
+<tr><th>게이트/검증</th><th>판정</th><th>요지</th></tr>
+<tr><td>G-1 교차검증</td><td><span class="tag pass">PASS</span></td><td>교차점 14개 정합 · 병합 2건 완료 · 환각 후보 0</td></tr>
+<tr><td>G-A 자동화 설계</td><td><span class="tag pass">PASS</span></td><td>V-블록 30/30 · 치명 B·C·F 실증 경로 지정(D+7~13)</td></tr>
+<tr><td>G-P 플레이북</td><td><span class="tag pass">PASS</span></td><td>DAG 오류 0 · 시간·의존성·정책·게이트 정합</td></tr>
+<tr><td>G-2A~D QA 배터리</td><td><span class="tag pass">PASS</span></td><td>치명 0 · 중대 0 · 오류율 3.1% · 22/22</td></tr>
+<tr><td>V 독립 검증(메타)</td><td><span class="tag B">조건부 PASS</span></td><td>15항목 13 완전일치·2 Δ&lt;0.1% · V-01~03 즉시 수정</td></tr>
+<tr><td>D2 엔진 리스크</td><td><span class="tag pass">해소</span></td><td>manseryeok 임의 경도 지원 확정(GRADE_A) · 골든 11/11</td></tr>
+<tr><td>SajuRoot 상표(예비)</td><td><span class="tag B">통과</span></td><td>KIPRIS·J-PlatPat·USPTO·마드리드 충돌 0 · 유사 2건 주의</td></tr>
+<tr><td>브랜딩 레드팀</td><td><span class="tag no">NO-GO</span>→수술 반영</td><td>4.2/10 · C26~C30 수술 5개 반영 · D-21 사전 검증 추가</td></tr>
+</table></div></div>
+</div>
+<div class="callout g"><b>12월 누적 흑자 전환 · 1월 투입 전액 회수(현실안).</b> 270주문 × 순기여 15,687원 − 투입 300만원 = <b>+1,235,490원(약 +124만)</b>. 12월 누적 +132,440원 흑자, 1월 누적 총기여 3,294,270원으로 300만원 전액 회수. 킬라인 K1~K3이 하방을 차단합니다.</div>
+<div class="callout y"><b>실행 시점 필수 과업(체인 명시):</b> ① manseryeok 골든 테스트 회귀 CI 등록(D+3, D2로 사전 해소) ② 블라인드 판별 시험 5인(D+7~9) ③ Paddle AUP 사전 문의(D+1~7) ④ 치명 자동화 B·C·F 실증(D+7~13) ⑤ SajuRoot 변리사 최종 확인 · 도메인 4종 조기 등록.</div>
+</section>
+
+<!-- ============ TAB 2 시장 ============ -->
+<section class="tab" id="t02">
+<h2 class="tt"><span class="no">02</span>시장·벤치마킹 (P701)</h2>
+<p class="lead">글로벌 스피리추얼 시장 실측. 시장 규모는 출처 간 3.4배 편차를 정직 공개하고 작업가설로 분해했습니다. 생존자 편향 통제를 위해 침체·실패 4사를 필수 수록.</p>
+<div class="grid3">
+<div class="card"><h4>시장 규모 · 3출처 교차</h4>
+<ul>
+<li>글로벌 점성앱 <b>$4.7B(TBRC 2025)~$16.1B(Econ)</b> · 편차 3.4배(정의 차이)</li>
+<li>작업가설: 앱 IAP [추정] $300M~1B</li>
+<li>인간 상담 마켓 미국만 <b>$23억 · CAGR 5.5%</b>(IBISWorld 2025)</li>
+<li>인도 베다: Astrotalk FY25 매출 ₹1,176Cr ≈ <b>$136M, +85% YoY</b> · 어드바이저 4.1만 · 매출 80% 재구매</li>
+</ul>
+<span class="st" data-t="출처: TBRC 2025 / 이코노미스트 / IBISWorld 2025 / Astrotalk FY25 공시 · as_of 2026-08-24 · GRADE_A/B 혼재 · P701 원결과">i</span></div>
+<div class="card"><h4>테이크레이트 실측</h4>
+<ul>
+<li>Keen <b>54%</b> / Kasamba <b>61%</b>(공식 어드바이저 약관, GRADE_A)</li>
+<li>Astrotalk 약 20% [추정 C] · 앱스토어 15~30%</li>
+<li>우리 매칭(페이즈 2): <b>25%</b> 파격 호조건 → 확보 속도 우선</li>
+</ul>
+<span class="st" data-t="출처: Keen/Kasamba 공식 약관 · as_of 2026-08-24 · GRADE_A">i</span></div>
+<div class="card"><h4>전환·리텐션 (RevenueCat 11.5만 앱)</h4>
+<ul>
+<li>프리미엄 무료형→유료(D35) 중앙값 <b>2.1%</b> <span class="tag C">C21</span></li>
+<li>하드 페이월 10.7%(상위 10% 38.7%)</li>
+<li>트라이얼→유료: 17~32일 42.5% vs ≤3일 25.5%</li>
+<li>1년 리텐션: 무료형 28% / 하드페이월 27%</li>
+</ul>
+<span class="st" data-t="출처: RevenueCat 11.5만 앱 표본 · as_of 2026-08-24 · GRADE_B · 앱 구독 표본 → 웹 단건 이동 맥락 라벨(C21)">i</span></div>
+</div>
+<div class="grid2">
+<div class="card"><h4>프리미엄 배수 (국내 기준 대비 실측)</h4>
+<div class="tw"><table style="min-width:0">
+<tr><th>세그먼트</th><th>배수</th><th>근거</th></tr>
+<tr><td>AI 단건</td><td class="num">1.9~3.8×</td><td>P701 실측</td></tr>
+<tr><td>인간 분당 마켓</td><td class="num">2.1~4.4×</td><td>P701 실측</td></tr>
+<tr><td><b>동일 한국 원법 영어판</b></td><td class="num"><b>2.3~3.7×</b></td><td>KoreaTravelEasy $66/40분 ÷ 국내 중앙 · 최적 근거</td></tr>
+<tr><td>Fiverr 최저 대비</td><td class="num">최대 14×</td><td>기그 분포</td></tr>
+</table></div>
+<p class="note">T1/T2 가격 2.5× 채택 = 실측 밴드 2.3~3.7 하단(무명+AI 단독 지불의사 상한 고려)</p></div>
+<div class="card"><h4>블렌디드 ARPU 벤치</h4>
+<div class="tw"><table style="min-width:0">
+<tr><th>서비스</th><th>ARPU</th></tr>
+<tr><td>Co-Star</td><td class="num">$0.09/MAU/월 ($400K ÷ 430만 MAU)</td></tr>
+<tr><td>Nebula</td><td class="num">$1.67/이용자/년 ($50M ARR ÷ 3,000만 주장)</td></tr>
+<tr><td>Astrotalk</td><td class="num">≈$4.5/사용자/월</td></tr>
+<tr><td>유료자 연 RLTV</td><td class="num">북미 $32 · 서유럽 $26 · 인도/동남아 $14</td></tr>
+</table></div></div>
+</div>
+<h3 class="th">벤치마크 13사</h3>
+<div class="tw"><table>
+<tr><th>서비스</th><th>유형</th><th>가격</th><th>지표</th><th>비고</th></tr>
+<tr><td>Co-Star</td><td>앱+단건</td><td>Pro $8.99/월 · 단건 $2.99~11.99</td><td>MAU 430만 · 스토어 $400K/월</td><td>2026-07 Midjourney 인수</td></tr>
+<tr><td>CHANI</td><td>구독</td><td>$11.99/월</td><td>$500K/월</td><td>반-AI 포지셔닝</td></tr>
+<tr><td>Nebula</td><td>주간구독+마켓</td><td>$7.99/주</td><td>ARR $50M · 3,000만</td><td>하드페이월+다크패턴 논란</td></tr>
+<tr><td>Keen</td><td>리딩마켓</td><td rowspan="4">$1~16/분</td><td rowspan="4">테이크 54~61%</td><td rowspan="4">Ingenio 롤업</td></tr>
+<tr><td>Kasamba</td><td>리딩마켓</td></tr>
+<tr><td>Purple Garden</td><td>리딩마켓</td></tr>
+<tr><td>Mysticsense</td><td>리딩마켓</td></tr>
+<tr><td>Astrotalk(인도)</td><td>분당마켓</td><td>₹5~200/분</td><td>매출 $136M · 어드바이저 4.1만</td><td>IPO 준비</td></tr>
+<tr><td>Labyrinthos</td><td>학습+크레딧</td><td>크레딧 $0.99~6.99</td><td>-</td><td>단건 반복 모델</td></tr>
+<tr><td>Fiverr spiritual</td><td>기그</td><td>$10~150+</td><td>타로 기그 1,076개</td><td>AI 기그 증가</td></tr>
+<tr><td>The Pattern</td><td>구독</td><td rowspan="3">$4.99~14.99/월</td><td rowspan="3">-</td><td rowspan="3">구독/마켓/미디어</td></tr>
+<tr><td>Sanctuary</td><td>마켓</td></tr>
+<tr><td>Astrology Zone</td><td>미디어</td></tr>
+</table></div>
+<div class="chart tall" id="c07"></div><div class="cap">c07 경쟁 산점도 · x=대표 가격(USD) · y=월 매출 추정(로그) · [추정] 표기 항목은 공개 지표 부재로 P701 밴드 추정</div>
+<h3 class="th">실패·침체 4사 (생존자 편향 통제)</h3>
+<div class="grid2">
+<div class="card"><ol>
+<li><b>Co-Star</b>: 투자 $21M·등록 3,000만인데 박스권 매각(화제성≠전환)</li>
+<li><b>Rimfactory(사주 스타트업)</b>: 2026-08-21 점술 포기·로봇 데이터 피벗. iOS 결제 장애로 유료 중단 → <b>사주 단독 과금화 난제 실증</b></li>
+<li><b>Kasamba</b>: 16년 정체 후 PE 매각</li>
+<li><b>Sanctuary</b>: 시드 이후 무조달·축소</li>
+</ol>
+<div class="callout r" style="margin-top:8px">Rimfactory 교훈 → "코어만으로 수익화" 낙관 금지, 과금 3유형 조합(무료 T0 + 단건 T1/T2 + 페이즈2 매칭) 필수. 자동화 전 컨시어지 베타(20명 인터뷰+20건 수동 판매) 선행.</div></div>
+<div class="card"><h4>화이트스페이스 판정</h4>
+<p>직접 경쟁(사주+글로벌 영어)은 존재하나 <b>전부 마이크로 스케일</b>(Saju World 평가 19건, SAJU 평점 2.6 등). <b>"정확한 시간대 엔진(진태양시·절기) + Nebula급 과금 UX + 인간 마켓" 교집합은 미점유.</b> 시간대 3종 세트를 명시하는 사주 앱은 관측 범위 내 0개.</p>
+<p class="note">G-2A R2 공격 반영: "기술 해자" 서술은 "콘텐츠·브랜드 자산"으로 축소 표기(3주 벤치마크 가능 지적 수용)</p></div>
+</div>
+</section>
+
+<!-- ============ TAB 3 일본 ============ -->
+<section class="tab" id="t03">
+<h2 class="tt"><span class="no">03</span>일본 시장 심층 (P702)</h2>
+<p class="lead">일본어 1차 출처 비중 약 85%. 진입 판정 <b>CONDITIONAL GO(일본 레그)</b>: 시장 997억엔·5/6 세그먼트 성장[야노 A] / 과금 모델 표준화[A] / 방한 일본인 365만+20% 성장, 韓国占い 이미 OTA 상품화[A/B] / 四柱推命 "命術=심층 감정" 포지션[B].</p>
+<div class="kpis">
+<div class="kpi b"><div class="k">점술 6대 시장 합산</div><div class="v">997억엔</div><div class="d">2023 · 스피리추얼 광의 4조2,418억엔 · 야노 A</div></div>
+<div class="kpi b"><div class="k">이용자 페르소나</div><div class="v">여성 90%</div><div class="d">30~50대 80% · 목적 85% 연애·남녀관계(야노 A)</div></div>
+<div class="kpi b"><div class="k">방한 일본인(2025)</div><div class="v">365만</div><div class="d">역대 최고 · 2026 상반기 +20.4% · 개인여행 90%+ · 서울 집중 76.8%</div></div>
+<div class="kpi b"><div class="k">PayPay QR 이용률</div><div class="v">46.3~65.1%</div><div class="d">조사별 상이(C19 정정) · 캐시리스 42.8%(METI) · 카드 57%</div></div>
+</div>
+<h3 class="th">시장 구조 (997억엔, 2023)</h3>
+<div class="tw"><table style="min-width:0">
+<tr><th>채널</th><th>규모</th><th class="num">비중</th><th>과금 실측(공식 GRADE_A)</th></tr>
+<tr><td>미디어(챗·메일)</td><td class="num">372억엔</td><td class="num">37.3%</td><td>ヴェルニ 180~600엔/분(20엔 단위 22단계·신규 4,000pt) · ピュアリ 280~460엔/분(첫 10분 무료) · ココナラ 100~420엔/분(3,000엔 쿠폰) · LINE占い 110엔~/분</td></tr>
+<tr><td>대면</td><td class="num">287억엔</td><td class="num">28.8%</td><td>체험 상품: KKday·Klook·HIS·한큐 패키지</td></tr>
+<tr><td>전화</td><td class="num">216억엔</td><td class="num">21.7%</td><td>1회 평균 약 6,000엔 · 분당 220~440엔</td></tr>
+<tr><td>스킬매칭</td><td class="num">65억엔</td><td class="num">6.5%</td><td>-</td></tr>
+<tr><td>기타</td><td class="num">57억엔</td><td class="num">5.7%</td><td>-</td></tr>
+</table></div>
+<h3 class="th">단가 앵커 (P708 가격 설계 직결)</h3>
+<div class="grid3">
+<div class="hl"><b>챗</b> 분당 90~250엔(평균 200엔) · 진입 110~200엔</div>
+<div class="hl"><b>회당제 중앙 5,000엔</b> · 심층 四柱推命 업셀 기준점 · 메일 감정 2,400~10,000엔</div>
+<div class="hl"><b>웹감정 밴드</b> 3,000~15,000엔 · 앱 구독 300~1,000엔/월 [추정] · 1.5~2배 프리미엄 가능 [추정]</div>
+</div>
+<h3 class="th">세그먼트 J1~J3 (일본어 카피 확정본)</h3>
+<div class="grid3">
+<div class="card"><h4>J1 · 四柱推命 경험 여성 30-50</h4>
+<p>유료 전환 잠재 600만±[추정] · 채널 X·LINE·명검색</p>
+<div class="copybox"><div class="lab">카피</div>「日本の四柱推命と読み比べられる、韓国式鑑定のはじめの一冊。」</div>
+<p class="note">상품: PDF 감정서 3,000~5,000엔 → 채팅 · 오퍼: 첫 감정 50%</p></div>
+<div class="card"><h4>J2 · K-컬처 접촉층 20-30</h4>
+<p>800~1,200만[추정] · TikTok·IG</p>
+<div class="copybox"><div class="lab">카피</div>「推しと同じ生年月日で読む、K-Styleの自分運勢。」</div>
+<p class="note">무료 데일리 → 아이돌 궁합 유료 · KPI 공유율·D7</p></div>
+<div class="card"><h4>J3 · 방한 예정자</h4>
+<p>IG 여행 · 리텐션 급감(시즌성) 한계 명시</p>
+<div class="copybox"><div class="lab">카피</div>「ソウルの旅が変わる、到着前に読む1枚の運勢ガイド。」</div>
+<p class="note">D-7 무료 운세 → 도착 전 이메일 감정 1,000~2,000엔 → 현지 연계</p></div>
+</div>
+<div class="callout y"><b>브랜딩 레드팀 반영:</b> 초기 타깃은 J1~U3 전체가 아니라 <b>J1∩J2(28-44세 여성, 유료 경험+K-컬처 접점) 1개로 축소</b>. 미국 확장은 일본 유료 20건 이후.</div>
+<h3 class="th">四柱推命 위상 · 규제 · 체험 신호</h3>
+<div class="grid2">
+<div class="card"><ul>
+<li>선호도: 손금 40% &gt; 타로 25.5% &gt; <b>四柱推命 14%</b>(마이나비 n=200, B) · 전문 블로그 75개(타로 270·점성 127 다음)</li>
+<li>IID(B): "한국·중국은 四柱推命 인기, 일본은 九星気学 주류" → J1 비교 포지셔닝의 근거</li>
+<li>규제: 特商法 제11조 표시+2022 개정 최종 확인 화면 의무(A) · <b>의료·생사·투자 상담 금지가 업계 약관 표준</b>(A) · 스테마 규제(2023.10 景表法) 어필리에이트 "광고" 표시 필수 · 국민생활센터 점술 피해 연 1,000건+(A)</li>
+</ul></div>
+<div class="card"><h4>방한·체험 신호 11건</h4>
+<ul>
+<li>KKday 워킹 투어·홍대 체험 / Klook 1:1 / HIS / 한큐 패키지(무당 체험 15명 한정)</li>
+<li>코네스트 명동 四柱카페 리뷰 <b>494건·4.9점</b></li>
+<li>Netflix "Battle of Fates"(r/Korea 50댓글) · 개인 증언 3건(GRADE_C)</li>
+<li>일본인 해외여행의 25%가 한국 · 90%+ 개인여행</li>
+</ul></div>
+</div>
+</section>
+
+<!-- ============ TAB 4 국가 매트릭스 ============ -->
+<section class="tab" id="t04">
+<h2 class="tt"><span class="no">04</span>국가 매트릭스 (P702B)</h2>
+<p class="lead">score = (0.30수요 + 0.20접근성 + 0.20 K컬처 + 0.15규제(역) + 0.15가격파워) × 20 · 전 15개국 검산 완료 · 민감도 3종 공개. S2(수익화 집중 .25/.15/.10/.15/.35)에서 <b>US 88.0 &gt; JP 87.0 역전</b> → 페이즈 2 미국 병행의 정량 근거.</p>
+<div class="ctrl">
+<div class="seg" id="scoreSeg"><button class="on" data-s="s1">S1 기본 가중치</button><button data-s="s2">S2 수익화 집중</button></div>
+<span class="note" style="margin:0">S2는 5축 데이터가 확보된 10개국만 재계산 표시(AU/PH/FR/DE/CN 축 미기재, C23·V 확인)</span>
+</div>
+<div class="chart" id="c08"></div><div class="cap">c08 국가 스코어 바 · S1/S2 토글 · 점수는 D04.axes에서 공식으로 실시간 재계산</div>
+<div class="chart" id="c09"></div><div class="cap">c09 국가별 매출 스택(현실안) · 국가 믹스 초기 가정: 일본 60 / 영어권 30 / 기타 10 (P702B → P709)</div>
+<h3 class="th">전국 스코어 카드</h3>
+<div class="tw"><table>
+<tr><th>#</th><th>국가</th><th>티어</th><th class="num">S1</th><th>5축(수요/접근/K컬처/규제/가격)</th><th class="num">S2</th><th>비고</th></tr>
+<tr><td>1</td><td>KR 홈베이스</td><td>홈</td><td class="num"><b>94.0</b></td><td>5/5/5/4/4</td><td class="num">90.0</td><td>협의 1.4조~광의 4조원</td></tr>
+<tr><td>2</td><td>JP</td><td><b>T1</b></td><td class="num"><b>90.0</b></td><td>5/4/5/4/4</td><td class="num">87.0</td><td>S2에서 US에 역전되나 T1 유지(집중 효율)</td></tr>
+<tr><td>3</td><td>US</td><td>T1(병행)</td><td class="num">84.5</td><td>4.5/4/4/3.5/5</td><td class="num"><b>88.0</b></td><td>S2 최상위 · 사이킥 $23억·성인 30% 연 1회+(Pew)</td></tr>
+<tr><td>4</td><td>TW</td><td>T2</td><td class="num">84.0</td><td>4.5/4.5/4.5/4/3</td><td class="num">78.0</td><td>음력설 압도적 피크(安太歲·流年盤) · 경험률 92%(MIC)</td></tr>
+<tr><td>5</td><td>SG</td><td>T2</td><td class="num">81.5</td><td>4/4.5/3.5/4/4.5</td><td class="num">84.0</td><td>영어권 게이트웨이 · 연간 오디트 S$88</td></tr>
+<tr><td>6</td><td>HK</td><td>T2</td><td class="num">76.5</td><td>4/4/3.5/3.5/4</td><td class="num">77.5</td><td>화교 경유지</td></tr>
+<tr><td>7</td><td>VN</td><td>T2</td><td class="num">75.0</td><td>4/4/5/3/2</td><td class="num">65.0</td><td>투비(土,www) 문화 · Tết 피크 · K-컬처 5점</td></tr>
+<tr><td>7</td><td>CA</td><td>T2</td><td class="num">75.0</td><td>3.5/4/3.5/4/4</td><td class="num">76.5</td><td>-</td></tr>
+<tr><td>9</td><td>UK</td><td>T2</td><td class="num">74.5</td><td>4/3.5/3.5/3.5/4</td><td class="num">76.0</td><td>Fraudulent Mediums Act 1951 폐지→입증 책임 강화 · ASA 가이드</td></tr>
+<tr><td>9</td><td>TH</td><td>T3</td><td class="num">74.5</td><td>4/4/4.5/3.5/2</td><td class="num">65.5</td><td>점술 산업 약 $1.5억/년 · LINE 생태</td></tr>
+<tr><td>11</td><td>AU</td><td>T3</td><td class="num">73.0</td><td colspan="2">축 미기재(C23)</td><td>S2 재계산 불가(V 보고)</td></tr>
+<tr><td>12</td><td>PH</td><td>T3</td><td class="num">69.5</td><td colspan="2">축 미기재(C23)</td><td>-</td></tr>
+<tr><td>13</td><td>FR</td><td>T3</td><td class="num">68.0</td><td colspan="2">축 미기재(C23)</td><td>-</td></tr>
+<tr><td>14</td><td>DE</td><td>T3</td><td class="num">63.0</td><td colspan="2">축 미기재(C23)</td><td>-</td></tr>
+<tr><td>15</td><td>CN</td><td>와치</td><td class="num">54.0</td><td>규제 1점(역산)</td><td>-</td><td>진입 금지 후보 · S3 비관 시 47.0 추가 하락 · 화교는 TW/HK/SG 경유</td></tr>
+</table></div>
+<h3 class="th">영어권·T2 세그먼트</h3>
+<div class="tw"><table>
+<tr><th>세그먼트</th><th>정의</th><th>상품·가격</th><th>카피</th></tr>
+<tr><td>U1 타로 헤비</td><td>영어권 점성·타로 헤비유저</td><td>차트 PDF $9.99</td><td>"Your birth chart, decoded by a Korean master system"</td></tr>
+<tr><td>U2 K-팝 차세대</td><td>아이돌 콘텐츠 접촉층</td><td>무료 아이돌 궁합(바이럴)</td><td>공개 생년월일만 · 미성년 제외 · 성향 해석만</td></tr>
+<tr><td>U3 아시안계</td><td>해외 아시안 디아스포라</td><td>$5 미니</td><td>"사주, in English - the reading your grandma trusted"</td></tr>
+<tr><td>TW1 자미두수 비교층</td><td>八字·紫微斗數 경험자</td><td>NT$880 比較盤</td><td>비교 포지셔닝</td></tr>
+<tr><td>TW2 MZ 소액</td><td>대만 MZ 소액 결제층</td><td>NT$150</td><td>행동결제 20대 73.2%(수발부 2024)</td></tr>
+<tr><td>SG1 연간 오디트</td><td>싱가포르 직장인</td><td>S$88</td><td>연간 리뷰 상품</td></tr>
+<tr><td>UK-B2 하이브리드</td><td>영국 구독+단건</td><td>£45</td><td>ASA 준수 카피</td></tr>
+</table></div>
+<div class="callout"><b>민감도 요약:</b> S1 K-컬처 강조 시 VN·TH 상승 · S2 수익화 집중 시 US 88.0 &gt; JP 87.0 역전 · S3 규제 비관 시 TW·SG가 안전 코어, CN 47.0 추가 하락(와치 유지 확정). ▲고정관념 경계 주석 4건(일본·미국·홍콩·영국) 원결과 승계 유지.</div>
+</section>
+
+<!-- ============ TAB 5 커뮤니티 ============ -->
+<section class="tab" id="t05">
+<h2 class="tt"><span class="no">05</span>커뮤니티 니즈 실측 (P703)</h2>
+<p class="lead">관측 2026-08-24 · Reddit JSON/스토어 RSS/유튜브 API 라이브 수집(GRADE_A 다수) · 원문 27건 verbatim 보존(원결과 수록분). 핵심: <b>명확 수요 실재(소수·지속적)</b> + <b>최대 공백 = 영어 자료 부재</b> + <b>계산 정합성 불신 = 우리 엔진의 차별화 실증</b>.</p>
+<h3 class="th">핵심 발견 6</h3>
+<div class="grid2">
+<div class="card"><ol>
+<li><b>명확 수요 실재</b>: r/AskAstrologers 직접 문의 → "I do! DM me" · 점신 미국 스토어 평가 2,121건 · FORCETELLER 517건 · Creatrip 사주 리포트 누적 7,000건+/평점 4.9</li>
+<li><b>영어 자료 부재 = 최대 공백</b>: 학습 콘텐츠 전부 소형 채널(수백~3천 뷰) vs 여행 체험 콘텐츠 23만~30만 뷰 → 교육·계산 콘텐츠 공급 부재가 곧 기회</li>
+<li><b>계산 정합성 신뢰 문제(치명 단서)</b>: "다른 계산기와 일주가 다르다" 불만 → 진태양시·절기 엔진 차별화가 실제 유저 불만으로 검증됨</li>
+</ol></div>
+<div class="card"><ol start="4">
+<li><b>진입 장벽 실증</b>: 점신 1성 다수 = 해외 번호/결제 장벽 → 이메일 기반 글로벌 진입 틈새</li>
+<li><b>바이럴 트리거</b>: Netflix "Battle of Fates" · 데이팅쇼 · K-pop 아이돌 사주(일본 X "98%やった！") · MBTI 대체 인식</li>
+<li><b>태그 오염 경고</b>: X #saju는 BL 팬덤 태그 충돌 → 태그 규모를 수요 지표로 직용 금지(P706/P706B 승계)</li>
+</ol></div>
+</div>
+<h3 class="th">니즈 4구간</h3>
+<div class="chart short" id="c13"></div><div class="cap">c13 니즈 4구간 도넛 · 정성 관측 기반 정성 분류 [추정] · 구간 정의는 하단 표</div>
+<div class="tw"><table>
+<tr><th>구간</th><th>정의</th><th>트리거</th><th>장벽</th><th>전략</th></tr>
+<tr><td><b>명확</b></td><td>점성 커뮤니티 직접 문의층+한국산 앱 해외 유저</td><td>K-콘텐츠·여행</td><td>영어 자원·결제·계산 신뢰</td><td>계산기+Chart basis 직격</td></tr>
+<tr><td><b>잠재</b></td><td>여행/무당 콘텐츠 30만 뷰 시청층·TikTok·일본 K-pop 팬</td><td>트렌드 콘텐츠</td><td>인지도(사주≠Ba Zi≠타로 구분 실패)</td><td>J2 K-컬처 경유 · U2 바이럴</td></tr>
+<tr><td><b>무관</b></td><td>r/japan 180만 구독 saju 0건 · 일본은 콘텐츠 소비형</td><td>-</td><td>'한국산 차별성' 각인 전까지 대중 직접 수요 낮음</td><td>대면 집중 접근 금지 · 콘텐츠로 간접</td></tr>
+<tr><td><b>거부</b></td><td>회의론 댓글 지지율 최상위(28↑, 165↑)</td><td>-</td><td>유사과학 인식</td><td>설득 금지 · 무료 체험+투명성(entertainment 포지션)</td></tr>
+</table></div>
+<h3 class="th">편견 패턴 4종 + 반박 (EN/JA 확정본)</h3>
+<div class="grid2">
+<div class="card"><h4>P1 유사과학/사기 우려</h4>
+<div class="copybox"><div class="lab">EN</div>"Saju doesn't ask you to believe anything - it's a structured reading of birth-time patterns, so try one free chart and judge how specific it is for yourself."</div>
+<div class="copybox"><div class="lab">JA</div>「サジュは信じるかどうかではなく、生年月日時から命式を構造的に読む枠組みです。まず無料で命式だけ出して、その具体性をご自身で確かめてみてください。」</div></div>
+<div class="card"><h4>P2 한국 전용/영어 자원 없음</h4>
+<div class="copybox"><div class="lab">EN</div>"You don't need Korean or hanja to start - saju's core is just five elements and eight characters..."</div>
+<div class="copybox"><div class="lab">JA</div>「ハンザや韓国語ができなくても大丈夫です。サジュの基本は五行と8文字だけ...」</div></div>
+<div class="card"><h4>P3 "같은 생일=같은 운" 오해</h4>
+<div class="copybox"><div class="lab">EN</div>"Unlike a single sun sign, saju combines year, month, day and hour pillars into vastly more chart combinations than 12 zodiac signs - that granularity is the point."</div>
+<div class="copybox"><div class="lab">JA</div>「年・月・日・時の4柱を組み合わせて12星座よりはるかに細かい命式を作ります。その分解能こそがサジュの価値です。」</div></div>
+<div class="card"><h4>P4 광고 의심("this is an ad")</h4>
+<div class="copybox"><div class="lab">EN</div>"trustworthy readers publish their method, pricing and the full chart logic up front..."</div>
+<p class="note">계산 메타 공개(P704C)가 곧 반박 수단 · 전부 설득 금지·투명성 원칙</p></div>
+</div>
+<h3 class="th">앱 리뷰 마이닝 → 제품 기능 반영</h3>
+<div class="grid2">
+<div class="card"><h4>칭찬 신호</h4><ul><li>"accurate" / "AI therapist" / "daily saju horoscope seems more accurate"(서양 점성 대비 사주 정확 인지) · Co-Star 대비 만족</li></ul></div>
+<div class="card"><h4>불만 Top 5 → 설계 반영</h4><ul>
+<li>① 해외 번호 불가(점신) → <b>이메일 가입</b></li>
+<li>② 계산기 간 일주 불일치 → <b>계산 메타 공개</b></li>
+<li>③ 결제 후 콘텐츠 접근 실패 → <b>즉시 접근</b></li>
+<li>④ 광고 5개 피로 → <b>무광고</b></li>
+<li>⑤ 개인정보 수정 불가 → <b>DSR 14일 SLA</b></li>
+</ul></div>
+</div>
+<div class="callout y"><b>관측 한계(G-2C 승계):</b> X·TikTok·IG 비로그인 관측(빙산의 일각) · 스토어 리뷰 한국어권 혼재 · 일본어 스토어 리뷰 표본 부족(일본 수요는 X·블로그·note 대체 관측, 인용 6건).</div>
+</section>
+
+<!-- ============ TAB 6 코어 설계 ============ -->
+<section class="tab" id="t06">
+<h2 class="tt"><span class="no">06</span>코어 설계 (P704·P704B·P704C·P704D·D2)</h2>
+<p class="lead">명리 로컬라이제이션 엔진 + 해석 콘텐츠 품질 + 다국어 아키텍처. 최대 불확실성이었던 manseryeok 해외 출생 지원은 <b>D2 실행 검증으로 해소(GRADE_A)</b>. 환각 방지 4규칙·Chart basis 스키마가 상시 작동합니다.</p>
+<h3 class="th">라이브러리 판정</h3>
+<div class="tw"><table style="min-width:0">
+<tr><th>lib</th><th>판정</th><th>근거</th></tr>
+<tr><td><b>manseryeok 2.0.0 (MIT)</b></td><td><span class="tag pass">주력 채택</span></td><td>trueSolarTime{longitude, applyEquationOfTime, applyHistoricalDst} 실존 · 한국 DST 12회+1954-61 UTC+8:30 자동 반영 · 절기 UTC 절대 순간 · KASI 정본 1391-2049+6tail · 임의 경도 지원 D2 실행 확정</td></tr>
+<tr><td>lunar-javascript 1.7.7 / lunar-typescript 1.8.6</td><td><span class="tag B">보조</span></td><td>교차검증·중국식 대조 · UTC+8 고정 → 한국 절기 경계 1시간차 가능 · 早子/晚子 13시진 구분 존재</td></tr>
+<tr><td>soroche</td><td><span class="tag no">기각</span></td><td>npm 404(존재 안 함) · 시드팩트 오류 정정 → 대체 후보 waterbeside/lunisolar·ziweiknows/ziwei-chart</td></tr>
+</table></div>
+<h3 class="th">엔진 5축 확정 설계</h3>
+<div class="grid2">
+<div class="card"><h4>축1 진태양시</h4><ul>
+<li>TST = LST + Δλ×4분 + EoT · 균시차 실측 <b>−14분15초~+16분25초</b>(비대칭)</li>
+<li>도시별 보정: 서울 −32.1분 / 도쿄 +18.8분 / 뉴델리 −21.2분 / 상하이 +5.9분</li>
+<li>반시간대 일반화 λ_zone=offset분/4(인도 82.5°E·네팔 86.25°E)</li></ul></div>
+<div class="card"><h4>축2 절기</h4><ul>
+<li>절입은 UTC 절대 순간 · 월주 12절 · 년주 입춘 단독</li>
+<li>입춘 실측: 2025-02-03 23:10 / 2026-02-04 05:02 KST(교차 일치)</li>
+<li>국내 실무 경계: 2010-02-04 07:47:51생 기준 07:47=기축년/07:48=경인년</li></ul></div>
+<div class="card"><h4>축3 자시</h4><ul>
+<li>한국 실무 23:30~01:30 표기 관행 · dayBoundary 3모드('midnight'|'jasi'|'splitJasi')</li>
+<li><b>기본=야자시(당일)</b> · UI 자시 배지+두 일주 병기+사용자 선택</li></ul></div>
+<div class="card"><h4>축4 DST · 축5 남반구</h4><ul>
+<li>DST: spring-forward gap 입력 거부 · fall-back overlap 사용자 선택 · 한국 DST 12회+1954-61 UTC+8:30 삼중 일치</li>
+<li>남반구: <b>기본=불필요설(다수설)</b> · 고급 옵션=계절 가중/완전 반전(月지 충 반전+대운 재계산) · "학파 미확정" 배지</li></ul></div>
+</div>
+<div class="callout g"><b>학파 정책:</b> 기본값 = <b>B(출생지 현지 표준시, tzdb 이력 포함) + C(진태양시) "정밀 모드" 옵션</b>. A(KST 환산)는 비권장 문서만. 시진 경계 ±40분 출생 시 카드 알림("진태양시 적용 시 시주가 X→Y"). "다른 계산기와 왜 다른가" 4요인(경도·EoT·DST·자시 관법) 투명 공개.</div>
+<h3 class="th">D2 실행 검증 · 골든 테스트 11/11 (2026-08-24, Node v26.5.0, npm 실설치)</h3>
+<div class="grid2">
+<div class="card"><h4>사용법 확정</h4><ul>
+<li>입력 시각 = KST 환산값(예: 뉴욕 06:00 EDT → 19:00 KST 입력)</li>
+<li>trueSolarTime.longitude = 출생지 경도 → (경도−135°)×4분 자동 보정</li>
+<li>EoT 정상 작동(Date 객체 전달 시 2/12 −14.2분, 11/3 +16.5분)</li>
+<li>주의: equationOfTimeMinutes는 Date 객체 필수(숫자 2개 전달 시 조용한 NaN) · KST 환산·해외 DST 처리는 호출자(서버리스) 책임</li></ul>
+<p class="note">폴백(수동 UTC 오프셋) 불필요 → 기본 경로 확정 · P711A D+2~3은 "확인·회귀 CI 등록"으로 축소</p></div>
+<div class="card"><h4>골든 테스트 결과 전승</h4><div class="tw"><table style="min-width:0">
+<tr><th>케이스</th><th>결과</th><th>판정</th></tr>
+<tr><td>도쿄 07:05 (139.69°E)</td><td>진태양시 07:20 진시 → 경진(辰)</td><td>✓</td></tr>
+<tr><td>뉴욕 06:00 EDT (−74.01°)</td><td>05:04 묘시 → 기묘(卯)</td><td>✓</td></tr>
+<tr><td>상파울루 23:30 (−46.63°)</td><td>23:21 자시 → 갑자(子)</td><td>✓</td></tr>
+<tr><td>뉴델리 07:10 IST (77.21°)</td><td>06:59 묘시 경계 → 정묘(卯)</td><td>✓</td></tr>
+<tr><td>서울 1990-05-15 07:05</td><td>기묘시주(README 예시 일치)</td><td>✓</td></tr>
+<tr><td>서울 1958-06-15 10:00 DST ON/OFF</td><td>병진(진시)/정사(사시) 구분</td><td>✓</td></tr>
+<tr><td>입춘 04:32 vs 05:32 (2026)</td><td>년주·월주 전환(을사 기축→병오 경인)</td><td>✓</td></tr>
+<tr><td>야자시 3모드 (2024-03-10 23:30)</td><td>midnight 계유 임자 / jasi 갑술 갑자 / split 계유 갑자</td><td>✓</td></tr>
+<tr><td>시각 없음(hour 미입력)</td><td>RangeError → 임의 채움 금지 자동(HP-4)</td><td>✓</td></tr>
+</table></div><p class="note">세부 케이스 분해 포함 11/11 통과 · 테스트 12종 설계(#11 1958 서울 이중 DST, #12 1965 상하이 vs 우루무치 등)는 P711A 골든 파일로 회귀</p></div>
+</div>
+<h3 class="th">콘텐츠·다국어 (P704B·P704D)</h3>
+<div class="grid2">
+<div class="card"><h4>리딩 구조·품질</h4><ul>
+<li><b>6섹션</b>: Chart Overview(시간대 보정 표준 문구 EN/JA 고정) / Element Balance / Ten-Gods Highlights / Year Ahead(가능성 구간) / Practical Guidance / Method &amp; Policy · 티어: 미니 3문장·단건 4섹션·프리미엄 6+질문3</li>
+<li><b>십성 템플릿 10종 × 신강/신약</b> EN/JA 각 2-3문장 · 편관=七殺 "압박을 추진력으로" 뉴트럴 재구성, 공포 톤 금지</li>
+<li>오행 10상태 "명리의 관행적 처방" 라벨 의무 · 문화 3계층(톤·프레임·지리 SH-MODE 3옵션)</li>
+<li>Barnum 루브릭 5축 통과 40/50+특이성≥7 · <b>블라인드 시험 8단계(5인, 식별률≥70%, 50-60% 의심존)</b> <span class="tag C">C24: 실행 전 설계 기준</span> · 금지 패턴 20종 정규식 자동 스캔</li>
+<li>시즌 템플릿 4종(New Year 12개월·Career·Relationship·Couple ±1 균형) · 예시 3종 자가 채점 43/42/41 전부 통과(1995-06-15 07:30 런던 BST 보정 포함)</li></ul></div>
+<div class="card"><h4>다국어 아키텍처 (P704D)</h4><ul>
+<li>로드맵: P1 EN+JA → P2 +ZH-TW → P3 +ES·TH(판정 3조건: 방문 500+/리드 20+/월 TCO 5만↓)</li>
+<li><b>3계층</b>: A UI(ICU·폴백) / <b>B 리딩 팩 3분리(templates/terms/tone, 코드 0줄 변경)</b> / C Azure 통역+glossary</li>
+<li><b>termbase 67항목</b>(십성10+오행5+천간10+지지12+개념30) · A등급 native_reviewed 필수</li>
+<li>파이프라인: EN 마스터→MT 벤치마크→후편집→LQA 16/20→릴리스 · TCO 언어당 초기 [60~120만]·월 [7~15만]</li></ul>
+<h4 style="margin-top:12px">환각 방지 4규칙</h4><ul>
+<li>① 천문 계산 결정론 코드만(LLM 재연산 즉시 폐기) ② 해석은 근거 태그(<b>Chart basis</b>: {text, evidence:[{pillar, source, rule_id}]}, C28) 통과분만 · 근거 0개 reject ③ 학파 정책 상시 표시 ④ hour=null → 시주 null 고정</li></ul></div>
+</div>
+<div class="card"><h4>십성 어휘표 확정 (EN/JA)</h4>
+<div class="tw"><table style="min-width:0">
+<tr><th>십성</th><th>EN</th><th>JA</th><th>십성</th><th>EN</th><th>JA</th></tr>
+<tr><td>비견</td><td>peer</td><td>比肩</td><td>편재</td><td>venturer</td><td>偏財</td></tr>
+<tr><td>겁재</td><td>challenger</td><td>劫財</td><td>정재</td><td>steward</td><td>正財</td></tr>
+<tr><td>식신</td><td>nurturer</td><td>食神</td><td>편관</td><td>commander</td><td><b>七殺</b>(일본 관행)</td></tr>
+<tr><td>상관</td><td>maverick</td><td>傷官</td><td>정관</td><td>authority</td><td>正官</td></tr>
+<tr><td>편인</td><td>explorer</td><td>偏印</td><td>정인</td><td>scholar</td><td><b>印綬</b>(일본 관행)</td></tr>
+</table></div><p class="note">점성술 유비는 배지 의무(EN "Analogy, not equivalence..." / JA 「あくまで類比です...」 / KO "점성술 비유일 뿐") · G-1 병합에서 양측 독립 작성 어휘 100% 일치 확인(이중 작성 검증 효과)</p></div>
+</section>
+
+<!-- ============ TAB 7 법제 ============ -->
+<section class="tab" id="t07">
+<h2 class="tt"><span class="no">07</span>보안·법제 (P707·P707B)</h2>
+<p class="lead">조회일 2026-08-24, 법제처·각국 공식 원문 기준. <b>⚠️ 법률 자문 아님 · 런칭 전 전문가 최종 확인 필요.</b> 시드팩트 오류 4건 사전 정정 완료(C13~C16).</p>
+<div class="grid2">
+<div class="card"><h4>결제 최종 판정</h4><ul>
+<li><b>Stripe: 한국 거주 사업자(개인 포함) 직접 가입 불가</b>(공식 45개국 목록, GRADE_A) · 미국 LLC 경유만 가능</li>
+<li><b>Paddle(MoR): 한국 사업자 이용 가능(A)</b> · 수수료 5%+$0.50/건 · 100개국 세무 대행 · <b>단, 리딩 용역은 AUP 심사 통과 불확실 → 사전 문의 필수(D+1~7)</b></li>
+<li>국내 PG: 해외카드 수취 가능(요금 별도) · 일본 캐리어·편의점 미지원 → 페이즈 2 일본 집중 시 KOMOJU(Degica) 검토</li>
+<li>권장: 초기 Paddle(디지털 리포트 중심 → 심사 통과 가능성 상대적 높음) + 국내 PG 백업</li></ul></div>
+<div class="card"><h4>법제처 라이브 확인 3건 (P712Q, 2026-08-24)</h4><ul>
+<li>전자상거래법 <b>제17조 제2항 제5호</b>(디지털콘텐츠 제공 개시 후 철회 불가)+제6호 고지 조치</li>
+<li>개인정보보호법 <b>제28조의8</b>(국외이전 · 동의 시 5개 항목 고지)</li>
+<li>표시광고법 <b>제3조</b>(허위·과장)</li></ul>
+<p class="note">사전 정정(C13~C16): 대법원 <b>2016도12460</b>(2017.11.9. 사기죄) · 개보법 제28조의8 · 부가세 제21~25조 · 표광법 제3조</p></div>
+</div>
+<h3 class="th">점술 규제 4권역</h3>
+<div class="tw"><table>
+<tr><th>권역</th><th>핵심 조문</th><th>운영 함의</th></tr>
+<tr><td>한국</td><td>표시광고법 제3조 · 전자상거래법 제17조2항5호 · <b>2016도12460</b></td><td>"불행 고지·길흉 결과 약속+기도비"가 관행 한계 벗어나면 사기죄 → 공포 조장 금지·정가제·재구매 유도 금지</td></tr>
+<tr><td>일본</td><td>特商法 제11조+2022 개정 최종 확인 화면 · 景表法 제5조 · 스테마 규제(2023.10)</td><td>어필리에이트 "광고" 표시 계약 조항화(P706) · 의료·생사·투자 금지 가이드라인 채택</td></tr>
+<tr><td>미국</td><td>FTC §5 · <b>NY Penal Law §165.35(점술 유료 Class B 경범죄, 단 "오락 목적 쇼" 예외)</b></td><td><b>entertainment 고지가 형사 리스크 방어수단</b> · 주별 지자체 허가 확인 필요</td></tr>
+<tr><td>EU/UK</td><td>CRD 14일 철회 + Art.16(m) 디지털콘텐츠 예외 / UK CCRs reg.36</td><td>사전 명시 동의+상실 승인 → <b>결제 전 체크박스 확보</b>(미체크 시 결제 진행 불가)</td></tr>
+</table></div>
+<h3 class="th">entertainment 고지 3개국어 확정본</h3>
+<div class="copybox"><div class="lab">EN</div>This reading is for entertainment and self-reflection purposes only. It is not a substitute for professional medical, legal, financial, or psychological advice. Outcomes are not guaranteed. You remain responsible for your own decisions.</div>
+<div class="copybox"><div class="lab">JA</div>本リーディングは、エンターテインメントおよび自己理解のためのものです。医療・法律・金融・心理などの専門的な助言の代わりにはなりません。結果を保証するものではありません。ご自身の意思決定の責任はお客様にあります。</div>
+<div class="copybox"><div class="lab">KO</div>본 리딩은 오락 및 자기 성찰의 목적으로 제공됩니다. 의료·법률·재무·심리 등 전문적 조언을 대체하지 않으며, 어떠한 결과도 보장하지 않습니다. 이용자의 결정에 대한 책임은 이용자에게 있습니다.</div>
+<h3 class="th">보안 (P707B)</h3>
+<div class="grid2">
+<div class="card"><h4>위협 상위 5종 + 배제 4종</h4><ul>
+<li>T1 계정탈취 ~ T5 결제사회공학 (배제: DDoS 등 4종)</li>
+<li>시트 8탭 격리 · 생년월일 분해·가명ID · 백업 AES-256 2곳</li>
+<li>Turnstile+허니팟+타임트랩 · 카드 미보관(PCI 최소)</li>
+<li>실천 20항목 무료 티어 내 · 분기 2FA 점검 · 연 1회 리허설 ≤2h</li></ul></div>
+<div class="card"><h4>침해 대응 통지 시한 (3건 1차 출처 확인)</h4>
+<div class="tw"><table style="min-width:0">
+<tr><th>권역</th><th>시한</th></tr>
+<tr><td>한국</td><td><b>72h</b>(개인정보보호법 제34조)</td></tr>
+<tr><td>EU(GDPR)</td><td><b>72h</b></td></tr>
+<tr><td>일본(APPI)</td><td>속보 3-5일 / 확보 30일</td></tr>
+</table></div><p class="note">통지 문구 3개국어 확정 · 개인정보: GDPR Art.3(2)·6(동의 권장)·13, SCC+TIA, DSR 1개월(내부 SLA 14일) · CCPA 임계 미달($26,625,000/10만명, 연 1회 재평가) · APPI 제17~18·28조 · 만 14세 법정대리인</p></div>
+</div>
+<div class="card"><h4>리스크 매트릭스 Top 5</h4><div class="tw"><table style="min-width:0">
+<tr><th>#</th><th>리스크</th><th>확률/영향</th><th>대응</th></tr>
+<tr><td>1</td><td>효능 단정 표현</td><td>중/상</td><td>카피 게이트(금지어 20종+검수 10항목)</td></tr>
+<tr><td>2</td><td>공포·과다 재구매</td><td>저/매우상</td><td>정가제·횟수 상한</td></tr>
+<tr><td>3</td><td>국외이전 동의 미비</td><td>중/상</td><td>별도 동의 UI(제28조의8 5항목)</td></tr>
+<tr><td>4</td><td>Paddle 심사 거부</td><td>중/중</td><td>국내 PG 병행</td></tr>
+<tr><td>5</td><td>일본 결제수단 부재</td><td>높음/중</td><td>KOMOJU 검토(페이즈 2)</td></tr>
+</table></div></div>
+</section>
+
+<!-- ============ TAB 8 매칭 ============ -->
+<section class="tab" id="t08">
+<h2 class="tt"><span class="no">08</span>신점 매칭 설계 (P705 · 페이즈 2+)</h2>
+<p class="lead">페이즈 1 매칭 매출 0(트랙 정합) · 페이즈 2 G3 해금 후 가동. 환율 $1≈1,384원(2026-08-21, C25) 기준 원가 실측.</p>
+<div class="grid2">
+<div class="card"><h4>테이크레이트 A안 25% 채택</h4><ul>
+<li>해외 표준 대비 파격적 호조건(Keen 54% / Kasamba 61%) → 확보 속도 우선</li>
+<li>콜드스타트 0% 3개월 연계 · 30명·GMV 5,000만 시 C안(리스팅 9,900원+15%) 전환 검토</li></ul></div>
+<div class="card"><h4>통역 3안 비용 실측</h4><ul>
+<li>(a) 영일 가능 상담사 +3,000원(정산 10% 프리미엄 · 외국어 가능 비율 [추정] 3~5% → 5명 확보에 100~150명 접촉)</li>
+<li>(b) <b>Azure 실시간 통역 1,700원/30분</b>(공식 $2.50/시간 · 무료티어 월 5시간) · 명리 glossary 100~150개 주입 필수</li>
+<li>(c) 번역가 검수 15,000원/1,500자(크몽 공식 · 템플릿화 시 5~8천 [추정])</li>
+<li>로드맵: 초기 (c)+(a 소수) → 월 200건+ 시 (a)+(b) 혼합(통역비 90% 절감)</li></ul></div>
+</div>
+<h3 class="th">상품 5종 (가격 확정)</h3>
+<div class="tw"><table>
+<tr><th>상품</th><th>구성</th><th class="num">정가</th><th>근거</th></tr>
+<tr><td>P1 원격 30분</td><td>화상·전화 리딩</td><td class="num">44,000원 (쿠폰 33,000)</td><td>일본 챗 30분 밴드 중상단 + 첫 쿠폰 밴드 정중앙</td></tr>
+<tr><td>P2 심층 50분</td><td>四柱推命 심층</td><td class="num">77,000원</td><td>심층 회당 밴드 상단</td></tr>
+<tr><td>P3 대면 30분</td><td>명동·홍대</td><td class="num">66,000원</td><td>실측 밴드 3-5만 상단 초과 → 시간예약+통역보증+AI리포트로 정당화(A/B 대상)</td></tr>
+<tr><td>P4 AI리포트+질문3</td><td>이메일 비동기</td><td class="num">33,000원</td><td>비동기 진입형</td></tr>
+<tr><td>P5 커플</td><td>2인 1회</td><td class="num">99,000원 (1인당 49,500)</td><td>연애 목적 85% 앵커</td></tr>
+</table></div>
+<div class="grid3">
+<div class="card"><h4>환불 문안 (P707 정합)</h4><ul><li>시작 전 100% / 시작 후 10분 내 50% / 통역 결함 100%+재예약 쿠폰</li><li>"법정 기준 상회 자체 혜택" 프레임</li></ul></div>
+<div class="card"><h4>콜드스타트 3단계</h4><ul><li>S1 공급 5명·수락률 80% / S2 무료 20건·리뷰 15건·평점 4.3+ / S3 유료 10건·전환 30%+·환불&lt;10%</li><li>14주 · 현금 100만원 이내 [추정]</li></ul></div>
+<div class="card"><h4>관광 연계 순서</h4><ul><li>한복 크로스(0원·즉시) → KKday/Klook 입점(커미션 10~30% [추정], 성과과금) → 한류 제휴 → 호텔 QR(후순위)</li></ul></div>
+</div>
+<p class="note">소싱: A(온라인 스크리닝)+B(명동·종로 방문) 우선, C(협회)는 20명부터 · 온보딩 체크리스트 10항목(P710E) · 자동화는 P710E 시나리오 등급(G-A 허용 범위) · glossary 100~150개는 페이즈 2 Q1 과업(P704D termbase와 병합).</p>
+</section>
+
+<!-- ============ TAB 9 그로스 ============ -->
+<section class="tab" id="t09">
+<h2 class="tt"><span class="no">09</span>그로스·발견 (P706·P706B·C26~C30)</h2>
+<p class="lead">유료광고 0원 위반 0건 검증 완료. 채널은 브랜딩 레드팀 반영 <b>3층 구조(C30)</b>로 운영합니다: 핵심(즉시) / 일본(즉시) / 보류. P706 설계 10종은 유지하되 실행 우선순위만 조정.</p>
+<h3 class="th">채널 3층 (C30 반영)</h3>
+<div class="grid3">
+<div class="card" style="border-color:rgba(63,185,80,.5)"><h4 style="color:#3fb950">핵심 · 즉시</h4><ul>
+<li><b>랜딩+계산기+이메일</b>(소유 채널 = 퍼널 코어, 뉴스레터 무료티어)</li>
+<li>무료 리드마그넷: <b>시각 차트</b>(8글자 배치+Day Master+오행 분포 도넛)+Chart basis 카드+1개 해석 문장 (C29)</li></ul></div>
+<div class="card" style="border-color:rgba(88,166,255,.5)"><h4 style="color:#58a6ff">일본 · 즉시</h4><ul>
+<li><b>YouTube JA 롱폼</b>(니치 교육 · "영어 자료 부재" 공백의 일본어 판)</li>
+<li><b>Shorts/TikTok JA</b>(주 4-5회 · Promote=광고 금지)</li>
+<li><b>X·note</b>(JA 韓国占い 계열 · EN 빌드인퍼블릭)</li></ul></div>
+<div class="card" style="border-color:rgba(139,148,158,.5)"><h4 style="color:#8b949e">보류</h4><ul>
+<li><b>Discord</b>: 이메일 구독 300명까지 개설 보류</li>
+<li><b>인스타·틱톡 EN</b>: D+30 데이터 재검토</li>
+<li><b>중화권 관측·런치 플랫폼</b>: 페이즈 2 (PH는 90일 시점)</li>
+<li>Reddit: 게시물 0 · 질문 응답만(90/10 룰) · 대만 Dcard·PTT 참여만(게시물 0)</li></ul></div>
+</div>
+<div class="chart tall" id="c06"></div><div class="cap">c06 채널 히트맵 · 3층 등급/우선순위/도달/전환기여/안전도 · 도달·전환은 정성 평가 [추정]</div>
+<h3 class="th">P706 채널 원설계 10종 (규칙·금지사항 포함, 우선순위만 3층으로 조정)</h3>
+<div class="tw"><table>
+<tr><th>채널</th><th>규칙</th><th>금지/주의</th></tr>
+<tr><td>C1 YouTube EN/JA</td><td>니치 교육 롱폼 · 검색 지분 선점</td><td>-</td></tr>
+<tr><td>C2 TikTok</td><td>주 4-5회</td><td>Promote=광고 금지</td></tr>
+<tr><td>C3 인스타</td><td>카루셀+릴스</td><td><b>#saju 태그 직용 금지</b>(BL 팬덤 충돌)</td></tr>
+<tr><td>C4 X</td><td>EN 빌드인퍼블릭+JA 태그</td><td>-</td></tr>
+<tr><td>C5 Reddit</td><td><b>게시물 0 · 질문 응답만</b>(90/10 룰)</td><td>자체홍보 금지 39.2% 실측</td></tr>
+<tr><td>C6 중화권</td><td>관측만</td><td>소홍서 해외=rednote 분리 · 웨이보 인증 $800 → 0원 위배</td></tr>
+<tr><td>C7 Discord</td><td>데일리 자동+목 AMA</td><td>개설 보류(이메일 300명까지)</td></tr>
+<tr><td>C8 뉴스레터</td><td>소유 채널 · 퍼널 코어</td><td>LINE 무료 플랜 월 200통 상한</td></tr>
+<tr><td>C9 런치 플랫폼</td><td>90일 시점 PH</td><td>페이즈 2로 보류</td></tr>
+<tr><td>C10 대만 Dcard·PTT</td><td><b>게시물 0 · 참여만</b></td><td>站規 06·07조: 외부 링크·업계배 영구 정지</td></tr>
+</table></div>
+<h3 class="th">브랜딩 카피 교체본 (C26~C28)</h3>
+<div class="copybox"><div class="lab">C26 히어로</div>EN: "Your Korean birth chart, explained clearly. Calculations shown." / JA: 「韓国式四柱推命を、わかりやすく。計算過程もすべて公開。」<br><span style="color:#8b949e">이유: 무명 브랜드의 정확성 약속은 과장으로 읽힘 → "설명+계산 근거 제시"로 낮춤</span></div>
+<div class="copybox"><div class="lab">C27 K-정통성</div>"Shared East Asian roots, interpreted through Korean Saju practice."<br><span style="color:#8b949e">이유: 독점 진품 주장은 중화권·일본에서 반발 위험 → 공유 뿌리+한국 실천 프레임</span></div>
+<div class="copybox"><div class="lab">C28 근거 태그</div>"evidence tags" → <b>"Chart basis" / 「この読みの根拠」</b> (실증 증거 뉘앙스 제거 · P704B 전체·랜딩·본 리포트 적용)</div>
+<h3 class="th">검색·AI 발견 (P706B)</h3>
+<div class="grid3">
+<div class="card"><h4>2026 환경 실측</h4><ul>
+<li>일본 검색: Google 55.4 / Bing 36.4 / Yahoo 6.4(Yahoo=Google 알고리즘)</li>
+<li>AIO 표시 시 <b>CTR −60%</b> · AI 인용률 <b>38%</b> · 클릭리스 <b>68%</b></li>
+<li>→ <b>KPI = AI 인용·이메일</b>(클릭 아님)</li></ul></div>
+<div class="card"><h4>키워드 31종 · PG 4유형</h4><ul>
+<li>키워드 31종(EN 17/JA 14) 의도 분류 · <b>계산 의도 전환 최우선</b></li>
+<li>프로그래매틱 PG1~4 품질 게이트 · <b>상한 200페이지/언어</b></li>
+<li>AEO(질문형 H2·FAQPage) · GEO(계산 메타=인용 자산, llms.txt는 실험)</li></ul></div>
+<div class="card"><h4>발견 목표 (D+365)</h4><ul>
+<li><b>인덱스 400+ 페이지</b> · 노출 20-60K/주</li>
+<li>자체 쿠키리스 이벤트(GA4 미설치)</li>
+<li>샌드박스 리스크 등록 유지(G-2A)</li></ul></div>
+</div>
+<div class="chart" id="c14"></div><div class="cap">c14 발견 목표 라인 · 누적 인덱스 페이지 [목표] + 주간 노출 밴드(20-60K) [목표]</div>
+<div class="chart" id="c15"></div><div class="cap">c15 AI 인용 추이 · 업계 관측(인용률 38%·클릭리스 68%·CTR −60%) + SajuRoot 월 인용 건수 [목표]</div>
+<h3 class="th">시리즈·퍼널·콘텐츠 가이드라인</h3>
+<div class="grid2">
+<div class="card"><h4>시리즈 5종 + 리퍼포스 7자산 (베이스 180분+가공 150분/월)</h4><ul>
+<li>S1 입문 교육(공백 공략) / S2 아이돌 사주 / S3 구조 비교 / S4 매칭 예약(페이즈 2) / S5 데일리 카드</li>
+<li><b>C30 조정:</b> S2 아이돌 사주는 <b>8편당 1편 이하</b> + 출생시각 추정·연애·건강·사망·심리·미성년 분석 금지(공개 생년월일만·성향 해석만)</li>
+<li>S5 Daily Element → <b>"오늘의 기운 × 나의 Day Master" 개인화 주간 리플렉션</b>으로 전환(범용 카드는 정확성 포지션 훼손)</li></ul></div>
+<div class="card"><h4>퍼널 · 반박 플레이북 · 컨시어지</h4><ul>
+<li>퍼널: 콘텐츠→랜딩(25-45%)→이메일 5통(D+0/2/5/10/21)→유료(2.1% 기준, 밴드 1.0-3.5%) · 전체 노출→유료 <b>0.02-0.10%</b></li>
+<li>반박 PB-A 동아시아 보편성("Same tree, different branches - Japan already reads it as 四柱推命") / PB-B 구조 비교("More input columns, not better answers") / PB-C 현지 검증("Try one free chart") · 전부 설득 금지·투명성 원칙</li>
+<li><b>컨시어지 베타(C30):</b> 자동화 전 20명 인터뷰+20건 수동 판매 우선(Rimfactory 교훈) · 웨이팅리스트 아닌 즉시 무료 차트 제공</li>
+<li>일본 스테마: "広告/PR" 표시 계약 조항화(광고주가 규제 대상)</li></ul></div>
+</div>
+</section>
+
+<!-- ============ TAB 10 사업모델 ============ -->
+<section class="tab" id="t10">
+<h2 class="tt"><span class="no">10</span>사업모델 (P708·P708B)</h2>
+<p class="lead">포지셔닝: "한국식 사주 원법 그대로" AI 리포트 · 인간 상담(5,000엔)의 ~30% 가격 · 경쟁 맵 우상단 유일 점유(로컬라이즈 4.0 × 원법 충실도 4.5).</p>
+<div class="pmap" id="pmap">
+<div class="axis-y">원법 충실도 ↑</div><div class="axis-x">로컬라이즈 수준 →</div>
+</div>
+<p class="cap">포지셔닝 맵 · SajuRoot(로컬라이즈 4.0 × 원법 충실도 4.5)가 우상단 단독 점유, 경쟁은 좌상단(원법 강력·현지화 약) 또는 우하단(현지화 강·원법 약)에 분포</p>
+<h3 class="th">차별화 5기둥</h3>
+<div class="grid2">
+<div class="card"><ol>
+<li><b>시간대 3종 엔진</b>: KST 환산·진태양시·절기 연도 처리 명시 앱 관측 0개(P701) + 계산 불만 실측(P703)</li>
+<li><b>언어팩 3분리</b>: templates/terms/tone · termbase 67 · 복제에 수주 소요</li>
+<li><b>계산 메타 공개</b>: 버전·입력·TZ 전부 공개 → "다른 계산기와 다른 이유" 4요인 투명 공개</li>
+<li><b>Chart basis</b>: 모든 해석 문장에 근거 태그(근거 0개 문장 reject) (C28)</li>
+<li><b>K-정통성 완화 프레임</b>: "Shared East Asian roots, interpreted through Korean Saju practice." (C27) · 3단 스토리+BIAS 1-4 반박 내장</li>
+</ol></div>
+<div class="card"><h4>가격 · 3통화 (DP-1: JPY·USD 이중 표기, KRW 내부 원가 기준)</h4>
+<div class="tw"><table style="min-width:0">
+<tr><th>티어</th><th class="num">USD</th><th class="num">JPY</th><th class="num">KRW</th><th>구성</th></tr>
+<tr><td><b>T1 단건</b></td><td class="num">$9.90</td><td class="num">¥1,390</td><td class="num">₩12,900</td><td>4섹션 리딩+차트</td></tr>
+<tr><td><b>T2 프리미엄</b></td><td class="num">$24.90</td><td class="num">¥3,480</td><td class="num">₩31,900</td><td>6섹션+질문3</td></tr>
+</table></div>
+<p class="note">배수 2.5× 채택(밴드 2.3~3.7 하단) · 무료 T0 미니(3문장→C29 시각 차트로 교체) · 환율 기준일 2026-08-21(C25)</p>
+<h4 style="margin-top:10px">유닛 이코노믹스</h4>
+<div class="tw"><table style="min-width:0">
+<tr><th>지표</th><th class="num">값</th><th>산식</th></tr>
+<tr><td>AOV</td><td class="num"><b>18,533원</b></td><td>T1 70%×12,753 + T2 30%×31,992 (C20) · T1/T2 각 JP 60%·US 40% 통화 혼합(¥8.72·$1.384)</td></tr>
+<tr><td>CM</td><td class="num"><b>84.6%</b></td><td>C17 정정(84.64% 실측)</td></tr>
+<tr><td>주문당 순기여</td><td class="num"><b>15,687원</b></td><td>AOV × CM (C18 통일 계수)</td></tr>
+<tr><td>ARPU/방문</td><td class="num">117원</td><td>116.76 반올림</td></tr>
+<tr><td>손익분기</td><td class="num">월 35주문</td><td>P708</td></tr>
+<tr><td>300만 회수</td><td class="num">누적 192주문</td><td>192×15,687=3,011,904</td></tr>
+</table></div></div>
+</div>
+<div class="grid2">
+<div class="card" style="border-color:rgba(63,185,80,.45)"><h4 style="color:#3fb950">G1 게이트 강화판 (C30)</h4>
+<ul><li>기존 "첫 유료 1건" → <b>비지인 유료 5건 ∧ 무료 차트 완료 50건 ∧ 결과→이메일 전환 ≥25% ∧ 치명 오류 0</b></li>
+<li>적용: P704C G-CORE · P711A 스프린트 · P711E KPI 정의서 · 플레이북 탭 13</li></ul></div>
+<div class="card"><h4>게이트 · 법제 대응</h4><ul>
+<li>G2: 11/30 누적 유료 ≥20건 ∧ 전환 1.5% ∨ 방문 3,000 → G3: 2027-01-15 페이즈 2 해금</li>
+<li>법제 high 5종 대응: PG 점술 금지 → <b>"AI 리포트 소프트웨어" 포지셔닝</b> · JP 캐리어 결제 배제(페이즈 2 KOMOJU 과제)</li>
+<li>네이밍 기본값 <b>SajuRoot(サジュルート)</b> 20/25점 · 상표 예비 확인 통과(3국+마드리드 충돌 0, 유사 2건 주의, 도메인 4종 미등록→조기 등록 권장) · 최종 확정은 사용자 승인+변리사 검토</li></ul></div>
+</div>
+</section>
+
+<!-- ============ TAB 11 재무 ============ -->
+<section class="tab" id="t11">
+<h2 class="tt"><span class="no">11</span>재무 시나리오 (P709)</h2>
+<p class="lead">기준 시나리오 = <b>현실안</b>. 전환율 2.1% 고정(CC-11: 공격안도 방문 3배 가정으로만 상향). 모든 파생 수치는 D11에서 계산되며 자가검증(MISMATCH=0)을 통과합니다.</p>
+<div class="ctrl">
+<div class="seg" id="scenSeg"><button data-s="conservative">보수</button><button class="on" data-s="realistic">현실(기준)</button><button data-s="aggressive">공격</button></div>
+<span class="note" style="margin:0">전역 시나리오 토글 · c01~c03·c09·월별 표에 즉시 반영</span>
+</div>
+<div class="kpis" id="finKpis"></div>
+<div class="chart" id="c01"></div><div class="cap">c01 월별 순이익 라인(3시나리오) · 2026-09 ~ 2027-03 · 현실안 11월 첫 월간 흑자</div>
+<div class="grid2">
+<div class="chart short" id="c02"></div>
+<div class="chart short" id="c03"></div>
+</div>
+<div class="cap">좌: c02 시나리오 비교 바(주문·매출·순이익) / 우: c03 누적 현금(현실안 12월 누적 흑자 전환 · 1월 300만 전액 회수 구간)</div>
+<h3 class="th">목표 슬라이더 · 순이익 = 15,687n − spend (C18 통일 계수)</h3>
+<div class="sliders">
+<div><label>목표 주문 수 n = <b id="slN">270</b>건 (10~1,000)</label><input type="range" id="slOrders" min="10" max="1000" step="10" value="270"></div>
+<div><label>투입 지출 spend = <b id="slS">300</b>만원 (0~300)</label><input type="range" id="slSpend" min="0" max="300" step="5" value="300"></div>
+</div>
+<div class="chart short" id="c04"></div>
+<div class="cap">c04 슬라이더 · 보수(54/220만)·현실(270/300만)·공격(810/300만) 기준점과 현재 설정 비교</div>
+<h3 class="th">유닛 토네이도 (현실안 기준 민감도)</h3>
+<div class="chart short" id="c05"></div>
+<div class="cap">c05 유닛 토네이도 · 현실안 +1,235,490원 기준 · 전환율 ±0.5%p가 최대 레버(±101만) · 주문 ±20%(±85만) · AOV ±10%(±42만) · 투입 ±10%(±30만) · CM ±3%p(±15만)</div>
+<h3 class="th">월별 상세 (시나리오 토글 연동)</h3>
+<div class="tw"><table id="finTable"></table></div>
+<div class="grid2">
+<div class="card"><h4>300만 배분 (현실안 확정)</h4>
+<div class="mrow"><div class="lb"><span>콘텐츠 140만</span><span>46.7%</span></div><div class="meter"><i style="width:46.7%;background:#3fb950"></i></div></div>
+<div class="mrow"><div class="lb"><span>로컬라이즈 100만</span><span>33.3%</span></div><div class="meter"><i style="width:33.3%;background:#58a6ff"></i></div></div>
+<div class="mrow"><div class="lb"><span>도구 30만</span><span>10%</span></div><div class="meter"><i style="width:10%;background:#d29922"></i></div></div>
+<div class="mrow"><div class="lb"><span>법무 20만</span><span>6.7%</span></div><div class="meter"><i style="width:6.7%;background:#bc8cff"></i></div></div>
+<div class="mrow"><div class="lb"><span>예비 10만</span><span>3.3%</span></div><div class="meter"><i style="width:3.3%;background:#8b949e"></i></div></div>
+<p class="note">페이즈 배분후보: T1 70/25/5(보수) · 55/35/10(현실) · 50/35/15(공격)</p></div>
+<div class="card"><h4>킬라인 K1~K3 (P709 확정)</h4><ul>
+<li><b>K1</b> 11/30 누적 &lt;20주문 → 동결</li>
+<li><b>K2</b> 12/31 월 &lt;10주문 ∧ 방문 &lt;3,000 → 청산</li>
+<li><b>K3</b> 소진 ≥255만 ∧ 매출 &lt;100만 → 즉시 중단</li></ul>
+<p class="note">목표 체인: 500만 ÷ 18,533 = 269.8 → <b>270주문</b> → ÷2.1% = <b>12,857 리드</b> → ÷30% = <b>42,857 방문</b> (G-2C 역산 정합)</p>
+<p class="note">세무: 일반과세 전제 · Paddle MoR 정산금 환산 인식 · 페이즈 2 상담사 3.3% 원천징수 · 부가세 영세율 여부는 시행령 열거 확인 필요(제20조1항3호 → 국외 공급)</p></div>
+</div>
+<h3 class="th">계절성 (수요 가중치)</h3>
+<div class="chart short" id="c12"></div>
+<div class="cap">c12 계절성 곡선 · 관측 기반 정성 지수 [추정] · JP 1월·4월·7월 / TW·VN 음력설(2027-02) / US·UK 1월+할로윈 · 월별 주문 분배에 반영</div>
+<div class="callout y"><b>V-05 각주:</b> 원본 P709의 총비용 3,768천원은 고정 투입 300만 + 변동비(수수료 등, 매출의 ~15.4%) 합계로, 변동비는 매출에서 충당되는 구조입니다. 예산 상한 300만원은 고정 투입 기준이며 누적현금 흐름이 정확한 판단 기준입니다(현실안 총비용 검산: 5,003,910 − 1,235,490 = 3,768,420원).</div>
+</section>
+
+<!-- ============ TAB 12 자동화 ============ -->
+<section class="tab" id="t12">
+<h2 class="tt"><span class="no">12</span>에이전틱 자동화 (P710A~F · G-A PASS)</h2>
+<p class="lead">Make 무료 1K ops(폴링 금지·이벤트 트리거만) · 구글 시트 8탭 중앙 DB · 식별자 체인 utm→lead_id→order_id→reading_id→review_id · <b>ops 486/700(예비 214=31%)</b> · 이메일 195/500. 표기: 자동/반자동/수동(CC-11 솔직 표기).</p>
+<div class="kpis">
+<div class="kpi g"><div class="k">월 ops 사용</div><div class="v">486 / 700</div><div class="d">예비 214 (31%) · 15규칙 합산 검산 완료</div></div>
+<div class="kpi g"><div class="k">이메일 사용</div><div class="v">195 / 500</div><div class="d">시퀀스 150+영수증 10+리뷰 20+CS 15</div></div>
+<div class="kpi b"><div class="k">V-블록 완전성</div><div class="v">30 / 30</div><div class="d">6도메인 × V1~V5 전부 작성(G-A S1)</div></div>
+<div class="kpi y"><div class="k">치명 실증 대기</div><div class="v">B·C·F</div><div class="d">D+7~13 실행 지정 · G-A PASS 조건 충족</div></div>
+</div>
+<div class="chart tall" id="c10"></div><div class="cap">c10 자동화 히트맵 · 6도메인 × V1~V5 30셀 · 주황=치명(실증 필수 경로 지정) · 파랑=시나리오 등급</div>
+<h3 class="th">이벤트 규칙 15종 (ops 배분표, 합계 486)</h3>
+<div class="tw"><table>
+<tr><th>#</th><th>규칙</th><th>도메인</th><th>산식</th><th class="num">ops</th></tr>
+<tr><td>1</td><td>lead.created</td><td>B</td><td>30×2</td><td class="num">60</td></tr>
+<tr><td>2</td><td>lead.verified</td><td>B</td><td>30×1</td><td class="num">30</td></tr>
+<tr><td>3</td><td>reading.generated</td><td>B</td><td>30×2</td><td class="num">60</td></tr>
+<tr><td>4</td><td>email.d0_send</td><td>B</td><td>30×1</td><td class="num">30</td></tr>
+<tr><td>5</td><td>email.sequence(D2/5/10/21)</td><td>B</td><td>30×4</td><td class="num">120</td></tr>
+<tr><td>6</td><td>crm.tagging</td><td>B</td><td>30×1</td><td class="num">30</td></tr>
+<tr><td>7</td><td>payment.webhook</td><td>C</td><td>10×3</td><td class="num">30</td></tr>
+<tr><td>8</td><td>receipt.send</td><td>C</td><td>10×1</td><td class="num">10</td></tr>
+<tr><td>9</td><td>d5_paid_gate(시퀀스 제외 판정)</td><td>B/C</td><td>25×1</td><td class="num">25</td></tr>
+<tr><td>10</td><td>review.request</td><td>D</td><td>20×1</td><td class="num">20</td></tr>
+<tr><td>11</td><td>cs.classify</td><td>D</td><td>15×1</td><td class="num">15</td></tr>
+<tr><td>12</td><td>optout.sync(수신거부 즉시 반영)</td><td>B/D</td><td>5×2</td><td class="num">10</td></tr>
+<tr><td>13</td><td>content.publish</td><td>A</td><td>10×3</td><td class="num">30</td></tr>
+<tr><td>14</td><td>content.metrics_ingest</td><td>A</td><td>8×2</td><td class="num">16</td></tr>
+<tr><td>15</td><td>kpi.daily_rollup</td><td>F</td><td>Apps Script</td><td class="num">0</td></tr>
+</table></div>
+<div class="grid3">
+<div class="card"><h4>6도메인 요약</h4><ul>
+<li><b>A 콘텐츠</b>: 6노드 DAG · 검수 10항목 · 리퍼포스 7자산 · 도구 135분/월 80% 다운그레이드</li>
+<li><b>B 리드→리딩(치명)</b>: 7단계 파이프라인 · SLA 3분 · 이메일 5통 시퀀스 · 생시모름 플래그</li>
+<li><b>C 결제(치명)</b>: Paddle 웹훅→시트→영수증 · 주간 대조 diff 0 · EU 체크박스</li>
+<li><b>D CS</b>: 분류 8카테고리 · 템플릿 16종 · SLA 24h/72h · 사기 의심 치명 푸시</li>
+<li><b>E 매칭(페이즈 2)</b>: 시나리오 등급 허용 · 필터 순서 고정 · 지급 인간 승인</li>
+<li><b>F 오케스트레이션(치명)</b>: 8탭+ERD · 알림 3심각도 · kpi_daily · DR(RTO 24h/RPO 7일)</li></ul></div>
+<div class="card"><h4>알림 3심각도</h4><div class="tw"><table style="min-width:0">
+<tr><th>등급</th><th>채널</th><th>사례</th></tr>
+<tr><td><span class="tag no">치명</span></td><td>푸시(즉시)</td><td>웹훅 유실·시트 쓰기 실패·scam/fraud·금지어 우회</td></tr>
+<tr><td><span class="tag C">주의</span></td><td>이메일(일 1회)</td><td>ops·이메일·도구분 80% · SLA 임박</td></tr>
+<tr><td><span class="tag B">정보</span></td><td>주간 요약</td><td>kpi_daily · 성과 · 발행 상태</td></tr>
+</table></div></div>
+<div class="card"><h4>SPOF · 인간 개입</h4><ul>
+<li>구글 계정: 2FA+P707B T1 방어 / Make: 폴링 금지+on_fail 수동 발행 절차 / Paddle: MoR 전환 비용 큼 → 주간 대조 감지</li>
+<li>고정 인간 지점: 검수 10항목·해석 문구·주간 대조·환불·CS 환불/품질·매칭 배정·정산 승인 → 주당 [추정] 6-9h (SOP 9h+제작 11h=20h 정합)</li>
+<li>kpi_daily = {date, leads, readings_sent, t1_orders, t2_orders, revenue, refunds, reviews, avg_review, cs_tickets, cs_sla_met, content_published} · P706B/P711E와 1:1 고정</li></ul></div>
+</div>
+</section>
+
+<!-- ============ TAB 13 플레이북 ============ -->
+<section class="tab" id="t13">
+<h2 class="tt"><span class="no">13</span>플레이북 D-21 ~ D+200 (G-P PASS)</h2>
+<p class="lead">DAG 오류 0 · 시간 축 정합(스프린트 40h → 주 20h, 피크 25h 4주, 초과 주 0건) · 게이트 임계값은 P704C/P709/P700 인용만. 브랜딩 레드팀 반영으로 <b>D-21 사전 수요 검증 구간이 추가</b>되었습니다.</p>
+<div class="chart" id="c11"></div><div class="cap">c11 게이트 타임라인 · D-21 사전검증 → G1 D+42 → G5 D+150 → D+200 종결 · 마커 크리깅: 재시험 D+56 포함</div>
+<div class="tw"><table>
+<tr><th>구간</th><th>주요 작업</th><th>게이트·판정</th></tr>
+<tr><td><b>D-21 ~ D-0</b> <span class="tag C">C26~C30 추가</span></td><td>사전 수요 검증: 20명 인터뷰 · 5초 브랜드 테스트 · 계산기 비교 콘텐츠 · 시드 콘텐츠 유통(웨이팅리스트 아닌 즉시 무료 차트)</td><td>수요 신호 확보 후 런치</td></tr>
+<tr><td><b>D+0 ~ D+14</b> 코어 스프린트 40h</td><td>D+1 계산기 · D+2~3 골든 테스트(D2 사전 해소→회귀 CI 등록) · D+4 termbase · D+5~6 커버리지 20건 · D+7~9 블라인드 시험(5인) · D+10 이메일 시퀀스 · D+11~12 채널(D+4 의존) · D+13 결제 샌드박스 3건+환불 · D+14 회고</td><td>G-CORE 5조건 진행</td></tr>
+<tr><td><b>D+15 ~ D+45</b></td><td>주 20h(SOP 9h+가변 11h) · D+15~21 첫 발행 · 30일 캘린더(월 리뷰/화 제작/수 발행/목 CS+AMA/금 실험/토 버퍼/일 휴식)</td><td><b>G1 D+42</b> 코어 게이트(∈ D+36~45)</td></tr>
+<tr><td>D+42 미달 시</td><td>D+56 재시험(블라인드 최대 2회)</td><td>미달 → 코어 축소(십성 6종) 또는 폐기(T1 사살)</td></tr>
+<tr><td><b>D+46 ~ D+90</b></td><td>본격 발견·채널 증폭 · 11/30 G2 판정(누적 유료≥20건∧전환 1.5%∨방문 3,000) · K1 킬라인 점검</td><td><b>G2 D+60</b> · <b>G3 D+90</b>(페이즈 2 해금 판정 2027-01-15)</td></tr>
+<tr><td><b>D+91 ~ D+150</b></td><td>페이즈 2(일본 집중+매칭 베타 · G3 통과 시) · 12/31 K2 킬라인 · 자동화 G-A 등급 유지</td><td><b>G4 D+120</b> 자동화 가동 · <b>G5 D+150</b> 확장 신호</td></tr>
+<tr><td><b>D+151 ~ D+200</b></td><td>티어 2+시즌 콘텐츠 3편 · 슬롯 80% · 최종 결산 준비</td><td>G0 종료 2027-03-31</td></tr>
+</table></div>
+<h3 class="th">게이트 G1~G7 · 트랙 사살 조건</h3>
+<div class="grid2">
+<div class="card"><div class="tw"><table style="min-width:0">
+<tr><th>게이트</th><th>시점</th><th>임계값</th></tr>
+<tr><td>G1 코어</td><td>D+42</td><td>G-CORE 5조건(C30 강화판): 엔진 12/12 ∧ 블라인드 ≥70% ∧ <b>비지인 유료 5건∧무료 차트 50건∧이메일 25%∧오류 0</b> ∧ 채널 3발행 ∧ 준비도 차단 0</td></tr>
+<tr><td>G2 실사용</td><td>D+60</td><td>리드→유료 ≥ P709 현실 하한(AI 리딩만)</td></tr>
+<tr><td>G3 채널·페이즈2</td><td>D+90</td><td>최고 채널 시간당 유료 전환 ≥0.1건 · 해금 판정 2027-01-15</td></tr>
+<tr><td>G4 자동화</td><td>D+120</td><td>G-A 등급 유지 ∧ 자동화 오류 월 ≤3건</td></tr>
+<tr><td>G5 확장</td><td>D+150</td><td>시즌 콘텐츠 3편 ∧ 슬롯 80% ∧ 티어2 조건</td></tr>
+<tr><td>G6 페이즈2 종합</td><td>2027-01-15</td><td>G3+K1~K2 종합 판정(P708/P709)</td></tr>
+<tr><td>G7 최종 결산</td><td>2027-03-31</td><td>G0 순이익 극대화 판정(보수 100/현실 500/공격 1,500만)</td></tr>
+</table></div></div>
+<div class="card"><h4>트랙 T1~T4 사살 조건</h4><ul>
+<li><b>T1 코어</b>: D+42 미달 및 D+56 재시험(블라인드 ≤2회) 미달 → 축소(십성 6종) 또는 폐기</li>
+<li><b>T2 페이즈2</b>: G3 미달(시간당 &lt;0.1건 ∧ D+90) → 진입 보류·오디언스 전용 전환 검토</li>
+<li><b>T3 페이즈3</b>: G5 미달 → 시즌 코어 상품만 운영</li>
+<li><b>T4 순차 하이브리드(기본 채택)</b>: 게이트 통과 시에만 다음 트랙 해금 · 자원 분산 금지</li>
+<li>정지 조건(CC-5): 예산 초과 · 법적 불가 · G-2D 3사이클 FAIL</li></ul></div>
+</div>
+</section>
+
+<!-- ============ TAB 14 운영 ============ -->
+<section class="tab" id="t14">
+<h2 class="tt"><span class="no">14</span>운영 SOP·KPI (P711D·P711E·P710F)</h2>
+<p class="lead">주 20h 블록 구조(고정 9h + 제작 11h, 피크 4주 25h) · 초과 컷 루 존재(초과 주 0건) · KPI는 kpi_daily 자체 쿠키리스 이벤트로 일집계.</p>
+<h3 class="th">주간 블록 7일</h3>
+<div class="tw"><table>
+<tr><th>요일</th><th>블록</th><th>내용</th></tr>
+<tr><td>월</td><td>리뷰·데이터</td><td>kpi_daily 주간 롤업 점검 · 월간 데이터 리뷰(P710A V6) 병행</td></tr>
+<tr><td>화</td><td>제작</td><td>베이스 롱폼 세션(월 2회) · 쇼츠·릴스 파생</td></tr>
+<tr><td>수</td><td>발행</td><td>발행 큐(검수 10항목 통과분) · 프로그래매틱 페이지</td></tr>
+<tr><td>목</td><td>CS+AMA</td><td>CS SLA 준수(24h/72h) · 커뮤니티 응답(Reddit 질문만)</td></tr>
+<tr><td>금</td><td>실험</td><td>주간 실험 1건 · 제목 A/B(수동 지정)</td></tr>
+<tr><td>토</td><td>버퍼</td><td>밀림 작업 · 웹훅 주간 대조(diff 0)</td></tr>
+<tr><td>일</td><td>휴식</td><td>정기 휴식(번아웃 방지 · CC-9)</td></tr>
+</table></div>
+<h3 class="th">킬라인 게이지 · 게이트 상태</h3>
+<div class="grid2">
+<div class="card"><h4>킬라인 K1~K3 (즉시 판정 루틴)</h4>
+<div class="mrow"><div class="lb"><span>K1 · 11/30 누적 유료 20주문</span><span class="tag hold">대기</span></div><div class="meter"><i style="width:8%;background:#8b949e"></i></div></div>
+<div class="mrow"><div class="lb"><span>K2 · 12/31 월 10주문 ∧ 방문 3,000</span><span class="tag hold">대기</span></div><div class="meter"><i style="width:5%;background:#8b949e"></i></div></div>
+<div class="mrow"><div class="lb"><span>K3 · 소진 255만 ∧ 매출 &lt;100만 → 즉시 중단</span><span class="tag hold">대기</span></div><div class="meter"><i style="width:0%;background:#f85149"></i></div></div>
+<p class="note">게이지는 체인 시점 기준(실행 전) · kpi_daily 실측 후 자동 갱신 대상(P714 운영 데이터 갱신)</p></div>
+<div class="card"><h4>게이트 상태 게이지</h4>
+<div class="mrow"><div class="lb"><span>G-1 교차검증</span><span class="tag pass">PASS</span></div><div class="meter"><i style="width:100%;background:#3fb950"></i></div></div>
+<div class="mrow"><div class="lb"><span>G-A 자동화 설계</span><span class="tag pass">PASS</span></div><div class="meter"><i style="width:100%;background:#3fb950"></i></div></div>
+<div class="mrow"><div class="lb"><span>G-P 플레이북</span><span class="tag pass">PASS</span></div><div class="meter"><i style="width:100%;background:#3fb950"></i></div></div>
+<div class="mrow"><div class="lb"><span>G-2A~D QA</span><span class="tag pass">PASS</span></div><div class="meter"><i style="width:100%;background:#3fb950"></i></div></div>
+<div class="mrow"><div class="lb"><span>치명 실증 B·C·F (D+7~13)</span><span class="tag C">예정</span></div><div class="meter"><i style="width:35%;background:#d29922"></i></div></div>
+<div class="mrow"><div class="lb"><span>G1 코어 게이트 (D+42)</span><span class="tag hold">대기</span></div><div class="meter"><i style="width:10%;background:#58a6ff"></i></div></div>
+</div></div>
+<div class="grid2">
+<div class="card"><h4>KPI 정의 (kpi_daily 필드 · P706B/P711E 1:1)</h4>
+<ul><li>leads · readings_sent · t1_orders · t2_orders · revenue · refunds · reviews · avg_review · cs_tickets · cs_sla_met · content_published</li>
+<li>발견 KPI(P706B 소관): AI 인용·이메일(클릭 아님) · 인덱스 페이지 · 주간 노출</li>
+<li>KPI 밴드는 냉시작 기준 30일 재교정 [추정]</li></ul></div>
+<div class="card"><h4>CS·리뷰 SLA</h4>
+<ul><li>주문·결제/기술 오류/리딩 품질/환불: 24h(품질·환불·DSR·사기는 인간 전용)</li>
+<li>스팸 72h(템플릿 거절) · 사기 의심: 즉시 치명 푸시+자동응답 중지</li>
+<li>리뷰: D+1 요청(오픈 1회+CS 미오픈 조건) · 3점 이하 재요구 금지 플래그</li>
+<li>DSR 14일 내 완료(내부 SLA)</li></ul></div>
+</div>
+</section>
+
+<!-- ============ TAB 15 QA ============ -->
+<section class="tab" id="t15">
+<h2 class="tt"><span class="no">15</span>QA·정정 (G-2A~G-2D · V 독립검증)</h2>
+<p class="lead">정정 18건(시드 4 + 실행 9 + 브랜딩 5) 전량 반영. 최종 판정 <b>G-2D PASS</b> 5조건: 치명 0 ✓ · 중대 0 ✓ · 8축 ≥4(최저 7) ✓ · 오류율 3.1%&lt;5% ✓ · 요구 22/22 ✓.</p>
+<h3 class="th">정정 로그 C13~C30 전체</h3>
+<div class="tw"><table>
+<tr><th>ID</th><th>구분</th><th>정정 내용</th></tr>
+<tr><td>C13</td><td rowspan="4" style="vertical-align:middle">시드 4건<br>(P707)</td><td>대법원 사건번호 2017도12460 → <b>2016도12460</b>(2017.11.9. 선고, 사기죄)</td></tr>
+<tr><td>C14</td><td>개인정보 국외이전 제39조의3 계열 → <b>현행 제28조의8</b>(2023.3.14 전문개정)</td></tr>
+<tr><td>C15</td><td>부가세 영세율 → 현행 <b>제21~25조 체계</b> 표기</td></tr>
+<tr><td>C16</td><td>표시광고법 허위·과장 → 현행 <b>제3조</b> 표기</td></tr>
+<tr><td>C17</td><td rowspan="9" style="vertical-align:middle">실행 9건<br>(G-2D)</td><td><b>CM 84.7% → 84.6%</b>(실측 84.64%)</td></tr>
+<tr><td>C18</td><td>슬라이더 계수 15,688 → <b>15,687 통일</b>(P712 수식·V-01 소스 반영)</td></tr>
+<tr><td>C19</td><td>P702B PayPay 56% → <b>46.3~65.1% 범위</b> 회선(조사별 상이)</td></tr>
+<tr><td>C20</td><td>AOV 산식 명기: <b>T1 70%/T2 30% · ¥8.72 · $1.384</b>(혼합 18,525→표준 18,533)</td></tr>
+<tr><td>C21</td><td>전환율 2.1% 출처 맥락 라벨: <b>RevenueCat 앱 구독 표본</b>(웹 단건 이동 주의)</td></tr>
+<tr><td>C22</td><td>보수안 spend(2,197,098원≈220만)·BEP 근거 병록</td></tr>
+<tr><td>C23</td><td>AU/PH/FR/DE/CN <b>5개국 스코어 축 병록</b>(재현 불가 명시)</td></tr>
+<tr><td>C24</td><td>블라인드 70% <b>"실행 전 설계 기준" 라벨</b></td></tr>
+<tr><td>C25</td><td>환율 기준일 단일 슬롯: <b>1,384원(2026-08-21)</b> 통일(1,380/1,384/1,385 3종 병존 해소)</td></tr>
+<tr><td>C26</td><td rowspan="5" style="vertical-align:middle">브랜딩 5건<br>(레드팀)</td><td>히어로 카피 → <b>"Your Korean birth chart, explained clearly. Calculations shown."</b></td></tr>
+<tr><td>C27</td><td>K-정통성 → <b>"Shared East Asian roots, interpreted through Korean Saju practice."</b></td></tr>
+<tr><td>C28</td><td>evidence tags → <b>"Chart basis / この読みの根拠"</b></td></tr>
+<tr><td>C29</td><td>무료 리드마그넷 3문장 → <b>시각 차트</b>(8글자+Day Master+오행 도넛+Chart basis 카드)</td></tr>
+<tr><td>C30</td><td>G1 게이트 → <b>유료 5건 ∧ 차트 50건 ∧ 이메일 25% ∧ 오류 0</b> + 채널 3층·D-21 사전 검증 추가</td></tr>
+</table></div>
+<h3 class="th">G-2A 레드팀 · G-2B 루브릭</h3>
+<div class="grid2">
+<div class="card"><h4>G-2A: 주장 15개 × 3인(R1 초회의적 소비자/R2 경쟁사 PM/R3 규제 감독관) = 45 공격</h4>
+<ul><li>재판정: <b>기각 5 / 부분수용 10 / 수용 0 · 치명타 0건</b>(사업 전제 유지)</li>
+<li>부분수용 10건은 전부 문서화·라벨링 수준(예: #3 전환율 맥락 라벨, #6 민감도 공개, #10 산식 명기, #11 상류 전제 라벨+킬라인)</li>
+<li>취약 Top3: ① AOV·CM 믹스 미기재(→C20) ② 270주문의 상류 42,857방문 전제(→킬라인·전제 라벨) ③ 전환율 2.1% 출처 맥락(→C21)</li></ul></div>
+<div class="card"><h4>G-2B 루브릭 8축 · 합계 66/80, 최저 7</h4>
+<div class="tw"><table style="min-width:0">
+<tr><th>축</th><th class="num">점수</th></tr>
+<tr><td>사실 근거성</td><td class="num">9</td></tr>
+<tr><td>출처 다각성</td><td class="num">9</td></tr>
+<tr><td>편향 중립</td><td class="num">8</td></tr>
+<tr><td>논리 정합</td><td class="num">7</td></tr>
+<tr><td>실행 가능성</td><td class="num">8</td></tr>
+<tr><td>재현 가능성</td><td class="num">7</td></tr>
+<tr><td>윤리·컴플라이언스</td><td class="num">9</td></tr>
+<tr><td>요구 충족도</td><td class="num">9</td></tr>
+</table></div><p class="note">정정 지시 축 0개 · 감점 사유는 반례 탐색 결과 라벨 처리</p></div>
+</div>
+<h3 class="th">G-2C 통계 · G-2D 결함</h3>
+<div class="grid2">
+<div class="card"><h4>G-2C: 실측 재계산 32건 → PASS</h4><ul>
+<li>일치 30 / 실질 오류 1(CM 84.7→84.64%) / 올림 관례 차 1(12,857 vs 12,858, ±1) → <b>오류율 1/32 = 3.1% &lt; 5%</b></li>
+<li>재현: 스코어 10국+S2 2건(공식 완전 재현, JP 90.0 포함) · ops 486 합산 · 이메일 195 · targets 270→12,857→42,857 · ARPU/방문 116.76→117 · 시나리오 3종(현실 1,235,490 / 공격 9,706,470 / 보수 −1,350,000→spend 2,197,098 역산)</li>
+<li>환각 후보: 치명 0건 · 표기 경계 2건(84.7%, 15,688) · handoffs 한계 재현 불가 4건(AOV 믹스·보수 spend·BEP 근거·5개국 축) → 전부 C20~C23으로 해소</li></ul></div>
+<div class="card"><h4>G-2D: 결함 10건 전부 경미 → PASS</h4>
+<p>D-01 AOV 믹스 / D-02 CM / D-03 계수 / D-04 보수 spend·BEP / D-05 5개국 축 / D-06 PayPay 회선 / D-07 2.1% 라벨 / D-08 블라인드 라벨 / D-09 퍼널 상류 배수 / D-10 환율 슬롯 → C17~C25 발행</p>
+<h4 style="margin-top:10px">V 독립 검증(메타 감사, Python 재계산)</h4><ul>
+<li>15개 항목: <b>13 완전 일치, 2 Δ&lt;0.1%</b>(T1 Δ10원·T2 Δ6원, 반올림)</li>
+<li>V-01~V-03(정정 미전파: C18 계수·C19 PayPay·C25 환율) → <b>즉시 수정 완료</b></li>
+<li>V-04 체인로그 규격 불일치(경미) · V-05 월별 비용 3,768천원 표기(각주 처리)</li>
+<li>L1 교차 5쌍 모순 0건 · G-2D PASS 유지 · next_gen_preset ⑥ "정정 발행 시 소스 파일 동시 갱신" 추가</li></ul></div>
+</div>
+<h3 class="th">D2 엔진 검증 · 상표 예비 확인 · 브랜딩 레드팀</h3>
+<div class="grid3">
+<div class="card" style="border-color:rgba(63,185,80,.4)"><h4 style="color:#3fb950">D2 · 해소 (GRADE_A)</h4><ul><li>manseryeok 임의 경도 지원 실행 확정 · 골든 11/11(전 세계 4+국내 5+경계)</li><li>E-1 게이트 최대 불확실성 제거 · 폴백 불필요</li></ul></div>
+<div class="card"><h4>SajuRoot 상표 예비 (2026-08-24)</h4><ul><li>KIPRIS·USPTO·J-PlatPat·WIPO GBD <b>동일 명칭 충돌 0건</b></li><li>도메인 4종(.com/.io/.app/.co.kr) 전부 미등록 → 조기 등록 권장</li><li>유사 주의 2건: 日 등록6721146 サグルート(9/41/42류) · 국내 사주온루트(법적 충돌 아님)</li><li>최종 판단은 변리사 검토 필수</li></ul></div>
+<div class="card" style="border-color:rgba(248,81,73,.4)"><h4 style="color:#f85149">브랜딩 레드팀 4.2/10</h4><ul><li>"정확성은 구매 이유가 아니다" · 수술 5개 → <b>C26~C30 전부 체인 반영 완료</b></li><li>타깃 J1∩J2 축소 · 채널 3층 · 시각 차트 리드마그넷 · 컨시어지 베타 · D-21 사전 검증</li><li>런칭 전 재검증 대기(재평가 예정)</li></ul></div>
+</div>
+</section>
+
+<!-- ============ TAB 16 프롬프트 ============ -->
+<section class="tab" id="t16">
+<h2 class="tt"><span class="no">16</span>프롬프트 세트 (G-CORE · HSH 체인)</h2>
+<p class="lead">HSH(Hyper-Scoping Handoff) 체인: 수석전략가 차터 → L1 시드 실측 → 교차검증 게이트 → 코어 통합 → L2 설계 → 자동화 → 게이트 → QA 배터리 → 아카이빙. schema 3.8 · 모호어 0 · req_map 22/22.</p>
+<h3 class="th">G-CORE 5조건 (P711A MVP 탈출 유일 기준 · gate-snapshot.json · C30 반영)</h3>
+<div class="grid2">
+<div class="card"><ol>
+<li><b>엔진 12/12</b>: 골든 테스트 12종 통과(테스트 12+3, D2로 임의 경도 해소 · 폴백=수동 UTC 오프셋)</li>
+<li><b>블라인드 ≥70%</b>: 식별률 70%+(5인, EN 전수·JA 50%, 재시험 ≤2회) <span class="tag C">실행 전 설계 기준(C24)</span></li>
+<li><b>유료 검증(C30)</b>: 비지인 유료 5건 ∧ 무료 차트 완료 50건 ∧ 결과→이메일 전환 ≥25% ∧ 치명 오류 0</li>
+</ol></div>
+<div class="card"><ol start="4">
+<li><b>채널 3발행</b>: 핵심 3층(랜딩+계산기+이메일 / 일본어 YT+Shorts / X·note)에서 최초 3건</li>
+<li><b>준비도 차단 0</b>: R1~R6(일본 편의점·캐리어 결제는 페이즈 2 로컬 PG 과제 - Paddle 점술 금지)</li>
+</ol>
+<div class="callout" style="margin-top:10px">IN: C1 엔진(manseryeok 2.0.0, 학파 B기본+C정밀, 자시 3모드 야자시 기본, SH off+2옵션) / C2 콘텐츠 v1.0(EN/JA, rule_id SSOT: TG-/EL-/SEASON-/PILLAR-) / C3 K-정통성(3단 스토리+BIAS 1-4 반박) / C4 서비스 기반(Paddle, 고지 3개국어) · OUT(재인입 트리거): O1 매칭·O2 대면(페이즈2) · O3 B2B/API·O4 멤버십(페이즈3)</div></div>
+</div>
+<h3 class="th">HSH-P700 체인 구조 (33 프롬프트 + 게이트 6종)</h3>
+<div class="tw"><table>
+<tr><th>스테이지</th><th>프롬프트</th><th>산출</th></tr>
+<tr><td>L0 차터</td><td>P700 수석전략가</td><td>요청 정규화(모호어 0) · 브랜드 3안(A 채택) · 목표트리 G0~G5 · 제약 5축 · 트랙 T1~T4 · 시드 9종 발행</td></tr>
+<tr><td>L1 실측</td><td>P701~P707 (시장/일본/국가/니즈/엔진/콘텐츠/매칭/그로스/법제)</td><td>9종 handoff · GRADE_A 다수 · 인용 원문 보존 · 편견 4패턴 반박</td></tr>
+<tr><td>게이트</td><td>G-1 교차검증</td><td>교차점 14 정합 · 병합 2건 · verified_set 발행</td></tr>
+<tr><td>코어 통합</td><td>P704C 코어명세 · P704D 다국어 · P707B 보안</td><td>G-CORE 5조건 · termbase 67 · 위협 5종·침해 72h</td></tr>
+<tr><td>L2 설계</td><td>P708 사업모델 · P709 재무 · P708B 브랜드 · P706B 발견</td><td>가격 3통화 · 시나리오 3종 · 킬라인 K1~K3 · 네이밍 SajuRoot · 키워드 31</td></tr>
+<tr><td>자동화</td><td>P710A~F (콘텐츠/리드/결제/CS/매칭/오케스트레이션)</td><td>6도메인 V-블록 30셀 · ops 486/700 · kpi_daily</td></tr>
+<tr><td>게이트</td><td>G-A 자동화 · G-P 플레이북</td><td>둘 다 PASS(치명 B·C·F 실증 경로 지정)</td></tr>
+<tr><td>실행</td><td>P711A~E (스프린트/페이즈2/시즌/SOP/KPI)</td><td>D-21~D+200 플레이북 · 주간 블록</td></tr>
+<tr><td>리포트</td><td>P712 리포트엔지니어 · P712Q 감수</td><td>탭 17·차트 15 · __DATASETS 15키 · Q-GATE PASS</td></tr>
+<tr><td>QA</td><td>G-2A~D (레드팀/루브릭/통계/정정루프)</td><td>PASS · C17~C25 발행</td></tr>
+<tr><td>검증·보강</td><td>V 독립검증 · D2 엔진실행 · 상표확인 · 브랜딩 레드팀</td><td>정합 확인 · D2 해소 · C26~C30 반영</td></tr>
+<tr><td>아카이빙</td><td>P713 조립·배포 · P714 갱신 · P715 KB</td><td>본 리포트 · 살아있는 리포트 루프</td></tr>
+</table></div>
+<h3 class="th">공통 계약(CC) 핵심</h3>
+<div class="grid3">
+<div class="card"><ul><li><b>CC-3</b>: 모든 수치 GRADE·as_of 표기</li><li><b>CC-5</b>: 정지 조건 3종(예산초과·법적불가·G-2D 3사이클 FAIL)</li></ul></div>
+<div class="card"><ul><li><b>CC-9</b>: 윤리 게이트(확정 예언 금지·entertainment 고지)</li><li><b>CC-11</b>: 편향 통제(생존자·확증 편향, [추정] 라벨)</li></ul></div>
+<div class="card"><ul><li><b>CC-12</b>: 한글·법률 감수(P712Q: FK 엠대시 0 · HUM ≤30% · SLOP 41-50 ≥35 · LAW 법제처 라이브 3건)</li></ul></div>
+</div>
+</section>
+
+<!-- ============ TAB 17 증거 ============ -->
+<section class="tab" id="t17">
+<h2 class="tt"><span class="no">17</span>증거 (인용 원문 · 체인 로그 · 소스 등급)</h2>
+<p class="lead">P703 관측 원문 27건 verbatim은 원결과 evidence 패키지에 전량 보존되어 있으며, 여기에는 핵심 원문을 그대로 수록합니다. 모든 인용에 출처·등급을 병기합니다.</p>
+<h3 class="th">인용 원문 보존 (핵심 발췌)</h3>
+<div class="qbox"><div class="qm">"Does anyone know how to read Korean saju? or do they know any websites that can do readings?"</div><div class="qs">r/AskAstrologers · 2021 · GRADE_A(Reddit JSON 라이브) · 답변 "I do! DM me" → 영어권 직접 수요 실증</div></div>
+<div class="qbox"><div class="qm">"It's unfortunate that there's very little English language representation" / "I'm assuming the resources are not available in English"</div><div class="qs">r/astrology · GRADE_A · 최대 공백 = 영어 자료 부재의 직접 증언</div></div>
+<div class="qbox"><div class="qm">"it gives me a different day master than other calculators online so I'm not entirely sure what to consider"</div><div class="qs">Sajuping 앱 리뷰 · GRADE_A(스토어 RSS) · 계산 정합성 불신 → 엔진 차별화 실증</div></div>
+<div class="qbox"><div class="qm">"한국 번호 없으면 아무것도 못하는게....."</div><div class="qs">점신(Jeomsin) 1성 리뷰 · GRADE_A · 해외 진입 장벽 실증(미국 스토어 평가 2,121건 중 다수)</div></div>
+<div class="qbox"><div class="qm">"推しと同じ生年月日...98%やった！"</div><div class="qs">일본 X · GRADE_B(비로그인 관측) · K-pop 아이돌 사주 바이럴 트리거</div></div>
+<div class="qbox"><div class="qm">"accurate" / "AI therapist" / "daily saju horoscope seems more accurate"</div><div class="qs">해외 앱 리뷰 · GRADE_A · 서양 점성 대비 사주 정확 인지</div></div>
+<div class="qbox"><div class="qm">회의론 댓글 지지율 최상위(28↑, 165↑)</div><div class="qs">Reddit · GRADE_A · '거부' 구간 존재의 정량 근거(설득 금지 원칙의 근거)</div></div>
+<p class="note">※ 27건 전체 원문(국가 태그·src 포함)은 P713 패키지 evidence/(인용 27건 원문·법제처 3건 로그)에 보존. 일본 수요는 X·블로그·note 대체 관측 인용 6건 포함.</p>
+<h3 class="th">소스 등급표</h3>
+<div class="grid2">
+<div class="card"><h4><span class="tag A">GRADE_A</span> 핵심 1차 출처</h4><ul>
+<li>야노경제연구소(일본 점술 6대 시장 2024.12) · METI(캐시리스) · JNTO/KTO(방한·여행)</li>
+<li>법제처 원문 5종(전자상거래법·개인정보보호법·표시광고법·대법원 판례·부가세) · 특상법·景表法</li>
+<li>Stripe/Paddle 공식(stripe.com/global) · Keen/Kasamba 공식 약관 · Azure 공식 요금 · 크몽 공식 가이드</li>
+<li>RevenueCat(11.5만 앱) · IBISWorld · Pew · 수발부 · IID · 마이나비 · MIC · 야노 이용자 조사</li><li>Reddit JSON·스토어 RSS·유튜브 API 라이브 수집 · manseryeok npm 실설치(D2)</li></ul></div>
+<div class="card"><h4><span class="tag C">GRADE_C</span> 잔존 + stale 처리</h4><ul>
+<li>[추정] 라벨 잔존: 세그먼트 규모감(J1 600만±, J2 800~1,200만) · KPI 밴드 · 통역 품질 비율 · 커미션 10~30% · 채널 히트맵 정성 점수</li>
+<li>stale(±90일, 등급 처리 완료): 이코노미스트 2018(한국 규모 병기) · YouGov 2015(영국 단일 지표) · 1111인력행 2010(대만 재검증 플래그)</li>
+<li>Astrotalk 테이크 ~20% [추정 C] · JP 앱 구독 밴드 [추정]</li></ul></div>
+</div>
+<h3 class="th">체인 로그 요약</h3>
+<div class="tw"><table>
+<tr><th>일자</th><th>스테이지</th><th>판정</th></tr>
+<tr><td>2026-08-22</td><td>P700 차터 발행(schema 3.8, L1 시드 9종)</td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td>2026-08-22~24</td><td>L1 실측 9종(P701~P707) + G-1 교차검증</td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td>2026-08-24</td><td>코어트리오(P704C·P704D·P707B) 통합</td><td><span class="tag pass">확정</span></td></tr>
+<tr><td>2026-08-24</td><td>L2 종합(P708·P709·P708B·P706B)</td><td><span class="tag pass">확정</span></td></tr>
+<tr><td>2026-08-24</td><td>P710A~F 자동화 설계 + G-A + G-P</td><td><span class="tag pass">PASS · PASS</span></td></tr>
+<tr><td>2026-08-24</td><td>P712 리포트 설계 + P712Q 감수(Q-GATE)</td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td>2026-08-24</td><td>G-2A~D QA 배터리(C17~C25 발행)</td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td>2026-08-24</td><td>V 독립 검증(V-01~03 수정) · D2 엔진 해소 · SajuRoot 상표 예비</td><td><span class="tag B">조건부 PASS · 해소 · 통과</span></td></tr>
+<tr><td>2026-08-24</td><td>브랜딩 레드팀 4.2/10 → C26~C30 반영</td><td><span class="tag no">NO-GO</span> → <span class="tag pass">수술 반영</span></td></tr>
+<tr><td>2026-08-24</td><td>P713 최종 리포트 조립(본 파일)</td><td><span class="tag pass">릴리스 준비</span></td></tr>
+</table></div>
+<h3 class="th">산출물 패키지</h3>
+<div class="card"><ul>
+<li><b>리포트</b>: 본 HTML(탭 17 · 차트 15 · __DATASETS D01~D15 · 자가검증 MISMATCH=0)</li>
+<li><b>데이터</b>: data/report_data.json(D01~D15 원본) · qa/(G2 패킷+correction_log.md) · evidence/(인용 27건·법제처 로그)</li>
+<li><b>체인</b>: HSH-P700 체인 전체(prompts 33종 + handoffs 18종 + 체인로그)</li>
+<li><b>살아있는 리포트</b>: P714 운영 데이터 갱신 · P715 국가 KB 아카이빙 · 배포는 사용자 승인 후(GitHub Pages)</li>
+</ul></div>
+<div class="callout r"><b>면책:</b> 본 리포트의 법률 관련 내용은 정보 제공 목적이며 법률 자문이 아닙니다. 런칭 전 전문가 최종 확인이 필요합니다. 모든 리딩 상품은 entertainment 목적 고지를 포함합니다.</div>
+</section>
+
+</main>
+<footer><div class="wrap">
+<span class="vbadge" id="verifyBadge">자가검증 실행 중…</span>
+<p>HSH-P700 체인 최종 아카이브 리포트 · P712 설계 + P713 조립 · base_date 2026-08-24 · 환율 기준일 2026-08-21(C25)</p>
+<p>ECharts 5.5.1(CDN 1회 로드) · 차트 직렬 초기화 step() · 오류 수집 __chartErrs · 해시 라우팅 #/t01~#/t17 · 본 리딩 서비스는 오락 및 자기 성찰 목적입니다.</p>
+</div></footer>
+<script>
+/* ================= __DATASETS (D01~D15) ================= */
+window.__DATASETS = {
+D01:{kpi:[
+ {k:"리드→유료 전환율",v:"2.1%",d:"프리미엄 무료형 중앙값 · 앱 구독 표본 맥락(C21)",cls:"b",src:"RevenueCat 11.5만 앱 · as_of 2026-08-24 · GRADE_B"},
+ {k:"AOV",v:"18,533원",d:"T1 70% × T2 30% 혼합(C20 산식)",cls:"b",src:"P701 실측 밴드 + P708 가격 · GRADE_A/B"},
+ {k:"공헌마진 CM",v:"84.6%",d:"C17 정정(84.64%) · 순기여 15,687원/주문(C18)",cls:"g",src:"P708/P709 · G-2C 재계산 PASS"},
+ {k:"자동화 ops",v:"486 / 700",d:"월 Make ops · 예비 214(31%) · 이메일 195/500",cls:"b",src:"P710F F2 배분표 · G-A 검산"},
+ {k:"일본 스코어",v:"90.0",d:"S1 2위(KR 94.0 다음) · S2에서 US 88.0 역전",cls:"b",src:"P702B · 10국 검산+독립 재현 일치"},
+ {k:"현실안 순이익",v:"+124만원",d:"270주문 · 매출 500만 · 12월 누적 흑자",cls:"g",src:"P709 · 1,235,490원(G-2C·V 재현)"},
+ {k:"엔진 리스크 D2",v:"해소",d:"manseryeok 임의 경도 지원 확정 · 골든 11/11",cls:"g",src:"D2 실행 검증 2026-08-24 · GRADE_A"},
+ {k:"요구 충족",v:"22 / 22",d:"R01~R22 전부 배당·산출(R19~R22 v3.3~3.6 신설 포함)",cls:"y",src:"P700 req_map · G-2B 축8 9점"}
+]},
+D02:{
+ size:[{src:"TBRC 2025",v:"$4.7B"},{src:"이코노미스트",v:"$16.1B"},{work:"작업가설",apps:"앱 IAP [추정] $300M~1B",usHuman:"미국 인간상담 $2.3B · CAGR 5.5%(IBISWorld)",in:"Astrotalk FY25 $136M(+85% YoY)"}],
+ take:[{n:"Keen",v:54,g:"A"},{n:"Kasamba",v:61,g:"A"},{n:"Astrotalk",v:20,g:"C 추정"},{n:"앱스토어",v:"15~30%",g:"A"}],
+ conv:{freemium:2.1,hard:10.7,hardTop10:38.7,trialLong:42.5,trialShort:25.5,retentionFreemium:28,retentionHard:27},
+ arpu:[{n:"Co-Star",v:"$0.09/MAU/월"},{n:"Nebula",v:"$1.67/이용자/년"},{n:"Astrotalk",v:"≈$4.5/사용자/월"},{n:"유료자 연 RLTV",v:"북미 $32 · 서유럽 $26 · 인도/동남아 $14"}],
+ premium:{ai:"1.9~3.8x",human:"2.1~4.4x",sameMethod:"2.3~3.7x",fiverr:"최대 14x"},
+ scatter:[{n:"Co-Star",x:8.99,y:400000,g:"공시"},{n:"CHANI",x:11.99,y:500000,g:"공시"},{n:"Nebula",x:32,y:4170000,g:"주장 ARR"},{n:"The Pattern",x:7.99,y:200000,g:"추정"},{n:"Sanctuary",x:14.99,y:250000,g:"추정"},{n:"Astrology Zone",x:10,y:150000,g:"추정"},{n:"Labyrinthos",x:3,y:60000,g:"추정"},{n:"Keen",x:45,y:2500000,g:"추정"},{n:"Kasamba",x:60,y:2000000,g:"추정"},{n:"Purple Garden",x:45,y:1200000,g:"추정"},{n:"Mysticsense",x:30,y:800000,g:"추정"},{n:"Astrotalk",x:0.75,y:11300000,g:"공시"},{n:"Fiverr spiritual",x:40,y:1500000,g:"추정"},{n:"SajuRoot T1(목표)",x:9.90,y:3610,g:"목표",me:1}],
+ failures:["Co-Star: 투자 $21M·등록 3,000만 박스권 매각(화제성≠전환)","Rimfactory: 2026-08-21 점술 포기·로봇 데이터 피벗(iOS 결제 장애→유료 중단)","Kasamba: 16년 정체 후 PE 매각","Sanctuary: 시드 이후 무조달·축소"]
+},
+D03:{
+ market:{total:"997억엔(2023)",broad:"4조2,418억엔",seg:[["미디어",372,37.3],["대면",287,28.8],["전화",216,21.7],["스킬매칭",65,6.5],["기타",57,5.7]]},
+ persona:{female:90,age:"30~50대 80%",purpose:"연애·남녀관계 85%",src:"야노경제연구소 GRADE_A"},
+ paypay:"46.3~65.1%",cashless:42.8,card:57,
+ anchors:{chat:"분당 90~250엔(평균 200)",session:"회당 중앙 5,000엔",mail:"2,400~10,000엔",phone:"1회 약 6,000엔"},
+ visits:{y2025:3650000,h1_2026:"+20.4%",share:"해외여행의 25%",seoul:"서울 집중 76.8%"}
+},
+D04:{
+ weights:{s1:[0.30,0.20,0.20,0.15,0.15],s2:[0.25,0.15,0.10,0.15,0.35]},
+ countries:[
+  {n:"KR",tier:"홈",ax:[5,5,5,4,4],s1:94.0,note:"협의 1.4조~광의 4조원"},
+  {n:"JP",tier:"T1",ax:[5,4,5,4,4],s1:90.0,note:"S2 87.0 · US에 역전되나 T1 유지"},
+  {n:"US",tier:"T1 병행",ax:[4.5,4,4,3.5,5],s1:84.5,note:"S2 88.0 최상위"},
+  {n:"TW",tier:"T2",ax:[4.5,4.5,4.5,4,3],s1:84.0,note:"음력설 피크 · 경험률 92%"},
+  {n:"SG",tier:"T2",ax:[4,4.5,3.5,4,4.5],s1:81.5,note:"영어권 게이트웨이"},
+  {n:"HK",tier:"T2",ax:[4,4,3.5,3.5,4],s1:76.5,note:"화교 경유지"},
+  {n:"VN",tier:"T2",ax:[4,4,5,3,2],s1:75.0,note:"투비 문화 · Tết"},
+  {n:"CA",tier:"T2",ax:[3.5,4,3.5,4,4],s1:75.0,note:"-"},
+  {n:"UK",tier:"T2",ax:[4,3.5,3.5,3.5,4],s1:74.5,note:"ASA 가이드"},
+  {n:"TH",tier:"T3",ax:[4,4,4.5,3.5,2],s1:74.5,note:"$1.5억/년 · LINE"},
+  {n:"AU",tier:"T3",ax:null,s1:73.0,note:"축 미기재(C23)"},
+  {n:"PH",tier:"T3",ax:null,s1:69.5,note:"축 미기재(C23)"},
+  {n:"FR",tier:"T3",ax:null,s1:68.0,note:"축 미기재(C23)"},
+  {n:"DE",tier:"T3",ax:null,s1:63.0,note:"축 미기재(C23)"},
+  {n:"CN",tier:"와치",ax:null,s1:54.0,note:"S3 비관 시 47.0 · 진입 금지 후보"}
+ ]
+},
+D05:{quotes_total:27,needs:[["명확",12],["잠재",33],["무관",45],["거부",10]],
+ biases:["P1 유사과학/사기 우려(회의론이 커뮤니티 주류)","P2 한국 전용/영어 자원 없음","P3 '같은 생일=같은 운' 오해","P4 광고 의심"],
+ reviews:{good:["accurate","AI therapist","서양 점성보다 정확"],bad:["해외 번호 불가","계산기 간 일주 불일치","결제 후 접근 실패","광고 5개 피로","개인정보 수정 불가"]}},
+D06:{lib:[["manseryeok 2.0.0","주력 채택","MIT · trueSolarTime 옵션 · KASI 1391-2049"],["lunar-javascript/typescript","보조","교차검증·중국식 대조"],["soroche","기각","npm 404(시드 오류 정정)"]],
+ golden:{pass:11,total:11,grade:"GRADE_A(D2 실행)"},
+ tenGods:[["비견","peer","比肩"],["겁재","challenger","劫財"],["식신","nurturer","食神"],["상관","maverick","傷官"],["편재","venturer","偏財"],["정재","steward","正財"],["편관","commander","七殺"],["정관","authority","正官"],["편인","explorer","偏印"],["정인","scholar","印綬"]],
+ termbase:67,blind:70,forbidden:20,sections:6,seasons:4,samples:[43,42,41]},
+D07:{notify:{kr:"72h(제34조)",eu:"72h(GDPR)",jp:"속보 3-5일/확보 30일"},paddle:"한국 사업자 가능 · 5%+$0.50 · AUP 사전 문의 필수",stripe:"한국 직접 가입 불가(45개국 목록)",
+ verified:["전자상거래법 제17조2항5호","개인정보보호법 제28조의8","표시광고법 제3조"]},
+D08:{take:25,products:[["P1 원격 30분",44000,33000],["P2 심층 50분",77000,null],["P3 대면 30분",66000,null],["P4 AI리포트+질문3",33000,null],["P5 커플",99000,49500]],
+ interp:[["(a) 영일 가능 상담사","+3,000원"],["(b) Azure 실시간","1,700원/30분"],["(c) 번역가 검수","15,000원/1,500자"]]},
+D09:{
+ tiers:{core:["랜딩+계산기+이메일"],jp:["YouTube JA 롱폼","Shorts/TikTok JA","X·note"],hold:["Discord(이메일 300명까지)","인스타·틱톡 EN(D+30)","중화권 관측","런치 플랫폼(페이즈2)"]},
+ heatmap:[
+  ["핵심","랜딩+계산기",1,3,5,5],["핵심","이메일·뉴스레터",1,4,5,5],
+  ["일본","YouTube JA 롱폼",1,3,4,4],["일본","Shorts/TikTok JA",1,4,3,4],["일본","X(EN/JA)",2,3,3,4],["일본","note",2,2,3,5],
+  ["보류","Reddit 질문 응답",2,2,3,3],["보류","Discord",4,2,2,4],["보류","인스타·틱톡 EN",4,4,2,3],["보류","대만 Dcard·PTT 참여",4,2,2,4],["보류","중화권 관측",5,3,1,1],["보류","런치 플랫폼 PH",5,3,3,4]],
+ keywords:{total:31,en:17,ja:14},pgTypes:"PG1~4 품질 게이트 · 상한 200페이지/언어",
+ aiEnv:{jpSearch:"Google 55.4/Bing 36.4/Yahoo 6.4",ctrDrop:-60,citeRate:38,clickless:68},
+ discovery:{pages365:400,imprWeek:"20-60K"},
+ citeTarget:[1,3,8,15,25,35,42,50],citeX:["D+30","D+60","D+90","D+120","D+180","D+240","D+300","D+365"],
+ pagesX:["D+30","D+90","D+180","D+270","D+365"],pagesY:[20,100,220,320,400],imprMin:[2,8,15,18,20],imprMax:[6,24,40,52,60]
+},
+D10:{price:{t1:{usd:9.90,jpy:1390,krw:12900},t2:{usd:24.90,jpy:3480,krw:31900},multi:2.5,band:"2.3~3.7"},
+ unit:{aov:18533,cm:84.6,cmExact:0.8464,contrib:15687,arpuVisit:117,bep:35,payback:192},
+ pos:{me:[4.0,4.5],rivals:[[1.5,4.2,"전통 상담(원법 강·현지화 약)"],[3.5,1.8,"글로벌 점성 앱(현지화 강·원법 약)"],[2.0,2.0,"중국식 Ba Zi 앱"],[1.8,3.8,"한국산 앱 해외 진출 시도"]]}},
+D11:{
+ fx:{krwPerUsd:1384,krwPerJpy:8.72,asOf:"2026-08-21",note:"C25 단일 슬롯"},
+ unit:{aov:18533,contrib:15687,cm:84.6,mix:{t1:0.7,t2:0.3},t1:{jp:0.6,jpy:1390,usd:9.90,blended:12753},t2:{jp:0.6,jpy:3480,usd:24.90,blended:31992}},
+ months:["9월","10월","11월","12월","1월","2월","3월"],monthsFull:["2026-09","2026-10","2026-11","2026-12","2027-01","2027-02","2027-03"],
+ scenarios:{
+  conservative:{label:"보수",color:"#8b949e",orders:[2,5,7,13,16,7,4],spend:[200000,350000,300000,400000,450000,250000,247098],totalSpend:2197098},
+  realistic:{label:"현실(기준)",color:"#3fb950",orders:[6,20,32,62,90,36,24],spend:[250000,500000,450000,550000,600000,400000,250000],totalSpend:3000000},
+  aggressive:{label:"공격",color:"#d29922",orders:[18,60,96,186,270,108,72],spend:[250000,500000,450000,550000,600000,400000,250000],totalSpend:3000000}},
+ targets:{orders:270,revenue:5003910,net:1235490,leads:12857,visits:42857,conv:2.1,leadRate:30},
+ budget:[["콘텐츠",140],["로컬라이즈",100],["도구",30],["법무",20],["예비",10]],
+ killlines:[["K1","11/30 누적<20주문 → 동결"],["K2","12/31 월<10주문 ∧ 방문<3,000 → 청산"],["K3","소진≥255만 ∧ 매출<100만 → 즉시 중단"]],
+ regionMix:{jp:0.6,en:0.3,other:0.1},
+ seasonality:{m:["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
+  jp:[100,55,60,80,55,55,75,55,60,60,55,70],tw:[85,100,70,55,50,50,55,55,60,65,70,75],en:[100,55,50,50,50,55,50,50,55,80,60,75]},
+ emailsUsed:195,emailCap:500
+},
+D12:{rules:[["lead.created","B",60],["lead.verified","B",30],["reading.generated","B",60],["email.d0_send","B",30],["email.sequence","B",120],["crm.tagging","B",30],["payment.webhook","C",30],["receipt.send","C",10],["d5_paid_gate","B/C",25],["review.request","D",20],["cs.classify","D",15],["optout.sync","B/D",10],["content.publish","A",30],["content.metrics_ingest","A",16],["kpi.daily_rollup","F",0]],
+ opsUsed:486,opsCap:700,vblock:{domains:[["A 콘텐츠",1],["B 리드→리딩",2],["C 결제",2],["D CS",1],["E 매칭",1],["F 오케스트레이션",2]],grade:{1:"시나리오",2:"실증 예정(치명)"}}},
+D13:{timeline:[[-21,"D-21 사전 수요 검증(C26~C30 추가)"],[0,"D+0 런치"],[14,"D+14 코어 스프린트 종료"],[42,"G1 코어 게이트"],[56,"D+56 재시험(블라인드 ≤2회)"],[60,"G2 실사용"],[90,"G3 채널·페이즈2 해금"],[120,"G4 자동화 가동"],[150,"G5 확장 신호"],[200,"D+200 종결"]]},
+D14:{weekly:[["월","리뷰·데이터"],["화","제작"],["수","발행"],["목","CS+AMA"],["금","실험"],["토","버퍼"],["일","휴식"]]},
+D15:{corrections:[["C13","시드","대법원 2016도12460"],["C14","시드","개보법 제28조의8"],["C15","시드","부가세 제21~25조"],["C16","시드","표광법 제3조"],
+ ["C17","실행","CM 84.6%"],["C18","실행","계수 15,687 통일"],["C19","실행","PayPay 46.3~65.1%"],["C20","실행","AOV 산식 명기"],["C21","실행","2.1% 맥락 라벨"],["C22","실행","보수 spend·BEP 병록"],["C23","실행","5개국 축 병록"],["C24","실행","블라인드 설계 기준 라벨"],["C25","실행","환율 단일 슬롯 1,384원"],
+ ["C26","브랜딩","히어로 카피 교체"],["C27","브랜딩","K-정통성 완화"],["C28","브랜딩","Chart basis"],["C29","브랜딩","시각 차트 리드마그넷"],["C30","브랜딩","G1 강화+채널 3층"]],
+ g2a:{attacks:45,reject:5,partial:10,accept:0,critical:0},g2b:{score:66,cap:80,min:7},g2c:{checked:32,err:1,rate:3.1},g2d:{defects:10,verdict:"PASS"},
+ v:{match:15,full:13,delta2:2,fixed:["V-01","V-02","V-03"]},d2:"해소(GRADE_A)",brand:{score:"4.2/10",verdict:"CONDITIONAL NO-GO → 수술 반영"}}
+};
+/* ================= derived finance ================= */
+const DS=window.__DATASETS, F=DS.D11;
+function scenCalc(key){const s=F.scenarios[key];const rev=s.orders.map(n=>n*F.unit.aov);
+ const net=s.orders.map((n,i)=>n*F.unit.contrib-s.spend[i]);
+ let c=0;const cum=net.map(v=>c+=v);
+ return {key,label:s.label,color:s.color,orders:s.orders,spend:s.spend,rev,net,cum,
+  totOrders:s.orders.reduce((a,b)=>a+b,0),totRev:rev.reduce((a,b)=>a+b,0),totSpend:s.totalSpend,totNet:cum[cum.length-1]};}
+const SC={conservative:scenCalc("conservative"),realistic:scenCalc("realistic"),aggressive:scenCalc("aggressive")};
+window.__SCEN="realistic";window.__SCORE="s1";
+/* ================= verify ================= */
+window.__verifyDatasets=function(){
+ const mm=[];const eq=(name,a,b)=>{if(a!==b)mm.push(name+" expected "+b+" got "+a);};
+ eq("consOrders",SC.conservative.totOrders,54);eq("realOrders",SC.realistic.totOrders,270);eq("aggOrders",SC.aggressive.totOrders,810);
+ eq("realSpend",F.scenarios.realistic.totalSpend,3000000);eq("consSpend",F.scenarios.conservative.totalSpend,2197098);
+ eq("realRevenue",270*F.unit.aov,5003910);eq("realNet",270*F.unit.contrib-3000000,1235490);
+ eq("aggNet",810*F.unit.contrib-3000000,9706470);eq("consNet",54*F.unit.contrib-2197098,-1350000);
+ eq("cumEndReal",SC.realistic.cum[6],1235490);eq("cumEndCons",SC.conservative.cum[6],-1350000);eq("cumEndAgg",SC.aggressive.cum[6],9706470);
+ if(!(SC.realistic.cum[3]>0))mm.push("Dec cumulative must be positive(12월 누적 흑자)");
+ if(!(SC.realistic.cum[4]>0))mm.push("Jan cumulative must be positive");
+ if(Math.round(F.unit.contrib/F.unit.aov*1000)/10!==84.6)mm.push("CM rounding");
+ const t1=F.unit.t1,t2=F.unit.t2;
+ if(Math.abs(t1.jp*t1.jpy*F.fx.krwPerJpy+(1-t1.jp)*t1.usd*F.fx.krwPerUsd-t1.blended)>1.5)mm.push("T1 blended");
+ if(Math.abs(t2.jp*t2.jpy*F.fx.krwPerJpy+(1-t2.jp)*t2.usd*F.fx.krwPerUsd-t2.blended)>1.5)mm.push("T2 blended");
+ if(Math.abs(F.unit.mix.t1*t1.blended+F.unit.mix.t2*t2.blended-F.unit.aov)>9)mm.push("AOV mix(C20 Δ8 허용)");
+ if(Math.ceil(5000000/F.unit.aov)!==270)mm.push("target orders ceil");if(Math.round(270/0.021)!==12857)mm.push("leads");if(Math.ceil(12857/0.30)!==42857)mm.push("visits");
+ const ops=DS.D12.rules.reduce((a,r)=>a+r[2],0);eq("opsSum",ops,DS.D12.opsUsed);eq("opsCap",DS.D12.opsCap,700);
+ eq("emails",F.emailsUsed,195);if(!(F.emailsUsed<F.emailCap))mm.push("email cap");
+ const W=DS.D04.weights,cOf=n=>DS.D04.countries.find(c=>c.n===n);
+ const calc=(c,w)=>{const s=c.ax.reduce((a,v,i)=>a+v*w[i],0);return Math.round(s*20*10)/10;};
+ const jp=cOf("JP"),us=cOf("US"),kr=cOf("KR");
+ eq("JP S1",calc(jp,W.s1),90.0);eq("US S1",calc(us,W.s1),84.5);eq("KR S1",calc(kr,W.s1),94.0);
+ eq("JP S2",calc(jp,W.s2),87.0);eq("US S2",calc(us,W.s2),88.0);
+ if(!(calc(us,W.s2)>calc(jp,W.s2)))mm.push("S2 US must beat JP(역전)");
+ DS.D04.countries.forEach(c=>{if(c.ax&&Math.abs(calc(c,W.s1)-c.s1)>0.05)mm.push("S1 recompute "+c.n);});
+ const bud=F.budget.reduce((a,b)=>a+b[1],0);eq("budget300",bud,300);
+ eq("corrections18",DS.D15.corrections.length,18);
+ if(DS.D06.golden.pass!==11||DS.D06.termbase!==67)mm.push("core constants");
+ const rm=F.regionMix;if(Math.abs(rm.jp+rm.en+rm.other-1)>1e-9)mm.push("regionMix sum");
+ if(DS.D09.heatmap.length!==12)mm.push("channels 12");
+ console.log("%c__verifyDatasets MISMATCH="+(mm.length===0?"0":mm.length),"color:"+(mm.length===0?"#3fb950":"#f85149")+";font-weight:bold");
+ if(mm.length)console.warn("MISMATCH DETAIL:",mm);
+ const b=document.getElementById("verifyBadge");
+ if(b){b.textContent=mm.length===0?"자가검증 MISMATCH=0 · 27항목 통과":"자가검증 MISMATCH="+mm.length;b.style.borderColor=mm.length===0?"rgba(63,185,80,.4)":"rgba(248,81,73,.4)";b.style.color=mm.length===0?"#3fb950":"#f85149";}
+ return mm.length;};
+/* ================= router ================= */
+const CH={};
+function activate(id){document.querySelectorAll("section.tab").forEach(s=>s.classList.toggle("on",s.id===id));
+ document.querySelectorAll(".tab-btn").forEach(b=>b.classList.toggle("on",b.dataset.t===id));
+ window.scrollTo({top:0});setTimeout(()=>{Object.keys(CH).forEach(k=>{try{CH[k].resize()}catch(e){}})},60);}
+window.addEventListener("hashchange",()=>{const m=location.hash.match(/^#\/(t\d{2})/);if(m)activate(m[1]);});
+document.getElementById("nav").addEventListener("click",e=>{const b=e.target.closest(".tab-btn");if(b)location.hash="/"+b.dataset.t;});
+/* ================= KPI grids ================= */
+(function(){const g=document.getElementById("kpiGrid");
+ g.innerHTML=DS.D01.kpi.map(k=>'<div class="kpi '+k.cls+'"><div class="k">'+k.k+'<i class="st" data-t="'+k.src+'">i</i></div><div class="v">'+k.v+'</div><div class="d">'+k.d+'</div></div>').join("");})();
+function finKpiRender(){const s=SC[window.__SCEN];const blackMonth=(()=>{if(s.cum[6]<=0)return "없음(청산 구간)";
+ for(let i=0;i<s.cum.length;i++)if(s.cum[i]>0)return F.months[i]+" 누적 흑자";return "-";})();
+ document.getElementById("finKpis").innerHTML=[
+ ['주문(7개월)',s.totOrders.toLocaleString()+'건','b'],['매출',fmtW(s.totRev),'b'],['투입 지출',fmtW(s.totSpend),'y'],
+ ['순이익',(s.totNet>=0?'+':'')+fmtW(s.totNet),s.totNet>=0?'g':'y'],['누적 흑자 전환',blackMonth,'b'],
+ ['월 최고 순이익',fmtW(Math.max.apply(null,s.net)),'g']].map(k=>'<div class="kpi '+k[2]+'"><div class="k">'+k[0]+'</div><div class="v">'+k[1]+'</div><div class="d">'+s.label+'안 · '+F.monthsFull[0]+'~'+F.monthsFull[6]+'</div></div>').join("");}
+function fmtW(n){return (n<0?'−':'')+(Math.abs(n)/10000>=1?(Math.abs(n)/10000).toFixed(1).replace(/\.0$/,"")+'만원':Math.abs(n).toLocaleString()+'원');}
+function finTableRender(){const s=SC[window.__SCEN];
+ let h='<tr><th>월</th><th class="num">주문</th><th class="num">매출</th><th class="num">투입</th><th class="num">월 순이익</th><th class="num">누적 현금</th></tr>';
+ F.monthsFull.forEach((m,i)=>{h+='<tr><td>'+m+'</td><td class="num">'+s.orders[i]+'</td><td class="num">'+s.rev[i].toLocaleString()+'</td><td class="num">'+s.spend[i].toLocaleString()+'</td><td class="num '+(s.net[i]>=0?'pos':'neg')+'">'+(s.net[i]>=0?'+':'')+s.net[i].toLocaleString()+'</td><td class="num '+(s.cum[i]>=0?'pos':'neg')+'">'+(s.cum[i]>=0?'+':'')+s.cum[i].toLocaleString()+'</td></tr>';});
+ h+='<tr><th>합계</th><th class="num">'+s.totOrders+'</th><th class="num">'+s.totRev.toLocaleString()+'</th><th class="num">'+s.totSpend.toLocaleString()+'</th><th class="num pos">+'+s.totNet.toLocaleString()+'</th><th class="num">= 순이익</th></tr>';
+ document.getElementById("finTable").innerHTML=h;}
+/* ================= charts ================= */
+const TXT={color:'#c9d1d9',fontFamily:'inherit'};
+const GRID={left:56,right:20,top:44,bottom:36,containLabel:true};
+const TOOLTIP={trigger:'axis',backgroundColor:'#161b22',borderColor:'#30363d',textStyle:{color:'#c9d1d9',fontSize:12}};
+function step(name,fn){try{fn();}catch(e){window.__chartErrs.push(name+': '+(e&&e.message||e));
+ const el=document.getElementById(name);if(el){el.classList.add('err');el.textContent='['+name+'] 차트 초기화 실패 · '+(e&&e.message||e)+' · 인터넷 연결(ECharts CDN) 확인 필요';}
+ console.error('chart',name,e);}}
+function mk(id){if(typeof echarts==='undefined')throw new Error('ECharts 미로딩(CDN)');const el=document.getElementById(id);if(!el)throw new Error('컨테이너 없음');const c=echarts.init(el);CH[id]=c;return c;}
+window.addEventListener('load',function(){
+/* c01 */
+step('c01',()=>{mk('c01').setOption({color:[SC.conservative.color,SC.realistic.color,SC.aggressive.color],textStyle:TXT,
+ tooltip:Object.assign({},TOOLTIP,{valueFormatter:v=>v.toLocaleString()+'원'}),
+ legend:{textStyle:{color:'#8b949e'},top:6},grid:GRID,
+ xAxis:{type:'category',data:F.monthsFull,axisLine:{lineStyle:{color:'#30363d'}}},
+ yAxis:{type:'value',axisLabel:{formatter:v=>(v/10000)+'만',color:'#8b949e'},splitLine:{lineStyle:{color:'#21262d'}}},
+ series:['conservative','realistic','aggressive'].map(k=>({name:SC[k].label,type:'line',smooth:true,symbolSize:7,data:SC[k].net,
+  lineStyle:{width:k===window.__SCEN?3.5:1.5},itemStyle:{opacity:1}}))});}); 
+/* c02 */
+step('c02',()=>{const keys=['conservative','realistic','aggressive'];
+ mk('c02').setOption({textStyle:TXT,tooltip:Object.assign({},TOOLTIP,{trigger:'item',formatter:p=>{const s=SC[keys[p.dataIndex]];
+  return '<b>'+s.label+'</b><br>주문 '+s.totOrders+'건<br>매출 '+fmtW(s.totRev)+'<br>투입 '+fmtW(s.totSpend)+'<br>순이익 <b>'+(s.totNet>=0?'+':'')+fmtW(s.totNet)+'</b>';}}),
+ grid:{left:64,right:20,top:30,bottom:30},
+ xAxis:{type:'category',data:keys.map(k=>SC[k].label),axisLine:{lineStyle:{color:'#30363d'}}},
+ yAxis:{type:'value',axisLabel:{formatter:v=>(v/10000)+'만',color:'#8b949e'},splitLine:{lineStyle:{color:'#21262d'}}},
+ series:[{type:'bar',barWidth:46,data:keys.map(k=>({value:SC[k].totNet,itemStyle:{color:SC[k].color,borderRadius:[5,5,0,0]}})),
+  label:{show:true,position:'top',color:'#e6edf3',fontWeight:'bold',formatter:p=>(p.value>=0?'+':'')+(p.value/10000).toFixed(0)+'만'}}]});});
+/* c03 */
+step('c03',()=>{mk('c03').setOption({color:[SC.conservative.color,SC.realistic.color,SC.aggressive.color],textStyle:TXT,
+ tooltip:Object.assign({},TOOLTIP,{valueFormatter:v=>v.toLocaleString()+'원'}),legend:{textStyle:{color:'#8b949e'},top:6},
+ grid:GRID,xAxis:{type:'category',data:F.monthsFull,axisLine:{lineStyle:{color:'#30363d'}}},
+ yAxis:{type:'value',axisLabel:{formatter:v=>(v/10000)+'만',color:'#8b949e'},splitLine:{lineStyle:{color:'#21262d'}}},
+ series:['conservative','realistic','aggressive'].map(k=>({name:SC[k].label,type:'line',smooth:true,data:SC[k].cum,
+  markLine:k==='realistic'?{silent:true,symbol:'none',lineStyle:{color:'#3fb950',type:'dashed'},label:{color:'#3fb950',formatter:'12월 누적 흑자'},data:[{yAxis:0}]}:undefined,
+  lineStyle:{width:k===window.__SCEN?3.5:1.5}}))});});
+/* c04 slider */
+step('c04',()=>{const slO=document.getElementById('slOrders'),slS=document.getElementById('slSpend');
+ const ro=document.createElement('div');ro.className='readout';const ch=document.getElementById('c04');ch.parentNode.insertBefore(ro,ch);
+ const c=mk('c04');const keys=['conservative','realistic','aggressive'];
+ function upd(){const n=+slO.value,sp=+slS.value*10000,profit=F.unit.contrib*n-sp;
+  document.getElementById('slN').textContent=n;document.getElementById('slS').textContent=slS.value;
+  ro.innerHTML='순이익 = <b>15,687 × '+n+' − '+sp.toLocaleString()+'</b> = <span class="big" style="color:'+(profit>=0?'#3fb950':'#f85149')+'">'+(profit>=0?'+':'−')+Math.abs(profit).toLocaleString()+'원</span> <span style="color:#8b949e">('+fmtW(Math.abs(profit))+(profit>=0?' 흑자':' 적자')+')</span> · G0 기준액 대비: '+(profit>=1000000?'공격 목표권':profit>=0?'현실·보수 사이':'킬라인 점검 구간');
+  c.setOption({textStyle:TXT,grid:{left:64,right:20,top:30,bottom:30},
+   tooltip:{trigger:'item',backgroundColor:'#161b22',borderColor:'#30363d',textStyle:{color:'#c9d1d9'},formatter:p=>p.name+'<br>'+(p.value>=0?'+':'')+(p.value).toLocaleString()+'원'},
+   xAxis:{type:'category',data:['보수(54/220만)','현실(270/300만)','공격(810/300만)','현재 설정'],axisLabel:{color:'#8b949e',fontSize:10},axisLine:{lineStyle:{color:'#30363d'}}},
+   yAxis:{type:'value',axisLabel:{formatter:v=>(v/10000)+'만',color:'#8b949e'},splitLine:{lineStyle:{color:'#21262d'}}},
+   series:[{type:'bar',barWidth:40,data:[{value:SC.conservative.totNet,itemStyle:{color:SC.conservative.color,borderRadius:[5,5,0,0]}},
+    {value:SC.realistic.totNet,itemStyle:{color:SC.realistic.color,borderRadius:[5,5,0,0]}},
+    {value:SC.aggressive.totNet,itemStyle:{color:SC.aggressive.color,borderRadius:[5,5,0,0]}},
+    {value:profit,itemStyle:{color:'#58a6ff',borderRadius:[5,5,0,0]}}],
+    label:{show:true,position:'top',color:'#e6edf3',fontSize:10,fontWeight:'bold',formatter:p=>(p.value>=0?'+':'')+(p.value/10000).toFixed(0)+'만'}}]},true);}
+ slO.addEventListener('input',upd);slS.addEventListener('input',upd);upd();});
+/* c05 tornado */
+step('c05',()=>{const base=F.targets.net,n270=270,leads=F.targets.leads;
+ const convLo=Math.round(leads*0.016*F.unit.contrib-F.scenarios.realistic.totalSpend)-base;
+ const convHi=Math.round(leads*0.026*F.unit.contrib-F.scenarios.realistic.totalSpend)-base;
+ const ord=54*F.unit.contrib,aov=Math.round(n270*F.unit.aov*F.unit.cmExact*0.10),sp=300000,cm=Math.round(n270*F.unit.aov*0.03);
+ const cats=['전환율 ±0.5%p','주문수 ±20%','AOV ±10%','투입 지출 ±10%','CM ±3%p'];
+ const lo=[convLo,-ord,-aov,sp,-cm],hi=[convHi,ord,aov,-sp,cm];
+ mk('c05').setOption({textStyle:TXT,tooltip:Object.assign({},TOOLTIP,{trigger:'item',formatter:p=>cats[p.dataIndex]+'<br>하방 '+(lo[p.dataIndex]/10000).toFixed(0)+'만 / 상방 +'+(hi[p.dataIndex]/10000).toFixed(0)+'만'}),
+  legend:{data:['하방 Δ','상방 Δ'],textStyle:{color:'#8b949e'},top:4},
+  grid:{left:110,right:24,top:36,bottom:30},
+  xAxis:{type:'value',axisLabel:{formatter:v=>(v/10000)+'만',color:'#8b949e'},splitLine:{lineStyle:{color:'#21262d'}}},
+  yAxis:{type:'category',data:cats,axisLabel:{color:'#c9d1d9'},axisLine:{lineStyle:{color:'#30363d'}}},
+  series:[{name:'하방 Δ',type:'bar',stack:'t',barWidth:18,itemStyle:{color:'#f85149',borderRadius:[0,0,0,5]},data:lo},
+   {name:'상방 Δ',type:'bar',stack:'t',barWidth:18,itemStyle:{color:'#3fb950',borderRadius:[0,5,5,0]},data:hi,
+   label:{show:true,position:'right',color:'#3fb950',fontSize:10,formatter:p=>'+'+(p.value/10000).toFixed(0)+'만'}}]});});
+/* c06 channel heatmap */
+step('c06',()=>{const rows=DS.D09.heatmap,ys=rows.map(r=>r[1]),xs=['3층 등급','우선순위','도달 [추정]','전환기여 [추정]','안전도(역위험)'];
+ const tierV={"핵심":1,"일본":2,"보류":3},tierL={1:'핵',2:'일',3:'보'},tierN={1:'핵심(즉시)',2:'일본(즉시)',3:'보류'};
+ const data=[];rows.forEach((r,i)=>{[tierV[r[0]],r[2],r[3],r[4],r[5]].forEach((v,j)=>data.push([j,i,v]));});
+ mk('c06').setOption({textStyle:TXT,tooltip:{position:'top',backgroundColor:'#161b22',borderColor:'#30363d',textStyle:{color:'#c9d1d9'},
+  formatter:p=>{const col=p.value[0];return ys[p.value[1]]+' ('+rows[p.value[1]][0]+')<br>'+xs[col]+': '+(col===0?tierN[p.value[2]]:p.value[2]+'/5');}},
+ grid:{left:130,right:70,top:10,bottom:56},
+ xAxis:{type:'category',data:xs,splitArea:{show:true,areaStyle:{color:['#161b22','#1c2129']}},axisLabel:{color:'#8b949e',fontSize:10}},
+ yAxis:{type:'category',data:ys,axisLabel:{color:'#c9d1d9',fontSize:11}},
+ visualMap:{type:'continuous',min:1,max:5,calculable:false,orient:'vertical',right:8,top:'center',text:['높음','낮음'],textStyle:{color:'#8b949e'},inRange:{color:['#1f3a5f','#1f6feb','#58a6ff','#3fb950','#a5d6a7']}},
+ series:[{type:'heatmap',data:data,label:{show:true,color:'#e6edf3',fontSize:10,formatter:p=>p.value[0]===0?tierL[p.value[2]]:p.value[2]},itemStyle:{borderColor:'#0d1117',borderWidth:2}}]});});
+/* c07 scatter */
+step('c07',()=>{const d=DS.D02.scatter;const comp=d.filter(p=>!p.me).map(p=>({value:[p.x,p.y],n:p.n,g:p.g}));const me=d.filter(p=>p.me).map(p=>({value:[p.x,p.y],n:p.n,g:p.g}));
+ mk('c07').setOption({textStyle:TXT,tooltip:{trigger:'item',backgroundColor:'#161b22',borderColor:'#30363d',textStyle:{color:'#c9d1d9'},
+  formatter:p=>'<b>'+p.data.n+'</b><br>가격 $'+p.data.value[0]+'<br>월 매출 $'+p.data.value[1].toLocaleString()+'<br>지표: '+p.data.g},
+ legend:{data:['벤치마크 13','SajuRoot(목표)'],textStyle:{color:'#8b949e'},top:4},
+ grid:GRID,xAxis:{type:'log',name:'가격(USD·로그)',nameTextStyle:{color:'#8b949e'},axisLabel:{color:'#8b949e',formatter:v=>'$'+v},splitLine:{lineStyle:{color:'#21262d'}}},
+ yAxis:{type:'log',name:'월 매출(USD·로그)',nameTextStyle:{color:'#8b949e'},axisLabel:{color:'#8b949e',formatter:v=>'$'+(v>=1000000?(v/1000000)+'M':v>=1000?(v/1000)+'K':v)},splitLine:{lineStyle:{color:'#21262d'}}},
+ series:[{name:'벤치마크 13',type:'scatter',data:comp,symbolSize:14,itemStyle:{color:'#58a6ff',opacity:.85},
+   label:{show:true,position:'top',color:'#8b949e',fontSize:9.5,formatter:p=>p.data.n}},
+  {name:'SajuRoot(목표)',type:'scatter',data:me,symbolSize:22,itemStyle:{color:'#3fb950',shadowColor:'#3fb950',shadowBlur:12},
+   label:{show:true,position:'top',color:'#3fb950',fontWeight:'bold',formatter:'SajuRoot T1'}}]});});
+/* c08 country bars with toggle */
+step('c08',()=>{const W=DS.D04.weights;
+ function calcS(w){return DS.D04.countries.map(c=>({n:c.n,tier:c.tier,s1:c.s1,s2:c.ax?Math.round(c.ax.reduce((a,v,i)=>a+v*w[i],0)*200)/10:null}));}
+ window.__renderC08=function(){const mode=window.__SCORE;let arr=calcS(W[mode]).filter(c=>c[mode]);
+  arr.sort((a,b)=>b[mode]-a[mode]);const kk=arr.map(c=>c.n+(c.tier?' ('+c.tier+')':''));
+  CH.c08.setOption({textStyle:TXT,tooltip:Object.assign({},TOOLTIP,{trigger:'item',formatter:p=>{const c=arr[p.dataIndex];
+   return '<b>'+c.n+'</b> '+c.tier+'<br>S1 '+c.s1.toFixed(1)+(c.s2!=null?' · S2 '+c.s2.toFixed(1):' · S2 재계산 불가(축 미기재 C23)');}}),
+   grid:{left:44,right:30,top:14,bottom:64},xAxis:{type:'category',data:kk,axisLabel:{color:'#8b949e',fontSize:10,rotate:45},axisLine:{lineStyle:{color:'#30363d'}}},
+   yAxis:{type:'value',min:40,max:100,axisLabel:{color:'#8b949e'},splitLine:{lineStyle:{color:'#21262d'}}},
+   series:[{type:'bar',barWidth:20,data:arr.map(c=>({value:c[mode],itemStyle:{color:c.n==='JP'?'#3fb950':c.n==='US'?'#d29922':c.n==='KR'?'#bc8cff':'#1f6feb',borderRadius:[4,4,0,0]}})),
+    label:{show:true,position:'top',color:'#c9d1d9',fontSize:10,formatter:p=>p.value.toFixed(1)}}]},true);};
+ mk('c08');window.__renderC08();});
+/* c09 revenue stack by region */
+window.__renderC09=function(){const s=SC[window.__SCEN],rm=F.regionMix;
+ const jp=s.rev.map(v=>Math.round(v*rm.jp)),en=s.rev.map(v=>Math.round(v*rm.en));
+ const other=s.rev.map((v,i)=>v-jp[i]-en[i]);
+ if(!CH.c09)return;CH.c09.setOption({color:['#3fb950','#58a6ff','#bc8cff'],textStyle:TXT,
+ tooltip:Object.assign({},TOOLTIP,{valueFormatter:v=>v.toLocaleString()+'원'}),legend:{data:['일본 60%','영어권 30%','기타 10%'],textStyle:{color:'#8b949e'},top:4},
+ grid:GRID,xAxis:{type:'category',data:F.monthsFull,axisLine:{lineStyle:{color:'#30363d'}}},
+ yAxis:{type:'value',axisLabel:{formatter:v=>(v/10000)+'만',color:'#8b949e'},splitLine:{lineStyle:{color:'#21262d'}}},
+ series:[{name:'일본 60%',type:'bar',stack:'r',barWidth:26,data:jp},{name:'영어권 30%',type:'bar',stack:'r',barWidth:26,data:en},{name:'기타 10%',type:'bar',stack:'r',barWidth:26,data:other,
+  label:{show:true,position:'top',color:'#e6edf3',fontSize:9.5,formatter:p=>{const t=p.value;return t>0?(t/10000).toFixed(0)+'万':'';}}}]},true);};
+step('c09',()=>{mk('c09');window.__renderC09();});
+/* c10 automation heatmap */
+step('c10',()=>{const vb=DS.D12.vblock,ys=vb.domains.map(d=>d[0]),xs=['V1 구축','V2 기능','V3 한도/신뢰','V4 컴플라이언스','V5 실증/이양'];
+ const data=[];vb.domains.forEach((d,i)=>{for(let j=0;j<5;j++)data.push([j,i,d[1]]);});
+ mk('c10').setOption({textStyle:TXT,tooltip:{position:'top',backgroundColor:'#161b22',borderColor:'#30363d',textStyle:{color:'#c9d1d9'},
+  formatter:p=>ys[p.value[1]]+' · '+xs[p.value[0]]+'<br>'+(p.value[2]===2?'치명 · 실증 경로 지정(D+7~13)':'시나리오 등급(G-A 허용)')},
+ grid:{left:130,right:80,top:12,bottom:46},
+ xAxis:{type:'category',data:xs,splitArea:{show:true,areaStyle:{color:['#161b22','#1c2129']}},axisLabel:{color:'#8b949e',fontSize:10}},
+ yAxis:{type:'category',data:ys,axisLabel:{color:'#c9d1d9',fontSize:11}},
+ visualMap:{show:false,piecewise:false,min:1,max:2,inRange:{color:['#1f6feb','#d29922']}},
+ series:[{type:'heatmap',data:data,label:{show:true,color:'#0d1117',fontWeight:'bold',formatter:p=>p.value[2]===2?'치명':'설계'},itemStyle:{borderColor:'#0d1117',borderWidth:2,borderRadius:4}}]});});
+/* c11 gate timeline */
+step('c11',()=>{const tl=DS.D13.timeline;const gates={'G1 코어 게이트':1,'G2 실사용':1,'G3 채널·페이즈2 해금':1,'G4 자동화 가동':1,'G5 확장 신호':1};
+ mk('c11').setOption({textStyle:TXT,tooltip:Object.assign({},TOOLTIP,{trigger:'item',formatter:p=>p.data.label}),
+ grid:{left:40,right:60,top:30,bottom:56},xAxis:{type:'value',min:-30,max:215,name:'D+day(런치 기준)',nameTextStyle:{color:'#8b949e'},
+  axisLabel:{color:'#8b949e',formatter:v=>v<0?'D'+v:'D+'+v},splitLine:{lineStyle:{color:'#21262d'}}},
+ yAxis:{type:'value',show:false,min:-1,max:1},
+ series:[{type:'scatter',data:tl.map((t,i)=>({value:[t[0],i%2===0?0.55:-0.55],label:t[1],name:t[1],
+  symbolSize:t[1].startsWith('G')||t[1].includes('게이트')||t[1].includes('해금')||t[1].includes('자동화')||t[1].includes('확장')?20:11,
+  itemStyle:{color:t[1].startsWith('G')?'#3fb950':t[0]<0?'#bc8cff':'#58a6ff'}})),
+  label:{show:true,position:'top',color:'#c9d1d9',fontSize:10,formatter:p=>p.data.label},
+  markLine:{silent:true,symbol:'none',lineStyle:{color:'#30363d'},data:[{yAxis:0}],label:{show:false}}}],
+ graphic:[{type:'text',right:14,top:8,style:{text:'● 초록=게이트 G1~G5 · 보라=D-21 사전 검증',fill:'#8b949e',fontSize:10}}]});});
+/* c12 seasonality */
+step('c12',()=>{const s=F.seasonality;mk('c12').setOption({color:['#3fb950','#bc8cff','#58a6ff'],textStyle:TXT,
+ tooltip:Object.assign({},TOOLTIP,{valueFormatter:v=>v+' (지수 [추정])'}),legend:{data:['JP(1·4·7월 피크)','TW·VN(음력설 피크)','US·UK(1월+할로윈)'],textStyle:{color:'#8b949e'},top:4},
+ grid:GRID,xAxis:{type:'category',data:s.m,axisLine:{lineStyle:{color:'#30363d'}},axisLabel:{color:'#8b949e'}},
+ yAxis:{type:'value',min:40,max:105,axisLabel:{color:'#8b949e'},splitLine:{lineStyle:{color:'#21262d'}}},
+ series:[{name:'JP(1·4·7월 피크)',type:'line',smooth:true,data:s.jp},{name:'TW·VN(음력설 피크)',type:'line',smooth:true,data:s.tw},{name:'US·UK(1월+할로윈)',type:'line',smooth:true,data:s.en}]});});
+/* c13 needs donut */
+step('c13',()=>{const d=DS.D05.needs;mk('c13').setOption({color:['#3fb950','#58a6ff','#8b949e','#f85149'],textStyle:TXT,
+ tooltip:{trigger:'item',backgroundColor:'#161b22',borderColor:'#30363d',textStyle:{color:'#c9d1d9'},formatter:p=>p.name+' [추정] '+p.value+'%'},
+ legend:{orient:'vertical',right:8,top:'center',textStyle:{color:'#8b949e'}},
+ series:[{type:'pie',radius:['42%','68%'],center:['38%','52%'],avoidLabelOverlap:true,
+  label:{color:'#c9d1d9',formatter:'{b}\n{c}%'},data:d.map(x=>({name:x[0],value:x[1]}))}],
+ graphic:[{type:'text',left:'31%',top:'46%',style:{text:'니즈\n4구간',fill:'#8b949e',fontSize:13,fontWeight:'bold',textAlign:'center'}}]});});
+/* c14 discovery */
+step('c14',()=>{const d=DS.D09;mk('c14').setOption({color:['#3fb950','#d29922','#f85149'],textStyle:TXT,
+ tooltip:Object.assign({},TOOLTIP),legend:{data:['누적 인덱스 페이지 [목표]','주간 노출 상한 [목표]','주간 노출 하한 [목표]'],textStyle:{color:'#8b949e'},top:4},
+ grid:GRID,xAxis:{type:'category',data:d.pagesX,axisLine:{lineStyle:{color:'#30363d'}},axisLabel:{color:'#8b949e'}},
+ yAxis:[{type:'value',name:'페이지',nameTextStyle:{color:'#8b949e'},axisLabel:{color:'#8b949e'},splitLine:{lineStyle:{color:'#21262d'}}},
+  {type:'value',name:'노출(K/주)',nameTextStyle:{color:'#8b949e'},axisLabel:{color:'#8b949e'},splitLine:{show:false}}],
+ series:[{name:'누적 인덱스 페이지 [목표]',type:'line',smooth:true,data:d.pagesY,lineStyle:{width:3.5},
+   markPoint:{data:[{coord:[4,400],value:'400+'}]},areaStyle:{opacity:.12}},
+  {name:'주간 노출 상한 [목표]',type:'line',yAxisIndex:1,smooth:true,data:d.imprMax,lineStyle:{type:'dashed',width:1.5}},
+  {name:'주간 노출 하한 [목표]',type:'line',yAxisIndex:1,smooth:true,data:d.imprMin,lineStyle:{type:'dashed',width:1.5},areaStyle:{opacity:.08}}]});});
+/* c15 AI citation */
+step('c15',()=>{const d=DS.D09;mk('c15').setOption({color:['#58a6ff','#d29922'],textStyle:TXT,
+ tooltip:Object.assign({},TOOLTIP),legend:{data:['SajuRoot 월 AI 인용 건수 [목표]','업계 AI 인용률(관측 38%)','클릭리스 68%'],textStyle:{color:'#8b949e'},top:4},
+ grid:GRID,xAxis:{type:'category',data:d.citeX,axisLine:{lineStyle:{color:'#30363d'}},axisLabel:{color:'#8b949e'}},
+ yAxis:[{type:'value',name:'건/월',nameTextStyle:{color:'#8b949e'},axisLabel:{color:'#8b949e'},splitLine:{lineStyle:{color:'#21262d'}}},
+  {type:'value',min:0,max:80,name:'%',nameTextStyle:{color:'#8b949e'},axisLabel:{color:'#8b949e'},splitLine:{show:false}}],
+ series:[{name:'SajuRoot 월 AI 인용 건수 [목표]',type:'line',smooth:true,data:d.citeTarget,lineStyle:{width:3.5},areaStyle:{opacity:.15}},
+  {name:'업계 AI 인용률(관측 38%)',type:'line',yAxisIndex:1,smooth:false,data:d.citeX.map(()=>38),lineStyle:{type:'dashed',width:1.5},symbol:'none'},
+  {name:'클릭리스 68%',type:'line',yAxisIndex:1,data:[],symbol:'none',
+   markLine:{silent:true,symbol:'none',lineStyle:{color:'#f85149',type:'dotted'},label:{color:'#f85149',formatter:'클릭리스 68% · AIO CTR −60% → KPI=인용·이메일'},data:[{yAxis:68}]}}]});});
+/* positioning map dots */
+step('pmap',()=>{const pm=document.getElementById('pmap');const pos=DS.D10.pos;
+ pos.rivals.forEach(r=>{const el=document.createElement('div');el.className='dot';
+  el.style.left=(r[0]/5*100)+'%';el.style.top=((1-r[1]/5)*88+6)+'%';el.style.width=el.style.height='9px';
+  el.innerHTML='<span class="dl">'+r[2]+'</span>';pm.appendChild(el);});
+ const me=document.createElement('div');me.className='dot me';me.style.left=(pos.me[0]/5*100)+'%';me.style.top=((1-pos.me[1]/5)*88+6)+'%';
+ me.style.width=me.style.height='16px';me.innerHTML='<span class="dl" style="color:#3fb950;font-weight:700">SajuRoot</span>';pm.appendChild(me);});
+/* scenario + score toggles */
+document.getElementById('scenSeg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+ window.__SCEN=b.dataset.s;document.querySelectorAll('#scenSeg button').forEach(x=>x.classList.toggle('on',x===b));
+ step('scenUpdate',()=>{finKpiRender();finTableRender();window.__renderC09();
+  const w={conservative:'conservative',realistic:'realistic',aggressive:'aggressive'}[window.__SCEN];
+  ['c01','c03'].forEach(id=>{if(CH[id])CH[id].setOption({series:['conservative','realistic','aggressive'].map(k=>({lineStyle:{width:k===w?3.5:1.5},itemStyle:{opacity:1}}))});});
+ });});
+document.getElementById('scoreSeg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+ window.__SCORE=b.dataset.s;document.querySelectorAll('#scoreSeg button').forEach(x=>x.classList.toggle('on',x===b));
+ step('scoreUpdate',()=>{if(window.__renderC08)window.__renderC08();});});
+finKpiRender();finTableRender();
+const mh=location.hash.match(/^#\/(t\d{2})/);if(mh)activate(mh[1]);
+window.__verifyDatasets();
+console.log('HSH-P700 리포트 초기화 완료 · 차트 15종 · chartErrs=',window.__chartErrs.length);
+});
+window.addEventListener('resize',()=>{Object.values(CH).forEach(c=>{try{c.resize()}catch(e){}})});
+</script>
+</body></html>
