@@ -45,8 +45,18 @@ header.hd{border-bottom:1px solid var(--border);background:linear-gradient(180de
 .kpi .d{font-size:11.5px;color:var(--muted)}
 .kpi.g .v{color:var(--green)}.kpi.b .v{color:var(--accent)}.kpi.y .v{color:var(--yellow)}
 /* tabs */
-.tabbar{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--border);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
-.tabbar .wrap{display:flex;gap:2px;padding:0 8px}
+.tabbar{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--border);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#30363d transparent}
+.tabbar::-webkit-scrollbar{height:6px}
+.tabbar::-webkit-scrollbar-track{background:transparent}
+.tabbar::-webkit-scrollbar-thumb{background:#30363d;border-radius:3px}
+.tabbar .wrap{display:flex;gap:2px;padding:0 8px;flex-wrap:nowrap;min-width:max-content}
+.tab-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:51;background:rgba(13,17,23,.95);border:1px solid var(--border);border-radius:6px;color:var(--muted);cursor:pointer;padding:8px 10px;font-size:14px;display:none;user-select:none;transition:opacity .2s}
+.tab-arrow:hover{color:var(--fg);background:#161b22}
+.tab-arrow.left{left:4px}
+.tab-arrow.right{right:4px}
+.tab-arrow.visible{display:block}
+.tab-counter{position:absolute;right:12px;bottom:4px;font-size:11px;color:var(--muted);z-index:51;background:rgba(13,17,23,.9);padding:2px 8px;border-radius:10px;border:1px solid var(--border);display:none}
+.tab-counter.visible{display:block}
 .tab-btn{flex:0 0 auto;border:0;background:transparent;color:var(--muted);font-size:13px;padding:11px 12px;cursor:pointer;border-bottom:2px solid transparent;font-family:inherit}
 .tab-btn:hover{color:var(--fg)}
 .tab-btn.on{color:var(--fg2);border-bottom-color:#f78166;font-weight:600}
@@ -157,7 +167,7 @@ footer .vbadge{display:inline-block;margin-bottom:10px;border:1px solid rgba(63,
 <span class="badge pass">G-1 · G-A · G-P · G-2A~D 전부 PASS</span>
 </div>
 </div></header>
-<nav class="tabbar"><div class="wrap" id="nav">
+<nav class="tabbar" id="tabbar" style="position:sticky"><button class="tab-arrow left" id="tabArrowL" onclick="scrollTab(-1)">◀</button><button class="tab-arrow right" id="tabArrowR" onclick="scrollTab(1)">▶</button><span class="tab-counter" id="tabCounter"></span><div class="wrap" id="nav">
 <button class="tab-btn on" data-t="t01"><span class="n">1</span>실행요약</button>
 <button class="tab-btn" data-t="t02"><span class="n">2</span>시장·벤치마킹</button>
 <button class="tab-btn" data-t="t03"><span class="n">3</span>일본 시장</button>
@@ -1425,5 +1435,52 @@ window.__verifyDatasets();
 console.log('HSH-P700 리포트 초기화 완료 · 차트 15종 · chartErrs=',window.__chartErrs.length);
 });
 window.addEventListener('resize',()=>{Object.values(CH).forEach(c=>{try{c.resize()}catch(e){}})});
+
+// 탭 내비게이션: 화살표 버튼 + 현재 탭 표시 + 키보드 내비게이션
+function scrollTab(dir) {
+  const bar = document.getElementById('tabbar');
+  bar.scrollBy({left: dir * 200, behavior: 'smooth'});
+}
+function updateTabUI() {
+  const bar = document.getElementById('tabbar');
+  const btns = [...document.querySelectorAll('.tab-btn')];
+  const activeIdx = btns.findIndex(b => b.classList.contains('on'));
+  const counter = document.getElementById('tabCounter');
+  const lArrow = document.getElementById('tabArrowL');
+  const rArrow = document.getElementById('tabArrowR');
+  const canScroll = bar.scrollWidth > bar.clientWidth;
+  if (canScroll) {
+    counter.textContent = (activeIdx + 1) + ' / ' + btns.length;
+    counter.classList.add('visible');
+    lArrow.style.display = bar.scrollLeft > 10 ? 'block' : 'none';
+    rArrow.style.display = bar.scrollLeft < bar.scrollWidth - bar.clientWidth - 10 ? 'block' : 'none';
+  } else {
+    counter.classList.remove('visible');
+    lArrow.style.display = 'none';
+    rArrow.style.display = 'none';
+  }
+}
+// 탭 전환 시 해당 버튼으로 스크롤
+document.getElementById('nav').addEventListener('click', () => {
+  setTimeout(() => {
+    const active = document.querySelector('.tab-btn.on');
+    if (active) active.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});
+    updateTabUI();
+  }, 50);
+});
+// 키보드: ←/→ 탭 이동
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+    const btns = [...document.querySelectorAll('.tab-btn')];
+    const idx = btns.findIndex(b => b.classList.contains('on'));
+    const next = e.key === 'ArrowRight' ? Math.min(idx + 1, btns.length - 1) : Math.max(idx - 1, 0);
+    if (next !== idx) { btns[next].click(); }
+  }
+});
+// 초기화 + 리사이즈
+window.addEventListener('load', updateTabUI);
+window.addEventListener('resize', updateTabUI);
+document.getElementById('tabbar').addEventListener('scroll', updateTabUI);
+
 </script>
 </body></html>
