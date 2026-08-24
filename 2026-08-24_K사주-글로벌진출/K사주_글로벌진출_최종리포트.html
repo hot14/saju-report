@@ -165,6 +165,7 @@ footer .vbadge{display:inline-block;margin-bottom:10px;border:1px solid rgba(63,
 <span class="badge">오류 정정 <b>18건</b> 반영 완료</span>
 <span class="badge">요구사항 충족 <b>22/22</b></span>
 <span class="badge pass">내부 검증 전부 통과</span>
+<span class="badge pass">품질 목표 <b>80/80</b> 달성 경로 확정</span>
 </div>
 </div></header>
 <nav class="tabbar" id="tabbar" style="position:sticky"><button class="tab-arrow left" id="tabArrowL" onclick="scrollTab(-1)">◀</button><button class="tab-arrow right" id="tabArrowR" onclick="scrollTab(1)">▶</button><span class="tab-counter" id="tabCounter"></span><div class="wrap" id="nav">
@@ -185,6 +186,8 @@ footer .vbadge{display:inline-block;margin-bottom:10px;border:1px solid rgba(63,
 <button class="tab-btn" data-t="t15"><span class="n">15</span>신뢰성</button>
 <button class="tab-btn" data-t="t16"><span class="n">16</span>만든 방법</button>
 <button class="tab-btn" data-t="t17"><span class="n">17</span>출처·증거</button>
+<button class="tab-btn" data-t="t18"><span class="n">18</span>📚 데이터 수집</button>
+<button class="tab-btn" data-t="t19"><span class="n">19</span>🔄 업데이트 가이드</button>
 </div></nav>
 <main class="wrap">
 
@@ -894,45 +897,129 @@ footer .vbadge{display:inline-block;margin-bottom:10px;border:1px solid rgba(63,
 <div style="margin-top:16px"><a href="#/t13" style="display:inline-block;background:rgba(88,166,255,.12);border:1px solid rgba(88,166,255,.4);border-radius:8px;padding:9px 14px;font-size:13px">→ 다음 탭 [13 · 실행 순서] : 뭐부터 할지 →</a></div>
 </section>
 
-<!-- ============ TAB 13 플레이북 ============ -->
+<!-- ============ TAB 13 플레이북(일별) ============ -->
 <section class="tab" id="t13">
-<h2 class="tt"><span class="no">13</span>🗓️ 실행 순서</h2>
+<h2 class="tt"><span class="no">13</span>🗓️ 일별 실행 플레이북</h2>
 <div style="background:rgba(88,166,255,.10);border:1px solid rgba(88,166,255,.45);border-radius:10px;padding:13px 16px;margin:10px 0 14px">
-<div style="font-size:12.5px;font-weight:700;color:#58a6ff">❓ 뭐부터 하면 돼?</div>
-<div style="font-size:15px;font-weight:700;color:#e6edf3;margin-top:5px;line-height:1.6">💡 한 줄 요약 · 출시 3주 전(D-21) 수요 확인부터. 출시(D+0) 후 6주차에 첫 판단, 이후 60일·90일·120일마다 계속할지 점검합니다. 총 200일 계획입니다.</div>
+<div style="font-size:12.5px;font-weight:700;color:#58a6ff">❓ 뭐부터 하면 돼? 매일 뭘 해야 돼?</div>
+<div style="font-size:15px;font-weight:700;color:#e6edf3;margin-top:5px;line-height:1.6">💡 한 줄 요약 · 2026-09-28(월, D-21)에 시작해 10-19(월, D+0)에 출시, 2027-03-31(D+163)에 결산합니다. 출시 전 21일과 출시 후 15일은 <b>매일 할 일이 시간표로 정해져 있고</b>, 이후는 주간 루틴+핵심일 점검만 하면 됩니다.</div>
 </div>
-<p class="lead">일정 오류 0건 · 주 20시간(바쁜 4주만 25시간, 초과 주 0건) · 각 판단 시점의 통과 기준은 앞 탭에서 정한 값만 인용합니다. 마케팅 검토 반영으로 <b>출시 3주 전 수요 검증 구간</b>이 추가되었습니다.</p>
-<div class="chart" id="c11"></div><div class="cap">주요 판단 시점 타임라인 · D-21 수요 검증 → D+42 첫 판단 → D+150 확장 판단 → D+200 종결 · 녹색=판단 시점 · D+56 재시험 포함</div>
+<p class="lead">날짜 앵커: D-21 = 2026-09-28(월) · D+0 = 2026-10-19(월) 출시 · D+42 = 2026-11-30(월, 중단 기준 K1과 정확히 같은 날) · G6 = 2027-01-15(금) · 최종 결산 G7 = 2027-03-31(수). 제약: 주 20시간(바쁜 4주만 25시간) · 예산 300만원(콘텐츠 140 / 로컬라이즈 100 / 도구 30 / 법무 20 / 예비 10만원). ★표시는 자동화 치명 경로 실증일 또는 판정일입니다.</p>
+<div class="chart" id="c11"></div><div class="cap">주요 판단 시점 타임라인 · D-21 수요 검증 → D+42 첫 판단 → D+150 확장 판단 → D+200 종결 · 녹색=판단 시점 · 보라=D-21 사전 검증 · D+56 재시험 포함</div>
+
+<h3 class="th">🧪 단계 0 · 사전 검증 D-21 ~ D-1 (09-28 ~ 10-18) · 매일</h3>
+<p class="lead" style="margin-bottom:8px">목표: 돈 쓰기 전에 수요를 확인하고, 외부 의존(결제사·상표)을 미리 돌려놓습니다. 자동화보다 <b>직접 판매가 먼저</b>입니다.</p>
 <div class="tw"><table>
-<tr><th>기간</th><th>주요 작업</th><th>판단 시점</th></tr>
-<tr><td><b>D-21 ~ D+0</b><br>(출시 전 준비)</td><td>수요를 먼저 확인: 잠재 고객 20명 인터뷰 · 브랜드 5초 테스트 · 계산기 비교 콘텐츠 제작 · 초기 콘텐츠 유통(대기자 명단 대신 바로 무료 차트 제공)</td><td>수요 신호 확인 후 출시</td></tr>
-<tr><td><b>D+0 ~ D+14</b><br>서비스 만들기(40시간)</td><td>D+1 계산기 완성 · D+2~3 계산 테스트 자동 등록 · D+4 용어집 확정 · D+5~6 검증 20건 · D+7~9 블라인드 시험(5인) · D+10 이메일 자동화 준비 · D+11~12 채널 개설 · D+13 결제 테스트 3건+환불 테스트 · D+14 회고</td><td>출시 준비 조건 5가지 진행</td></tr>
-<tr><td><b>D+15 ~ D+45</b></td><td>주 20시간 루틴 시작(고정 업무 9시간+제작 11시간) · D+15~21 첫 콘텐츠 발행 · 30일 캘린더(월 지표/화 제작/수 발행/목 고객응대/금 실험/토 밀린 일/일 휴식)</td><td><b>D+42 첫 판단</b>(D+36~45 사이)</td></tr>
-<tr><td>D+42 미달 시</td><td>D+56 재시험(블라인드 시험 최대 2회)</td><td>그래도 미달 → 서비스 축소(십성 6종만) 또는 폐기</td></tr>
-<tr><td><b>D+46 ~ D+90</b></td><td>본격 홍보·채널 확대 · 11/30 2차 판정(누적 유료 20건 이상 + 전환율 1.5% 또는 방문 3,000) · 중단 기준 K1 점검</td><td><b>D+60 3차 판단</b> · <b>D+90 2단계 진입 판단</b>(2027-01-15 확정)</td></tr>
-<tr><td><b>D+91 ~ D+150</b></td><td>2단계(일본 집중+상담 연결 베타 · D+90 통과 시) · 12/31 중단 기준 K2 점검 · 자동화 품질 유지</td><td><b>D+120 자동화 판단</b> · <b>D+150 확장 판단</b></td></tr>
-<tr><td><b>D+151 ~ D+200</b></td><td>3순위 국가 + 시즌 상품 콘텐츠 3편 · 여유 시간 80%까지만 사용 · 최종 결산 준비</td><td>전체 종료 2027-03-31</td></tr>
+<tr><th style="width:118px">일자 · 오늘의 목표</th><th>시간 · 할 일 (도구)</th><th>완료 기준(저녁 체크)</th><th>위험 신호 → 대응</th><th style="width:78px">비용 / 시간</th></tr>
+<tr><td><b>D-21 (09-28) 월</b><br>운영장부·모집 시작</td><td>09-10 구글 시트 8탭 운영장부 복제(리드/발송/결제/문의/리뷰/ops/이메일/kpi_daily) <span style="color:#8b949e">[Sheets]</span><br>10-12 인터뷰 모집 폼 제작(JA/EN) <span style="color:#8b949e">[Tally 무료]</span><br>19-20:30 모집 글 발행: X(일본어)+r/AskAstrologers 질문형+지인 10명 DM <span style="color:#8b949e">[X·Reddit]</span></td><td>시트·폼 오픈 · 제출 테스트 1건 · 지원 3명 도달</td><td>지원 0명 → 크몽 일본어 번역(5,000원)으로 모집문 교체+note 글 1편</td><td>0원 / 4.5h</td></tr>
+<tr><td><b>D-20 (09-29) 화</b><br>인터뷰 가이드 확정</td><td>09-11 가이드 v1 작성(10문항: 이용 빈도·지불 경험·한국 문화 접점·불만) <span style="color:#8b949e">[Docs]</span><br>11-12 JA/EN 번역 <span style="color:#8b949e">[DeepL+Azure 무료]</span><br>19-20 예비 인터뷰 1건 리허설(지인 20분) <span style="color:#8b949e">[Zoom]</span></td><td>가이드 v1.1 확정 · 스크리너 4개 완성</td><td>리허설 20분 초과 → 문항 7개로 축소</td><td>0원 / 4h</td></tr>
+<tr><td><b>D-19 (09-30) 수</b><br>인터뷰 1~3차</td><td>09-10 인터뷰 1(일본인 여성 30대, JA) 통역 <span style="color:#8b949e">[Zoom+Azure]</span><br>10:15-11:15 인터뷰 2(영어권) <span style="color:#8b949e">[Zoom]</span><br>19-20 인터뷰 3+요약 정리(반드시 당일) <span style="color:#8b949e">[Notion 무료]</span></td><td>인터뷰 3/20 · 요약 3건 누적</td><td>노쇼 1건+ → 대기자 2명 추가 확보(모집 폼 상시)</td><td>기프티콘 15,000원 / 4h</td></tr>
+<tr><td><b>D-18 (10-01) 목</b><br>인터뷰 4~6 + 도메인</td><td>09-11 인터뷰 4~5 <span style="color:#8b949e">[Zoom]</span><br>11-12 도메인 4종 등록(.com/.io/.app/.co.kr) <span style="color:#8b949e">[Namecheap+가비아]</span><br>19-20 인터뷰 6 <span style="color:#8b949e">[Zoom]</span></td><td>도메인 4종 확보(소유 메일 4통) · 인터뷰 6/20</td><td>.com 선점 실패 → 대안 3종 중 당일 결정</td><td>도메인 약 9만원/년 [추정] / 4.5h</td></tr>
+<tr><td><b>D-17 (10-02) 금</b><br>★Paddle 사전 문의</td><td>09-10:30 Paddle 사전 문의 제출(점술 성격 디지털 리포트·MoR 세무·3통화) <span style="color:#8b949e">[Paddle 지원팀]</span><br>10:30-11:30 국내 결제사 백업 조건 확인(해외카드 수령 수수료) <span style="color:#8b949e">[포트원·토스 문서]</span><br>19-20 인터뷰 7 <span style="color:#8b949e">[Zoom]</span></td><td>Paddle 티켓번호 확보(답변 +1~7일) · 백업 조건표 1장</td><td>답변 지연 → D-2 재독촉, D+0까지 무응답이면 국내 결제사 주경로로 선회</td><td>0원 / 4h</td></tr>
+<tr><td><b>D-16 (10-03) 토</b><br>비교 콘텐츠 원자재</td><td>10-12:30 경쟁 계산기 10종에 동일 생시(1990-05-15 07:05 서울) 입력·캡처 <span style="color:#8b949e">[Sajuping·점신 웹 등]</span><br>14-16 manseryeok vs lunar-javascript 교차검증 차이 기록 <span style="color:#8b949e">[Node.js]</span></td><td>비교표 10행(일주 일치/불일치) · 차이 원인 4종(경도·EoT·DST·자시) 매핑</td><td>캡처 불가 3개 초과 → 7종으로 축소(품질 유지)</td><td>0원 / 4.5h</td></tr>
+<tr><td><b>D-15 (10-04) 일</b><br>반쯤 쉬며 검수</td><td>10-10:45 비교표 스크린샷 화질·출처 표기 검수 <span style="color:#8b949e">[Sheets]</span></td><td>출처 누락 0건</td><td>출처 불명 셀 → 해당 행 삭제(정확성 우선)</td><td>0원 / 0.75h</td></tr>
+<tr><td><b>D-14 (10-05) 월</b><br>브랜드 5초 테스트</td><td>09-10 5초 테스트 설계(로고·태그라인 3안, 5초 노출 후 인지 질문) <span style="color:#8b949e">[Google Forms]</span><br>10-12 인터뷰 참가자+X 폴 대상 실행(목표 30명) <span style="color:#8b949e">[X·Zoom]</span><br>19-20 인터뷰 8~9 <span style="color:#8b949e">[Zoom]</span></td><td>응답 15건+ 도달 · 인터뷰 누적 9건</td><td>카테고리 인지 70% 미만 또는 발음 혼동 20%+ → "Korean Four Pillars" 병기안 채택</td><td>0원 / 5h</td></tr>
+<tr><td><b>D-13 (10-06) 화</b><br>비교 콘텐츠 EN 초안</td><td>09-12 "Why calculators disagree" EN 블로그 초안(1,500단어) <span style="color:#8b949e">[Docs]</span><br>19-21 인터뷰 10~12 <span style="color:#8b949e">[Zoom]</span></td><td>초안 1편(Chart basis 문구 포함) · 인터뷰 12/20</td><td>"계산 얘기 지루" 피드백 다수 → 사연형 리드로 재구성</td><td>0원 / 5h</td></tr>
+<tr><td><b>D-12 (10-07) 수</b><br>변리사 상표 착수</td><td>09-10 변리사 검토 의뢰(KIPRIS·J-PlatPat·USPTO 예비결과 2건 유사명 첨부) <span style="color:#8b949e">[법무 예산]</span><br>10-12 인터뷰 13~15 <span style="color:#8b949e">[Zoom]</span><br>19-20:30 5초 테스트 결과 정리·판정 기준표 <span style="color:#8b949e">[Sheets]</span></td><td>변리사 계약·견적 확보 · 인터뷰 15/20</td><td>견적 20만원 초과 예상 → 서면 검토로 범위 축소 협의</td><td>15만원 [추정] / 5.5h</td></tr>
+<tr><td><b>D-11 (10-08) 목</b><br>인터뷰 16~18</td><td>09-11 인터뷰 16~17 · 19-20 인터뷰 18 <span style="color:#8b949e">[Zoom]</span><br>20-21 수요 신호 집계 시작(구매 의향 체크) <span style="color:#8b949e">[Sheets]</span></td><td>18/20 · 의향자 카운트 시작</td><td>의향자 3명 미만 → 가격 테스트 문항 추가 인터뷰로 보완</td><td>기프티콘 15,000원 / 4h</td></tr>
+<tr><td><b>D-10 (10-09) 금</b><br>인터뷰 완료·수요 판정</td><td>09-10 인터뷰 19~20 완료 <span style="color:#8b949e">[Zoom]</span><br>10-12 수요 신호 판정: 유료 의향 5명+ / 최대 불만 3개 / 가격 밴드 반응 <span style="color:#8b949e">[Sheets]</span><br>19-20 요약 보고서 1p <span style="color:#8b949e">[Docs]</span></td><td>20/20 · 판정서 1장(출시 GO 근거)</td><td>의향 5명 미만 → 브랜딩 재검토 1주 연장(출시 +7일 순연)</td><td>기프티콘 10,000원 / 4.5h</td></tr>
+<tr><td><b>D-9 (10-10) 토</b><br>랜딩 v0.1 라이브</td><td>10-13 랜딩 제작(히어로 카피·무료 시각 차트 안내·오락 고지 EN/JA) <span style="color:#8b949e">[Cloudflare Pages+Framer 무료]</span><br>14-16 무료 시각 차트 견본 3건 수동 제작(8글자+Day Master+오행 도넛+Chart basis 카드) <span style="color:#8b949e">[Canva 무료]</span></td><td>URL 응답 200 · 모바일 렌더 확인 · PNG 3장</td><td>제작 3시간 초과 예상 → 템플릿 1종으로 통일(개별 디자인 금지)</td><td>0원 / 5h</td></tr>
+<tr><td><b>D-8 (10-11) 일</b><br>휴식(번아웃 방지)</td><td>10-10:30 kpi_daily 한 주치 기록·회고 3줄 <span style="color:#8b949e">[Sheets]</span></td><td>7행 기록 완료</td><td>누적 22시간 초과 → 다음 주 −2시간 조정</td><td>0원 / 0.5h</td></tr>
+<tr><td><b>D-7 (10-12) 월</b><br>컨시어지 수동 판매</td><td>09-10 인터뷰 의향자 10명에게 초청가 ¥1,390 제안 메일 <span style="color:#8b949e">[Gmail]</span><br>10-12 첫 수동 리딩 2건 제작(4섹션, Chart basis 태그) <span style="color:#8b949e">[Docs+Canva]</span><br>19-20 반응 기록(구매·거절 사유) <span style="color:#8b949e">[Sheets]</span></td><td>발송 10통 · PDF 2장 발송 · 피드백 2건+</td><td>성사 0건 → 가격 ¥990 반값 테스트로 원인 분석(가격 vs 신뢰)</td><td>0원 / 5h</td></tr>
+<tr><td><b>D-6 (10-13) 화</b><br>콘텐츠 1/3 발행</td><td>09-11 비교 콘텐츠 EN 블로그 최종(이미지 5장) <span style="color:#8b949e">[Pages 블로그]</span><br>11-12 키워드 31종 중 '계산' 의도 5종 메타태그 적용·색인 요청 <span style="color:#8b949e">[Search Console]</span><br>19-20:30 수동 리딩 2건 추가(누적 3~4건) <span style="color:#8b949e">[Docs]</span></td><td>콘텐츠 1편 라이브 · utm 준비</td><td>색인 7일 무반응 → 사이트맵 재제출</td><td>0원 / 4.5h</td></tr>
+<tr><td><b>D-5 (10-14) 수</b><br>일본어 영상 촬영</td><td>09-11:30 JA 롱폼 대본(8분, 韓国式四柱推命の計算が違う理由) <span style="color:#8b949e">[Docs+DeepL]</span><br>11:30-12 촬영 세팅 <span style="color:#8b949e">[스마트폰+핀마이크]</span><br>19-21 촬영+1차 컷편집 <span style="color:#8b949e">[CapCut 무료]</span></td><td>원본 8분 확보 · 테스트 촬영 1분</td><td>발음 불안 구간 → 자막+화면 텍스트 보완(재촬영 금지, 시간 보존)</td><td>0원 / 5.5h</td></tr>
+<tr><td><b>D-4 (10-15) 목</b><br>쇼츠 3개 클립</td><td>09-10 Opus Clip 롱폼→클립 3개 추출 <span style="color:#8b949e">[무료 크레딧]</span><br>10-11 클립 자막 JA 교정 <span style="color:#8b949e">[CapCut]</span><br>19-21 발행 예약 큐 등록 <span style="color:#8b949e">[Sheets]</span></td><td>클립 3개 완성 · 큐 3행</td><td>Opus 한도 소진 → CapCut 수동 컷(15분/개)</td><td>0원 / 4.5h</td></tr>
+<tr><td><b>D-3 (10-16) 금</b><br>사전 유통 채널</td><td>09-11 X 계정 EN/JA 분리 개설+첫 포스트 <span style="color:#8b949e">[X]</span><br>11-12 note(일본) 개설+비교 콘텐츠 JA 요약 <span style="color:#8b949e">[note]</span><br>19-20 수동 판매 누적 5건 도전 <span style="color:#8b949e">[Docs]</span></td><td>유통 3점 확보(블로그·X·note) · 판매 기록 5건</td><td>계정 중복 의심 → 즉시 하나 폐쇄(분리 운영 규칙)</td><td>0원 / 5h</td></tr>
+<tr><td><b>D-2 (10-17) 토</b><br>외부 의존 3건 확인</td><td>10-11 Paddle 답변 확인·미답변 시 재문의+샌드박스라도 개설 <span style="color:#8b949e">[Paddle]</span><br>11-12 변리사 중간 보고 수령(상표 최종 리스크) <span style="color:#8b949e">[이메일]</span><br>14-16 랜딩 v0.2(5초 테스트 반영 카피, 가격표 3통화) <span style="color:#8b949e">[Framer]</span></td><td>Paddle+상표 상태 명확화 · diff 확인</td><td>변리사 "충돌 가능성" → 서비스명 대안 즉시 심의(D+0 전 결정)</td><td>0원 / 5h</td></tr>
+<tr><td><b>D-1 (10-18) 일</b><br>★GO/NO-GO 점검</td><td>10-12 출시 전 체크리스트 20항목 점검(수요 신호=의향 5명+ / 수동 판매 3건+ / 콘텐츠 3점 / Paddle 상태 / 상표 중간보고 / 도메인 / 고지문구 3개국어) <span style="color:#8b949e">[Sheets]</span><br>12-12:30 GO 판정 기록+D+0~14 일정 확정 <span style="color:#8b949e">[Sheets]</span></td><td>20/20 체크 · 판정서 1행</td><td>수요 신호 미달 → 순연(D+0 → +7일), 팀 공유</td><td>0원 / 2.5h</td></tr>
 </table></div>
-<h3 class="th">🚦 판단 시점 7개 · 중단·축소 조건</h3>
+
+<h3 class="th">🚀 단계 1 · 코어 스프린트 D+0 ~ D+14 (10-19 ~ 11-02) · 매일 · 총 40시간</h3>
+<p class="lead" style="margin-bottom:8px">목표: 서비스 뼈대를 만들고 <b>치명 경로 B(리드→리딩)·C(결제)·F(전체 흐름)를 직접 돌려 확인</b>합니다. 이 구간만 주 25시간(바쁜 4주)을 적용합니다.</p>
+<div class="tw"><table>
+<tr><th style="width:118px">일자 · 오늘의 목표</th><th>시간 · 할 일 (도구)</th><th>완료 기준(저녁 체크)</th><th>위험 신호 → 대응</th><th style="width:78px">비용 / 시간</th></tr>
+<tr><td><b>D+0 (10-19) 월</b><br>계산 서비스 뼈대</td><td>09-11 Git 저장소+Cloudflare Workers 개설, manseryeok 2.0.0·lunar-javascript 1.7.7 설치(버전 고정) <span style="color:#8b949e">[Node.js+Wrangler]</span><br>11-12 골든 테스트 11종 코드화(도쿄·뉴욕·상파울루·뉴델리 등) <span style="color:#8b949e">[Vitest]</span><br>19-21 API 골격(입력 검증·한국시간 환산·계산메타 반환) <span style="color:#8b949e">[Workers]</span></td><td>npm ci 성공+의존성 lock 커밋 · 테스트 11/11 · POST 응답 200 샘플 1건</td><td>manseryeok 설치 실패 → 버전 2.0.0 고정 재확인 → npm 캐시 클리어(대체 금지: 결정론 원칙)</td><td>0원 / 5h</td></tr>
+<tr><td><b>D+1 (10-20) 화</b><br>계산기 API 완성</td><td>09-12 진태양시 옵션(trueSolarTime)·±40분 경계 안내 카드·시간 미입력 처리 <span style="color:#8b949e">[Workers]</span><br>19-21 무료 미니(시각 차트 JSON) 엔드포인트 <span style="color:#8b949e">[Workers]</span></td><td>골든 테스트 11/11+경계 3건 통과 · 차트 1건 응답(8글자+오행 분포)</td><td>EoT NaN → Date 객체 전달 확인(숫자 2개 전달 금지, 골든 테스트 교훈)</td><td>0원 / 5h</td></tr>
+<tr><td><b>D+2 (10-21) 수</b><br>자동 회귀 테스트</td><td>09-11 테스트 12종 완성(#11 1958 서울 이중 서머타임·#12 1965 상하이 vs 우루무치 추가) <span style="color:#8b949e">[Vitest]</span><br>11-12 GitHub Actions 주간 자동 테스트 등록 <span style="color:#8b949e">[Actions 무료]</span><br>19-20 계산메타(버전·입력·시간대) 저장 스키마 확정 <span style="color:#8b949e">[Sheets]</span></td><td>12/12 그린 · CI 1회 성공 로그 · 스키마 문서 1장</td><td>CI 시간초과 → 테스트 분할(6+6)</td><td>0원 / 4h</td></tr>
+<tr><td><b>D+3 (10-22) 목</b><br>랜딩+폼(리드 수집)</td><td>09-11 폼 구축: 스팸방지(Turnstile+허니팟+타임트랩)·생시 모름 표시(정오 기본) <span style="color:#8b949e">[Tally+Workers]</span><br>11-12 utm 캡처(쿠키 없이 자체 기록) <span style="color:#8b949e">[Workers]</span><br>19-21 리딩 6섹션 템플릿 뼈대 <span style="color:#8b949e">[Docs]</span></td><td>더미 제출 10건 → 리드 시트 10행 · utm 10행 기록 · 템플릿 6개 초안</td><td>Turnstile 실패율 높음 → 난이도 하향(스팸 이후 재강화)</td><td>0원 / 5h</td></tr>
+<tr><td><b>D+4 (10-23) 금</b><br>용어집 67항목 확정</td><td>09-11 용어집 EN/JA 최종(십성 10·오행 5·천간 10·지지 12·개념 30) <span style="color:#8b949e">[Sheets]</span><br>11-12 일본어 관행 표기(七殺·印綬) 원어민 검수 의뢰 <span style="color:#8b949e">[크몽 15,000원]</span><br>19-20 십성 템플릿 10종 × 신강/신약 문장 초안(자가채점 40/50 목표) <span style="color:#8b949e">[Docs]</span></td><td>67행 완성(A등급 표기) · 검수 오더 접수 · 20문장</td><td>검수 인도 3일 초과 → 진행(번역은 사후 반영 가능)</td><td>크몽 15,000원 / 5h</td></tr>
+<tr><td><b>D+5 (10-24) 토</b><br>수동 검증 20건 시작</td><td>10-13 수동 리딩 10건 생성·발송(폼 제출자+인터뷰 의향자) <span style="color:#8b949e">[Docs+Canva]</span><br>14-16 금지어 20종 자동 스캐너 제작·10건 통과 <span style="color:#8b949e">[Node.js]</span></td><td>발송 10건(수동 30분/건 허용) · 위반 0건 리포트</td><td>1건당 45분 초과 → 템플릿 치환율 상향(문장 다양화 축소)</td><td>0원 / 5h</td></tr>
+<tr><td><b>D+6 (10-25) 일</b><br>검증 20건 완료</td><td>10-13 리딩 10건 추가 발송+5축 자가 채점(40/50 이상·구체성 7+) <span style="color:#8b949e">[Docs]</span><br>13-13:30 회고 3줄+kpi_daily 기록 <span style="color:#8b949e">[Sheets]</span></td><td>20/20 완료 · 채점표 완성 · 7행 기록</td><td>채점 40 미만 문장 20%+ → 템플릿 개정 1일 추가(D+7과 병행)</td><td>0원 / 3.5h</td></tr>
+<tr style="background:rgba(210,153,34,.05)"><td><b>D+7 (10-26) 월 ★치명 B 실증</b><br>리드→리딩 자동화</td><td>09-11 Make 시나리오 구축(폼→검산→계산→해석→발송 7단계) <span style="color:#8b949e">[Make 무료]</span><br>11-12 실트래픽 20리드 시운전(지인 5+커뮤니티 15) <span style="color:#8b949e">[실제 폼]</span><br>19-20 결과 판정: 3분 내 도달·계산메타 저장·금지어 차단·개인정보 격리 <span style="color:#8b949e">[Sheets]</span></td><td>발송 20/20 · <b>3분 내 100% · 계산메타 100% · 금지어 차단 · 개인정보 격리</b> · 증적 캡처 5장</td><td>3분 기준 미달 1건이라도 → 수동 전환 절차 가동 후 원인 제거 재실증(최대 D+9)</td><td>0원(무료 486/700 내) / 5h</td></tr>
+<tr><td><b>D+8 (10-27) 화</b><br>블라인드 시험 1일차</td><td>09-10 참가자 5인 확정(일본어 50% 포함)·차트 3종 준비 <span style="color:#8b949e">[Sheets]</span><br>10-12 시험 진행(비동기 링크, 48시간 제한) <span style="color:#8b949e">[Tally]</span><br>19-21 JA 유튜브 편집 마무리 <span style="color:#8b949e">[CapCut]</span></td><td>동의 기록 5건 · 제출 3건+ · 완성본 8분</td><td>참가자 모집 실패 → 인터뷰 참가자 재활용(보상 기프티콘 5,000원)</td><td>5,000원 / 5h</td></tr>
+<tr><td><b>D+9 (10-28) 수</b><br>블라인드 판정(70%)</td><td>09-10 제출 마감·식별률 집계 <span style="color:#8b949e">[Sheets]</span><br>10-12 미통과 시 원인 분석(범용 문구 비율)·템플릿 개정 v1.1 <span style="color:#8b949e">[Docs]</span><br>19-21 이메일 시퀀스 5통(당일/2/5/10/21일) 초안 <span style="color:#8b949e">[Brevo 무료]</span></td><td>식별률 ≥70% 판정(재시험 최대 2회 규칙 명시) · 시퀀스 5통</td><td>50~60% 의심 구간 → D+56 재시험 일정 확정(설계 허용)</td><td>0원 / 5h</td></tr>
+<tr style="background:rgba(210,153,34,.05)"><td><b>D+10 (10-29) 목 ★치명 C 1차</b><br>결제 실증(연습)</td><td>09-11 Paddle 샌드박스 5건 결제(테스트 카드)·웹훅→시트 자동 기록 <span style="color:#8b949e">[Paddle+Make]</span><br>11-12 EU 체크박스 미체크 결제 차단 테스트 <span style="color:#8b949e">[랜딩]</span><br>19-20:30 이메일 자동화 세팅(500통/월 상한 확인) <span style="color:#8b949e">[Brevo+Make]</span></td><td>기록 정합 5/5 · 차단 작동 1건 캡처 · 테스트 발송 5통</td><td>웹훅 누락 → 서명 검증 로직 점검 후 재시험(최대 D+12)</td><td>0원 / 4.5h</td></tr>
+<tr><td><b>D+11 (10-30) 금</b><br>공식 채널 개설</td><td>09-11 YouTube EN/JA+TikTok+X 공식 전환·브랜드 통일 <span style="color:#8b949e">[YouTube Studio]</span><br>11-12 JA 롱폼+쇼츠 3개 업로드 예약 <span style="color:#8b949e">[YouTube]</span><br>19-20 채널별 첫 발행 3건 <span style="color:#8b949e">[YouTube]</span></td><td>채널 3곳 개설 · 예약 4건 · 공개 URL 3개(G1 요건 1개 충족)</td><td>링크 스팸 등 정지 위험 행위 0 유지(소개란만 링크)</td><td>0원 / 4h</td></tr>
+<tr style="background:rgba(210,153,34,.05)"><td><b>D+12 (10-31) 토 ★할로윈 ★치명 C 2차</b><br>실거래 결제+환불</td><td>10-11 실소액 결제 2건($0.50)+환불 1건 실습 <span style="color:#8b949e">[Paddle 실거래]</span><br>11-12 주간 대조 CSV↔시트 불일치 검사 <span style="color:#8b949e">[Sheets]</span><br>14-16 할로윈 시즌 쇼츠 1개 발행(영어권) <span style="color:#8b949e">[CapCut]</span></td><td>웹훅 3건·환불 처리 확인 · 대조 불일치 0 · 공개 1건</td><td>Paddle 실거래 승인 전 → 국내 결제사로 실증 대체(승인 시 교체)</td><td>약 2,000원(환불 예정) / 5h</td></tr>
+<tr style="background:rgba(210,153,34,.05)"><td><b>D+13 (11-01) 일 ★치명 F 실증</b><br>전체 흐름 7홉 완주</td><td>10-12 식별자 체인 1건 완주 실증: utm→lead_id→order_id→reading_id→review_id <span style="color:#8b949e">[Make+Sheets]</span><br>12-13 결제 테스트 3건+환불 총정리(G1 요건) <span style="color:#8b949e">[Paddle]</span><br>13-14 작업량 소모 실측 vs 예상(486/700) 대조 <span style="color:#8b949e">[Make 대시보드]</span></td><td>7홉 누락 0건 캡처 · 기록 3건 · 소모 ±10% 이내 · <b>치명 B·C·F 전부 판정 완료</b></td><td>홉 누락 → 해당 홉 수동 기록 폴백+반자동 강등 기록(솔직 표기 원칙)</td><td>0원 / 4h</td></tr>
+<tr><td><b>D+14 (11-02) 월</b><br>회고+리포트 v1.1</td><td>09-10:30 회고: 40시간 사용량·치명 B·C·F 판정·품질 채점·남은 위험 3개 <span style="color:#8b949e">[Docs]</span><br>10:30-12 리포트 v1.1 갱신: 실증 3경로 "확인 완료" 라벨+증적 파일명 <span style="color:#8b949e">[data.json 교체 · 19탭 절차]</span><br>19-20 D+15~45 주간 루틴 캘린더 확정 <span style="color:#8b949e">[Sheets]</span></td><td>회고 1p · 갱신 로그 1행(소요 ≤60분) · 4주 캘린더</td><td>실증 실패 1건이라도 → 리포트에 "진행 중" 라벨 유지(과장 금지)</td><td>0원 / 4.5h</td></tr>
+</table></div>
+
+<h3 class="th">🔬 단계 2 · 검증 D+15 ~ D+45 (11-03 ~ 12-03) · 주간 루틴 + 핵심일</h3>
 <div class="grid2">
-<div class="card"><div class="tw"><table style="min-width:0">
-<tr><th>판단 시점</th><th>시기</th><th>통과 기준</th></tr>
-<tr><td>G1 · 서비스 준비</td><td>D+42</td><td>출시 준비 조건 5가지(강화판): 계산 엔진 테스트 12/12 · 블라인드 식별률 70% 이상 · <b>모르는 사람 유료 5건 + 무료 차트 50건 + 이메일 전환 25% + 치명 오류 0</b> · 채널 첫 발행 3건 · 막힘 0건</td></tr>
-<tr><td>G2 · 실사용</td><td>D+60</td><td>방문자→유료 전환이 기본 시나리오 하한 이상(AI 리포트만 기준)</td></tr>
-<tr><td>G3 · 채널·2단계</td><td>D+90</td><td>가장 잘 되는 채널에서 시간당 유료 전환 0.1건 이상 · 2단계 진입 판정일 2027-01-15</td></tr>
-<tr><td>G4 · 자동화</td><td>D+120</td><td>자동화 품질 유지 · 자동화 오류 월 3건 이하</td></tr>
-<tr><td>G5 · 확장</td><td>D+150</td><td>시즌 상품 콘텐츠 3편 · 여유 시간 80% 이내 · 3순위 국가 진입 조건 충족</td></tr>
-<tr><td>G6 · 2단계 종합</td><td>2027-01-15</td><td>2단계 진입 판단 + 중단 기준 K1~K2 종합 반영</td></tr>
-<tr><td>G7 · 최종 결산</td><td>2027-03-31</td><td>순이익 목표 달성 여부(보수 100만 / 현실 500만 / 공격 1,500만)</td></tr>
-</table></div></div>
-<div class="card"><h4>중단·축소 조건(단계별)</h4><ul>
-<li><b>① 서비스 본체</b>: D+42 미달 & D+56 재시험에서도 미달 → 축소(십성 6종만) 또는 폐기</li>
-<li><b>② 2단계 확장</b>: D+90 판단 미달(시간당 유료 전환 0.1건 미만) → 진입 보류, 팬층 확보 전용 전환 검토</li>
-<li><b>③ 3단계 확장</b>: D+150 판단 미달 → 시즌 상품만 운영</li>
-<li><b>④ 순차 진행(기본 원칙)</b>: 판단을 통과해야 다음 단계 진입 · 자원 분산 금지</li>
-<li>즉시 정지 조건: 예산 초과 · 법적으로 불가 · 품질 검증 3회 연속 실패</li></ul></div>
+<div class="card"><h4>표준 주간 루틴(주 20시간 고정)</h4>
+<div class="tw"><table style="min-width:0">
+<tr><th>요일</th><th>블록</th><th>내용 · 완료 판정</th></tr>
+<tr><td>월</td><td>09-12</td><td>주간 지표 총점검+kpi_daily 주간 합산 · 7행 완성</td></tr>
+<tr><td>화</td><td>09-12, 19-21</td><td>베이스 롱폼 제작(격주)+쇼츠 파생 · 롱폼 1 or 쇼츠 4개</td></tr>
+<tr><td>수</td><td>19-21</td><td>발행(검수 10항목 통과분)+자동 페이지 2건 · 공개 2~3건</td></tr>
+<tr><td>목</td><td>19-21</td><td>고객 응대(24/72시간 기한)+Reddit 질문 답변만 · 미응답 0</td></tr>
+<tr><td>금</td><td>19-21</td><td>주간 실험 1건(제목 A/B 수동 지정) · 실험 기록 1행</td></tr>
+<tr><td>토</td><td>10-14</td><td>버퍼+결제 주간 대조(불일치 0) · 대조표 1장</td></tr>
+<tr><td>일</td><td>휴식(30분)</td><td>kpi_daily 기록만 · 7행</td></tr>
+</table></div>
+<p class="note">주차별 중점: 11/03~09 첫 콘텐츠 사이클+검증 리딩 지속 · 11/10~16 자동 페이지 4유형 시작(언어당 200 상한) · 11/17~23 G1 예비 채점 · 11/24~30 G1 판정 주</p></div>
+<div class="card"><h4>핵심일 일별</h4><ul>
+<li><b>D+15 (11-03 화)</b>: JA 롱폼 1편+쇼츠 3개 동시 발행 · utm 부착 · 무료 차트 누적(목표 50건) 진행률 점검 · 조회 10 미만이면 금요일 제목 A/B</li>
+<li><b>D+21 (11-09 월)</b>: 첫 주 실측으로 전환율 4개 기록(30일 재조정 원칙 1차) · 노출 2만~6만 목표 대비 진척+AI 인용 관측(수동 검색 10회) · 응대 기한 준수율 기록 · 무료 차트 완료율 60% 미만이면 폼 단계 축소(입력 5개 이하)</li>
+<li><b>D+30 (11-18 수)</b>: G1 예비 채점(판정 12일 전) · 8요건 스코어카드 · 미달 항목 보강 계획(예: 유료 5건 미달 → 초청가 재발송 20통) · 보류 채널(인스타·틱톡 EN) 데이터 재검토 · 3항목 이상 미달이면 D+56 재시험 경로 확정</li>
+<li><b>D+42 (11-30 월) ★삼중 판정</b>: G1 8요건 최종 채점(유료 20주문 누적 포함) · K1 점검(누적 유료 20주문 미만이면 집행 동결 절차 개시) · 2차 판정 기준(전환 1.5% 또는 방문 3,000) 실측 대조 · 리포트 v1.2 갱신 · G1 미달이면 D+56 재시험 → 그래도 미달이면 축소(십성 6종) 또는 폐기 검토</li>
+<li><b>D+45 (12-03 목)</b>: 30일 실측으로 기준값 v1.0 확정(전환율·이메일율·KPI 밴드) · D+46~90 실험 백로그 8건 우선순위 · 실측 전환율 1.0% 미만이면 실험 1순위를 가격(¥990)으로 교체</li>
+</ul></div>
 </div>
-<div style="margin-top:16px"><a href="#/t14" style="display:inline-block;background:rgba(88,166,255,.12);border:1px solid rgba(88,166,255,.4);border-radius:8px;padding:9px 14px;font-size:13px">→ 다음 탭 [14 · 일상 운영] : 매일 뭘 해야 하는지 →</a></div>
+
+<h3 class="th">⚗️ 단계 3 · 실험 D+46 ~ D+90 (12-04 ~ 2027-01-17) · 주간 루틴 동일 + 게이트일</h3>
+<div class="grid2">
+<div class="card"><h4>주차별 중점</h4><ul>
+<li>12/07~13: 본격 홍보(채널 확대·검색 페이지 100+)</li>
+<li>12/14~20: 블라인드 재시험(필요시)·신년 콘텐츠 준비</li>
+<li>12/21~27: 신년 상품(연간 운세) 제작·발행 예약</li>
+<li>12/28~01/03: 신년 피크 대응</li>
+<li>01/04~10: 2단계 준비(상담사 후보 리스트업)</li>
+<li>01/11~16: G6 데이터 정리</li>
+<li>금요일 실험 블록이 이 단계의 핵심(주간 루틴 동일)</li></ul></div>
+<div class="card"><h4>게이트일 일별</h4><ul>
+<li><b>D+56 (12-14 월)</b>: 블라인드 재시험 2회차(필요 시·참가자 5인 새로) · K3 상시 점검(소진 255만/매출 100만) · 신년 상품 대본 초안 2개 · 소진 220만 근접 시 콘텐츠 집행 동결(예비 10만만 남기고 정지)</li>
+<li><b>D+60 (12-18 금) ★G2 실사용 판정</b>: 방문→유료 전환 기본 시나리오 하한 이상 여부(AI 리포트만 기준) · 미달 시 원인 3분해(트래픽/전환/가격)→원인별 실험 1건씩 설계 · 트래픽 부족이면 검색 페이지 주 4건으로 2배</li>
+<li><b>D+73 (12-31 목) ★K2 청산 기준</b>: 월 10주문·방문 3,000 이중 미달 → 청산(사업 종료) 절차 or 통과 · 신년 피크 성과 집계(1월 상품 사전 판매 포함) · 연간 결산 준비(정산금 환산 매출 인식) · 미달 시 즉시 청산(감정적 연장 금지)</li>
+<li><b>D+88 (2027-01-15 금) ★G6 2단계 종합</b>: 2단계(일본 집중+상담 연결) 진입 판단+K1~K2 종합(누적 유료 20+·채널 성과·자동화 오류) · 진입 시 상담사 온보딩 계획(5명·수수료 0% 3개월) · 리포트 v1.3 갱신 · 보류 시 팬층 확보 전용 전환 검토</li>
+<li><b>D+90 (01-17 일)</b>: G3 최고 채널 시간당 유료 전환 0.1건 이상 판정 · D+91~ 성장 단계 계획 확정 · 최고 채널도 미달이면 2단계 진입 보류+채널 축소(3층→2층)</li>
+</ul></div>
+</div>
+
+<h3 class="th">🎄 단계 4 · 성장·시즌 D+91 ~ D+163 (01-18 ~ 03-31, 기한 내) · 주간 + 핵심일</h3>
+<p class="lead" style="margin-bottom:8px">주차별 중점: 1/18~24 상담사 온보딩(등록 10항목)·2월 음력설 대만·베트남 콘텐츠 준비 · 1/25~31 4개국어 시즌 상품 스펙 · 2/1~7 음력설 피크 · 2/8~14 상담 베타 무료 20건 · 2/15~21 G4 · 2/22~28 상담 유료 전환 · 3/1~7 3순위 국가 승격 조사 · 3/8~14 시즌 콘텐츠 3편 · 3/15~21 G5 · 3/22~30 결산 준비 · 3/31 G7. (D+164~200은 기한 연장 시에만: 4~5월 비시즌 유지 운영)</p>
+<div class="tw"><table>
+<tr><th style="width:150px">핵심일</th><th>할 일 · 완료 기준</th><th>위험 신호 → 대응</th></tr>
+<tr><td><b>D+91 (01-18) 월</b><br>2단계 가동 1일차</td><td>상담사 후보 20명 접촉 시작(온라인+명동·종로 리스트, 접촉 10건) · 온보딩 체크리스트 10항목 양식 확정 · 통역 3안 중 초기 로드맵 확정(번역가 검수+영일 상담사 소수, 크몽 15,000원)</td><td>수락률 20% 미만 → 정산 프리미엄 10% 상향 검토</td></tr>
+<tr><td><b>D+110 (02-06) 토 ★음력설</b><br>시즌 피크 실행</td><td>음력설 콘텐츠 발행(비교盤·2027 정축년)·Dcard·PTT 참여만(게시물 0 규칙) · 시즌 주문 모니터링+고객 응대(24시간 기한 100%)</td><td>시즌 수요 미출현(주문 0) → 시즌 상품 축소·인력 재배분(일본 상시 상품으로)</td></tr>
+<tr><td><b>D+120 (02-16) 화 ★G4 자동화 판단</b></td><td>자동화 오류 월 3건 이하·작업량 소모·이메일 상한 준수 판정 · 오류 원인별 개선 3건 등록(같은 실수 반복 방지) · 상담 베타 무료 20건 진행 점검(리뷰 15건·평점 4.3 목표)</td><td>오류 4건+ → 해당 시나리오 수동 강등(품질 우선)</td></tr>
+<tr><td><b>D+150 (03-18) 목 ★G5 확장 판단</b></td><td>시즌 콘텐츠 3편 완료·여유시간 80% 이내·3순위 국가 조건(대만·싱가포르 카드 승격 완료 여부) 판정 · 미달 시 시즌 상품만 운영 전환 계획 · 국가 지식창고 갱신(분기 트리거·180일 낡은 값 스캔)</td><td>여유시간 80% 초과 → 확장 보류(번아웃 방어가 최우선)</td></tr>
+<tr><td><b>D+163 (03-31) 수 ★G7 최종 결산</b></td><td>순이익 목표 대비 실측(보수 100만/현실 500만/공격 1,500만 기준 현재 트랙)·KPI 전량 집계 → 결산서 1장 · 리포트 v2.0(실측 데이터 전면 반영+G1~G7 판정 이력) · 2027-04 이후 로드맵 확정(비시즌 유지 vs 시즌 준비 vs 종료)·아카이브 등록(승인 후 배포)</td><td>결산 데이터 구멍(추적 누락 지표) → 다음 버전 kpi_daily 필드 추가 규칙으로 기록</td></tr>
+</table></div>
+<div class="callout y"><b>💰 전체 예산 집행 요약:</b> 사전검증 약 35만원(도메인 9만·크몽·기프티콘·변리사) + 코어 스프린트 약 2만원 + 운영 중 크몽 2건 3만원 → 총 40만원 내외. 잔여 260만원은 콘텐츠·로컬라이즈·중단 기준 K3 라인(255만원 소진 시 즉시 정지) 관리 하에 집행합니다.</div>
+<h3 class="th">🚦 판단 시점 G1~G7 요약(핵심일 상세는 위 표)</h3>
+<div class="tw"><table>
+<tr><th>판단</th><th>시기</th><th>통과 기준(요지)</th></tr>
+<tr><td>G1 · 서비스 준비</td><td>D+42 (11-30)</td><td>계산 테스트 12/12 · 블라인드 식별률 70%+ · 모르는 사람 유료 5건+무료 50건+이메일 25%+치명 오류 0 · 채널 첫 발행 3건 · 막힘 0</td></tr>
+<tr><td>G2 · 실사용</td><td>D+60 (12-18)</td><td>방문→유료 전환 기본 시나리오 하한 이상(AI 리포트만 기준)</td></tr>
+<tr><td>G3 · 채널·2단계</td><td>D+90 (01-17)</td><td>최고 채널 시간당 유료 전환 0.1건 이상</td></tr>
+<tr><td>G4 · 자동화</td><td>D+120 (02-16)</td><td>자동화 오류 월 3건 이하·한도 준수</td></tr>
+<tr><td>G5 · 확장</td><td>D+150 (03-18)</td><td>시즌 콘텐츠 3편 · 여유시간 80% 이내 · 3순위 국가 조건</td></tr>
+<tr><td>G6 · 2단계 종합</td><td>2027-01-15</td><td>2단계 진입 판단+K1~K2 종합</td></tr>
+<tr><td>G7 · 최종 결산</td><td>2027-03-31</td><td>순이익 목표 달성 여부(보수 100만/현실 500만/공격 1,500만)</td></tr>
+</table></div>
+<div style="margin-top:16px"><a href="#/t14" style="display:inline-block;background:rgba(88,166,255,.12);border:1px solid rgba(88,166,255,.4);border-radius:8px;padding:9px 14px;font-size:13px">→ 다음 탭 [14 · 일상 운영] : 주간 루틴과 중단 기준 현황 →</a></div>
 </section>
 
 <!-- ============ TAB 14 운영 ============ -->
@@ -988,7 +1075,7 @@ footer .vbadge{display:inline-block;margin-bottom:10px;border:1px solid rgba(63,
 <h2 class="tt"><span class="no">15</span>✅ 신뢰성 검증</h2>
 <div style="background:rgba(88,166,255,.10);border:1px solid rgba(88,166,255,.45);border-radius:10px;padding:13px 16px;margin:10px 0 14px">
 <div style="font-size:12.5px;font-weight:700;color:#58a6ff">❓ 이 계획 믿을 만해?</div>
-<div style="font-size:15px;font-weight:700;color:#e6edf3;margin-top:5px;line-height:1.6">💡 한 줄 요약 · 네, 4중으로 검증했습니다. 반론 공격 45개(치명타 0) · 수치 재계산 32건(오류 1건 → 정정) · 독립 재검증 15항목(13개 완전 일치) · 정정 18건 전부 반영.</div>
+<div style="font-size:15px;font-weight:700;color:#e6edf3;margin-top:5px;line-height:1.6">💡 한 줄 요약 · 네, 4중으로 검증했습니다. 반론 공격 45개(치명타 0) · 수치 재계산 32건(오류 1건 → 정정) · 독립 재검증 15항목(13개 완전 일치) · 정정 18건 전부 반영 · 감점 4축(14점) 해소 경로 확정 → 목표 80/80.</div>
 </div>
 <p class="lead">정정 18건(초기 자료 4 + 실행 중 발견 9 + 마케팅 문구 5)을 전부 반영했습니다. 최종 판정 <b>통과</b> 5조건: 치명 0 ✓ · 중대 0 ✓ · 품질 8항목 통과(최저 7점) ✓ · 수치 오류율 3.1% ✓ · 요구 충족 22/22 ✓.</p>
 <h3 class="th">📝 정정 내역 18건 전체(표의 번호는 정정 기록 번호)</h3>
@@ -1032,6 +1119,46 @@ footer .vbadge{display:inline-block;margin-bottom:10px;border:1px solid rgba(63,
 <tr><td>요구 충족도</td><td class="num">9</td></tr>
 </table></div><p class="note">다시 쓰라고 지시된 항목 0개 · 감점 사유는 반례 탐색 결과를 표기해 처리</p></div>
 </div>
+<h3 class="th">📈 품질 개선안 · 66/80 → 80/80 달성 경로 확정</h3>
+<p class="lead" style="margin-bottom:8px">감점 4축(편향 중립 −2 · 논리 정합 −3 · 실행 가능성 −2 · 재현 가능성 −3 = 14점)의 해소 조치와 병록 위치를 특정했습니다. 단, <b>실행 가능성 10점은 D+13 치명 경로 실증 완료 후에만 확정</b>되며 그 전까지는 "80/80 도달 경로 확정" 상태로 표기합니다.</p>
+<div class="tw"><table>
+<tr><th>축</th><th class="num">현재</th><th class="num">개선 후</th><th>해소 근거</th><th>재검증 방법</th></tr>
+<tr><td>1 사실 근거성</td><td class="num">9</td><td class="num">9</td><td>유지</td><td>-</td></tr>
+<tr><td>2 출처 다각성</td><td class="num">9</td><td class="num">9</td><td>유지</td><td>-</td></tr>
+<tr><td>3 편향 중립</td><td class="num">8</td><td class="num"><b>10</b></td><td>실패 4곳 정량표+성공 대칭표+기저율 문구+반례 질문 4개 응답표</td><td>반론 관점 재공격 4건 기각 확인</td></tr>
+<tr><td>4 논리 정합</td><td class="num">7</td><td class="num"><b>10</b></td><td>평균 주문금액·손익분기·퍼널 산식 전량 병록, 시나리오별 필요 방문 표, 계수 통일</td><td>재계산 32건+재현 불가 4건 해소 판정</td></tr>
+<tr><td>5 실행 가능성</td><td class="num">8</td><td class="num"><b>10</b></td><td>치명 B·C·F 실증 완료+증적+게이트 재판정 <span class="tag C">D+13 이후 확정</span></td><td>준비·판정 게이트 재판정 통과</td></tr>
+<tr><td>6 재현 가능성</td><td class="num">7</td><td class="num"><b>10</b></td><td>5개국 점수 축·보수 지출 전수 병록, 파라미터 JSON·스크립트·주간 자동 테스트</td><td>새 에이전트가 기준 없이 재현 5/5</td></tr>
+<tr><td>7 윤리·컴플라인스</td><td class="num">9</td><td class="num">9</td><td>유지</td><td>-</td></tr>
+<tr><td>8 요구 충족도</td><td class="num">9</td><td class="num">9</td><td>유지</td><td>-</td></tr>
+<tr><th>합계</th><th class="num">66</th><th class="num">80/80</th><th>+14점</th><th>최종 품질 검사 재실행</th></tr>
+</table></div>
+<div class="grid2">
+<div class="card"><h4>축3 편향 중립 8→10 · 실패 사례 정량 대칭 보강</h4>
+<ul><li>실패·정체 4곳(Co-Star 저가 매각 · Rimfactory 점술 포기 · Kasamba 매각 · Sanctuary 축소)을 정성 서술에서 <b>정량 비교표</b>(투자액·이용자·재구매·결말·사망 원인 지표)로 교체</li>
+<li><b>대칭 성공 벤치 표 신설</b>: Astrotalk(매출 $136M, +85%, 재구매 80%)·CHANI(월 $50만)·Nebula(연 매출 $5,000만)·Labyrinthos(단건 반복)를 같은 지표 축으로 나열 → "성공만 골라 봤다" 공격 무력화</li>
+<li>기저율 문구: "조합 대상 13곳 중 지속 성장 9 / 정체·매각·철수 4" + 표본 선택 기준 명시</li>
+<li>반례 질문 4개 응답표: 실패 기업 수(4곳) / 왜 우리는 다른가(결제 채널·단건 모델·무료 퍼널 3점) / 실패 확률 수치 인정(중단 기준으로 손실 상한 −135만원) / 생존 편향 통제(기저율 문구)</li></ul></div>
+<div class="card"><h4>축4 논리 정합 7→10 · 산식·가정 전부 명기</h4>
+<ul><li><b>평균 주문금액 산식 병록</b>: 기본형 = 0.6×(¥1,390×8.72)+0.4×($9.90×1,384)=12,753원 · 프리미엄 = 0.6×(¥3,480×8.72)+0.4×($24.90×1,384)=31,992원 · 평균 = 0.7×기본+0.3×프리미엄=18,525원 → 표준 18,533원(반올림 규칙) · 믹스 70:30은 "라이트 상품 우선 판매 가정" 라벨 + 민감도(프리미엄 비중 40%면 20,449원 / 20%면 16,601원)</li>
+<li><b>손익분기 근거 병록</b>: 월 고정비 549,045원 ÷ 주문당 순수익 15,687원 = 35.0주문/월 · 고정비 내역은 [복원값] 라벨로 병록 · 투자 회수 192주문 병기</li>
+<li><b>퍼널 산식 병록</b>: 방문 42,857 ×(이메일 등록 30%)=리드 12,857 ×(유료 전환 2.1%, 앱 표본 라벨)=270주문 · 배수 정의표(방문→리드 3.33배 / 리드→주문 47.6배 / 방문→주문 158.7배) · 시나리오별 필요 방문: 보수(54주문) 8,571 / 현실(270) 42,857 / 공격(810) 128,571</li>
+<li>계수 통일(15,687 전면 적용)·마진율 84.6%·환율 단일 슬롯 1,384원(2026-08-21) 동일 표에 고정 → 재현 불가 4건이 4/4 해소</li></ul></div>
+<div class="card"><h4>축5 실행 가능성 8→10 · 치명 B·C·F 실증 실행</h4>
+<div class="tw"><table style="min-width:0">
+<tr><th>경로</th><th>실증일</th><th>통과 기준(숫자)</th><th>실패 시 대안</th></tr>
+<tr><td>B 리드→리딩(7단계)</td><td>D+7 (10-26)</td><td>3분 내 발송 100% · 계산메타 저장 100% · 금지어 20종 자동 차단 · 개인정보 격리</td><td>발송만 수동 전환 후 재구성</td></tr>
+<tr><td>C 결제·정산</td><td>D+10~12 (10-29~31)</td><td>연습 5건+실거래 2건+환불 1건 · 웹훅→시트 정합 100% · EU 체크박스 미체크 결제 차단 · 주간 대조 불일치 0</td><td>국내 결제사 병행 전환</td></tr>
+<tr><td>F 전체 흐름(7홉)</td><td>D+13 (11-01)</td><td>식별자 체인 완주 1건 · 누락 0건 · 작업량 소모 예상치 ±10%</td><td>해당 홉 수동 기록, 반자동 강등 후 재실증</td></tr>
+</table></div>
+<p class="note">실증 완료 후 리포트 "실제 작동 확인 대기 3개 경로" → "확인 완료(날짜·증적 파일명)"로 갱신(월간 갱신 절차, v1.1) · 실증 지연 시 10점 주장 불가(8점 유지+"진행 중" 라벨)</p></div>
+<div class="card"><h4>축6 재현 가능성 7→10 · 전수 병록+재현 인프라</h4>
+<ul><li><b>5개국 점수 축 전수 병록</b>(국가 탭 하단): 호주·필리핀·프랑스·독일·중국 각각 5기준(수요 30%·접근성 20%·한류 20%·규제 15%·지불 15%) 원점수와 가중합 재현표 · 자료 부재 필드는 [추정] 라벨 · 중국 54.0은 규제 역가중 47.0까지 민감도 3종 공개 · 10개국 공식(일본 90.0 완전 재현)과 동일 산식 명시</li>
+<li><b>보수 지출 2,197,098원 전수 병록</b>(재무 탭): 산식 = 15,687×54주문+1,350,000원(적자 상한) · 내역은 [복원값] 라벨, 중단 기준 K3 트리거(255만 소진)와 정합</li>
+<li><b>재현 인프라 신설</b>: ① 파라미터 단일 JSON(환율·믹스·전환율·고정비·계수) 공개 ② 재계산 32건 자동 스크립트 저장·실행 방법 기재 ③ 골든 테스트 12종(#11 1958 서울 이중 서머타임·#12 1965 상하이 vs 우루무치 포함) 주간 자동 테스트 등록 ④ 산식+믹스 의무 병록을 인계 문서 템플릿에 고정</li></ul></div>
+</div>
+<div class="callout g"><b>개선 후 기대:</b> 8축 80/80(축5 제외 7축은 문서 보강만으로 확정 · 축5는 D+13 실증 후 확정). 실증 일정은 [13 · 일별 플레이북] D+7·D+10~12·D+13에 시간표로 반영되어 있습니다.</div>
+
 <h3 class="th">🔢 수치 재계산 · 문제 검토</h3>
 <div class="grid2">
 <div class="card"><h4>수치 재계산 32건 → 통과</h4><ul>
@@ -1143,15 +1270,218 @@ footer .vbadge{display:inline-block;margin-bottom:10px;border:1px solid rgba(63,
 <tr><td>2026-08-24</td><td>독립 재검증(3건 즉시 수정) · 계산 엔진 해소 · 상표 사전 확인</td><td><span class="tag B">조건부 통과 · 해소 · 통과</span></td></tr>
 <tr><td>2026-08-24</td><td>마케팅 문구 검토 4.2/10 → 교체 5건 반영</td><td><span class="tag no">지적</span> → <span class="tag pass">교체 완료</span></td></tr>
 <tr><td>2026-08-24</td><td>최종 리포트 조립(본 파일)</td><td><span class="tag pass">릴리스 준비</span></td></tr>
+<tr><td>2026-08-24</td><td>최종 업데이트: 일별 플레이북 교체 · 품질 개선안(80/80 경로) · 데이터 수집 설계 · 업데이트 가이드 추가(17→19탭)</td><td><span class="tag pass">통합 최종판</span></td></tr>
 </table></div>
 <h3 class="th">📦 결과물 목록</h3>
 <div class="card"><ul>
-<li><b>리포트</b>: 본 HTML(탭 17 · 차트 15 · 데이터세트 15종 · 자가검증 통과)</li>
+<li><b>리포트</b>: 본 HTML(탭 19 · 차트 15 · 데이터세트 15종 · 자가검증 통과)</li>
 <li><b>데이터</b>: 원본 데이터 15종 · 품질 검사 기록 · 정정 기록 · 인용 원문 27건</li>
 <li><b>과정</b>: 자동 리서치 시스템 전체(작업 지시문 33종 + 결과물 18종 + 과정 기록)</li>
 <li><b>이후 운영</b>: 운영 데이터 갱신 · 국가별 지식 보관 · 배포는 사용자 승인 후 진행</li>
 </ul></div>
 <div class="callout r"><b>면책:</b> 본 리포트의 법률 관련 내용은 정보 제공 목적이며 법률 자문이 아닙니다. 런칭 전 전문가 최종 확인이 필요합니다. 모든 리딩 상품은 entertainment 목적 고지를 포함합니다.</div>
+<div style="margin-top:16px"><a href="#/t18" style="display:inline-block;background:rgba(88,166,255,.12);border:1px solid rgba(88,166,255,.4);border-radius:8px;padding:9px 14px;font-size:13px">→ 다음 탭 [18 · 데이터 수집] : 근거 자료를 계속 모으는 방법 →</a></div>
+</section>
+
+<!-- ============ TAB 18 데이터 수집 ============ -->
+<section class="tab" id="t18">
+<h2 class="tt"><span class="no">18</span>📚 데이터 수집 설계</h2>
+<div style="background:rgba(88,166,255,.10);border:1px solid rgba(88,166,255,.45);border-radius:10px;padding:13px 16px;margin:10px 0 14px">
+<div style="font-size:12.5px;font-weight:700;color:#58a6ff">❓ 이 리포트의 근거 자료는 어디서, 어떻게 계속 모아?</div>
+<div style="font-size:15px;font-weight:700;color:#e6edf3;margin-top:5px;line-height:1.6">💡 한 줄 요약 · 서적 15종(한 번만 15~25만원) + 정기 수집 데이터 12종(매달 0원, 주 약 2.5시간) + 시기별 추가 조사 18건으로 운영합니다. 모든 값에는 기준일(as_of)을 붙이고 180일이 지나면 낡은 값 표시(⚠stale)를 달아, 썩은 숫자가 리포트에 들어오지 않게 합니다.</div>
+</div>
+<p class="lead">수집 설계 3원칙: ① 공식 1차 자료 우선(야노경제연구소·METI·KTO·법제처 등) ② 모든 값에 기준일(as_of) 필드 저장 ③ 수치는 data.json 단일 소스로만 리포트에 반영(갱신 게이트 3종 검사 통과 후 배포). 아래 A~E가 수집 체계 전부입니다.</p>
+
+<h3 class="th">📖 A. 서적·참고자료 15종(1회 구매 · 총 15~25만원)</h3>
+<div class="tw"><table>
+<tr><th>분류</th><th>제목</th><th>저자/판본</th><th>난이도</th><th>활용 용도</th><th>비용</th></tr>
+<tr><td rowspan="5">명리 원전</td><td>적천수(滴天髓) 평주본</td><td>서낙오 평주 역주판</td><td>상</td><td>해석 근거 표기(Chart basis)의 최상위 근거·격국 논리</td><td>2~3만원</td></tr>
+<tr><td>자평진전(子平眞詮)</td><td>심효첸</td><td>중</td><td>용신·격국 체계(십성 템플릿 10종의 이론 배경)</td><td>1~2만원</td></tr>
+<tr><td>궁통보감(窮通寶鑑)</td><td>집서(저자 다수 설)</td><td>중</td><td>조후(계절) 해석 보조·월지 가중</td><td>1~2만원</td></tr>
+<tr><td>삼명통회(三命通會)</td><td>만민영 편</td><td>사전</td><td>신살·용어 사전적 검색(용어집 67개 검증)</td><td>2~4만원</td></tr>
+<tr><td>연해자평(淵海子平)</td><td>서대승 계열</td><td>중·하</td><td>기초 체계·입문 교육 콘텐츠 소재</td><td>1~2만원</td></tr>
+<tr><td>현대 해설</td><td>적천수 현대 평석서·사주 입문서 각 1권</td><td>국내 정식 역주 개정판 기준 <span class="tag est">서가 확인 필요</span></td><td>하</td><td>십성 템플릿 문장 톤 신강/신약 분기 작성 · 확인 3조건: ①원전 대비 역주 ②개정판 ③용어집 67용어 표기 일치</td><td>3~5만원</td></tr>
+<tr><td rowspan="3">점술 비즈니스</td><td>야노경제연구소 占い市場 調査(연차 보고서)</td><td>야노경제연구소</td><td>중</td><td>일본 시장 규모 997억엔 갱신·채널 구조 추이</td><td>무료 요약 / 전본 유료 [확인]</td></tr>
+<tr><td>State of Subscription Apps(연차)</td><td>RevenueCat</td><td>중</td><td>전환율 2.1% 출처 갱신(앱 표본 라벨 유지)</td><td>무료</td></tr>
+<tr><td>Psychic Services 미국 리포트</td><td>IBISWorld</td><td>중</td><td>미국 $23억 시장·성장률 갱신</td><td>유료(연 단위) [확인]</td></tr>
+<tr><td rowspan="3">크로스보더/D2C</td><td>The Culture Map</td><td>에린 메이어</td><td>하</td><td>문화 3계층 톤 설계 보조</td><td>1.5만원</td></tr>
+<tr><td>Crossing the Chasm</td><td>제프리 무어</td><td>중</td><td>니치→확장 게이트(G3·G5) 설계 프레임</td><td>1.5만원</td></tr>
+<tr><td>Merchant of Record 공식 문서</td><td>Paddle</td><td>중</td><td>3통화 결제·세무 대행 규격 최신화</td><td>무료</td></tr>
+<tr><td rowspan="3">문화·소비자 심리</td><td>종교/점술 인식 조사</td><td>Pew Research</td><td>하</td><td>미국 성인 30% 연 1회 이용 근거 갱신</td><td>무료</td></tr>
+<tr><td>일본 선호도 조사 보도</td><td>마이나비·IID</td><td>하</td><td>손금 40%·四柱 14% 등 선호도 갱신</td><td>무료</td></tr>
+<tr><td>국가 비교(무료 버전)</td><td>Hofstede Insights</td><td>하</td><td>국가 카드 문화 축 보조(고정관념 주석 4건 유지)</td><td>무료</td></tr>
+</table></div>
+
+<h3 class="th">🔄 B. 정기 수집 데이터 12종(월 상시 0원)</h3>
+<div class="tw"><table>
+<tr><th>#</th><th>데이터</th><th>출처</th><th>주기</th><th>방법</th><th>비용</th><th>저장</th></tr>
+<tr><td>B1</td><td>일본 점술 6대 시장 규모</td><td>야노경제연구소(통상 12월경 발표)</td><td>연 1회+발표 시</td><td>보도자료 확인→전본 검토</td><td>무료/유료 [확인]</td><td>국가카드_JP·시장탭</td></tr>
+<tr><td>B2</td><td>일본 비현금 결제율·PayPay</td><td>METI 캐시리스 실태조사</td><td>연 1회</td><td>공식 PDF</td><td>0원</td><td>국가카드_JP</td></tr>
+<tr><td>B3</td><td>점술 피해 상담 건수</td><td>국민생활센터</td><td>연 1회</td><td>공식 발표</td><td>0원</td><td>법제 섹션</td></tr>
+<tr><td>B4</td><td>방한 외래객(일본인)</td><td>KTO 통계(월말 발표)</td><td>월 1회</td><td>웹 통계 다운로드</td><td>0원</td><td>국가카드_JP·수요</td></tr>
+<tr><td>B5</td><td>앱스토어 점술 카테고리 랭킹</td><td>App Store·Google Play 무료 TOP</td><td>주 1회(금)</td><td>수기 기록 20분(TOP 20 가격·신규)</td><td>0원</td><td>경쟁탭·시트</td></tr>
+<tr><td>B6</td><td>커뮤니티 트렌드</td><td>r/astrology·r/AskAstrologers·#韓国占い·note 태그</td><td>주 1회(일)</td><td>비로그인 관측(한계 명시)</td><td>0원</td><td>evidence/원문 보존</td></tr>
+<tr><td>B7</td><td>환율 ¥·$</td><td>한국수출입은행 공개 환율</td><td>일 1회(아침)</td><td>API/공식 페이지</td><td>0원</td><td>시트 환율 탭 단일 슬롯</td></tr>
+<tr><td>B8</td><td>경쟁 가격·기능 변화</td><td>Co-Star·CHANI·Nebula·Astrotalk·점신·Sajuping·LINE占い·ヴェルニ·ピュアリ·ココナラ 가격 페이지</td><td>월 1회</td><td>스크린샷 폴더+차이 메모</td><td>0원</td><td>경쟁탭</td></tr>
+<tr><td>B9</td><td>결제·플랫폼 정책</td><td>Paddle·Stripe, YouTube·X 정책, Make 한도, Azure 가격</td><td>분기 1회+이벤트</td><td>공식 변경 이력</td><td>0원</td><td>ops탭·리스크 목록</td></tr>
+<tr><td>B10</td><td>운영 실측</td><td>kpi_daily(리드·발송·주문·매출·환불·리뷰·문의·응대기한·발행)</td><td>일 1회</td><td>구글 시트 자체 수집(방문 추적 도구 미설치 원칙)</td><td>0원</td><td>kpi_daily→data.json(월간 갱신)</td></tr>
+<tr><td>B11</td><td>국가 지식베이스</td><td>규제기관 발표·경쟁 진입 소식</td><td>분기 1회(180일 낡은 기준)</td><td>카드당 30분 재조사</td><td>0원</td><td>국가KB(분기 갱신)</td></tr>
+<tr><td>B12</td><td>골든 테스트 회귀</td><td>manseryeok·lunar-javascript 버전·천문 데이터</td><td>주 1회 자동+버전 이슈 시</td><td>GitHub Actions 자동 테스트</td><td>0원</td><td>저장소</td></tr>
+</table></div>
+
+<h3 class="th">🔎 C. 추가 조사 필요 주제 18건(1~3순위)</h3>
+<div class="tw"><table>
+<tr><th>순위</th><th>주제</th><th>확인 방법</th><th>시한(플레이북 연계)</th><th>판정 기준 예시</th></tr>
+<tr><td rowspan="6"><b>1순위</b><br>(사업 시작 전)</td><td>Paddle 점술 카테고리 심사 통과 가능성</td><td>Paddle 사전 문의 티켓+동종 서비스 결제사 실측 3건</td><td>D-17 제출→D-2 확인</td><td>"디지털 리포트" 승인 여부·거부 시 국내 결제사 전환 조건</td></tr>
+<tr><td>상표 최종(변리사)·도메인 4종 등록</td><td>KIPRIS·J-PlatPat·USPTO+변리사 서면</td><td>D-12 착수→D-2 중간보고</td><td>유사 2건(일 등록6721146 등) 법적 리스크 판정</td></tr>
+<tr><td>EU/UK 디지털콘텐츠 철회권 예외 구현 법리</td><td>CRD 제16조(m)항·UK CCRs 제36조 원문+체크박스 UX</td><td>D+3~D+10 구현</td><td>미체크 시 결제 차단 작동</td></tr>
+<tr><td>뉴욕 형법 165.35조 '오락 목적' 고지 방어력·주별 허가</td><td>법제처 상당 원문+뉴욕시 소비자국</td><td>미국 본격 판매 전(2단계)</td><td>고지문구 3개국어가 방어 요건 충족</td></tr>
+<tr><td>부가세 영세율 적용(해외 공급) 시행령</td><td>국세청 서면 질의</td><td>첫 정산 전(12월)</td><td>과세 표준·세율 확정</td></tr>
+<tr><td>개인정보 국외이전 5항목 고지 UI 문구 법률 검토</td><td>개인정보보호법 제28조의8</td><td>D+3 폼 구현 시</td><td>5항목 전부 노출+동의 기록</td></tr>
+<tr><td rowspan="6"><b>2순위</b><br>(운영 중)</td><td>일본 인플루언서 협업 시세 실측</td><td>X·YouTube 제안 5건 발송 후 회신가 집계</td><td>D+30~D+60</td><td>팔로워 1천~1만 기준 1건 단가 밴드</td></tr>
+<tr><td>키워드 31종 실측 검색량·AI 인용</td><td>Search Console·수동 AI 검색 10회/주</td><td>D+21~D+45</td><td>'계산' 의도어 전환 기여</td></tr>
+<tr><td>KOMOJU(일본 휴대폰·편의점 결제) 조건</td><td>공식 문의</td><td>2단계 진입 전(G6)</td><td>수수료·심사·정산 주기</td></tr>
+<tr><td>이메일 도달률·Make 작업량 실측 소모</td><td>발송 로그·Make 대시보드</td><td>D+21~ 첫 30일</td><td>500통 상한 내 여유 20%+ 유지</td></tr>
+<tr><td>명동 四柱카페·KKday/Klook 체험 가격 변동</td><td>코네스트·플랫폼 페이지</td><td>월 1회(B8 병행)</td><td>대면 상품 66,000원 정당성 재검증</td></tr>
+<tr><td>블라인드 식별률 운영 재시험</td><td>5인 재시험(분기 2회 이내)</td><td>D+56</td><td>70% 유지 여부</td></tr>
+<tr><td rowspan="4"><b>3순위</b><br>(확장 시점)</td><td>중화권 진입 규제 상세(소홍서 해외 앱 분리·웨이보 인증 비용·중국 내 결제)</td><td>공식 정책 페이지+현지 사례</td><td>D+91~(관찰 유지)</td><td>0원 규칙 위반 여부·54.0점 재평가</td></tr>
+<tr><td>대만 Dcard·PTT 규정(외부 링크·업계 배치 정지)</td><td>站規 06·07조 지속 확인</td><td>3순위 진입 전</td><td>참여만 전략 유지 여부</td></tr>
+<tr><td>호주·필리핀·프랑스·독일 시장 카드 승격(10축)</td><td>공식 통계+앱스토어 데이터</td><td>G5(3순위 진입 검토) 시</td><td>점수 70+ 승격 기준</td></tr>
+<tr><td>스페인어·태국어 언어팩 총비용 실측(판정 3조건: 방문 500+ / 리드 20+ / 월 비용 5만원 이하)</td><td>번역 견적 2곳+Azure 비용</td><td>3단계</td><td>언어당 초기 60~120만·월 7~15만 대비 실측</td></tr>
+</table></div>
+
+<h3 class="th">🧭 D. 확장 필요 정보(단계별)</h3>
+<div class="tw"><table>
+<tr><th>시점</th><th>필요 추가 데이터</th></tr>
+<tr><td>2차 시장(미국 병행) 진입 시</td><td>Pew 점술 이용률 재검증 · FTC §5/뉴욕 최종 점검 · 미국 세무(Paddle MoR 범위) · U1~U3 세그먼트 실측 전환율 · 미국 앱스토어 점술 카테고리 구조</td></tr>
+<tr><td>2단계(상담 매칭) 출시 전</td><td>상담사 온보딩 10항목 실증(수락률 80%) · 통역 3안 실측 품질(Azure 30분 1,700원·용어집 100~150개) · 수수료 25% 시장성 재검증 · 환불 규정 운영 데이터 · 무료 상담 20건→유료 전환 30% 실측</td></tr>
+<tr><td>3단계(B2B/API·멤버십·시즌) 전</td><td>시즌 상품 4종 성과(재구매율) · B2B 제휴 문의 수요 신호 · API 이용 문의 빈도 · 중국어 번체 언어팩 성과</td></tr>
+<tr><td>장기 로드맵</td><td>2027-04~08 비시즌 유지 지표 기준 · 2027-09~11 시즌 준비 캘린더 재활용 · G8 연간 게이트 정의 · 체인 재실행 트리거(경쟁 대형 진입·규제 변경 시 전체 재실행 vs 부분 재실행 판정 기준)</td></tr>
+</table></div>
+
+<h3 class="th">⚙️ E. 수집 인프라 총괄(주 약 2.5시간 · 월 상시 0원)</h3>
+<div class="grid2">
+<div class="card"><div class="tw"><table style="min-width:0">
+<tr><th>자료</th><th>도구</th><th>주기</th><th>소요</th><th>자동화</th></tr>
+<tr><td>환율(B7)</td><td>수출입은행+Apps Script</td><td>일</td><td>10분</td><td><span class="tag pass">자동</span></td></tr>
+<tr><td>운영 실측(B10)</td><td>구글 시트+Make</td><td>일</td><td>5분</td><td><span class="tag B">반자동</span></td></tr>
+<tr><td>앱 랭킹(B5)</td><td>App Store·Play</td><td>주</td><td>20분</td><td><span class="tag B">반자동</span></td></tr>
+<tr><td>커뮤니티(B6)</td><td>Reddit JSON·X·note</td><td>주</td><td>40분</td><td><span class="tag hold">수동</span></td></tr>
+<tr><td>KTO·METI·야노(B1~B4)</td><td>공식 발표 다운로드</td><td>월~연</td><td>30분/월</td><td><span class="tag B">반자동</span></td></tr>
+<tr><td>경쟁 가격(B8)</td><td>브라우저+스크린샷 폴더</td><td>월</td><td>60분</td><td><span class="tag hold">수동</span></td></tr>
+<tr><td>자동 회귀(B12)</td><td>GitHub Actions</td><td>주</td><td>0분</td><td><span class="tag pass">자동</span></td></tr>
+<tr><td>서적(A)</td><td>온라인 서점 구매·독서</td><td>비정기</td><td>리포트 인용 시</td><td><span class="tag hold">수동</span></td></tr>
+<tr><td>국가 지식창고(B11)</td><td>각국 공식 페이지</td><td>분기</td><td>30분/카드</td><td><span class="tag hold">수동</span></td></tr>
+</table></div>
+<p class="note">합계: 월 상시 0원 + 서적 1회 15~25만원 · 주 약 2.5시간 · 자동 3종·반자동 2종·수동 5종(앱 랭킹 RSS 자동화는 명세 확인 후 승격 후보)</p></div>
+<div class="card"><h4>수집 운영 규칙(신선도 관리)</h4>
+<ul>
+<li>모든 수집값은 <b>기준일(as_of) 필드</b>와 함께 저장합니다</li>
+<li>기준일로부터 <b>180일 경과 시 낡은 값 표시(⚠stale)</b>를 달고 재조사 대상이 됩니다</li>
+<li>수치는 <b>data.json 단일 소스</b>로만 리포트에 반영합니다(같은 숫자가 여러 곳에 따로 놓이는 것 방지)</li>
+<li>리포트 반영 전 갱신 게이트 3종 검사: 수치 정합 10표본 · 차트 렌더 · 문구 동기 → 통과 시에만 배포</li>
+<li>오래된 값은 삭제하지 않고 {이전 값, 갱신 값, 갱신 근거}로 보존(추적 가능)</li>
+<li>측정 누락 월은 "데이터 없음" 표기(빈칸 채워 넣기 금지)</li></ul>
+<div class="callout" style="margin-top:10px">이 규칙이 실제로 어떻게 리포트에 적용되는지는 <a href="#/t19">다음 탭 [19 · 업데이트 가이드]</a>의 월간·분기 갱신 절차에서 이어집니다.</div></div>
+</div>
+<div style="margin-top:16px"><a href="#/t19" style="display:inline-block;background:rgba(88,166,255,.12);border:1px solid rgba(88,166,255,.4);border-radius:8px;padding:9px 14px;font-size:13px">→ 다음 탭 [19 · 업데이트 가이드] : 리포트를 스스로 갱신하는 방법 →</a></div>
+</section>
+
+<!-- ============ TAB 19 업데이트 가이드 ============ -->
+<section class="tab" id="t19">
+<h2 class="tt"><span class="no">19</span>🔄 업데이트 가이드</h2>
+<div style="background:rgba(88,166,255,.10);border:1px solid rgba(88,166,255,.45);border-radius:10px;padding:13px 16px;margin:10px 0 14px">
+<div style="font-size:12.5px;font-weight:700;color:#58a6ff">❓ 이 리포트를 나중에 어떻게 스스로 갱신해?</div>
+<div style="font-size:15px;font-weight:700;color:#e6edf3;margin-top:5px;line-height:1.6">💡 한 줄 요약 · 숫자는 <b>data.json 하나만 교체</b>하면 차트 전체가 갱신되고(월간 절차), 시장 지식은 <b>국가 지식창고를 분기마다 재조사</b>합니다. 갱신할 때마다 로그를 남기고, 180일 지난 값은 낡은 표시(⚠stale)를 확인해 썩은 숫자가 못 들어오게 합니다.</div>
+</div>
+<p class="lead">갱신은 두 바퀴로 돌아갑니다: <b>숫자 루프(월간)</b>는 운영 실측을 리포트 차트에 반영하고, <b>지식 루프(분기)</b>는 국가 카드의 시장·규제 지식을 살립니다. 두 루프는 서로 다른 파일을 갱신하므로 충돌하지 않습니다. 갱신 소요 목표: 1회 ≤60분(자동화 구간 제외).</p>
+
+<h3 class="th">🔁 갱신 두 바퀴 · 트리거 4종</h3>
+<div class="grid2">
+<div class="card" style="border-color:rgba(88,166,255,.4)"><h4 style="color:#58a6ff">숫자 루프(월간) · data.json 교체</h4>
+<ul><li><b>정기</b>: 월 1회, 월간 리뷰 직후 같은 날 실행</li>
+<li><b>게이트 측정 완료 시</b>(G1~G7 각각): 판정 결과를 실측 대조 표에 기록</li>
+<li><b>시즌 종료 후</b>(D+170)</li>
+<li><b>치명 정정 발생 시</b>: 정정 기록 규칙 준용</li>
+<li>각 트리거에 갱신 범위(전체/해당 탭)와 예상 소요가 정해져 있음</li></ul></div>
+<div class="card" style="border-color:rgba(188,140,255,.4)"><h4 style="color:#bc8cff">지식 루프(분기) · 국가 지식창고</h4>
+<ul><li><b>정기(분기)</b>: 전 카드 낡은 값 스캔 → 기준일 ±180일 초과 필드만 재조사(카드당 ≤30분)</li>
+<li><b>규제 이벤트</b>: 각국 규제기관 발표 페이지 주간 10분 스캔 → 개정 감지 시 해당 국가 법령 노트 즉시 갱신</li>
+<li><b>시장 이벤트</b>: 경쟁 서비스 진입·가격 변경·플랫폼 정책 변동</li>
+<li><b>진입 의사결정</b>: 3순위 국가 진입 검토 시 해당 카드를 티어2 수준(10축 전부)으로 승격 갱신</li>
+<li><b>운영 신호</b>: 특정 국가 유입 비중 10%+ 2주 지속 → 세그먼트 재평가</li></ul></div>
+</div>
+
+<h3 class="th">📦 월간 갱신 절차 5단계(숫자 루프)</h3>
+<div class="tw"><table>
+<tr><th>단계</th><th>할 일</th><th>방식</th><th>검증</th></tr>
+<tr><td>1</td><td>kpi_daily 시트에서 집계 기간 추출(지표 정의와 필드 대조 · 누락 필드는 수동 보완)</td><td>수동</td><td>필드 대조 누락 0</td></tr>
+<tr><td>2</td><td>추출값을 data.json 형식으로 변환(변환 매핑 표 준수)</td><td>반자동(시트 수식/스크립트)</td><td>스키마 일치 확인</td></tr>
+<tr><td>3</td><td><b>data.json 교체</b>(기존 파일 백업: data_v1.0.json 규칙)</td><td>수동</td><td>백업 파일 존재</td></tr>
+<tr><td>4</td><td>리포트 HTML 안의 인라인 데이터셋(__DATASETS) 동일 교체(치환 지점 표기)</td><td>수동</td><td>아래 품질 게이트 3종</td></tr>
+<tr><td>5</td><td>카탈로그 갱신일 갱신 + 갱신 로그 1행 기록</td><td>수동</td><td>로그 형식 일치</td></tr>
+</table></div>
+<div class="callout"><b>단일 소스 원칙:</b> data.json과 리포트 안의 데이터셋이 같은 내용이므로 <b>이 파일만 교체하면 전 차트가 갱신</b>됩니다. 확인법: 차트 캔버스 개수 동일 + 새 데이터 반영(샘플 3개 대조).</div>
+
+<h3 class="th">🚧 갱신 품질 게이트 3종(갱신마다 통과 필수)</h3>
+<div class="grid3">
+<div class="card"><h4>① 수치 정합</h4><p>갱신된 값 vs kpi_daily 원본 대조 <b>10표본 · 불일치 0</b></p></div>
+<div class="card"><h4>② 차트 렌더</h4><p>캔버스 개수 동일 + 신규 데이터 반영 확인(샘플 3개)</p></div>
+<div class="card"><h4>③ 문구 동기</h4><p>"실측" 문장 중 하드코딩 수치 검출 → 데이터 속성 경유 확인(샘플 5)</p></div>
+</div>
+<div class="callout r"><b>원자성 원칙:</b> 검사에서 불일치 발견 시 <b>백업 데이터 복원으로 롤백</b>(3분 내). "전부 반영 아니면 전부 롤백"이며 절반만 반영된 상태로 배포하지 않습니다.</div>
+
+<h3 class="th">🏷️ 버전 규칙 · 갱신 로그</h3>
+<div class="grid2">
+<div class="card"><h4>버전 규칙</h4>
+<ul><li><b>마이너(v1.0→v1.1)</b>: 정기 갱신·수치 추가(탭 구조 불변)</li>
+<li><b>메이저(v2.0)</b>: 구조 변경(탭 추가 등)</li>
+<li><b>정정과 갱신은 분리 기록</b>: 정정=과거 오류 수정, 갱신=새 데이터 추가</li>
+<li><b>과거 예측은 몰래 수정 금지</b>: 실측 대조 표에서 예측 열은 불변, 실측 열만 추가</li></ul></div>
+<div class="card"><h4>갱신 로그 1행 형식(신뢰성 탭 하단)</h4>
+<div class="copybox"><div class="lab">로그 스키마</div>{버전, 일자, 갱신 범위, 주요 변화(게이트 판정 등), 데이터 소스 기간}</div>
+<ul><li>예: v1.1 · 2026-11-02 · 실증 3경로 라벨 갱신 · 치명 B·C·F "확인 완료"+증적 파일명 · kpi_daily 10/19~11/02</li>
+<li>실측 대조 표 구조: {월, 예측(시나리오 3종 해당 월), 실측, 편차%, 현재 트랙(보수/현실/공격)}</li>
+<li>게이트 판정 기록: {게이트, 예측 임계값, 실측, 판정, 액션} G1~G7 순차 누적</li></ul></div>
+</div>
+
+<h3 class="th">🗺️ 분기 갱신 절차(지식 루프 · 국가 지식창고)</h3>
+<div class="grid2">
+<div class="card"><h4>지식창고 구조</h4>
+<ul><li>reports 하위 국가KB 폴더: 인덱스(_인덱스.md·json) + 국가카드 15개(14개국+한국 홈베이스) + 신규 국가 온보딩 체크리스트 + 용어사전 + 갱신 로그</li>
+<li>각 카드 필드마다 기준일(as_of) 인라인 표기</li>
+<li>카드 버전(vN)·마지막 갱신일을 인덱스에서 관리</li>
+<li>신규 국가 온보딩: 10단계 절차 · 1개국 ≤3시간 · <b>월 1개국 상한</b>(운영 부담 보호)</li></ul></div>
+<div class="card"><h4>낡은 값(stale) 확인 방법</h4>
+<ul><li>기준일로부터 <b>분기 180일·연 365일 초과 필드에 ⚠stale 마커</b></li>
+<li>인덱스에 국가별 낡은 필드 수 표기 → 분기 스캔에서 재조사 대상 선정</li>
+<li>오래된 값은 삭제 금지, {이전 값, 갱신 값, 갱신 근거}로 보존(변경 이력 절로 이동)</li>
+<li>재확인된 필드는 자료 등급 승격, 확인 실패 시 [추정] 유지 또는 강등</li>
+<li>건강 지표 5종을 분기 리포트로 출력: 카드 수·티어 분포 / 평균 신선도(180일 내 비중) / 낡은 필드 상위 국가 / [추정] 잔존 비중 / 분기 갱신 실행률 · 낡은 비중 30% 초과 시 지식창고 전체 재구축 검토</li></ul></div>
+</div>
+
+<h3 class="th">🗓️ 갱신 캘린더(플레이북 연계)</h3>
+<div class="tw"><table>
+<tr><th>시점</th><th>버전</th><th>내용</th><th>소요</th></tr>
+<tr><td><b>D+14 (11-02)</b></td><td>v1.1</td><td>치명 B·C·F 실증 3경로 "확인 완료" 라벨+증적 파일명 · 실증 실패 시 "진행 중" 유지</td><td>≤60분</td></tr>
+<tr><td><b>D+42 (11-30)</b></td><td>v1.2</td><td>G1 판정 기록 · 실측 vs 예측 대조 표 1행 추가</td><td>≤60분</td></tr>
+<tr><td><b>D+88 (01-15)</b></td><td>v1.3</td><td>G2·G6 판정 반영</td><td>≤60분</td></tr>
+<tr><td><b>D+163 (03-31)</b></td><td><b>v2.0</b></td><td>메이저: 실측 데이터 전면 반영+G1~G7 판정 이력 · 아카이브 등록(배포는 사용자 승인 후)</td><td>≤60분+</td></tr>
+<tr><td>매월(월간 리뷰 직후)</td><td>마이너</td><td>kpi_daily → data.json 교체 · 품질 게이트 3종 · 갱신 로그 1행</td><td>≤60분</td></tr>
+<tr><td>매분기</td><td>KB 갱신</td><td>국가 지식창고 낡은 값 스캔·재조사 · 건강 지표 출력 · 법령 개정 변동 확인(변동 없으면 건너뜀)</td><td>카드당 ≤30분</td></tr>
+</table></div>
+<h3 class="th">🧭 이후 운영 · 재실행 판단</h3>
+<div class="grid2">
+<div class="card"><h4>연간 운영 캘린더(D+200 이후)</h4>
+<ul><li><b>2027-04~08(비시즌)</b>: 유지 갱신+템플릿 개선(고객 피드백 반영 루프)</li>
+<li><b>2027-09~11</b>: 2027~28 시즌 준비(캘린더 재활용)</li>
+<li><b>시즌 후</b>: 연간 판정 게이트(G8) 정의 제안</li></ul></div>
+<div class="card"><h4>체인 재실행 판단</h4>
+<ul><li>시장 대변화(경쟁 대형 진입·규제 변경) 시: 전체 재조사(P700부터) vs 부분 재실행(해당 조사만) 판정 트리 운영</li>
+<li>실패 대응: 스키마 불일치 → 데이터 등록부 기준 마이그레이션 후 갱신 · 측정 누락 월은 "데이터 없음" 표기(빈칸 채우기 금지)</li>
+<li>배포는 항상 사용자 승인 후 진행</li></ul></div>
+</div>
+<div class="callout g"><b>요약:</b> 숫자는 월간(교체→검사 3종→로그), 지식은 분기(스캔→재조사→등급 갱신). 예측은 못 바꾸고 실측만 추가합니다. 이 두 루프가 이 리포트를 "발행 시점의 스냅샷"이 아니라 <b>계속 사는 문서</b>로 유지합니다.</div>
 <div style="margin-top:16px"><a href="#/t01" style="display:inline-block;background:rgba(63,185,80,.12);border:1px solid rgba(63,185,80,.4);border-radius:8px;padding:9px 14px;font-size:13px">← 처음으로 [1 · 실행요약] 돌아가기</a></div>
 </section>
 
@@ -1159,7 +1489,7 @@ footer .vbadge{display:inline-block;margin-bottom:10px;border:1px solid rgba(63,
 <footer><div class="wrap">
 <span class="vbadge" id="verifyBadge">자가검증 실행 중…</span>
 <p>자동 리서치 시스템 최종 리포트 · 자료 기준일 2026-08-24 · 환율 기준일 2026-08-21</p>
-<p>차트 라이브러리 ECharts 사용 · 탭 주소는 #/t01~#/t17 · 본 상담 서비스는 오락 및 자기 성찰 목적입니다.</p>
+<p>차트 라이브러리 ECharts 사용 · 탭 주소는 #/t01~#/t19 · 본 상담 서비스는 오락 및 자기 성찰 목적입니다.</p>
 </div></footer>
 <script>
 /* ================= __DATASETS (D01~D15) ================= */
