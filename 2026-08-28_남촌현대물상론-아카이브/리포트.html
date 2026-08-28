@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>남촌학파 명리학 종합 아카이브 - 남촌현대물상론</title>
+<style>
+  :root{
+    --bg:#f7f5f0; --card:#ffffff; --ink:#1f1c17; --sub:#6b6459; --line:#e5dfd3;
+    --accent:#9a3412; --accent2:#7c5cff; --gold:#b8860b; --ok:#15803d; --warn:#b45309; --bad:#b91c1c;
+    --hanja-bg:#fdf6ec;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Pretendard','Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  a{color:var(--accent)}
+  h2{font-size:26px;margin:56px 0 18px;padding-left:14px;border-left:5px solid var(--accent)}
+  h3{font-size:19px;margin:28px 0 12px;color:#3d3529}
+  p{margin:10px 0}
+  .muted{color:var(--sub);font-size:14px}
+  .tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:99px;margin-right:6px;vertical-align:middle}
+  .tag.ok{background:#dcfce7;color:var(--ok)} .tag.warn{background:#fef3c7;color:var(--warn)} .tag.bad{background:#fee2e2;color:var(--bad)} .tag.info{background:#ede9fe;color:var(--accent2)}
+  .hero{background:linear-gradient(135deg,#2a1f14 0%,#4a2c17 55%,#7c3f12 100%);color:#fff;padding:64px 0 48px}
+  .hero h1{font-size:34px;line-height:1.35;margin-bottom:10px}
+  .hero .sub{color:#f3d9bd;font-size:17px;margin-bottom:26px}
+  .hero .meta{font-size:13px;color:#d8c3a5}
+  .statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:28px}
+  .stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 16px}
+  .stat b{display:block;font-size:22px;color:#ffd9a8}
+  .stat span{font-size:12.5px;color:#e8d5bc}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin:16px 0;box-shadow:0 1px 3px rgba(40,30,10,.05)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0;background:#fff}
+  th{background:#f1ebe0;text-align:left;padding:9px 12px;border:1px solid var(--line);white-space:nowrap}
+  td{padding:9px 12px;border:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:#fbf9f4}
+  .callout{border-left:5px solid var(--warn);background:#fffbeb;border-radius:0 12px 12px 0;padding:18px 22px;margin:18px 0}
+  .callout.fix{border-color:var(--accent);background:#fff7ed}
+  .callout h4{font-size:16px;margin-bottom:8px}
+  .hanja{font-family:'Song Myung','Nanum Myeongjo',serif;background:var(--hanja-bg);border:1px solid #eadfc8;padding:1px 7px;border-radius:6px;font-size:15px}
+  .toc{position:sticky;top:0;background:rgba(247,245,240,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:50;padding:10px 0;overflow-x:auto}
+  .toc .wrap{display:flex;gap:8px;flex-wrap:nowrap}
+  .toc a{flex:0 0 auto;font-size:13px;text-decoration:none;color:#5b5344;background:#fff;border:1px solid var(--line);padding:5px 12px;border-radius:99px}
+  .toc a:hover{background:#fff3e6;border-color:#e8c49a}
+  .tabs{display:flex;gap:8px;margin:16px 0 0}
+  .tabbtn{flex:0 0 auto;padding:9px 20px;border-radius:10px 10px 0 0;border:1px solid var(--line);border-bottom:none;background:#efe9dd;cursor:pointer;font-size:15px;font-weight:600;color:#7a6f5c}
+  .tabbtn.on{background:#fff;color:var(--accent)}
+  .tabpane{display:none;background:#fff;border:1px solid var(--line);border-radius:0 12px 12px 12px;padding:20px 24px}
+  .tabpane.on{display:block}
+  details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 20px;margin:12px 0}
+  summary{cursor:pointer;font-weight:700;color:var(--accent);font-size:15px}
+  details .doc{margin-top:14px;font-size:14px;background:#faf7f1;border-radius:8px;padding:16px 18px;white-space:pre-wrap}
+  .tl{position:relative;margin:20px 0 10px;padding-left:26px}
+  .tl::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:3px;background:#e3d5bd;border-radius:3px}
+  .tl-item{position:relative;margin-bottom:18px}
+  .tl-item::before{content:'';position:absolute;left:-25px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--accent);border:3px solid #f3e3cd}
+  .tl-item b.date{color:var(--accent);font-size:14.5px;display:block}
+  .src-tbl td:nth-child(1){width:44%}
+  .badge{font-size:12px;font-weight:700;border-radius:6px;padding:1px 8px}
+  .badge.conf{background:#dcfce7;color:var(--ok)} .badge.part{background:#fef3c7;color:var(--warn)} .badge.un{background:#f3f4f6;color:#6b7280}
+  .kv{display:grid;grid-template-columns:170px 1fr;gap:6px 14px;font-size:14.5px}
+  .kv div:nth-child(odd){color:var(--sub)}
+  footer{margin:64px 0 40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
+  .big-num{font-size:30px;font-weight:800;color:var(--accent)}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+  .pill{background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:5px 14px;font-size:14px}
+  .pill.no{border-color:#f3c1c1;background:#fff5f5;color:var(--bad);text-decoration:line-through}
+  .scroll-note{font-size:12.5px;color:var(--sub);margin-top:-6px}
+</style>
+</head>
+<body>
+
+<div class="toc"><div class="wrap">
+  <a href="#s1">학파 개요</a><a href="#s2">정정·검증 노트</a><a href="#s3">창시자</a><a href="#s4">이론 체계</a><a href="#s5">커리큘럼</a><a href="#s6">교육 기관</a><a href="#s7">도서</a><a href="#s8">온라인 채널</a><a href="#s9">보도자료</a><a href="#s10">연대기</a><a href="#s11">사업화 노트</a><a href="#s12">출처·검증</a>
+</div></div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>남촌학파 명리학 종합 아카이브<br><span style="font-size:22px;font-weight:500">남촌현대물상론(南村現代物象論)과 김대영(金大英)의 모든 공개 자료</span></h1>
+    <p class="sub">격국·용신·신살을 두지 않고 물상과 천간합만으로 통변한다는 학파의 이론, 강의, 도서, 방송, 조직 자료를 전부 수집해 출처와 함께 묶었다.</p>
+    <p class="meta">수집·검증: 2026-08-28 (Aside 리서치) · 공개 웹 자료 13종 이상 · 수강생 한정 배포본(PDF 유인물)은 공개 경로에서 미확인</p>
+    <div class="statgrid">
+      <div class="stat"><b>2권</b><span>단행본 (2020 이론서, 2025 사례집)</span></div>
+      <div class="stat"><b>11년</b><span>동방대 강의 (2026 공지 기준)</span></div>
+      <div class="stat"><b>401편</b><span>유튜브 영상 (구독자 4,250명)</span></div>
+      <div class="stat"><b>2017</b><span>석사논문 (원광대 동양학대학원)</span></div>
+      <div class="stat"><b>35만원</b><span>동방대 현행 수강료 (1학기분)</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<h2 id="s1">1. 학파 개요: 무엇을 버리고 무엇으로 본다</h2>
+<div class="card">
+  <p>남촌학파는 안양에서 상담과 강의를 해 온 김대영이 자신의 호인 '남촌'을 붙여 정립한 사주 해석 학파다. 2020년 보도자료와 2025년 보도자료가 모두 이 학파의 뼈대를 같은 방식으로 요약한다. 사주 글자를 오행의 물상(物象), 즉 자연물의 성질과 움직임으로 읽고, 천간이 합을 이룰 때 일어나는 변화를 별도의 원리로 다룬다. '자연의 법칙을 인간의 법칙으로' 풀어내고, 노자 사상을 삶의 해법에 연결한다는 문구가 반복된다.</p>
+  <p>기존 명리의 어떤 도구를 쓰지 않는지도 강의 공지마다 거의 똑같이 적혀 있다.</p>
+  <div class="pill-row">
+    <span class="pill no">격국</span><span class="pill no">용신</span><span class="pill no">조후</span><span class="pill no">신살론</span><span class="pill no">십이운성</span><span class="pill no">지장간(지장간)</span><span class="pill no">포테법</span>
+  </div>
+  <p>대신 쓰는 도구는 세 가지로 압축된다.</p>
+  <div class="pill-row">
+    <span class="pill">① 10천간 물상론 (갑목부터 계수까지 자연물 비유)</span>
+    <span class="pill">② 천간합의 변화원리 (합화를 넘어선 다단 변화)</span>
+    <span class="pill">③ 안심법(眼心法) (마음을 읽는 관법)</span>
+  </div>
+  <p>2026년 개강 공지는 여기에 '재(財)와 관(官)에 관법'을 추가로 내세운다. 이 관법은 2025년 보도자료 발간사에서 저자가 "독자적으로 개발했다"고 밝힌 항목으로, 직업 선택과 진로 탐색에 쓴다고 한다.</p>
+  <h3>판 교체 이력 (조직명 기준)</h3>
+  <p>초기 조직명은 남촌현대물상미래학회였다(2020 보도자료, 2019~2020 카페·블로그). 2025년 보도자료부터는 남촌물상역학연구회라는 이름으로 바뀌어 있고, 회장은 김대영이다. 유튜브 채널 소개에도 연구회 명칭이 쓰인다. 두 단체가 같은 조직의 이름 변경으로 보이지만, 공식 연속성을 증명하는 문서는 확인하지 못했다.</p>
+</div>
+
+<h2 id="s2">2. 붙여 넣은 개요 대비 정정·검증 노트</h2>
+<div class="callout fix">
+  <h4>질문에 붙어 있던 개요문과 공개 1차 자료를 대조해 다섯 건을 확인했다.</h4>
+  <table>
+    <tr><th>항목</th><th>개요문 표기</th><th>1차 자료 확인 결과</th><th>판정</th></tr>
+    <tr><td>안심법 한자</td><td>安心法</td><td>2025 보도자료, 2020 강의계획서, 유튜브 공지 모두 <span class="hanja">眼心法</span> (눈 안 십, 마음 십)</td><td><span class="badge part">정정</span> 眼心法이 정확</td></tr>
+    <tr><td>동방문화대 평생교육원 강의</td><td>"진행된 바 있습니다"</td><td>동방미래교육원 공식 과정표에 현재도 등재. 2018~2026 개강 공지 연속 확인</td><td><span class="badge conf">확인</span> 현재 운영 중</td></tr>
+    <tr><td>'역학계 최초' 표현</td><td>사실인 양 서술</td><td>저자 발간사와 출판사 보도자료의 자기 주장. 제3자 검증 자료 없음</td><td><span class="badge part">주장</span> 출처 명시 필요</td></tr>
+    <tr><td>강의 PDF 교재 배포</td><td>"수강생에 한정 배포"</td><td>공개된 PDF·유인물 없음. 다만 강의 녹화를 카페에 올려 1주일간 복습하게 하는 운영 방식까지 확인</td><td><span class="badge part">부분</span> 공개본 미존재</td></tr>
+    <tr><td>'남촌' 특허 등록</td><td>미언급</td><td>2025 보도자료가 "호이자 특허 등록된 명칭"이라고 주장. 특허번호는 미확인</td><td><span class="badge un">미확인</span></td></tr>
+  </table>
+</div>
+
+<h2 id="s3">3. 창시자: 남촌 김대영 프로필</h2>
+<div class="grid2">
+  <div class="card">
+    <h3 style="margin-top:0">학력·이력 (공개 자료 기준)</h3>
+    <div class="kv">
+      <div>학위논문</div><div><span class="hanja">陰陽五行의 木行에 대한 硏究</span>, 원광대학교 동양학대학원 석사, 2017 (DBpia 등재 확인)</div>
+      <div>교수직</div><div>동방문화대학원대학교 명리학 교수 (현재) · 원광대 평생교육원 명리학 교수 (2020 보도자료, 현재 여부 미확인)</div>
+      <div>자기소개 추가 이력</div><div>국민대학교 동양철학 교수 (유튜브 채널 소개 2026 기준. 타 소스 교차 확인 안 됨)</div>
+      <div>조직</div><div>남촌물상역학연구회 회장 (과거 남촌현대물상미래학회 고문 표기)</div>
+      <div>상담소</div><div>대영작명철학원, 안양 중앙사거리 (2020 보도자료. 2016 블로그에 상세 주소·전화)</div>
+      <div>연령 가늠</div><div>2026년 유튜브 영상 제목에 "76세의 명리학자" 표현 (본인 영상 기준)</div>
+    </div>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">석사논문이 말해주는 이론의 뿌리</h3>
+    <p>논문 초록(DBpia)에 학파의 방법론이 그대로 나온다. 음양오행 중 목행만 골라, 고전 4서(<span class="hanja">淵海子平·三命通會·滴天髓·窮通寶鑑</span>)의 목과 현대 명리서를 대조하되 "격국, 용신, 지장간, 십이신살을 전혀 사용하지 않고" 시대에 맞게 정리했다고 논문이 밝힌다. 목의 물상을 '위로 올라가는 기세'로 보고 교육·건축·사람을 상대하는 일에 적용한다. 성장하려는 성향은 리더 기질로 풀었다.</p>
+    <p>주목할 점은 논문이 이미 '물상론 사주명조 사례집'이라는 선행 현대 명리서를 참고문헌으로 쓰고 있다는 사실이다. 2020년 보도자료의 유방현 추천사에도 "10여년 전 물상론을 접한 이후 천착했다"는 문장이 있다. 물상론 자체는 선행 학문이고, 김대영의 기여는 여기에 천간합의 변화원리와 안심법이라는 자기 체계를 얹은 것으로 문서상 판단된다. '물상론 창시'로 소개하면 과장이 된다.</p>
+  </div>
+</div>
+
+<h2 id="s4">4. 이론 체계: 세 개의 축</h2>
+<div class="card">
+  <h3 style="margin-top:0">① 10천간의 물상과 응용</h3>
+  <p>기초반 커리큘럼 7주차부터 16주차가 전부 '천간의 물상과 ○○의 응용' 형식이다. 갑목, 을목, 병화, 정화(원문 표기 정토는 오기), 무토, 기토, 경금, 신금, 임수, 계수 순으로 한 글자씩 파고들고, 심화반에서는 같은 순서로 실제 사주를 즉석에서 풀어보는 실관(實觀) 훈련을 반복한다. 논문 초록의 목 행 예시는 "교육, 건축, 사람을 상대하는 일", 리더 기질, 창조·기획 능력 등 현대 직업 언어로 치환하는 방식을 보여준다.</p>
+  <h3>② 천간합의 변화원리</h3>
+  <p>이 학파의 차별점으로 가장 강하게 밀어붙이는 이론이다. 2020년 발간사에서 저자는 "자연의 이치를 오행의 물상으로 정리하여 천간합의 변화원리를 구체적으로 정립한 학자는 없었다"고 주장한다. 유방현 추천사는 이를 구체화하는데, 기존 천간합 해석이 합화(合和)라는 단식(單式) 변화에 머문다면, 남촌물상론은 "논리 속에 숨은 논리"를 찾아 다단계의 물상 변화를 읽고, 그 누구도 사유하지 못한 추명법으로 천간 기운 변화의 새로운 패러다임을 제시한다고 평가한다. 2023년 강의 공지 제목에도 "천간합의 변화를 알아야 물상론의 해석이 가능하다"는 문장이 첫 줄에 온다.</p>
+  <h3>③ 안심법(眼心法): 마음을 읽는 관법</h3>
+  <p>2020년 강의계획서 원문이 안심법을 일곱 항목으로 정의한다.</p>
+  <table>
+    <tr><th style="width:60px">번호</th><th>2020년 강의계획서 원문 요지</th></tr>
+    <tr><td>1</td><td>남촌현대물상론으로 사람의 마음과 행동을 알아내는 관법이다</td></tr>
+    <tr><td>2</td><td>사주원국에서 그 사람이 어떤 마음을 가지고 살 것인가를 알 수 있다</td></tr>
+    <tr><td>3</td><td>대운에서 10년 동안 어떤 행동을 할 것인가를 알 수 있다</td></tr>
+    <tr><td>4</td><td>세운에서 그 해 어떤 일에 목표를 두고 승패를 판단할지 알 수 있다</td></tr>
+    <tr><td>5</td><td>월운에서 1년의 목표를 향한 성공 여부를 알아낼 수 있다</td></tr>
+    <tr><td>6</td><td>안심법으로 마음을 읽어 내정법(內情法)을 알 수 있다</td></tr>
+    <tr><td>7</td><td>안심법으로 궁합·남녀·상대의 마음을 정확하게 알 수 있다</td></tr>
+  </table>
+  <p class="muted">2019년 카페 공지 버전은 항목 수가 세 개로 줄어 있다(원국·세운·궁합). 정의 자체가 연도마다 다듬어져 왔음을 알 수 있다. 2023년 공지는 "남촌물상론을 알면 래정법(來情法)은 배우지 않아도 알 수 있다"는 문구로 상대의 마음을 읽는 기능을 홍보한다.</p>
+</div>
+
+<h2 id="s5">5. 강의 커리큘럼: 2019년판과 2020년판 전문</h2>
+<p>두 해 강의계획서가 모두 공개되어 있다. 2019년판은 기초반을 안미자 교수가, 심화반을 김대영 교수가 맡았고, 2020년판부터는 김대영 혼자 기초반과 심화반을 모두 맡는다. 커리큘럼 구조는 이론(기초반)과 실전 통변(심화반, 즉석실관)의 병행이 핵심이다.</p>
+
+<div class="tabs">
+  <button class="tabbtn on" data-tab="t2020">2020년 2학기 (16주)</button>
+  <button class="tabbtn" data-tab="t2019">2019년 2학기 (15주)</button>
+</div>
+<div class="tabpane on" id="t2020">
+  <p class="muted">출처: 남촌물상미래학회 티스토리 2020-08-10 게시 강의계획서. 화요일 오전 기초반(3시간)·오후 심화반(3시간), 모집 25명, 수강료 기초 30만원·심화 35만원.</p>
+  <table>
+    <tr><th style="width:60px">주</th><th>기초반 (오전)</th><th>심화반 (오후)</th></tr>
+    <tr><td>1</td><td>남촌현대물상론의 기본 원리</td><td>갑목의 사주풀이 즉석실관, 안심법</td></tr>
+    <tr><td>2</td><td>오행이란 무엇인가</td><td>을목의 사주풀이 즉석실관, 안심법</td></tr>
+    <tr><td>3</td><td>남촌현대물상론의 유기적인 해석</td><td>병화의 사주풀이 즉석실관, 안심법</td></tr>
+    <tr><td>4</td><td>남촌현대물상론의 상생과 의미</td><td>정화의 사주풀이 즉석실관, 안심법</td></tr>
+    <tr><td>5</td><td>남촌물상론의 천간합의 변화원리</td><td>무토의 사주풀이 즉석실관, 안심법</td></tr>
+    <tr><td>6</td><td>물상론의 지지의 변화의 원리</td><td>기토의 사주풀이 즉석실관, 안심법</td></tr>
+    <tr><td>7</td><td>천간의 물상과 갑목의 응용</td><td>경금의 사주풀이 즉석실관, 안심법</td></tr>
+    <tr><td>8</td><td>천간의 물상과 을목의 응용 (원문: 을화, 오기)</td><td>임수의 사주풀이 즉석실관, 안심법</td></tr>
+    <tr><td>9</td><td>천간의 물상과 병화의 응용</td><td>계수의 사주풀이 즉석실관, 안심법</td></tr>
+    <tr><td>10</td><td>천간의 물상과 정화의 응용 (원문: 정토, 오기)</td><td>질병의 사주풀이 즉석실관, 안심법</td></tr>
+    <tr><td>11</td><td>천간의 물상과 무토의 응용</td><td>직업의 사주풀이 즉석실관, 안심법</td></tr>
+    <tr><td>12</td><td>천간의 물상과 기토의 응용</td><td>이혼사주 풀이 즉석실관, 안심법</td></tr>
+    <tr><td>13</td><td>천간의 물상과 경금의 응용</td><td>숙살지권(叔殺之權) 사주 즉석실관: 법조인</td></tr>
+    <tr><td>14</td><td>천간의 물상과 신금의 응용 (원문: 천강, 오기)</td><td>숙살지권 사주 즉석실관: 의사</td></tr>
+    <tr><td>15</td><td>천간의 물상과 임수의 응용 (원문: 천강, 오기)</td><td>기업인 회장사주 즉석실관</td></tr>
+    <tr><td>16</td><td>천간의 물상과 계수의 응용</td><td>무관·무재 사주 즉석실관</td></tr>
+  </table>
+  <p class="muted">2020년판은 16주로 늘었고, 심화반 말미에 무관·무재 사주가 추가되었다. 질병(10주)·직업(11주)·이혼(12주)·법조인·의사·기업인은 질문 개요에 있던 '현대적 고민별 즉석 풀이' 훈련이 그대로 들어간 자리다.</p>
+</div>
+<div class="tabpane" id="t2019">
+  <p class="muted">출처: 다음 카페 역학동 2019-08-22 공지 원문. 매주 화요일, 접수 8월 5일~9월 2일, 모집 20명, 기초 30만원·심화 35만원, 수료 시 총장 명명 명리상담사 수료증.</p>
+  <table>
+    <tr><th style="width:60px">주</th><th>기초반 (안미자 교수)</th><th>심화반 (김대영 교수)</th></tr>
+    <tr><td>1</td><td>물상론의 기본 원리</td><td>갑목의 사주풀이 즉석실관</td></tr>
+    <tr><td>2</td><td>물상론의 유기적인 해석</td><td>을목의 사주풀이 즉석실관</td></tr>
+    <tr><td>3</td><td>물상론의 오행과 상생의 의미</td><td>병화의 사주풀이 즉석실관</td></tr>
+    <tr><td>4</td><td>물상론의 천간합과 충의 이론</td><td>정화의 사주풀이 즉석실관</td></tr>
+    <tr><td>5</td><td>삼합과 방합, 육합의 지지 변화</td><td>무토의 사주풀이 즉석실관</td></tr>
+    <tr><td>6</td><td>천간의 물상과 갑목의 응용</td><td>기토의 사주풀이 즉석실관</td></tr>
+    <tr><td>7</td><td>천간의 물상과 을목의 응용</td><td>경금의 사주풀이 즉석실관</td></tr>
+    <tr><td>8</td><td>천간의 물상과 병화의 응용</td><td>임수의 사주풀이 즉석실관</td></tr>
+    <tr><td>9</td><td>천간의 물상과 정화의 응용</td><td>계수의 사주풀이 즉석실관</td></tr>
+    <tr><td>10</td><td>천간의 물상과 무토의 응용</td><td>질병의 사주풀이 즉석실관</td></tr>
+    <tr><td>11</td><td>천간의 물상과 기토의 응용</td><td>직업의 사주풀이 즉석실관</td></tr>
+    <tr><td>12</td><td>천간의 물상과 경금의 응용</td><td>이혼사주 풀이 즉석실관</td></tr>
+    <tr><td>13</td><td>천간의 물상과 신금의 응용</td><td>숙살지권 사주 즉석실관: 법조인</td></tr>
+    <tr><td>14</td><td>천간의 물상과 임수의 응용</td><td>숙살지권 사주 즉석실관: 의사</td></tr>
+    <tr><td>15</td><td>천간의 물상과 계수의 응용</td><td>기업인 회장사주 즉석실관 (기초·심화 마무리)</td></tr>
+  </table>
+  <p class="muted">2019년판 제목의 '안삼법'은 본문 내용이 전부 안심법이므로 오기로 판단된다. 지지론(삼합·방합·육합)을 기초반 5주에 배치한 점이 2020년판과 다르다.</p>
+</div>
+
+<h2 id="s6">6. 교육 기관과 강의 운영 실태</h2>
+<div class="card">
+  <h3 style="margin-top:0">동방문화대학원대학교 동방미래교육원 (현재 운영, 1차 자료)</h3>
+  <div class="kv">
+    <div>과정명</div><div>남촌현대물상론기초 (강의계획서 HWP상 "남촌물상명리(사주)기초반")</div>
+    <div>담당</div><div>김대영</div>
+    <div>기간</div><div>1년 (수료기준 2학기), 화요일 10:00~12:30</div>
+    <div>수강료</div><div>35만원 (1학기분)</div>
+    <div>교재</div><div>남촌물상론 기초편 (김대영 저, 문학공원)</div>
+    <div>인원</div><div>50명 (대면 선착순 20명), 줌 병행, 강의 녹화 복습 제공</div>
+    <div>접수</div><div>동방대 원서접수 페이지 (register_accept.php), 2026년 접수는 2월 10일~28일</div>
+    <div>문의</div><div>미래교육원 02-3668-9811 / 대표 02-3668-9890 / dbedu@dongbang.ac.kr</div>
+    <div>납입</div><div>하나은행 148-910012-35904 (예금주: 동방문화대학원대학교)</div>
+    <div>환불</div><div>평생교육법 시행령 제23조에 따라 개강일 기준 산정한다고 접수 폼이 명시 (조문 원문은 법제처 API 장애로 이번 세션 미검증)</div>
+    <div>특전</div><div>수료 시 총장 명의 명리상담사 수료증 (2019·2020 공지)</div>
+  </div>
+  <p class="muted">강의 시작 시점: 2025년 공지는 "9년째", 2026년 공지는 "11년째"라고 적어 동방대 강의 개시를 2015~2016년경으로 역산할 수 있다. 2018년 6월 방학특강 8주 공지(카페 53217)가 확인되는 가장 오래된 공개 공지다.</p>
+</div>
+<div class="grid2">
+  <div class="card">
+    <h3 style="margin-top:0">개강 공지 타임라인 (다음 카페 역학동)</h3>
+    <table>
+      <tr><th>연도</th><th>내용</th><th>게시물</th></tr>
+      <tr><td>2018.6</td><td>방학특강 8주</td><td><a href="https://cafe.daum.net/2040/MsL/53217">53217</a></td></tr>
+      <tr><td>2019.8</td><td>2학기 9/3 개강, 기초+심화</td><td><a href="https://m.cafe.daum.net/2040/MsL/56289">56289</a></td></tr>
+      <tr><td>2020.2</td><td>1학기 3/3 개강</td><td><a href="https://cafe.daum.net/2040/MsL/57314">57314</a></td></tr>
+      <tr><td>2020.8</td><td>2학기 9/8 개강 (티스토리 강의계획서)</td><td><a href="https://kdy6645.tistory.com/4">tistory/4</a></td></tr>
+      <tr><td>2023.2</td><td>3/7 개강, 줌 병행, 창업반은 종로 국민은행 7층</td><td><a href="https://m.cafe.daum.net/2040/MsL/61370">61370</a></td></tr>
+      <tr><td>2024.8</td><td>2학기 9/3 개강, 네이버카페 '남촌물상 아카데미' 언급</td><td><a href="https://cafe.daum.net/2040/MsL/63525">63525</a></td></tr>
+      <tr><td>2025.2</td><td>3/4 개강, "9년째 강의중"</td><td><a href="https://cafe.daum.net/2040/MsL/64149">64149</a></td></tr>
+      <tr><td>2026.2</td><td>3/3 개강, "11년째", 창업반은 안양 본프라자</td><td><a href="https://m.cafe.daum.net/2040/MsL/65577">65577</a></td></tr>
+      <tr><td>2026.4</td><td>즉석실관 무료 공개 강의 4/30</td><td><a href="https://cafe.daum.net/2040/MsL/65886">65886</a></td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">창업반과 원광대</h3>
+    <p><b>창업반</b>은 대학 과정과 별개로 연구회가 직접 도는 실전 반이다. 2023년에는 서울 종로역 국민은행 7층에서 매주 목요일 열렸고, 2025~2026년에는 안양시 만안구 안양로 316 본프라자 3층 310호 연구회 강의실로 옮겨 매주 목요일 강의 중이다. 즉석실관 위주로 진행한다. 오프라인과 온라인을 동시에 하며 청강은 전화 승인 후 1회만 허용한다. 교재는 2026년부터 신간 사례집이다.</p>
+    <p><b>원광대</b>는 2020년 보도자료가 "원광대학교 평생교육원, 동방대학원 대학교 교수로 강의하고 있다"고 전하며, 2020년 프로필에는 원광디지털대학교 술수동아리 강의와 동양대학원 스터디 강사도 적혀 있다. 다만 2026년 현재 원광대 평생능력개발원 사이트에서 남촌 강좌 흔적은 찾지 못했으므로 현재 개설 여부는 미확인이다.</p>
+  </div>
+</div>
+
+<h2 id="s7">7. 도서: 단행본 전부 (2권)</h2>
+<div class="grid2">
+  <div class="card">
+    <h3 style="margin-top:0">남촌현대물상론 (2020)</h3>
+    <div class="kv">
+      <div>출간</div><div>2020-01-12, 문학공원</div>
+      <div>규격</div><div>양장 170×245mm, 351~352쪽, 정가 30,000원</div>
+      <div>ISBN</div><div>9788965773238</div>
+      <div>부제</div><div>인생의 길잡이! 사주팔자 신패러다임 (알라딘)</div>
+      <div>판매</div><div>알라딘 품절(2021-01-12 확인), 중고 3건, 플라이북 전자책 27,000원에 대여·구매 가능</div>
+      <div>용도</div><div>동방대 기초반 교재</div>
+    </div>
+    <p class="muted">보도자료에 실린 발간사에서 저자는 "남촌현대물상미래학회 회원 중심으로 강의를 통해 전수하고 있다"고 적고, 천간합의 변화원리를 책으로 공유하겠다고 선언한다.</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">남촌물상론 사례집 (2025)</h3>
+    <div class="kv">
+      <div>발행</div><div>2025-09-12, 문학공원</div>
+      <div>규격</div><div>171×244×35mm, 526쪽, 1,057g, 정가 48,000원 (보도자료는 524쪽 B5 표기)</div>
+      <div>ISBN</div><div>9788965775720</div>
+      <div>판매</div><div>예스24 정가 판매 중, 판매지수 186, 리뷰 0건</div>
+      <div>구성</div><div>일간별 10장: 甲木·乙木·丙火·丁火·戊土·己土·庚金·辛金·壬水·癸水 日干</div>
+      <div>용도</div><div>동방대 창업반 교재 (2026 공지)</div>
+    </div>
+    <p class="muted">예스24 목차의 8장은 '羊金 日干'으로 찍혀 있으나 십간 체계상 辛金의 오기로 판단된다. 발간사에서 저자는 이 책을 "물상론의 정수가 녹아 있는 실제 적용의 결과물"이라고 부르며, 재관 관법을 통한 직업 선택·대인 관계·재물 흐름·건강 문제의 풀이 과정을 담았다고 설명한다.</p>
+  </div>
+</div>
+<p class="muted">강의 공지에 등장하는 교재명 '남촌물상론 기초편'은 별도 ISBN이 확인되지 않는다. 2020년 이론서와 같은 책을 가리키는 호칭으로 추정되나, 개별 신간 가능성은 배제할 수 없어 미확인으로 남긴다.</p>
+
+<h2 id="s8">8. 온라인 채널: 유튜브 남촌물상TV와 커뮤니티</h2>
+<div class="card">
+  <div class="grid2">
+    <div>
+      <h3 style="margin-top:0">채널 스펙 (2026-08-28 확인)</h3>
+      <div class="kv">
+        <div>채널</div><div><a href="https://www.youtube.com/@NAMCHON-TV">@NAMCHON-TV</a> (남촌물상TV)</div>
+        <div>가입</div><div>2023-07-25</div>
+        <div>규모</div><div>구독자 4,250명 · 영상 401개 · 총 조회수 1,370,480</div>
+        <div>주기</div><div>주 1회 이상 업로드 (최신 영상은 확인일 하루 전)</div>
+      </div>
+      <p>채널 소개란이 사실상 공식 프로필 역할을 한다. 원광대 동양대학원 졸업, 학위논문명, 국민대·동방대 교수직, 저서 2권, 기초반(동방대)과 창업반(안양) 안내, 사주상담·작명·택일·궁합·취업 업무, 이메일과 상담 전화까지 전부 적혀 있다. 공식 링크로 다음카페(cafe.daum.net/5011saju), 네이버카페(cafe.naver.com/saju5011), 네이버밴드(band.us/band/69739387)를 건다.</p>
+    </div>
+    <div>
+      <h3 style="margin-top:0">영상 주제 분포 (최근 5개월 30편)</h3>
+      <table>
+        <tr><th>주제</th><th>편수</th><th>예시</th></tr>
+        <tr><td>질병 예측 (암·뇌졸증)</td><td>10</td><td>유방암, 췌장암, 간암, 난소암, 뇌졸증</td></tr>
+        <tr><td>재물·상속·처가</td><td>6</td><td>친정 재산과 남편 출세, 처가 재산</td></tr>
+        <tr><td>직업·전문직·자격</td><td>3</td><td>전문직 기술 팔자, 자격증과 수명</td></tr>
+        <tr><td>결혼·궁합·자식</td><td>5</td><td>결혼 불가 사주, 출산택일, 자식 걱정</td></tr>
+        <tr><td>기업인·국운·시사</td><td>4</td><td>이재용, 정용진, 김범석, 미군 감축</td></tr>
+        <tr><td>강의 공개·기타</td><td>2</td><td>기초반 4강, 사업 성공 사주</td></tr>
+      </table>
+      <p class="muted">질병 사주가 콘텐츠의 최대 축이다. 2020년 보도자료도 "질병이 오기 전에 사전 검진으로 예방할 수 있도록" 연구했다고 쓴 만큼, 학파의 대표 서사가 건강 예측임을 알 수 있다.</p>
+    </div>
+  </div>
+</div>
+<details>
+  <summary>영상 30편 전체 목록 (제목 · 길이 · 업로드 · 조회수)</summary>
+  <table>
+    <tr><th>#</th><th>제목</th><th>길이</th><th>업로드</th><th>조회</th></tr>
+    <tr><td>1</td><td>친정 부모 재산이 남편 출세 시킨다</td><td>29분</td><td>1일 전</td><td>151</td></tr>
+    <tr><td>2</td><td>처가집 재산을 받아 성공하려면 이 사주를 보라!</td><td>27분</td><td>8일 전</td><td>228</td></tr>
+    <tr><td>3</td><td>내가 직접 출산택일한 이 아이 어디까지 성공을 할까?</td><td>24분</td><td>2주 전</td><td>165</td></tr>
+    <tr><td>4</td><td>자식 때문에 걱정이 되면 이 영상 꼭 확인하세요</td><td>33분</td><td>4주 전</td><td>338</td></tr>
+    <tr><td>5</td><td>사주에 火가 많은 데 왜 부자가 될까?</td><td>27분</td><td>1개월 전</td><td>356</td></tr>
+    <tr><td>6</td><td>신축일주 무재사주 베트남에서 돈 벌 수가 있다.</td><td>17분</td><td>1개월 전</td><td>176</td></tr>
+    <tr><td>7</td><td>내사주 전문직 기술로 먹거 사는 팔자인?</td><td>28분</td><td>1개월 전</td><td>364</td></tr>
+    <tr><td>8</td><td>이런사주 결혼 불가 해법은 있는가?</td><td>29분</td><td>1개월 전</td><td>315</td></tr>
+    <tr><td>9</td><td>소리없이 찾아온 난소암 내 사주에 보일까?</td><td>22분</td><td>2개월 전</td><td>301</td></tr>
+    <tr><td>10</td><td>내 사주에 있는 재물 과연 언제 내 돈이 될까?</td><td>35분</td><td>2개월 전</td><td>479</td></tr>
+    <tr><td>11</td><td>갑자기 찾아온 뇌졸증 사주에 미리 알 수 있다.</td><td>29분</td><td>2개월 전</td><td>543</td></tr>
+    <tr><td>12</td><td>76세의 명리학자가 30년 상담사례의 비밀 (실제상담사례공개)</td><td>22분</td><td>2개월 전</td><td>347</td></tr>
+    <tr><td>13</td><td>직업과 암의 숨겨진 관계, 당신 사주에도 나타난다.</td><td>22분</td><td>2개월 전</td><td>288</td></tr>
+    <tr><td>14</td><td>이런 사주가 췌장암에 잘 걸릴 수가 있다</td><td>22분</td><td>2개월 전</td><td>292</td></tr>
+    <tr><td>15</td><td>남촌물상론의 특강 유방암에 대하여 강의.</td><td>16분</td><td>3개월 전</td><td>208</td></tr>
+    <tr><td>16</td><td>남촌물상상론으로 풀어본 정용진 회장과 신세계 그릅의 운명은?</td><td>6분31초</td><td>3개월 전</td><td>323</td></tr>
+    <tr><td>17</td><td>누구나 암에 걸릴 수 있다 사주로 그 시기를 알 수 있다</td><td>21분</td><td>3개월 전</td><td>270</td></tr>
+    <tr><td>18</td><td>미국은 한국에 미군 감축을 할 것인가?</td><td>10분14초</td><td>3개월 전</td><td>122</td></tr>
+    <tr><td>19</td><td>사람은 누구나 암에 걸릴 수 있다, 암이 발병하는 시기와 수술 시기를 아는 비밀은?</td><td>21분</td><td>3개월 전</td><td>189</td></tr>
+    <tr><td>20</td><td>남촌물상론으로 바라본 쿠팡 김범석 의장 과연 한국에서 성장할 수 있을까?</td><td>7분53초</td><td>3개월 전</td><td>171</td></tr>
+    <tr><td>21</td><td>내 사주에 사업으로 성공할 수 있는지 알 수 있다</td><td>21분</td><td>3개월 전</td><td>420</td></tr>
+    <tr><td>22</td><td>남촌물상론으로 바라본 삼성 이재용 회장 선택, 파업사태, 사주에 어떤 해답이?</td><td>8분19초</td><td>3개월 전</td><td>349</td></tr>
+    <tr><td>23</td><td>자격증 하나 때문에 생명을 연장할 수 있다</td><td>21분</td><td>3개월 전</td><td>299</td></tr>
+    <tr><td>24</td><td>나도 암에 걸릴 수 있을까? 바로 확인할 수 있다</td><td>19분</td><td>4개월 전</td><td>254</td></tr>
+    <tr><td>25</td><td>유방암! 사주만봐도 알수있다</td><td>8분40초</td><td>4개월 전</td><td>329</td></tr>
+    <tr><td>26</td><td>췌장암 미리 알수있다!</td><td>12분48초</td><td>4개월 전</td><td>236</td></tr>
+    <tr><td>27</td><td>1조 벌었는데 병들어 못 쓰는 팔자</td><td>14분1초</td><td>5개월 전</td><td>291</td></tr>
+    <tr><td>28</td><td>내사주에 간암 신호가 있을까?</td><td>10분10초</td><td>5개월 전</td><td>208</td></tr>
+    <tr><td>29</td><td>누구나 쉽게 배우는 남촌물상론사주 기초반 4강</td><td>19분</td><td>5개월 전</td><td>368</td></tr>
+    <tr><td>30</td><td>남편복은 없는데 돈복있는사주! 왜일까?</td><td>18분</td><td>5개월 전</td><td>521</td></tr>
+  </table>
+</details>
+
+<h2 id="s9">9. 보도자료 원문 (출판사 배포)</h2>
+<details>
+  <summary>2020-01-17: 남촌 김대영 교수, 사주명리학 기초편 '남촌현대물상론' 펴내 (뉴스와이어)</summary>
+  <div class="doc">경기도 안양시 안양동 중앙사거리에 위치한 대영작명철학원 원장으로 개인 운명감정부터 기업경영컨설팅까지 해법을 제시해 온 남촌 김대영 교수가 그간의 상담을 바탕으로 한 사주명리학의 기초이론서 '남촌현대물상론'을 펴냈다. 양장본(170×245), 352페이지, 정가 3만원.
+
+김대영 교수 발간사: "많은 시행착오를 겪으면서 수많은 실전 상담을 통해 쌓은 경험을 바탕으로 정립한 남촌현대물상론을 남촌현대물상미래학회 회원 중심으로 강의를 통해 전수하고 있다. 지금부터는 새로운 자연의 이치에 부합하는 천간합의 변화원리를 남촌현대물상론에 관심이 있는 모든 분들께 출판을 통해서 함께 공유하고자 한다. 시중에는 물상에 관련된 수많은 책들이 난무하고 있다. 그렇지만 자연의 이치를 오행의 물상으로 정리하여 천간합의 변화원리를 구체적으로 정립한 학자는 없었다. 필자는 오랫동안 쌓은 이론과 상담을 통해서 검증된 천간합의 변화원리를 역학계 최초로 밝히고자 한다"
+
+유방현(동방문화대 석좌교수, 철학박사) 추천사: "수십 년 기존의 명리에 대한 탐구를 이어오다 10여년 전 물상론을 접한 이후 줄곧 물상론에 천착하여 천간에 대한 새로운 이해와 통찰을 마주하고 기존 천간합의 단식 해석인 합화(合和)의 변화를 넘어서 논리 속에 숨은 논리를 재발견하며 한 단계 뛰어넘는 물상론적 통변의 새로운 논리와 체계를 정립하였다. 그 누구도 사유하지 못한 추명법을 창안하여 천간 기운 변화의 새로운 패러다임을 제시함으로써 사주 통변의 새로운 이해와 규준을 이 책이 제시하고 있다"
+
+이병돈(동방문화대 평생교육원장, 미래예측학 박사) 추천사: "10여년간 실전 상담을 통해 체득한 남촌현대물상론을 강의를 통하여 아낌없이 열정적으로 전수하여 전국적으로 많은 제자들이 활동하고 있다. 이 한 권의 책을 제대로 익히면 사람들이 행복하게 살아가도록 도움을 줄 수 있는 명리학자가 될 것이라 믿는다"
+
+저자의 목적: "궁극적인 목적은 기업을 운영하는 사업가들이 성공할 수 있도록 기업 컨설팅을 하는 한편 실업자들은 일자리를 얻을 수 있는 기회를 만들어주는 것" / 질병 사전 예방 연구로 원광대 동양대학원에서 '음양오행의 목행에 대한 연구' 발표 / 원광대 평생교육원, 동방대학원 대학교 교수로 강의 중</div>
+</details>
+<details>
+  <summary>2025-10-13: 남촌 김대영 교수 '남촌물상론 사례집' 펴내 (뉴스와이어)</summary>
+  <div class="doc">경기도 안양시 만안구 본플라자 3층에 위치한 남촌물상역학연구회 회장 김대영 동양철학 교수가 20여 년간의 연구와 강의, 그리고 수많은 상담 현장에서 쌓아온 노하우를 담아 '남촌현대물상론 사례집'을 펴냈다. 524페이지, B5판, 4만8천원.
+
+2020년 책의 사례를 모은 지침서. 저자는 자신의 호이자 "특허 등록된 명칭"인 '남촌'을 붙여 독자적인 '남촌물상론'을 정립했다고 밝힌다. 사주 글자의 물상, 즉 '자연의 법칙을 인간의 법칙'으로, 노자 사상의 지혜를 인간 삶의 해법으로 풀어내는 학문이다.
+
+용신·격국·신살 등을 넘어 물상과 천간합의 변화로 삶의 흐름과 내면 심리를 읽으며, '남촌물상론 안심법(眼心法)'으로 명명한 천간합의 원리는 관계의 본질과 마음의 움직임을 통찰하는 도구다.
+
+발간사: "제가 독자적으로 개발한 '재(財)와 관(官)에 대한 관법'을 통한 직업 선택 및 진로 탐색, 대인 관계, 재물 흐름, 건강 문제 등 복합적인 상황들을 남촌물상론의 독창적인 시각으로 어떻게 풀어내고 해결책을 찾아갈 수 있는지 그 과정을 세밀하게 담아냈다"
+
+조성재(동방문화대 총장) 추천사: "2020년에 이은 남촌 선생의 두 번째 책이 발간됐다. 저자는 많은 임상을 바탕으로 오랜 시간 물상론을 정밀하게 분석하고, 교정하고, 증명하고 있다. 그의 새로운 천간합의 개발은 현대인의 인생 궤적의 바로미터처럼 명확하게 확인할 수 있을 정도로 탁월하다. 명리학을 공부하는 학인들에게 남촌물상론의 필독을 권한다"</div>
+</details>
+
+<h2 id="s10">10. 연대기: 2016년부터 2026년까지</h2>
+<div class="card">
+  <div class="tl">
+    <div class="tl-item"><b class="date">2016.7</b>네이버 블로그 상담 후기가 "원광대학·동방대학 평생교육원 겸임교수", 대영작명철학원(안양 CGV사거리, 031-442-5522) 원장으로 소개. 동양철학 석·박사라는 자칭은 확인 중.</div>
+    <div class="tl-item"><b class="date">2017</b>원광대 동양학대학원 석사논문 '陰陽五行의 木行에 대한 硏究' 제출 (DBpia 등재). 물상론적 방법론과 고전 4서 대조가 이미 완성돼 있다.</div>
+    <div class="tl-item"><b class="date">2018.6</b>동방대 방학특강 8주 공지 (카페 53217). 공개 확인 가능한 가장 이른 강의 공지.</div>
+    <div class="tl-item"><b class="date">2019.7~8</b>티스토리에 2019년 국운 분석 포스트. 카페에 2학기 개강 공지(기초+심화, 20명, 30~35만원).</div>
+    <div class="tl-item"><b class="date">2020.1</b>첫 단행본 '남촌현대물상론' 출간(문학공원). 뉴스와이어 보도자료 배포. 동방대 1학기 3/3 개강.</div>
+    <div class="tl-item"><b class="date">2020.8</b>티스토리에 2학기 강의계획서 게시. 안심법 7대 정의, 16주 커리큘럼 공개.</div>
+    <div class="tl-item"><b class="date">2023.2</b>카페 공지에 줌(ZOOM) 병행과 창업반(종로) 운영이 처음 확인되고, 천간합 원리를 '비법'으로 홍보. 같은 해 7월 유튜브 채널 개설.</div>
+    <div class="tl-item"><b class="date">2024</b>2학기 개강 공지와 함께 네이버카페 '남촌물상 아카데미·기초반' 운영 흔적.</div>
+    <div class="tl-item"><b class="date">2025</b>9월 두 번째 책 '남촌물상론 사례집' 출간. 10월 보도자료에서 조직명이 남촌물상역학연구회로, 창업반 교실이 안양 본프라자로 표기.</div>
+    <div class="tl-item"><b class="date">2026</b>동방대 3/3 개강("11년째", 모집 50명), 창업반 교재를 사례집으로 교체. 4/30 즉석실관 무료 공개 강의. 유튜브는 주 1회 이상 새 영상을 올리며 137만 누적 조회.</div>
+  </div>
+</div>
+
+<h2 id="s11">11. 사업화 관점 메모 (관련 조사 컨텍스트)</h2>
+<div class="card">
+  <p>이 아카이브는 학파 자료 수집이 목적이지만, 진행 중인 사주 서비스 사업화 조사와 연결되는 관찰을 짧게 남긴다. 남촌학파의 교육 설계는 현장에서 작동하는 소규모 수익 모델이라는 점에서 참고 가치가 있다.</p>
+  <ul style="padding-left:22px">
+    <li><b>입문 장벽 제거를 마케팅 축으로 사용.</b> 용신·격국 같은 암기 과목을 버린다는 메시지는 "1년이면 현업 통변이 가능하다"는 약속과 짝을 이룬다. 진입 문턱을 낮추는 커리큘럼 슬로건의 좋은 사례다.</li>
+    <li><b>교육과 상담과 콘텐츠의 삼각 수익 구조.</b> 대학 부설 교육원 강좌(35만원/1학기), 창업반(사례집 신간 교재화), 유료 상담(작명·택일·궁합), 무료 유튜브 홍보가 서로를 밀어준다.</li>
+    <li><b>수료증과 녹화 복습으로 재학률 확보.</b> 총장 명의 수료증, 카페 녹화 1주일 복습 제도는 오프라인 학원형 서비스의 결합력 장치다.</li>
+    <li><b>질병 사주 콘텐츠의 양날.</b> 유튜브 최다 주제가 암·뇌졸증 예측이다. 검색 유입에는 유리하지만 의료 행위 오인 리스크가 크다. AI 사주 서비스가 이 축을 벤치마킹한다면 면책 설계가 반드시 선행돼야 한다.</li>
+    <li><b>규모의 한계.</b> 구독자 4,250명, 모집 50명 규모에서 11년째 유지되는 점은 '개인 브랜드 의존 모델'의 성장 천장을 보여준다. 이 학파를 벤치마킹할 때는 파격 커리큘럼 차별화는 배우되, 창시자 개인 의존 구조는 오히려 피할 지점이다.</li>
+  </ul>
+</div>
+
+<h2 id="s12">12. 출처 목록과 검증 상태</h2>
+<div class="card">
+  <table class="src-tbl">
+    <tr><th>출처</th><th>내용</th><th>상태</th></tr>
+    <tr><td><a href="https://www.newswire.co.kr/newsRead.php?no=900189">뉴스와이어 2020-01-17</a></td><td>첫 책 출간, 발간사·추천사, 이력</td><td><span class="badge conf">전문 확인</span></td></tr>
+    <tr><td><a href="https://www.newswire.co.kr/newsRead.php?no=1020458">뉴스와이어 2025-10-13</a></td><td>사례집 출간, 조직명·주소 갱신</td><td><span class="badge conf">전문 확인</span></td></tr>
+    <tr><td><a href="https://kdy6645.tistory.com/4">티스토리 kdy6645/4</a></td><td>2020년 2학기 강의계획서, 안심법 7정의</td><td><span class="badge conf">전문 확인</span></td></tr>
+    <tr><td><a href="https://m.cafe.daum.net/2040/MsL/56289">다음 카페 56289</a></td><td>2019년 강의계획서 15주 전문</td><td><span class="badge conf">전문 확인</span></td></tr>
+    <tr><td><a href="https://m.cafe.daum.net/2040/MsL/61370">다음 카페 61370</a></td><td>2023년 개강·창업반·래정법 문구</td><td><span class="badge part">스니펫</span></td></tr>
+    <tr><td><a href="https://cafe.daum.net/2040/MsL/64149">다음 카페 64149</a></td><td>2025년 개강, 교재 기초편</td><td><span class="badge part">스니펫</span></td></tr>
+    <tr><td><a href="https://m.cafe.daum.net/2040/MsL/65577">다음 카페 65577</a></td><td>2026년 개강, 모집 50명, 계좌·연락처</td><td><span class="badge part">스니펫</span></td></tr>
+    <tr><td><a href="https://cafe.daum.net/2040/MsL/63525">다음 카페 63525</a> · <a href="https://cafe.daum.net/2040/MsL/57314">57314</a> · <a href="https://cafe.daum.net/2040/MsL/53217">53217</a> · <a href="https://cafe.daum.net/2040/MsL/65886">65886</a></td><td>2024·2020·2018·2026 공개강의 공지</td><td><span class="badge part">스니펫</span></td></tr>
+    <tr><td><a href="https://www.youtube.com/@NAMCHON-TV">유튜브 남촌물상TV</a></td><td>채널 스펙, 자기소개, 영상 30편 목록</td><td><span class="badge conf">직접 확인</span></td></tr>
+    <tr><td><a href="https://www.dbpia.co.kr/journal/detail?nodeId=T14572527">DBpia T14572527</a></td><td>석사논문 초록·목차 전문</td><td><span class="badge conf">직접 확인</span></td></tr>
+    <tr><td><a href="https://www.dongbang.ac.kr/graduateUniv/html/education/education_info01.php">동방미래교육원 과정안내</a></td><td>현행 과정표, 수강료 35만원, 접수처</td><td><span class="badge conf">직접 확인</span></td></tr>
+    <tr><td><a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=228991010">알라딘</a> · <a href="https://www.yes24.com/product/goods/153917159">예스24</a> · <a href="https://www.flybook.kr/book/571481">플라이북</a></td><td>도서 2권 서점 정보, ISBN, 품절·판매 상태</td><td><span class="badge conf">직접 확인</span></td></tr>
+    <tr><td><a href="https://m.blog.naver.com/gs5759/220767209577">네이버 블로그 2016 후기</a></td><td>대영작명철학원 주소·전화, 겸임교수 표현</td><td><span class="badge un">3자 블로그</span></td></tr>
+    <tr><td>티스토리 2019 국운 포스트</td><td>2019년 국운 분석 발췌</td><td><span class="badge part">스니펫</span></td></tr>
+  </table>
+  <h3>남은 미확인 사항</h3>
+  <ul style="padding-left:22px;font-size:14.5px">
+    <li>'남촌' 상표·특허 등록 사실과 번호 (2025 보도자료 주장뿐)</li>
+    <li>김대영 박사 학위 여부 (2016 블로그는 석·박사 병기, 검증 소스는 석사만)</li>
+    <li>국민대 동양철학 교수 직 (유튜브 자기소개 단일 소스)</li>
+    <li>평생교육법 시행령 제23조 조문 원문 (법제처 API 타임아웃, 다음 세션 재검증 필요)</li>
+    <li>수강생 한정 강의 PDF·유인물의 공개 경로 (공개된 흔적 없음. 학파 운영 방식상 내부 배포로 판단)</li>
+  </ul>
+</div>
+
+<footer>
+  <p><b>수집 방법론.</b> 웹 검색(고급 모드), 뉴스와이어 원문 페치, 다음 카페·티스토리·예스24·알라딘·플라이북·DBpia·동방대 공식 사이트를 브라우저로 직접 열어 확인했다. 유튜브 채널은 실제 페이지에서 채널 소개와 영상 목록을 읽었다. 4개 병렬 리서치 트랙 중 1개(교육기관·연구회)가 성공했고 나머지 3개는 타임아웃되어 해당 영역(카페·유튜브·서점)을 본 세션에서 직접 재수집했다. 보도자료와 강의 공지는 개설자·출판사가 쓴 1차 자료라는 점을 감안해, 자기 주장성 문구는 별도 표기했다. 모든 수치·일자·주소·연락처는 출처 원문 그대로다.</p>
+  <p>아카이브 생성: 2026-08-28 · 원문 발췌본 9종(raw)이 함께 보관된다. 조사 중 발견한 개인 연락처(010-3139-6645 등)는 개설자가 공식 공지에 올린 업무용 정보다.</p>
+</footer>
+
+</main>
+<script>
+document.querySelectorAll('.tabbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.tabbtn').forEach(function(x){x.classList.remove('on')});
+    document.querySelectorAll('.tabpane').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on');
+    document.getElementById(b.dataset.tab).classList.add('on');
+  });
+});
+</script>
+</body>
+</html>
