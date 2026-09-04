@@ -1,0 +1,23 @@
+{
+ "A_nocturne": {
+  "screenId": "1a1374d364a443638cc8d859572f17be",
+  "screenshotFile": "variants/A_nocturne.png",
+  "designSystemId": "assets/e27d9cd459e542ab939c371353dd88bf",
+  "dsDisplayName": "Ink & Hanji",
+  "screenResource": "projects/11843585505944593298/screens/1a1374d364a443638cc8d859572f17be"
+ },
+ "C_obang": {
+  "screenId": "d509acb9a64e4300b5fae452159bfd47",
+  "screenshotFile": "variants/C_obang.png",
+  "designSystemId": "assets/3ddca0d460764dddab2ab9adb3c4f99f",
+  "dsDisplayName": "Obsidian Meridian",
+  "screenResource": "projects/11843585505944593298/screens/d509acb9a64e4300b5fae452159bfd47"
+ },
+ "AC_hybrid": {
+  "screenId": "593bb3d25ac045aa90e5be099d77bf94",
+  "screenshotFile": "variants/AC_hybrid.png",
+  "designSystemId": "assets/eb0e569bc76a4af680d4ee6eb43ee128",
+  "dsDisplayName": "Nocturne Obang",
+  "screenResource": "projects/11843585505944593298/screens/593bb3d25ac045aa90e5be099d77bf94"
+ }
+}
