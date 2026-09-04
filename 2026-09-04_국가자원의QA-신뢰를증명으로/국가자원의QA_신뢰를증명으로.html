@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>국가 자원의 QA: 정치·인력·에너지를 증명 가능한 자산으로</title>
+<style>
+:root{
+  --bg:#0d1117; --panel:#161b22; --panel2:#1c2129; --border:#2d333b;
+  --text:#e6edf3; --muted:#8b949e; --accent:#5eb0ff; --green:#3fb950; --red:#f85149; --amber:#d29922;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{background:var(--bg); color:var(--text); font-family:'Apple SD Gothic Neo','Pretendard','Noto Sans KR',sans-serif; font-size:15.5px; line-height:1.75;}
+.wrap{max-width:960px; margin:0 auto; padding:32px 20px 80px;}
+a{color:var(--accent); text-decoration:none;}
+a:hover{text-decoration:underline;}
+header{border-bottom:1px solid var(--border); padding-bottom:24px; margin-bottom:24px;}
+.kicker{font-size:13px; font-weight:700; letter-spacing:.08em; color:var(--accent); margin-bottom:8px;}
+h1{font-size:28px; line-height:1.35; margin-bottom:10px;}
+.lede{font-size:16.5px; max-width:65ch;}
+.meta{font-size:13.5px; color:var(--muted); margin-top:8px;}
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:22px;}
+.card{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:12px 14px;}
+.card .k{font-size:12px; color:var(--muted); margin-bottom:4px;}
+.card .v{font-size:20px; font-weight:700;}
+.card .s{font-size:12px; color:var(--muted);}
+.v.pos{color:var(--green);} .v.neg{color:var(--red);} .v.neu{color:var(--amber);}
+.toc{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:14px 18px; font-size:14px; margin-bottom:8px;}
+.toc b{color:var(--muted); font-size:13px;}
+h2{font-size:21px; border-top:1px solid var(--border); margin:44px 0 14px; padding-top:24px;}
+h3{font-size:16.5px; color:var(--accent); margin:26px 0 8px;}
+p{margin:10px 0; max-width:70ch;}
+.muted{color:var(--muted); font-size:13.5px;}
+.callout{background:var(--panel); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:8px; padding:14px 18px; margin:16px 0; max-width:75ch;}
+.callout.warn{border-left-color:var(--red);}
+.callout.good{border-left-color:var(--green);}
+.callout .t{font-weight:700; margin-bottom:4px;}
+table{width:100%; border-collapse:collapse; margin:14px 0; font-size:14px;}
+th{background:var(--panel2); font-weight:700; text-align:left; padding:9px 12px; border:1px solid var(--border);}
+td{padding:9px 12px; border:1px solid var(--border); vertical-align:top;}
+tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.pos{color:var(--green); font-weight:700;} .neg{color:var(--red); font-weight:700;} .neu{color:var(--amber); font-weight:700;}
+.src{font-size:12.5px; color:var(--muted); margin:8px 0 0; line-height:1.6; max-width:80ch;}
+.chartbox{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:18px; margin:18px 0;}
+.chartbox .ct{font-weight:700; font-size:14.5px; margin-bottom:10px;}
+.sim{background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:20px; margin:18px 0;}
+.sim .ct{font-weight:700; margin-bottom:6px;}
+.simgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin:12px 0;}
+.simgrid label{font-size:12.5px; color:var(--muted); display:block; margin-bottom:4px;}
+.simgrid input{width:100%; background:var(--panel2); border:1px solid var(--border); color:var(--text); border-radius:8px; padding:8px 10px; font-size:14.5px;}
+.out{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:14px;}
+.out .card .v{font-size:18px;}
+.foot{border-top:1px solid var(--border); margin-top:48px; padding-top:18px; font-size:12.5px; color:var(--muted); line-height:1.7;}
+.foot b{color:var(--text);}
+ul{margin:8px 0 8px 22px;}
+li{margin:5px 0;}
+.small{font-size:13.5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">무역전략 리서치 3편 · 2026-09-04</div>
+  <h1>국가 자원의 QA: 정치·인력·에너지를 증명 가능한 자산으로</h1>
+  <p class="lede">정치 안정, 인적자원, 에너지. 이 세 가지는 이미 사실상 QA를 받고 있다. 등급이 매겨지고, 가격이 매겨지고, 보험이 들어가고, AI가 실시간 감시한다. 질문은 QA를 "받을 것이냐, 팔 것이냐"다.</p>
+  <div class="meta">시리즈 1편(중미 검증 중개)·2편(인도 회랑)의 상위 프레임 · 공개 자료 90여 건 기반</div>
+  <div class="cards">
+    <div class="card"><div class="k">한국 CDS 5년물</div><div class="v pos">21.6bp</div><div class="s">계엄 첨두 40.4bp에서 회복</div></div>
+    <div class="card"><div class="k">TIC 시장 (검사·인증)</div><div class="v neu">2,424억$</div><div class="s">2031년 3,061억$ 전망</div></div>
+    <div class="card"><div class="k">배경조사 시장</div><div class="v neu">71.9억$</div><div class="s">2034년 137억$ 전망</div></div>
+    <div class="card"><div class="k">에너지 증명서 시장</div><div class="v neu">280억$</div><div class="s">2030년 455억$ 전망</div></div>
+    <div class="card"><div class="k">W3C VC 2.0</div><div class="v pos">표준 확정</div><div class="s">2025-05-15 권고안 승격</div></div>
+    <div class="card"><div class="k">EU 디지털 ID 월렛</div><div class="v neu">2026-12-24</div><div class="s">27개국 제공 의무화 시한</div></div>
+    <div class="card"><div class="k">한국 모바일 신분증</div><div class="v pos">730만 건</div><div class="s">2026-06 누적, 세계 선두권</div></div>
+    <div class="card"><div class="k">에스토니아 검증 수출</div><div class="v pos">1.25억€</div><div class="s">2025년 세수, 전년 +87%</div></div>
+  </div>
+</header>
+
+<div class="toc"><b>목차</b> &nbsp; <a href="#s1">1. 질문 재정의</a> · <a href="#s2">2. 증거: 세 자산의 QA 라이프사이클</a> · <a href="#s3">3. 신뢰 구축과 브랜딩</a> · <a href="#s4">4. AI 시대의 증명 기술</a> · <a href="#s5">5. 한국의 접근</a> · <a href="#s6">6. 실행 설계</a> · <a href="#s7">7. 리스크와 반론</a> · <a href="#s8">8. 결론</a></div>
+
+<h2 id="s1">1. 질문 재정의: QA는 이미 진행 중이다</h2>
+<p>질문을 이렇게 정리한다. 정치 안정과 인적자원과 에너지를 QA해야 한다고 할 때, 실은 QA는 이미 진행 중이다. 누가 하느냐가 문제다. 신용평가사는 정치 불안정을 등급에 반영하고, 시장은 국채 스프레드로 매일 가격을 매기고, 보험사는 정치 리스크를 인수하고, 검사·인증 기업들은 세계 GDP의 2%에 상당하는 매출을 내고 있다. 사용자 질문의 답은 세 문장으로 요약된다.</p>
+<div class="callout good">
+  <div class="t">판정 1. 세 자산 모두 QA 라이프사이클이 실재한다.</div>
+  <p class="small">측정(지수), 가격(시장), 이전(보험), 감시(AI)의 네 단계가 자산마다 이미 돌아간다. 정치 안정은 신용등급·CDS·정치리스크보험으로, 인력은 배경조사·자격 검증·암호학적 자격증명으로, 에너지는 증명서·국경 조정관세·제품 여권으로. 각 단계마다 수치가 존재하고, 그 수치는 2024~2026년에 극적으로 움직였다.</p>
+</div>
+<div class="callout good">
+  <div class="t">판정 2. 신뢰의 브랜딩은 3단 사다리로 진화했다.</div>
+  <p class="small">1단계는 마크다. UL 120년, Swiss Made의 법적 보호 원산지 규칙. 2단계는 등급이다. 신용등급과 소프트파워 지수. 3단계는 패스포트다. 암호학적으로 검증 가능한 증명의 발행과 검증 인프라. 에스토니아는 이 3단계를 국가 사업으로 묶어 2025년에 1억 2,500만 유로의 세수를 올렸고, 1유로 투자에 12유로를 회수했다.</p>
+</div>
+<div class="callout warn">
+  <div class="t">판정 3. 한국의 병목은 인프라가 아니라 브랜딩이다.</div>
+  <p class="small">한국은 모바일 신분증 730만 건, 전국 보급 완료, 블록체인 학위·배지, 4단계 발급 인증이라는 세계 최상위 증명 스택을 갖췄다. 그런데 이 스택은 국가 브랜드로 수출된 적이 없다. 인프라가 있는데 브랜드가 없는 나라와, 에스토니아처럼 브랜드로 파는 나라의 차이가 3장의 주제다. AI 시대에는 증명이 표준화되므로, 스택을 가진 나라가 브랜드를 먼저 붙이는 쪽이 이긴다.</p>
+</div>
+
+<h2 id="s2">2. 증거: 세 자산의 QA 라이프사이클</h2>
+
+<h3>2-1. 정치 안정: 등급과 스프레드로 매일 가격이 매겨진다</h3>
+<p>정치 안정은 가장 감정적인 주제처럼 보이지만, 실제로는 가장 정밀하게 가격이 매겨지는 자산이다. 2024~2026년의 두 사례가 그 메커니즘을 보여준다.</p>
+<p><b>한국, 2024-12 계엄.</b> 계엄 선포 다음 날 KOSPI는 1.4% 하락으로 마감했고, 원화는 장중 1,444.93원까지 떨어졌다. 5년물 CDS는 계엄 전일 33.95bp에서 2025년 1월 10일 40.4bp로 치솟았다가 2월에 31.25bp로 회복, 2026년 9월 1일 기준 21.6bp까지 내려왔다. 12월 한 달에 외국인이 상장주식을 3조 6,490억원 순매도했고, 한국은행은 환시 진정을 위해 비정례 RP 총 19조 6,100억원어치를 3회에 걸쳐 매입했다. 신용평가사 3곳은 계엄 1주일 안에 등급 유지를 밝혔고, 무디스는 2026년 2월 Aa2·안정적 전망을, S&amp;P는 2026년 4월 AA·안정적 전망을 유지하며 "계엄 쇼크 후 정치 상황을 신속히 안정화한 강한 정책기관"이라고 명시했다. 정치 충격이 가격(시장)에 즉시 기록되고, 제도(등급)가 그 기록을 감사한 셈이다.</p>
+<p><b>프랑스, 2024-12~2025-10 삼중 강등.</b> 무디스는 "정치적 파편화"를 사유로 Aa1에서 Aa3로, 피치는 AA-에서 A+로, S&amp;P도 정기 일정을 어기고 예외 강등했다. 프랑스 10년 국채와 독일 분트의 스프레드는 불신임안 발의 직후 65bp에서 85bp까지 벌어졌다. 정치 이벤트가 스프레드라는 실시간 가격으로, 등급이라는 사후 감사로 이중 기록된 사례다.</p>
+<div class="chartbox">
+  <div class="ct">차트 1. 정치 충격의 실시간 가격: 한국 5년물 CDS (bp)</div>
+  <canvas id="chart1" height="150"></canvas>
+  <div class="src">출처: KED Global(2025-02-17), worldgovernmentbonds.com(2026-09-01 데이터). 계엄 전일 33.95bp → 첨두 40.4bp → 계엄 전 수준 회복 31.25bp → 2026-09 21.6bp. 시장이 정치를 가격화하고 회복을 검증한다.</div>
+</div>
+<p>이 가격을 보험으로 이전하는 시장도 실재한다. 세계은행 다자간투자담보기구(MIGA)는 FY2025에 사상 최대인 95억 달러의 신규 정치리스크 보증을 발행했고, 신용·정치리스크보험 시장의 프리미엄 베이스는 490억 달러로 집계된다. 마지막 단계는 AI 감시다. Verisk Maplecroft는 198개국 190여 개 리스크 지수에 보험 인수용 예측 스코어(SRCC Predictive)를 얹었고, Control Risks는 RiskMap 2026에서 27개국 등급을 변경했으며, 월스트리트는 전쟁을 재해 캐터스트로프 모델처럼 정량화해 포트폴리오 가격에 넣기 시작했다.</p>
+<table>
+  <tr><th>QA 단계</th><th>정치 안정의 실체</th><th>2025-2026 실측</th></tr>
+  <tr><td>측정</td><td>WGI(35개 소스, 신규 0~100 스케일), Fragile States Index, WJP 법치주의, V-Dem</td><td>한국 WGI 정치안정 68.3 백분위(2023), FSI 29.8, WJP 19위, V-Dem 2025년 선거민주주의로 조정</td></tr>
+  <tr><td>가격</td><td>국채 스프레드, CDS, 환율</td><td>프랑스 OAT-분트 65→85bp, 한국 CDS 34→40→22bp, 터키 CDS 296bp·리라 -10%·250억$ 방어 개입</td></tr>
+  <tr><td>감사·이전</td><td>신용등급, 정치리스크보험</td><td>프랑스 삼중 강등 vs 한국 삼중 유지, MIGA 95억$ 사상 최대, CPRI 프리미엄 490억$</td></tr>
+  <tr><td>실시간 감시</td><td>AI 리스크 피드, 캐터스트로프 모델</td><td>Maplecroft SRCC 예측 스코어, RiskMap 27개국 변경, 전쟁 캐트모델 도입 논의</td></tr>
+</table>
+<p class="src">출처: World Bank WGI(2025-12 개정), Fragile States Index 2024판(2025-02), WJP(2025), V-Dem(2025-03, 2026-03), Reuters·CNBC·KED Global·한국은행(2024-12~2026-09), France24·Reuters·Le Monde(2024-12~2025-10), MIGA 연차보고서(2025-10), Howden CPRI(2025-09), Maplecroft·Control Risks·Fortune(2026)</p>
+
+<h3>2-2. 인력: 사기의 산업화와 증명의 표준화가 경주 중이다</h3>
+<p>인적자원의 QA는 사기와의 경주다. 미국 근로자의 약 70%가 이력서에 허위를 기재한 경험이 있다고 답했고, 청년층의 92%는 "발각된 적이 없다"고 답했다. 학위 위조 생태계는 연 70억 달러 규모로 추산되며[추정], 미국 간호사 위조 학위 스캔들(Operation Nightingale)에서는 7,600건의 가짜 학위가 1억 1,400만 달러의 거래로 적발됐다. 극단 표본은 북한 가짜 IT 워커다. 10만 명 이상이 40여 개국에서 AI 얼굴·음성 변조로 취업해 연 5억 달러를 벌어들이며 개인당 연 30만 달러 이상을 가져간다고 한다.</p>
+<p>이에 대응하는 검증 산업도 자리를 잡았다. 고용 신원조사 시장은 2025년 71.9억 달러에서 2034년 137억 달러로 성장 전망이고, 업계 1위 First Advantage는 22억 달러로 2위 Sterling을 인수해 통합을 끝냈다. 스킬 검증 쪽에서는 Credly가 2025년 1월 누적 1억 개의 디지털 배지를 돌파했고, 2025년 한 해에만 시스코 380만 개, IBM 278만 개, 구글 클라우드 208만 개가 발급됐다. 자격의 증명이 배지라는 데이터 단위로 바뀌고 있는 것이다.</p>
+<div class="callout">
+  <div class="t">QA 단계 대응표: 인력</div>
+  <p class="small">측정: 스킬 평가(TestGorilla 누적 1,140만 명)와 자격 제도(한국 국가기술자격 2025년 응시 229만 명). 가격: 배경조사 시장과 스킬 평가 시장. 증명: W3C Verifiable Credentials 2.0(2025-05-15 권고안), EU 디지털 ID 월렛(2026-12-24까지 27개국 제공 의무), 미국 21개주 모바일 운전면허, 한국 모바일 신분증 730만 건. 감시: AI 면접·대리수험 탐지, 서명된 AI 에이전트 식별(4장).</p>
+</div>
+<p class="src">출처: HR Dive(2025-06), ResumeBuilder(2024), Parchment·Springer(2025-11, 210억$는 추정치), Klippa(2025-07), The Register(2026-03-18, 북한 IT 워커), Fortune Business Insights(2026-07-27, 배경조사 시장), First Advantage 실적(2026-02-26), Credly·Pearson(2025-01-07), 고용노동부(2026-06-25)</p>
+
+<h3>2-3. 에너지: 증명서가 곧 상품인 시장</h3>
+<p>에너지의 QA는 가장 공식화돼 있다. 재생에너지 증명서(REC·GO) 시장은 2025년 280억 달러에서 2030년 455억 달러로 성장 전망이며, 유럽의 그린 스틸은 프리미엄이 톤당 100~350유로에 거래된다. 저탄소 알루미늄의 일본·한국 프리미엄은 출시 2년 만에 톤당 0~10달러에서 45~85달러로 올랐다. "이 전기·이 금속이 무엇으로 만들었는가"라는 증명 자체에 가격이 붙어 있는 셈이다.</p>
+<p>2026년부터는 규제가 증명을 의무로 바꾼다. EU 탄소국경조정제도(CBAM)의 본규정이 2026년 1월 1일 발효됐고(인증서 구매는 2027년 2월로 연기), 배터리 여권은 2027년 2월 18일부터, 디지털 제품 여권(DPP) 레지스트리는 2026년 7월 20일 운영을 시작했다. 산림파괴 규정(EUDR)은 두 차례 연기 끝에 2026년 12월 30일 적용이 확정됐다. 강제노동 쪽에서도 미국 UFLPA는 누적 1만 8,000건·38억 1천만 달러 분의 선적을 검토했고, EU 강제노동 규정은 2027년 12월 14일 전면 적용된다.</p>
+<p>한국의 실측도 흥미롭다. K-REC 가격은 7만원대를 유지하는 반면, 2025년 4월부터 I-REC(국제 증명서)가 병행 발행되기 시작해 같은 옥상 태양광이 두 증명 체계에 걸리는 이중 시장이 됐다. 국제 증명서 가격이 MWh당 1~5달러인 데 비해 K-REC는 50달러 이상이라, 같은 전기라도 어떤 증명을 붙이느냐에 따라 가치가 갈린다. 증명 체계의 통일성이 곧 국가 에너지 상품성이라는 뜻이다.</p>
+<p class="src">출처: MarketsandMarkets·Research and Markets(2025-04, 2025-11, EAC 시장), futureenergygo(2025-03-16, GO 가격 붕괴), Google 환경보고서(2026-06-24, CFE 65%·APAC 13%), EU 집행위 CBAM·DPP 페이지(2026-09-04 조회), Circularise(2025-10-09, 배터리 여권), CBP UFLPA 대시보드(2026-01), Fastmarkets(2026-03, 그린 금속 프리미엄), KPX·K-RE100(2026-09-04 조회, K-REC), Reslink(2026-05-14, 한국 I-REC), dataeconomy.co.kr(2026-05-01, RE100 12%)</p>
+<div class="chartbox">
+  <div class="ct">차트 2. 증명이 곧 시장이 되는 세 곳 (시장 규모, 십억 달러)</div>
+  <canvas id="chart2" height="150"></canvas>
+  <div class="src">출처: MarketsandMarkets(TIC 2025→2031, EAC 2025→2030), Fortune Business Insights(배경조사 2025→2034). 규모 정의는 조사기관별로 상이하며 범위 차이가 있다.</div>
+</div>
+
+<h2 id="s3">3. 신뢰 구축과 브랜딩: 마크에서 패스포트까지</h2>
+<p>신뢰를 구축하는 방법은 역사적으로 세 단계로 진화했다. 첫 단계는 <b>마크</b>다. UL 마크는 120년 넘게 민간 인증으로 소비자 신뢰를 축적했고, Swiss Made는 법령으로 원산지 기준(스위스 제조비용 60% 이상)을 강제하는 국가 공유 브랜드다. 두 번째 단계는 <b>등급</b>이다. 신용등급이 국가의 상환 의지를 알파벳으로 압축하듯, Brand Finance 소프트파워 지수는 193개국을 55개 지표로 스코어링한다. 2026년 판에서 한국은 11위(59.2점)로 상승했는데, 세계가 사랑하는 브랜드 7위, 첨단기술 5위인 반면 거버넌스가 약점으로 기록됐다. 미국은 193개국 중 최대 하락폭을 기록했고, 스위스는 "일하고, 투자하고, 방문하기 좋은 1위 나라"라는 신뢰 브랜드의 정석을 보여줬다. 세 번째 단계는 <b>패스포트</b>다. 개별 증명을 암호학적으로 발행하고 어디서나 검증 가능하게 만드는 인프라다.</p>
+<div class="callout good">
+  <div class="t">에스토니아: 검증 스택을 브랜드로 파는 나라</div>
+  <p class="small">에스토니아 e-Residency는 자국 디지털 신원을 외국인에게 판매하는 사업이다. 2025년 한 해에 1억 2,500만 유로의 국고 수익(전년 +87%)을 냈고, 신규 e-레지던트 13,828명(+20%)을 얻었다. 누적 13만 5,000명이 185개국에서 가입해 4만 3,000여 개 회사를 설립했고, 누적 경제 효과는 약 4억 유로다. 행정비 1유로당 12유로 이상이 돌아온다. 균형 시선도 필요하다. 기록의 상당분은 배당세 개정 직전의 세납 앞당기기 효과였고, 자금세탁·제재 회피 리스크가 상존하며, 플라스틱 카드의 비효율이 성장의 최대 장애물이라는 것을 정부 스스로 인정해 2026년부터 생체인증 모바일 전환을 추진 중이다.</p>
+</div>
+<p class="src">출처: e-Residency 공식 블로그(2026-02-06), ERR(2026-02-06), Biometric Update(2026-02-10), Estonian World(2026-01-31, 균형 시선), Brand Finance 소프트파워 2026(2026-01-20/30), FHS 스위스시계협회, UL 코리아 보도자료</p>
+<p>여기서 한국의 역설이 드러난다. 한국은 증명 인프라의 세계 최상위권이다. 모바일 주민등록증은 2025년 3월 전국 보급을 끝냈고, 2026년 6월 누적 발급(운전면허 포함)은 730만 건이다. 발급에는 스마트폰 점유인증, 본인인증, IC 카드 PIN, 안면인증의 4단계가 걸려 있다. 포스텍은 2020년부터 블록체인 학위증을 발급했고, 서울대를 포함한 대학 증명서에 DID 기반 배지가 쓰인다. 그러나 시행 첫 달 이용자는 1,000명 중 6명이었다(행안부 설명자료, 2025-04). 스택은 완성됐는데 채택 브랜딩이 없었던 것이다. 2025년 7월 네이버·토스·시중은행 앱으로 발급을 개방하자 누적이 400만에서 730만으로 뛰었다. 인프라가 신뢰 브랜드가 되려면 유통과 서사가 필요하다는 실증이다.</p>
+
+<h2 id="s4">4. AI 시대의 증명 기술: "증명 가능"의 조건이 바뀌었다</h2>
+<p>AI는 양쪽을 동시에 무장시킨다. 사기 쪽에는 얼굴·음성·문서 생성이 생겼고(북한 가짜 워커가 그 표본), 검증 쪽에는 암호학적 증명과 에이전트 인증이 생겼다. 2025~2026년에 표준과 법이 한꺼번에 정착했다는 점이 이 시기의 특징이다.</p>
+<table>
+  <tr><th>기술·제도</th><th>확정 시점</th><th>증명 가능성의 내용</th></tr>
+  <tr><td>W3C Verifiable Credentials 2.0</td><td>2025-05-15 권고안</td><td>학력·자격·경력을 암호서명된 증명으로 발행, 오프라인 검증 가능</td></tr>
+  <tr><td>EU 디지털 ID 월렛(eIDAS 2.0)</td><td>2026-12-24 제공 의무</td><td>27개국 정부 발급 월렛, 2030년까지 시민 80% 채택 목표. 2026년 말 1.69억 월렛 보급 전망[추정]</td></tr>
+  <tr><td>Cloudflare Web Bot Auth</td><td>2026-07 공식 분류</td><td>AI 에이전트 트래픽의 암호학적 서명 식별. 서명 없는 에이전트는 미검증으로 구분</td></tr>
+  <tr><td>Visa Trusted Agent Protocol / Mastercard KYA</td><td>2025-10 발표</td><td>결제망이 AI 에이전트를 등록·검증하는 "에이전트 신원조회". 미국 리테일 AI 트래픽 +4,700%가 트리거</td></tr>
+  <tr><td>World ID (proof of human)</td><td>2026년 1,800만 검증</td><td>인간임을 증명하는 생체 자격. Tinder·Okta 통합(2026-07)</td></tr>
+  <tr><td>EU CBAM·배터리 여권·DPP</td><td>2026~2027 단계 발효</td><td>물품의 탄소·원산지·재료를 디지털 여권으로 수입 통관에 부착</td></tr>
+</table>
+<p>요점은 이렇다. 증명의 단위가 문서에서 암호학적 자격증명으로, 증명의 주체가 사람에서 AI 에이전트까지 확장됐고, 증명의 수용이 자발적 관행에서 법적 의무(EUDI, CBAM, DPP)로 바뀌었다. 이제 "증명 가능한 방식"은 수사가 아니라 규격이다. 규격을 준수하는 스택을 갖춘 나라는 그것을 수출할 수 있고, 갖추지 못한 나라는 QA의 소비자로 남는다.</p>
+<p class="src">출처: W3C(2025-05-15), GDPR Local·EU 집행위(2026-08/06), Jumio·ABI Research(2026-06, 월렛 전망은 추정), Cloudflare 개발자 문서(2026-07), Visa 뉴스룸(2025-10-14), Mastercard(2025-10, 2026-03), World(2025-12, 2026-07)</p>
+
+<h2 id="s5">5. 한국의 접근: QA 소비자에서 QA 생산자로</h2>
+<p>한국의 현재 위치를 QA 라이프사이클로 읽으면 이렇다. 정치 안정은 소비자다. 등급도 스프레드도 외국 기관·시장이 매기고, 한국은 그 가격을 지불하는 쪽이다. 인력 증명은 인프라 강국이면서 상품 약자다. 스택(모바일 ID, DID 배지)은 세계 최상위인데 그것을 패키지로 수출한 사례가 없다. 에너지 증명은 파편화가 곧 기회다. K-REC과 I-REC의 이중 체계는 혼란이지만, 통합·국제화되면 그 자체가 수출 상품이 된다. 세 자산을 관통하는 전략 한 줄은 이렇다. 한국이 이미 세계 수준으로 갖춘 증명 스택에 국가 브랜드를 붙여, QA의 생산자로 팔아 넘기는 것이다. 에스토니아가 1유로에 12유로를 받았다면, 한국은 규모의 경제로 그 배수를 노릴 수 있는 몇 안 되는 나라다.</p>
+<table>
+  <tr><th>축</th><th>내용</th><th>근거 자산</th><th>첫 단계</th></tr>
+  <tr><td><b>제도 수출</b></td><td>에스토니아식 국가 디지털 정체성 상품화. 외국인 사업자·투자자에게 한국형 검증 신원(K-e-Residency형)을 발급</td><td>모바일 신분증 730만 건, 4단계 발급 인증, 외국인등록 모바일화 이미 시행</td><td>외국인 대상 발급 확대(2026-03 민간 개방 정책을 국제판으로)</td></tr>
+  <tr><td><b>검증 산업</b></td><td>TIC 2,424억$ 시장에서 한국계 공백 해소. 인도 BIS 게이트(2편)·동남아로 한국계 시험·인증 진출</td><td>KTL·KTR·KCL의 해외망, KoINDEX의 BIS 세미나 경험</td><td>인도 BIS 인정 시험소 신청(2편 로드맵과 동일)</td></tr>
+  <tr><td><b>탄소·에너지 증명</b></td><td>K-ETS·K-REC·I-REC 통합과 국제 상호인정. CBAM 대응 증명을 상품화</td><td>K-ETS 4기 계획(2026-2030), CBAM 상호인정 협상 착수, K-REC 7만원대</td><td>K-ETS의 CBAM 차감 인정 확보(정부가 협상 중인 안을 산업 지원으로 연결)</td></tr>
+  <tr><td><b>인력 증명 패스포트</b></td><td>VC 2.0 규격의 학력·자격·경력 배지를 해외 채용 시장에 수출. AI 에이전트 시대의 KYA 인프라 연동</td><td>옴니원 배지(서울대 등), 디지털 새싹 연 27만 명, 국가기술자격 연 229만 응시</td><td>국가자격을 W3C VC 규격으로 표준 발행하는 파일럿</td></tr>
+  <tr><td><b>거버넌스 회복 서사</b></td><td>계엄 충격의 시장 검증 기록(CDS 40.4→21.6bp, 등급 3사 유지)을 "제도가 작동하는 나라"의 수치 서사로 브랜딩</td><td>무디스 Aa2·S&amp;P AA 유지 사유서의 문구 자체가 원자재</td><td>통상 협상·수출 인수 서류에 시장 검증 데이터 표준 첨부</td></tr>
+</table>
+<div class="callout good">
+  <div class="t">시리즈 연결</div>
+  <p class="small">1편에서 한국의 역할은 "검증된 문"이었고, 2편에서 인도에서는 "문을 만들어 파는 사람"이었다. 3편의 결론은 그 위층이다. 문 자체를 만드는 나라, 즉 증명 규격과 인프라를 수출하는 나라가 된다는 것이다. 이 세 편이 하나의 사다리를 이룬다.</p>
+</div>
+
+<h2 id="s6">6. 실행 설계: 세 레벨의 액션과 ROI 시뮬레이터</h2>
+
+<h3>6-1. 먼저 하지 말아야 할 것</h3>
+<div class="callout warn">
+  <div class="t">3대 금지</div>
+  <ul class="small">
+    <li><b>지수 관광:</b> 소프트파워 순위를 올리는 사업에 예산을 쓰는 일. 순위는 결과이지 상품이 아니다. 팔 수 있는 것은 등급·증명·여권이다.</li>
+    <li><b>증명 독점의 수입:</b> 신용평가 3사가 보여준 것은 QA 생산자의 힘이자 그 폐해다. 한국이 만들 증명 인프라는 개방형 규격(VC 2.0) 위에 세워야 검증 가능성이 유지된다.</li>
+    <li><b>에스토니아의 복사:</b> 135만 인구 국가의 모델을 5,200만 인구에 그대로 적용하면 안 된다. 규모는 장점(데이터·사업장 수)이자 리스크(세탁·제재 회피 표적)다. 리스크 통제를 먼저 설계해야 한다.</li>
+  </ul>
+</div>
+
+<h3>6-2. 세 레벨의 액션</h3>
+<table>
+  <tr><th>레벨</th><th>12개월 액션</th></tr>
+  <tr><td><b>국가</b></td><td>모바일 신분증의 국제 발급·검증 파일럿(재외동포·외국인 사업자). 국가자격의 VC 2.0 표준 발행 파일럿. K-ETS의 CBAM 차감 인정 협상 성과를 수출 기업 서류 표준에 반영</td></tr>
+  <tr><td><b>기업</b></td><td>자사 제품의 DPP·배터리 여권 대응 데이터 구조 구축(2027-02 시한). 공급망 강제노동 증빙(UFLPA·EU 강제노동 규정)의 증거 패키지 표준화. 인도 BIS 게이트 진출(2편)과 결합</td></tr>
+  <tr><td><b>개인</b></td><td>VC 규격 디지털 배지로 자기 증명 포트폴리오 축적(Credly 발급량이 보여주듯 기업이 이미 수요자). 검증 직업군(TIC·배경조사·컴플라이언스)의 진입. 무엇이든 "측정→가격→보험→감시" 4단계로 분해하는 QA 사고를 업무에 적용</td></tr>
+</table>
+
+<h3>6-3. 국가 검증 스택 ROI 시뮬레이터</h3>
+<p class="small muted">에스토니아 e-Residency의 실적(2025년 비용 1,000만 유로, 수익 1억 2,500만 유로, 1:12.5)을 보정 기준으로 삼고, 한국 규모의 가상 프로그램 수익성을 계산한다. 기본값은 예시 가정이다.</p>
+<div class="sim">
+  <div class="ct">국가 검증 프로그램 ROI (에스토니아 실적 보정)</div>
+  <div class="simgrid">
+    <div><label>연 프로그램 비용 (백만 유로)</label><input type="number" id="cost" value="15" min="1" step="1"></div>
+    <div><label>연 신규 발급 (천 명)</label><input type="number" id="users" value="20" min="1" step="5"></div>
+    <div><label>1인당 연 세수 기여 (유로)</label><input type="number" id="pertax" value="900" min="100" step="100"></div>
+    <div><label>브랜딩 탄력 (발급 증가율 %/년)</label><input type="number" id="growth" value="20" min="0" step="5"></div>
+    <div><label>프로그램 기간 (년)</label><input type="number" id="years" value="3" min="1" max="10" step="1"></div>
+    <div><label>에스토니아 보정치 참고: 1유로 → 12.5유로</label><input type="number" id="ref" value="12.5" min="1" step="0.5" disabled></div>
+  </div>
+  <div class="out">
+    <div class="card"><div class="k">첫해 순수익</div><div class="v" id="o1">-</div><div class="s">세수 총액 - 프로그램 비용</div></div>
+    <div class="card"><div class="k">기간 총 ROI 배수</div><div class="v pos" id="o2">-</div><div class="s">총 세수 ÷ 총 비용</div></div>
+    <div class="card"><div class="k">에스토니아 대비 배수</div><div class="v" id="o3">-</div><div class="s">본 프로그램 ROI ÷ 12.5</div></div>
+    <div class="card"><div class="k">3년차 발급 규모</div><div class="v neu" id="o4">-</div><div class="s">성장률 복리 반영</div></div>
+  </div>
+  <p class="src" style="margin-top:12px">가정: 발급 1인당 연 세수 기여는 에스토니아 2025년 실적(세수 1.25억 유로 ÷ 유효 카드 약 6.3만 = 약 2,000유로)을 한국형 낮은 시나리오로 할인해 사용. 실제 세수는 과세 구조·체류 형태에 따라 크게 달라진다.</p>
+</div>
+
+<h2 id="s7">7. 리스크와 반론</h2>
+<table>
+  <tr><th>반론·리스크</th><th>검토</th><th>대응</th></tr>
+  <tr><td>"증명의 독점이 새로운 지배가 된다"</td><td>QA 생산자의 권력은 실재한다. 신용평가 3사가 프랑스를 강등하면 국가 재정비용이 커진다. 한국이 증명 수출국이 되면 같은 비판을 받는다.</td><td>개방형 규격(W3C VC)·다자 상호인정(ILAC류) 위에서만 운영. 단일 기관 독점 구조 금지를 설계 원칙으로</td></tr>
+  <tr><td>"프라이버시와 감시의 경계"</td><td>모바일 ID·DPP·KYA가 늘수록 국가·기업의 추적력이 커진다. 한국의 4단계 발급 인증은 보안은 강하지만 수용성 논쟁을 남긴다.</td><td>선택적 공개(selective disclosure)를 기본 사양으로. 증명은 최소 필드만 노출하는 구조</td></tr>
+  <tr><td>"한국 거버넌스 약점이 브랜딩을 훼손한다"</td><td>소프트파워 인덱스도 거버넌스를 약점으로 기록했다. 계엄 사태의 기억은 남아 있다.</td><td>오히려 시장 검증 기록(CDS 회복, 등급 유지)이 "제도가 충격을 흡수했다"는 증명 데이터다. 숫자로 서사를 대체한다</td></tr>
+  <tr><td>"에스토니아 숫자는 부풀려졌다는 반론"</td><td>일부는 사실이다. 2025년 기록의 상당분이 세제 개정 직전 배당 앞당기기였고, 장기 꼬리 기업의 세납은 적다. 자금세탁 리스크도 상존한다.</td><td>본 리포트도 균형 시선으로 표기. 한국형 설계는 세수보다 "검증된 사업자 풀"의 자산 가치를 목표로 삼는다</td></tr>
+  <tr><td>"AI가 검증도 무력화한다"</td><td>딥페이크·문서 생성은 계속 진화한다. 다만 암호서명 증명은 생성 모델로 위조할 수 없는 수학적 구조다. 위조 가능한 건 언제나 '종이 세계'다.</td><td>종이·PDF 증명을 VC 규격으로 전환하는 속도 경쟁에 집중. 전환된 만큼 안전해진다</td></tr>
+</table>
+
+<h2 id="s8">8. 결론: 신뢰의 공장</h2>
+<p>질문에 답한다. 정치 안정·인력·에너지의 QA는 이미 존재하며, 측정(WGI·배지·증명서), 가격(CDS·프리미엄), 이전(정치리스크보험), 감시(AI 리스크 피드)의 네 단계로 돌아간다. 신뢰성 구축은 이 네 단계를 자국 자산에 적용하는 일이고, 브랜딩은 그 산출물을 마크에서 등급으로, 등급에서 패스포트로 올려 파는 일이다. 에스토니아가 1유로에 12유로를 받은 것은 기술이 아니라 그 브랜딩의 결과다.</p>
+<p>한국이 접근해야 할 길은 명확하다. 세계 최상위 증명 스택(모바일 신분증 730만 건, DID 배지, 4단계 인증) 위에 국가 브랜드를 붙여 제도·검증·탄소·인력 증명의 네 축으로 수출하는 것이다. AI 시대에는 증명이 W3C VC 2.0과 EU 월렛으로 표준화되므로, 규격을 준수하는 스택을 먼저 브랜드화한 나라가 QA의 생산자가 된다. 한국은 그 조건을 이미 갖춘 몇 안 되는 나라이고, 남은 것은 숫자로 증명되는 서사를 상품으로 포장하는 일이다.</p>
+<div class="callout good">
+  <div class="t">한 줄 결론</div>
+  <p class="small">QA를 받는 나라에서 QA를 파는 나라로. 한국의 다음 수출품은 제품이 아니라, 제품을 증명하던 방식 자체다.</p>
+</div>
+<p><b>다음 액션 3가지:</b> ① 자기 자격·경력 중 VC 규격 배지로 전환할 목록을 만들고 올해 두 개를 발급받는다. ② 회사 제품이 CBAM·배터리 여권·DPP 중 어느 시한에 걸리는지 확인하고 데이터 담당자를 지정한다. ③ 분기마다 한국 CDS 5년물과 소프트파워 지수 변화를 기록해 거버넌스 회복 서사의 원자재를 축적한다.</p>
+
+<div class="foot">
+  <p><b>조사 방법:</b> World Bank WGI(2025-12 개정), V-Dem(2025·2026), WJP(2025), Fragile States Index(2024판), 무디스·피치·S&amp;P 등급 액션(2024-12~2026-04), MIGA 연차보고서, Howden CPRI, CBP UFLPA 대시보드, EU 집행위(CBAM·DPP·EUDR), W3C, Brand Finance 소프트파워 2026, e-Residency 공식 통계, 행정안전부, KPX·K-RE100, ICAP, Fastmarkets, SGS·Bureau Veritas·Intertek·TUV 실적 발표를 2026-09-04 기준 교차 확인했다. 조사기관별 시장규모는 범위 정의 차이가 있으며, 추정치는 본문에 [추정]으로 표기했다. WGI 한국 2024년치(신방법론)와 K-EXIM·K-sure 국가별 한도는 공개 자료에서 확인 불가했다.</p>
+  <p><b>유의:</b> 본 리포트는 공개 자료 기반 분석이며 투자·정책 자문이 아니다. 시뮬레이터 기본값은 예시 가정이다.</p>
+  <p id="gateline"><b>윤문 게이트:</b> 검증 예정</p>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script>
+const cA=document.getElementById('chart1');
+new Chart(cA,{type:'line',data:{labels:['계엄 전일 24-12-02','첨두 25-01-10','회복 25-02-13','26-09-01'],datasets:[
+ {label:'한국 5년물 CDS (bp)',data:[33.95,40.4,31.25,21.62],borderColor:'#5eb0ff',backgroundColor:'#5eb0ff33',tension:.3,fill:true,pointRadius:4}]},
+ options:{plugins:{legend:{labels:{color:'#e6edf3',font:{size:13}}}},scales:{x:{ticks:{color:'#8b949e',font:{size:11}},grid:{color:'#2d333b'}},y:{ticks:{color:'#8b949e',callback:v=>v+'bp'},grid:{color:'#2d333b'},suggestedMin:15,suggestedMax:45}}}});
+
+const cB=document.getElementById('chart2');
+new Chart(cB,{type:'bar',data:{labels:['TIC (25→31)','에너지 증명서 (25→30)','배경조사 (25→34)'],datasets:[
+ {label:'현재',data:[242.4,28.0,7.19],backgroundColor:'#5eb0ff'},
+ {label:'전망',data:[306.1,45.5,13.71],backgroundColor:'#3fb950'}]},
+ options:{plugins:{legend:{labels:{color:'#e6edf3',font:{size:13}}}},scales:{x:{ticks:{color:'#8b949e',font:{size:11}},grid:{display:false}},y:{type:'logarithmic',ticks:{color:'#8b949e',callback:v=>'$'+v+'B'},grid:{color:'#2d333b'},title:{display:true,text:'십억 달러 (로그)',color:'#8b949e'}}}}});
+
+function num(id){return parseFloat(document.getElementById(id).value)||0;}
+function fmt(n){return Math.round(n).toLocaleString('ko-KR');}
+function calc(){
+  const cost=num('cost'), u=num('users'), tax=num('pertax'), g=num('growth')/100, y=Math.min(num('years'),10);
+  const y1rev=u*1000*tax, y1net=y1rev-cost*1e6;
+  let totalRev=0, totalCost=0, users=u;
+  for (let i=1;i<=y;i++){
+    totalRev+=users*1000*tax;
+    totalCost+=cost*1e6*(i>1?(1+0.05*(i-1)):1);
+    users=users*(1+g);
+  }
+  const roi=totalRev/totalCost;
+  document.getElementById('o1').textContent=(y1net>=0?'+':'')+fmt(y1net/1e6)+'M€';
+  document.getElementById('o1').className='v '+(y1net>=0?'pos':'neg');
+  document.getElementById('o2').textContent=roi.toFixed(1)+'x';
+  document.getElementById('o2').className='v '+(roi>=12.5?'pos':(roi>=1?'neu':'neg'));
+  const vs=roi/12.5;
+  document.getElementById('o3').textContent=vs.toFixed(2)+'x';
+  document.getElementById('o3').className='v '+(vs>=1?'pos':'neu');
+  document.getElementById('o4').textContent=fmt(users)+'천 명';
+}
+['cost','users','pertax','growth','years'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+calc();
+</script>
+</body>
+</html>
+fmt(users)+'천 명';
+}
+['cost','users','pertax','growth','years'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+calc();
+</script>
+</body>
+</html>
