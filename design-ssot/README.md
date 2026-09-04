@@ -42,6 +42,6 @@ design-ssot/
 
 ## 현재 상태와 다음 액션
 
-- ✅ 조사·아카이브 완료 (2026-09-04)
+- ✅ Stitch MCP 설치·검증 완료 (2026-09-04) — 커뮤니티 `stitch-mcp` · GCP `sajuro-fortune` · 도구 17개 실호 확인. **신규 세션에서 마운트됨**
 - ⏭ 다음: 06-workflow Step 1 — 방향 A/C/A+C 중 베이스 확정 → Stitch로 화면 6종+공유카드 생성 (시작 화면부터)
 - ⚠ OpenDesign(pencil MCP) 사용 전 앱 실행 필수

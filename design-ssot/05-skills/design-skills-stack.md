@@ -8,6 +8,7 @@
 |---|---|---|---|
 | **design-taste-frontend** (tasteskill v2) | 프로젝트 `.agents/skills/design-taste-frontend` (+ Claude Code 심링크) | Anti-slop 프론트엔드 구현 규칙. §0 Brief Inference → Design Read 선언 → §14 Hard pre-flight. 구현 단계에서 반드시 로드 | OpenDesign → 코드 |
 | **stitch-design 플러그인** (tasteskill 저장소) | `~/.claude/skills/stitch-skills/plugins/stitch-design/` | Stitch 작업 5종: `generate-design`(프롬프트 키워드·매핑), `extract-design-md`(DESIGN.md 스펙 추출), `extract-static-html`, `code-to-design`, `manage-design-system` | Stitch ↔ 코드 동기화 |
+| **stitch-mcp** (MCP 서버) | `~/.claude.json` → `mcpServers.stitch` | Stitch API 직접 호출 17개 도구: 화면 생성·편집·변형, DESIGN.md→디자인 시스템 업로드/적용, HTML·이미지 회수. GCP `sajuro-fortune` | Stitch 생성 단계 |
 | **pencil MCP (OpenDesign)** | 세션 MCP | `.pen` 캔버스 설계 파일 편집. **사전 조건: OpenDesign 앱 실행 중** (미실행 시 `get_editor_state` 연결 실패 확인됨) | 디자인 정제/확정 |
 | **ego-browser** | CLI (`ego-browser nodejs`) | AI 최적화 브라우저. 레퍼런스 수집·생성물 시각 검증·스크린샷 | 전 단계 검증 |
 | superdesign | 세션 스킬 | 대안 캔버스(멀티모델 비교). OpenDesign 경로가 막힐 때 폴백 | 비교 생성 |
