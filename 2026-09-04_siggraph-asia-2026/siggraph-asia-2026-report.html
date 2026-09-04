@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIGGRAPH Asia 2026 완전 리포트 (2026-09-04 기준)</title>
+<style>
+  :root{
+    --bg:#0f1220; --panel:#181c2f; --panel2:#1f2440; --line:#2c3152;
+    --tx:#e8eaf6; --tx2:#a9b0d0; --acc:#7c9cff; --acc2:#ffb86b; --ok:#5dd39e; --warn:#ff9f7c;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.75;font-size:16px}
+  a{color:var(--acc);text-decoration:none;word-break:break-all}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  header.hero{background:linear-gradient(135deg,#141936 0%,#1a1440 55%,#33154a 100%);border-bottom:1px solid var(--line);padding:44px 0 30px}
+  .kicker{color:var(--acc2);font-weight:700;font-size:14px;letter-spacing:.08em}
+  h1{margin:8px 0 6px;font-size:34px;line-height:1.3}
+  .sub{color:var(--tx2);font-size:15px}
+  .badges{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+  .badge{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--tx)}
+  .badge.hot{border-color:var(--acc2);color:var(--acc2)}
+  .badge.ok{border-color:var(--ok);color:var(--ok)}
+  nav.toc{position:sticky;top:0;z-index:50;background:rgba(15,18,32,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;padding:8px 20px}
+  nav.toc a{white-space:nowrap;font-size:13px;color:var(--tx2);padding:6px 10px;border-radius:8px}
+  nav.toc a:hover{background:var(--panel2);color:var(--tx);text-decoration:none}
+  section{padding:34px 0 10px}
+  h2{font-size:24px;border-left:4px solid var(--acc);padding-left:12px;margin:0 0 14px}
+  h3{font-size:18px;margin:22px 0 8px;color:var(--acc2)}
+  p{margin:10px 0}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0}
+  .grid{display:grid;gap:12px}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+  .stat .n{font-size:28px;font-weight:800;color:var(--acc2)}
+  .stat .l{font-size:13px;color:var(--tx2)}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+  th{background:var(--panel2);color:var(--tx);text-align:left;padding:9px 10px;border:1px solid var(--line);position:sticky;top:44px}
+  td{padding:8px 10px;border:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+  .tblwrap{overflow-x:auto;border-radius:12px;border:1px solid var(--line)}
+  .tag{display:inline-block;border-radius:6px;padding:1px 7px;font-size:12px;margin:1px 2px 1px 0;white-space:nowrap}
+  .t-j{background:#1d3a2f;color:var(--ok);border:1px solid #2c5b48}
+  .t-c{background:#20304d;color:var(--acc);border:1px solid #34497a}
+  .t-u{background:#3a2f1d;color:var(--acc2);border:1px solid #5b4a2c}
+  .t-src{background:#2b2140;color:#c9a6ff;border:1px solid #463466}
+  .linkrow a{margin-right:8px}
+  .filterbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;align-items:center}
+  .filterbar input[type=text]{flex:1;min-width:220px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;color:var(--tx);padding:10px 12px;font-size:14px}
+  .fbtn{background:var(--panel2);border:1px solid var(--line);color:var(--tx2);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer}
+  .fbtn.on{background:var(--acc);border-color:var(--acc);color:#0f1220;font-weight:700}
+  .note{background:#241d10;border:1px solid #5b4a2c;border-radius:12px;padding:12px 16px;font-size:14px;color:#ffd9a8;margin:12px 0}
+  .ok-note{background:#12271f;border:1px solid #2c5b48;border-radius:12px;padding:12px 16px;font-size:14px;color:#bdf0d8;margin:12px 0}
+  ul.compact{margin:8px 0;padding-left:22px}
+  ul.compact li{margin:5px 0}
+  .person{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--panel2)}
+  .person .role{font-size:12px;color:var(--tx2)}
+  .person .nm{font-size:16px;font-weight:700;margin:2px 0}
+  footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 0 60px;color:var(--tx2);font-size:13px}
+  .small{font-size:12.5px;color:var(--tx2)}
+  code{font-family:var(--mono);background:var(--panel2);border-radius:5px;padding:1px 6px;font-size:13px}
+  @media print{nav.toc{display:none}body{background:#fff;color:#111}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">ACM SIGGRAPH ASIA 2026 · KUALA LUMPUR</div>
+    <h1>SIGGRAPH Asia 2026 완전 리포트</h1>
+    <div class="sub">채택 확정 논문 · 키노트 · 위원회 · 워크숍 · 코드 저장소 · SNS 계정 총정리 · 조사 기준일 2026년 9월 4일 (행사 D-88)</div>
+    <div class="badges">
+      <span class="badge hot">2026. 12. 1~4 · KLCC 쿠알라룸푸르</span>
+      <span class="badge">기술논문 조건부 채택 322편</span>
+      <span class="badge">공개 확인 논문 63편</span>
+      <span class="badge">코드 저장소 40여 개</span>
+      <span class="badge ok">공식 목록 전문 공개: 11월 9일</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc"><div class="wrap">
+  <a href="#s0">핵심 요약</a><a href="#s1">행사 개요</a><a href="#s2">일정</a><a href="#s3">키노트</a><a href="#s4">위원회</a><a href="#s5">기술논문</a><a href="#s6">연기논문</a><a href="#s7">코드·GitHub</a><a href="#s8">한국 동향</a><a href="#s9">워크숍·프로그램</a><a href="#s10">등록·참가</a><a href="#s11">SNS 디렉터리</a><a href="#s12">검증 상태·한계</a><a href="#s13">출처</a>
+</div></nav>
+
+<div class="wrap">
+
+<section id="s0">
+  <h2>핵심 요약</h2>
+  <div class="note"><b>반드시 알아야 할 전제.</b> SIGGRAPH Asia 2026 본 행사는 2026년 12월 1일부터 4일까지 말레이시아 쿠알라룸푸르 쇼핑구역 KLCC(쿠알라룸푸르 컨벤션센터)에서 열린다. 오늘(2026년 9월 4일) 기준 아직 개최 전이다. 다만 기술논문 채택 결정은 7월 19일에 끝났고, 공식 채택 목록(논문 ID 322개)이 공개되었다. 저자들이 arXiv, GitHub, SNS, 소속 연구실 페이지로 논문 제목과 자료를 공개하기 시작했기 때문에, 이 리포트는 "지금 시점에 공개 확인된 모든 것"을 담는다.</div>
+  <div class="grid g3">
+    <div class="stat"><div class="n">322</div><div class="l">조건부 채택 기술논문 (공식 PDF, 7/20 게시)</div></div>
+    <div class="stat"><div class="n">63</div><div class="l">제목까지 공개 확인된 논문 (이 리포트 수집)</div></div>
+    <div class="stat"><div class="n">40+</div><div class="l">코드 공개 GitHub 저장소 (최다 1,159스타)</div></div>
+    <div class="stat"><div class="n">18</div><div class="l">SIGGRAPH 2026에서 발표가 SA2026으로 연기된 논문</div></div>
+    <div class="stat"><div class="n">11/9</div><div class="l">TOG 45권 6호·프로시딩스 공식 공개일</div></div>
+    <div class="stat"><div class="n">9/28</div><div class="l">등록 얼리버드 마감 (최대 $200 절약)</div></div>
+  </div>
+  <p>두 갈래 트랙이 운영된다. 저널 트랙은 ACM Transactions on Graphics(TOG) 45권 6호로, 컨퍼런스 트랙은 SIGGRAPH Asia 2026 Conference Proceedings로 출판된다. 올해부터 ACM이 완전 오픈액세스로 전환했다. 게재 수수료(APC)는 회원 250달러, 비회원 350달러이고, ACM Open 협약 소속 기관 저자는 면제된다.</p>
+</section>
+
+<section id="s1">
+  <h2>1. 행사 개요</h2>
+  <table>
+    <tr><th style="width:180px">항목</th><th>내용</th></tr>
+    <tr><td>행사명</td><td>SIGGRAPH Asia 2026 (제19회 ACM SIGGRAPH Asia 컨퍼런스·엑스비션)</td></tr>
+    <tr><td>일정</td><td>컨퍼런스 12월 1일(화)~4일(금), 전시회 12월 2일(수)~4일(금)</td></tr>
+    <tr><td>장소</td><td>쿠알라룸푸르 컨벤션센터(KLCC), Kuala Lumpur City Centre, 50088 Kuala Lumpur, Malaysia</td></tr>
+    <tr><td>의의</td><td>아시아 태평양을 순회하는 SIGGRAPH Asia 사상 첫 말레이시아 개최. 테마는 "Weaving the Future"</td></tr>
+    <tr><td>컨퍼런스 의장</td><td>Frank Guan (Guan Yunqing), 싱가포르공과대학(Singapore Institute of Technology)</td></tr>
+    <tr><td>주관·주최</td><td>ACM SIGGRAPH 주관, Koelnmesse Pte Ltd 주최 운영</td></tr>
+    <tr><td>다음 회차</td><td>SIGGRAPH Asia 2027은 11월 30일~12월 3일 도쿄 개최 확정 (공식 X 계정 8월 10일 공지)</td></tr>
+    <tr><td>미디어 파트너</td><td>80 Level (@80Level, 게임 개발자 콘텐츠 매체)</td></tr>
+  </table>
+</section>
+
+<section id="s2">
+  <h2>2. 일정 타임라인</h2>
+  <h3>기술논문 (Technical Papers)</h3>
+  <div class="tblwrap"><table>
+    <tr><th>날짜</th><th>단계</th><th>상태</th></tr>
+    <tr><td>5월 5일</td><td>초록 제출 마감 (저널·컨퍼런스 공통)</td><td>종료</td></tr>
+    <tr><td>5월 12일 (업로드 13일)</td><td>논문 전문 제출 마감</td><td>종료</td></tr>
+    <tr><td>6월 25일</td><td>심사위원 리뷰 마감</td><td>종료</td></tr>
+    <tr><td>6월 29일~7월 3일</td><td>저자 리뷰 공개·리버털(반박)</td><td>종료</td></tr>
+    <tr><td>7월 17~18일</td><td>기술논문위원회 회의</td><td>종료</td></tr>
+    <tr><td><b>7월 19일</b></td><td><b>채택 결정 발표</b> (다음 날 조건부 채택 논문 ID 목록 게시)</td><td>종료</td></tr>
+    <tr><td>8월 28일</td><td>최종 심사용 수정본 제출 (코드·데이터 공개 약속 시 이 시점부터 준비)</td><td>종료</td></tr>
+    <tr><td>10월 중</td><td>공식 채널을 통한 제목·초록·50단어 요약·영상 일부 홍보 공개 시작</td><td>예정</td></tr>
+    <tr><td><b>11월 9일</b></td><td><b>공식 출판일</b>: TOG 45권 6호 + SIGGRAPH Asia 2026 Conference Proceedings가 ACM Digital Library에 공개</td><td>예정</td></tr>
+    <tr><td>12월 1일</td><td>Papers Fast Forward (본 행사 첫날), 이후 세션별 발표. 세션은 참가자 동의 하에 온라인 생중계</td><td>예정</td></tr>
+  </table></div>
+  <h3>기타 프로그램 알림 일정</h3>
+  <ul class="compact">
+    <li>Emerging Technologies: 8월 7일 채택 알림, 8월 16일 최종 자료 제출</li>
+    <li>Birds of a Feather: 8월 12일 제출 마감</li>
+    <li>Real-Time Live!: 8월 20일 제출 마감, 9월 16일 채택 알림, 본 행사 마지막 날(12월 4일) 상영</li>
+    <li>Educator's Forum: 9월 8일 채택 알림, 9월 23일 최종 자료 제출</li>
+    <li>Volumetric Video Challenge(VVC) 워크숍: 9월 16일 제출 마감</li>
+    <li>이미 마감된 프로그램: 기술논문(5/13), 아트페이퍼(6/8), XR(6/18), 아트갤러리·이머징테크·XR(6/18), 워크숍(챌린지형 6/15·토론형 7/31), 기술커뮤니케이션즈(7/27), 포스터(7/31)</li>
+  </ul>
+  <h3>신제도: 발표 연기(Deferral)</h3>
+  <p>쿠알라룸푸르행 비자 거절 같은 접근성 문제를 겪는 저자를 위해 올해 새로 도입된 제도다. SA2026 채택 저자는 발표를 SIGGRAPH 2027로 미룰 수 있다. 신청은 8월 12일까지, 결정은 8월 26일에 끝났다. 반대 방향으로는 SIGGRAPH 2026(7월 LA)에서 채택된 논문 18편이 이번 SA2026 무대에서 발표된다(6장 참조).</p>
+</section>
+
+<section id="s3">
+  <h2>3. 키노트·피처드 스피커</h2>
+  <div class="grid g2">
+    <div class="person">
+      <div class="role">KEYNOTE · "Technology to Create the Magic"</div>
+      <div class="nm">Markus Gross (마르쿠스 그로스)</div>
+      <p>월트 디즈니 스튜디오 최고과학책임자(Chief Scientist)이자 디즈니리서치|스튜디오 디렉터, ETH 쮸리히 컴퓨터과학과 교수이자 컴퓨터그래픽스연구실장. 물리기반 모델링, 컴퓨터 애니메이션, 디지털 휴먼, VR, 영상기술 분야 권위자다. 과학논문 500편 이상, 특허 100건 이상. 아카데미 기술업적상 2회(2013, 2019), ACM SIGGRAPH Steven Anson Coons상 수상.</p>
+      <p class="small"><a href="https://studios.disneyresearch.com/people/markus-gross/">DisneyResearch|Studios 인물 페이지</a> · 공식 키노트 발표 소식: @SIGGRAPHAsia 7월 8일 게시</p>
+    </div>
+    <div class="person">
+      <div class="role">KEYNOTE</div>
+      <div class="nm">Andrea Vedaldi (안드레아 베달디)</div>
+      <p>옥스퍼드대학교 컴퓨터비전·기계학습 교수. 세계 최고 수준으로 꼽히는 Visual Geometry Group(VGG)을 공동 이끌고, Meta에서 3D 비전과 생성형 AI를 담당하는 리서치 사이언티스트·테크리드다. 왕립학회 Faraday Discovery Fellowship 수여, ELLIS 펠로. IEEE Thomas Huang 기념상, IEEE Mark Everingham상, CVPR 최우수논문상 2회, ACM Test of Time상 수상.</p>
+      <p class="small"><a href="https://www.robots.ox.ac.uk/~vedaldi/">개인 홈페이지(robots.ox.ac.uk/~vedaldi)</a> · <a href="https://eng.ox.ac.uk/people/andrea-vedaldi/">옥스퍼드 공대 프로필</a></p>
+    </div>
+  </div>
+  <h3>피처드 스피커 (픽사 "Hoppers" 제작 세션)</h3>
+  <p>디즈니·픽사 애니메이션 "Hoppers" 제작 뒷이야기 세션("We're All In This Together: The Making Of Disney and Pixar's Hoppers")이 공개되었다. 발표자는 Andrea Goh(레이아웃 리드), Beth Albright(VFX 수퍼바이저), Lyon Liew(테일러링·시뮬레이션 수퍼바이저)이며, 공식 페이지는 "그리고 더 많은 발표자"로 추가 공개를 예고하고 있다.</p>
+</section>
+
+<section id="s4">
+  <h2>4. 조직 위원회</h2>
+  <h3>프로그램별 의장 (공식 위원회 페이지 전체)</h3>
+  <div class="tblwrap"><table>
+    <tr><th>프로그램</th><th>의장</th><th>소속</th></tr>
+    <tr><td>컨퍼런스 의장</td><td>Frank Guan</td><td>Singapore Institute of Technology, 싱가포르</td></tr>
+    <tr><td>Art Gallery</td><td>Yuichiro Katsumoto</td><td>일본</td></tr>
+    <tr><td>Art Papers</td><td>Juergen Hagler</td><td>오스트리아</td></tr>
+    <tr><td>Computer Animation Festival</td><td>Carlene Tan</td><td>싱가포르</td></tr>
+    <tr><td>Courses</td><td>Jianmin Zheng</td><td>싱가포르</td></tr>
+    <tr><td>Educator's Forum</td><td>Samantha Chan Wei Ting</td><td>싱가포르</td></tr>
+    <tr><td>Emerging Technologies</td><td>Hiroyuki Kajimoto</td><td>일본</td></tr>
+    <tr><td>Featured Sessions</td><td>Will Ramey</td><td>미국</td></tr>
+    <tr><td>Games</td><td>Chin Ike Tan</td><td>말레이시아</td></tr>
+    <tr><td>Industry Outreach</td><td>Vinod Krishnan</td><td>미국</td></tr>
+    <tr><td>Posters</td><td>Peng Song</td><td>싱가포르</td></tr>
+    <tr><td>Publications</td><td>Stephen Spencer</td><td>워싱턴대학교, 미국</td></tr>
+    <tr><td>Real-Time Live!</td><td>Yibing Jiang</td><td>미국</td></tr>
+    <tr><td>Student Volunteers</td><td>Nicolas Nghiem</td><td>영국</td></tr>
+    <tr><td>Technical Communications</td><td>Qi Sun</td><td>미국</td></tr>
+    <tr><td><b>Technical Papers 의장</b></td><td><b>Ravi Ramamoorthi</b></td><td>UC 샌디에이고(UCSD), NVIDIA 겸직, 미국 · <a href="https://cseweb.ucsd.edu/~ravir/">홈페이지</a></td></tr>
+    <tr><td>Technical Papers 부의장</td><td>Huamin Wang</td><td>Style3D Research, 중국</td></tr>
+    <tr><td>Workshops</td><td>Ruizhen Hu</td><td>심천대학교, 중국</td></tr>
+    <tr><td>XR</td><td>Eugene Ch'ng</td><td>중국</td></tr>
+  </table></div>
+  <h3>기술논문위원회(TP Committee) 구조</h3>
+  <ul class="compact">
+    <li><b>자문위원회(Advisory Board)</b>: Alla Sheffer, Ariel Shamir(Reichman대), Hui Huang(심천대), <b>Jehee Lee(서울대)</b>, Michael Wimmer(TU Wien), Mirela Ben-Chen, Niloy Mitra, Olga Sorkine(ETH), Richard Zhang, Sylvain Paris</li>
+    <li><b>Sorter(1차 분류) 25명</b>: Christopher Batty, Daniel Cohen-Or, Nils Thuerey, Paul Debevec, Gordon Wetzstein(스탠퍼드), Ioannis Gkioulekas(브라운대), Karol Myszkowski, Michael Kazhdan, Szymon Rusinkiewicz(프린스턴), Bo Zhu, Yuting Ye 외</li>
+    <li><b>이해충돌(COI) 코디네이터</b>: Aaron Hertzmann(Adobe), Holly Rushmeier(예일), Ming Lin, Shunsuke Saito, Stephen Lombardi(Google), <b>Sung-Hee Lee(KAIST)</b>, Tien-Tsin Wong 외 약 45명</li>
+    <li><b>위원 약 120명</b>: Chenfanfu Jiang, Christian Theobalt, Craig Schroeder(Lucasfilm), Douglas Lanman, Felix Heide, Johannes Kopf(Meta), Kun Zhou(저장대), Lingjie Liu, Mathieu Desbrun, Miloš Hašan(Adobe), Rameen Abdal(Snap), Rohan Sawhney(NVIDIA), Sergey Tulyakov(Snap), Steve Marschner, Taku Komura, Tzu-Mao Li, Yebin Liu(칭화대), Zexiang Xu(Hillbot) 외. 한국인 위원으로는 <b>Min H. Kim(KAIST), Seung-Hwan Baek(포스텍), Sunghyun Cho(포스텍), Suyeon Choi(서울대), Yoonsang Lee(한양대)</b>가 있다.</li>
+  </ul>
+  <p class="small">위원회 페이지 일부("Local Committee" 목록이 일본 소속 인물로 표기)는 2024 도쿄 대회 템플릿이 남아 있는 것으로 보인다. 말레이시아 현지 조직 정보로 오해하지 않도록 주의한다. [추정: 템플릿 잔류 데이터]</p>
+  <h3>SACAG (SIGGRAPH Asia 자문그룹)</h3>
+  <p>의장 Tomasz Bednarz(NVIDIA, 호주). 위원에 SA2025 의장 Taku Komura(홍콩대), SA2026 의장 Frank Guan, SA2027 의장 Takahito Tejima, Pol Jeremias-Vila(Netflix) 등이 있다.</p>
+</section>
+
+<section id="s5">
+  <h2>5. 기술논문: 채택 현황과 공개 확인 카탈로그</h2>
+  <h3>채택 규모</h3>
+  <ul class="compact">
+    <li>공식 채택 목록 PDF(7월 20일 게시)에 기록된 조건부 채택 논문 ID는 <b>322개</b>다. 저널·컨퍼런스 트랙을 합친 수치이며, 조건부 상태에서 수정 심사를 거치므로 최종 수는 다소 변동할 수 있다.</li>
+    <li>참고 비교: SA2025(홍콩) 컨퍼런스 트랙은 869편 접수, 178편 채택(약 20%)이었다. 같은 해 SIGGRAPH 2026(LA)은 총 1,177편(저널 전용 216 + 듀얼트랙 961)을 접수했다.</li>
+    <li>양 트랙 모두 7페이지 본문 컨퍼런스 규격 기준이며, 컨퍼런스 트랙은 "위험 부담이 있더라도 빠른 공개"를 지향하는 심사 기준이 적용된다.</li>
+  </ul>
+  <h3>공개 확인된 논문 카탈로그 (63편, 검색 가능)</h3>
+  <p class="small">아래 목록은 arXiv 본문·주석, GitHub 저장소 README, 저자·연구실 SNS 발표, 연구실 홈페이지를 직접 확인해 만든 목록이다. 트랙 표시는 저자 명시 기준이고, 명시가 없으면 [트랙 미상]으로 둔다. 링크는 모두 조사일(9/4)에 확인했다.</p>
+  <div class="filterbar">
+    <input type="text" id="pq" placeholder="제목·저자·키워드 검색 (예: gaussian, KAIST, hair)">
+    <button class="fbtn on" data-f="all">전체</button>
+    <button class="fbtn" data-f="j">저널(TOG)</button>
+    <button class="fbtn" data-f="c">컨퍼런스</button>
+    <button class="fbtn" data-f="kr">한국 관련</button>
+    <button class="fbtn" data-f="code">코드 공개</button>
+  </div>
+  <div class="tblwrap"><table id="ptable">
+    <thead><tr><th style="width:26%">제목</th><th style="width:30%">저자</th><th style="width:11%">트랙</th><th style="width:8%">출처</th><th>링크</th></tr></thead>
+    <tbody id="pbody"></tbody>
+  </table></div>
+  <p class="small" id="pcount"></p>
+</section>
+
+<section id="s6">
+  <h2>6. SIGGRAPH 2026 → SA2026 연기(Deferral) 논문 18편</h2>
+  <p>올해 SIGGRAPH 2026(LA, 7월)은 신설 Deferral 프로그램을 운영했다. 비자 거절 등으로 현장 발표가 어려운 저자가 다음 SIGGRAPH 또는 SIGGRAPH Asia로 발표를 미루는 제도다. SIGGRAPH 2026 논문집 머리말 원문에 따르면 "논문 18편이 Deferral 프로그램에 참여하고 목차에 표시된다. 이 논문들은 본 논문집에는 실리지만 SIGGRAPH Asia 2026에서 발표된다". 이 18편은 SA2026 현장에서 발표되는 확정 콘텐츠다.</p>
+  <p>프로시딩스 PDF 머리말의 단검표(†) 표시에서 12편의 제목과 저자를 직접 추출했다. 나머지 6편은 추출 과정에서 표식이 확인되지 않았으며, 저널 트랙(TOG 이슈) 쪽에 속했을 가능성이 높다. [추정]</p>
+  <div class="tblwrap"><table>
+    <tr><th>#</th><th>제목</th><th>저자</th><th>원문 논문번호</th></tr>
+    <tr><td>1</td><td>Multi-Agent CAD Code Generation</td><td>Yang Liu, Daxuan Ren, Yijie Ding, Jianmin Zheng, Fang Deng</td><td>Art. 20</td></tr>
+    <tr><td>2</td><td>PEAR: Pixel-aligned Expressive humAn mesh Recovery</td><td>Jiahao Wu, Yunfei Liu, Lijian Lin, Ye Zhu, Lei Zhu, Jingyi Li, Yu Li</td><td>Art. 46</td></tr>
+    <tr><td>3</td><td>Real-Time Light-Field Path Tracing for 3D Displays via Sparse Spatial-Angular-Temporal Reconstruction</td><td>Zongyuan Yang*, Liulei Zou*, Ling Zhu*, Yongping Xiong, Honghui Fan, Baolin Liu, Yingde Song, Yu Zhu, Chang Zeng, Wangping Ye</td><td>Art. 50</td></tr>
+    <tr><td>4</td><td>TrajVG: 3D Trajectory-Coupled Visual Geometry Learning</td><td>Xingyu Miao, Weiguang Zhao, Tao Lu, Linning Xu, Mulin Yu, Yang Long, Jiangmiao Pang, Junting Dong</td><td>Art. 75</td></tr>
+    <tr><td>5</td><td>SynthVerse: A Large-Scale Diverse Synthetic Dataset for Point Tracking</td><td>Weiguang Zhao*, Haoran Xu*, Xingyu Miao, Qin Zhao, Rui Zhang, Kaizhu Huang, Ning Gao, Peizhou Cao, Mingze Sun, Mulin Yu, Tao Lu, Linning Xu, Junting Dong, Jiangmiao Pang</td><td>Art. 76</td></tr>
+    <tr><td>6</td><td>Generative Texture Filtering</td><td>Rongjia Zheng, Shangwei Huang, Lei Zhu, Wei-Shi Zheng, Qing Zhang</td><td>Art. 82</td></tr>
+    <tr><td>7</td><td>SCOPE: Scale-Consistent One-Pass Estimation of 3D Geometry</td><td>Zheng Zhang, Lihe Yang, Tianyu Yang, Chaohui Yu, Yixing Lao, Xiaoyang Guo, Biao Gong, Fan Wang, Hengshuang Zhao</td><td>Art. 119</td></tr>
+    <tr><td>8</td><td>Generalizable and Relightable Gaussian Splatting for Human Novel View Synthesis</td><td>Yipengjing Sun, Shengping Zhang, Chenyang Wang, Shunyuan Zheng, Zonglin Li, Xiangyang Ji</td><td>Art. 126</td></tr>
+    <tr><td>9</td><td>VFXMaster: Unlocking Dynamic Visual Effect Generation via In-Context Learning</td><td>Baolu Li*, Yiming Zhang*, Qinghe Wang*, Liqian Ma, Xiaoyu Shi, Xintao Wang, Pengfei Wan, Zhenfei Yin, Yunzhi Zhuge, Huchuan Lu, Xu Jia</td><td>Art. 130</td></tr>
+    <tr><td>10</td><td>Nonlinear Multigrid for Injective Embedding</td><td>Yu Zhao, Renjie Chen</td><td>Art. 138</td></tr>
+    <tr><td>11</td><td>Fast Cutting of Cage Based Deformation with Walk on Spheres</td><td>Hossam Saeed, Michael Lambiri, Teseo Schneider, Derek Nowrouzezahrai, Paul G. Kry</td><td>Art. 147</td></tr>
+    <tr><td>12</td><td>VeraRetouch: A Lightweight Fully Differentiable Framework for Multi-Task Reasoning Photo Retouching</td><td>Yihong Guo, Youwei Lyu, Jiajun Tang, Yizhuo Zhou, Hongliang Wang, Jinwei Chen, Changqing Zou, Qingnan Fan</td><td>Art. 169</td></tr>
+  </table></div>
+  <p class="small">*는 동등 기여 표시. 출처: SIGGRAPH 2026 Conference Proceedings 프론트매터(ACM DL, DOI 10.1145/3799902).</p>
+</section>
+
+<section id="s7">
+  <h2>7. 코드·GitHub 저장소</h2>
+  <p>채택 발표와 함께 코드를 연 저자들이 많다. 스타 수는 2026년 9월 4일 기준이며, 저장소 설명이나 README에 "SIGGRAPH Asia 2026" 채택 문구가 확인된 것만 골랐다. 제출 목적 표기만 있는 저장소(예: "Target venue: SIGGRAPH Asia 2026")는 제외했다.</p>
+  <div class="tblwrap"><table>
+    <tr><th>저장소</th><th>스타</th><th>논문</th></tr>
+    <tr><td><a href="https://github.com/ant-research/4DAnyone">ant-research/4DAnyone</a></td><td>1,159</td><td>4DAnyone: Create Anyone in 4D from a Casual Monocular Video (<a href="https://arxiv.org/abs/2608.20335">arXiv</a> · <a href="https://4danyone.github.io/">프로젝트</a>)</td></tr>
+    <tr><td><a href="https://github.com/yehonathanlitman/Lift4D">yehonathanlitman/Lift4D</a></td><td>422</td><td>Lift4D: Harmonizing Single-View 3D Estimation for 4D Reconstruction In-the-Wild (<a href="https://arxiv.org/abs/2606.23688">arXiv</a> · <a href="https://lift4d.github.io">프로젝트</a>)</td></tr>
+    <tr><td><a href="https://github.com/OpenImagingLab/AnyRecon">OpenImagingLab/AnyRecon</a></td><td>400</td><td>AnyRecon: Arbitrary-View 3D Reconstruction with Video Diffusion Model (<a href="https://arxiv.org/abs/2604.19747">arXiv</a> · <a href="https://yutian10.github.io/AnyRecon/">프로젝트</a>)</td></tr>
+    <tr><td><a href="https://github.com/phongdaot/MocapAnything">phongdaot/MocapAnything</a></td><td>336</td><td>MocapAnything: End-to-End Motion Capture for Arbitrary Skeletons (<a href="https://arxiv.org/abs/2604.28130">arXiv</a> · <a href="https://animotionlab.github.io/MoCapAnythingV2/">프로젝트</a>)</td></tr>
+    <tr><td><a href="https://github.com/zju3dv/InfiniSplat">zju3dv/InfiniSplat</a></td><td>321</td><td>InfiniSplat: Implicit Gaussian Decoding for Large-Baseline Monocular View Synthesis (<a href="https://arxiv.org/abs/2608.02437">arXiv</a> · <a href="https://zju3dv.github.io/InfiniSplat">프로젝트</a>) · HuggingFace 트렌딩</td></tr>
+    <tr><td><a href="https://github.com/ShirleyMaxx/REST3D">ShirleyMaxx/REST3D</a></td><td>267</td><td>REST3D: Reconstructing Physically Stable 3D Scenes from a Single Image (<a href="https://arxiv.org/abs/2605.30338">arXiv</a> · <a href="https://shirleymaxx.github.io/REST3D/">프로젝트</a>)</td></tr>
+    <tr><td><a href="https://github.com/ali-vilab/DiffusionOPD">ali-vilab/DiffusionOPD</a></td><td>173</td><td>DiffusionOPD: A Unified Perspective of On-Policy Distillation in Diffusion Models (<a href="https://arxiv.org/abs/2605.15055">arXiv</a> · <a href="https://quanhaol.github.io/DiffusionOPD-site/">사이트</a>)</td></tr>
+    <tr><td><a href="https://github.com/jjrCN/PanoWorld">jjrCN/PanoWorld</a></td><td>167</td><td>PanoWorld: A Generative Spatial World Model for Consistent Whole-House Panorama Synthesis (<a href="https://arxiv.org/abs/2605.17916">arXiv</a> · <a href="https://jjrcn.github.io/PanoWorld-project-home/">프로젝트</a>)</td></tr>
+    <tr><td><a href="https://github.com/Eyeline-Labs/ID-V2V">Eyeline-Labs/ID-V2V</a></td><td>146</td><td>ID-V2V: Identity-Preserving Video Restylization (<a href="https://arxiv.org/abs/2607.22830">arXiv</a> · <a href="https://eyeline-labs.github.io/ID-V2V/">프로젝트</a>)</td></tr>
+    <tr><td><a href="https://github.com/zsh523/RecGen3D">zsh523/RecGen3D</a></td><td>115</td><td>RecGen3D: Reconstruction-Guided 3D Generation in a Shared Canonical Space (<a href="https://arxiv.org/abs/2604.01479">arXiv</a>)</td></tr>
+    <tr><td><a href="https://github.com/PicoTrex/Mind-Brush">PicoTrex/Mind-Brush</a></td><td>98</td><td>Mind-Brush (PICO/바이트댄스 XR) (<a href="https://arxiv.org/abs/2602.01756">arXiv</a>)</td></tr>
+    <tr><td><a href="https://github.com/Mobiuslqm/PAct">Mobiuslqm/PAct</a></td><td>82</td><td>PAct: Part-Decomposed Single-View Articulated Object Generation (<a href="https://arxiv.org/abs/2602.14965">arXiv</a> · <a href="https://pact-project.github.io/">프로젝트</a>)</td></tr>
+    <tr><td><a href="https://github.com/Fan-Treasure/TopoSurfel">Fan-Treasure/TopoSurfel</a></td><td>53</td><td>TopoSurfel: Closing the Loop between Gaussian Surfels and Meshes for Surface Reconstruction, TOG (<a href="https://arxiv.org/abs/2608.20687">arXiv</a> · <a href="https://fan-treasure.github.io/TopoSurfel_page/">프로젝트</a>)</td></tr>
+    <tr><td><a href="https://github.com/Friedrich-M/UniMate">Friedrich-M/UniMate</a></td><td>40</td><td>UniMate: One Unified Model to Animate Diverse Skeletons (<a href="https://linzhanm.github.io/unimate/">프로젝트</a> · <a href="https://linzhanmou.com/unimate/interactive.html">데모</a>)</td></tr>
+    <tr><td><a href="https://github.com/jasongzy/Make-It-Poseable">jasongzy/Make-It-Poseable</a></td><td>28</td><td>Make-It-Poseable: Feed-forward Latent Posing Model for 3D Characters (<a href="https://arxiv.org/abs/2512.16767">arXiv</a> · <a href="https://jasongzy.github.io/Make-It-Poseable/">프로젝트</a>)</td></tr>
+    <tr><td><a href="https://github.com/grignarder/UVFaceFusion">grignarder/UVFaceFusion</a></td><td>22</td><td>UVFaceFusion: Fast Multi-view Topologically Consistent Face Reconstruction in the Wild via UV-space Neural Fusion, 저널 (<a href="https://arxiv.org/abs/2607.18798">arXiv</a>)</td></tr>
+    <tr><td><a href="https://github.com/AMAP-ML/EVR">AMAP-ML/EVR</a></td><td>21</td><td>EVR (알리바바 Amap, README에 SA2026 채택 명시) (<a href="https://arxiv.org/abs/2607.29025">arXiv</a>)</td></tr>
+    <tr><td><a href="https://github.com/aidilayce/GraG">aidilayce/GraG</a></td><td>16</td><td>Grasp in Gaussians</td></tr>
+    <tr><td><a href="https://github.com/Net-Maker/GaussiAnimate">Net-Maker/GaussiAnimate</a></td><td>13</td><td>GaussiAnimate: Rig Animatable Categories with Level of Dynamics (<a href="https://arxiv.org/abs/2604.08547">arXiv</a> · <a href="https://cookmaker.cn/gaussianimate">프로젝트</a>)</td></tr>
+    <tr><td><a href="https://github.com/kenji-tojo/inverse-line-primitives">kenji-tojo/inverse-line-primitives</a></td><td>11</td><td>Inverse Rendering for Modeling with Line Primitives, ACM TOG (<a href="https://kenji-tojo.github.io/sa26-line-primitives/">프로젝트</a>)</td></tr>
+    <tr><td><a href="https://github.com/Kartik-Teotia/STEER">Kartik-Teotia/STEER</a></td><td>9</td><td>STEER: Steerable Dyadic Head Avatars (<a href="https://kartik-teotia.github.io/STEER/">프로젝트</a>)</td></tr>
+  </table></div>
+  <h3>10스타 미만·신규 저장소</h3>
+  <ul class="compact">
+    <li><a href="https://github.com/WangLongZJU/DirtyMoCap">WangLongZJU/DirtyMoCap</a> (5): DirtyMoCap, 마커 기반 무제한 모캡</li>
+    <li><a href="https://github.com/mchaewon/CompMVR">mchaewon/CompMVR</a> (5): CompMVR, 압축 인지 다중뷰 복원 · <a href="https://mchaewon.github.io/CompMVR-project-page/">프로젝트</a></li>
+    <li><a href="https://github.com/Yongxue-Chen/hybManuFieldOpt">Yongxue-Chen/hybManuFieldOpt</a> (4): 필드 최적화(Charlie C.L. Wang 랩)</li>
+    <li><a href="https://github.com/DecomVoxel/DecomVoxel">DecomVoxel/DecomVoxel</a> (4): DecomVoxel, ACM TOG</li>
+    <li><a href="https://github.com/Rhythm25/PSM">Rhythm25/PSM</a> (3): 정반사 재질 미러맨ifold 투영 미분렌더링, TOG</li>
+    <li><a href="https://github.com/Akinesia112/DiffPhD">Akinesia112/DiffPhD</a> (3): DiffPhD, TOG 45(6) · <a href="https://chabu-tseng.github.io/diffphd.github.io/">프로젝트</a></li>
+    <li><a href="https://github.com/ChenyueCai/GLOSS">ChenyueCai/GLOSS</a> (3): GLOSS, 참조 기반 텍스처 필 · <a href="https://chenyuecai.github.io/gloss-page/">프로젝트</a></li>
+    <li><a href="https://github.com/swang3081/Hamiltonian-Two-Way-Coupling-of-Nonlinear-Waves-and-3D-Flows">swang3081/Hamiltonian-Two-Way-Coupling…</a> (2): 비선형 파동-3D 유체 결합, TOG</li>
+    <li><a href="https://github.com/SonyResearch/generative_sdr_to_hdr_video">SonyResearch/generative_sdr_to_hdr_video</a> (2): SDR에서 HDR 비디오 생성</li>
+    <li><a href="https://github.com/ICTMCG/Beyond-Pixels">ICTMCG/Beyond-Pixels</a> (1): 비유 전이(<a href="https://arxiv.org/abs/2602.01335">arXiv</a> · <a href="https://yuci-gpt.github.io/Beyond-Pixels/">프로젝트</a>)</li>
+    <li><a href="https://github.com/shaohua-pan/Encore">shaohua-pan/Encore</a> (1): 오디오-비디오 생성(<a href="https://arxiv.org/abs/2601.03233">arXiv</a> · <a href="https://shaohua-pan.github.io/encore-page/">프로젝트</a>)</li>
+    <li><a href="https://github.com/vLAR-group/RelightFormer">vLAR-group/RelightFormer</a> (1): 릴라이팅(HKUST vLAR)</li>
+    <li><a href="https://github.com/cecret3350/AnyStitch">cecret3350/AnyStitch</a> (1): 대시차 이미지 스티칭, TOG</li>
+    <li><a href="https://github.com/neu-vi/StreamForce">neu-vi/StreamForce</a>: 스트리밍 비디오 생성(<a href="https://arxiv.org/abs/2606.07508">arXiv</a> · <a href="https://neu-vi.github.io/StreamForce/">프로젝트</a>)</li>
+    <li><a href="https://github.com/NJUCG/tile-based-frame-extrapolation">NJUCG/tile-based-frame-extrapolation</a>: 타일 기반 프레임 외삽(남경대)</li>
+    <li><a href="https://github.com/Jaywalk18/equissl-release">Jaywalk18/equissl-release</a>: EquiSSL, 360도 장면 이해, TOG 저널</li>
+    <li><a href="https://github.com/dukang/MVID">dukang/MVID</a> (1), <a href="https://github.com/doudin404/SketchFlow">doudin404/SketchFlow</a> (1): 스케치 생성(<a href="https://arxiv.org/abs/2608.21659">arXiv</a>), <a href="https://github.com/SuikaSibyl/vnc">SuikaSibyl/vnc</a> (1), <a href="https://github.com/3dpcc/Gameleon">3dpcc/Gameleon</a> (1), <a href="https://github.com/dartmouth-risc-lab/sdr-tof">dartmouth-risc-lab/sdr-tof</a></li>
+  </ul>
+  <h3>팔로우 가치가 있는 GitHub 조직</h3>
+  <p><a href="https://github.com/ant-research">ant-research</a>(앤트그룹 XR), <a href="https://github.com/zju3dv">zju3dv</a>(저장대 3DV, GVHMR 1.9k스타 전례), <a href="https://github.com/OpenImagingLab">OpenImagingLab</a>(CUHK 계열), <a href="https://github.com/ali-vilab">ali-vilab</a>, <a href="https://github.com/Eyeline-Labs">Eyeline-Labs</a>, <a href="https://github.com/PicoTrex">PicoTrex</a>(PICO), <a href="https://github.com/AMAP-ML">AMAP-ML</a>(알리바바 Amap), <a href="https://github.com/vLAR-group">vLAR-group</a>(HKUST), <a href="https://github.com/ICTMCG">ICTMCG</a>(중과원), <a href="https://github.com/neu-vi">neu-vi</a>, <a href="https://github.com/NJUCG">NJUCG</a>, <a href="https://github.com/SonyResearch">SonyResearch</a></p>
+  <p class="small">참고: GitHub 토픽 "siggraph-asia-2026"은 아직 사용되지 않고, Paper Digest의 SA2026 전용 페이지도 아직 만들어지지 않았다(11~12월경 생성 관례). 제출 대상 표기만 있는 저장소와 채택 발표 전 생성된 의사 공식 저장소는 검증에서 제외했다.</p>
+</section>
+
+<section id="s8">
+  <h2>8. 한국 연구 동향</h2>
+  <div class="card">
+    <p><b>POSTECH 컴퓨터그래픽스 연구실(이승용·백승환 랩)</b>: 7월 30일 "5 papers will be presented at SIGGRAPH ASIA 2026"을 공지했다. 논문 목록은 "곧 공개" 상태다. 참고로 이 랩은 SA2025에서 2편, SIGGRAPH 2026에서 8편을 기록한 팀이다. <a href="https://cg.postech.ac.kr/2026/07/30/5-papers-will-be-presented-at-siggraph-asia-2026/">공지 링크</a></p>
+    <p><b>KAIST 로보틱스앤비전 연구실(임성훈 교수)</b>: CRAFT(주제 맞춤형 개인화 생성, 바이du와 공동연구)가 7월 20일 채택을 공지했다. 아래 카탈로그 1번대 목록에 상세가 있다. <a href="https://rv.kaist.ac.kr/news-our-paper-has-been-accepted-to-siggraph-asia.html">공지 링크</a></p>
+    <p><b>고려대학교 IIIXR 연구실</b>: 7월 25일 "1 Paper Accepted @ SIGGRAPH Asia 2026"을 공지했다. <a href="https://iiixr.korea.ac.kr/news">뉴스 페이지</a></p>
+  </div>
+  <p>카탈로그에서 한국 소속 저자가 포함된 것으로 확인된 논문: CRAFT(KAIST RV랩), SiZeUp(Hui Huang 랩은 심천대지만 Daniel Cohen-Or 협업), InfiniSplat(공동저자 Ruizhen Hu·Sida Peng 저장대, 단 한국 소속은 아님), 라이트필드 패스트레이싱 연기논문(북경대 계열) 등이 있다. 기술논문위원회의 한국인 위원은 4장에 정리했다. 과거 한국인 컨퍼런스 의장으로는 고형석(2010), 추진혜(2020), 정순기(2022)가 있다.</p>
+</section>
+
+<section id="s9">
+  <h2>9. 워크숍·주요 프로그램</h2>
+  <h3>AI Film Frontiers (AIFF) 워크숍</h3>
+  <p>생성형 AI가 영화 제작 파이프라인을 바꾸는 방식을 다루는 챌린지형 워크숍이다. 캐릭터 일관성, 멀티샷 서사 일관성, 오디오비주얼 생성, 인간-AI 협업이 핵심 주제다. 참가자는 FilmFreeway로 AI 생성 영화를, SIGGRAPH 제출 시스템으로 기술리포트를 내고, 수상작은 본 행사에서 상영되며 기술리포트는 SA2026 프로시딩스에 정식 게재된다. 조직진 X 계정은 <a href="https://x.com/cveu_workshop">@cveu_workshop</a>. 챌린지형 워크숍 공통 마감은 6월 15일로 종료되었다.</p>
+  <h3>Volumetric Video Challenge (VVC) 워크숍 (2회차)</h3>
+  <p>볼류메트릭 비디오를 실험실 프로토타입에서 실제 배포 가능한 시스템으로 옮기는 것이 목표다. 올해는 ① 볼류메트릭 비디오 압축, ② 스파스뷰 재구성, 두 과제다. SA2025 데이터셋에 SelfCap 캡처를 확장한 멀티뷰 벤치마크로 평가하고 초청 키노트도 진행한다. 제출 마감은 <b>9월 16일</b>. <a href="https://asia.siggraph.org/2026/submissions/workshops/volumetric-video-challenge-workshop/">공식 페이지</a></p>
+  <h3>그 외</h3>
+  <ul class="compact">
+    <li>프로그램 구성(공식): Art Gallery, Art Papers, Birds of a Feather, Computer Animation Festival, Courses, Educator's Forum, Emerging Technologies, Exhibitor Talks, Featured Sessions, Games, Keynotes, Posters, Real-Time Live!, Technical Communications, Technical Papers, Workshops, XR</li>
+    <li>Khronos BOF 발표자 모집: 3D Gaussian Splats, glTF/World Models, OpenXR, Slang, AI for Standards (KhronosJP 공지)</li>
+    <li>컨퍼런스·전시 콘텐츠는 2026년 9월부터 순차 공개된다는 공식 안내가 있다</li>
+  </ul>
+</section>
+
+<section id="s10">
+  <h2>10. 등록·참가 정보</h2>
+  <div class="tblwrap"><table>
+    <tr><th>카테고리</th><th>얼리버드 (~9/28)</th><th>일반 (9/29~11/30)</th><th>온사이트 (12/1~4)</th></tr>
+    <tr><td>Full Access Supporter · ACM 회원</td><td>$975</td><td>$1,125</td><td>$1,325</td></tr>
+    <tr><td>Full Access Supporter · 비회원</td><td>$1,175</td><td>$1,275</td><td>$1,475</td></tr>
+    <tr><td>Full Access · ACM 회원</td><td>$875</td><td>$1,075</td><td>$1,225</td></tr>
+    <tr><td>Full Access · 비회원</td><td>$975</td><td>$1,175</td><td>$1,325</td></tr>
+    <tr><td>Full Access · ACM 학생회원</td><td>$475</td><td>$575</td><td>$675</td></tr>
+    <tr><td>Enhanced Access (전 일정)</td><td>$550</td><td>$650</td><td>$700</td></tr>
+    <tr><td>Exhibit &amp; Experience Access</td><td>$20</td><td>$25</td><td>$30</td></tr>
+  </table></div>
+  <ul class="compact">
+    <li>Enhanced Access는 Courses, Technical Communications, Technical Papers, 공식 리셉션을 제외한 거의 모든 프로그램에 접근한다. 기술논문을 들으려면 Full Access 이상이 필요하다.</li>
+    <li>그룹 할인: 5패스 이상 10%, 10패스 이상 15%, 15패스 이상 20% (같은 카테고리, Full/Enhanced에만 적용)</li>
+    <li>채택 저자 혜택: 논문당 저자 1인 풀컨퍼런스 25% 할인. 발표하려면 Full Conference 등록이 필요하다.</li>
+    <li>여비 지원: ACM SIGGRAPH Opportunity Travel Grant(SIGGRAPH Asia용) 추첨이 8월 30일~9월 18일 진행되고 9월 30일 발표된다.</li>
+    <li>취소·양도 불가. 결제는 신용카드 기본.</li>
+  </ul>
+</section>
+
+<section id="s11">
+  <h2>11. SNS·팔로우 디렉터리</h2>
+  <h3>공식 계정</h3>
+  <div class="tblwrap"><table>
+    <tr><th>채널</th><th>계정</th></tr>
+    <tr><td>X (트위터)</td><td><a href="https://x.com/siggraphasia">@siggraphasia</a> · 해시태그 <code>#SIGGRAPHAsia2026</code></td></tr>
+    <tr><td>Facebook</td><td><a href="https://www.facebook.com/ACMSIGGRAPHAsia">facebook.com/ACMSIGGRAPHAsia</a></td></tr>
+    <tr><td>Instagram</td><td><a href="https://www.instagram.com/siggraphasia/">@siggraphasia</a></td></tr>
+    <tr><td>LinkedIn</td><td><a href="https://www.linkedin.com/company/acm-siggraph/">ACM SIGGRAPH</a></td></tr>
+    <tr><td>YouTube</td><td><a href="https://www.youtube.com/user/ACMSIGGRAPH">youtube.com/user/ACMSIGGRAPH</a></td></tr>
+    <tr><td>모본사</td><td><a href="https://x.com/siggraph">@siggraph</a> (ACM SIGGRAPH, SIGGRAPH 2026·Asia 2026 겸용)</td></tr>
+  </table></div>
+  <h3>논문 트래커·미디어</h3>
+  <ul class="compact">
+    <li><a href="https://x.com/HuggingPapers">@HuggingPapers</a>: SA2026 논문(4DAnyone, InfiniSplat 등)을 프로젝트·코드 링크와 함께 소개하는 데일리 페이퍼스 계정</li>
+    <li><a href="https://x.com/CSVisionPapers">@CSVisionPapers</a>: arXiv 신착 논문 중 SA2026 채택작을 전함</li>
+    <li><a href="https://x.com/80Level">@80Level</a>: 공식 미디어 파트너</li>
+    <li><a href="https://x.com/cveu_workshop">@cveu_workshop</a>: AI Film Frontiers 워크숍 조직진</li>
+    <li><a href="https://x.com/KhronosJP">@KhronosJP</a>: BOF 세션 발표자 모집 공지</li>
+  </ul>
+  <h3>이번 조사에서 확인된 저자 개인 계정 (발표 트윗 주인들)</h3>
+  <p><a href="https://x.com/talidekel">@talidekel</a>(Tali Dekel, FoldingAgent), <a href="https://x.com/PLUS_W8VE">@PLUS_W8VE</a>(Jiawei Wang, InfiniSplat 1저자), <a href="https://x.com/pengsida">@pengsida</a>(Sida Peng, 저장대, InfiniSplat 교신), <a href="https://x.com/rsasaki0109">@rsasaki0109</a>(Ryohei Sasaki, InfiniSplat·ID-V2V·4DAnyone 소개), <a href="https://x.com/hiroyasu_akada">@hiroyasu_akada</a>(Hiroyasu Akada, Google 인턴 논문), <a href="https://x.com/wootwootwo">@wootwootwo</a>(Heming Zhu, UMA), <a href="https://x.com/yuhengliu02">@yuhengliu02</a>(Yuheng Liu, RecGen3D), <a href="https://x.com/YuRitianYu">@YuRitianYu</a>(Hao Yu, InfiniSplat), <a href="https://x.com/mayamoriya">@mayamoriya</a>·<a href="https://x.com/sigal_raab">@sigal_raab</a>(FoldingAgent 공동저자)</p>
+  <h3>핵심 인물 홈페이지</h3>
+  <p>Ravi Ramamoorthi(기술논문 의장) <a href="https://cseweb.ucsd.edu/~ravir/">cseweb.ucsd.edu/~ravir</a> · Markus Gross <a href="https://studios.disneyresearch.com/people/markus-gross/">DisneyResearch|Studios</a> · Andrea Vedaldi <a href="https://www.robots.ox.ac.uk/~vedaldi/">robots.ox.ac.uk/~vedaldi</a></p>
+</section>
+
+<section id="s12">
+  <h2>12. 검증 상태와 한계 (정직한 공백 명시)</h2>
+  <div class="card">
+    <ul class="compact">
+      <li><b>공식 제목 목록은 아직 없다.</b> 공식 PDF는 논문 ID만 담고 있고, 제목·저자는 11월 9일 TOG 45권 6호·프로시딩스 공개로 나온다. 10월부터 공식 채널 홍보로 일부가 먼저 나온다. 이 리포트의 63편은 저자 스스로 공개한 것만 담았으며 322편 중 약 20% 커버리지다.</li>
+      <li><b>연기 논문 18편 중 12편 식별.</b> 나머지 6편은 PDF 텍스트 추출상 표식이 사라져 식별하지 못했다. 저널 트랙 소속 가능성을 [추정]으로 표기했다.</li>
+      <li><b>트랙 표기는 저자 명시 기준</b>이다. 명시가 없는 논문은 [트랙 미상]으로 두었고, 출판일에 수정될 수 있다.</li>
+      <li><b>스타 수와 링크는 9월 4일 기준</b> 실측값이다.</li>
+      <li><b>베스트 페이퍼 등 시상</b>은 12월 본 행사에서 발표된다. 아직 존재하지 않는다.</li>
+      <li><b>키노트는 2인 확인</b>이며, 추가 공개가 예고되어 있다("many more"). 위원회 페이지의 일부 오래된 템플릿 데이터(Local Committee)는 오염 주석을 달았다.</li>
+      <li>AIFF 마감(6/15)은 챌린지형 워크숍 공통 일정 기준이고, VVC(9/16)는 공식 홈페이지 명시값이다.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s13">
+  <h2>13. 출처 (전부 2026-09-04 조회)</h2>
+  <ul class="compact small">
+    <li>공식 홈: <a href="https://asia.siggraph.org/2026/">asia.siggraph.org/2026</a> (일정·장소·키노트·피처드 스피커·VVC 마감)</li>
+    <li>기술논문 안내: <a href="https://asia.siggraph.org/2026/submissions/technical-papers/">submissions/technical-papers</a> (마감·트랙·연기 제도·11/9 출판·TOG 45(6)·APC·저자 할인)</li>
+    <li>조건부 채택 목록 PDF: <a href="https://asia.siggraph.org/2026/images/pdfs/SIGGRAPH-Asia-2026-Conditionally-Accepted-Technical-Papers.pdf">SIGGRAPH-Asia-2026-Conditionally-Accepted-Technical-Papers.pdf</a> (322개 ID, 본 리포트에서 텍스트 추출 후 계수)</li>
+    <li>위원회: <a href="https://asia.siggraph.org/2026/about-the-event/siggraph-asia-2026-committee/">committee</a> · <a href="https://asia.siggraph.org/2026/about-the-event/siggraph-asia-2026-committee/technical-papers-committee/">TP committee</a></li>
+    <li>등록: <a href="https://asia.siggraph.org/2026/plan-to-attend/registration-categories-fees/">registration-categories-fees</a> (요금·얼리버드·그룹할인)</li>
+    <li>워크숍: <a href="https://asia.siggraph.org/2026/submissions/workshops/ai-film-frontiers-workshop/">AIFF</a> · <a href="https://asia.siggraph.org/2026/submissions/workshops/volumetric-video-challenge-workshop/">VVC</a> · 프로그램 마감: <a href="https://asia.siggraph.org/2026/submissions/">submissions</a></li>
+    <li>SIGGRAPH 2026 프론트매터(연기 18편): <a href="https://dl.acm.org/doi/proceedings/10.1145/3799902">dl.acm.org/doi/proceedings/10.1145/3799902</a></li>
+    <li>SA2025 채택률(869→178): <a href="https://dl.acm.org/doi/proceedings/10.1145/3757377">dl.acm.org/doi/proceedings/10.1145/3757377</a></li>
+    <li>arXiv API: all:"SIGGRAPH Asia 2026" 질의 결과 25편 (export.arxiv.org)</li>
+    <li>X 게시물: <a href="https://x.com/SIGGRAPHAsia/status/2080869699319931366">위원회 회의 종료 공지</a>, <a href="https://x.com/SIGGRAPHAsia/status/…2027 도쿄 공지">SA2027 도쿄 공지(8/10)</a>, @talidekel/@PLUS_W8VE/@wootwootwo/@hiroyasu_akada/@pengsida/@rsasaki0109 발표 트윗</li>
+    <li>한국 연구실: <a href="https://cg.postech.ac.kr/2026/07/30/5-papers-will-be-presented-at-siggraph-asia-2026/">POSTECH CG랩</a> · <a href="https://rv.kaist.ac.kr/news-our-paper-has-been-accepted-to-siggraph-asia.html">KAIST RV랩</a> · <a href="https://iiixr.korea.ac.kr/news">고려대 IIIXR</a></li>
+    <li>여비 지원: <a href="https://www.siggraph.org/news/acm-siggraph-opportunity-travel-grant-siggraph-asia/">siggraph.org 뉴스 (8/23)</a></li>
+    <li>GitHub 저장소 40여 개: 각 저장소 README·설명을 GitHub API·raw README로 9/4 검증 (본문 7장 표 참조)</li>
+  </ul>
+</section>
+
+<footer>
+  <div>SIGGRAPH Asia 2026 완전 리포트 · 조사·작성: Aside (2026-09-04) · 다음 업데이트 지점: 10월(공식 제목 공개 시작), 11월 9일(전체 목록), 12월 1~4일(본 행사·시상)</div>
+</footer>
+
+</div>
+
+<script>
+const P = [
+ {t:"Reparametrizing 3D Gaussian Splatting for Real-Time Palette-based Color and Luminance Editing", a:"Cheng-Kang Ted Chao, Yotam Gingold", tr:"c", src:"arXiv", ar:"2609.03897", kw:"3dgs color editing"},
+ {t:"Inverse Rendering for Modeling with Line Primitives", a:"Kenji Tojo, Ariel Shamir, Nobuyuki Umetani, Bernd Bickel", tr:"j", src:"arXiv+GitHub", ar:"2609.00625", gh:"https://github.com/kenji-tojo/inverse-line-primitives", pj:"https://kenji-tojo.github.io/sa26-line-primitives/", kw:"inverse rendering CAD line"},
+ {t:"FoldingAgent: Inferring Parametric Origami Procedures from Demonstration Videos", a:"Maya Moriya, Sigal Raab, Yael Vinker, Tali Dekel (Google)", tr:"c", src:"arXiv+X", ar:"2609.00377", pj:"https://maya-moriya.github.io/origami-page/", kw:"origami video agent female"},
+ {t:"Domain-Varying 2D Green's Functions for Cage-based Deformation", a:"Dong Xiao, Renjie Chen, Bailin Deng", tr:"c", src:"arXiv", ar:"2608.31003", kw:"cage deformation greens"},
+ {t:"Anisotropic Green Coordinates", a:"Dong Xiao, Renjie Chen, Bailin Deng", tr:"j", src:"arXiv", ar:"2512.20386", kw:"cage coordinates deformation"},
+ {t:"Test-Time Scaling for Video Diffusion Models via Diagnosis-Guided Candidate Recycling", a:"Hangzhou He, Lunhao Duan, Shanshan Zhao, Kaiwen Li, Qing-Guo Chen, Weihua Luo, Yanye Lu (Alibaba)", tr:"j", src:"arXiv", ar:"2608.29322", kw:"video diffusion test-time"},
+ {t:"Hamiltonian Two-Way Coupling of Nonlinear Waves and 3D Flows", a:"Sinan Wang, Ruicheng Wang, Taiyuan Zhang, Fan Feng, Bo Zhu 외", tr:"j", src:"arXiv+GitHub", ar:"2608.25203", gh:"https://github.com/swang3081/Hamiltonian-Two-Way-Coupling-of-Nonlinear-Waves-and-3D-Flows", kw:"fluid waves simulation"},
+ {t:"SiZeUp: Fast 3D Proxy from Aerial Images via Depth Ordinal Loss", a:"Wenjun Zhou, Yunshan Li, Qiaoyu Zhu, Weidan Xiong, Hao Zhang, Daniel Cohen-Or, Hui Huang", tr:"c", src:"arXiv", ar:"2608.22821", kw:"aerial drone 3d proxy"},
+ {t:"SketchFlow: Zero-Shot Vector Sketch Generation via GMM Prior Flow in CLIP Latent Space", a:"Jin Zhou, Hongliang Yang, Pengfei Xu, Hui Huang", tr:"c", src:"arXiv+GitHub", ar:"2608.21659", gh:"https://github.com/doudin404/SketchFlow", kw:"sketch vector generation"},
+ {t:"CRAFT: Constrained Reward via Attention Fine-Tuning for Subject Personalization without Composed Targets", a:"Jihun Park, Kyoungmin Lee, Jongmin Gim, Hyeonseo Jo, Jaeyeul Kim, Han Zou, Zhenpeng Zhan, Yan Zhang, Sunghoon Im (KAIST+바이두)", tr:"c", src:"arXiv+랩", ar:"2608.14403", kw:"KOREA KAIST personalization diffusion baidu", kr:1},
+ {t:"CustomDance: Customized 3D Dance Generation with Coarse-to-Fine Human-Centered Interactive Control", a:"Xulong Tang, Kaixing Yang, Xiaohu Guo, Prabhakaran Balakrishnan, Rawan Alghofaili", tr:"c", src:"arXiv", ar:"2608.06722", kw:"dance motion generation"},
+ {t:"InfiniSplat: Implicit Gaussian Decoding for Large-Baseline Monocular View Synthesis", a:"Jiawei Wang, Hao Yu, Yongzhen Hu, Xinyi Yang, Tao Ni, Xin Zhan, Junbo Chen, Xiaowei Zhou, Ruizhen Hu, Sida Peng", tr:"j", src:"arXiv+GitHub+X", ar:"2608.02437", gh:"https://github.com/zju3dv/InfiniSplat", pj:"https://zju3dv.github.io/InfiniSplat", code:1, kw:"3dgs novel view synthesis feedforward trending"},
+ {t:"EgoPlay: Event-Triggered Video Editing for Egocentric Streams", a:"Jinjie Mai, Gordon Guocheng Qian, Willi Menapace, Sergey Tulyakov, Bernard Ghanem, Peter Wonka, Rameen Abdal 외 (Snap/KAUST)", tr:"c", src:"arXiv", ar:"2607.24560", pj:"https://egoplay2026.github.io/egoplay", kw:"egocentric video editing"},
+ {t:"ID-V2V: Identity-Preserving Video Restylization", a:"Yuancheng Xu, Mingming He, Pablo Salamanca, Li Ma, Yash Kant, Paul Debevec, Ning Yu 외 (Eyeline Labs)", tr:"c", src:"arXiv+GitHub+X", ar:"2607.22830", gh:"https://github.com/Eyeline-Labs/ID-V2V", pj:"https://eyeline-labs.github.io/ID-V2V/", code:1, kw:"video restyle identity"},
+ {t:"REST3D: Reconstructing Physically Stable 3D Scenes from a Single Image", a:"Xiaoxuan Ma, Jiashun Wang, Nicolas Ugrinovic, Yehonathan Litman, Kris Kitani (CMU)", tr:"c", src:"arXiv+GitHub", ar:"2605.30338", gh:"https://github.com/ShirleyMaxx/REST3D", pj:"https://shirleymaxx.github.io/REST3D/", code:1, kw:"physical stability scene reconstruction"},
+ {t:"Real-Time Neural Hair G-Buffer Anti-Aliasing", a:"Chenghao Wu, Yuefan Shen, Tao Huang, Kai Yan, Zahra Montazeri, Kui Wu", tr:"c", src:"arXiv", ar:"2605.17557", kw:"hair rendering realtime aa"},
+ {t:"Generating HDR Video from SDR Video", a:"SaiKiran Tedla, Francesco Banterle, Trevor Canham, Karanpreet Raja, David B. Lindell, Kiriakos N. Kutulakos, Daisuke Iso 외 (Sony)", tr:"c", src:"arXiv+GitHub", ar:"2605.14703", gh:"https://github.com/SonyResearch/generative_sdr_to_hdr_video", pj:"https://sdr2hdrvideo.github.io", code:1, kw:"hdr sdr video sony"},
+ {t:"RecGen3D: Reconstruction-Guided 3D Generation in a Shared Canonical Space", a:"Zhisheng Huang, Jiahao Chen, Cheng Lin, Zhengming Yu, Zibo Zhao, Yuan Liu, Xin Li, Wenping Wang 외", tr:"c", src:"arXiv+GitHub+X", ar:"2604.01479", gh:"https://github.com/zsh523/RecGen3D", code:1, kw:"3d generation reconstruction"},
+ {t:"ShotVerse: Advancing Cinematic Camera Control for Text-Driven Multi-Shot Video Creation", a:"Songlin Yang, Zhe Wang, Xuyi Yang, Anyi Rao 외", tr:"c", src:"arXiv", ar:"2603.11421", kw:"camera control video multi-shot"},
+ {t:"ProAct: Harnessing Streaming Motion Generation and Agentic Reasoning for Real-Time Embodied Social Interaction", a:"Zeyi Zhang, Zixi Kang, Ruijie Zhao, Biao Jiang, Libin Liu 외", tr:"j", src:"arXiv", ar:"2602.14048", pj:"https://proactrobot.github.io/", kw:"motion generation robot embodied agent"},
+ {t:"Beyond Pixels: Visual Metaphor Transfer via Schema-Driven Agentic Reasoning", a:"Yu Xu, Yuxin Zhang, Lin Gao, Oliver Deussen, Tong-Yee Lee, Fan Tang (ICT/CAS)", tr:"c", src:"arXiv+GitHub", ar:"2602.01335", gh:"https://github.com/ICTMCG/Beyond-Pixels", pj:"https://yuci-gpt.github.io/Beyond-Pixels/", code:1, kw:"metaphor transfer stylization"},
+ {t:"Make-It-Poseable: Feed-forward Latent Posing Model for 3D Characters", a:"Zhiyang Guo, Ori Zhang, Jax Xiang, Alan Zhao, Zhenxun Yuan, Wengang Zhou, Houqiang Li", tr:"c", src:"arXiv+GitHub", ar:"2512.16767", gh:"https://github.com/jasongzy/Make-It-Poseable", pj:"https://jasongzy.github.io/Make-It-Poseable/", code:1, kw:"posing character rig"},
+ {t:"CADKnitter: Compositional CAD Generation from Text and Geometry Guidance", a:"Tri Le, Khang Nguyen, Baoru Huang, Tung D. Ta, Anh Nguyen", tr:"c", src:"arXiv", ar:"2512.11199", kw:"cad generation compositional"},
+ {t:"CanvasComposer: Personalized Group Photo Generation via a Multi-Reference Canvas", a:"Gordon Guocheng Qian, Ruihang Zhang, Tsai-Shien Chen, Sergey Tulyakov, Kuan-Chieh Jackson Wang 외 (Snap)", tr:"c", src:"arXiv", ar:"2510.20820", pj:"https://snap-research.github.io/canvascomposer", kw:"group photo generation personalization"},
+ {t:"Keyframe-Centric State-Space Modeling for Burst Image Super-Resolution", a:"Ozan Unal, Steven Marty, Dengxin Dai", tr:"c", src:"arXiv", ar:"2503.19634", kw:"burst super-resolution mamba"},
+ {t:"4DAnyone: Create Anyone in 4D from a Casual Monocular Video", a:"ant-research (앤트그룹)", tr:"u", src:"GitHub+X", ar:"2608.20335", gh:"https://github.com/ant-research/4DAnyone", pj:"https://4danyone.github.io/", code:1, kw:"4d human video multiview trending"},
+ {t:"Lift4D: Harmonizing Single-View 3D Estimation for 4D Reconstruction In-the-Wild", a:"Yehonathan Litman 외", tr:"u", src:"GitHub", ar:"2606.23688", gh:"https://github.com/yehonathanlitman/Lift4D", pj:"https://lift4d.github.io", code:1, kw:"4d reconstruction"},
+ {t:"AnyRecon: Arbitrary-View 3D Reconstruction with Video Diffusion Model", a:"OpenImagingLab (CUHK)", tr:"u", src:"GitHub", ar:"2604.19747", gh:"https://github.com/OpenImagingLab/AnyRecon", pj:"https://yutian10.github.io/AnyRecon/", code:1, kw:"3d reconstruction video diffusion"},
+ {t:"MocapAnything: End-to-End Motion Capture for Arbitrary Skeletons", a:"phongdaot 외", tr:"u", src:"GitHub", ar:"2604.28130", gh:"https://github.com/phongdaot/MocapAnything", pj:"https://animotionlab.github.io/MoCapAnythingV2/", code:1, kw:"motion capture skeleton"},
+ {t:"DiffusionOPD: A Unified Perspective of On-Policy Distillation in Diffusion Models", a:"ali-vilab (알리바바)", tr:"u", src:"GitHub", ar:"2605.15055", gh:"https://github.com/ali-vilab/DiffusionOPD", pj:"https://quanhaol.github.io/DiffusionOPD-site/", code:1, kw:"diffusion distillation"},
+ {t:"PanoWorld: A Generative Spatial World Model for Consistent Whole-House Panorama Synthesis", a:"jjrCN 외", tr:"u", src:"GitHub", ar:"2605.17916", gh:"https://github.com/jjrCN/PanoWorld", pj:"https://jjrcn.github.io/PanoWorld-project-home/", code:1, kw:"panorama world model"},
+ {t:"Mind-Brush", a:"PicoTrex (PICO/바이트댄스 XR)", tr:"u", src:"GitHub", ar:"2602.01756", gh:"https://github.com/PicoTrex/Mind-Brush", code:1, kw:"xr vr painting"},
+ {t:"PAct: Part-Decomposed Single-View Articulated Object Generation", a:"Mobiuslqm 외", tr:"u", src:"GitHub", ar:"2602.14965", gh:"https://github.com/Mobiuslqm/PAct", pj:"https://pact-project.github.io/", code:1, kw:"articulated object generation"},
+ {t:"TopoSurfel: Closing the Loop between Gaussian Surfels and Meshes for Surface Reconstruction", a:"Fan-Treasure 외", tr:"j", src:"GitHub", ar:"2608.20687", gh:"https://github.com/Fan-Treasure/TopoSurfel", pj:"https://fan-treasure.github.io/TopoSurfel_page/", code:1, kw:"surface reconstruction gaussians mesh"},
+ {t:"UniMate: One Unified Model to Animate Diverse Skeletons", a:"Linzhan Mou 외 (Princeton)", tr:"u", src:"GitHub", ar:"", gh:"https://github.com/Friedrich-M/UniMate", pj:"https://linzhanm.github.io/unimate/", code:1, kw:"animation skeleton unified"},
+ {t:"UVFaceFusion: Fast Multi-view Topologically Consistent Face Reconstruction in the Wild via UV-space Neural Fusion", a:"grignarder 외", tr:"j", src:"GitHub", ar:"2607.18798", gh:"https://github.com/grignarder/UVFaceFusion", code:1, kw:"face reconstruction uv"},
+ {t:"EVR", a:"AMAP-ML (알리바바 Amap)", tr:"u", src:"GitHub", ar:"2607.29025", gh:"https://github.com/AMAP-ML/EVR", code:1, kw:"amap alibaba"},
+ {t:"GaussiAnimate: Rig Animatable Categories with Level of Dynamics", a:"Net-Maker 외", tr:"u", src:"GitHub", ar:"2604.08547", gh:"https://github.com/Net-Maker/GaussiAnimate", pj:"https://cookmaker.cn/gaussianimate", code:1, kw:"gaussian animation rig"},
+ {t:"STEER: Steerable Dyadic Head Avatars", a:"Kartik Teotia 외", tr:"u", src:"GitHub", ar:"", gh:"https://github.com/Kartik-Teotia/STEER", pj:"https://kartik-teotia.github.io/STEER/", code:1, kw:"head avatar"},
+ {t:"UMA: Ultra-detailed Human Avatars via Multi-level Surface Alignment", a:"Heming Zhu 외", tr:"j", src:"X", ar:"", kw:"human avatar TOG", x:"https://x.com/wootwootwo"},
+ {t:"Grasp in Gaussians (GraG)", a:"aidilayce 외", tr:"u", src:"GitHub", ar:"", gh:"https://github.com/aidilayce/GraG", code:1, kw:"grasp gaussians"},
+ {t:"DirtyMoCap: Robust Motion Capture from Unconstrained Markers", a:"WangLongZJU 외 (저장대)", tr:"u", src:"GitHub", ar:"", gh:"https://github.com/WangLongZJU/DirtyMoCap", pj:"https://wanglongzju.github.io/DirtyMoCap-Project-Page/", code:1, kw:"motion capture markers"},
+ {t:"CompMVR: Compression-Aware Multi-View Restoration", a:"mchaewon 외", tr:"u", src:"GitHub", ar:"", gh:"https://github.com/mchaewon/CompMVR", pj:"https://mchaewon.github.io/CompMVR-project-page/", code:1, kw:"compression multiview"},
+ {t:"Field Optimization for Scalable and Distortion-Aware Deformation (hybManuFieldOpt)", a:"Yongxue Chen, Charlie C.L. Wang 랩", tr:"u", src:"GitHub", ar:"", gh:"https://github.com/Yongxue-Chen/hybManuFieldOpt", code:1, kw:"field optimization deformation"},
+ {t:"DecomVoxel", a:"DecomVoxel 외", tr:"j", src:"GitHub", ar:"", gh:"https://github.com/DecomVoxel/DecomVoxel", code:1, kw:"voxel decomposition TOG"},
+ {t:"Differentiable Rendering for Specular Materials via Projected Specular Manifolds (PSM)", a:"Rhythm25 외", tr:"j", src:"GitHub", ar:"", gh:"https://github.com/Rhythm25/PSM", code:1, kw:"specular differentiable rendering"},
+ {t:"DiffPhD", a:"Akinesia112 외", tr:"j", src:"GitHub", ar:"", gh:"https://github.com/Akinesia112/DiffPhD", pj:"https://chabu-tseng.github.io/diffphd.github.io/", code:1, kw:"TOG 45(6)"},
+ {t:"GLOSS: Reference-Guided Texture Fill", a:"Chenyue Cai 외", tr:"u", src:"GitHub", ar:"", gh:"https://github.com/ChenyueCai/GLOSS", pj:"https://chenyuecai.github.io/gloss-page/", code:1, kw:"texture fill"},
+ {t:"Grasp Generation with Distance-aware Energy (제목 미공개, Google 인턴십)", a:"Hiroyasu Akada 외 (Google)", tr:"u", src:"X", ar:"", kw:"hand object grasp google conditional", x:"https://x.com/hiroyasu_akada"},
+ {t:"Encore: Infinite Audio-Video Generation with Adaptive Signal Routing", a:"Shaohua Pan 외", tr:"u", src:"GitHub", ar:"2601.03233", gh:"https://github.com/shaohua-pan/Encore", pj:"https://shaohua-pan.github.io/encore-page/", code:1, kw:"audio video generation"},
+ {t:"RelightFormer", a:"vLAR-group (HKUST)", tr:"u", src:"GitHub", ar:"", gh:"https://github.com/vLAR-group/RelightFormer", code:1, kw:"relighting"},
+ {t:"AnyStitch: Generative Large Parallax Image Stitching", a:"cecret3350 외", tr:"j", src:"GitHub", ar:"", gh:"https://github.com/cecret3350/AnyStitch", code:1, kw:"stitching parallax"},
+ {t:"S4R: Progressive Scaling for Rigid Body Interpenetration Resolving", a:"PeterZs 외", tr:"j", src:"GitHub", ar:"", gh:"https://github.com/PeterZs/S4R", code:1, kw:"interpenetration rigid"},
+ {t:"StreamForce: Streaming Video Generation with Streaming Force Control", a:"neu-vi (Northeastern)", tr:"u", src:"GitHub", ar:"2606.07508", gh:"https://github.com/neu-vi/StreamForce", pj:"https://neu-vi.github.io/StreamForce/", code:1, kw:"streaming video force"},
+ {t:"Tile-based Frame Extrapolation", a:"NJUCG (남경대)", tr:"u", src:"GitHub", ar:"", gh:"https://github.com/NJUCG/tile-based-frame-extrapolation", code:1, kw:"frame extrapolation"},
+ {t:"EquiSSL: Gauge-Equivariant Attention for Rotation-Stable 360° Scene Understanding", a:"Jaywalk18 외", tr:"j", src:"GitHub", ar:"", gh:"https://github.com/Jaywalk18/equissl-release", code:1, kw:"360 equivariant"},
+ {t:"Video Numerical Continuation for Differentiable Inverse Rendering (vnc)", a:"SuikaSibyl 외", tr:"u", src:"GitHub", ar:"", gh:"https://github.com/SuikaSibyl/vnc", pj:"https://suikasibyl.github.io/vnc", code:1, kw:"inverse rendering continuation"},
+ {t:"Gameleon: Gaussianizing Point Clouds for On-Demand 4D Performance", a:"3dpcc 외", tr:"u", src:"GitHub", ar:"", gh:"https://github.com/3dpcc/Gameleon", pj:"https://gameleon2026.github.io/anon-demo/", code:1, kw:"point cloud 4d gaussian"},
+ {t:"Fabric 101 for Wrinkles", a:"GongDeshan 외", tr:"u", src:"GitHub", ar:"", gh:"https://github.com/GongDeshan/Fabric_101_for_Wrinkles", code:1, kw:"fabric wrinkle"},
+ {t:"InterMASH: Unified Geometric Representation for Grasp Synthesis", a:"Inter-MASH 외", tr:"u", src:"GitHub", ar:"", gh:"https://github.com/Inter-MASH/Inter-MASH.github.io", code:1, kw:"grasp synthesis"},
+ {t:"SDR-TOF (Dartmouth)", a:"dartmouth-risc-lab", tr:"u", src:"GitHub", ar:"", gh:"https://github.com/dartmouth-risc-lab/sdr-tof", code:1, kw:"time of flight"},
+ {t:"POSTECH CG랩 채택 5편 (제목 미공개)", a:"POSTECH 이승용·백승환 랩", tr:"u", src:"랩", ar:"", kw:"KOREA postech", kr:1, x:"https://cg.postech.ac.kr/2026/07/30/5-papers-will-be-presented-at-siggraph-asia-2026/"},
+ {t:"고려대 IIIXR 채택 1편 (제목 미공개)", a:"고려대 IIIXR", tr:"u", src:"랩", ar:"", kw:"KOREA korea univ", kr:1, x:"https://iiixr.korea.ac.kr/news"}
+];
+const tbody = document.getElementById('pbody');
+const trMap = {j:['저널(TOG)','t-j'], c:['컨퍼런스','t-c'], u:['트랙 미상','t-u']};
+const srcMap = {'arXiv':'t-c','arXiv+GitHub':'t-c','arXiv+X':'t-c','arXiv+랩':'t-c','GitHub':'t-src','GitHub+X':'t-src','X':'t-u','랩':'t-u'};
+let html = '';
+P.forEach((p,i)=>{
+  const links = [];
+  if(p.ar) links.push('<a href="https://arxiv.org/abs/'+p.ar+'">arXiv:'+p.ar+'</a>');
+  if(p.pj) links.push('<a href="'+p.pj+'">프로젝트</a>');
+  if(p.gh) links.push('<a href="'+p.gh+'">GitHub</a>');
+  if(p.x && !p.gh && !p.ar) links.push('<a href="'+p.x+'">공지</a>');
+  html += '<tr data-tr="'+p.tr+'" data-code="'+(p.code?1:0)+'" data-kr="'+(p.kr?1:0)+'" data-kw="'+(p.kw||'').toLowerCase()+'">'
+    + '<td>'+p.t+'</td><td>'+p.a+'</td>'
+    + '<td><span class="tag '+trMap[p.tr][1]+'">'+trMap[p.tr][0]+'</span></td>'
+    + '<td><span class="tag '+(srcMap[p.src]||'t-u')+'">'+p.src+'</span></td>'
+    + '<td class="linkrow">'+links.join(' ')+'</td></tr>';
+});
+tbody.innerHTML = html;
+document.getElementById('pcount').textContent = '표시: ' + P.length + '편 / 전체 ' + P.length + '편 (조사 시점에 공개 확인된 것만 포함)';
+let curF = 'all';
+function applyFilter(){
+  const q = document.getElementById('pq').value.trim().toLowerCase();
+  let shown = 0;
+  document.querySelectorAll('#pbody tr').forEach(r=>{
+    let ok = true;
+    if(curF==='j') ok = r.dataset.tr==='j';
+    else if(curF==='c') ok = r.dataset.tr==='c';
+    else if(curF==='kr') ok = r.dataset.kr==='1';
+    else if(curF==='code') ok = r.dataset.code==='1';
+    if(ok && q) ok = (r.textContent.toLowerCase().includes(q) || r.dataset.kw.includes(q));
+    r.style.display = ok ? '' : 'none';
+    if(ok) shown++;
+  });
+  document.getElementById('pcount').textContent = '표시: ' + shown + '편 / 전체 ' + P.length + '편';
+}
+document.getElementById('pq').addEventListener('input', applyFilter);
+document.querySelectorAll('.fbtn').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    curF = b.dataset.f;
+    applyFilter();
+  });
+});
+</script>
+</body>
+</html>
