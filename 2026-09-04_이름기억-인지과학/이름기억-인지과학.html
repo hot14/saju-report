@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사람 이름이 한 번에 안 외워지는 이유 · 구조인가 성격인가</title>
+<style>
+:root{
+  --bg:#0d1117; --panel:#161b22; --panel2:#1c2129; --border:#2d333b;
+  --text:#e6edf3; --muted:#8b949e; --accent:#5eb0ff; --green:#3fb950; --red:#f85149; --amber:#d29922; --purple:#bc8cff;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{background:var(--bg); color:var(--text); font-family:'Apple SD Gothic Neo','Pretendard','Noto Sans KR',sans-serif; font-size:15.5px; line-height:1.78;}
+.wrap{max-width:920px; margin:0 auto; padding:36px 20px 90px;}
+a{color:var(--accent); text-decoration:none;}
+a:hover{text-decoration:underline;}
+header{border-bottom:1px solid var(--border); padding-bottom:26px; margin-bottom:26px;}
+.kicker{font-size:13px; font-weight:700; letter-spacing:.08em; color:var(--accent); margin-bottom:8px;}
+h1{font-size:29px; line-height:1.35; margin-bottom:12px;}
+.lede{font-size:16.5px; color:var(--text); max-width:66ch;}
+.meta{font-size:13.5px; color:var(--muted); margin-top:10px;}
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px; margin-top:24px;}
+.card{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:13px 15px;}
+.card .k{font-size:12px; color:var(--muted); margin-bottom:5px; font-weight:700; letter-spacing:.04em;}
+.card .v{font-size:15px; font-weight:700; line-height:1.5;}
+.card .s{font-size:12.5px; color:var(--muted); margin-top:5px;}
+.toc{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:14px 18px; font-size:14px; margin-bottom:10px;}
+.toc b{color:var(--muted); font-size:13px;}
+.toc a{display:inline-block; margin:3px 10px 3px 0;}
+h2{font-size:22px; border-top:1px solid var(--border); margin:48px 0 14px; padding-top:26px;}
+h3{font-size:17px; color:var(--accent); margin:28px 0 8px;}
+p{margin:11px 0; max-width:72ch;}
+.muted{color:var(--muted); font-size:13.5px;}
+.callout{background:var(--panel); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:8px; padding:14px 18px; margin:16px 0; max-width:76ch;}
+.callout.warn{border-left-color:var(--red);}
+.callout.good{border-left-color:var(--green);}
+.callout .t{font-weight:700; margin-bottom:5px;}
+table{width:100%; border-collapse:collapse; margin:14px 0; font-size:14.5px;}
+th{background:var(--panel2); font-weight:700; text-align:left; padding:9px 12px; border:1px solid var(--border);}
+td{padding:9px 12px; border:1px solid var(--border); vertical-align:top;}
+tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.pos{color:var(--green); font-weight:700;} .neg{color:var(--red); font-weight:700;} .neu{color:var(--amber); font-weight:700;}
+.src{font-size:12.5px; color:var(--muted); margin:8px 0 0; line-height:1.65; max-width:84ch;}
+.src b{color:#a8b3bf;}
+.big{background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:20px 22px; margin:18px 0;}
+.big .bt{font-size:16px; font-weight:700; margin-bottom:8px;}
+.quiz{background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:22px; margin:18px 0;}
+.qq{margin:16px 0; padding-bottom:14px; border-bottom:1px dashed var(--border);}
+.qq:last-of-type{border-bottom:none;}
+.qq .qt{font-weight:700; margin-bottom:8px; font-size:15px;}
+.qq label{display:block; margin:7px 0; cursor:pointer; font-size:14.5px;}
+.qq input{margin-right:8px;}
+#quizBtn{background:var(--accent); color:#0d1117; border:none; border-radius:8px; padding:10px 22px; font-weight:700; font-size:15px; cursor:pointer; margin-top:14px;}
+#quizResult{margin-top:16px; font-size:15px; line-height:1.7;}
+.typebox{display:none; background:var(--panel2); border:1px solid var(--border); border-radius:10px; padding:16px 18px; margin-top:12px;}
+.typebox.show{display:block;}
+.badge{display:inline-block; font-size:12px; font-weight:700; padding:2px 9px; border-radius:20px; margin-right:6px;}
+.b-blue{background:rgba(94,176,255,.15); color:var(--accent);}
+.b-green{background:rgba(63,185,80,.15); color:var(--green);}
+.b-red{background:rgba(248,81,73,.15); color:var(--red);}
+.b-amber{background:rgba(210,153,34,.15); color:var(--amber);}
+.b-purple{background:rgba(188,140,255,.15); color:var(--purple);}
+footer{margin-top:56px; border-top:1px solid var(--border); padding-top:18px; font-size:13px; color:var(--muted);}
+@media (max-width:600px){ h1{font-size:23px;} body{font-size:14.5px;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">인지과학 리서치 리포트 · NO.21</div>
+  <h1>사람 이름이 한 번에 안 외워지는 이유<br>구조인가, 성격인가</h1>
+  <p class="lede">"어색해서 그런가, 아니면 내가 오만해서 그런가"라는 자기 의심을 구조·상황·성격의 세 축으로 나눠 연구 결과를 대조했다. 결론부터 말하면 이름 망각의 주범은 성격이 아니라 이름이라는 정보의 설계상 결함과 첫 만남 순간의 주의 배분이다. 어색해하는 성향은 실재하는 보조 원인이고, 오만함이 직접 원인이라는 연구 근거는 찾지 못했다.</p>
+  <div class="meta">작성일 2026-09-04 · 근거 소스 20편(동료심사 논문·체계적 문헌고찰 중심) · 전일 세션 「시냅스 연결과 ADHD 약」 후속 조사</div>
+</header>
+
+<div class="cards">
+  <div class="card"><div class="k">구조</div><div class="v">이름은 의미 없는 라벨이다</div><div class="s">Baker/baker 역설: 같은 사람의 직업은 잘 외우는데 이름은 못 외운다</div></div>
+  <div class="card"><div class="k">상황</div><div class="v">자기 차례 직전이 최악의 타이밍</div><div class="s">자기소개 준비에 주의가 빼앗겨 이름이 아예 저장되지 않는다</div></div>
+  <div class="card"><div class="k">성격</div><div class="v">어색함은 실재하는 보조 원인</div><div class="s">사회불안의 자기초점이 주의를 안쪽으로 끌어당겨 부호화 예산을 줄인다</div></div>
+  <div class="card"><div class="k">오만함</div><div class="v">직접 근거 없음</div><div class="s">같은 뇌가 얼굴은 35년 뒤에도 90% 맞힌다. 태도 문제라면 얼굴도 못 외웠어야 한다</div></div>
+</div>
+
+<div class="toc" style="margin-top:20px;"><b>목차</b><br>
+  <a href="#s1">1. 왜 이름만 유독 어려운가</a>
+  <a href="#s2">2. '어색함' 가설 검증</a>
+  <a href="#s3">3. '오만함' 가설 검증</a>
+  <a href="#s4">4. 내 유형 진단</a>
+  <a href="#s5">5. 개선 프로토콜</a>
+  <a href="#s6">6. ADHD 약과의 관계</a>
+  <a href="#s7">7. 한계와 미해결 갭</a>
+  <a href="#s8">8. 출처</a>
+</div>
+
+<h2 id="s1">1. 왜 이름만 유독 어려운가: 세 가지 구조적 결함</h2>
+
+<h3>1-1. 이름은 갈고리가 없는 소리다</h3>
+<p>심리학자 질리언 코언(Gillian Cohen)이 1990년에 정리한 핵심 지적은 단순하다. 성씨와 이름은 일반 단어와 달리 아무런 뜻이 붙어 있지 않다는 것.<span class="src"><b>Cohen 1990</b>, 고유명사 연구 리뷰</span> "간호사다", "멜번에서 왔다"는 말은 이미 아는 지식에 걸어둘 갈고리가 존재한다. 반면 "김대식이다"라는 소리는 그 사람을 가리키는 표지일 뿐이고, 뜻이 없는 정보는 기존 지식망에 연결되지 못한 채 떠다닌다.</p>
+<p>이 차이를 실험으로 보여준 것이 1987년 맥위니(McWeeny) 연구팀의 얼굴-정보 학습 실험이다. 같은 사람의 직업과 이름을 함께 외우게 하면 직업은 훨씬 잘 외워지지만 이름은 유독 잘 잊힌다. 흔히 "베이커/제빵사 역설(baker/baker paradox)"라고 부르는 이유다. 영어로 같은 소리인 baker(성씨)와 baker(제빵사) 중 제빵사 쪽이 훨씬 오래 남는다. 제빵사에는 뜻이 있고 성씨 베이커에는 없기 때문이다.<span class="src"><b>McWeeny, Young, Hay &amp; Ellis 1987</b>, British Journal of Psychology 78, 「Putting names to faces」</span></p>
+
+<h3>1-2. 실패 지점은 '뜻'이 아니라 '소리' 단계다</h3>
+<p>이름이 떠오르지 않을 때를 뜯어보면 이상한 패턴이 나온다. 그 사람이 누구인지, 어떤 사이인지는 전부 기억나는데 소리가 안 튀어나오는 것이다. 이것이 입에 걸린 단어 현상(TOT, tip-of-the-tongue)이고, 실패 위치는 의미 기억이 아니라 음운(발음 형태) 인출 단계로 특정된다.</p>
+<p>2026년 1월자 리뷰 논문은 이를 명확히 정리한다. 성인기 내내 TOT 빈도는 안정적으로 늘어나는데 일반 지능이나 어휘력은 유지된다. 고령자는 젊은 성인보다 TOT가 약 두 배 많고 특히 저빈도 단어와 고유명사에서 그렇다. 그러나 의미의 정확성과 이해는 보존되어 있어서, 결함이 의미 기억 자체가 아니라 음운 부호화 단계의 선택적 비효율임을 알 수 있다는 것이다.<span class="src"><b>Brain Sci. 2026, 14(2), 269</b>, 「The Tip-of-the-Tongue Phenomenon: Cognitive, Neural, and Neurochemical Perspectives」 리뷰</span></p>
+<p>버크(Burke) 연구팀의 고전 연구는 여기에 두 가지를 더한다. 고유명사는 다른 종류의 단어보다 TOT를 유의하게 더 자주 일으키는데, 이는 젊은 성인에서도 마찬가지다. 그리고 뜻이 아니라 소리의 단서를 주면 TOT가 풀린다. "체리 pit"이라는 소리를 먼저 내면 "브래드 피트"라는 이름이 튀어나오는 식이다.<span class="src"><b>Burke, MacKay, Worthley &amp; Wade 1991</b>, J. Memory and Language 30 · <b>Burke 등 2004</b> 「Cherry pit primes Brad Pitt」 · TOT 뇌영상 연구(J Cogn Neurosci, PMC2373253)</span></p>
+
+<h3>1-3. 같은 뇌가 얼굴은 35년 뒤에도 맞힌다</h3>
+<p>이름만 못 외우는 게 '기억력 나쁨'이 아니라는 가장 직관적인 반증은 얼굴과의 비교다. 고전적인 학교 졸업앨범 연구에서 사람들은 졸업 후 약 35년이 지나도 옛 동기들의 얼굴을 약 90% 정확도로 골라냈다.<span class="src"><b>Bahrick 등 1975</b>, 얼굴 기억 종단 연구(2차 인용: siliconcanals 정리)</span> 같은 사람, 같은 뇌, 같은 동기 상태에서 얼굴은 수십 년을 버티는데 이름은 30초 만에 증발한다. 이 비대칭은 태도나 성격으로 설명할 수 없고, 정보 자체의 구조 차이로만 설명된다. 얼굴은 그 사람에 대해 아는 모든 것과 연결된 반면 이름은 아무것에도 연결되지 않은 고아 라벨이기 때문이다.</p>
+
+<div class="callout good">
+  <div class="t">절 1 결론</div>
+  이름 망각은 기억력 저하가 아니라 설계 문제다. 의미 없는 라벨이고, 인출 실패는 소리 단계에서 일어나며, 젊고 건강한 사람에게도 고유명사는 가장 취약한 정보 부류다. "나만 유독 못 외운다"는 감각은 이 구조가 모든 사람에게 적용된다는 사실을 모르기에 생기는 착시에 가깝다.
+</div>
+
+<h2 id="s2">2. '어색함' 가설: 부분적으로 참이다</h2>
+<p>이름을 들은 그 3초 동안 우리는 이름을 듣지 않고 있다. 아이컨택을 관리하고, 내가 할 말을 준비하고, 상대의 인상을 평가하는 일이 동시에 돌아간다. 주의는 좁은 스포트라이트인데, 자기소개 순간에 그 스포트라이트는 정확히 나를 향해 있다. 주의가 주어지지 않은 정보는 저장 자체가 되지 않는다. 많은 '이름 까먹기'는 잊은 게 아니라 처음부터 외운 적이 없는 것이다.<span class="src"><b>Economic Times 2026-01-29</b> 심리학자 정리 기사 · <b>mindoly</b> 인지심리 블로그 정리</span></p>
+
+<h3>2-1. 다음 순서 효과(next-in-line effect)</h3>
+<p>1973년 브레너(Brenner)의 실험이 찾아낸 현상이 정확히 이 순간을 겨냥한다. 여러 명이 차례로 소리 내어 읽는 과제에서, 자기 차례 직전에 나온 단어들만 기억이 유의하게 나빴다. 이후 연구들은 이것이 인출 문제가 아니라 인코딩 문제임을 확인했다. 발표를 준비하며 주의를 미리 배정하면 효과가 사라지기 때문이다. "내 차례가 올 때 하는 내심의 연습"이 직전 사람의 말을 담을 저장 공간을 통째로 쓰는 것이다. 자기소개는 이 효과가 가장 순수한 형태로 일어나는 상황이다.<span class="src"><b>Brenner 1973</b> 원실험 · Colby College 인지심리학 리뷰(2017/2018) · siliconcanals 정리</span></p>
+
+<h3>2-2. 사회불안과 자기초점</h3>
+<p>"어색해 하는 성향"이 개입하는 지점이 여기다. 사회불안 연구에서 자기초점(self-focused attention)은 내 신체 상태, 내 생각, 내 평가에 주의가 고정되는 것을 말하는데, 뇌영상 연구는 사회불안이 높은 사람이 자기 생각과 반응에 주의를 두기만 해도 내측 전전두엽(mPFC) 활성이 비정상적으로 올라간다는 것을 보였다. 치료 현장에서 외적 초점은 적응적, 내적 초점은 부적응적으로 다뤄진다. 어색해하는 사람일수록 첫 만남에서 주의 예산이 안쪽으로 새고, 바깥의 이름 소리에 배정되는 몫이 줄어든다.<span class="src"><b>PMC4448029</b>, 「Neural correlates of self-focused attention in social anxiety」(2017)</span></p>
+<p>긴장은 저장을 망치는 데서 끝나지 않고 인출도 망친다. 인출 직전 스트레스가 코르티솔을 올리고 해마 주도의 인출을 유의하게 저하한다는 것은 체계적 문헌고찰로 확인된 사실이다. 그래서 자리에서는 안 나오던 이름이 20분 뒤, 이완된 뒤에야 떠오른다.<span class="src"><b>Shields 등</b>, 「Stress and long-term memory retrieval: a systematic review」(2020)</span></p>
+
+<div class="callout">
+  <div class="t">절 2 판정</div>
+  '어색함' 가설은 참이다. 다만 성격 결함이라는 의미가 아니라 주의 배분 메커니즘의 문제라는 의미다. 자기초점 성향은 훈련으로 바꿀 수 있는 것이고, 실제로 이후 절의 프로토콜은 주의를 이름 쪽으로 재배정하는 기술이다.
+</div>
+
+<h2 id="s3">3. '오만함' 가설: 직접 근거 없음, 반대 증거는 두 개</h2>
+<p>이 리포트에서 가장 솔직하게 말해야 하는 부분이다. "오만하거나 관심 없는 사람은 이름을 못 외운다"는 주제로 설계된 통제 연구를 검색 범위 내에서 찾지 못했다. 상식적으로 가능한 간접 경로는 있다. 관심과 중요성은 부호화를 돕고, 자기와 연결 지은 정보는 더 잘 남는다(자기참조 효과). 오만함이 '이 사람은 내게 중요하지 않다'는 관심 배제로 발현된다면 이론상 부호화가 약해질 수 있다. 그러나 그것은 능력의 문제가 아니라 동기의 문제고, 오만함이라는 성격 특성 자체가 이름 망각을 유발한다는 직접 검증은 존재하지 않는다. 이 항목은 표 7-1에 '근거 없음'으로 명시해 둔다.<span class="src"><b>PMC3226761</b>, 「Memory for Details with Self-Referencing」, 자기참조 효과 리뷰</span></p>
+<p>대신 반대 방향 증거가 두 개 있다.</p>
+<p><b>이름 기억은 유일하게 '나는 평균 이상' 자평이 무너지는 능력이다.</b> 사람들은 대인 관계 능력, 성실성, 리더십 등 대부분의 사회적 능력에서 자신을 통계적으로 불가능할 만큼 평균 이상으로 평가한다(평균 이상 효과, better-than-average effect). 그런데 2011년 연구가 확인한 예외가 바로 이름 기억이다. 젊은 성인은 대부분의 능력에서 유의하게 위평균 자평을 하는데, 유독 "타인의 이름 기억"에서는 그 자평이 유의하게 나타나지 않았다. 나이 든 성인은 자신의 이름 기억이 나쁠수록 당혹감 점수가 높아진다는 상관도 같은 연구에서 확인됐다. 즉 '나만 유독 못 외운다'는 감각은 보편적 약점을 개인 결함으로 오독한 것일 가능성이 높다.<span class="src"><b>PMC8363054</b>, 「Remembering Proper Names as a Potential Exception to the Better-than-Average Effect in Younger and Older Adults」</span></p>
+<p><b>오만해서라면 얼굴도 못 외웠어야 한다.</b> 앞 절의 학년도 연구에서 같은 사람들이 얼굴은 35년 뒤에도 90%를 맞혔다. 태도가 문제라면 얼굴과 이름이 함께 무너져야 정상인데, 실제로는 이름만 선별적으로 붕괴한다. 이는 실패의 원인이 정보 구조에 있지 나에게 있음을 뜻한다.</p>
+<p>마지막으로 심리적 함정 하나만 짚는다. "못 외우는 나는 무례한 사람이다"라는 자기 규정은 다시 묻기 어렵게 만들고, 회복 기회를 스스로 깎는다. 상대방이 실제로 상처받는 지점은 자신의 이름이 까먹혔다는 사실이 아니라 '나를 잊을 만한 사람' 취급당했다는 느낌이다. 이름을 잊었어도 그 순간 따뜻한 주의를 주면 충분히 회복되고, 대부분의 사람은 자기 이름을 다시 물어보는 행동 자체를 무례가 아니라 관심으로 받아들인다.<span class="src"><b>MEM Health</b> 「Names and Faces: A Field Guide」 · siliconcanals 정리</span></p>
+
+<div class="callout good">
+  <div class="t">절 3 판정</div>
+  오만함 가설은 기각에 가깝다. 직접 근거가 없고, 구조적 반증이 두 개 있다. 이름 망각을 성격의 증거로 읽는 해석은 훈련 가능한 기술 문제를 인격 문제로 바꿔놓는 것일 뿐, 회복을 더 어렵게 만든다.
+</div>
+
+<h2 id="s4">4. 내 유형 진단: 6문항 셀프 체크</h2>
+<p class="muted">임상 진단 도구가 아니다. 실패 지점이 부호화(넣기)인지 인출(꺼내기)인지, 상황 요인인지 기반 상태인지를 구분해 해당하는 처방으로 연결하는 용도다. 해당하는 항목에 체크하고 버튼을 누른다.</p>
+
+<div class="quiz" id="quiz">
+  <div class="qq"><div class="qt">Q1. 이름을 들은 그 3초 동안, 나는 다음 인사말이나 내 소개를 준비하고 있었다.</div>
+    <label><input type="checkbox" data-w="encode"> 그렇다</label>
+  </div>
+  <div class="qq"><div class="qt">Q2. 얼굴과 맥락은 전부 기억나는데 이름 소리만 안 나온다. 자리를 뜬 뒤 20분쯤 지나서야 떠오르기도 한다.</div>
+    <label><input type="checkbox" data-w="retrieve"> 그렇다</label>
+  </div>
+  <div class="qq"><div class="qt">Q3. 여러 명이 차례로 자기소개할 때, 내 차례가 다가올수록 앞 사람 말이 거의 안 들린다.</div>
+    <label><input type="checkbox" data-w="nervous"> 그렇다</label>
+  </div>
+  <div class="qq"><div class="qt">Q4. 관심 있고 친해지고 싶은 사람의 이름은 잘 외운다. 그러니까 능력 자체는 있는 편이다.</div>
+    <label><input type="checkbox" data-w="motivation"> 그렇다</label>
+  </div>
+  <div class="qq"><div class="qt">Q5. 최근 수면이 6시간 미만인 날이 잦고, 새로 만난 사람이 많은 날 다음날이면 이름이 통째로 사라진다.</div>
+    <label><input type="checkbox" data-w="base"> 그렇다</label>
+  </div>
+  <div class="qq"><div class="qt">Q6. 이름 외우기 전에 미리 '오늘은 이름을 꼭 챙기자'고 의식한 적이 거의 없다. 그냥 만나다 보면 되는 줄 알았다.</div>
+    <label><input type="checkbox" data-w="intent"> 그렇다</label>
+  </div>
+  <button id="quizBtn">진단 결과 보기</button>
+  <div id="quizResult"></div>
+</div>
+
+<h2 id="s5">5. 개선 프로토콜: 만남의 전후 24시간</h2>
+<p>구조적 결함은 못 바꾸지만 절차로 상쇄할 수 있다. 아래 표의 각 행동은 검증된 효과가 있는 것만 골랐고, 등급은 근거 강도를 뜻한다(A: 메타분석·RCT 수준, B: 실험·통제 연구, C: 전문가 합의·실용 권고).</p>
+
+<table>
+  <tr><th style="width:130px;">시점</th><th>행동</th><th style="width:90px;">근거</th></tr>
+  <tr><td><b>만나기 전</b></td><td>'이름 캐치'를 그 자리의 공식 임무로 미리 설정한다. 레이스 전 보급 계획을 세우듯, 오늘 만날 사람 이름을 잡는 것이 오늘의 과제라고 스스로에게 선언한다. 사전 의도는 그 순간의 주의 배분을 바꾼다.</td><td><span class="neu">C</span></td></tr>
+  <tr><td><b>들은 직후 3초</b></td><td>① 소리 내어 2회 반복한다("대식님, 반갑습니다"). ② 다음 문장에 이름을 넣는다. 이것이 첫 번째 인출 연습이 된다. ③ 얼굴 특징과 짝짓는다.</td><td><span class="pos">A</span></td></tr>
+  <tr><td><b>같은 대화 중</b></td><td>이름을 이미 아는 단어·사람·발음과 연결해 의미 갈고리를 인위적으로 만든다. 성씨가 같은 지인, 비슷한 소리의 단어, 직업과의 억지 연상 모두 유효하다.</td><td><span class="pos">B</span></td></tr>
+  <tr><td><b>자리를 뜬 직후</b></td><td>한 줄 메모를 남긴다. "김대식, 군청색 재킷, 신사업팀, 대전 출신" 같은 두 줄짜리 기록은 인출 연습이자 백업이다.</td><td><span class="neu">C</span></td></tr>
+  <tr><td><b>저녁, 자기 전</b></td><td>그날 만난 이름을 전부 안 보고 한 번 꺼내본 뒤 잔다. 수면 중 해마의 리플레이가 꺼내온 기억을 굳힌다.</td><td><span class="pos">A</span></td></tr>
+  <tr><td><b>다음날·3일·7일</b></td><td>간격을 벌려 재인출한다. Anki 같은 간격반복 앱에 '이름-얼굴' 카드를 만들면 자동화된다. 같은 시간을 몰아 쓰는 반복보다 간격을 벌린 반복이 장기 기억에서 더 우수하다.</td><td><span class="pos">A</span></td></tr>
+  <tr><td><b>기억 안 날 때</b></td><td>억지로 짜내지 말고 바로 다시 묻는다. "어디서 만났는지는 정확히 기억하는데 이름이 날아갔다, 도와줘"라는 따뜻한 회복 문장은 상처보다 관심으로 읽힌다. 음운 단서도 유효하다. 비슷한 소리의 단어를 떠올리면 TOT가 풀린다.</td><td><span class="neu">C</span></td></tr>
+  <tr><td><b>훈련(선택)</b></td><td>얼굴-이름 연상 기억법 훈련은 단순 노출보다 우수했고 효과가 한 달까지 유지됐다. 경도인지장애 환자에서도 효과가 확인된 방법이라 건강한 성인에게는 더 그렇다.</td><td><span class="pos">B</span></td></tr>
+  <tr><td><b>기반 상태</b></td><td>수면 7시간 이상, 주 3회 유산소 운동. 전일 리포트에서 확인했듯 수면은 기억 고정의 핵심 메커니즘이고 운동은 해마 부피를 늘려 기억력을 실제로 개선한다.</td><td><span class="pos">A</span></td></tr>
+</table>
+<div class="src"><b>근거 요약</b> · 의도 설정: MEM Health · 반복+삽입+연결: mindoly, siliconcanals 정리 · 인출 연습: Roediger &amp; Butler 2011(TiCS), 간격 반복: Educational Psychology Review 2021 메타분석 · 메모: MEM Health · 수면: PMC3079906 리뷰 · 운동: Erickson 등 2011(PNAS) · 회복 대화: MEM Health · 음운 단서: Burke 등 2004 · 기억법 훈련: PMC3348454(Hampstead 계열, 1개월 유지)</div>
+
+<h2 id="s6">6. ADHD 약으로 해결되나</h2>
+<p>전일 세션에서 확인한 대로다. ADHD 약(메틸페니데이트 등)은 부족한 상태를 평균으로 되돌리는 효과는 확실하지만, 건강한 성인의 기억력을 평균 위로 끌어올린다는 근거는 약하고 장기 학업 성과 개선 효과도 확인되지 않았다. 처방이 필요한 향정신성의약품이라 진단 없이 접근할 수도 없다. 이름 망각의 주원인이 부호화 절차와 정보 구조라는 이 리포트의 결론과 맞물려 보면, 약물은 이 문제의 해결 경로가 아니다. 다만 집중력 저하가 일상 전반의 기능을 해칠 만큼 지속된다면, 이름 문제가 아니라 주의 문제로 정신과 평가를 받아볼 가치는 있다.</p>
+
+<h2 id="s7">7. 한계와 미해결 갭</h2>
+<p>이 리포트가 정직하게 인정하는 한계는 아래와 같다. 숫자를 다루는 리포트의 신뢰는 채운 칸보다 비워둔 칸을 얼마나 정확히 표시했는가에서 나온다.</p>
+<table>
+  <tr><th style="width:280px;">항목</th><th>상태</th></tr>
+  <tr><td>오만함( narcissism 등 성격 특성)과 이름 망각의 직접 인과 연구</td><td><span class="neg">미발견</span> · 절 3의 간접 논리는 이론적 경로일 뿐이다</td></tr>
+  <tr><td>"첫 만남 30초 내 N%가 이름을 잊는다" 류의 수치</td><td><span class="neg">미채용</span> · 검증 가능한 원출처를 확보하지 못해 수치를 싣지 않았다</td></tr>
+  <tr><td>한국어 이름(성+이름 3음절, 성씨 중복률 높음) 고유 연구</td><td><span class="neu">제한적</span> · 핵심 근거는 영어권 연구다. 한국 성씨의 높은 중복률(김·이·박)이 연상 갈고리 만들기에 어떤 영향을 주는지는 후속 과제다</td></tr>
+  <tr><td>얼굴 90%(35년) 수치</td><td><span class="neu">2차 인용</span> · Bahrick 등 1975 원문이 아닌 정리 기사 경유 확인이다</td></tr>
+  <tr><td>노인 TOT 약 2배 수치</td><td><span class="neu">리뷰 인용</span> · 2026년 리뷰 논문의 문헌 종합 수치로, 원 메타분석까지는 대조하지 않았다</td></tr>
+  <tr><td>절 4 진단 퀴즈</td><td><span class="neu">비임상</span> · 자기 이해 보조용이며 어떤 진단도 대체하지 않는다</td></tr>
+</table>
+
+<h2 id="s8">8. 출처 목록</h2>
+<h3>동료심사 논문</h3>
+<p class="muted" style="line-height:1.9;">
+· McWeeny, Young, Hay &amp; Ellis (1987). Putting names to faces. British Journal of Psychology, 78.<br>
+· Cohen (1990). Memory for proper names. · Cohen &amp; Burke (1993).<br>
+· Burke, MacKay, Worthley &amp; Wade (1991). On the tip of the tongue. J. Memory and Language, 30.<br>
+· Burke, Locantore, Austin &amp; Chae (2004). Cherry pit primes Brad Pitt. Psychological Science.<br>
+· Brenner (1973). The next-in-line effect. · Bahrick 등 (1975). 얼굴 기억 종단 연구.<br>
+· Rogers, Kuiper &amp; Kirker (1977). 자기참조 효과 원논문 · Memory for Details with Self-Referencing (PMC3226761).<br>
+· Fogler, James 등. Remembering Proper Names and the Better-than-Average Effect (PMC8363054).<br>
+· Stress and long-term memory retrieval: a systematic review (2020, PMC7879075).<br>
+· Retrieval practice improves item memory but not source memory in the context of stress (2019, J. Affect. Disord. 계열).<br>
+· Roediger &amp; Butler (2011). The critical role of retrieval practice in long-term retention. TiCS, 15(1).<br>
+· Carpenter &amp; DeLosh (2005). Testing and spacing effects in name learning. · Spaced Retrieval Practice 메타분석 (2021, Educational Psychology Review).<br>
+· Mnemonic strategy training improves memory (2012, PMC3348454) 및 Hampstead 등 얼굴-이름 훈련 선행 연구(2008/2011).<br>
+· Brain Sciences (2026), 14(2), 269. TOT 종합 리뷰 · TOT의 신경기반 뇌영상 연구(PMC2373253) · 한국 고령자 연예인 이름 TOT 연구, Communication Sciences &amp; Disorders 26(4), 2021(e-csd).
+</p>
+<h3>정리·실용 자료</h3>
+<p class="muted" style="line-height:1.9;">
+· MEM Health, Names and Faces: A Field Guide · mindoly, Why you forget names · Economic Times (2026-01-29), Do You Always Forget Names? · siliconcanals 정리 기사 2편(2026-06/07) · Colby College CogBlog(2017/2018), next-in-line effect · PMC4448029, Neural correlates of self-focused attention in social anxiety (2017) · 전일 세션 「시냅스 연결과 ADHD 약」 리서치(MTA 8년 추적, Roberts 2020 메타분석, Ilieva 2015 메타분석 등)
+</p>
+
+<footer>
+  본 리포트는 공개된 학술 문헌과 평판 자료를 교차 대조해 작성했다. 의학적 진단이나 처방을 대체하지 않는다. · 생성 2026-09-04 · Aside Agent
+</footer>
+
+</div>
+<script>
+document.getElementById('quizBtn').addEventListener('click', function(){
+  var boxes = document.querySelectorAll('#quiz input[type="checkbox"]');
+  var w = {encode:0, retrieve:0, nervous:0, motivation:0, base:0, intent:0};
+  boxes.forEach(function(b){ if(b.checked){ w[b.dataset.w]++; } });
+  var parts = [];
+  if(w.encode||w.intent) parts.push({t:'부호형(넣기 실패)', c:'b-blue', m:'이름이 저장되기 전에 놓치는 유형이다. 만나기 전 의도 설정 + 들은 직후 소리내어 반복 + 대화에 이름 삽입이 직효다. 가장 흔한 유형이고 개선 폭도 가장 크다.'});
+  if(w.retrieve) parts.push({t:'인출형(꺼내기 실패)', c:'b-purple', m:'저장은 되는데 꺼내는 통로가 약한 유형이다. 저녁 1회 인출 + 다음날·3일·7일 간격 재인출로 인출 경로를 두껍게 만들면 된다. 음운 단서(비슷한 소리 떠올리기)도 효과가 검증돼 있다.'});
+  if(w.nervous) parts.push({t:'긴장형(자기초점)', c:'b-red', m:'내 차례 준비에 주의가 빼앗기는 유형이다. 자기소개 문장을 미리 정해두면 그 순간의 내적 연습이 사라지고 다음 순서 효과가 줄어든다. 긴장해도 무너지지 않는 기억은 간격 인출 연습으로 만든다.'});
+  if(w.motivation) parts.push({t:'동기형(선택적)', c:'b-green', m:'관심이 있는 대상은 잘 외우는 유형이다. 능력 문제가 아니라 기본값 설정 문제라는 뜻이다. "모르는 사람에게도 관심 갈고리를 의도적으로 만드는 것"이 훈련 목표가 된다.'});
+  if(w.base) parts.push({t:'기반형(회복 부족)', c:'b-amber', m:'수면 부족으로 굳히기(고정) 단계가 새는 유형이다. 어떤 암기술보다 수면 7시간이 선행 조건이다. 운동도 함께.'});
+  var r = document.getElementById('quizResult');
+  if(parts.length===0){
+    r.innerHTML = '<span class="badge b-green">해당 없음</span> 체크된 항목이 없다. 이 리포트의 절 5 프로토콜 전체를 예방 차원에서 가볍게 적용해 보라.';
+  } else {
+    r.innerHTML = parts.map(function(p){ return '<div class="typebox show"><span class="badge '+p.c+'">'+p.t+'</span>'+p.m+'</div>'; }).join('');
+  }
+});
+</script>
+</body>
+</html>
