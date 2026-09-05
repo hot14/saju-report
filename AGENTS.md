@@ -4,7 +4,7 @@
 
 ### Issue tracker
 
-Issues live in GitHub Issues (repo remote 연결 예정 — `gh` CLI 사용, PRs are not a triage surface). See `docs/agents/issue-tracker.md`.
+Issues live in GitHub Issues at `hot14/saju-report` (remote `origin` 연결됨, `gh` CLI 사용, PRs are not a triage surface). 코드 푸시는 `main:main-local` 브랜치로만 — 원격 main은 Pages 배포 브랜치. See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
