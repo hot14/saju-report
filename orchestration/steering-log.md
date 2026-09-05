@@ -18,3 +18,10 @@
   - i18n-구축: ctx_c589421c9168 @ wt-i18n-multilang-2 → styles/typography-multilang.css + docs/i18n-spec.md
 - 흐름: worker_done 취합 → 코디네이터가 각 브랜치 연결작업+커밋 → 브랜치별 머지 게이트(머지마스터/악마적 비판/CTO 해결사) → 지적사항 재배정 루프 → master 머지
 - 배경 작업: Stitch V2 화면 21장 생성 완료(flows-v2는 KR 7장, flows/는 V1 21장 보존). V2 i18n 랜딩 9장 다운로드 예정.
+
+## 루프 로그 (게이트 사이클)
+
+- R1 워커(사용성·톤·i18n): 전량 완료·브랜치 커밋(bb4b09b/b1a29ea/21b56a4)
+- 게이트 1차: 머지마스터(i18n·UX=merge, tone=fixes) · 악마비판(공격 19건·치명 6) · CTO(해결 41건·머지조건 G1-G8)
+- R2 워커(재배정): U14 배지명 10종 ✓ · EN 카피덱+컷블록 ✓(ce2c321) · 재접근+공유카드 스펙 ✓
+- 잔여: COORD SSOT 정합 커밋 5건(T1·T5·T4·T8·U18+I1) → U1 EN 7화면 재생성(≥750px) → G1-G8 검증 → master 머지
