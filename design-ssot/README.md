@@ -9,6 +9,7 @@
 | 문서 | 내용 | 언제 읽나 |
 |---|---|---|
 | [01-analysis/product-analysis.md](01-analysis/product-analysis.md) | **제품 본질·니즈 3층·비판적 리스크 R1-8·디자인 원리 P1-7·방향 3축** | 모든 디자인 논쟁의 최상위 근거 |
+| [01-analysis/competitor-intel.md](01-analysis/competitor-intel.md) | **경쟁 정찰 추가분** - 혼빛 CSS 해석·포스텔러 가격·SajuRoot 카피·astrobazi 명명 충돌 | 경쟁 대응·카피 작업 시 |
 | [01-analysis/competitor-landscape.md](01-analysis/competitor-landscape.md) | 경쟁 18개 분석 + 따라할 것 10 / 피할 것 5 | 기능·퍼널·공유 장치 설계 시 |
 | [02-direction/design-direction.md](02-direction/design-direction.md) | 방향 "Nocturne Obang" (A+C) + 컬러·타이포·컴포넌트 토큰 초안 | Stitch 프롬프트·캔버스 작업 입력값 |
 | [03-references/references-index.md](03-references/references-index.md) | **작업 단계→참조 매핑 테이블** + 최우선 에셋 12 | 실제 작업 시작 시 첫 조회 지점 |
