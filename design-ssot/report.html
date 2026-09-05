@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K-사주 SSOT · 개발 진행 단계 통합 리포트</title>
+<style>
+  :root{--paper:#f5f4f2;--ink:#141416;--surface:#fff;--mute:#6f6a63;--red:#d0342c;--line:#d9d6d0;--gold:#b98a2c}
+  *{box-sizing:border-box;margin:0;padding:0;word-break:keep-all;overflow-wrap:break-word}
+  body{background:var(--paper);color:var(--ink);font:15px/1.8 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+  .wrap{max-width:1280px;margin:0 auto;padding:56px 28px 120px}
+  .eyebrow{font-size:11px;letter-spacing:.28em;color:var(--red);text-transform:uppercase}
+  h1{font-family:Georgia,"Noto Serif KR",serif;font-size:34px;line-height:1.2;margin:12px 0 8px}
+  .lede{color:var(--mute);max-width:860px}
+  .lede b{color:var(--ink)}
+  .meta{display:flex;gap:18px;flex-wrap:wrap;margin:18px 0 8px;font-size:12px;color:var(--mute)}
+  .meta span b{color:var(--ink)}
+  nav{position:sticky;top:0;z-index:9;display:flex;gap:8px;flex-wrap:wrap;padding:14px 0;margin-bottom:10px;background:linear-gradient(var(--paper) 80%,transparent);border-bottom:1px solid var(--line)}
+  nav a{color:var(--mute);text-decoration:none;font-size:13px;padding:6px 13px;border:1px solid var(--line);border-radius:999px}
+  nav a:hover{color:var(--ink);border-color:var(--mute)}
+  h2{font-family:Georgia,"Noto Serif KR",serif;font-size:24px;margin:44px 0 6px;padding-top:18px;border-top:1px solid var(--line)}
+  h2:first-of-type{border-top:0;padding-top:0;margin-top:26px}
+  .stamp{display:inline-block;font-size:11px;letter-spacing:.14em;border:1.5px solid var(--red);color:var(--red);padding:2px 10px;border-radius:3px;font-weight:700;vertical-align:middle}
+  .stage{margin:26px 0}
+  .stage .tag{font-size:11px;letter-spacing:.14em;color:var(--mute);text-transform:uppercase}
+  .stage h3{font-size:18px;margin:4px 0 6px}
+  .stage p{color:var(--mute);font-size:13.5px;max-width:900px;margin-bottom:12px}
+  .row{display:grid;grid-auto-flow:column;grid-auto-columns:190px;gap:14px;overflow-x:auto;padding:4px 2px 14px}
+  .row::-webkit-scrollbar{height:7px}.row::-webkit-scrollbar-thumb{background:var(--line);border-radius:7px}
+  .shot{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .shot img{display:block;width:100%;height:auto}
+  .cap{font-size:11.5px;color:var(--mute);margin-top:6px}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+  th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);background:var(--surface)}
+  td b{color:var(--red)}
+  .pass{color:#1e7a3c;font-weight:700}
+  .open{color:#b05a1e;font-weight:700}
+  .qbox{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:8px;padding:16px 20px;margin:18px 0}
+  .qbox h3{font-size:14px;margin-bottom:6px}
+  .qbox p{font-size:13.5px;color:var(--mute)}
+  footer{margin-top:70px;color:#8a857c;font-size:12px;border-top:1px solid var(--line);padding-top:16px}
+  a{color:var(--red)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">K-Saju Design SSOT · Progression Archive</div>
+  <h1>개발 진행 단계 통합 리포트</h1>
+  <p class="lede">남촌 물상론 기반 사주 자기이해 서비스(글로벌 K컬처 유입 · 영어 우선 · 웹 전용 · $8 단건)의 프론트엔드 디자인 전 과정.
+     <b>다크 3방향 → 밝은 물성 전환 → Swiss 확정 → 고도화</b>까지 4회 사이클 · 3-리뷰어 게이트 2회 · 워커 10기 오케스트레이션 기록.</p>
+  <div class="meta">
+    <span>업데이트 <b>2026-09-05</b></span>
+    <span>화면 <b>41장</b></span>
+    <span>판정 에셋 <b>291+97</b></span>
+    <span>게이트 <b>G1-G8 통과</b></span>
+    <span>로컬 브랜치 <b>main-local</b> 동기화</span>
+  </div>
+
+  <nav>
+    <a href="#timeline">진행 타임라인</a>
+    <a href="#swiss">Swiss 확정 세트</a>
+    <a href="#compare">스타일 5방향</a>
+    <a href="#variants">Swiss 변형 5종 (EN/KO)</a>
+    <a href="#dark">V1 다크 아카이브</a>
+    <a href="#gate">게이트 기록</a>
+    <a href="#open">결정 대기</a>
+  </nav>
+
+  <h2 id="timeline">진행 타임라인</h2>
+  <div class="stage">
+    <div class="tag">Stage 1 · 09-04</div>
+    <h3>SSOT 아카이브 구축 + 다크 3방향 확정 (v0.1)</h3>
+    <p>핀터레스트·트렌드 사이트 조사 291 에셋 판정 태그 아카이빙. Stitch 3방향 비교에서 A+C "Nocturne Obang"(87점) 확정 — 이후 09-05 가드레일 회의로 밝은 방향 전환.</p>
+    <div class="row">
+      <div class="shot"><img src="02-direction/styles-5/../flows/AC/landing.png" alt="" loading="lazy" onerror="this.parentNode.style.opacity=.3"></div>
+      <div class="shot"><img src="02-direction/flows/AC/free_result.png" alt="" loading="lazy" onerror="this.parentNode.style.opacity=.3"></div>
+      <div class="shot"><img src="02-direction/flows/AC/share_card.png" alt="" loading="lazy" onerror="this.parentNode.style.opacity=.3"></div>
+    </div>
+    <p class="cap">A+C Nocturne Obang 세트 (다크 · 이력 보존) — flows/AC/</p>
+  </div>
+  <div class="stage">
+    <div class="tag">Stage 2 · 09-05</div>
+    <h3>콘셉트 가드레일 — 밝은 모던 K-컬처 물성으로 전환 (v0.2)</h3>
+    <p>09-05 회의 3건: (1) 오행 비주얼의 점성학 톤 분리 · <b>물성의 스틸컷</b> 원칙 (2) 일간 정체성 카드 = 1번 자산 · 관계는 핵심 패턴 3-5장면만 (3) 52만 조합 → <b>12-18 유형 압축 노출</b>. 다크 v0.2 폐기. 상세: <a href="concept-guardrail.md">concept-guardrail.md</a></p>
+  </div>
+  <div class="stage">
+    <div class="tag">Stage 3 · 09-05</div>
+    <h3>오케스트레이션 R1 — 사용성·톤·i18n 워커 3기</h3>
+    <p>UX 검증(질문 18·리스크 12) · 톤 정합(팔레트 정당화·EYEBROW 지도) · i18n 구축(31/31 실측). 3-리뷰어 게이트: 악마 비판 19건(치명 6) · CTO 해결 41건 · 머지조건 G1-G8 확정.</p>
+  </div>
+  <div class="stage">
+    <div class="tag">Stage 4 · 09-05</div>
+    <h3>R2 재배정 — 배지명 10종 · EN 카피덱 · 재접근·공유카드 설계</h3>
+    <p>astrobazi 충돌 회피 배지명 10종(Heartwood · Ivy Thread · Noon Mark · Moon Phase · Granite Ridge · Garden Soil · Cast Iron · Silver Foil · Mountain Stream · Mirror Lake) · 매직링크 영수증 설계 · 컷블록 EN/KR.</p>
+  </div>
+
+  <h2 id="swiss">Swiss Data-Editorial — 확정 고도화 세트</h2>
+  <div class="stage">
+    <div class="tag">Stage 5 · 09-05 · 채택</div>
+    <h3>Swiss Data-Editorial 확정 + 6화면 고도화 (FIG. 02-07)</h3>
+    <p>스타일 5방향 경쟁에서 Swiss 92점 최고 평가. 순백+먹+시그널 레드 · FIG. 도판 넘버링 · REGISTRY 문법 · tabular numbers. "판정은 코드가 확정하고 근거를 표기한다"는 제품 철학의 시각화. 카피덱 v2 문장 직접 주입 · em-dash 0 · 점술 어휘 0.</p>
+    <div class="row">
+      <div class="shot"><img src="02-direction/flows-swiss/entry_en.png" alt="" loading="lazy"></div>
+      <div class="shot"><img src="02-direction/flows-swiss/calculating_en.png" alt="" loading="lazy"></div>
+      <div class="shot"><img src="02-direction/flows-swiss/free_result_en.png" alt="" loading="lazy"></div>
+      <div class="shot"><img src="02-direction/flows-swiss/payment_en.png" alt="" loading="lazy"></div>
+      <div class="shot"><img src="02-direction/flows-swiss/paid_result_en.png" alt="" loading="lazy"></div>
+      <div class="shot"><img src="02-direction/flows-swiss/share_card_en.png" alt="" loading="lazy"></div>
+    </div>
+    <p class="cap">FIG. 02 입력(성별·분 필드 추가) · FIG. 03 결정론 조립 · FIG. 04 컷 블록 · FIG. 05 영수증(Apple 로고 해소) · FIG. 06 대운 타임라인 · FIG. 07 공유 카드 — flows-swiss/ (780px)</p>
+  </div>
+
+  <h2 id="compare">스타일 5방향 비교</h2>
+  <div class="stage">
+    <div class="tag">Stage 6 · 09-05</div>
+    <p>동일 카피덱 · 5개 시각 언어 경쟁. 상세 대화형 비교: <a href="review-styles-5.html">review-styles-5.html</a></p>
+    <div class="row">
+      <div class="shot"><img src="styles-5/swiss.png" alt="" loading="lazy"></div>
+      <div class="shot"><img src="styles-5/gallery.png" alt="" loading="lazy"></div>
+      <div class="shot"><img src="styles-5/wellness.png" alt="" loading="lazy"></div>
+      <div class="shot"><img src="styles-5/brutal.png" alt="" loading="lazy"></div>
+      <div class="shot"><img src="styles-5/muji.png" alt="" loading="lazy"></div>
+    </div>
+    <p class="cap">Swiss 92(권장) · Gallery 84 · Pastel 82 · Brutalist 80 · Muji 78 — 판정 근거는 <a href="review-styles-5.html">비교 페이지</a> 하단 표</p>
+  </div>
+
+  <h2 id="variants">Swiss 변형 5종 · EN/KO 쌍</h2>
+  <div class="stage">
+    <div class="tag">Stage 7 · 09-05</div>
+    <p>Swiss 문법 안 단계적 변형: Dense Data · Airy Gallery · Red Signal Bold · Soft Warm · Mono Ledger. 각 변형 <b>한국어본 나란히 검증</b> — keep-all 전부 적용, 가독성 실측(readability-ko-v2.json): Dense 16px·1.80 / Warm 16px·1.80 통과, Ledger·RedBold 1.56 수용, Airy 14px 미달(조건부).</p>
+    <div class="row">
+      <div class="shot"><img src="swiss-variants/dense_ko.png" alt="" loading="lazy"></div>
+      <div class="shot"><img src="swiss-variants/airy_ko.png" alt="" loading="lazy"></div>
+      <div class="shot"><img src="swiss-variants/redbold_ko.png" alt="" loading="lazy"></div>
+      <div class="shot"><img src="swiss-variants/warm_ko.png" alt="" loading="lazy"></div>
+      <div class="shot"><img src="swiss-variants/ledger_ko.png" alt="" loading="lazy"></div>
+    </div>
+    <p class="cap">좌부터 Dense · Airy · RedBold · Warm · Ledger (KO) — 개별 EN본은 swiss-variants/ 참조</p>
+  </div>
+
+  <h2 id="dark">V1 다크 아카이브 (이력)</h2>
+  <div class="stage">
+    <div class="tag">Stage 0 · 09-04 · 이력 보존</div>
+    <p>Nocturne Obang 확정 시절 21장. 방향 전환으로 아카이브 — 배지 문법·컷 블록·대운 타임라인 등 구조 자산은 Swiss 세트로 승계됨.</p>
+    <div class="row">
+      <div class="shot"><img src="02-direction/flows/AC/landing.png" alt="" loading="lazy" onerror="this.parentNode.style.opacity=.25"></div>
+      <div class="shot"><img src="02-direction/flows/AC/entry_en.png" alt="" loading="lazy" onerror="this.parentNode.style.opacity=.25"></div>
+      <div class="shot"><img src="02-direction/flows/AC/free_result_en.png" alt="" loading="lazy" onerror="this.parentNode.style.opacity=.25"></div>
+      <div class="shot"><img src="02-direction/flows/AC/paid_result_en.png" alt="" loading="lazy" onerror="this.parentNode.style.opacity=.25"></div>
+      <div class="shot"><img src="02-direction/flows/AC/share_card_en.png" alt="" loading="lazy" onerror="this.parentNode.style.opacity=.25"></div>
+    </div>
+    <p class="cap">flows/AC/ — 21스크린 전체 보존</p>
+  </div>
+
+  <h2 id="gate">게이트 기록 (2회)</h2>
+  <table>
+    <tr><th>게이트</th><th>1차 (R1 산출)</th><th>2차 (R3-R4 산출)</th></tr>
+    <tr><td><b>머지마스터</b></td><td>i18n·UX merge / tone fixes · DESIGN.md 이중 정의 지적</td><td>3브랜치 전수 대조 · <b>merge 순서 권고</b> · 누락 조각 12건</td></tr>
+    <tr><td><b>악마적 비판</b></td><td>공격 19건 (치명 6): 대운 계산 불능 구조 · EN 덱 부재 · ru-RU 제재 · 대비 수치 오류</td><td>— (CTO 재심으로 흡수)</td></tr>
+    <tr><td><b>CTO 해결사</b></td><td>해결 41건 · fix-now 19 · 머지조건 G1-G8</td><td>악마 19건 재심: <span class="pass">해소 6 · 승계 9 · 증감 4</span> (T-07 승격 · T-13~15 신규)</td></tr>
+  </table>
+  <p style="font-size:13px;color:var(--mute)">산출: <a href="docs/gate-merge-master.md">gate-merge-master.md</a> · <a href="docs/gate-devil-advocate.md">gate-devil-advocate.md</a> · <a href="docs/gate-cto-solutions.md">gate-cto-solutions.md</a> · 티켓 SSOT: <a href="docs/tickets-index.md">tickets-index.md</a> (T-01~T-12)</p>
+
+  <h2 id="open">결정 대기 (사용자)</h2>
+  <div class="qbox">
+    <h3>Q1 · 사이트+앱 vs 웹 전용</h3>
+    <p>SSOT은 웹 전용(앱스토어 회피, 수수료 3-7%)이나 최근 태스크명에 '앱' 포함. PWA/네이티브 확정 시 입력·결제·푸시 설계 추가. → grill 문서 Q1</p>
+  </div>
+  <div class="qbox">
+    <h3>Q5 · 로케일 전략</h3>
+    <p>10개 로케일 동시 vs EN+KR 선행 후 순차(CTO 권장). 조판 자산(typo-multilang)은 이미 10-로케일 완비 — 순차 오픈이어도 즉시 대응 가능. → T-12</p>
+  </div>
+  <div class="qbox">
+    <h3>{{BRAND}} 확정</h3>
+    <p>데드라인 도래로 SajuRoot 기본 채택(임정). 확정 시 {{BRAND}} 치환 + 워드마크 밴드 디자인 + 도메인 4종 등록. → T-05 · product-decisions.md</p>
+  </div>
+
+  <footer>
+    SSOT 단일 소스: design-ssot/ · 이 리포트: design-ssot/report.html · 화면 ID: 02-direction/flows-swiss · 게이트 산출: docs/gate-*.md ·
+    대시보드: <a href="index.html">design-ssot/index.html</a> · 스타일 비교: <a href="review-styles-5.html">review-styles-5.html</a> · 변형: <a href="review-swiss-variants.html">review-swiss-variants.html</a>
+  </footer>
+</div>
+</body>
+</html>

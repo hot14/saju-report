@@ -1,0 +1,67 @@
+{
+ "landing_en-US": {
+  "screenId": "88718ef6fbbf4b15ad52b37d4cc854d3",
+  "file": "landing_en-US.png"
+ },
+ "landing_en-GB": {
+  "screenId": "fb24a6714b514bd18d055efc5130e2a2",
+  "file": "landing_en-GB.png"
+ },
+ "landing_ja": {
+  "screenId": "2c875130e3b24f139c23cbb6c1eaf381",
+  "file": "landing_ja.png"
+ },
+ "landing_zh": {
+  "screenId": "e20fa529cd8e4146b6ad2cf277993b79",
+  "file": "landing_zh.png"
+ },
+ "landing_th": {
+  "screenId": "280b9678abe14ebeac6e028647d2ca8c",
+  "file": "landing_th.png"
+ },
+ "landing_vi": {
+  "screenId": "c46873fbf25a4b6785fa9814e17fb86d",
+  "file": "landing_vi.png"
+ },
+ "landing_fil": {
+  "screenId": "6c46a57c854f44589a08659edb85281d",
+  "file": "landing_fil.png"
+ },
+ "landing_id": {
+  "screenId": "49542227ce4049c081d491b46502ff2a",
+  "file": "landing_id.png"
+ },
+ "landing_ru": {
+  "screenId": "bb074c87cd5a4d4691f1fab025f708fc",
+  "file": "landing_ru.png"
+ },
+ "landing_ko": {
+  "screenId": "79b59ddaf7f744a5aab7e67a633e2cfe",
+  "file": "landing_ko.png",
+  "note": "regenerated via edit_screens, screen 49cbd808cafa4903bdce1a7d622b238f"
+ },
+ "entry": {
+  "screenId": "08a841806cf549ad9cb39e5b2d64314d",
+  "file": "entry_ko.png"
+ },
+ "calculating": {
+  "screenId": "6d1399a845b344a6b35765e2fc0c3a7b",
+  "file": "calculating_ko.png"
+ },
+ "free_result": {
+  "screenId": "d0d27e836adc4d6d8bc8ef07adc080de",
+  "file": "free_result_ko.png"
+ },
+ "payment": {
+  "screenId": "283426415281405e970b69b46c158859",
+  "file": "payment_ko.png"
+ },
+ "paid_result": {
+  "screenId": "7470b331ad9241bc9b9ade244b4a55be",
+  "file": "paid_result_ko.png"
+ },
+ "share_card": {
+  "screenId": "785b5e99b0dc479a87f7731cf3a05f11",
+  "file": "share_card_ko.png"
+ }
+}

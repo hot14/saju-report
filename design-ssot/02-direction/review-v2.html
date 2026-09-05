@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K-Saju V2 화면 리뷰 · U1 EN 재생성 + i18n</title>
+<style>
+  :root{--ink:#141416;--surface:#1b1b1e;--tile:#202024;--hanji:#f5f1e6;--mute:#a8a29a;--gold:#c9a227;--line:#2c2c31}
+  *{box-sizing:border-box;margin:0;padding:0;word-break:keep-all;line-break:strict;overflow-wrap:break-word}
+  body{background:var(--ink);color:var(--hanji);font:15px/1.7 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+  .wrap{max-width:1320px;margin:0 auto;padding:48px 24px 100px}
+  .eyebrow{font-size:11px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
+  h1{font-family:Georgia,"Noto Serif KR",serif;font-size:32px;margin:10px 0 6px}
+  .lede{color:var(--mute);max-width:760px}
+  .lede b{color:var(--hanji)}
+  nav{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 4px}
+  nav a{color:var(--mute);text-decoration:none;font-size:13px;padding:7px 14px;border:1px solid var(--line);border-radius:999px}
+  nav a:hover{color:var(--hanji);border-color:var(--mute)}
+  section{padding:40px 0 6px;border-top:1px solid var(--line);margin-top:34px}
+  .dhead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  h2{font-family:Georgia,"Noto Serif KR",serif;font-size:23px}
+  .tag{font-size:12px;color:var(--ink);background:var(--gold);border-radius:999px;padding:3px 12px;font-weight:700}
+  .tag.plain{background:var(--tile);color:var(--mute);font-weight:400}
+  .dnote{color:var(--mute);font-size:13.5px;margin:8px 0 20px;max-width:880px}
+  .row{display:grid;grid-auto-flow:column;grid-auto-columns:250px;gap:18px;overflow-x:auto;padding:6px 2px 20px;scroll-snap-type:x proximity}
+  .row::-webkit-scrollbar{height:8px}.row::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
+  figure{scroll-snap-align:start}
+  .phone{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .phone img{display:block;width:100%;height:auto}
+  figcaption{margin-top:9px;font-size:12.5px;color:var(--mute);display:flex;justify-content:space-between;gap:8px}
+  .en{color:#7c766c;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+  .grid9{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+  .grid9 .phone{border-radius:14px}
+  footer{margin-top:60px;color:#6f695f;font-size:12px}
+</style>
+  <link rel="stylesheet" href="../styles/typography-multilang.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">K-Saju V2 · Bright Mulsang · 2026-09-05</div>
+  <h1>화면 리뷰 · U1 EN 재생성 + i18n + KR</h1>
+  <p class="lede">Stitch 재생성(V2 DS 고정) → HTML 렌더 <b>780px</b>(게이트 G3 충족) · 카피덱 v2 문장 직접 주입 · em-dash 0 · 금지어 0.
+     배지명은 U14 확정값(Mirror Lake · Heartwood · Noon Mark 등). 워드마크·가격은 {{BRAND}}·{{PRICE}} 토큰 정책상 SAJU·$8 표기.</p>
+  <nav>
+    <a href="#u1">U1 EN 7화면</a>
+    <a href="#swiss">Swiss 고도화</a>
+    <a href="#i18n">i18n 랜딩 9</a>
+    <a href="#kr">KR V2 7화면</a>
+  </nav>
+
+  <section id="u1">
+    <div class="dhead"><h2>U1 · EN 7화면 (최종 후보)</h2><span class="tag">780px · G3 통과</span></div>
+    <p class="dnote">카피덱 v2 문장을 프롬프트에 그대로 주입해 재생성한 세트. 랜딩은 카피덱 §2 문구(유일 eyebrow "The ten forms", 히어로 4요소 종결)와 일치.</p>
+    <div class="row">
+      <figure><div class="phone"><img src="flows-v2-en/landing_en.png" alt="landing"></div><figcaption><span>시작</span><span class="en">landing</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2-en/entry_en.png" alt="entry"></div><figcaption><span>입력</span><span class="en">entry</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2-en/calculating_en.png" alt="calculating"></div><figcaption><span>계산 중</span><span class="en">calculating</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2-en/free_result_en.png" alt="free result"></div><figcaption><span>무료 결과</span><span class="en">free result</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2-en/payment_en.png" alt="payment"></div><figcaption><span>결제</span><span class="en">payment</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2-en/paid_result_en.png" alt="paid result"></div><figcaption><span>유료 결과</span><span class="en">full report</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2-en/share_card_en.png" alt="share card"></div><figcaption><span>공유 카드</span><span class="en">share card 4:5</span></figcaption></figure>
+    </div>
+  </section>
+
+  
+  <section id="swiss">
+    <div class="dhead"><h2>Swiss Data-Editorial · 고도화 세트 (최종 후보)</h2><span class="tag">780px × 6 + 랜딩</span></div>
+    <p class="dnote">순백+먹+시그널 레드 · FIG. 도판 넘버링 · REGISTRY 문법 · tabular numbers. "SAJU RESEARCH BUREAU" 포지셔닝 — 판정은 코드, 근거는 표기. 카피덱 v2 문장 직접 주입, 게이트 통과(em-dash 0 · 점술 어휘 0 · occult 0).</p>
+    <div class="row">
+      <figure><div class="phone"><img src="flows-swiss/entry_en.png" alt="swiss entry"></div><figcaption><span>FIG. 02 입력</span><span class="en">entry · gender+minute</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-swiss/calculating_en.png" alt="swiss calculating"></div><figcaption><span>FIG. 03 계산 중</span><span class="en">deterministic</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-swiss/free_result_en.png" alt="swiss free"></div><figcaption><span>무료 결과</span><span class="chip ok">컷블록 샘플 반영</span><span class="en">free result</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-swiss/payment_en.png" alt="swiss payment"></div><figcaption><span>결제</span><span class="chip ok">Apple 로고 해소</span><span class="en">payment</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-swiss/paid_result_en.png" alt="swiss paid"></div><figcaption><span>유료 결과</span><span class="chip ok">대운 타임라인</span><span class="en">full report</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-swiss/share_card_en.png" alt="swiss share"></div><figcaption><span>공유 카드</span><span class="en">share 4:5</span></figcaption></figure>
+    </div>
+    <p class="dnote" style="font-size:12px">랜딩(FIG. 01)은 styles-5/swiss.png. 산출: flows-swiss/ · 스크린 ID는 /tmp/sw_*.json 기록.</p>
+  </section>
+
+  <section id="i18n">
+    <div class="dhead"><h2>i18n 랜딩 · 9개 로케일</h2><span class="tag plain">EN-US · EN-GB · JA · ZH · TH · VI · FIL · ID · RU</span></div>
+    <p class="dnote">동일 DS(밝은 물성) + 로케일별 카피. 10개 지원 언어 중 KO는 U1 세트에 포함. 태국어·베트남어·키릴 렌더링 확인용.</p>
+    <div class="grid9">
+      <figure><div class="phone"><img src="flows-v2/landing_en-US.png" alt="en-US"></div><figcaption><span class="en">en-US</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2/landing_en-GB.png" alt="en-GB"></div><figcaption><span class="en">en-GB</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2/landing_ja.png" alt="ja"></div><figcaption><span class="en">ja-JP</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2/landing_zh.png" alt="zh"></div><figcaption><span class="en">zh-Hans</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2/landing_th.png" alt="th"></div><figcaption><span class="en">th-TH</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2/landing_vi.png" alt="vi"></div><figcaption><span class="en">vi-VN</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2/landing_fil.png" alt="fil"></div><figcaption><span class="en">fil-PH</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2/landing_id.png" alt="id"></div><figcaption><span class="en">id-ID</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2/landing_ru.png" alt="ru"></div><figcaption><span class="en">ru-RU</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section id="kr">
+    <div class="dhead"><h2>KR · V2 7화면</h2><span class="tag plain">참고 · 저해상도 렌더</span></div>
+    <p class="dnote">한국어 카피 버전. 렌더 해상도가 낮아(썸네일) 판정용은 U1 EN 세트를 기준으로 하고, KR은 카피·구조 참조용.</p>
+    <div class="row">
+      <figure><div class="phone"><img src="flows-v2/landing_ko.png" alt="kr landing"></div><figcaption><span>시작</span><span class="en">landing</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2/entry_ko.png" alt="kr entry"></div><figcaption><span>입력</span><span class="en">entry</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2/calculating_ko.png" alt="kr calculating"></div><figcaption><span>계산 중</span><span class="en">calculating</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2/free_result_ko.png" alt="kr free"></div><figcaption><span>무료 결과</span><span class="en">free result</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2/payment_ko.png" alt="kr payment"></div><figcaption><span>결제</span><span class="en">payment</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2/paid_result_ko.png" alt="kr paid"></div><figcaption><span>유료 결과</span><span class="en">full report</span></figcaption></figure>
+      <figure><div class="phone"><img src="flows-v2/share_card_ko.png" alt="kr share"></div><figcaption><span>공유 카드</span><span class="en">share card</span></figcaption></figure>
+    </div>
+  </section>
+
+  <footer>U1 renders: HTML→780px @2x (ego-browser) · 카피: docs/copy-deck-v2-en.md · 게이트: docs/gate-*.md · master 머지 완료(eaaaf4a)</footer>
+</div>
+</body>
+</html>
