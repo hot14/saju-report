@@ -9,8 +9,8 @@
 ```
 Design a screen for a premium Korean Saju (four pillars) reading web service
 for global K-pop fans, English-first, mobile-first (375px baseline).
-Aesthetic: warm hanji paper (#FAF7F2) background, ink (#2A2724) typography,
-hairline fog borders (#D8D2C7), serif display (Fraunces) + sans body
+Aesthetic: warm hanji paper (#F7F3EA) background, ink (#2A2724) typography,
+hairline fog borders (#D8D2C7), serif display (Cormorant Garamond) + sans body
 (IBM Plex Sans KR), generous whitespace, no photos of people, no stars/moons/
 tarot cliches, no purple gradients, no glassmorphism. Single accent comes
 from one colored nature illustration (ink-line style). Follow DESIGN.md.
@@ -23,7 +23,7 @@ from one colored nature illustration (ink-line style). Follow DESIGN.md.
 ```
 Hero screen. Background: a faint gray single-stroke line landscape (mountain,
 river, a small tree) covering the lower two-thirds, barely visible.
-Headline in Fraunces: "You are a great tree." Subline in sans: "TikTok gave
+Headline in Cormorant Garamond: "You are a great tree." Subline in sans: "TikTok gave
 you your Day Master. This is the system behind it." One ink-black CTA button
 "Find my day master". Below the hero, three result cards fanned like sheets
 of paper, each showing a colored ink-line nature object (green tree, blue
@@ -80,9 +80,9 @@ instantly. Full refund, no questions." No badges, no timers, no upsell.
 ## 화면 6 · Paid Result (유료 리딩)
 
 ```
-Editorial reading screen on deep ink background (#211E1B paper-dark variant),
+Editorial reading screen on bright hanji background (#F7F3EA),
 for immersive night reading. Top: hanja glyph large in stem color + chapter
-title in Fraunces ("The river without banks"). Body: single 640px column,
+title in Cormorant Garamond ("The river without banks"). Body: single 640px column,
 16px sans, 1.75 line height, paragraph every 3-4 lines. Small evidence tag
 inline in mono ("node B2 - river kept flowing by metal"). Chapter nav at
 bottom: 7 dots. A save-to-card button pinned. Feels like a beautifully set
@@ -93,7 +93,7 @@ book page, not an app dashboard.
 
 ## 생성 후 체크리스트 (매 화면)
 
-- [ ] 배경이 #FAF7F2 계열인가 (순백 아님)
+- [ ] 배경이 #F7F3EA 계열인가 (순백 아님)
 - [ ] CTA가 먹색 단색인가 (천간색 CTA 금지)
 - [ ] 천간색이 텍스트로 쓰이지 않았는가
 - [ ] 별·달·수정구·타로·단청 클리셰 없는가

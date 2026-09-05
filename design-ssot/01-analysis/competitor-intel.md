@@ -56,7 +56,7 @@
 - K-정통성 프레임(교체 확정, C27): "Korean authenticity" → **"Shared East Asian roots, interpreted through Korean Saju practice."**
 - 근거 태그명(교체 확정, C28): "evidence tags" → **"Chart basis" / 「この読みの根拠」**
 - 3단 스토리: **Origin you can place / Method you can inspect / Reading you can use**
-- 신뢰 문장 3종: "Calculated from astronomy. Same math for everyone on Earth." / "This is about you — not your fate. It's a mirror, not a prophecy." / "For self-reflection and fun. Not medical, financial, or legal advice."
+- 신뢰 문장 3종: "Calculated from astronomy. Same math for everyone on Earth." / "This is about you · not your fate. It's a mirror, not a prophecy." / "For self-reflection and fun. Not medical, financial, or legal advice."
 - 기타 카피 후보 (글로벌_원리설명_프레임워크.md): "What kind of energy are you?"(온보딩 첫 카피는 질문), "MBTI asks you 93 questions. Saju reads your birth moment.", "Wood expands. Fire radiates. Earth anchors. Metal structures. Water flows.", "A weak Day Master is not a weak person.", "Your chart is your seed, not your tree.", "Same tree, different branches", "More input columns, not better answers", "Try one free chart", "Meet the pattern you were born with.", "Find which member matches your force.", "You are the River (壬)."
 - 금지 문장: "predict your future", luck 프레이밍, 학파 혼용 언급, "Korean fortune telling"(→ "Korea's oldest personality system" 방향)
 
@@ -110,7 +110,7 @@
 - **모션**: 별 반짝임·플로트 계열 키프레임 11종(twinkle, float, bloom-twinkle, bloom-float, bloomPulse, hbScoreIn[궁합 점수 등장], ad-kenburns 등) - 상시 생동감 있는 우주 배경
 - **이미지 자산 극소주의**: 미러 전체에서 이미지 5개뿐 - `site/icon.svg`(초승달+별 3개, 그라디언트 #ffe3a0→#ff5ec0→#a78bfa→#5eead4 on #1c0f33→#0a0418, rx 26), `site/dal-v2.png`(672×900, 달 캐릭터 일러스트 [추정: 파일명·용도상 메인 마스코트]), `site/apple-icon.png`, 광고 배너 2개(`site/ads/aim-300x250-ko.png`). **아이돌 프로필 사진 없음** - 842명 아이돌 페이지가 전부 텍스트+CSS/SVG 렌더. 초상권 회피이자 시각 일관성 전략
 - **페이지 인벤토리** (`data/pages.json`, 섹션별): idol 842종(그룹별 아이돌 상세), blog 382종, mbti 17, daily 12(띠별 오늘 운세), topic 8(애정·직업·재물·건강·학업·인간관계·여행·총운) + 특수 페이지: circle(2~8명 그룹 궁합 매트릭스), idol-match(830+ 아이돌 궁합), play("사주 도감" 80카드 수집+주간 퀘스트 - 포켓몬 도감 문법), streaks(데일리 카드 뽑기·스트릭·오행 배지), wrapped(연간 리뷰 - Spotify Wrapped 문법), share(9:16 인스타/틱톡 스토리 공유 카드 키트), pro(Couple Pro 유료), me(내 사주·스트릭·카드), discover
-- **카피 톤**: 히어로 "당신의 혼빛은?", 타이틀 "혼빛 — 내 최애랑 궁합? K-pop 궁합·사주·MBTI 무료", OG alt "What's your honbit?", "가입 없이 무료". K-pop 팬 언어(최애·덕질 문법)를 사주에 이식
+- **카피 톤**: 히어로 "당신의 혼빛은?", 타이틀 "혼빛 · 내 최애랑 궁합? K-pop 궁합·사주·MBTI 무료", OG alt "What's your honbit?", "가입 없이 무료". K-pop 팬 언어(최애·덕질 문법)를 사주에 이식
 
 ### 혼빛 요약 (5줄)
 1. 다크 남보라 우주(#070612~#15122b) + 크림 잉크(#fff8ee) + 소울 퍼플 트라이어드(#b794f6/#f0abfc/#67e8f9)

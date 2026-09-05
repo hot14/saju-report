@@ -1,6 +1,6 @@
 # K-Saju 디자인 SSOT (Single Source of Truth)
 
-> 남촌 물상론 기반 사주 웹서비스 — 영어권 K컬처 유입 사용자 대상.
+> 남촌 물상론 기반 사주 웹서비스 · 영어권 K컬처 유입 사용자 대상.
 > 이 디렉터리가 Stitch → OpenDesign → 프론트엔드까지 **모든 디자인 판단의 유일한 근거 저장소**다.
 > 생성: 2026-09-04 · 원천 설계 문서: `~/Downloads/사주앱_설계와_워크플로우.html`
 
@@ -12,7 +12,7 @@
 | [01-analysis/competitor-intel.md](01-analysis/competitor-intel.md) | **경쟁 정찰 추가분** - 혼빛 CSS 해석·포스텔러 가격·SajuRoot 카피·astrobazi 명명 충돌 | 경쟁 대응·카피 작업 시 |
 | [01-analysis/competitor-landscape.md](01-analysis/competitor-landscape.md) | 경쟁 18개 분석 + 따라할 것 10 / 피할 것 5 | 기능·퍼널·공유 장치 설계 시 |
 | [02-direction/design-direction.md](02-direction/design-direction.md) | 방향 "Nocturne Obang" (A+C) + 컬러·타이포·컴포넌트 토큰 초안 | Stitch 프롬프트·캔버스 작업 입력값 |
-| [02-direction/typography-linebreak-system.md](02-direction/typography-linebreak-system.md) | **줄나눔·다국어 타이포 시스템** — 언어별 적정 줄나눔 단위(한글 어절/영어 단어)·디바이스 유동 타입·토큰 무결성·anti-slop 문장 가드. 구현: `typography.css` · 검증: `typography-demo.html` | 화면 구현·카피 조판·리뷰 페이지 작성 시 |
+| [02-direction/typography-linebreak-system.md](02-direction/typography-linebreak-system.md) | **줄나눔·다국어 타이포 시스템** · 언어별 적정 줄나눔 단위(한글 어절/영어 단어)·디바이스 유동 타입·토큰 무결성·anti-slop 문장 가드. 구현: `typography.css` · 검증: `typography-demo.html` | 화면 구현·카피 조판·리뷰 페이지 작성 시 |
 | [03-references/references-index.md](03-references/references-index.md) | **작업 단계→참조 매핑 테이블** + 최우선 에셋 12 | 실제 작업 시작 시 첫 조회 지점 |
 | [03-references/trends-2025-26.md](03-references/trends-2025-26.md) | 2025-26 트렌드 14종 + 검증 URL 59 | 무드 근거 필요 시 |
 | [03-references/aesthetic-korean-mystic.md](03-references/aesthetic-korean-mystic.md) | 한국 전통 자원·미스틱 레퍼런스·타이포 6세트·색 시스템 | 시각 언어 상세 결정 시 |
@@ -41,8 +41,8 @@ design-ssot/
 
 ## 운용 규칙 (SSOT 유지 조건)
 
-1. **새 레퍼런스는 반드시 이 구조에 추가** — 대화 중 링크만 던지는 건 금지. 해당 카테고리 md 또는 assets에 기록.
-2. **디자인 결정이 나면 02-direction을 갱신** — v0.1 → v0.2 … 이력 유지.
+1. **새 레퍼런스는 반드시 이 구조에 추가** · 대화 중 링크만 던지는 건 금지. 해당 카테고리 md 또는 assets에 기록.
+2. **디자인 결정이 나면 02-direction을 갱신** · v0.1 → v0.2 … 이력 유지.
 3. **Stitch 생성물의 확정본은 DESIGN.md로 추출해 02-direction에 저장** (06-workflow Step 4).
 4. 금기: 최종 제품에 수집 이미지 직접 사용 (내부 무드보드 전용).
 
@@ -52,6 +52,6 @@ design-ssot/
 
 ## 현재 상태와 다음 액션
 
-- ✅ Stitch 플로우 생성 완료 (2026-09-04) — 3방향 × 7화면 = 21스크린. `02-direction/flows/` + 검증 기록 `02-direction/flows-verification.md`
+- ✅ Stitch 플로우 생성 완료 (2026-09-04) · 3방향 × 7화면 = 21스크린. `02-direction/flows/` + 검증 기록 `02-direction/flows-verification.md`
 - ⏭ 다음: 방향별 플로우 열람 → 채택 방향 최종 확정 → **OpenDesign 이관** (앱 실행 필수) → 디자인 시스템 확정
 - ⚠ OpenDesign(pencil MCP) 사용 전 앱 실행 필수

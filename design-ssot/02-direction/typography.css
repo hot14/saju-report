@@ -85,8 +85,11 @@ body, p, li, dd, dt, figcaption, td, th, h1, h2, h3, h4, h5, h6, blockquote {
    미지원 브라우저는 무시하며 규칙이 깨지지 않음 (progressive enhancement) */
 h1, h2, h3, .text-balance {
   text-wrap: balance;
-  line-height: var(--lh-display);
 }
+/* I1 개정(v1.1): :lang(ko/en) 블록(0,1,0)이 (0,0,1) 표기보다 우선해
+   디스플레이 행간이 사망하던 결함 수정. 언어별로 디스플레이 행간을 재선언 */
+:is(h1, h2, h3, .text-balance):lang(ko) { line-height: var(--lh-display); }
+:is(h1, h2, h3, .text-balance):lang(en) { line-height: var(--lh-display); }
 p, li, blockquote, dd, .text-pretty {
   text-wrap: pretty;
 }

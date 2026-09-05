@@ -21,18 +21,26 @@
 - 슬로프 체크 21스크린 전부 통과 (보라 그라데이션·수정구·이모지·fortune 카피 0건)
 - R1(공유 카드)·R2(컷 블록)·P7(보증 3줄) 설계 의도의 시각 구현 확인
 - "I don't know my birth time" 1급 옵션 3방향 모두 구현 (R5)
-- A entry 카피 "Privacy-first processing. No data stored without intent." — 채택 후보
+- A entry 카피 "Privacy-first processing. No data stored without intent." · 채택 후보
 
 ## 알려진 결함 (OpenDesign 정제 단계에서 처리)
 
 | # | 화면 | 결함 | 조치 |
 |---|---|---|---|
-| 1 | AC free_result | 렌더 비율 비정상 (99×512 소스 — 세로 압축) | 재생성 또는 .pen에서 재조판 |
+| 1 | AC free_result | 렌더 비율 비정상 (99×512 소스 · 세로 압축) | 재생성 또는 .pen에서 재조판 |
 | 2 | AC payment | Apple Pay 버튼이 "Pay" 텍스트만 ( 로고 누락) | 컴포넌트 교체 |
 | 3 | AC paid_result | 워드마크가 "NOCTURNE OBANG"으로 렌더 (서비스명 미확정 상태의 자동 채움) | 서비스명 확정 후 전면 교체 |
 | 4 | C share_card | 하단 가장자리 아티팩트 (고스트 텍스트) | 재생성 또는 크롭 |
-| 5 | 전체 | Stitch 생성 카피는 영문 초안 수준 — 설계 문서 §5 문체 3원칙 검수 별도 필요 | 보닌 검수 단계 |
+| 5 | 전체 | Stitch 생성 카피는 영문 초안 수준 · 설계 문서 §5 문체 3원칙 검수 별도 필요 | 보닌 검수 단계 |
 
 ## 워드마크 유의
 
 Stitch가 방향별로 'Saju', 'Saju Archive' 등 워드마크를 임의 생성했다. 서비스명·워드마크는 미확정 항목이며, 확정 후 전 화면 교체 대상. (A+C 방향 채택 시 "Nocturne Obang"은 무드명이지 서비스명이 아님)
+
+---
+
+## U18 정정 (2026-09-05, CTO 게이트 지적 반영)
+
+1. 본 문서의 V2 스크린 검증은 105~226px **썸네일 실측**이었다. 프로덕션 해상도(≥750px) 재검증이 U1 재생성 시 필수.
+2. V2 랜딩 카피에서 금지어 "운명" 계열 표현 발견(썸네일 판독). 카피 원천은 `docs/copy-deck-v2-kr.md`·`copy-deck-v2-en.md`(em-dash·금지어 기계검증 통과)로 대체하고, 재생성 프롬프트는 카피덱 문장을 직접 주입한다.
+3. CTA 표기는 카피덱 v2 기준 "내 패턴 읽기 · {{PRICE}}" (em-dash 제거).

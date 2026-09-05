@@ -1,4 +1,4 @@
-# 03b — 한국 전통 × 모던 프리미엄 + 미스틱 에스테틱 (AestheticScout 전문)
+# 03b · 한국 전통 × 모던 프리미엄 + 미스틱 에스테틱 (AestheticScout 전문)
 
 > URL 전부 실존 확인. godly.website는 recent.design으로 이전 확인.
 
@@ -6,7 +6,7 @@
 
 ### 오방색 (오행 대응 색)
 - 오방색·오간색 체계 (정색5+간색): https://www.tinnews.co.kr/7373
-- 평창올림픽 엠블럼 — 오방색의 글로벌 번역: https://www.yna.co.kr/view/AKR20180206065600063
+- 평창올림픽 엠블럼 · 오방색의 글로벌 번역: https://www.yna.co.kr/view/AKR20180206065600063
 - 조선 오방색 색감 연구: https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART001983283
 - **한국 전통색 171종 HEX 에셋** (색명+한문+헥스): https://assets.clip-studio.com/en-us/detail?id=2232396
 - 한국전통표준색 팔레트 (.clr): https://coolpunch.tistory.com/177
@@ -15,11 +15,11 @@
 ### 단청
 - 대한항공 Morning Calm 2026 단청 특집: https://morningcalm.koreanair.com/ko/issues/march-april-2026-vol-50-no-02/dancheong
 - '단청바스켓' (코리아 디자인 어워드): https://design.co.kr/article/26203/
-- 브랜드 '하치' — 단청 BI 전환: https://plus.hankyung.com/apps/newsinside.view?aid=202511166922d
+- 브랜드 '하치' · 단청 BI 전환: https://plus.hankyung.com/apps/newsinside.view?aid=202511166922d
 - 궁궐 단청 문양 디자인 연구: https://www.dbpia.co.kr/journal/detail?nodeId=T15774021
 
 ### 민화
-- 국가유산청 — K-Art 속 민화 재해석: https://www.cha.go.kr/cop/bbs/selectBoardArticle.do?nttId=90443&bbsId=BBSMSTR_1008
+- 국가유산청 · K-Art 속 민화 재해석: https://www.cha.go.kr/cop/bbs/selectBoardArticle.do?nttId=90443&bbsId=BBSMSTR_1008
 - '비나리안' 민화 오브제: http://m.yonhaptv.co.kr/45146
 - K-민화 글로벌 전략: https://k-folkpainting.co.kr/mobile/article.html?no=22968
 
@@ -53,12 +53,12 @@
 
 | # | 한글 | 라틴 | 무드/용도 | URL |
 |---|------|----------------|------------|-----|
-| 1 | **마루 부리** | **Cormorant** | 한지+고전 에디토리얼 — 리포트 본문·표지 | https://noonnu.cc/font_page/487 × https://fonts.google.com/specimen/Cormorant |
-| 2 | **본명조/Noto Serif KR** (한자 그리프 내장) | **Cinzel** | 다크 히어로·시작 — 사원 비문 무드 | https://fonts.google.com/noto/specimen/Noto+Serif+KR × https://fonts.google.com/specimen/Cinzel |
+| 1 | **마루 부리** | **Cormorant** | 한지+고전 에디토리얼 · 리포트 본문·표지 | https://noonnu.cc/font_page/487 × https://fonts.google.com/specimen/Cormorant |
+| 2 | **본명조/Noto Serif KR** (한자 그리프 내장) | **Cinzel** | 다크 히어로·시작 · 사원 비문 무드 | https://fonts.google.com/noto/specimen/Noto+Serif+KR × https://fonts.google.com/specimen/Cinzel |
 | 3 | **나눔명조** | **Marcellus** | 박물관 라벨·섹션 헤딩 | https://fonts.google.com/specimen/Nanum+Myeongjo × https://fonts.google.com/specimen/Marcellus |
-| 4 | **본명조 Light** | **Italiana** | 공유 카드·결제 — 럭셔리 헤어라인 | https://fonts.google.com/specimen/Italiana × https://noonnu.cc/font_page/35 |
+| 4 | **본명조 Light** | **Italiana** | 공유 카드·결제 · 럭셔리 헤어라인 | https://fonts.google.com/specimen/Italiana × https://noonnu.cc/font_page/35 |
 | 5 | **마루 부리 ExtraBold** | **Fraunces** | 웜 미스틱 모던 헤드라인 | https://noonnu.cc/font_page/487 × https://fonts.google.com/specimen/Fraunces |
-| 6 | **HS활공명조** (판본체) | **Cormorant Garamond** | 고문서 무드 — 유료 심층 섹션 | https://blog.naver.com/hp0/224242936430 × https://fonts.google.com/specimen/Cormorant |
+| 6 | **HS활공명조** (판본체) | **Cormorant Garamond** | 고문서 무드 · 유료 심층 섹션 | https://blog.naver.com/hp0/224242936430 × https://fonts.google.com/specimen/Cormorant |
 
 - 페어링 탐색: https://www.typewolf.com/fraunces · 웹폰트 소재: https://noonnu.cc · https://www.sandollcloud.com/free-font/15886/Noto-Serif-KR
 - 핵심: **Noto Serif KR은 한자(漢字) 공식 지원** → 오행 한자 표기가 단일 폰트로 해결됨.
@@ -78,9 +78,9 @@
 정확 헥스 채택처: CLIP STUDIO 전통색 171종 (assets 링크 상동) · 한국전통표준색 .clr. 이론 근거: https://aodr.org/_common/do.php?a=full&bidx=660&aidx=8759
 
 ### 다크 베이스 조합 3후보
-- **A. "먹물 호수"** — 먹 베이스+한지 백+골드 단일 포인트 (tarot-noir 표준, 가장 안전)
-- **B. "단청 야경"** — 먹 베이스+aurora gradient(청×적×황 blur)를 계산 중·하이라이트에 국소 사용
-- **C. "백자 한지"** — 라이트 대안: 한지 백+먹 텍스트+오행 5도트 (공유 카드 반전 구성)
+- **A. "먹물 호수"** · 먹 베이스+한지 백+골드 단일 포인트 (tarot-noir 표준, 가장 안전)
+- **B. "단청 야경"** · 먹 베이스+aurora gradient(청×적×황 blur)를 계산 중·하이라이트에 국소 사용
+- **C. "백자 한지"** · 라이트 대안: 한지 백+먹 텍스트+오행 5도트 (공유 카드 반전 구성)
 
 ## SSOT 적용 제안
 1. 베이스 A + 하이라이트 B 국소 + 공유 카드 다크·골드·오행 5도트

@@ -1,4 +1,4 @@
-# 05 — 디자인 스킬 스택 (설치 현황 + 용도 매핑)
+# 05 · 디자인 스킬 스택 (설치 현황 + 용도 매핑)
 
 > 설치일 2026-09-04. 작업 파이프라인 단계별로 어떤 스킬을 언제 쓰는지의 기준 문서.
 
@@ -25,11 +25,11 @@
 
 ## 단계별 사용 규칙
 
-1. **디자인 방향 확정 전** — 이 SSOT(`01-analysis`, `02-direction`, `03-references`)만 읽고 판단. 스킬이 방향을 정하지 않는다.
-2. **Stitch 생성 시** — `stitch-design/generate-design`의 키워드·매핑 참조로 프롬프트 작성 + `02-direction/design-direction.md`의 토큰 초안 주입.
-3. **Stitch 결과 → OpenDesign 이관 시** — `extract-design-md`로 DESIGN.md 뽑아 `02-direction/DESIGN.md`로 보관 → pencil MCP `get_guidelines` 후 `batch_design`으로 재구성. pencil MCP 호출 전 반드시 `get_editor_state(include_schema=true)`.
-4. **생성물 검증 시** — ego-browser 스크린샷 + `design-taste-frontend` §14 pre-flight + `kill-ai-slop` 패턴 감사.
-5. **구현 시** — `design-taste-frontend` 전체 규칙 로드. 랜딩/결과화면이 대상(대시보드 규칙 아님).
+1. **디자인 방향 확정 전** · 이 SSOT(`01-analysis`, `02-direction`, `03-references`)만 읽고 판단. 스킬이 방향을 정하지 않는다.
+2. **Stitch 생성 시** · `stitch-design/generate-design`의 키워드·매핑 참조로 프롬프트 작성 + `02-direction/design-direction.md`의 토큰 초안 주입.
+3. **Stitch 결과 → OpenDesign 이관 시** · `extract-design-md`로 DESIGN.md 뽑아 `02-direction/DESIGN.md`로 보관 → pencil MCP `get_guidelines` 후 `batch_design`으로 재구성. pencil MCP 호출 전 반드시 `get_editor_state(include_schema=true)`.
+4. **생성물 검증 시** · ego-browser 스크린샷 + `design-taste-frontend` §14 pre-flight + `kill-ai-slop` 패턴 감사.
+5. **구현 시** · `design-taste-frontend` 전체 규칙 로드. 랜딩/결과화면이 대상(대시보드 규칙 아님).
 
 ## tasteskill 설치 출처
 - `npx skills add Leonxlnx/taste-skill --skill design-taste-frontend` / `--skill stitch-skill`
