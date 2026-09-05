@@ -1,0 +1,47 @@
+[
+ [
+  "dense",
+  {
+   "fontSize": "16px",
+   "lh": "1.80",
+   "wordBreak": "keep-all",
+   "contrast": "n/a"
+  }
+ ],
+ [
+  "airy",
+  {
+   "fontSize": "14px",
+   "lh": "1.43",
+   "wordBreak": "keep-all",
+   "contrast": "n/a"
+  }
+ ],
+ [
+  "redbold",
+  {
+   "fontSize": "18px",
+   "lh": "1.56",
+   "wordBreak": "keep-all",
+   "contrast": "n/a"
+  }
+ ],
+ [
+  "warm",
+  {
+   "fontSize": "16px",
+   "lh": "1.80",
+   "wordBreak": "keep-all",
+   "contrast": "n/a"
+  }
+ ],
+ [
+  "ledger",
+  {
+   "fontSize": "18px",
+   "lh": "1.56",
+   "wordBreak": "keep-all",
+   "contrast": "n/a"
+  }
+ ]
+]

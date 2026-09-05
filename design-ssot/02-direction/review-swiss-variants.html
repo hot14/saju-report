@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAJU · Swiss 변형 5종 비교 (EN/KO)</title>
+<style>
+  :root{--ink:#141416;--surface:#1b1b1e;--tile:#202024;--hanji:#f5f1e6;--mute:#a8a29a;--gold:#c9a227;--line:#2c2c31}
+  *{box-sizing:border-box;margin:0;padding:0;word-break:keep-all;overflow-wrap:break-word}
+  body{background:var(--ink);color:var(--hanji);font:15px/1.7 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+  .wrap{max-width:1340px;margin:0 auto;padding:48px 24px 100px}
+  .eyebrow{font-size:11px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
+  h1{font-family:Georgia,"Noto Serif KR",serif;font-size:30px;margin:10px 0 6px}
+  .lede{color:var(--mute);max-width:840px}.lede b{color:var(--hanji)}
+  table{width:100%;border-collapse:collapse;margin:22px 0;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:8px 12px;text-align:left}
+  th{color:var(--mute);font-size:11.5px;letter-spacing:.08em;background:var(--surface)}
+  .ok{color:#9fb98a}.warn{color:#e0b64f}
+  .grid{display:grid;gap:34px;margin-top:26px}
+  .variant{border-top:1px solid var(--line);padding-top:28px}
+  .dhead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  h2{font-family:Georgia,"Noto Serif KR",serif;font-size:21px}
+  .pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:16px}
+  figure{scroll-snap-align:start}
+  .phone{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .phone img{display:block;width:100%;height:auto}
+  figcaption{margin-top:8px;font-size:12px;color:var(--mute)}
+  .en{color:#7c766c;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
+  footer{margin-top:50px;color:#6f695f;font-size:12px}
+</style>
+<link rel="stylesheet" href="../styles/typography-multilang.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Swiss Family · 5 Sub-variants · EN/KO Pairs · 780px</div>
+  <h1>Swiss 변형 5종 비교</h1>
+  <p class="lede">Swiss Data-Editorial 문법 안에서 <b>단계적 변형 5종</b> — 동일 카피덱(KR 공식 문안 + EN 덱) · 동일 DS · 동일 구성. 각 변형마다 <b>한국어본을 함께 검증</b>: keep-all 전부 적용, 행간·본문 크기 실측값은 하단 표.</p>
+
+  <table>
+    <tr><th>변형</th><th>성격</th><th>본문 크기</th><th>행간</th><th>keep-all</th><th>특기사항</th></tr>
+    <tr><td><b>Dense Data</b></td><td>Economist식 조밀 데이터 그리드</td><td class="ok">16px</td><td class="ok">1.80 ✓</td><td class="ok">✓</td><td>가독성 게이트 완전 통과</td></tr>
+    <tr><td><b>Airy Gallery</b></td><td>여백 극대화 미술관 카탈로그 (레드→딥 그린)</td><td class="warn">14px ⚠</td><td class="warn">1.43 ⚠</td><td class="ok">✓</td><td>본문 하한 16px 미달 — 채택 시 스케일 상향 조건</td></tr>
+    <tr><td><b>Red Signal Bold</b></td><td>신호 레드 확대 · 확신의 마커</td><td class="ok">18px</td><td>1.56 (수용)</td><td class="ok">✓</td><td>임팩트 최대</td></tr>
+    <tr><td><b>Soft Warm</b></td><td>웜 화이트 · 온도 완화 · 글로벌 친화</td><td class="ok">16px</td><td class="ok">1.80 ✓</td><td class="ok">✓</td><td>가독성 게이트 완전 통과</td></tr>
+    <tr><td><b>Mono Ledger</b></td><td>모노 원장 · 레지스트리 문법 · 데이터 무결성 극대화</td><td class="ok">18px</td><td>1.56 (수용)</td><td class="ok">✓</td><td>근거 태그와 문법 일치</td></tr>
+  </table>
+  <p style="color:var(--mute);font-size:12px;margin-top:-14px">실측: ego-browser getComputedStyle, 390px 뷰포트 (swiss-variants/readability-ko-v2.json)</p>
+
+  <div class="grid">
+
+    <div class="variant" id="dense">
+      <div class="dhead"><h2>1 · Dense Data</h2></div>
+      <p class="dnote">Economist식 조밀함. 헤어라인 그리드 전면 · 타뷸러 넘버 · 소형 캡스. 신뢰·데이터 정밀 최우선.</p>
+      <div class="pair">
+        <figure><div class="phone"><img src="swiss-variants/dense_en.png" alt="dense en"></div><figcaption><span class="en">EN</span></figcaption></figure>
+        <figure><div class="phone"><img src="swiss-variants/dense_ko.png" alt="dense ko"></div><figcaption><span>한국어 · keep-all · 1.80</span><span class="en">KO</span></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="variant" id="airy">
+      <div class="dhead"><h2>2 · Airy Gallery</h2></div>
+      <p class="dnote">딥 그린 액센트로 전환, 여백 55%+, 조용한 카탈로그. 본문 14px는 하한 미달 — 채택 시 스케일 상향 조건부.</p>
+      <div class="pair">
+        <figure><div class="phone"><img src="swiss-variants/airy_en.png" alt="airy en"></div><figcaption><span class="en">EN</span></figcaption></figure>
+        <figure><div class="phone"><img src="swiss-variants/airy_ko.png" alt="airy ko"></div><figcaption><span>한국어</span><span class="en">KO</span></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="variant" id="redbold">
+      <div class="dhead"><h2>3 · Red Signal Bold</h2></div>
+      <p class="dnote">신호 레드의 존재감을 키운 확신 변형. 섹션 마커·언더라인·블록에 레드. 스위스 그리드 유지.</p>
+      <div class="pair">
+        <figure><div class="phone"><img src="swiss-variants/redbold_en.png" alt="redbold en"></div><figcaption><span class="en">EN</span></figcaption></figure>
+        <figure><div class="phone"><img src="swiss-variants/redbold_ko.png" alt="redbold ko"></div><figcaption><span>한국어</span><span class="en">KO</span></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="variant" id="warm">
+      <div class="dhead"><h2>4 · Soft Warm</h2></div>
+      <p class="dnote">웜 화이트 #FAF9F6 + 웜 그레이 헤어라인 + 골드 미니 액센트. 글로벌 컨슈머 온도 완화.</p>
+      <div class="pair">
+        <figure><div class="phone"><img src="swiss-variants/warm_en.png" alt="warm en"></div><figcaption><span class="en">EN</span></figcaption></figure>
+        <figure><div class="phone"><img src="swiss-variants/warm_ko.png" alt="warm ko"></div><figcaption><span>한국어 · 1.80</span><span class="en">KO</span></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="variant" id="ledger">
+      <div class="dhead"><h2>5 · Mono Ledger</h2></div>
+      <p class="dnote">모노스페이스 라벨·숫자·캡션 — 원장/레지스트리 문법. NODE B2 근거 태그 체계와 문법 일치.</p>
+      <div class="pair">
+        <figure><div class="phone"><img src="swiss-variants/ledger_en.png" alt="ledger en"></div><figcaption><span class="en">EN</span></figcaption></figure>
+        <figure><div class="phone"><img src="swiss-variants/ledger_ko.png" alt="ledger ko"></div><figcaption><span>한국어</span><span class="en">KO</span></figcaption></figure>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Stitch GEMINI_3_PRO · DS 9d25763e(Bright) · 동일 카피덱(KR 공식+EN 덱) · 렌더 780px · 실측 readability-ko-v2.json</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+[
+ [
+  "dense",
+  {
+   "fontSize": "16px",
+   "lineHeightPx": "24px",
+   "lhRatio": "1.50",
+   "wordBreak": "keep-all",
+   "widthPx": 350,
+   "contrast": "NaN",
+   "maxwEm": 6.25
+  }
+ ],
+ [
+  "airy",
+  {
+   "fontSize": "14px",
+   "lineHeightPx": "20px",
+   "lhRatio": "1.43",
+   "wordBreak": "keep-all",
+   "widthPx": 342,
+   "contrast": "NaN",
+   "maxwEm": 7.142857142857143
+  }
+ ],
+ [
+  "redbold",
+  {
+   "fontSize": "18px",
+   "lineHeightPx": "28px",
+   "lhRatio": "1.56",
+   "wordBreak": "keep-all",
+   "widthPx": 350,
+   "contrast": "NaN",
+   "maxwEm": 5.555555555555555
+  }
+ ],
+ [
+  "warm",
+  {
+   "fontSize": "16px",
+   "lineHeightPx": "24px",
+   "lhRatio": "1.50",
+   "wordBreak": "keep-all",
+   "widthPx": 350,
+   "contrast": "NaN",
+   "maxwEm": 6.25
+  }
+ ],
+ [
+  "ledger",
+  {
+   "fontSize": "18px",
+   "lineHeightPx": "28px",
+   "lhRatio": "1.56",
+   "wordBreak": "keep-all",
+   "widthPx": 350,
+   "contrast": "NaN",
+   "maxwEm": 5.555555555555555
+  }
+ ]
+]
