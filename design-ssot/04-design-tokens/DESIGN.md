@@ -1,6 +1,6 @@
 # Design System: Bright Mulsang (K-Saju Service)
 **Skill:** stitch-design-taste · **Project:** Korean Saju (물상론) reading service for global K-culture fans
-**Version:** v0.3 (2026-09-05) · 09-05 콘셉트 가드레일 회의에 따라 다크 v0.2(Nocturne Obang)를 폐기하고 **밝은 모던 K-컬처 물성**으로 단일화. 본 문서가 유일한 토큰 원천이다(다크 v0.2 표기 #141416 배경·#C9A227 CTA·Fraunces·Motion 5는 전부 무효).
+**Version:** v0.3 (2026.09.05 · 09.05 콘셉트 가드레일 회의에 따라 다크 v0.2(Nocturne Obang)를 폐기하고 **밝은 모던 K-컬처 물성**으로 단일화. 본 문서가 유일한 토큰 원천이다(다크 v0.2 표기 #141416 배경·#C9A227 CTA·Fraunces·Motion 5는 전부 무효).
 **상위 문서:** `02-direction/concept-guardrail.md` (제작 원칙) · `02-direction/design-direction.md` (v0.1 원본, 이력용) · `02-direction/github-pages-archive-digest.md`
 **Stitch DS 고정값:** 프로젝트 `282676268687837114` (K-Saju V2 - Bright Mulsang) · Bright DS `assets/9d25763e1c344185bfc980f7a09cb755` · 재생성 시 항상 이 DS를 주입한다.
 
