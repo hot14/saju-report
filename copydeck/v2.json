@@ -19,7 +19,21 @@
       { "key": "resultFree.cutblock.headline", "issue": "값이 번역이 아님(의도적): ko-KR 여기까지가 진단입니다. vs en-US This is your structure. EN은 의료 어휘 회피(Q10)로 재작성됨." }
     ],
     "not_copy_rows": "원 덱의 비카피 행(카드 시그니처 오행 5도트 · 챕터 내비 7점 레일 · 지불 버튼 로고 필수 등)은 문자열이 아니라 시각 지시라 미수록. 원 덱 비고 참조.",
-    "fallback": "런타임 폴백 {locale} → en-US → ko-KR · 누락 키 [missing:key] 렌더(i18n-spec §3.4). 본 파일의 ko-KR · en-US는 상호 폴백 최종점이므로 키 불일치는 CI 게이트 1(키 셋 동일성)의 예외 목록으로 _meta.asymmetries를 등록한다."
+    "fallback": "런타임 폴백 {locale} → en-US → ko-KR · 누락 키 [missing:key] 렌더(i18n-spec §3.4). 본 파일의 ko-KR · en-US는 상호 폴백 최종점이므로 키 불일치는 CI 게이트 1(키 셋 동일성)의 예외 목록으로 _meta.asymmetries를 등록한다.",
+    "badges_field": "최상위 badges 객체는 EN 덱 {{BADGE}} 치환표다(R4 추가). 로케일 키(ko-KR·en-US)와 별개의 참조 테이블이며 언어 카피와 무관하게 명명 소스(badge-naming-en.md)를 가리킨다."
+  },
+  "badges": {
+    "_note": "EN 덱 {{BADGE}} 치환표 · 원천 docs/badge-naming-en.md(커밋 6143ce1 · astrobazi 비충돌 명명). KR 표기는 카피 덱 SSOT 기준. 임수·계수는 수계 배정이 교차(F2 · cto-reverification.md §5)하여 두 매핑을 병기했다: by-hanja=명명 문서 대응표 기준, by-object=카피 덱 물상 기준. 치환 실행 전 코디네이터 판정 필요.",
+    "gap-mok":      { "hanja": "甲木", "kr": "갑목 · 큰 나무",   "en": "Heartwood",      "status": "확정" },
+    "eul-mok":      { "hanja": "乙木", "kr": "을목 · 작은 나무", "en": "Ivy Thread",     "status": "확정" },
+    "byeong-hwa":   { "hanja": "丙火", "kr": "병화 · 태양",      "en": "Noon Mark",      "status": "확정" },
+    "jeong-hwa":    { "hanja": "丁火", "kr": "정화 · 달",        "en": "Moon Phase",     "status": "판정 대기: 상표 혼잡(달 앱 다수)이라 {{BRAND}} 결합 사용 전제는 유지" },
+    "mu-to":        { "hanja": "戊土", "kr": "무토 · 큰 산",     "en": "Granite Ridge",  "status": "확정(정식 상표 검색 전)" },
+    "gi-to":        { "hanja": "己土", "kr": "기토 · 정원 흙",   "en": "Garden Soil",    "status": "확정(서술적 라벨 · {{BRAND}} 결합)" },
+    "gyeong-geum":  { "hanja": "庚金", "kr": "경금 · 큰 쇠",     "en": "Cast Iron",      "status": "확정(일반명사 라벨 · {{BRAND}} 결합)" },
+    "sin-geum":     { "hanja": "辛金", "kr": "신금 · 작은 쇠",   "en": "Silver Foil",    "status": "확정(정식 상표 검색 전)" },
+    "im-su":        { "hanja": "壬水", "kr": "임수 · 넓은 호수", "en": { "by-hanja": "Mountain Stream", "by-object": "Mirror Lake" }, "status": "F2 판정 대기" },
+    "gye-su":       { "hanja": "癸水", "kr": "계수 · 시냇물",    "en": { "by-hanja": "Mirror Lake", "by-object": "Mountain Stream" }, "status": "F2 판정 대기" }
   },
   "ko-KR": {
     "landing": {
