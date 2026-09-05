@@ -1,0 +1,244 @@
+{
+  "_meta": {
+    "title": "Copy Deck V2 · locale-key JSON (I2)",
+    "generated": "2026-09-05",
+    "sources": [
+      "docs/copy-deck-v2-kr.md (카피 덱 V2 한국어 · SSOT)",
+      "docs/copy-deck-v2-en.md (Copy Deck V2 English · SSOT 후보)"
+    ],
+    "key_format": "screen.block.element · 소문자 케밥 · 점 계층 (docs/i18n-spec.md §3.2)",
+    "tokens": ["{{BRAND}}", "{{PRICE}}", "{{BADGE}}"],
+    "token_rules": "워드마크 {{BRAND}} · 가격 {{PRICE}} · 배지명 {{BADGE}}. 화면 하드코딩 금지 원칙 승계. ko-KR 배지 인스턴스(임수 · 넓은 호수 등)는 원 덱이 확정 KR 표기로 둔 값이며, EN 덱의 {{BADGE}} 슬롯과 쌍이다(badge-naming-en.md 수령 후 치환).",
+    "value_types": "문자열 또는 문자열 배열. 배열은 UI에서 각각 별도 줄로 렌더되는 문자열 집합(보증 3줄 · 챕터 7개 · 조립 단계 4개 등).",
+    "asymmetries": [
+      { "key": "resultFree.cutblock.valueframe", "issue": "en-US에만 존재(UX 수정 #4 월구독 대비 영구 소유 프레임). KR 덱 반영은 코디네이터 연결 필요(EN 덱 남은 것 1)." },
+      { "key": "resultFree.cutblock.preview-bodies", "issue": "en-US에만 존재(주제별 본문 샘플 1문장 3종). KR 덱 화면 4에는 잠긴 3주제 타이틀만 있다." },
+      { "key": "landing.hero.headline", "issue": "ko-KR은 데모 인스턴스 문자열(당신은 넓은 호수입니다.), en-US는 You are {{BADGE}}. 토큰 슬롯. 배지명 확정 시 ko-KR 값도 인스턴스로 유지·en-US는 토큰 치환." },
+      { "key": "landing.badgestrip.examples", "issue": "ko-KR은 구체 배지 3종, en-US는 {{BADGE}} ×3(KR 덱과 동일 슬롯: 임수·갑목·병화 인스턴스)." },
+      { "key": "badges.*.label", "issue": "ko-KR label은 간명 · 물상 확정 표기, en-US label은 {{BADGE}} 토큰 + kr-ref 참조열(badge-naming-en.md 관할 · O4)." },
+      { "key": "resultFree.cutblock.headline", "issue": "값이 번역이 아님(의도적): ko-KR 여기까지가 진단입니다. vs en-US This is your structure. EN은 의료 어휘 회피(Q10)로 재작성됨." }
+    ],
+    "not_copy_rows": "원 덱의 비카피 행(카드 시그니처 오행 5도트 · 챕터 내비 7점 레일 · 지불 버튼 로고 필수 등)은 문자열이 아니라 시각 지시라 미수록. 원 덱 비고 참조.",
+    "fallback": "런타임 폴백 {locale} → en-US → ko-KR · 누락 키 [missing:key] 렌더(i18n-spec §3.4). 본 파일의 ko-KR · en-US는 상호 폴백 최종점이므로 키 불일치는 CI 게이트 1(키 셋 동일성)의 예외 목록으로 _meta.asymmetries를 등록한다."
+  },
+  "ko-KR": {
+    "landing": {
+      "wordmark": "{{BRAND}}",
+      "hero.headline": "당신은 넓은 호수입니다.",
+      "hero.sub": "짧은 영상은 하루의 글자를 알려줍니다. {{BRAND}}는 그 글자가 만드는 평생의 패턴을 읽어드립니다.",
+      "cta.primary": "내 패턴 읽기",
+      "badgestrip.label": "열 개의 물상",
+      "badgestrip.guide": "태어난 날에 따라, 서로 다른 물상 하나가 배정됩니다.",
+      "badgestrip.examples": ["임수 · 넓은 호수", "갑목 · 큰 나무", "병화 · 태양"],
+      "cardpreview.headline": "결과는 한 장의 카드로 남습니다.",
+      "cardpreview.caption": "배지와 한 문장만으로, 본문 없이도 의미가 전달됩니다.",
+      "closing.headline": "여덟 글자로 당신을 읽어드립니다.",
+      "closing.cta": "내 패턴 읽기",
+      "footer.disclaimer": "{{BRAND}}는 자기이해를 위한 읽기 도구입니다. 의료, 법률, 금융 조언이 아닙니다.",
+      "footer.links": ["개인정보 처리방침", "이용약관"]
+    },
+    "input": {
+      "title": "생년월일을 입력해주세요.",
+      "birthdate.labels": ["연도", "월", "일"],
+      "birthdate.helper": "양력 기준입니다. 음력은 아래 토글에서 바꿀 수 있어요.",
+      "birthdate.lunar-toggle": "음력으로 입력",
+      "time.label": "출생 시각",
+      "time.helper": "가까울수록 정확해집니다.",
+      "time.unknown": "시각을 모르겠어요",
+      "time.unknown-helper": "몰라도 결과를 받을 수 있습니다. 다루는 주제가 줄어듭니다.",
+      "city.label": "출생 도시",
+      "city.helper": "현지 시각 보정에만 쓰입니다.",
+      "slots.caption": "여덟 글자가 이 자리에 채워집니다.",
+      "privacy": "입력값은 판정에만 쓰입니다. 별도 동의 없이 저장하지 않습니다.",
+      "cta.primary": "내 패턴 읽기",
+      "error.common": "확인해주세요.",
+      "error.year": "연도는 4자리로 입력해주세요.",
+      "error.range": "1900년 이후로 입력해주세요.",
+      "error.time": "시각을 선택하거나, 모르겠어요를 눌러주세요."
+    },
+    "calculating": {
+      "caption": "여덟 글자를 맞추고 있습니다.",
+      "fourcolumns": ["年", "月", "日", "時"],
+      "steps": ["태어난 해의 글자", "태어난 달의 글자", "태어난 날의 글자", "태어난 시의 글자"],
+      "fourcolumns.no-time": "시각 없이 날까지의 글자로 읽습니다.",
+      "done": "여덟 글자가 정해졌습니다.",
+      "deterministic": "같은 생년월일은 항상 같은 결과를 만듭니다.",
+      "skip": "건너뛰기"
+    },
+    "resultFree": {
+      "card.badge": "임수 · 넓은 호수",
+      "card.declaration": "당신은 넓은 호수입니다.",
+      "card.oneline": "넓게 고이고, 깊게 흐릅니다.",
+      "card.signature": "{{BRAND}}",
+      "body.sample": "당신의 에너지는 좁은 곳에 갇히면 약해지고, 넓게 퍼질 때 힘을 쓰는 물입니다. 좁은 틀과 짧은 마감이 반복되는 일에서는 실력보다 먼저 지치는 패턴이 있습니다. 반대로 역할이 넓어질수록, 당신은 점점 단단해집니다.",
+      "cutblock.headline": "여기까지가 진단입니다.",
+      "cutblock.transition": "다음부터는 처방입니다.",
+      "cutblock.preview-topics": ["강한 국면, 약한 국면", "관계에서 반복되는 패턴", "언제 달라지는가"],
+      "cutblock.cta": "내 패턴 읽기 · {{PRICE}}",
+      "cutblock.sub": "1회 결제로 7개 주제 전체를 읽을 수 있습니다.",
+      "share.guide": "카드 한 장으로 결과를 남기고, 나눌 수 있습니다.",
+      "share.cta": "카드 저장하기"
+    },
+    "pay": {
+      "summary": "전체 리딩 · 7개 주제",
+      "summary.sub": "결제하면 즉시 읽을 수 있습니다.",
+      "price": "{{PRICE}}",
+      "guarantee": ["1회 결제입니다. 구독이 없습니다.", "결제와 동시에 전달됩니다.", "전액 환불이 가능합니다. 이유는 묻지 않습니다."],
+      "pay-methods": ["Apple Pay", "Google Pay"],
+      "cardform.labels": ["카드 번호", "유효기간", "보안 코드"],
+      "cardform.errors": ["카드번호를 확인해주세요.", "유효기간을 확인해주세요."],
+      "cta.final": "결제하기",
+      "footer.disclaimer": "{{BRAND}}는 자기이해를 위한 읽기 도구입니다. 의료, 법률, 금융 조언이 아닙니다."
+    },
+    "resultPaid": {
+      "badge": "임수 · 넓은 호수",
+      "chapters": ["당신을 만든 물상", "에너지가 도는 방식", "강한 국면, 약한 국면", "일에서 나타나는 패턴", "관계에서 반복되는 패턴", "돈과 만나는 패턴", "언제 달라지는가"],
+      "body.sample": "넓은 호수에는 둑이 필요하지 않습니다. 대신 물이 마르지 않도록, 들어오는 양을 관리하는 일이 당신의 처방입니다. 좁은 그릇을 늘리는 쪽이 아니라, 흘러나가는 지점을 좁히는 쪽에서 당신은 회복됩니다.",
+      "timeline.lead": "10년마다 물줄이 바뀝니다.",
+      "timeline.sample": "30대 중반에 흐름이 바뀌는 구간이 옵니다. 그때 무엇을 넓히는지에 따라, 다음 물의 깊이가 정해집니다.",
+      "evidence.tag": "노드 B2 · 강이 쇠에 의해 흐름을 유지함",
+      "quote.cta": "이 문장을 카드로 남기기",
+      "bottom.cta": "카드 저장하기"
+    },
+    "shareCard": {
+      "badge": "임수 · 넓은 호수",
+      "hanja": "壬水",
+      "oneline": "넓게 고이고, 깊게 흐릅니다.",
+      "wordmark": "{{BRAND}}",
+      "outside.guide": "카드만 공유해도 의미가 전달됩니다.",
+      "cta.save": "카드 저장하기",
+      "cta.share": "공유하기"
+    },
+    "badges": {
+      "gap-mok": { "label": "갑목 · 큰 나무", "hanja": "甲木", "oneline": "위로 뻗는 줄기, 아래로 내린 뿌리." },
+      "eul-mok": { "label": "을목 · 작은 나무", "hanja": "乙木", "oneline": "휘어져도 끊기지 않는 성질." },
+      "byeong-hwa": { "label": "병화 · 태양", "hanja": "丙火", "oneline": "넓게 비추는 열." },
+      "jeong-hwa": { "label": "정화 · 달", "hanja": "丁火", "oneline": "가까이 오래 머무는 빛." },
+      "mu-to": { "label": "무토 · 큰 산", "hanja": "戊土", "oneline": "무겁고 움직이지 않는 바탕." },
+      "gi-to": { "label": "기토 · 정원 흙", "hanja": "己土", "oneline": "심으면 살리는 흙." },
+      "gyeong-geum": { "label": "경금 · 큰 쇠", "hanja": "庚金", "oneline": "벼려진 면의 단단함." },
+      "sin-geum": { "label": "신금 · 작은 쇠", "hanja": "辛金", "oneline": "세공되어 빛나는 광택." },
+      "im-su": { "label": "임수 · 넓은 호수", "hanja": "壬水", "oneline": "넓게 고이고, 깊게 흐르는 물." },
+      "gye-su": { "label": "계수 · 시냇물", "hanja": "癸水", "oneline": "길을 내면서 스며드는 물." }
+    },
+    "relations": {
+      "dam": { "node": "둑", "sentence": "둑을 만나면, 당신의 물은 고여 깊어집니다." },
+      "stream": { "node": "시냇물", "sentence": "시냇물을 만나면, 당신의 호수는 섞여 넓어집니다." },
+      "great-tree": { "node": "큰 나무", "sentence": "나무를 만나면, 당신의 물은 그늘을 얻습니다." },
+      "mountain": { "node": "큰 산", "sentence": "산을 만나면, 당신의 흐름은 방향을 얻습니다." }
+    }
+  },
+  "en-US": {
+    "landing": {
+      "wordmark": "{{BRAND}}",
+      "hero.headline": "You are {{BADGE}}.",
+      "hero.sub": "A short video shows the letters of your day. {{BRAND}} reads the lifelong pattern they make.",
+      "cta.primary": "Read my pattern",
+      "badgestrip.label": "The ten forms",
+      "badgestrip.guide": "Your birth date assigns you one of ten forms.",
+      "badgestrip.examples": ["{{BADGE}}", "{{BADGE}}", "{{BADGE}}"],
+      "cardpreview.headline": "The result stays as a single card.",
+      "cardpreview.caption": "The badge and one line carry the meaning on their own.",
+      "closing.headline": "Your reading begins with eight letters.",
+      "closing.cta": "Read my pattern",
+      "footer.disclaimer": "{{BRAND}} is a reading tool for self-understanding. It is not medical, legal, or financial advice.",
+      "footer.links": ["Privacy Policy", "Terms of Service"]
+    },
+    "input": {
+      "title": "Enter your date of birth.",
+      "birthdate.labels": ["Year", "Month", "Day"],
+      "birthdate.helper": "Dates default to the solar calendar. You can switch to lunar below.",
+      "birthdate.lunar-toggle": "Enter a lunar date",
+      "time.label": "Time of birth",
+      "time.helper": "The closer to your exact time, the sharper the reading.",
+      "time.unknown": "I don't know my birth time",
+      "time.unknown-helper": "You can still get your reading. It covers fewer topics.",
+      "city.label": "City of birth",
+      "city.helper": "Used only to adjust for local time.",
+      "slots.caption": "Your eight letters fill these slots.",
+      "privacy": "Your entries are used only for your reading. Nothing is stored without separate consent.",
+      "cta.primary": "Read my pattern",
+      "error.common": "Please check this.",
+      "error.year": "Enter the year in 4 digits.",
+      "error.range": "Enter a year after 1900.",
+      "error.time": "Pick a time, or tap I don't know my birth time."
+    },
+    "calculating": {
+      "caption": "Assembling your eight letters.",
+      "fourcolumns": ["年", "月", "日", "時"],
+      "steps": ["The letter of your birth year", "The letter of your birth month", "The letter of your birth day", "The letter of your birth hour"],
+      "fourcolumns.no-time": "With no birth hour, the reading uses the letters through the day.",
+      "done": "Your eight letters are set.",
+      "deterministic": "The same birth date always produces the same reading.",
+      "skip": "Skip"
+    },
+    "resultFree": {
+      "card.badge": "{{BADGE}}",
+      "card.declaration": "You are {{BADGE}}.",
+      "card.oneline": "It gathers wide, and runs deep.",
+      "card.signature": "{{BRAND}}",
+      "body.sample": "Your energy is water that weakens in tight places and does its work as it spreads wide. In work where narrow frames and short deadlines repeat, your pattern is to tire before your skill gives out. As your role widens, you grow steadier.",
+      "cutblock.headline": "This is your structure.",
+      "cutblock.transition": "Next, how to work with it.",
+      "cutblock.preview-topics": ["Strong phases, weak phases", "Patterns that repeat in relationships", "When things change"],
+      "cutblock.preview-bodies": [
+        "Your strength builds in phases that expand, and wears thin in phases that only maintain.",
+        "You grow steady in relationships where what you give gathers, and tire, over and over, where it all drains away.",
+        "A turn in the current arrives in your mid-thirties, and what you widen then decides how deep the next water runs."
+      ],
+      "cutblock.cta": "Read my pattern · {{PRICE}}",
+      "cutblock.sub": "One payment unlocks all seven topics.",
+      "cutblock.valueframe": "Pay once, and reread it whenever you like.",
+      "share.guide": "Keep your result as a card, and share it.",
+      "share.cta": "Save my card"
+    },
+    "pay": {
+      "summary": "Full reading · 7 topics",
+      "summary.sub": "Available the moment you pay.",
+      "price": "{{PRICE}}",
+      "guarantee": ["One-time payment. No subscription.", "Delivered instantly.", "Full refund, no questions asked."],
+      "pay-methods": ["Apple Pay", "Google Pay"],
+      "cardform.labels": ["Card number", "Expiry date", "Security code"],
+      "cardform.errors": ["Check the card number.", "Check the expiry date."],
+      "cta.final": "Pay now",
+      "footer.disclaimer": "{{BRAND}} is a reading tool for self-understanding. It is not medical, legal, or financial advice."
+    },
+    "resultPaid": {
+      "badge": "{{BADGE}}",
+      "chapters": ["The form that made you", "How your energy moves", "Strong phases, weak phases", "Patterns in your work", "Patterns that repeat in relationships", "How you meet money", "When things change"],
+      "body.sample": "A wide lake needs no dam. The work is to manage what flows in, so the water never runs dry. You recover not by widening the vessel, but by narrowing the places where it drains.",
+      "timeline.lead": "Every ten years, your current turns.",
+      "timeline.sample": "A turn in the current arrives in your mid-thirties. What you widen then decides how deep the next water runs.",
+      "evidence.tag": "Node B2 · the river keeps its flow through metal",
+      "quote.cta": "Keep this line as a card",
+      "bottom.cta": "Save my card"
+    },
+    "shareCard": {
+      "badge": "{{BADGE}}",
+      "hanja": "壬水",
+      "oneline": "It gathers wide, and runs deep.",
+      "wordmark": "{{BRAND}}",
+      "outside.guide": "The card alone carries the meaning.",
+      "cta.save": "Save my card",
+      "cta.share": "Share"
+    },
+    "badges": {
+      "gap-mok": { "label": "{{BADGE}}", "kr-ref": "갑목 · 큰 나무", "hanja": "甲木", "oneline": "A trunk that reaches up, roots that reach down." },
+      "eul-mok": { "label": "{{BADGE}}", "kr-ref": "을목 · 작은 나무", "hanja": "乙木", "oneline": "It bends without breaking." },
+      "byeong-hwa": { "label": "{{BADGE}}", "kr-ref": "병화 · 태양", "hanja": "丙火", "oneline": "Heat that reaches wide." },
+      "jeong-hwa": { "label": "{{BADGE}}", "kr-ref": "정화 · 달", "hanja": "丁火", "oneline": "A light that lingers close." },
+      "mu-to": { "label": "{{BADGE}}", "kr-ref": "무토 · 큰 산", "hanja": "戊土", "oneline": "A ground too heavy to shift." },
+      "gi-to": { "label": "{{BADGE}}", "kr-ref": "기토 · 정원 흙", "hanja": "己土", "oneline": "Soil that keeps what you plant alive." },
+      "gyeong-geum": { "label": "{{BADGE}}", "kr-ref": "경금 · 큰 쇠", "hanja": "庚金", "oneline": "The hardness of a forged surface." },
+      "sin-geum": { "label": "{{BADGE}}", "kr-ref": "신금 · 작은 쇠", "hanja": "辛金", "oneline": "A gleam refined by fine work." },
+      "im-su": { "label": "{{BADGE}}", "kr-ref": "임수 · 넓은 호수", "hanja": "壬水", "oneline": "Water that gathers wide and runs deep." },
+      "gye-su": { "label": "{{BADGE}}", "kr-ref": "계수 · 시냇물", "hanja": "癸水", "oneline": "Water that makes its way, and sinks in." }
+    },
+    "relations": {
+      "dam": { "node": "dam", "sentence": "When you meet a dam, your water gathers and deepens." },
+      "stream": { "node": "stream", "sentence": "When you meet a stream, your lake mingles and widens." },
+      "great-tree": { "node": "great tree", "sentence": "When you meet a great tree, your water finds shade." },
+      "mountain": { "node": "mountain", "sentence": "When you meet a mountain, your flow gains direction." }
+    }
+  }
+}
