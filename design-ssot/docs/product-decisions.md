@@ -18,3 +18,7 @@
 ## 토큰 규칙 (G1 검증 대상)
 
 `{{BRAND}}` · `{{PRICE}}` 외 하드코딩 금지 범위: design-ssot/02-direction, design-ssot/04-design-tokens 내 가격·서비스명 문자열.
+
+## P2 갱신 (2026-09-05, 데드라인 도래)
+
+{{BRAND}} 확정 데드라인(U1 완료 직후)이 도래했다. product-decisions.md 절차에 따라 **SajuRoot 기본 채택(임정)**으로 자동 승격한다. {{BRAND}} 토큰 체계는 유지되며 치환값만 확정된다. 이의(변경) 시 본 문서를 수정하면 된다.
