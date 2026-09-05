@@ -1,0 +1,220 @@
+/* ============================================================
+   K-Saju Typography & Line-Breaking System · Multilang Extension v1.1
+   10-로케일 조판: ko-KR en-US en-GB ja-JP zh-Hans th-TH vi-VN fil-PH id-ID ru-RU
+   근거: design-ssot/02-direction/typography-linebreak-system.md (v1.0 원칙 승계)
+   관계: design-ssot/02-direction/typography.css (v1.0)을 수정 없이 @import로 확장
+   사양: docs/i18n-spec.md (URL 구조 · 카피덱 · QA · 폰트 로딩)
+   연결: <link rel="stylesheet" href="/styles/typography-multilang.css">
+   Design Read: 언어가 규칙을 결정하고 디바이스는 폭만 바꾼다 · 스크립트별
+   마크 구조(태국어 쌓임 · 베트남어 겹받침)가 행간을, 단어 구조(러시아어 장단어)가
+   하이픈을, 문자체계(CJK 금칙)가 line-break을 결정한다.
+   ============================================================ */
+
+@import url("../design-ssot/02-direction/typography.css");
+
+/* ---------- 0. 관계 선언 ----------
+   ko/en 은 base §3·§4가 단일 진실원천 (이 파일에서 중복 정의 금지).
+   이 파일은 나머지 8개 로케일 + zh·fil 별칭 + 스크립트별 폰트 스택을 담당.
+   :lang() 은 BCP47 접두 매칭이므로 :lang(ja) 는 lang="ja-JP" 에도 적용된다.
+   로케일 -> 셀렉터 대응:
+     ko-KR -> :lang(ko)          [base]
+     en-US / en-GB -> :lang(en)  [base]
+     ja-JP -> :lang(ja)
+     zh-Hans -> :lang(zh) · :lang(zh-Hans)
+     th-TH -> :lang(th)
+     vi-VN -> :lang(vi)
+     fil-PH -> :lang(fil) (레거시 tl 별칭 포함)
+     id-ID -> :lang(id)
+     ru-RU -> :lang(ru) */
+
+/* ---------- 1. 다국어 토큰 (base §1 확장) ---------- */
+:root {
+  /* 행간: 마크가 쌓이는 스크립트일수록 크다 */
+  --lh-ja: 1.8;                 /* 일본어: 한자+가나 밀도, 한글과 동일 축 */
+  --lh-zh: 1.8;                 /* 중국어 간체 */
+  --lh-th: 1.9;                 /* 태국어: 상하부 모음·성조 3단 쌓임 · 최대 */
+  --lh-vi: 1.7;                 /* 베트남어: 겹받침 발음구분 기호(예: ề ậ) 보정 */
+  --lh-ru: 1.6;                 /* 러시아어: 키릴 디센더는 라틴과 동일 수준 */
+  --lh-display-th: 1.3;         /* base --lh-display 1.15 는 태국어 마크 클리핑 위험 */
+  --lh-display-vi: 1.25;        /* 베트남어 디스플레이 보정 */
+
+  /* 행폭(measure): CJK 1자=1em · 태국어는 제로 어드밴스 마크 감안 환산 · 라틴·키릴은 ch */
+  --measure-ja: 36em;           /* 일본어 34~38자 */
+  --measure-ja-tight: 20em;
+  --measure-zh: 34em;           /* 간체 32~36자 */
+  --measure-zh-tight: 20em;
+  --measure-th: 30em;           /* 태국어 유효 45~55자 상당 */
+  --measure-th-tight: 18em;
+  --measure-vi: 60ch;           /* 장단어 보정 · en 66ch 보다 짧게 */
+  --measure-vi-tight: 32ch;
+  --measure-ru: 60ch;           /* 러시아어 평균 단어 길이가 길다 */
+  --measure-ru-tight: 32ch;
+  /* fil/id: 라틴 · base --measure-en(66ch)/--measure-en-tight(34ch) 재사용 */
+
+  /* 디스플레이 자간: 비라틴 스크립트는 음수 트래킹 금지 (마크·글리프 병치 충돌) */
+  --track-display-ja: 0em;
+  --track-display-zh: 0em;
+  --track-display-th: 0em;
+  --track-display-vi: -0.01em;  /* 라틴 계열이나 겹받침 여유 · en(-0.02em) 보다 보수 */
+  --track-display-ru: -0.02em;  /* 키릴은 라틴 디스플레이 문법 공유 */
+
+  /* ---------- 폰트 스택: 본문·UI 산세리프 (역할 × 스크립트) ----------
+     웹폰트 -> OS 폴백 -> 일반 패밀리 순서. 로딩 전략은 docs/i18n-spec.md §5.
+     Noto 계열이 10 로케일에서 동일 디자인 언어를 제공한다(브랜드 일관성). */
+  --font-sans-latin: "Noto Sans", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans-ko: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans", sans-serif;
+  --font-sans-ja: "Noto Sans JP", "Hiragino Sans", "Meiryo", "Yu Gothic", "Noto Sans", sans-serif;
+  --font-sans-zh-hans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans", sans-serif;
+  --font-sans-th: "Noto Sans Thai", "Sarabun", "Leelawadee UI", "Thonburi", "Tahoma", sans-serif;
+  --font-sans-vi: "Noto Sans Vietnamese", "Be Vietnam Pro", "Noto Sans", "Inter", system-ui, sans-serif;
+  --font-sans-ru: "Noto Sans", "Inter", "PT Sans", system-ui, "Segoe UI", sans-serif;
+  /* fil/id: --font-sans-latin 재사용 (라틴 규칙) */
+
+  /* ---------- 폰트 스택: 디스플레이 세리프 (.font-display 유틸 §5) ----------
+     DESIGN.md 3본제의 스크립트 확장. 라틴 디스플레이(Cinzel·Italiana·Cormorant)가
+     앞에 오고 스크립트 세리프가 뒤따른다 · 라틴 런은 Cinzel, 고유 스크립트는
+     해당 Noto Serif 로 렌더된다. Cinzel 은 라틴(+latin-ext) 한정이므로
+     vi(Cormorant 대체)·ru(Playfair Display 대체)는 자체 토큰으로 분기한다. */
+  --font-display-latin: "Cinzel", "Italiana", "Cormorant", "Noto Serif", serif;
+  --font-display-ko: "Cinzel", "Noto Serif KR", "Nanum Myeongjo", "AppleMyungjo", "Batang", serif;
+  --font-display-ja: "Cinzel", "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-display-zh-hans: "Cinzel", "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-display-th: "Cinzel", "Noto Serif Thai", "Noto Sans Thai", serif;
+  --font-display-vi: "Cormorant", "Playfair Display", "Noto Serif", serif;
+  --font-display-ru: "Playfair Display", "PT Serif", "Noto Serif", serif;
+
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+/* ---------- 2. 일본어 · ja-JP: 금칙처리(kinsoku) ---------- */
+:lang(ja) {
+  font-family: var(--font-sans-ja);
+  word-break: normal;           /* 띄어쓰기 없는 스크립트 · keep-all 은 오버플로 원인 (금지) */
+  line-break: strict;           /* 행두 금칙(。、」등) · 행말 금칙(「등) 엄격 적용 */
+  line-height: var(--lh-ja);
+  letter-spacing: 0;            /* 본문 트래킹 0 */
+  overflow-wrap: break-word;
+}
+:lang(ja) .measure { max-width: var(--measure-ja); }
+:lang(ja) .measure-tight { max-width: var(--measure-ja-tight); }
+:lang(ja) h1, :lang(ja) h2, :lang(ja) h3 { letter-spacing: var(--track-display-ja); }
+
+/* ---------- 3. 중국어 간체 · zh-Hans: 금칙처리 + 부호 압축 ----------
+   제품은 zh-Hans 만 제공 · zh-Hant 출시 시 폰트 스택 라인만 분기 필요. */
+:lang(zh) {
+  font-family: var(--font-sans-zh-hans);
+  word-break: normal;           /* 간체도 띄어쓰기 없음 · keep-all 금지 */
+  line-break: strict;           /* 행두 。·？·” 금지 · 행말 “ 금지 */
+  line-height: var(--lh-zh);
+  letter-spacing: 0;
+  overflow-wrap: break-word;
+}
+:lang(zh-Hans) .measure, :lang(zh) .measure { max-width: var(--measure-zh); }
+:lang(zh-Hans) .measure-tight, :lang(zh) .measure-tight { max-width: var(--measure-zh-tight); }
+:lang(zh) h1, :lang(zh) h2, :lang(zh) h3 { letter-spacing: var(--track-display-zh); }
+
+/* CJK 최신 조판 보강 (Chromium 2025+ · 미지원 UA 는 무시 · 규칙은 유지)
+   text-autospace: 한자<->라틴 경계 자동 1/8em
+   text-spacing-trim: 인접 전각 부호 쌍 압축(기본 normal 유지 · 명시) */
+:lang(ja), :lang(zh) {
+  text-autospace: normal;
+  text-spacing-trim: normal;
+}
+
+/* ---------- 4. 태국어 · th-TH: 사전 세그멘테이션 + 행간 1.9 ---------- */
+:lang(th) {
+  font-family: var(--font-sans-th);
+  word-break: normal;           /* UA 내장 태국어 사전(ICU)이 어경계 분할 · keep-all 금지 */
+  overflow-wrap: break-word;    /* 사전 미탑재 UA 안전판 · 무한 오버플로 방지 */
+  line-height: var(--lh-th);    /* 상·하부 마크 3단 쌓임 -> 전 로케일 최대 행간 */
+  letter-spacing: 0;            /* 제로 어드밴스 마크 분리 방지 · 트래킹 금지 */
+}
+:lang(th) .measure { max-width: var(--measure-th); }
+:lang(th) .measure-tight { max-width: var(--measure-th-tight); }
+/* 태국어 디스플레이: base 1.15 오버라이드 · 마크 클리핑 방지 */
+:lang(th) h1, :lang(th) h2, :lang(th) h3,
+:lang(th) .text-balance, :lang(th) .headline-2l, :lang(th) .headline-3l {
+  line-height: var(--lh-display-th);
+}
+:lang(th) h1, :lang(th) h2, :lang(th) h3 { letter-spacing: var(--track-display-th); }
+
+/* ---------- 5. 베트남어 · vi-VN: 발음구분 기호 보정 ---------- */
+:lang(vi) {
+  font-family: var(--font-sans-vi);
+  line-height: var(--lh-vi);    /* 라틴이나 겹받침(ề ậ ộ)으로 en(1.6) 보다 크게 */
+  letter-spacing: 0;            /* 본문 트래킹 0 · 마크 인접 충돌 회피 */
+  overflow-wrap: break-word;
+}
+:lang(vi) .measure { max-width: var(--measure-vi); }
+:lang(vi) .measure-tight { max-width: var(--measure-vi-tight); }
+/* 베트남어 디스플레이: 겹받침 여유 */
+:lang(vi) h1, :lang(vi) h2, :lang(vi) h3,
+:lang(vi) .text-balance, :lang(vi) .headline-2l, :lang(vi) .headline-3l {
+  line-height: var(--lh-display-vi);
+}
+:lang(vi) h1, :lang(vi) h2, :lang(vi) h3 { letter-spacing: var(--track-display-vi); }
+/* 협폭 컬럼에서만 하이픈 허용 (base §4 en 패턴 승계 · 본문 기본은 하이픈 없음) */
+:lang(vi).narrow, .narrow :lang(vi) p { hyphens: auto; -webkit-hyphens: auto; }
+
+/* ---------- 6. 러시아어 · ru-RU: 하이픈 자동화 ----------
+   평균 단어 7~9자 · 하이픈 없으면 행폭이 폭주한다. 전역 auto + 분절 품질 가드. */
+:lang(ru) {
+  font-family: var(--font-sans-ru);
+  line-height: var(--lh-ru);
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 9 3 3;        /* 9자 미만 단어 · 행두/행말 3자 미만 분절 금지 */
+  -webkit-hyphenate-limit-before: 3;   /* Safari 계열 접두사 (미지원 시 무시) */
+  -webkit-hyphenate-limit-after: 3;
+}
+:lang(ru) .measure { max-width: var(--measure-ru); }
+:lang(ru) .measure-tight { max-width: var(--measure-ru-tight); }
+:lang(ru) h1, :lang(ru) h2, :lang(ru) h3 { letter-spacing: var(--track-display-ru); }
+
+/* ---------- 7. 필리핀어 · 인도네시아어 · fil-PH / id-ID: 라틴 규칙 ----------
+   en 과 동일한 라틴 조판 · tl 은 fil 의 레거시 태그 별칭. */
+:lang(fil), :lang(tl), :lang(id) {
+  font-family: var(--font-sans-latin);
+  line-height: var(--lh-en);
+  overflow-wrap: break-word;
+}
+:lang(fil) .measure, :lang(tl) .measure, :lang(id) .measure { max-width: var(--measure-en); }
+:lang(fil) .measure-tight, :lang(tl) .measure-tight, :lang(id) .measure-tight { max-width: var(--measure-en-tight); }
+:lang(fil) h1, :lang(fil) h2, :lang(fil) h3,
+:lang(tl) h1, :lang(tl) h2, :lang(tl) h3,
+:lang(id) h1, :lang(id) h2, :lang(id) h3 { letter-spacing: var(--track-display-en); }
+/* 협폭 컬럼에서만 하이픈 (base §4 en 패턴 승계) */
+:lang(fil).narrow, .narrow :lang(fil) p,
+:lang(tl).narrow, .narrow :lang(tl) p,
+:lang(id).narrow, .narrow :lang(id) p { hyphens: auto; -webkit-hyphens: auto; }
+
+/* ---------- 8. 혼합 문장 (base §6 의 전 스크립트 확장) ----------
+   문단 언어가 자식 런(span lang="en" 등)에 행간을 물려준다 · 이중 행간 방지.
+   en 삽입 런의 자간도 문단 규칙 승계 · 비라틴 문단에서 라틴 트래킹 잔류 방지.
+   역방향(en 문장 속 비라틴 런)은 base v1.0 이 규칙을 두지 않으므로 여기서도
+   두지 않는다 · 카피 가이드상 삽입 런은 en 중심으로 구성한다. */
+:lang(th) :lang(en), :lang(ja) :lang(en), :lang(zh) :lang(en),
+:lang(vi) :lang(en), :lang(ru) :lang(en),
+:lang(fil) :lang(en), :lang(tl) :lang(en), :lang(id) :lang(en) {
+  line-height: inherit;
+  letter-spacing: 0;
+}
+
+/* ---------- 9. 디스플레이 세리프 유틸 (.font-display) ----------
+   히어로·공유 카드·한자 온머닌트. 로케일이 스택을 결정한다. */
+.font-display { font-family: var(--font-display-latin); }
+:lang(ko) .font-display { font-family: var(--font-display-ko); }
+:lang(ja) .font-display { font-family: var(--font-display-ja); }
+:lang(zh) .font-display, :lang(zh-Hans) .font-display { font-family: var(--font-display-zh-hans); }
+:lang(th) .font-display { font-family: var(--font-display-th); }
+:lang(vi) .font-display { font-family: var(--font-display-vi); }
+:lang(ru) .font-display { font-family: var(--font-display-ru); }
+/* en/fil/id: 기본값(--font-display-latin) 유지 */
+.font-display { text-wrap: balance; }
+
+/* ---------- 10. 고아·과부 가드 (조판 품질 · 미지원 UA 는 무시) ---------- */
+p, li { orphans: 2; widows: 2; }
+
+/* ---------- 11. 버전 노트 ----------
+   v1.1 (2026-09-05): 10-로케일 확장. base v1.0 불변 · @import 연결만.
+   다국어 QA 게이트·카피덱·URL 구조는 docs/i18n-spec.md 참조. */
