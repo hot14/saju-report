@@ -1,0 +1,117 @@
+{
+ "A": {
+  "entry": {
+   "status": "ok",
+   "screenId": "1a5b7a550849472389869111767fe0a3",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/A/entry.png",
+   "bytes": 125554
+  },
+  "calculating": {
+   "status": "ok",
+   "screenId": "0e739756960243f4a80f29e36e58ee87",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/A/calculating.png",
+   "bytes": 125488
+  },
+  "free_result": {
+   "status": "ok",
+   "screenId": "05bcec6f5c414094b9c55e22327015d4",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/A/free_result.png",
+   "bytes": 53626
+  },
+  "payment": {
+   "status": "ok",
+   "screenId": "e8732bacc0ea4703b9ca4a48c1ab4f2b",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/A/payment.png",
+   "bytes": 35779
+  },
+  "paid_result": {
+   "status": "ok",
+   "screenId": "84a6a32dbe0341d3be9c58a0a1f55343",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/A/paid_result.png",
+   "bytes": 67872
+  },
+  "share_card": {
+   "status": "ok",
+   "screenId": "ad964242adfc49f6ba31b286616ac95d",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/A/share_card.png",
+   "bytes": 124513
+  }
+ },
+ "C": {
+  "entry": {
+   "status": "ok",
+   "screenId": "386fb7947d4c438fb66b9e24db6db2d7",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/C/entry.png",
+   "bytes": 65416
+  },
+  "calculating": {
+   "status": "ok",
+   "screenId": "61852890777d4efdafc017b507bacd0a",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/C/calculating.png",
+   "bytes": 130630
+  },
+  "free_result": {
+   "status": "ok",
+   "screenId": "6340380067cf4275bb7240e4557621db",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/C/free_result.png",
+   "bytes": 61636
+  },
+  "payment": {
+   "status": "ok",
+   "screenId": "3006e92d133546cfa74a7e4e358a3187",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/C/payment.png",
+   "bytes": 115271
+  },
+  "paid_result": {
+   "status": "ok",
+   "screenId": "c3fb4a519165437596967ec13cd7c25d",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/C/paid_result.png",
+   "bytes": 47372
+  },
+  "share_card": {
+   "status": "ok",
+   "screenId": "a303e9cf6fcb4dc3835480d6ee0911b5",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/C/share_card.png",
+   "bytes": 69718
+  }
+ },
+ "AC": {
+  "entry": {
+   "status": "ok",
+   "screenId": "c0a2aae24c3f427ab0119fffc83fc7d7",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/AC/entry.png",
+   "bytes": 27314,
+   "note": "regenerated dark-mode fix"
+  },
+  "calculating": {
+   "status": "ok",
+   "screenId": "f7e5badd05dd480fa4294618b42f9c5c",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/AC/calculating.png",
+   "bytes": 122676
+  },
+  "free_result": {
+   "status": "ok",
+   "screenId": "297e81db84214cbaa9cbb8c246af5eb2",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/AC/free_result.png",
+   "bytes": 38094
+  },
+  "payment": {
+   "status": "ok",
+   "screenId": "39b7f654e30d403891e724da04f8549f",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/AC/payment.png",
+   "bytes": 97522
+  },
+  "paid_result": {
+   "status": "ok",
+   "screenId": "497d6b798a20435e8533832b3613b2a5",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/AC/paid_result.png",
+   "bytes": 62093
+  },
+  "share_card": {
+   "status": "ok",
+   "screenId": "2ddbb9a7e0584d39b7ac7e8a0edfe460",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows/AC/share_card.png",
+   "bytes": 44116
+  }
+ }
+}

@@ -1,0 +1,1574 @@
+{
+ "generated": "2026-09-05T06:28:16.056Z",
+ "note": "design reference SSOT for k-saju project",
+ "categories": [
+  {
+   "dir": "minhwa_art",
+   "query": "민화·먹선 (스타일 원천)",
+   "count": 14,
+   "entries": [
+    {
+     "file": "0dbaa48d914f8e313384506dabf362d1.jpg",
+     "source": "https://i.pinimg.com/736x/0d/ba/a4/0dbaa48d914f8e313384506dabf362d1.jpg",
+     "bytes": 156672
+    },
+    {
+     "file": "2d54029d30a9dff17881ceebaa7002e8.jpg",
+     "source": "https://i.pinimg.com/736x/2d/54/02/2d54029d30a9dff17881ceebaa7002e8.jpg",
+     "bytes": 170935
+    },
+    {
+     "file": "39cffe03970fcc09c8989f804b48e2c3.jpg",
+     "source": "https://i.pinimg.com/736x/39/cf/fe/39cffe03970fcc09c8989f804b48e2c3.jpg",
+     "bytes": 217718
+    },
+    {
+     "file": "3e0b6e211308bc41150d91c59059fdcc.jpg",
+     "source": "https://i.pinimg.com/736x/3e/0b/6e/3e0b6e211308bc41150d91c59059fdcc.jpg",
+     "bytes": 109701
+    },
+    {
+     "file": "43c6ed6f391a1eab6799d1d54c90f548.jpg",
+     "source": "https://i.pinimg.com/736x/43/c6/ed/43c6ed6f391a1eab6799d1d54c90f548.jpg",
+     "bytes": 217103
+    },
+    {
+     "file": "54706f3085a79c54fe97824a7bfe9a6e.jpg",
+     "source": "https://i.pinimg.com/736x/54/70/6f/54706f3085a79c54fe97824a7bfe9a6e.jpg",
+     "bytes": 129759
+    },
+    {
+     "file": "721be63c00e63a5ad3af02a2e9144c01.jpg",
+     "source": "https://i.pinimg.com/736x/72/1b/e6/721be63c00e63a5ad3af02a2e9144c01.jpg",
+     "bytes": 101594
+    },
+    {
+     "file": "84c5ee4216e84cb2e0e147adb379718e.jpg",
+     "source": "https://i.pinimg.com/736x/84/c5/ee/84c5ee4216e84cb2e0e147adb379718e.jpg",
+     "bytes": 103245
+    },
+    {
+     "file": "85064a5b2a4b8a6f21a084755874dd85.jpg",
+     "source": "https://i.pinimg.com/736x/85/06/4a/85064a5b2a4b8a6f21a084755874dd85.jpg",
+     "bytes": 194304
+    },
+    {
+     "file": "8b5c27c3d2b2f22fe83e45eb85960d82.jpg",
+     "source": "https://i.pinimg.com/736x/8b/5c/27/8b5c27c3d2b2f22fe83e45eb85960d82.jpg",
+     "bytes": 184774
+    },
+    {
+     "file": "bfae2ac5fa1566f3fa95ef1d8dd5b4c9.jpg",
+     "source": "https://i.pinimg.com/736x/bf/ae/2a/bfae2ac5fa1566f3fa95ef1d8dd5b4c9.jpg",
+     "bytes": 212013
+    },
+    {
+     "file": "cab8cbf38f735ce0e43fb5b5f05cbc52.jpg",
+     "source": "https://i.pinimg.com/736x/ca/b8/cb/cab8cbf38f735ce0e43fb5b5f05cbc52.jpg",
+     "bytes": 147096
+    },
+    {
+     "file": "e1c8651eda9173d3cad2d01fdbd1b5e4.jpg",
+     "source": "https://i.pinimg.com/736x/e1/c8/65/e1c8651eda9173d3cad2d01fdbd1b5e4.jpg",
+     "bytes": 113075
+    },
+    {
+     "file": "f4ced682ec25ebdb8a788648dcd4e7e7.jpg",
+     "source": "https://i.pinimg.com/736x/f4/ce/d6/f4ced682ec25ebdb8a788648dcd4e7e7.jpg",
+     "bytes": 169826
+    }
+   ]
+  },
+  {
+   "dir": "ink-wash",
+   "query": "수묵화·한지 (라이선스)",
+   "count": 20,
+   "metaFile": "assets/ink-wash/manifest.json",
+   "entries": [
+    {
+     "file": "hanji-texture-01.jpg",
+     "source": null,
+     "bytes": 221792
+    },
+    {
+     "file": "hanji-texture-02.jpg",
+     "source": null,
+     "bytes": 196911
+    },
+    {
+     "file": "hanji-texture-03.jpg",
+     "source": null,
+     "bytes": 360020
+    },
+    {
+     "file": "hanji-texture-04.jpg",
+     "source": null,
+     "bytes": 321127
+    },
+    {
+     "file": "hanji-texture-05.jpg",
+     "source": null,
+     "bytes": 644742
+    },
+    {
+     "file": "hanji-texture-06.jpg",
+     "source": null,
+     "bytes": 478990
+    },
+    {
+     "file": "ink-animal-01.jpg",
+     "source": null,
+     "bytes": 553599
+    },
+    {
+     "file": "ink-animal-02.jpg",
+     "source": null,
+     "bytes": 37820
+    },
+    {
+     "file": "ink-animal-03.jpg",
+     "source": null,
+     "bytes": 66253
+    },
+    {
+     "file": "ink-animal-04.jpg",
+     "source": null,
+     "bytes": 189302
+    },
+    {
+     "file": "ink-animal-05.jpg",
+     "source": null,
+     "bytes": 731725
+    },
+    {
+     "file": "ink-animal-06.jpg",
+     "source": null,
+     "bytes": 195364
+    },
+    {
+     "file": "ink-animal2-01.jpg",
+     "source": null,
+     "bytes": 579802
+    },
+    {
+     "file": "ink-animal2-02.jpg",
+     "source": null,
+     "bytes": 218272
+    },
+    {
+     "file": "ink-animal2-03.jpg",
+     "source": null,
+     "bytes": 127670
+    },
+    {
+     "file": "ink-animal2-04.jpg",
+     "source": null,
+     "bytes": 632337
+    },
+    {
+     "file": "ink-animal2-05.jpg",
+     "source": null,
+     "bytes": 828555
+    },
+    {
+     "file": "sumukhwa-01.jpg",
+     "source": null,
+     "bytes": 228914
+    },
+    {
+     "file": "sumukhwa-02.jpg",
+     "source": null,
+     "bytes": 189072
+    },
+    {
+     "file": "sumukhwa-03.jpg",
+     "source": null,
+     "bytes": 297972
+    }
+   ]
+  },
+  {
+   "dir": "ink-illustration",
+   "query": "먹선 네이처 일러스트",
+   "count": 14,
+   "entries": [
+    {
+     "file": "ink-ill-01.jpg",
+     "source": null,
+     "bytes": 58040
+    },
+    {
+     "file": "ink-ill-02.jpg",
+     "source": null,
+     "bytes": 48230
+    },
+    {
+     "file": "ink-ill-03.jpg",
+     "source": null,
+     "bytes": 109349
+    },
+    {
+     "file": "ink-ill-04.jpg",
+     "source": null,
+     "bytes": 76667
+    },
+    {
+     "file": "ink-ill-05.jpg",
+     "source": null,
+     "bytes": 107896
+    },
+    {
+     "file": "ink-ill-06.jpg",
+     "source": null,
+     "bytes": 130651
+    },
+    {
+     "file": "ink-ill-07.jpg",
+     "source": null,
+     "bytes": 203573
+    },
+    {
+     "file": "ink-ill-08.jpg",
+     "source": null,
+     "bytes": 47098
+    },
+    {
+     "file": "ink-ill-09.jpg",
+     "source": null,
+     "bytes": 29378
+    },
+    {
+     "file": "ink-ill-10.jpg",
+     "source": null,
+     "bytes": 81510
+    },
+    {
+     "file": "ink-ill-11.jpg",
+     "source": null,
+     "bytes": 49712
+    },
+    {
+     "file": "ink-ill-12.jpg",
+     "source": null,
+     "bytes": 86381
+    },
+    {
+     "file": "ink-ill-13.jpg",
+     "source": null,
+     "bytes": 50209
+    },
+    {
+     "file": "ink-ill-14.jpg",
+     "source": null,
+     "bytes": 57900
+    }
+   ]
+  },
+  {
+   "dir": "editorial_serif_web",
+   "query": "에디토리얼 세리프 웹",
+   "count": 13,
+   "entries": [
+    {
+     "file": "15f02db2d0c1941278ea34b57785bee6.jpg",
+     "source": "https://i.pinimg.com/736x/15/f0/2d/15f02db2d0c1941278ea34b57785bee6.jpg",
+     "bytes": 47858
+    },
+    {
+     "file": "17fcdfa4f7d509e9be9e0c494d1ca95f.jpg",
+     "source": "https://i.pinimg.com/736x/17/fc/df/17fcdfa4f7d509e9be9e0c494d1ca95f.jpg",
+     "bytes": 78765
+    },
+    {
+     "file": "1de5d2c5c970f475b72e08335b55eaee.jpg",
+     "source": "https://i.pinimg.com/736x/1d/e5/d2/1de5d2c5c970f475b72e08335b55eaee.jpg",
+     "bytes": 93122
+    },
+    {
+     "file": "2887156cfab4e1844734aadc2cfedf83.jpg",
+     "source": "https://i.pinimg.com/736x/28/87/15/2887156cfab4e1844734aadc2cfedf83.jpg",
+     "bytes": 26035
+    },
+    {
+     "file": "32cff9e5520cd8f80ac542c0daf70164.jpg",
+     "source": "https://i.pinimg.com/736x/32/cf/f9/32cff9e5520cd8f80ac542c0daf70164.jpg",
+     "bytes": 116363
+    },
+    {
+     "file": "48b3763ed060eb854b3f16a539435705.jpg",
+     "source": "https://i.pinimg.com/736x/48/b3/76/48b3763ed060eb854b3f16a539435705.jpg",
+     "bytes": 144251
+    },
+    {
+     "file": "70dfb1743099d65a1a783921a9b5b877.jpg",
+     "source": "https://i.pinimg.com/736x/70/df/b1/70dfb1743099d65a1a783921a9b5b877.jpg",
+     "bytes": 37492
+    },
+    {
+     "file": "71f88e2411fbb7d3b093fdef85852e02.jpg",
+     "source": "https://i.pinimg.com/736x/71/f8/8e/71f88e2411fbb7d3b093fdef85852e02.jpg",
+     "bytes": 94404
+    },
+    {
+     "file": "a3537517792a8fbf35243f5c5dc39dc3.jpg",
+     "source": "https://i.pinimg.com/736x/a3/53/75/a3537517792a8fbf35243f5c5dc39dc3.jpg",
+     "bytes": 127232
+    },
+    {
+     "file": "aa5a6568bb93d50ad21f6c2eb00f9c9d.jpg",
+     "source": "https://i.pinimg.com/736x/aa/5a/65/aa5a6568bb93d50ad21f6c2eb00f9c9d.jpg",
+     "bytes": 116819
+    },
+    {
+     "file": "b288512321d67d1e49c4f3ef9c5a16de.jpg",
+     "source": "https://i.pinimg.com/736x/b2/88/51/b288512321d67d1e49c4f3ef9c5a16de.jpg",
+     "bytes": 23205
+    },
+    {
+     "file": "cfdac5432263e1286b434f41e57b3442.jpg",
+     "source": "https://i.pinimg.com/736x/cf/da/c5/cfdac5432263e1286b434f41e57b3442.jpg",
+     "bytes": 131048
+    },
+    {
+     "file": "fa1630f15f38c6143cfe59ceb52f5793.jpg",
+     "source": "https://i.pinimg.com/736x/fa/16/30/fa1630f15f38c6143cfe59ceb52f5793.jpg",
+     "bytes": 86261
+    }
+   ]
+  },
+  {
+   "dir": "typography",
+   "query": "타입 스펙imen",
+   "count": 16,
+   "entries": [
+    {
+     "file": "cinzel.png",
+     "source": null,
+     "bytes": 126663
+    },
+    {
+     "file": "cormorant-garamond.png",
+     "source": null,
+     "bytes": 132920
+    },
+    {
+     "file": "eb-garamond.png",
+     "source": null,
+     "bytes": 138552
+    },
+    {
+     "file": "fontshare-cabinet-grotesk.png",
+     "source": null,
+     "bytes": 52662
+    },
+    {
+     "file": "fontshare-general-sans.png",
+     "source": null,
+     "bytes": 67222
+    },
+    {
+     "file": "fontshare-satoshi.png",
+     "source": null,
+     "bytes": 52456
+    },
+    {
+     "file": "fraunces.png",
+     "source": null,
+     "bytes": 134007
+    },
+    {
+     "file": "gowun-batang.png",
+     "source": null,
+     "bytes": 153263
+    },
+    {
+     "file": "gowun-dodum.png",
+     "source": null,
+     "bytes": 141181
+    },
+    {
+     "file": "ibm-plex-sans-kr.png",
+     "source": null,
+     "bytes": 124133
+    },
+    {
+     "file": "instrument-serif.png",
+     "source": null,
+     "bytes": 129442
+    },
+    {
+     "file": "italiana.png",
+     "source": null,
+     "bytes": 112372
+    },
+    {
+     "file": "marcellus.png",
+     "source": null,
+     "bytes": 120513
+    },
+    {
+     "file": "maruburi-noonnu.png",
+     "source": null,
+     "bytes": 549217
+    },
+    {
+     "file": "nanum-myeongjo.png",
+     "source": null,
+     "bytes": 160690
+    },
+    {
+     "file": "noto-serif-kr.png",
+     "source": null,
+     "bytes": 120330
+    }
+   ]
+  },
+  {
+   "dir": "share_card_design",
+   "query": "공유 카드 구조",
+   "count": 14,
+   "entries": [
+    {
+     "file": "0732c90d6c79a4461f5b53a81aa3583f.jpg",
+     "source": "https://i.pinimg.com/736x/07/32/c9/0732c90d6c79a4461f5b53a81aa3583f.jpg",
+     "bytes": 73136
+    },
+    {
+     "file": "0a6d022a8232687f640f585fa6c490ab.jpg",
+     "source": "https://i.pinimg.com/736x/0a/6d/02/0a6d022a8232687f640f585fa6c490ab.jpg",
+     "bytes": 78466
+    },
+    {
+     "file": "1ef03cfaf504fab7e14ab7af09ee6837.jpg",
+     "source": "https://i.pinimg.com/736x/1e/f0/3c/1ef03cfaf504fab7e14ab7af09ee6837.jpg",
+     "bytes": 108152
+    },
+    {
+     "file": "2163ba7c30241a373bd9c998dcafcb6d.jpg",
+     "source": "https://i.pinimg.com/736x/21/63/ba/2163ba7c30241a373bd9c998dcafcb6d.jpg",
+     "bytes": 89414
+    },
+    {
+     "file": "4dedece5fef4fe7658befa1d5ca21b22.jpg",
+     "source": "https://i.pinimg.com/736x/4d/ed/ec/4dedece5fef4fe7658befa1d5ca21b22.jpg",
+     "bytes": 103476
+    },
+    {
+     "file": "583755a050a1ce9ca8c824da77d6756c.jpg",
+     "source": "https://i.pinimg.com/736x/58/37/55/583755a050a1ce9ca8c824da77d6756c.jpg",
+     "bytes": 108334
+    },
+    {
+     "file": "5f9f8457d67f50ea03fe48f8c9db28bb.jpg",
+     "source": "https://i.pinimg.com/736x/5f/9f/84/5f9f8457d67f50ea03fe48f8c9db28bb.jpg",
+     "bytes": 161025
+    },
+    {
+     "file": "67a391fb68ce928aae25f442a0067fab.jpg",
+     "source": "https://i.pinimg.com/736x/67/a3/91/67a391fb68ce928aae25f442a0067fab.jpg",
+     "bytes": 85120
+    },
+    {
+     "file": "96128a9749b5698c5d35e496a077ecd1.jpg",
+     "source": "https://i.pinimg.com/736x/96/12/8a/96128a9749b5698c5d35e496a077ecd1.jpg",
+     "bytes": 53515
+    },
+    {
+     "file": "b20cecc190527be6fbcb6c9721af6d4a.jpg",
+     "source": "https://i.pinimg.com/736x/b2/0c/ec/b20cecc190527be6fbcb6c9721af6d4a.jpg",
+     "bytes": 111391
+    },
+    {
+     "file": "b92b9c07ac4cb5b777c4790c837a4a40.jpg",
+     "source": "https://i.pinimg.com/736x/b9/2b/9c/b92b9c07ac4cb5b777c4790c837a4a40.jpg",
+     "bytes": 79701
+    },
+    {
+     "file": "e0384086b31d8442912f30e3eedd3a7d.jpg",
+     "source": "https://i.pinimg.com/736x/e0/38/40/e0384086b31d8442912f30e3eedd3a7d.jpg",
+     "bytes": 57146
+    },
+    {
+     "file": "f1b5d112ca0baaf1e56b1b787c675d5f.jpg",
+     "source": "https://i.pinimg.com/736x/f1/b5/d1/f1b5d112ca0baaf1e56b1b787c675d5f.jpg",
+     "bytes": 124448
+    },
+    {
+     "file": "f4c3b6016ee5f88f7bdd6495a352c33b.jpg",
+     "source": "https://i.pinimg.com/736x/f4/c3/b6/f4c3b6016ee5f88f7bdd6495a352c33b.jpg",
+     "bytes": 62096
+    }
+   ]
+  },
+  {
+   "dir": "saju_design",
+   "query": "사주 디자인",
+   "count": 17,
+   "entries": [
+    {
+     "file": "08b4a65f44902b289cf756aaef5e0606.jpg",
+     "source": "https://i.pinimg.com/736x/08/b4/a6/08b4a65f44902b289cf756aaef5e0606.jpg",
+     "bytes": 111576
+    },
+    {
+     "file": "122d8e3e2d67191752a7c29081e39775.jpg",
+     "source": "https://i.pinimg.com/736x/12/2d/8e/122d8e3e2d67191752a7c29081e39775.jpg",
+     "bytes": 166721
+    },
+    {
+     "file": "149eae4ed045db9ef19995ee0eecfd24.jpg",
+     "source": "https://i.pinimg.com/736x/14/9e/ae/149eae4ed045db9ef19995ee0eecfd24.jpg",
+     "bytes": 119796
+    },
+    {
+     "file": "341fb74b070ded30242b733a3338ac7a.jpg",
+     "source": "https://i.pinimg.com/736x/34/1f/b7/341fb74b070ded30242b733a3338ac7a.jpg",
+     "bytes": 114521
+    },
+    {
+     "file": "3a2a69d7a54f2574e11c38f30e914f71.jpg",
+     "source": "https://i.pinimg.com/736x/3a/2a/69/3a2a69d7a54f2574e11c38f30e914f71.jpg",
+     "bytes": 131238
+    },
+    {
+     "file": "44ee2d57cdfbffcae734cc7ce7d6eca5.jpg",
+     "source": "https://i.pinimg.com/736x/44/ee/2d/44ee2d57cdfbffcae734cc7ce7d6eca5.jpg",
+     "bytes": 95793
+    },
+    {
+     "file": "50871c01a49d17c30535b2e77d0275a1.jpg",
+     "source": "https://i.pinimg.com/736x/50/87/1c/50871c01a49d17c30535b2e77d0275a1.jpg",
+     "bytes": 69262
+    },
+    {
+     "file": "657bb32ba27c8b104da6beb7bd6e5ffa.jpg",
+     "source": "https://i.pinimg.com/736x/65/7b/b3/657bb32ba27c8b104da6beb7bd6e5ffa.jpg",
+     "bytes": 123302
+    },
+    {
+     "file": "7778f8ce26c654f5c516add1a3caea8d.jpg",
+     "source": "https://i.pinimg.com/736x/77/78/f8/7778f8ce26c654f5c516add1a3caea8d.jpg",
+     "bytes": 92076
+    },
+    {
+     "file": "823b13a8c900a99cfe735b2b453420fd.jpg",
+     "source": "https://i.pinimg.com/736x/82/3b/13/823b13a8c900a99cfe735b2b453420fd.jpg",
+     "bytes": 67102
+    },
+    {
+     "file": "b5c91e8eb25bb5d3afa03a687d75d15b.jpg",
+     "source": "https://i.pinimg.com/736x/b5/c9/1e/b5c91e8eb25bb5d3afa03a687d75d15b.jpg",
+     "bytes": 95733
+    },
+    {
+     "file": "b6cde5b90ce7f6392e186a1985115ed0.jpg",
+     "source": "https://i.pinimg.com/736x/b6/cd/e5/b6cde5b90ce7f6392e186a1985115ed0.jpg",
+     "bytes": 65965
+    },
+    {
+     "file": "c3f434ba85f5fafbdafd24a61309c52b.jpg",
+     "source": "https://i.pinimg.com/736x/c3/f4/34/c3f434ba85f5fafbdafd24a61309c52b.jpg",
+     "bytes": 12948
+    },
+    {
+     "file": "ca4945976d311f266418b947d629fc2c.jpg",
+     "source": "https://i.pinimg.com/736x/ca/49/45/ca4945976d311f266418b947d629fc2c.jpg",
+     "bytes": 31554
+    },
+    {
+     "file": "e6f225b671cf1b67b98413a5750b3aa8.jpg",
+     "source": "https://i.pinimg.com/736x/e6/f2/25/e6f225b671cf1b67b98413a5750b3aa8.jpg",
+     "bytes": 40163
+    },
+    {
+     "file": "e92d9ea914b1ff31d373d8600635c043.jpg",
+     "source": "https://i.pinimg.com/736x/e9/2d/9e/e92d9ea914b1ff31d373d8600635c043.jpg",
+     "bytes": 115817
+    },
+    {
+     "file": "f0fd94d28f80eebd611ff319597442e8.jpg",
+     "source": "https://i.pinimg.com/60x60/f0/fd/94/f0fd94d28f80eebd611ff319597442e8.jpg",
+     "bytes": 2031
+    }
+   ]
+  },
+  {
+   "dir": "astrology_app_ui",
+   "query": "점성술 앱 UI",
+   "count": 14,
+   "entries": [
+    {
+     "file": "076d8311d206f0d91c23dbfc47aaccae.jpg",
+     "source": "https://i.pinimg.com/736x/07/6d/83/076d8311d206f0d91c23dbfc47aaccae.jpg",
+     "bytes": 30873
+    },
+    {
+     "file": "0973bee53548040164b5fd0cf643b1f6.jpg",
+     "source": "https://i.pinimg.com/736x/09/73/be/0973bee53548040164b5fd0cf643b1f6.jpg",
+     "bytes": 54001
+    },
+    {
+     "file": "0e8931434ca45b6819e04d60c020a23c.jpg",
+     "source": "https://i.pinimg.com/736x/0e/89/31/0e8931434ca45b6819e04d60c020a23c.jpg",
+     "bytes": 77133
+    },
+    {
+     "file": "197b5dd31344f001b7db846ec1bf6313.jpg",
+     "source": "https://i.pinimg.com/736x/19/7b/5d/197b5dd31344f001b7db846ec1bf6313.jpg",
+     "bytes": 87031
+    },
+    {
+     "file": "4e43220cd91a5d5fbbf8b61be4cbbe13.jpg",
+     "source": "https://i.pinimg.com/736x/4e/43/22/4e43220cd91a5d5fbbf8b61be4cbbe13.jpg",
+     "bytes": 9903
+    },
+    {
+     "file": "5cd3b490c28853b26f1853681577b4b3.jpg",
+     "source": "https://i.pinimg.com/736x/5c/d3/b4/5cd3b490c28853b26f1853681577b4b3.jpg",
+     "bytes": 134832
+    },
+    {
+     "file": "932962cbf6b1919764b4862292b788dc.jpg",
+     "source": "https://i.pinimg.com/736x/93/29/62/932962cbf6b1919764b4862292b788dc.jpg",
+     "bytes": 45288
+    },
+    {
+     "file": "a281b10292a4795919b18221de62abec.jpg",
+     "source": "https://i.pinimg.com/736x/a2/81/b1/a281b10292a4795919b18221de62abec.jpg",
+     "bytes": 67255
+    },
+    {
+     "file": "aaf0d8f9ea4b661ca4d4709b588affa7.jpg",
+     "source": "https://i.pinimg.com/736x/aa/f0/d8/aaf0d8f9ea4b661ca4d4709b588affa7.jpg",
+     "bytes": 51222
+    },
+    {
+     "file": "bd3413665b1c8aaddab9a964febfd3e3.jpg",
+     "source": "https://i.pinimg.com/736x/bd/34/13/bd3413665b1c8aaddab9a964febfd3e3.jpg",
+     "bytes": 96810
+    },
+    {
+     "file": "beed3220053dafd767b42c88180152d8.jpg",
+     "source": "https://i.pinimg.com/736x/be/ed/32/beed3220053dafd767b42c88180152d8.jpg",
+     "bytes": 40868
+    },
+    {
+     "file": "cfdb6f61787eef7e094fa23e040a11ef.jpg",
+     "source": "https://i.pinimg.com/736x/cf/db/6f/cfdb6f61787eef7e094fa23e040a11ef.jpg",
+     "bytes": 84359
+    },
+    {
+     "file": "ec42faa45f873563f191945e30f63109.jpg",
+     "source": "https://i.pinimg.com/736x/ec/42/fa/ec42faa45f873563f191945e30f63109.jpg",
+     "bytes": 112998
+    },
+    {
+     "file": "ee4f11b89463be3653ad9484047f02f3.jpg",
+     "source": "https://i.pinimg.com/736x/ee/4f/11/ee4f11b89463be3653ad9484047f02f3.jpg",
+     "bytes": 40108
+    }
+   ]
+  },
+  {
+   "dir": "personality_app_ui",
+   "query": "퍼스널리티 앱 UI",
+   "count": 16,
+   "entries": [
+    {
+     "file": "0ec043f3e9a0a5cc069cb9ec2bd14432.jpg",
+     "source": "https://i.pinimg.com/736x/0e/c0/43/0ec043f3e9a0a5cc069cb9ec2bd14432.jpg",
+     "bytes": 45948
+    },
+    {
+     "file": "10af9256e5855d6d40fccf481f19e531.jpg",
+     "source": "https://i.pinimg.com/736x/10/af/92/10af9256e5855d6d40fccf481f19e531.jpg",
+     "bytes": 77540
+    },
+    {
+     "file": "15e8c0d3015a141d0caf94058fbebfb4.jpg",
+     "source": "https://i.pinimg.com/736x/15/e8/c0/15e8c0d3015a141d0caf94058fbebfb4.jpg",
+     "bytes": 38906
+    },
+    {
+     "file": "19ea23461e926440dba3783e0f4794e9.jpg",
+     "source": "https://i.pinimg.com/736x/19/ea/23/19ea23461e926440dba3783e0f4794e9.jpg",
+     "bytes": 36276
+    },
+    {
+     "file": "29cd59c2b4671046c7c9a52d966b2b15.jpg",
+     "source": "https://i.pinimg.com/736x/29/cd/59/29cd59c2b4671046c7c9a52d966b2b15.jpg",
+     "bytes": 27312
+    },
+    {
+     "file": "2eb30f7f4d8b64745e751a8ff6431238.jpg",
+     "source": "https://i.pinimg.com/736x/2e/b3/0f/2eb30f7f4d8b64745e751a8ff6431238.jpg",
+     "bytes": 36904
+    },
+    {
+     "file": "333a87ecd1acc160c22a839093ea926e.jpg",
+     "source": "https://i.pinimg.com/736x/33/3a/87/333a87ecd1acc160c22a839093ea926e.jpg",
+     "bytes": 78559
+    },
+    {
+     "file": "3642930a5ba36a9b2c17eea9931c729a.jpg",
+     "source": "https://i.pinimg.com/736x/36/42/93/3642930a5ba36a9b2c17eea9931c729a.jpg",
+     "bytes": 54533
+    },
+    {
+     "file": "38a24577226cfff6e8627f1f01c581c5.jpg",
+     "source": "https://i.pinimg.com/736x/38/a2/45/38a24577226cfff6e8627f1f01c581c5.jpg",
+     "bytes": 94133
+    },
+    {
+     "file": "9c64f2663567e1e27b6c897884542827.jpg",
+     "source": "https://i.pinimg.com/736x/9c/64/f2/9c64f2663567e1e27b6c897884542827.jpg",
+     "bytes": 24296
+    },
+    {
+     "file": "9dc5d69a0f92ece80bdfe074458d8116.jpg",
+     "source": "https://i.pinimg.com/736x/9d/c5/d6/9dc5d69a0f92ece80bdfe074458d8116.jpg",
+     "bytes": 52724
+    },
+    {
+     "file": "c18dba4d38b80c7add6b86854e8a01d4.jpg",
+     "source": "https://i.pinimg.com/736x/c1/8d/ba/c18dba4d38b80c7add6b86854e8a01d4.jpg",
+     "bytes": 29002
+    },
+    {
+     "file": "cc7d9f4fa850bb278f99907076ed4194.jpg",
+     "source": "https://i.pinimg.com/736x/cc/7d/9f/cc7d9f4fa850bb278f99907076ed4194.jpg",
+     "bytes": 49605
+    },
+    {
+     "file": "d9f391272a37c543980551aacbd567d1.jpg",
+     "source": "https://i.pinimg.com/736x/d9/f3/91/d9f391272a37c543980551aacbd567d1.jpg",
+     "bytes": 44620
+    },
+    {
+     "file": "f068a4eaf7320caf91f77aa93eb6f560.jpg",
+     "source": "https://i.pinimg.com/736x/f0/68/a4/f068a4eaf7320caf91f77aa93eb6f560.jpg",
+     "bytes": 40257
+    },
+    {
+     "file": "fd84aab02be75d5aecb14db6ede34286.jpg",
+     "source": "https://i.pinimg.com/736x/fd/84/aa/fd84aab02be75d5aecb14db6ede34286.jpg",
+     "bytes": 55483
+    }
+   ]
+  },
+  {
+   "dir": "mystic_website",
+   "query": "미스틱 웹사이트",
+   "count": 12,
+   "entries": [
+    {
+     "file": "0d5a18339e41d299eb792c5b1b252f0e.jpg",
+     "source": "https://i.pinimg.com/736x/0d/5a/18/0d5a18339e41d299eb792c5b1b252f0e.jpg",
+     "bytes": 94443
+    },
+    {
+     "file": "13b54f8e262e8686c3d48cf8676f63e7.jpg",
+     "source": "https://i.pinimg.com/736x/13/b5/4f/13b54f8e262e8686c3d48cf8676f63e7.jpg",
+     "bytes": 101756
+    },
+    {
+     "file": "1d8b1184effc15857a9d51daf301ebee.jpg",
+     "source": "https://i.pinimg.com/736x/1d/8b/11/1d8b1184effc15857a9d51daf301ebee.jpg",
+     "bytes": 165599
+    },
+    {
+     "file": "35244d5e359f6be65c0f947cee81290d.jpg",
+     "source": "https://i.pinimg.com/736x/35/24/4d/35244d5e359f6be65c0f947cee81290d.jpg",
+     "bytes": 102464
+    },
+    {
+     "file": "40f1e11b2fd889a120dae9b0be8e722e.jpg",
+     "source": "https://i.pinimg.com/736x/40/f1/e1/40f1e11b2fd889a120dae9b0be8e722e.jpg",
+     "bytes": 128430
+    },
+    {
+     "file": "881bd4404f93097396e493b417bd366d.jpg",
+     "source": "https://i.pinimg.com/736x/88/1b/d4/881bd4404f93097396e493b417bd366d.jpg",
+     "bytes": 37007
+    },
+    {
+     "file": "88266823e77813ea01ca85477fc91815.jpg",
+     "source": "https://i.pinimg.com/736x/88/26/68/88266823e77813ea01ca85477fc91815.jpg",
+     "bytes": 66645
+    },
+    {
+     "file": "8cdd1456d2b2ab1fceff8d90cd310a11.jpg",
+     "source": "https://i.pinimg.com/736x/8c/dd/14/8cdd1456d2b2ab1fceff8d90cd310a11.jpg",
+     "bytes": 130680
+    },
+    {
+     "file": "ae636466fd1675e24d1d88a1e4a16122.jpg",
+     "source": "https://i.pinimg.com/736x/ae/63/64/ae636466fd1675e24d1d88a1e4a16122.jpg",
+     "bytes": 83572
+    },
+    {
+     "file": "f0ef9e02c43aabff9fb1b795a6fab639.jpg",
+     "source": "https://i.pinimg.com/736x/f0/ef/9e/f0ef9e02c43aabff9fb1b795a6fab639.jpg",
+     "bytes": 12952
+    },
+    {
+     "file": "f3d0c5b04b8d7ad62bd163ee3146da96.jpg",
+     "source": "https://i.pinimg.com/736x/f3/d0/c5/f3d0c5b04b8d7ad62bd163ee3146da96.jpg",
+     "bytes": 109563
+    },
+    {
+     "file": "f4882dff6e912b55b08c548193502e93.jpg",
+     "source": "https://i.pinimg.com/736x/f4/88/2d/f4882dff6e912b55b08c548193502e93.jpg",
+     "bytes": 80052
+    }
+   ]
+  },
+  {
+   "dir": "competitors",
+   "query": "경쟁사 실측",
+   "count": 54,
+   "entries": [
+    {
+     "file": "16personalities.png",
+     "source": null,
+     "bytes": 152490
+    },
+    {
+     "file": "chani-01-top.png",
+     "source": null,
+     "bytes": 463964
+    },
+    {
+     "file": "chani-01.jpg",
+     "source": null,
+     "bytes": 33546
+    },
+    {
+     "file": "chani-02-mid.png",
+     "source": null,
+     "bytes": 200865
+    },
+    {
+     "file": "chani-02.jpg",
+     "source": null,
+     "bytes": 33434
+    },
+    {
+     "file": "chani-03-bottom.png",
+     "source": null,
+     "bytes": 203404
+    },
+    {
+     "file": "chani-03.jpg",
+     "source": null,
+     "bytes": 33098
+    },
+    {
+     "file": "chani-04.jpg",
+     "source": null,
+     "bytes": 28578
+    },
+    {
+     "file": "chani-05.jpg",
+     "source": null,
+     "bytes": 33300
+    },
+    {
+     "file": "chani.png",
+     "source": null,
+     "bytes": 487289
+    },
+    {
+     "file": "costar-01.jpg",
+     "source": null,
+     "bytes": 102094
+    },
+    {
+     "file": "costar-02.jpg",
+     "source": null,
+     "bytes": 130362
+    },
+    {
+     "file": "costar-03.jpg",
+     "source": null,
+     "bytes": 106263
+    },
+    {
+     "file": "costar-04.jpg",
+     "source": null,
+     "bytes": 142888
+    },
+    {
+     "file": "costar-05.jpg",
+     "source": null,
+     "bytes": 223006
+    },
+    {
+     "file": "costar.png",
+     "source": null,
+     "bytes": 200350
+    },
+    {
+     "file": "forceteller.png",
+     "source": null,
+     "bytes": 537169
+    },
+    {
+     "file": "honbit-01-top.png",
+     "source": null,
+     "bytes": 840250
+    },
+    {
+     "file": "honbit-02-mid.png",
+     "source": null,
+     "bytes": 611108
+    },
+    {
+     "file": "honbit-03-bottom.png",
+     "source": null,
+     "bytes": 487275
+    },
+    {
+     "file": "moonly-01-top.png",
+     "source": null,
+     "bytes": 645063
+    },
+    {
+     "file": "moonly-01.jpg",
+     "source": null,
+     "bytes": 76957
+    },
+    {
+     "file": "moonly-02-mid.png",
+     "source": null,
+     "bytes": 71852
+    },
+    {
+     "file": "moonly-02.jpg",
+     "source": null,
+     "bytes": 82405
+    },
+    {
+     "file": "moonly-03-bottom.png",
+     "source": null,
+     "bytes": 60630
+    },
+    {
+     "file": "moonly-03.jpg",
+     "source": null,
+     "bytes": 60464
+    },
+    {
+     "file": "moonly-04.jpg",
+     "source": null,
+     "bytes": 88634
+    },
+    {
+     "file": "moonly-05.jpg",
+     "source": null,
+     "bytes": 85037
+    },
+    {
+     "file": "nebula-01-top.png",
+     "source": null,
+     "bytes": 556303
+    },
+    {
+     "file": "nebula-01.jpg",
+     "source": null,
+     "bytes": 26959
+    },
+    {
+     "file": "nebula-02-mid.png",
+     "source": null,
+     "bytes": 157963
+    },
+    {
+     "file": "nebula-02.jpg",
+     "source": null,
+     "bytes": 28416
+    },
+    {
+     "file": "nebula-03-bottom.png",
+     "source": null,
+     "bytes": 151383
+    },
+    {
+     "file": "nebula-03.jpg",
+     "source": null,
+     "bytes": 29372
+    },
+    {
+     "file": "nebula-04.jpg",
+     "source": null,
+     "bytes": 32292
+    },
+    {
+     "file": "nebula-05.jpg",
+     "source": null,
+     "bytes": 29544
+    },
+    {
+     "file": "pattern-01.jpg",
+     "source": null,
+     "bytes": 67593
+    },
+    {
+     "file": "pattern-02.jpg",
+     "source": null,
+     "bytes": 61703
+    },
+    {
+     "file": "pattern-03.jpg",
+     "source": null,
+     "bytes": 79047
+    },
+    {
+     "file": "pattern-04.jpg",
+     "source": null,
+     "bytes": 61666
+    },
+    {
+     "file": "pattern-05.jpg",
+     "source": null,
+     "bytes": 60661
+    },
+    {
+     "file": "sajukid-01-top.png",
+     "source": null,
+     "bytes": 331162
+    },
+    {
+     "file": "sajukid-02-mid.png",
+     "source": null,
+     "bytes": 101789
+    },
+    {
+     "file": "sajukid-03-bottom.png",
+     "source": null,
+     "bytes": 79547
+    },
+    {
+     "file": "sanctuary-01-top.png",
+     "source": null,
+     "bytes": 717362
+    },
+    {
+     "file": "sanctuary-01.jpg",
+     "source": null,
+     "bytes": 33175
+    },
+    {
+     "file": "sanctuary-02-mid.png",
+     "source": null,
+     "bytes": 751772
+    },
+    {
+     "file": "sanctuary-02.jpg",
+     "source": null,
+     "bytes": 46132
+    },
+    {
+     "file": "sanctuary-03-bottom.png",
+     "source": null,
+     "bytes": 312460
+    },
+    {
+     "file": "sanctuary-03.jpg",
+     "source": null,
+     "bytes": 33861
+    },
+    {
+     "file": "sanctuary-04.jpg",
+     "source": null,
+     "bytes": 28376
+    },
+    {
+     "file": "sanctuary-05.jpg",
+     "source": null,
+     "bytes": 31771
+    },
+    {
+     "file": "sanctuary.png",
+     "source": null,
+     "bytes": 679964
+    },
+    {
+     "file": "thepattern.png",
+     "source": null,
+     "bytes": 195050
+    }
+   ]
+  },
+  {
+   "dir": "trend-galleries",
+   "query": "트렌드 갤러리",
+   "count": 15,
+   "entries": [
+    {
+     "file": "awwwards-1.png",
+     "source": null,
+     "bytes": 38466
+    },
+    {
+     "file": "awwwards-2.png",
+     "source": null,
+     "bytes": 38466
+    },
+    {
+     "file": "awwwards-korean-1.png",
+     "source": null,
+     "bytes": 213235
+    },
+    {
+     "file": "godly-1.png",
+     "source": null,
+     "bytes": 616630
+    },
+    {
+     "file": "godly-2.png",
+     "source": null,
+     "bytes": 621248
+    },
+    {
+     "file": "godly-3.png",
+     "source": null,
+     "bytes": 634596
+    },
+    {
+     "file": "landbook-1.png",
+     "source": null,
+     "bytes": 390541
+    },
+    {
+     "file": "landbook-2.png",
+     "source": null,
+     "bytes": 596148
+    },
+    {
+     "file": "landbook-3.png",
+     "source": null,
+     "bytes": 739148
+    },
+    {
+     "file": "minimal-gallery-1.png",
+     "source": null,
+     "bytes": 387983
+    },
+    {
+     "file": "minimal-gallery-2.png",
+     "source": null,
+     "bytes": 569484
+    },
+    {
+     "file": "minimal-gallery-3.png",
+     "source": null,
+     "bytes": 415577
+    },
+    {
+     "file": "siteinspire-1.png",
+     "source": null,
+     "bytes": 508802
+    },
+    {
+     "file": "siteinspire-2.png",
+     "source": null,
+     "bytes": 457787
+    },
+    {
+     "file": "siteinspire-3.png",
+     "source": null,
+     "bytes": 522662
+    }
+   ]
+  },
+  {
+   "dir": "luxury_dark_landing",
+   "query": "럭셔리 다크 랜딩",
+   "count": 14,
+   "entries": [
+    {
+     "file": "1950113971eb7986ac6641238076bb1c.jpg",
+     "source": "https://i.pinimg.com/736x/19/50/11/1950113971eb7986ac6641238076bb1c.jpg",
+     "bytes": 48865
+    },
+    {
+     "file": "1efaaf8832ac02dab09cf6aeb5bf3645.jpg",
+     "source": "https://i.pinimg.com/736x/1e/fa/af/1efaaf8832ac02dab09cf6aeb5bf3645.jpg",
+     "bytes": 108409
+    },
+    {
+     "file": "23f8b43376862f5618ff48f8280cbd79.jpg",
+     "source": "https://i.pinimg.com/736x/23/f8/b4/23f8b43376862f5618ff48f8280cbd79.jpg",
+     "bytes": 92759
+    },
+    {
+     "file": "28d39aa324291cc3a2e349a12d4a3f3e.jpg",
+     "source": "https://i.pinimg.com/736x/28/d3/9a/28d39aa324291cc3a2e349a12d4a3f3e.jpg",
+     "bytes": 144773
+    },
+    {
+     "file": "39170e16e07202884e8458e7f15c7e6c.jpg",
+     "source": "https://i.pinimg.com/736x/39/17/0e/39170e16e07202884e8458e7f15c7e6c.jpg",
+     "bytes": 19760
+    },
+    {
+     "file": "4af6b21baf8f3e2cec981fcd3aaaa11f.jpg",
+     "source": "https://i.pinimg.com/736x/4a/f6/b2/4af6b21baf8f3e2cec981fcd3aaaa11f.jpg",
+     "bytes": 78362
+    },
+    {
+     "file": "56e8d04f73e3bab78d5973a5a41d7255.jpg",
+     "source": "https://i.pinimg.com/736x/56/e8/d0/56e8d04f73e3bab78d5973a5a41d7255.jpg",
+     "bytes": 71864
+    },
+    {
+     "file": "80d8629703c384c878c6cc439a649a8d.jpg",
+     "source": "https://i.pinimg.com/736x/80/d8/62/80d8629703c384c878c6cc439a649a8d.jpg",
+     "bytes": 99019
+    },
+    {
+     "file": "a1f478e9dcb5eeaee072e4a326a5528e.jpg",
+     "source": "https://i.pinimg.com/736x/a1/f4/78/a1f478e9dcb5eeaee072e4a326a5528e.jpg",
+     "bytes": 59709
+    },
+    {
+     "file": "d4fcd1f573090a35ec444e981fba675f.jpg",
+     "source": "https://i.pinimg.com/736x/d4/fc/d1/d4fcd1f573090a35ec444e981fba675f.jpg",
+     "bytes": 117512
+    },
+    {
+     "file": "d60e4f82727abe5009e8ecc33a0ca1ad.jpg",
+     "source": "https://i.pinimg.com/736x/d6/0e/4f/d60e4f82727abe5009e8ecc33a0ca1ad.jpg",
+     "bytes": 101545
+    },
+    {
+     "file": "e4a935a1919cfa1fe9c76e2cb8350977.jpg",
+     "source": "https://i.pinimg.com/736x/e4/a9/35/e4a935a1919cfa1fe9c76e2cb8350977.jpg",
+     "bytes": 62358
+    },
+    {
+     "file": "f613a2da77b80416f24915d34390b598.jpg",
+     "source": "https://i.pinimg.com/736x/f6/13/a2/f613a2da77b80416f24915d34390b598.jpg",
+     "bytes": 102601
+    },
+    {
+     "file": "fe0154558738625a90a40a9f839d86f2.jpg",
+     "source": "https://i.pinimg.com/736x/fe/01/54/fe0154558738625a90a40a9f839d86f2.jpg",
+     "bytes": 104954
+    }
+   ]
+  },
+  {
+   "dir": "celestial_branding",
+   "query": "셀레스티얼 브랜딩",
+   "count": 13,
+   "entries": [
+    {
+     "file": "041e5c1e49602c4151dfa9a0e7165dd1.jpg",
+     "source": "https://i.pinimg.com/736x/04/1e/5c/041e5c1e49602c4151dfa9a0e7165dd1.jpg",
+     "bytes": 83639
+    },
+    {
+     "file": "09fed046411d5e56304896c89e02dac9.jpg",
+     "source": "https://i.pinimg.com/736x/09/fe/d0/09fed046411d5e56304896c89e02dac9.jpg",
+     "bytes": 124580
+    },
+    {
+     "file": "2d4aaa54d668f5061fe1b332a73f52bd.jpg",
+     "source": "https://i.pinimg.com/736x/2d/4a/aa/2d4aaa54d668f5061fe1b332a73f52bd.jpg",
+     "bytes": 156625
+    },
+    {
+     "file": "306e46cae1f9c2bdcfd016c14ee26881.jpg",
+     "source": "https://i.pinimg.com/736x/30/6e/46/306e46cae1f9c2bdcfd016c14ee26881.jpg",
+     "bytes": 29910
+    },
+    {
+     "file": "3f991d866dce15d8c19d471fe0694577.jpg",
+     "source": "https://i.pinimg.com/736x/3f/99/1d/3f991d866dce15d8c19d471fe0694577.jpg",
+     "bytes": 26390
+    },
+    {
+     "file": "44612639e2283196879b650332a7d5b2.jpg",
+     "source": "https://i.pinimg.com/736x/44/61/26/44612639e2283196879b650332a7d5b2.jpg",
+     "bytes": 140921
+    },
+    {
+     "file": "5273abad385be41ec44a4d82ca31da5f.jpg",
+     "source": "https://i.pinimg.com/736x/52/73/ab/5273abad385be41ec44a4d82ca31da5f.jpg",
+     "bytes": 224786
+    },
+    {
+     "file": "995520703d74f5531ce5dec0776796ef.jpg",
+     "source": "https://i.pinimg.com/736x/99/55/20/995520703d74f5531ce5dec0776796ef.jpg",
+     "bytes": 107608
+    },
+    {
+     "file": "a397ab2f564b59caa0763cf9c02b1098.jpg",
+     "source": "https://i.pinimg.com/736x/a3/97/ab/a397ab2f564b59caa0763cf9c02b1098.jpg",
+     "bytes": 139456
+    },
+    {
+     "file": "a4caa1e6ff46cb15d7c367e0e53efb3c.jpg",
+     "source": "https://i.pinimg.com/736x/a4/ca/a1/a4caa1e6ff46cb15d7c367e0e53efb3c.jpg",
+     "bytes": 196060
+    },
+    {
+     "file": "bf72a4e10a62279de17c9c082294de84.jpg",
+     "source": "https://i.pinimg.com/736x/bf/72/a4/bf72a4e10a62279de17c9c082294de84.jpg",
+     "bytes": 75581
+    },
+    {
+     "file": "dcab6a0b7d6faf79d27fe28e6cacc86a.jpg",
+     "source": "https://i.pinimg.com/736x/dc/ab/6a/dcab6a0b7d6faf79d27fe28e6cacc86a.jpg",
+     "bytes": 117355
+    },
+    {
+     "file": "f8b649553657b3ef9cdc4387166c5621.jpg",
+     "source": "https://i.pinimg.com/736x/f8/b6/49/f8b649553657b3ef9cdc4387166c5621.jpg",
+     "bytes": 103199
+    }
+   ]
+  },
+  {
+   "dir": "tarot_app_ui",
+   "query": "타로 앱 UI",
+   "count": 13,
+   "entries": [
+    {
+     "file": "043a8829b59fdd3392090f32fd1f60cd.jpg",
+     "source": "https://i.pinimg.com/736x/04/3a/88/043a8829b59fdd3392090f32fd1f60cd.jpg",
+     "bytes": 71766
+    },
+    {
+     "file": "1cd66f549e23d648bf2943ef03597564.jpg",
+     "source": "https://i.pinimg.com/736x/1c/d6/6f/1cd66f549e23d648bf2943ef03597564.jpg",
+     "bytes": 21516
+    },
+    {
+     "file": "522a7a52613ae811979a5675987e2332.jpg",
+     "source": "https://i.pinimg.com/736x/52/2a/7a/522a7a52613ae811979a5675987e2332.jpg",
+     "bytes": 60519
+    },
+    {
+     "file": "5b7232e60ffa8b7d8be32914ff5b33ea.jpg",
+     "source": "https://i.pinimg.com/736x/5b/72/32/5b7232e60ffa8b7d8be32914ff5b33ea.jpg",
+     "bytes": 39005
+    },
+    {
+     "file": "735f56c37ad5ef813b10406d91ed1848.jpg",
+     "source": "https://i.pinimg.com/736x/73/5f/56/735f56c37ad5ef813b10406d91ed1848.jpg",
+     "bytes": 34984
+    },
+    {
+     "file": "87fda0e74d3403c883035395f8996314.jpg",
+     "source": "https://i.pinimg.com/736x/87/fd/a0/87fda0e74d3403c883035395f8996314.jpg",
+     "bytes": 99657
+    },
+    {
+     "file": "a89a989acd7cfe8692d1e2abb8a0a596.jpg",
+     "source": "https://i.pinimg.com/736x/a8/9a/98/a89a989acd7cfe8692d1e2abb8a0a596.jpg",
+     "bytes": 79159
+    },
+    {
+     "file": "b346575b9016f06fdf6f05e50cb92edc.jpg",
+     "source": "https://i.pinimg.com/736x/b3/46/57/b346575b9016f06fdf6f05e50cb92edc.jpg",
+     "bytes": 108604
+    },
+    {
+     "file": "d4dd2d9c9322e16f89579ebf8f5991ed.jpg",
+     "source": "https://i.pinimg.com/736x/d4/dd/2d/d4dd2d9c9322e16f89579ebf8f5991ed.jpg",
+     "bytes": 26233
+    },
+    {
+     "file": "e91f981a335153b8a868189c2990ab74.jpg",
+     "source": "https://i.pinimg.com/736x/e9/1f/98/e91f981a335153b8a868189c2990ab74.jpg",
+     "bytes": 101058
+    },
+    {
+     "file": "ec42faa45f873563f191945e30f63109.jpg",
+     "source": "https://i.pinimg.com/736x/ec/42/fa/ec42faa45f873563f191945e30f63109.jpg",
+     "bytes": 112998
+    },
+    {
+     "file": "f3903ef2003179d7295f6aaa5b73b424.jpg",
+     "source": "https://i.pinimg.com/736x/f3/90/3e/f3903ef2003179d7295f6aaa5b73b424.jpg",
+     "bytes": 116560
+    },
+    {
+     "file": "f6a54a0df8848712deb797d30a767b99.jpg",
+     "source": "https://i.pinimg.com/736x/f6/a5/4a/f6a54a0df8848712deb797d30a767b99.jpg",
+     "bytes": 56582
+    }
+   ]
+  },
+  {
+   "dir": "korean_traditional_pattern",
+   "query": "한국 전통 문양",
+   "count": 32,
+   "entries": [
+    {
+     "file": "076f00816e89b8fbe7b3f354b53c60e5.jpg",
+     "source": "https://i.pinimg.com/736x/07/6f/00/076f00816e89b8fbe7b3f354b53c60e5.jpg",
+     "bytes": 77568
+    },
+    {
+     "file": "0c0f2be36bb7a4d6d0492942c30b909c.jpg",
+     "source": "https://i.pinimg.com/60x60/0c/0f/2b/0c0f2be36bb7a4d6d0492942c30b909c.jpg",
+     "bytes": 2094
+    },
+    {
+     "file": "19d5f7c843d925471f16aa475b806a63.jpg",
+     "source": "https://i.pinimg.com/60x60/19/d5/f7/19d5f7c843d925471f16aa475b806a63.jpg",
+     "bytes": 1414
+    },
+    {
+     "file": "1d902660be9176c22591c9aa95fd3e9d.jpg",
+     "source": "https://i.pinimg.com/736x/1d/90/26/1d902660be9176c22591c9aa95fd3e9d.jpg",
+     "bytes": 158662
+    },
+    {
+     "file": "1da30e8b4133b48ace05addf84e6fabf.jpg",
+     "source": "https://i.pinimg.com/60x60/1d/a3/0e/1da30e8b4133b48ace05addf84e6fabf.jpg",
+     "bytes": 1853
+    },
+    {
+     "file": "24944c46706119db90e3056b861f1702.jpg",
+     "source": "https://i.pinimg.com/60x60/24/94/4c/24944c46706119db90e3056b861f1702.jpg",
+     "bytes": 2201
+    },
+    {
+     "file": "274206631d7d65352791239681c9a861.jpg",
+     "source": "https://i.pinimg.com/736x/27/42/06/274206631d7d65352791239681c9a861.jpg",
+     "bytes": 144638
+    },
+    {
+     "file": "29c1b0d450db61bc8e8991051c52ae28.jpg",
+     "source": "https://i.pinimg.com/736x/29/c1/b0/29c1b0d450db61bc8e8991051c52ae28.jpg",
+     "bytes": 345509
+    },
+    {
+     "file": "2a3b3e53a5dacd50a26edd26acf950b3.jpg",
+     "source": "https://i.pinimg.com/60x60/2a/3b/3e/2a3b3e53a5dacd50a26edd26acf950b3.jpg",
+     "bytes": 1689
+    },
+    {
+     "file": "2ace2aa26d0eccd5a93b9a71b2307b04.jpg",
+     "source": "https://i.pinimg.com/60x60/2a/ce/2a/2ace2aa26d0eccd5a93b9a71b2307b04.jpg",
+     "bytes": 1400
+    },
+    {
+     "file": "2b55a0464ac77270086190d67aa6f8e7.jpg",
+     "source": "https://i.pinimg.com/736x/2b/55/a0/2b55a0464ac77270086190d67aa6f8e7.jpg",
+     "bytes": 152619
+    },
+    {
+     "file": "3042d27f2f4ac08bed2da57ea8658905.jpg",
+     "source": "https://i.pinimg.com/60x60/30/42/d2/3042d27f2f4ac08bed2da57ea8658905.jpg",
+     "bytes": 2038
+    },
+    {
+     "file": "3267d1600968be65f4b4399692c4e78e.jpg",
+     "source": "https://i.pinimg.com/736x/32/67/d1/3267d1600968be65f4b4399692c4e78e.jpg",
+     "bytes": 243286
+    },
+    {
+     "file": "35de32578753f6014ae9a5a8a60e2d95.jpg",
+     "source": "https://i.pinimg.com/60x60/35/de/32/35de32578753f6014ae9a5a8a60e2d95.jpg",
+     "bytes": 2183
+    },
+    {
+     "file": "44296710e40e172f8197d5ea51d8452c.jpg",
+     "source": "https://i.pinimg.com/60x60/44/29/67/44296710e40e172f8197d5ea51d8452c.jpg",
+     "bytes": 5533
+    },
+    {
+     "file": "48a66fe30db573a2552bece26c4cdd4b.jpg",
+     "source": "https://i.pinimg.com/736x/48/a6/6f/48a66fe30db573a2552bece26c4cdd4b.jpg",
+     "bytes": 171990
+    },
+    {
+     "file": "4caf6ececd9fede7bd4dddc4a50f13e5.jpg",
+     "source": "https://i.pinimg.com/60x60/4c/af/6e/4caf6ececd9fede7bd4dddc4a50f13e5.jpg",
+     "bytes": 1709
+    },
+    {
+     "file": "503acd4bed944fd3090eee86187e9407.jpg",
+     "source": "https://i.pinimg.com/60x60/50/3a/cd/503acd4bed944fd3090eee86187e9407.jpg",
+     "bytes": 1794
+    },
+    {
+     "file": "85cb6f02b9aa393abbb07db6a94d60b3.jpg",
+     "source": "https://i.pinimg.com/60x60/85/cb/6f/85cb6f02b9aa393abbb07db6a94d60b3.jpg",
+     "bytes": 5231
+    },
+    {
+     "file": "8975a847f1575d821227e47a099695f4.jpg",
+     "source": "https://i.pinimg.com/60x60/89/75/a8/8975a847f1575d821227e47a099695f4.jpg",
+     "bytes": 1482
+    },
+    {
+     "file": "8b5c27c3d2b2f22fe83e45eb85960d82.jpg",
+     "source": "https://i.pinimg.com/60x60/8b/5c/27/8b5c27c3d2b2f22fe83e45eb85960d82.jpg",
+     "bytes": 2039
+    },
+    {
+     "file": "8c90cdd21089ae7093d21a46847a9f49.jpg",
+     "source": "https://i.pinimg.com/736x/8c/90/cd/8c90cdd21089ae7093d21a46847a9f49.jpg",
+     "bytes": 79284
+    },
+    {
+     "file": "91cadd0340449efcafdbdf9d3087f3e7.jpg",
+     "source": "https://i.pinimg.com/60x60/91/ca/dd/91cadd0340449efcafdbdf9d3087f3e7.jpg",
+     "bytes": 2065
+    },
+    {
+     "file": "94acf452a4ceccb8774e1baf1f9d4a75.jpg",
+     "source": "https://i.pinimg.com/736x/94/ac/f4/94acf452a4ceccb8774e1baf1f9d4a75.jpg",
+     "bytes": 61005
+    },
+    {
+     "file": "9a321f1fb05ba3ecbd1102069fe4fee4.jpg",
+     "source": "https://i.pinimg.com/736x/9a/32/1f/9a321f1fb05ba3ecbd1102069fe4fee4.jpg",
+     "bytes": 108894
+    },
+    {
+     "file": "add81813fb835ae8cd858bbd9e9cbbf1.jpg",
+     "source": "https://i.pinimg.com/736x/ad/d8/18/add81813fb835ae8cd858bbd9e9cbbf1.jpg",
+     "bytes": 112728
+    },
+    {
+     "file": "b21e5dc8bd50dbf844c406e4a86a877d.jpg",
+     "source": "https://i.pinimg.com/736x/b2/1e/5d/b21e5dc8bd50dbf844c406e4a86a877d.jpg",
+     "bytes": 84559
+    },
+    {
+     "file": "b3ebdb0ee63323363d1f0a225a041805.jpg",
+     "source": "https://i.pinimg.com/736x/b3/eb/db/b3ebdb0ee63323363d1f0a225a041805.jpg",
+     "bytes": 398143
+    },
+    {
+     "file": "b418967e8f51db7be1e0315b04994b1e.jpg",
+     "source": "https://i.pinimg.com/60x60/b4/18/96/b418967e8f51db7be1e0315b04994b1e.jpg",
+     "bytes": 32617
+    },
+    {
+     "file": "b46befbbd3c603b32a9cd7dc720bf47b.jpg",
+     "source": "https://i.pinimg.com/60x60/b4/6b/ef/b46befbbd3c603b32a9cd7dc720bf47b.jpg",
+     "bytes": 1722
+    },
+    {
+     "file": "b6cde5b90ce7f6392e186a1985115ed0.jpg",
+     "source": "https://i.pinimg.com/736x/b6/cd/e5/b6cde5b90ce7f6392e186a1985115ed0.jpg",
+     "bytes": 65965
+    },
+    {
+     "file": "ed59850e88b2508e4952874338f2d110.jpg",
+     "source": "https://i.pinimg.com/736x/ed/59/85/ed59850e88b2508e4952874338f2d110.jpg",
+     "bytes": 56803
+    }
+   ]
+  }
+ ]
+}
