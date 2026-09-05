@@ -1,0 +1,124 @@
+/* ============================================================
+   K-Saju Typography & Line-Breaking System v1.0
+   언어별 적정 줄나눔 단위 · 디바이스 대응 · anti-slop 조판
+   근거: design-ssot/02-direction/typography-linebreak-system.md
+   ============================================================ */
+
+/* ---------- 0. 언어 판별 기준 ----------
+   html[lang] 이 단일 진실원천.
+   한글 문단: lang="ko" / 영어 문단: lang="en"
+   한글 문장 안의 영어·숫자 런: <span lang="en"> 으로 감싼다. */
+
+/* ---------- 1. 토큰 ---------- */
+:root {
+  /* 행폭(measure): 언어별 적정 줄 길이 */
+  --measure-en: 66ch;            /* 영어 본문 45–75ch 중심값 */
+  --measure-en-tight: 34ch;      /* 영어 협폭(카드/사이드) */
+  --measure-ko: 38em;            /* 한글 본문 34–42자 중심값 (한글 1자 ≈ 1em) */
+  --measure-ko-tight: 22em;      /* 한글 협폭 */
+
+  /* 행간: 한글이 더 크다 (복합 모음 구조) */
+  --lh-en: 1.6;
+  --lh-ko: 1.8;
+  --lh-display: 1.15;            /* 헤드라인 공통 */
+
+  /* 유동 타입 스케일: 375px → 1280px 연속 보간 */
+  --fs-hero:  clamp(28px, 6.4vw + 6px, 64px);
+  --fs-h1:    clamp(26px, 4.6vw + 6px, 44px);
+  --fs-h2:    clamp(21px, 3vw + 6px, 30px);
+  --fs-h3:    clamp(18px, 1.8vw + 8px, 21px);
+  --fs-body:  clamp(15px, 0.4vw + 12px, 17px);
+  --fs-small: clamp(12px, 0.3vw + 10px, 13px);
+  --fs-caption: clamp(10.5px, 0.25vw + 9px, 12px);
+
+  /* 자간: 라틴 디스플레이는 음수, 한글은 기본·소형 양수 */
+  --track-display-en: -0.02em;
+  --track-display-ko: -0.01em;
+  --track-small-ko: 0.01em;
+  --track-caps: 0.14em;          /* 소형 캡스/라벨 */
+
+  /* 문단 간격 (논리 속성 — RTL 확장 대비) */
+  --gap-para: 0.9em;
+}
+
+/* ---------- 2. 전역 기본: 단어가 끊기지 않는 것이 기본값 ---------- */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body, p, li, dd, dt, figcaption, td, th, h1, h2, h3, h4, h5, h6, blockquote {
+  overflow-wrap: break-word;     /* URL 같은 파열 토큰만 예외 허용 */
+  word-break: normal;            /* 기본은 단어 단위 */
+  font-kerning: normal;
+}
+/* 어떤 경우에도 글자 단위 분해를 금지해야 하는 요소: 배지, 버튼, 라벨, 코드 */
+.badge, .btn, .label, .chip, code, kbd, .no-break {
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
+/* ---------- 3. 한국어 규칙 ---------- */
+:lang(ko) {
+  word-break: keep-all;          /* 한글 어절 단위만 줄바꿈 — 글자 단위 분절 원천 차단 */
+  line-break: strict;            /* 금지 조칙(괄호·마침표 등) 앞 줄바꿈 방지 */
+  line-height: var(--lh-ko);
+  letter-spacing: var(--track-small-ko);
+}
+:lang(ko) h1, :lang(ko) h2, :lang(ko) h3 { letter-spacing: var(--track-display-ko); }
+/* 한글 협폭 컨테이너: 모바일 카드 등 */
+:lang(ko) .measure { max-width: var(--measure-ko); }
+:lang(ko) .measure-tight { max-width: var(--measure-ko-tight); }
+
+/* ---------- 4. 영어 규칙 ---------- */
+:lang(en) {
+  line-height: var(--lh-en);
+  hyphens: auto;                 /* 협폭에서만 하이픈 허용 — 전역 아님 */
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
+}
+:lang(en) h1, :lang(en) h2, :lang(en) h3 { letter-spacing: var(--track-display-en); }
+:lang(en) .measure { max-width: var(--measure-en); }
+:lang(en) .measure-tight { max-width: var(--measure-en-tight); }
+/* 협폭 영어 컬럼에서만 하이픈 활성 (본문 기본은 하이픈 없음) */
+:lang(en).narrow, .narrow :lang(en) p { hyphens: auto; }
+
+/* ---------- 5. 줄바꿈 품질 (2025-26 baseline) ----------
+   balance : 헤드라인 — 줄 길이 균등화, 리본 줄 방지
+   pretty  : 본문 — 마지막 한 단어 고아(orphan) 방지
+   미지원 브라우저는 무시하며 규칙이 깨지지 않음 (progressive enhancement) */
+h1, h2, h3, .text-balance {
+  text-wrap: balance;
+  line-height: var(--lh-display);
+}
+p, li, blockquote, dd, .text-pretty {
+  text-wrap: pretty;
+}
+/* 헤드라인 최대 행수 가드: 3줄 초과 금지 (공유 카드·히어로) */
+.headline-2l, .headline-3l { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
+.headline-2l { -webkit-line-clamp: 2; }
+.headline-3l { -webkit-line-clamp: 3; }
+
+/* ---------- 6. 혼합 문장 (한글 + 영어 런) ----------
+   한글 문장 내 영어는 <span lang="en">으로 감싼다:
+   - 하이픈·자간·행간이 영어 규칙 적용
+   - 한글 keep-all과 충돌 없음 */
+:lang(ko) :lang(en) {
+  line-height: inherit;          /* 문단 행간 유지 — 이중 행간 방지 */
+  letter-spacing: 0;
+}
+
+/* ---------- 7. 인용·수식 구조 ---------- */
+blockquote {
+  margin-block: 1.2em;
+  padding-inline-start: 1em;
+  border-inline-start: 2px solid currentColor;
+}
+.pullquote { font-size: 1.25em; text-wrap: balance; }
+
+/* ---------- 8. 슬로프 가드 ----------
+   - 단위 기호/숫자 결합 토큰 분리 금지: "8"과 "$" 사이 줄바꿈 금지 */
+.price, .stat { white-space: nowrap; }
+/* 숫자 그룹: 1,000 단위 내부 분절 금지 */
+.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ---------- 9. 리듬 (문단 간격 — 균일 AI 간격 탈피) ---------- */
+.prose > * + * { margin-block-start: var(--gap-para); }
+.prose h2, .prose h3 { margin-block-start: 1.6em; }
+.prose blockquote + p { margin-block-start: 1.2em; }

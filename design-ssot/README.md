@@ -12,6 +12,7 @@
 | [01-analysis/competitor-intel.md](01-analysis/competitor-intel.md) | **경쟁 정찰 추가분** - 혼빛 CSS 해석·포스텔러 가격·SajuRoot 카피·astrobazi 명명 충돌 | 경쟁 대응·카피 작업 시 |
 | [01-analysis/competitor-landscape.md](01-analysis/competitor-landscape.md) | 경쟁 18개 분석 + 따라할 것 10 / 피할 것 5 | 기능·퍼널·공유 장치 설계 시 |
 | [02-direction/design-direction.md](02-direction/design-direction.md) | 방향 "Nocturne Obang" (A+C) + 컬러·타이포·컴포넌트 토큰 초안 | Stitch 프롬프트·캔버스 작업 입력값 |
+| [02-direction/typography-linebreak-system.md](02-direction/typography-linebreak-system.md) | **줄나눔·다국어 타이포 시스템** — 언어별 적정 줄나눔 단위(한글 어절/영어 단어)·디바이스 유동 타입·토큰 무결성·anti-slop 문장 가드. 구현: `typography.css` · 검증: `typography-demo.html` | 화면 구현·카피 조판·리뷰 페이지 작성 시 |
 | [03-references/references-index.md](03-references/references-index.md) | **작업 단계→참조 매핑 테이블** + 최우선 에셋 12 | 실제 작업 시작 시 첫 조회 지점 |
 | [03-references/trends-2025-26.md](03-references/trends-2025-26.md) | 2025-26 트렌드 14종 + 검증 URL 59 | 무드 근거 필요 시 |
 | [03-references/aesthetic-korean-mystic.md](03-references/aesthetic-korean-mystic.md) | 한국 전통 자원·미스틱 레퍼런스·타이포 6세트·색 시스템 | 시각 언어 상세 결정 시 |

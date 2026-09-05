@@ -10,7 +10,8 @@
     --gold:#c9a227; --wood:#2e5a87; --fire:#b33b24; --metal:#c0c6cd; --water:#3b4a6b;
     --line:#2c2c31;
   }
-  *{box-sizing:border-box; margin:0; padding:0}
+  *{box-sizing:border-box; margin:0; padding:0; word-break:keep-all; line-break:strict; overflow-wrap:break-word}
+  :lang(en){word-break:normal}
   body{background:var(--ink); color:var(--hanji); font:15px/1.6 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
        background-image:radial-gradient(rgba(245,241,230,.025) 1px, transparent 1px); background-size:24px 24px}
   .wrap{max-width:1280px; margin:0 auto; padding:0 24px 96px}
