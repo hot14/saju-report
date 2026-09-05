@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typography Demo · 10 locales · K-Saju</title>
+<!-- ============================================================
+  I6 · 10-로케일 조판 데모 (typography-linebreak-system v1.0 + multilang v1.1)
+  로딩 체인: styles/typography-multilang.css
+    -> @import ../design-ssot/02-direction/typography.css (base v1.0 · 무수정)
+  사양: docs/i18n-spec.md §4 조판 매트릭스 · 조판 규칙은 전부 저 두 CSS가 소유한다.
+  샘플 문단은 조판 검체다. ko/en은 카피덱 v2 확정문안, 나머지 8로케일은
+  glossary 확정 전 임시 검체(제품 카피 아님).
+  하단 #computed-report 표의 값은 ego-browser(Chromium) getComputedStyle
+  실측값을 정적으로 삽입한 기록이고, #verifier 스크립트가 재방문 시
+  실측과 대조해 판정 열을 채운다.
+============================================================ -->
+<link rel="stylesheet" href="typography-multilang.css">
+<style>
+  /* 데모 크롬 전용 · 신규 조판 규칙을 두지 않는다.
+     예외 1: body font-family · base·multilang 모두 ko/en 본문 폰트를 사이트
+     크롬에 위임하므로 데모 기본값으로 토큰을 걸 뿐이다.
+     예외 2: 아래 호스팅 보정 블록(프로덕션 계단값 원복 · 근거는 주석 참조). */
+  body { margin: 0 auto; padding: 24px 20px 64px; max-width: 860px; }
+  body { font-family: var(--font-sans-latin); }
+  header.page { border-block-end: 1px solid #cfc8bd; margin-block-end: 8px; padding-block-end: 12px; }
+  header.page h1 { font-size: 20px; margin: 0 0 4px; }
+  header.page p { font-size: 13px; color: #555; margin: 0; }
+  section.loc { border-block-start: 1px solid #ddd6cb; padding-block: 14px 18px; }
+  p.loc-meta { font-size: 12px; color: #777; margin: 0 0 6px; }
+  p.loc-meta code { font-family: var(--font-mono, monospace); font-size: 11px; }
+  p.tokens { font-size: 14px; margin-block-start: 10px; }
+  p.tokens .sep { color: #bbb; margin-inline: 6px; }
+  figure.narrow-wrap { margin: 10px 0 0; }
+  figure.narrow-wrap figcaption { font-size: 11.5px; color: #888; }
+  section.report { margin-block-start: 40px; }
+  table#computed-report { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+  table#computed-report th, table#computed-report td {
+    border: 1px solid #d8d2c8; padding: 5px 7px; text-align: start; vertical-align: top;
+  }
+  table#computed-report thead th { background: #f2eee6; }
+  table#computed-report td.ok { color: #2c6e49; }
+  table#computed-report td.ng { color: #a33b24; font-weight: 600; }
+  p.provenance { font-size: 12px; color: #666; }
+
+  /* --- 단일 페이지 호스팅 보정(artifact restoration) --------------------
+     원인: 데모 특성상 html 이 lang="ko" 고정이라 :lang(ko) 가 모든 섹션의
+     조상이 된다. 그 결과 (a) base §6 혼합런 규칙 :lang(ko) :lang(en)
+     (0,2,0)이 en/en-GB 섹션 전체에 걸려 line-height: inherit 가 되고,
+     (b) base §3 의 line-break: strict 가 ko 가 아닌 섹션에 상속된다.
+     프로덕션(로케일별 URL · html[lang]=로케일)에서는 둘 다 발생하지
+     않는다. 아래 3줄은 신규 조판 규칙이 아니라 프로덕션 계단값의 원복이다. */
+  section.loc:lang(en) { line-height: var(--lh-en); line-break: auto; }
+  section.loc:lang(th), section.loc:lang(vi),
+  section.loc:lang(ru), section.loc:lang(fil), section.loc:lang(id) { line-break: auto; }
+  section.loc:lang(en) h3.font-display { line-height: var(--lh-display); }
+</style>
+</head>
+<body>
+
+
+<header class="page">
+  <h1>Typography Demo · 10 locales</h1>
+  <p>styles/typography-multilang.css(v1.1) + base typography.css(v1.0 · @import) 로딩 검증 페이지. i18n-spec §4 매트릭스와 하단 실측 표를 대조한다.</p>
+</header>
+
+<main class="prose">
+
+<!-- 1 · ko-KR (base §3) -->
+<section class="loc" id="loc-ko" lang="ko-KR">
+  <p class="loc-meta"><code>ko-KR</code> · keep-all · line-break strict · 행간 1.8 · 38em</p>
+  <h3 class="font-display">당신은 넓은 호수입니다.</h3>
+  <p class="measure">당신의 에너지는 좁은 곳에 갇히면 약해지고, 넓게 퍼질 때 힘을 쓰는 물입니다. 좁은 틀과 짧은 마감이 반복되는 일에서는 실력보다 먼저 지치는 패턴이 있습니다. 반대로 역할이 넓어질수록, 당신은 점점 단단해집니다. 당신의 <span lang="en">pattern</span>을 여덟 글자로 읽어드립니다.</p>
+  <figure class="narrow-wrap">
+    <p class="measure-tight narrow">같은 생년월일은 항상 같은 결과를 만듭니다. 태어난 날에 따라, 서로 다른 물상 하나가 배정됩니다.</p>
+    <figcaption>협폭 검체 · 22em</figcaption>
+  </figure>
+  <p class="tokens"><span class="badge no-break">임수 · 넓은 호수</span><span class="sep">|</span><span class="price">$8</span><span class="sep">|</span><span class="num">12,400</span></p>
+</section>
+
+<!-- 2 · en-US (base §4) -->
+<section class="loc" id="loc-en" lang="en-US">
+  <p class="loc-meta"><code>en-US</code> · normal · 기본 line-break · 행간 1.6 · 66ch · 협폭만 하이픈</p>
+  <h3 class="font-display">Your reading begins with eight letters.</h3>
+  <p class="measure">Your energy is water that weakens in tight places and does its work as it spreads wide. In work where narrow frames and short deadlines repeat, your pattern is to tire before your skill gives out. As your role widens, you grow steadier.</p>
+  <figure class="narrow-wrap">
+    <p class="measure-tight narrow">The same birth date always produces the same reading. A short video shows the letters of your day. Deliberately long words demonstrate hyphenation in this narrow column: understanding, straightforward, characterization.</p>
+    <figcaption>narrow specimen · 34ch · hyphens auto</figcaption>
+  </figure>
+  <p class="tokens"><span class="badge no-break">{{BADGE}}</span><span class="sep">|</span><span class="price">$8</span><span class="sep">|</span><span class="num">12,400</span></p>
+</section>
+
+<!-- 3 · en-GB (base §4 · 카피만 분기) -->
+<section class="loc" id="loc-en-GB" lang="en-GB">
+  <p class="loc-meta"><code>en-GB</code> · 조판은 en 공용 · 스펠링 분기 검체(-ise)</p>
+  <h3 class="font-display">Your reading begins with eight letters.</h3>
+  <p class="measure">Your reading organises eight letters into one lifelong pattern. The result stays as a single card you can revisit. When your role widens, you grow steadier.</p>
+  <p class="tokens"><span class="badge no-break">{{BADGE}}</span><span class="sep">|</span><span class="price">$8.00</span><span class="sep">|</span><span class="num">12,400</span></p>
+</section>
+
+<!-- 4 · ja-JP (multilang §2) -->
+<section class="loc" id="loc-ja" lang="ja-JP">
+  <p class="loc-meta"><code>ja-JP</code> · normal(keep-all 금지) · line-break strict(금칙) · 행간 1.8 · 36em</p>
+  <h3 class="font-display">あなたは「広い湖」です。</h3>
+  <p class="measure">あなたのエネルギーは、狭い場所では弱まり、広がるときに力を発揮する水です。狭い枠と短い納期が続く仕事では、実力より先に疲れる傾向があります。反面、担当が広くなるほど、あなたは着実になっていきます。結果は<span lang="en">one card</span>として残ります。</p>
+  <figure class="narrow-wrap">
+    <p class="measure-tight narrow">同じ生年月日は、いつも同じ結果を作ります。役割が広がるとき、次の水深が決まります。</p>
+    <figcaption>협폭 검체 · 20em</figcaption>
+  </figure>
+  <p class="tokens"><span class="badge no-break">壬水 · 広い湖</span><span class="sep">|</span><span class="price">$8</span><span class="sep">|</span><span class="num">12,400</span></p>
+</section>
+
+<!-- 5 · zh-Hans (multilang §3) -->
+<section class="loc" id="loc-zh" lang="zh-Hans">
+  <p class="loc-meta"><code>zh-Hans</code> · normal · line-break strict(금칙) · 행간 1.8 · 34em</p>
+  <h3 class="font-display">你是一片宽阔的湖。</h3>
+  <p class="measure">你的能量是水:在狭窄的地方变弱,在铺开的时候发力。在窄框架和短工期反复出现的工作里,你的模式是本事还没有用尽,人先累了。相反,当角色变宽,你会越来越稳。结果会留在<span lang="en">one card</span>里。</p>
+  <figure class="narrow-wrap">
+    <p class="measure-tight narrow">同一个出生日期,总是产生同一份解读。</p>
+    <figcaption>협폭 검체 · 20em</figcaption>
+  </figure>
+  <p class="tokens"><span class="badge no-break">壬水 · 宽阔的湖</span><span class="sep">|</span><span class="price">US$8</span><span class="sep">|</span><span class="num">12,400</span></p>
+</section>
+
+<!-- 6 · th-TH (multilang §4) -->
+<section class="loc" id="loc-th" lang="th-TH">
+  <p class="loc-meta"><code>th-TH</code> · 사전 세그멘테이션 · 행간 1.9 · 디스플레이 1.3 · 30em</p>
+  <h3 class="font-display">คุณคือทะเลสาบกว้าง</h3>
+  <p class="measure">พลังงานของคุณเป็นน้ำ: อ่อนลงเมื่อติดอยู่ในที่แคบ และทำงานเต็มที่เมื่อไหลกว้างออกไป งานที่กรอบแคบและกำหนดส่งสั้น ๆ ซ้ำไปมา ทำให้คุณเหนื่อยก่อนที่ความสามารถจะหมด เมื่อบทบาทกว้างขึ้นเรื่อย ๆ คุณจะมั่นคงขึ้นเรื่อย ๆ ผลลัพธ์อยู่ในรูปของ <span lang="en">one card</span></p>
+  <figure class="narrow-wrap">
+    <p class="measure-tight narrow">วันเกิดเดียวกัน ให้ผลลัพธ์เดิมเสมอ</p>
+    <figcaption>협폭 검체 · 18em</figcaption>
+  </figure>
+  <p class="tokens"><span class="badge no-break">壬水 · ทะเลสาบกว้าง</span><span class="sep">|</span><span class="price">฿280</span><span class="sep">|</span><span class="num">12,400</span></p>
+</section>
+
+<!-- 7 · vi-VN (multilang §5) -->
+<section class="loc" id="loc-vi" lang="vi-VN">
+  <p class="loc-meta"><code>vi-VN</code> · 겹받침 보정 · 행간 1.7 · 디스플레이 1.25 · 60ch</p>
+  <h3 class="font-display">Bạn là một hồ rộng.</h3>
+  <p class="measure">Năng lượng của bạn là nước: yếu đi khi bị giữ ở nơi chật hẹp, và phát huy khi được trải rộng. Trong công việc lặp lại khung hẹp và hạn chót ngắn, xu hướng của bạn là mệt trước khi tài năng cạn. Mỗi vấn đề lặp lại đều cho thấy cùng một khuôn mẫu. Độ sâu của dòng nước kế tiếp tùy thuộc vào việc bạn mở rộng điều gì.</p>
+  <figure class="narrow-wrap">
+    <p class="measure-tight narrow">Cùng một ngày sinh luôn cho ra cùng một bản đọc. Những từ dài thể hiện gạch nối trong cột hẹp này: hiểu biết, đặc trưng, trách nhiệm.</p>
+    <figcaption>협폭 검체 · 32ch · 하이픈 auto</figcaption>
+  </figure>
+  <p class="tokens"><span class="badge no-break">壬水 · hồ rộng</span><span class="sep">|</span><span class="price">8 USD</span><span class="sep">|</span><span class="num">1.000</span></p>
+</section>
+
+<!-- 8 · fil-PH (multilang §7) -->
+<section class="loc" id="loc-fil" lang="fil-PH">
+  <p class="loc-meta"><code>fil-PH</code> · 라틴 공용 · 행간 1.6 · 66ch · 협폭만 하이픈</p>
+  <h3 class="font-display">Ikaw ang isang malawak na lawa.</h3>
+  <p class="measure">Ang enerhiya mo ay tubig: humihina sa masikip na lugar, at gumagana kapag kumalat nang maluwag. Sa trabahong paulit-ulit ang makitid na balangkas at maikling takdang panahon, ang pattern mo ay mapagod bago maubos ang galing. Kapag lumawak ang papel mo, tumatagal ang tibay mo.</p>
+  <p class="tokens"><span class="badge no-break">壬水 · malawak na lawa</span><span class="sep">|</span><span class="price">₱450</span><span class="sep">|</span><span class="num">12,400</span></p>
+</section>
+
+<!-- 9 · id-ID (multilang §7) -->
+<section class="loc" id="loc-id" lang="id-ID">
+  <p class="loc-meta"><code>id-ID</code> · 라틴 공용 · 행간 1.6 · 66ch</p>
+  <h3 class="font-display">Anda adalah danau yang luas.</h3>
+  <p class="measure">Energi Anda adalah air: melemah saat terjebak di tempat sempit, dan bekerja saat tersebar luas. Dalam pekerjaan yang berulang dengan bingkai sempit dan tenggat pendek, pola Anda adalah lelah sebelum kemampuan habis. Saat peran Anda meluas, Anda semakin mantap.</p>
+  <p class="tokens"><span class="badge no-break">壬水 · danau yang luas</span><span class="sep">|</span><span class="price">Rp 130.000</span><span class="sep">|</span><span class="num">1.000</span></p>
+</section>
+
+<!-- 10 · ru-RU (multilang §6) -->
+<section class="loc" id="loc-ru" lang="ru-RU">
+  <p class="loc-meta"><code>ru-RU</code> · 전역 하이픈 auto(limit 9 3 3) · 행간 1.6 · 60ch</p>
+  <h3 class="font-display">Вы широкое озеро.</h3>
+  <p class="measure">Ваша энергия подобна воде: она слабеет в тесных местах и работает в полную силу, когда растекается широко. В работе, где повторяются узкие рамки и короткие сроки, ваша склонность к утомлению проявляется раньше, чем иссякает мастерство. Когда роль расширяется, вы становитесь устойчивее. Результат остаётся в виде «одной карточки».</p>
+  <figure class="narrow-wrap">
+    <p class="measure-tight narrow">Одна и та же дата рождения всегда даёт одно и то же чтение. Длинные слова показывают перенос: индивидуальность, разнообразие, соответствие.</p>
+    <figcaption>협폭 검체 · 32ch · 하이픈 전역 auto</figcaption>
+  </figure>
+  <p class="tokens"><span class="badge no-break">壬水 · широкое озеро</span><span class="sep">|</span><span class="price">8 $</span><span class="sep">|</span><span class="num">12 400</span></p>
+</section>
+
+<!-- 실측 기록 · ego-browser getComputedStyle · 값은 정적 삽입 -->
+<section class="report" id="report" lang="ko">
+  <h2>getComputedStyle 실측 기록</h2>
+  <p class="provenance">측정 환경: ego-browser(Chromium 150) getComputedStyle · 2026-09-05 · 뷰포트 1200px · <code>styles/typography-multilang.css</code> 로딩(@import 체인 포함 · 시트 2장 확인). 행간은 px 실측을 font-size로 나눈 비율로 기록. en 계열 행간·line-break·디스플레이 행간은 호스팅 보정 적용 후 실측값이다(근거: head style 블록 주석). 재방문 시 <code>#verifier</code> 스크립트가 표의 기록값과 live 계산값을 대조해 판정 열을 채운다.</p>
+  <table id="computed-report">
+    <thead>
+      <tr>
+        <th scope="col">로케일</th>
+        <th scope="col">본문 행간</th>
+        <th scope="col">word-break</th>
+        <th scope="col">line-break(금칙)</th>
+        <th scope="col">overflow-wrap</th>
+        <th scope="col">hyphens</th>
+        <th scope="col">디스플레이 행간</th>
+        <th scope="col">판정</th>
+      </tr>
+    </thead>
+    <tbody id="report-body">
+      <!-- 실측 행: ego-browser(Chromium 150) getComputedStyle · 2026-09-05 · 뷰포트 1200px.
+           data-* 속성값이 #verifier 의 대조 기준이다(셀 표기는 가독용). -->
+      <tr data-loc="ko" data-lh="1.8" data-wb="keep-all" data-lb="strict" data-ow="break-word" data-hy="manual" data-dlh="1.15">
+        <th scope="row">ko-KR</th>
+        <td>1.8 · 28.8px/16px</td><td>keep-all</td><td>strict</td><td>break-word</td><td>manual</td><td>1.15</td><td></td>
+      </tr>
+      <tr data-loc="en" data-lh="1.6" data-wb="normal" data-lb="auto" data-ow="break-word" data-hy="auto" data-dlh="1.15">
+        <th scope="row">en-US</th>
+        <td>1.6 · 25.6px/16px</td><td>normal</td><td>auto</td><td>break-word</td><td>auto(F1)</td><td>1.15</td><td></td>
+      </tr>
+      <tr data-loc="en-GB" data-lh="1.6" data-wb="normal" data-lb="auto" data-ow="break-word" data-hy="auto" data-dlh="1.15">
+        <th scope="row">en-GB</th>
+        <td>1.6 · 25.6px/16px</td><td>normal</td><td>auto</td><td>break-word</td><td>auto(F1)</td><td>1.15</td><td></td>
+      </tr>
+      <tr data-loc="ja" data-lh="1.8" data-wb="normal" data-lb="strict" data-ow="break-word" data-hy="manual" data-dlh="1.8">
+        <th scope="row">ja-JP</th>
+        <td>1.8 · 28.8px/16px</td><td>normal</td><td>strict(금칙)</td><td>break-word</td><td>manual</td><td>1.8(F3)</td><td></td>
+      </tr>
+      <tr data-loc="zh" data-lh="1.8" data-wb="normal" data-lb="strict" data-ow="break-word" data-hy="manual" data-dlh="1.8">
+        <th scope="row">zh-Hans</th>
+        <td>1.8 · 28.8px/16px</td><td>normal</td><td>strict(금칙)</td><td>break-word</td><td>manual</td><td>1.8(F3)</td><td></td>
+      </tr>
+      <tr data-loc="th" data-lh="1.9" data-wb="normal" data-lb="auto" data-ow="break-word" data-hy="manual" data-dlh="1.3">
+        <th scope="row">th-TH</th>
+        <td>1.9 · 30.4px/16px</td><td>normal</td><td>auto</td><td>break-word</td><td>manual</td><td>1.3</td><td></td>
+      </tr>
+      <tr data-loc="vi" data-lh="1.7" data-wb="normal" data-lb="auto" data-ow="break-word" data-hy="manual" data-dlh="1.25">
+        <th scope="row">vi-VN</th>
+        <td>1.7 · 27.2px/16px</td><td>normal</td><td>auto</td><td>break-word</td><td>manual</td><td>1.25</td><td></td>
+      </tr>
+      <tr data-loc="fil" data-lh="1.6" data-wb="normal" data-lb="auto" data-ow="break-word" data-hy="manual" data-dlh="1.6">
+        <th scope="row">fil-PH</th>
+        <td>1.6 · 25.6px/16px</td><td>normal</td><td>auto</td><td>break-word</td><td>manual</td><td>1.6(F3)</td><td></td>
+      </tr>
+      <tr data-loc="id" data-lh="1.6" data-wb="normal" data-lb="auto" data-ow="break-word" data-hy="manual" data-dlh="1.6">
+        <th scope="row">id-ID</th>
+        <td>1.6 · 25.6px/16px</td><td>normal</td><td>auto</td><td>break-word</td><td>manual</td><td>1.6(F3)</td><td></td>
+      </tr>
+      <tr data-loc="ru" data-lh="1.6" data-wb="normal" data-lb="auto" data-ow="break-word" data-hy="auto" data-dlh="1.6">
+        <th scope="ru">ru-RU</th>
+        <td>1.6 · 25.6px/16px</td><td>normal</td><td>auto</td><td>break-word</td><td>auto(전역)</td><td>1.6(F3)</td><td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>실측 발견 사항</h3>
+  <ol class="findings">
+    <li><b>F1 · base v1.0 결함 보고(미수정).</b> <code>:lang(en) { hyphens: auto }</code>가 블록 전역으로 선언되어 있다(base §4). 주석과 i18n-spec §4 매트릭스는 "협폭만 auto"를 규정하는데, 선언 자체가 전역이라 프로덕션 en 페이지에서는 본문 어디서나 하이픈이 활성된다. 협폭 한정 규칙(<code>:lang(en).narrow, .narrow :lang(en) p</code>)은 사실상 중복. 표의 en·en-GB hyphens 열 값(auto)이 이 결함의 실측 증거다. 기존 파일 수정 금지 규칙으로 본 데모는 기록만 한다. 수정 방향(참고): 블록 내 선언을 제거하고 narrow 규칙만 남기면 스펙과 일치한다.</li>
+    <li><b>F2 · 단일 페이지 호스팅 보정.</b> 데모는 html 이 lang="ko" 고정이라 <code>:lang(ko)</code>가 전 섹션의 조상이 되고, base §6 혼합런 규칙 <code>:lang(ko) :lang(en)</code>(0,2,0)이 en·en-GB 섹션 전체에 적용되며 line-height: inherit(1.8)가 된다. 또 base §3의 line-break: strict 가 ko 이외 섹션에 상속된다. 프로덕션(로케일별 URL · html[lang]=해당 로케일)에서는 발생하지 않는 인위적 충돌이라 head 의 style 블록 마지막 3줄로 프로덕션 계단값을 원복했고, 표의 en 계열 값은 보정 후 실측이다. 프로덕션 영향 없음.</li>
+    <li><b>F3 · 디스플레이 행간 de-facto 값.</b> ja·zh·fil·id·ru 의 h3 디스플레이 행간이 본문 행간(1.8/1.6)과 동일하게 실측됐다. 결함이 아니라 i18n-spec §4 각주가 문서화한 v1.1 de-facto 승계(명시 오버라이드는 th 1.3 · vi 1.25 · ko/en 1.15 뿐). 1.15 디스플레이 행간의 전 로케일 복원은 base 소유 과제다(무수정 원칙 · 후속 base 개정 권고).</li>
+  </ol>
+</section>
+</main>
+
+<script id="verifier">
+/* 회귀 검증: 표의 기록값(data-*) vs live getComputedStyle 대조.
+   표가 비어 있으면 아무 것도 하지 않는다(측정 선행). */
+(function () {
+  var rows = document.querySelectorAll('#computed-report tbody tr[data-loc]');
+  if (!rows.length) return;
+  var fmtLh = function (el) {
+    var cs = getComputedStyle(el);
+    var lh = parseFloat(cs.lineHeight) || 0;
+    var fs = parseFloat(cs.fontSize) || 1;
+    return +(lh / fs).toFixed(2);
+  };
+  rows.forEach(function (tr) {
+    var loc = tr.getAttribute('data-loc');
+    var sec = document.getElementById('loc-' + loc);
+    var cell = tr.querySelector('td:last-child');
+    if (!sec || !cell) return;
+    var p = sec.querySelector('p.measure');
+    var h = sec.querySelector('h3.font-display');
+    var cs = getComputedStyle(p);
+    var live = {
+      lh: fmtLh(p), wb: cs.wordBreak, lb: cs.lineBreak,
+      ow: cs.overflowWrap, hy: cs.hyphens, dlh: fmtLh(h)
+    };
+    var rec = {
+      lh: parseFloat(tr.getAttribute('data-lh')),
+      wb: tr.getAttribute('data-wb'), lb: tr.getAttribute('data-lb'),
+      ow: tr.getAttribute('data-ow'), hy: tr.getAttribute('data-hy'),
+      dlh: parseFloat(tr.getAttribute('data-dlh'))
+    };
+    var bad = Object.keys(rec).filter(function (k) {
+      return String(rec[k]) !== String(live[k]);
+    });
+    if (!bad.length) { cell.textContent = '일치'; cell.className = 'ok'; }
+    else {
+      cell.textContent = '불일치: ' + bad.map(function (k) {
+        return k + ' 기록 ' + rec[k] + ' · 실측 ' + live[k];
+      }).join(', ');
+      cell.className = 'ng';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
