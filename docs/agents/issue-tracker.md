@@ -15,7 +15,7 @@ Infer the repo from `git remote -v`; `gh` does this automatically when run insid
 
 ## Pull requests as a triage surface
 
-**리모트**: `origin` = https://github.com/hot14/saju-report.git (연결 완료 2026-09-05). 코드 푸시는 `git push origin main:main-local`로만 — 원격 `main`은 GitHub Pages 배포 브랜치이므로 직접 푸시 금지. 이슈 #1 = V2 개편 트래킹.
+**리모트**: `origin` = `https://github.com/hot14/saju-report.git` (연결 완료 2026-09-05). 코드 푸시는 `git push origin main:main-local`로만 — 원격 `main`은 GitHub Pages 배포 브랜치이므로 직접 푸시 금지. 이슈 #1 = V2 개편 트래킹.
 
 **PRs as a request surface: no.** _(Set to `yes` if this repo treats external PRs as feature requests; `/triage` reads this flag.)_
 
