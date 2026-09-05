@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K-Saju 디자인 시안 리뷰 — 3방향 × 7화면</title>
+<style>
+  :root{
+    --ink:#141416; --surface:#1b1b1e; --tile:#202024; --hanji:#f5f1e6; --mute:#a8a29a;
+    --gold:#c9a227; --wood:#2e5a87; --fire:#b33b24; --metal:#c0c6cd; --water:#3b4a6b;
+    --line:#2c2c31;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{background:var(--ink); color:var(--hanji); font:15px/1.6 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+       background-image:radial-gradient(rgba(245,241,230,.025) 1px, transparent 1px); background-size:24px 24px}
+  .wrap{max-width:1280px; margin:0 auto; padding:0 24px 96px}
+  header{padding:56px 0 8px}
+  .eyebrow{font-size:11px; letter-spacing:.28em; color:var(--gold); text-transform:uppercase}
+  h1{font-family:Georgia,"Noto Serif KR",serif; font-size:34px; font-weight:600; margin:10px 0 6px}
+  .lede{color:var(--mute); max-width:720px}
+  .lede b{color:var(--hanji)}
+  nav{position:sticky; top:0; z-index:9; display:flex; gap:8px; padding:14px 0; margin:18px 0 8px;
+      background:linear-gradient(var(--ink) 82%, transparent); border-bottom:1px solid var(--line)}
+  nav a{color:var(--mute); text-decoration:none; font-size:13px; padding:7px 14px; border:1px solid var(--line); border-radius:999px}
+  nav a:hover{color:var(--hanji); border-color:var(--mute)}
+  section{padding:44px 0 8px}
+  .dhead{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap}
+  h2{font-family:Georgia,"Noto Serif KR",serif; font-size:24px}
+  .score{font-size:12px; color:var(--ink); background:var(--gold); border-radius:999px; padding:3px 12px; font-weight:700}
+  .score.mid{background:var(--metal)} .score.low{background:#8d8578}
+  .dnote{color:var(--mute); font-size:13.5px; margin:8px 0 20px; max-width:860px}
+  .ds{font-size:11px; letter-spacing:.14em; color:var(--water2,#8fa3c0)}
+  .row{display:grid; grid-auto-flow:column; grid-auto-columns:236px; gap:18px; overflow-x:auto; padding:6px 2px 22px; scroll-snap-type:x proximity}
+  .row::-webkit-scrollbar{height:8px} .row::-webkit-scrollbar-thumb{background:var(--line); border-radius:8px}
+  figure{scroll-snap-align:start}
+  .phone{border:1px solid var(--line); border-radius:22px; overflow:hidden; background:var(--tile);
+         box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .phone img{display:block; width:100%; height:auto}
+  figcaption{margin-top:9px; font-size:12.5px; color:var(--mute); display:flex; justify-content:space-between; gap:8px}
+  figcaption .en{color:#7c766c; font-size:11px; letter-spacing:.08em; text-transform:uppercase}
+  .chip{display:inline-block; font-size:10.5px; border-radius:999px; padding:2px 9px; margin-top:6px; border:1px solid}
+  .chip.warn{color:#e0b64f; border-color:#5c4d1d; background:rgba(201,162,39,.08)}
+  .chip.ok{color:#9fb98a; border-color:#3a4a33; background:rgba(120,160,90,.07)}
+  .chip.fix{color:#e08a6f; border-color:#5c2f1d; background:rgba(179,59,36,.08)}
+  table{width:100%; border-collapse:collapse; margin-top:18px; font-size:14px}
+  th,td{border:1px solid var(--line); padding:10px 14px; text-align:left}
+  th{color:var(--mute); font-weight:600; font-size:12px; letter-spacing:.1em; text-transform:uppercase; background:var(--surface)}
+  td.hl{background:rgba(201,162,39,.07)}
+  .dots{display:inline-flex; gap:5px; vertical-align:middle}
+  .dots i{width:9px; height:9px; border-radius:50%; display:inline-block}
+  .next{margin-top:26px; border:1px solid var(--line); border-radius:14px; padding:20px 22px; background:var(--surface)}
+  .next h3{font-size:13px; letter-spacing:.18em; color:var(--gold); text-transform:uppercase; margin-bottom:10px}
+  .next ol{margin-left:18px; color:var(--mute)} .next li{margin:4px 0}
+  .next b{color:var(--hanji)}
+  footer{margin-top:60px; color:#6f695f; font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Design SSOT · 2026-09-04</div>
+  <h1>K-Saju 디자인 시안 리뷰</h1>
+  <p class="lede">Stitch(Gemini 3 Pro) 생성 · <b>3방향 × 7화면 = 21스크린</b>. 슬로프 체크 전량 통과.
+     결함 위치는 <span class="chip fix" style="margin:0 2px">fix</span> 배지로 표시 — 상세는 <b>flows-verification.md</b>.</p>
+</header>
+
+<nav>
+  <a href="#a">A · Ink &amp; Hanji</a>
+  <a href="#c">C · Obsidian Meridian</a>
+  <a href="#ac">A+C · Nocturne Obang</a>
+  <a href="#cmp">비교·채점</a>
+  <a href="#nx">다음 단계</a>
+</nav>
+
+<section id="a">
+  <div class="dhead"><h2>A — Nocturne Editorial</h2><span class="score low">56/100</span><span class="ds">DS: Ink &amp; Hanji</span></div>
+  <p class="dnote">먹 배경 + 한지 세리프 + 수묵 워터마크. 가장 차분하고 신뢰형. entry의 "Privacy-first processing" 카피가 강점. 후킹 요소(배지·카드 프리뷰) 부재가 감점 요인.</p>
+  <div class="row">
+    <figure><div class="phone"><img src="variants/A_nocturne.png" alt="A 시작"></div><figcaption><span>시작</span><span class="en">landing</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/A/entry.png" alt="A 입력"></div><figcaption><span>입력</span><span class="en">entry</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/A/calculating.png" alt="A 계산 중"></div><figcaption><span>계산 중</span><span class="en">calculating</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/A/free_result.png" alt="A 무료 결과"></div><figcaption><span>무료 결과</span><span class="en">free result</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/A/payment.png" alt="A 결제"></div><figcaption><span>결제</span><span class="en">payment</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/A/paid_result.png" alt="A 유료 결과"></div><figcaption><span>유료 결과</span><span class="en">full report</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/A/share_card.png" alt="A 공유 카드"></div><figcaption><span>공유 카드</span><span class="en">share card</span></figcaption></figure>
+  </div>
+</section>
+
+<section id="c">
+  <div class="dhead"><h2>C — Obang Hybrid</h2><span class="score mid">76/100</span><span class="ds">DS: Obsidian Meridian</span></div>
+  <p class="dnote">벤토 그리드 + 오방 5원소 타일 + "REGISTRY NO." 박물관 카탈로그 무드. 색 시스템 확장성 최강. 히어로 타일의 빈 영역과 하단 아티팩트가 과제.</p>
+  <div class="row">
+    <figure><div class="phone"><img src="variants/C_obang.png" alt="C 시작"></div><figcaption><span>시작</span><span class="en">landing</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/C/entry.png" alt="C 입력"></div><figcaption><span>입력</span><span class="en">entry</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/C/calculating.png" alt="C 계산 중"></div><figcaption><span>계산 중</span><span class="en">calculating</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/C/free_result.png" alt="C 무료 결과"></div><figcaption><span>무료 결과</span><span class="en">free result</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/C/payment.png" alt="C 결제"></div><figcaption><span>결제</span><span class="en">payment</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/C/paid_result.png" alt="C 유료 결과"></div><figcaption><span>유료 결과</span><span class="en">full report</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/C/share_card.png" alt="C 공유 카드"></div><figcaption><span>공유 카드</span><span class="chip fix">하단 아티팩트</span><span class="en">share card</span></figcaption></figure>
+  </div>
+</section>
+
+<section id="ac">
+  <div class="dhead"><h2>A+C — Nocturne Obang <span class="dots"><i style="background:var(--wood)"></i><i style="background:var(--fire)"></i><i style="background:var(--gold)"></i><i style="background:var(--metal)"></i><i style="background:var(--water)"></i></span></h2><span class="score">87/100 권장</span><span class="ds">DS: Nocturne Obang</span></div>
+  <p class="dnote">A의 무드 + C의 배지 스트립 + 공유카드 프리뷰·대운 타임라인까지. 서사가 완결되는 완결형. entry는 라이트 이탈로 1회 재생성해 다크 복원 완료.</p>
+  <div class="row">
+    <figure><div class="phone"><img src="variants/AC_hybrid.png" alt="AC 시작"></div><figcaption><span>시작</span><span class="en">landing</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/AC/entry.png" alt="AC 입력"></div><figcaption><span>입력</span><span class="chip ok">재생성 완료</span><span class="en">entry</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/AC/calculating.png" alt="AC 계산 중"></div><figcaption><span>계산 중</span><span class="chip ok">4단계 결정론</span><span class="en">calculating</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/AC/free_result.png" alt="AC 무료 결과"></div><figcaption><span>무료 결과</span><span class="chip warn">렌더 비율 이슈</span><span class="en">free result</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/AC/payment.png" alt="AC 결제"></div><figcaption><span>결제</span><span class="chip warn"> Pay 로고</span><span class="en">payment</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/AC/paid_result.png" alt="AC 유료 결과"></div><figcaption><span>유료 결과</span><span class="chip warn">워드마크 임시</span><span class="en">full report</span></figcaption></figure>
+    <figure><div class="phone"><img src="flows/AC/share_card.png" alt="AC 공유 카드"></div><figcaption><span>공유 카드</span><span class="chip ok">5도트 시그니처</span><span class="en">share card</span></figcaption></figure>
+  </div>
+</section>
+
+<section id="cmp">
+  <div class="dhead"><h2>비교 · 채점</h2></div>
+  <p class="dnote">가중치: 공유 카드 30 · 신뢰 25 · 확장성 25 · 차별성 20 — <b>product-analysis.md §6</b> 판정 프레임.</p>
+  <table>
+    <tr><th>방향</th><th>공유카드 /30</th><th>신뢰 /25</th><th>확장성 /25</th><th>차별성 /20</th><th>합계</th><th>한줄</th></tr>
+    <tr><td>A Nocturne</td><td>12</td><td>22</td><td>12</td><td>10</td><td><b>56</b></td><td>우아하지만 조용 — 후킹 부재</td></tr>
+    <tr><td>C Obang</td><td>18</td><td>18</td><td>24</td><td>16</td><td><b>76</b></td><td>시스템 최완성 — 히어로 공백 과제</td></tr>
+    <tr class="hl"><td><b>A+C Nocturne Obang</b></td><td><b>27</b></td><td>20</td><td>22</td><td>18</td><td><b>87</b></td><td><b>완결형 — 채택 권장</b></td></tr>
+  </table>
+</section>
+
+<section id="nx">
+  <div class="next">
+    <h3>Next</h3>
+    <ol>
+      <li><b>방향 확정</b> — 위 3벌을 보고 채택 (권장: A+C). 부분 조합도 가능: "AC 베이스 + C의 entry" 같은 혼합 지정.</li>
+      <li><b>OpenDesign 이관</b> — OpenDesign 앱 실행 후 pencil MCP로 채택 7스크린을 .pen 캔버스로 이관, 결함 5건 정제.</li>
+      <li><b>디자인 시스템 확정</b> — 물상 배지 10종 · 토큰 · 공유 카드 규격 확정 후 프론트엔드 인계.</li>
+    </ol>
+  </div>
+</section>
+
+<footer>Generated by Stitch (Gemini 3 Pro) · SSOT: design-ssot/ · Screen IDs: flows/manifest.json · 이 페이지는 내부 리뷰 전용</footer>
+</div>
+</body>
+</html>

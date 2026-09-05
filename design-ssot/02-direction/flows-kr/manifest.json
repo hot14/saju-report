@@ -1,0 +1,134 @@
+{
+ "A": {
+  "landing": {
+   "status": "ok",
+   "screenId": "8aad456ac22d4751ba3389ca1ed6754d",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/A/landing.png",
+   "bytes": 87235
+  },
+  "entry": {
+   "status": "ok",
+   "screenId": "cf37e883e66b415790ae9e6e3c3ede73",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/A/entry.png",
+   "bytes": 94809
+  },
+  "calculating": {
+   "status": "ok",
+   "screenId": "e70b08d070b647b19cec37e7b71bc067",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/A/calculating.png",
+   "bytes": 119305
+  },
+  "free_result": {
+   "status": "ok",
+   "screenId": "96bf7bb7a6b344709d70f36692625549",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/A/free_result.png",
+   "bytes": 55315
+  },
+  "payment": {
+   "status": "ok",
+   "screenId": "fecaca8af8fc4f6681d2ebe7e40d150e",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/A/payment.png",
+   "bytes": 66455
+  },
+  "paid_result": {
+   "status": "ok",
+   "screenId": "bf775855f52641dcaf4460262f7085ef",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/A/paid_result.png",
+   "bytes": 86108
+  },
+  "share_card": {
+   "status": "ok",
+   "screenId": "268b4e2d5bfd4ff0bf8eec340a06cde3",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/A/share_card.png",
+   "bytes": 66031
+  }
+ },
+ "C": {
+  "landing": {
+   "status": "ok",
+   "screenId": "dc311e37a3d741c2ad674c7475e1ddea",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/C/landing.png",
+   "bytes": 138530
+  },
+  "entry": {
+   "status": "ok",
+   "screenId": "0de4fe1f9eb54d8ba9c2e499531bb4e9",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/C/entry.png",
+   "bytes": 109088
+  },
+  "calculating": {
+   "status": "ok",
+   "screenId": "f9878bad0052497cb24d918552b16f81",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/C/calculating.png",
+   "bytes": 134339
+  },
+  "free_result": {
+   "status": "ok",
+   "screenId": "f18d14bb192149048350dcd84b99f19c",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/C/free_result.png",
+   "bytes": 39284
+  },
+  "payment": {
+   "status": "ok",
+   "screenId": "8cbc14edc0c84978a3f5d4f113c0b02e",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/C/payment.png",
+   "bytes": 56734
+  },
+  "paid_result": {
+   "status": "ok",
+   "screenId": "1b524f8537ac45ee8b080ab6778d293f",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/C/paid_result.png",
+   "bytes": 53323
+  },
+  "share_card": {
+   "status": "ok",
+   "screenId": "1381ca184f324a1fa9df4ff984447fd1",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/C/share_card.png",
+   "bytes": 31379
+  }
+ },
+ "AC": {
+  "landing": {
+   "status": "ok",
+   "screenId": "27d60e92dde542c6bea948eee1d27703",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/AC/landing.png",
+   "bytes": 101549
+  },
+  "entry": {
+   "status": "ok",
+   "screenId": "c3cb2ec955274ac595da8942e9f4ae83",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/AC/entry.png",
+   "bytes": 68024
+  },
+  "calculating": {
+   "status": "ok",
+   "screenId": "5ecc3f7a3b4042a7a43bbf863d374064",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/AC/calculating.png",
+   "bytes": 106353
+  },
+  "free_result": {
+   "status": "ok",
+   "screenId": "d3a86cf0ff8641c397a39b60af747a25",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/AC/free_result.png",
+   "bytes": 41807
+  },
+  "payment": {
+   "status": "ok",
+   "screenId": "3dad30aa645d4cab8747c139ca73d9ec",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/AC/payment.png",
+   "bytes": 93932
+  },
+  "paid_result": {
+   "status": "ok",
+   "screenId": "650ffb45b27d4e238c47000fd425c31c",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/AC/paid_result.png",
+   "bytes": 89331
+  },
+  "share_card": {
+   "status": "ok",
+   "screenId": "b1c03348f9304d848820b034d848459c",
+   "file": "/Users/hot14/Desktop/260904_k-saju/design-ssot/02-direction/flows-kr/AC/share_card.png",
+   "bytes": 64087
+  }
+ }
+}
