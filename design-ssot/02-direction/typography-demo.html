@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>줄나눔 시스템 데모 — K-Saju Typography</title>
+<title>줄나눔 시스템 데모 · K-Saju Typography</title>
 <link rel="stylesheet" href="typography.css">
 <style>
   :root{ --ink:#141416; --surface:#1b1b1e; --tile:#202024; --hanji:#f5f1e6; --mute:#a8a29a; --gold:#c9a227; --line:#2c2c31 }
@@ -45,27 +45,27 @@
   </nav>
 
   <section id="ko">
-    <h2>1. 한글 — 어절 단위 줄바꿈 (keep-all)</h2>
+    <h2>1. 한글 · 어절 단위 줄바꿈 (keep-all)</h2>
     <p class="desc">한글은 글자 단위로 끊기면 읽기가 무너진다. 좌측(안티패턴: break-all)과 우측(정답: keep-all)을 비교한다. 실제 서비스에는 정답 규칙만 적용된다.</p>
     <div class="duo">
       <div class="card bad narrow-demo">
-        <h3>✕ 안티패턴 — 글자 단위 분절</h3>
+        <h3>✕ 안티패턴 · 글자 단위 분절</h3>
         <p class="breakall" lang="ko">당신에게 없는 건 끈기가 아니라, 물을 가둘 둑입니다. 혼자 세운 규칙은 자기가 밀면 무너지기 때문입니다.</p>
       </div>
       <div class="card good">
-        <h3>✓ 정답 — 어절 단위 (서비스 적용값)</h3>
+        <h3>✓ 정답 · 어절 단위 (서비스 적용값)</h3>
         <p lang="ko">당신에게 없는 건 끈기가 아니라, 물을 가둘 둑입니다. 혼자 세운 규칙은 자기가 밀면 무너지기 때문입니다.</p>
       </div>
     </div>
   </section>
 
   <section id="en">
-    <h2>2. 영어 — 협폭 하이픈과 단어 보존</h2>
+    <h2>2. 영어 · 협폭 하이픈과 단어 보존</h2>
     <p class="desc">영어 본문은 하이픈 없이 단어 단위. 230px 협폭 컬럼에서만 hyphens:auto가 활성화되어 끊김이 자연스럽다. 가격·수치 토큰은 절대 분리되지 않는다.</p>
     <div class="duo">
       <div class="card narrow-demo" lang="en">
         <h3>Narrow column · 230px</h3>
-        <p>The pattern is structural, not prophetic. What you lack is not persistence — it is a bank to hold the water.</p>
+        <p>The pattern is structural, not prophetic. What you lack is not persistence · it is a bank to hold the water.</p>
       </div>
       <div class="card good" lang="en">
         <h3>Token integrity</h3>
@@ -75,10 +75,10 @@
   </section>
 
   <section id="mix" class="mixed">
-    <h2>3. 혼합 문장 — 한글 + 영어 런</h2>
+    <h2>3. 혼합 문장 · 한글 + 영어 런</h2>
     <p class="desc">한글 문장 안의 영어는 &lt;span lang="en"&gt;으로 감싸 언어별 규칙이 각자 적용된다. 행간 이중화 없음.</p>
     <div class="card good">
-      <p lang="ko">당신의 일간은 <span lang="en">Ren Water</span> — 계산상 상위 <span class="num">12%</span> 희귀 조합입니다. 이 리포트는 <span class="no-break">$8</span>이며, <span lang="en">one-time</span> 결제로 구독은 없습니다.</p>
+      <p lang="ko">당신의 일간은 <span lang="en">Ren Water</span> · 계산상 상위 <span class="num">12%</span> 희귀 조합입니다. 이 리포트는 <span class="no-break">$8</span>이며, <span lang="en">one-time</span> 결제로 구독은 없습니다.</p>
     </div>
   </section>
 
@@ -88,11 +88,11 @@
     <div class="duo">
       <div class="card bad">
         <h3>✕ 균형 없음</h3>
-        <p style="font-size:var(--fs-h2);line-height:var(--lh-display);text-wrap:initial" lang="ko">당신은 넓은, 둑 없는 호수입니다 — 그리고 그 호수는 맑습니다</p>
+        <p style="font-size:var(--fs-h2);line-height:var(--lh-display);text-wrap:initial" lang="ko">당신은 넓은, 둑 없는 호수입니다 · 그리고 그 호수는 맑습니다</p>
       </div>
       <div class="card good">
         <h3>✓ balance 적용</h3>
-        <p class="text-balance" style="font-size:var(--fs-h2);line-height:var(--lh-display)" lang="ko">당신은 넓은, 둑 없는 호수입니다 — 그리고 그 호수는 맑습니다</p>
+        <p class="text-balance" style="font-size:var(--fs-h2);line-height:var(--lh-display)" lang="ko">당신은 넓은, 둑 없는 호수입니다 · 그리고 그 호수는 맑습니다</p>
       </div>
     </div>
   </section>
@@ -102,11 +102,11 @@
     <p class="desc">375px 모바일 → 1280px 데스크톱까지 연속 보간. 줄바꿈 지점이 디바이스 폭에 따라 자연스럽게 재배치된다.</p>
     <p class="hero text-balance" lang="ko">당신은 넓은 호수입니다</p>
     <p class="pull text-pretty" lang="ko">당신은 시작한 것이 많고, 그중 상당수가 끝나기 전에 다음이 시작됐을 겁니다. 그건 끈기의 문제가 아니라, 담아둘 곳의 문제입니다.</p>
-    <div class="card"><p class="text-pretty" lang="ko">본문 크기 <span class="num" id="fs-report"></span> — 현재 뷰포트 <span class="num" id="vw-report"></span></p></div>
+    <div class="card"><p class="text-pretty" lang="ko">본문 크기 <span class="num" id="fs-report"></span> · 현재 뷰포트 <span class="num" id="vw-report"></span></p></div>
   </section>
 
   <section id="prose">
-    <h2>6. 문장 구조 — anti-slop 가드</h2>
+    <h2>6. 문장 구조 · anti-slop 가드</h2>
     <p class="desc">구조는 단정, 미래는 조건문. 주장 뒤에 행동이 온다. 윤문 규칙은 typography.css가 아니라 카피 시스템의 책임이지만, 조판이 리듬을 지탱한다.</p>
     <div class="duo">
       <div class="card bad">

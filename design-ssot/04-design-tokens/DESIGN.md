@@ -45,8 +45,8 @@ Hard rules:
 | 근거 태그·데이터 | · | IBM Plex Mono | 판정 근거·좌표 라벨 전용 |
 
 - 한글 폰트 최종 확정은 눈누(https://noonnu.cc) 상업용 무료 라인업에서.
-- BANNED: Inter, Roboto, **Fraunces, Instrument Serif**(tasteskill §4.1), 3단 미만 타입 스케일.
-- 스펙imen: `assets/typography/` (16종, fraunces·instrument-serif는 배제 태그로 전환 예정).
+- BANNED: Inter, Roboto, tasteskill §4.1 금지 세리프 2종, 3단 미만 타입 스케일.
+- 스펙imen: `assets/typography/` (16종, §4.1 금지 세리프 2종 표본은 배제 태그로 전환 예정).
 
 ## 4. Component Behaviors
 - **일간 정체성 카드 ×10** (브랜드 최고 자산): 입력 완료 즉시 출력. 오행색 도트 + 한자 + 영어 물상명(배지명은 `docs/badge-naming-en.md` 확정값, astrobazi 선점 공식 회피) + 물성 스틸컷. 워드마크는 {{BRAND}} 토큰.

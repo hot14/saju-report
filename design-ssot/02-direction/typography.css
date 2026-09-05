@@ -12,9 +12,9 @@
 /* ---------- 1. 토큰 ---------- */
 :root {
   /* 행폭(measure): 언어별 적정 줄 길이 */
-  --measure-en: 66ch;            /* 영어 본문 45–75ch 중심값 */
+  --measure-en: 66ch;            /* 영어 본문 45-75ch 중심값 */
   --measure-en-tight: 34ch;      /* 영어 협폭(카드/사이드) */
-  --measure-ko: 38em;            /* 한글 본문 34–42자 중심값 (한글 1자 ≈ 1em) */
+  --measure-ko: 38em;            /* 한글 본문 34-42자 중심값 (한글 1자 ≈ 1em) */
   --measure-ko-tight: 22em;      /* 한글 협폭 */
 
   /* 행간: 한글이 더 크다 (복합 모음 구조) */
@@ -27,7 +27,7 @@
   --fs-h1:    clamp(26px, 4.6vw + 6px, 44px);
   --fs-h2:    clamp(21px, 3vw + 6px, 30px);
   --fs-h3:    clamp(18px, 1.8vw + 8px, 21px);
-  --fs-body:  clamp(15px, 0.4vw + 12px, 17px);
+  --fs-body:  clamp(16px, 0.4vw + 12px, 17px);
   --fs-small: clamp(12px, 0.3vw + 10px, 13px);
   --fs-caption: clamp(10.5px, 0.25vw + 9px, 12px);
 
@@ -37,7 +37,7 @@
   --track-small-ko: 0.01em;
   --track-caps: 0.14em;          /* 소형 캡스/라벨 */
 
-  /* 문단 간격 (논리 속성 — RTL 확장 대비) */
+  /* 문단 간격 (논리 속성 · RTL 확장 대비) */
   --gap-para: 0.9em;
 }
 
@@ -56,7 +56,7 @@ body, p, li, dd, dt, figcaption, td, th, h1, h2, h3, h4, h5, h6, blockquote {
 
 /* ---------- 3. 한국어 규칙 ---------- */
 :lang(ko) {
-  word-break: keep-all;          /* 한글 어절 단위만 줄바꿈 — 글자 단위 분절 원천 차단 */
+  word-break: keep-all;          /* 한글 어절 단위만 줄바꿈 · 글자 단위 분절 원천 차단 */
   line-break: strict;            /* 금지 조칙(괄호·마침표 등) 앞 줄바꿈 방지 */
   line-height: var(--lh-ko);
   letter-spacing: var(--track-small-ko);
@@ -69,7 +69,7 @@ body, p, li, dd, dt, figcaption, td, th, h1, h2, h3, h4, h5, h6, blockquote {
 /* ---------- 4. 영어 규칙 ---------- */
 :lang(en) {
   line-height: var(--lh-en);
-  hyphens: auto;                 /* 협폭에서만 하이픈 허용 — 전역 아님 */
+  hyphens: auto;                 /* 협폭에서만 하이픈 허용 · 전역 아님 */
   -webkit-hyphens: auto;
   overflow-wrap: break-word;
 }
@@ -80,8 +80,8 @@ body, p, li, dd, dt, figcaption, td, th, h1, h2, h3, h4, h5, h6, blockquote {
 :lang(en).narrow, .narrow :lang(en) p { hyphens: auto; }
 
 /* ---------- 5. 줄바꿈 품질 (2025-26 baseline) ----------
-   balance : 헤드라인 — 줄 길이 균등화, 리본 줄 방지
-   pretty  : 본문 — 마지막 한 단어 고아(orphan) 방지
+   balance : 헤드라인 · 줄 길이 균등화, 리본 줄 방지
+   pretty  : 본문 · 마지막 한 단어 고아(orphan) 방지
    미지원 브라우저는 무시하며 규칙이 깨지지 않음 (progressive enhancement) */
 h1, h2, h3, .text-balance {
   text-wrap: balance;
@@ -103,7 +103,7 @@ p, li, blockquote, dd, .text-pretty {
    - 하이픈·자간·행간이 영어 규칙 적용
    - 한글 keep-all과 충돌 없음 */
 :lang(ko) :lang(en) {
-  line-height: inherit;          /* 문단 행간 유지 — 이중 행간 방지 */
+  line-height: inherit;          /* 문단 행간 유지 · 이중 행간 방지 */
   letter-spacing: 0;
 }
 
@@ -121,7 +121,7 @@ blockquote {
 /* 숫자 그룹: 1,000 단위 내부 분절 금지 */
 .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
 
-/* ---------- 9. 리듬 (문단 간격 — 균일 AI 간격 탈피) ---------- */
+/* ---------- 9. 리듬 (문단 간격 · 균일 AI 간격 탈피) ---------- */
 .prose > * + * { margin-block-start: var(--gap-para); }
 .prose h2, .prose h3 { margin-block-start: 1.6em; }
 .prose blockquote + p { margin-block-start: 1.2em; }
