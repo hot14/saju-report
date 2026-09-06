@@ -1,3 +1,5 @@
+> **DEPRECATED 2026-09-06** — 확정 컨셉(스위스 레저 · 라이트)과 불일치. 사용 금지. 대체: `05-handoff/HANDOFF.md` + `05-handoff/tokens.css`
+
 # Design System: Bright Mulsang (K-Saju Service)
 **Skill:** stitch-design-taste · **Project:** Korean Saju (물상론) reading service for global K-culture fans
 **Version:** v0.3 (2026.09.05 · 09.05 콘셉트 가드레일 회의에 따라 다크 v0.2(Nocturne Obang)를 폐기하고 **밝은 모던 K-컬처 물성**으로 단일화. 본 문서가 유일한 토큰 원천이다(다크 v0.2 표기 #141416 배경·#C9A227 CTA·Fraunces·Motion 5는 전부 무효).

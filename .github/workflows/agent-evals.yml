@@ -74,7 +74,8 @@ jobs:
                      + glob.glob("design-ssot/02-direction/taste-20-ko-html/*.html")
                      + glob.glob("design-ssot/02-direction/brutal-20-html/bt*.html")
                      + glob.glob("design-ssot/02-direction/brutal-20-ko-html/*.html")
-                     + glob.glob("design-ssot/02-direction/html-impl-ko/*.html"))
+                     + glob.glob("design-ssot/02-direction/html-impl-ko/*.html")
+                     + glob.glob("design-ssot/02-direction/final-swiss-ko/*.html"))
           errors = []
           for p in targets:
               s = open(p, encoding="utf-8", errors="replace").read()
