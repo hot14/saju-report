@@ -1,0 +1,48 @@
+/* ============================================================
+   SAJU Design Tokens v1.0 "Swiss Ledger"
+   확정 컨셉: 스위스 데이터-에디토리얼 (KO) · intent/design-finalization
+   근거: final-swiss-ko/ 7화면 실사용 값 추출 (2026-09-06)
+   이전 버전: 04-design-tokens/tokens.css (v0.2 Nocturne Obang) → DEPRECATED
+   ============================================================ */
+
+:root {
+  /* --- Color (배경 · 잉크 · 액센트 3색 체계) --- */
+  --color-bg: #FFFFFF;              /* 순백 배경 (전 화면 단일) */
+  --color-ink: #111111;             /* 잉크 블랙 (본문 · 라인 · CTA 필) */
+  --color-ink-soft: #444748;        /* 보조 텍스트 */
+  --color-ink-mute: #6F6A63;        /* 캡션 · 메타 */
+  --color-accent: #E0311D;          /* 레드 — 헤드라인 마침표 · 하이라이트 보더 · YOU 태그 전용 */
+  --color-hairline: #D0CDC6;        /* 헤어라인 · 표 룰 */
+
+  /* --- Typography --- */
+  --font-display: "Noto Serif KR", serif;          /* 900 — 헤드라인 */
+  --font-body: "Noto Sans KR", sans-serif;         /* 400/500/700 — 본문 */
+  --font-mono: "IBM Plex Mono", monospace;         /* 라벨 · 데이터 · 도판 캡션 */
+
+  /* --- Type Scale --- */
+  --text-hero: 2.6rem;        /* 히어로 (모바일 기준) */
+  --text-h1: 2rem;
+  --text-h2: 1.25rem;
+  --text-body: 0.95rem;
+  --text-label: 0.7rem;       /* 모노 라벨 · letter-spacing 0.14em · UPPERCASE */
+
+  /* --- Spacing --- */
+  --space-section: 3.5rem;    /* 섹션 간 */
+  --space-block: 1.25rem;     /* 블록 간 */
+  --space-inline: 0.75rem;
+  --page-pad: 1.25rem;        /* 390px 기준 좌우 패딩 */
+
+  /* --- Component Tokens --- */
+  --border-width: 1.5px;            /* 카드 · 표 기본 보더 */
+  --border-strong: 2px;             /* CTA · 하이라이트 */
+  --radius: 0px;                    /* 라운드 없음 — 스위스 문법 */
+  --table-row-pad: 0.85rem;         /* 레지스트리 표 행 */
+  --cta-pad: 1rem 1.5rem;           /* 풀필 CTA */
+
+  /* --- Figure (도판) System --- */
+  --fig-caption: "도판 0N - 제목";  /* 모노 · mute · 화면 상단 좌측 */
+  --fig-registry: 01 랜딩 · 02 입력 · 03 해석 · 04 결과 · 05 공유 · 06 리포트 · 07 도감;
+
+  /* --- Brand Law (CI eval 3이 검증) --- */
+  --law: "오컬트 심볼 0 · 운세/운명 어휘 0 · em-dash 0 · 다크 배경 0 · 점수 바 0 (표 문법만)";
+}
