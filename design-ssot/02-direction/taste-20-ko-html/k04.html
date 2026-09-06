@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&amp;family=Noto+Sans+KR:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#FBF9F5",
+                        "text-main": "#1A1815",
+                        "accent": "#B8433A",
+                        "divider": "#E5E2DF", // Approximating hairline color
+                        "surface": "#ffffff"
+                    },
+                    fontFamily: {
+                        "myeongjo": ["'Nanum Myeongjo'", "serif"],
+                        "sans-kr": ["'Noto Sans KR'", "sans-serif"],
+                        // Fallbacks mapping to design system
+                        "headline-md": ["'Nanum Myeongjo'", "serif"],
+                        "body-md": ["'Noto Sans KR'", "sans-serif"],
+                        "kicker-sm": ["'Noto Sans KR'", "sans-serif"],
+                        "caption": ["'Nanum Myeongjo'", "serif"],
+                        "label-caps": ["'Noto Sans KR'", "sans-serif"]
+                    },
+                    spacing: {
+                        "section-gap": "120px",
+                        "margin-mobile": "24px",
+                        "hairline": "0.5px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #FBF9F5;
+            color: #1A1815;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .hairline-b {
+            border-bottom: 0.5px solid #E5E2DF;
+        }
+        .hairline-t {
+            border-top: 0.5px solid #E5E2DF;
+        }
+        .hairline-l {
+            border-left: 0.5px solid #E5E2DF;
+        }
+        .hairline-r {
+            border-right: 0.5px solid #E5E2DF;
+        }
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-sans-kr min-h-screen flex flex-col">
+<!-- 1. Top Bar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-margin-mobile h-16 z-50 bg-background hairline-b">
+<!-- Assuming exact match from JSON: TopAppBar, but user requests specific wordmark & language switcher -->
+<!-- Adapting TopAppBar structure from JSON -->
+<div class="flex-none">
+<!-- Placeholder for leading icon from JSON if needed, but user didn't explicitly request menu here, just Top Bar with wordmark. JSON says leading_icon: menu -->
+<button class="flex items-center justify-center text-text-main hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined" data-icon="menu" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+<div class="flex-grow text-center">
+<span class="font-myeongjo text-[32px] tracking-tighter text-text-main">SAJU</span>
+</div>
+<div class="flex-none flex items-center gap-2">
+<span class="font-sans-kr text-[11px] font-bold tracking-widest text-text-main">KO</span>
+<div class="flex gap-1">
+<div class="w-1 h-1 rounded-full bg-text-main/30"></div>
+<div class="w-1 h-1 rounded-full bg-text-main/30"></div>
+<div class="w-1 h-1 rounded-full bg-text-main/30"></div>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-24 pb-section-gap px-margin-mobile">
+<!-- 2. Hero Section -->
+<section class="mt-16 mb-section-gap flex flex-col items-start w-full">
+<div class="w-full h-64 mb-8" data-alt="A highly aesthetic, minimalist photograph of calm, still water reflecting a pale, overcast sky. The composition is unbalanced, favoring negative space to evoke quiet contemplation. Light mode color palette with soft creams, muted blues, and crisp whites. High-end editorial style akin to Kinfolk magazine photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYF_KadU4XWoCInHxXn3UaTU8b6uF6Oc1v6-AQZBh513mds2h7L5tpttXLJLe05zCCNFoUP3apYz059pHJ0x03bpTpgu8XjVhQ5zcYQlSrmkYke-WqMf7j7J9mUsVuKA4lQFpvQPheq2ZX179ywAJuSv9aiu-eIuU4IV9Dvv750YhIYlM8bWEa43YLxiyZgZK5OYnjtwF3xcv3D_xRZEV5LKnn8HRTqO4dVpcvDOtjLoeEfrj-qY3p1-Ok0wzh937P0jixCTFPLw')"></div>
+<p class="font-sans-kr text-[12px] font-bold tracking-[0.1em] text-accent mb-4">[IDENTIFICATION]</p>
+<h1 class="font-myeongjo text-[40px] leading-[1.2] font-normal text-text-main mb-6 w-full pr-8">
+                당신은 거울 호수입니다.
+            </h1>
+<p class="font-sans-kr text-[16px] leading-[1.6] font-light text-text-main/80 mb-10 w-full pr-4">
+                짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+            </p>
+<button class="w-full bg-text-main text-surface font-sans-kr text-[11px] font-medium tracking-[0.08em] py-4 rounded-none hover:bg-accent transition-colors duration-300">
+                내 패턴 읽기
+            </button>
+</section>
+<!-- 3. 'The Ten Forms' Section -->
+<section class="mb-section-gap w-full">
+<div class="hairline-t pt-8 mb-8">
+<h2 class="font-myeongjo text-[24px] text-text-main mb-2">열 가지 형태</h2>
+<p class="font-sans-kr text-[14px] leading-[1.5] text-text-main/70">
+                    생년월일시가 열 가지 형태 중 하나를 정합니다.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Tiles -->
+<div class="flex items-center justify-between p-6 bg-surface hairline-t hairline-b hairline-l hairline-r">
+<span class="font-myeongjo text-[18px] text-text-main">거울 호수 壬</span>
+<div class="w-12 h-12 rounded-full border border-[#E5E2DF] flex items-center justify-center">
+<div class="w-8 h-8 rounded-full bg-[#E5E2DF]"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-6 bg-surface hairline-t hairline-b hairline-l hairline-r">
+<span class="font-myeongjo text-[18px] text-text-main">깊은 심목 甲</span>
+<div class="w-12 h-12 rounded-full border border-[#E5E2DF] flex items-center justify-center">
+<div class="w-8 h-8 rounded-full bg-[#E5E2DF]"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-6 bg-surface hairline-t hairline-b hairline-l hairline-r">
+<span class="font-myeongjo text-[18px] text-text-main">정오 표식 丙</span>
+<div class="w-12 h-12 rounded-full border border-[#E5E2DF] flex items-center justify-center">
+<div class="w-8 h-8 rounded-full bg-[#E5E2DF]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Card Preview Section -->
+<section class="mb-section-gap w-full">
+<h2 class="font-myeongjo text-[24px] text-text-main mb-8 leading-tight">결과는 단 하나의 카드로 남습니다.</h2>
+<div class="bg-surface p-8 hairline-t hairline-b hairline-l hairline-r relative shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
+<!-- Aesthetic graphic element inside card -->
+<div class="absolute top-0 right-0 w-16 h-16 bg-background hairline-b hairline-l flex items-center justify-center">
+<span class="font-myeongjo text-accent text-[20px]">壬</span>
+</div>
+<div class="mt-8">
+<div class="flex justify-between items-baseline py-4 hairline-b">
+<span class="font-sans-kr text-[11px] font-medium tracking-widest text-text-main/60 uppercase">일련번호</span>
+<span class="font-sans-kr text-[14px] text-text-main">9A-2B-X1</span>
+</div>
+<div class="flex justify-between items-baseline py-4 hairline-b">
+<span class="font-sans-kr text-[11px] font-medium tracking-widest text-text-main/60 uppercase">오행</span>
+<span class="font-sans-kr text-[14px] text-text-main">물</span>
+</div>
+<div class="flex justify-between items-baseline py-4 hairline-b">
+<span class="font-sans-kr text-[11px] font-medium tracking-widest text-text-main/60 uppercase">음양</span>
+<span class="font-sans-kr text-[14px] text-text-main">양</span>
+</div>
+<div class="flex justify-between items-baseline py-4">
+<span class="font-sans-kr text-[11px] font-medium tracking-widest text-text-main/60 uppercase">주요 패턴</span>
+<span class="font-myeongjo text-[16px] text-text-main">거울 호수</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Closing Section -->
+<section class="mb-12 w-full flex flex-col items-center text-center pt-8 hairline-t">
+<p class="font-myeongjo text-[20px] text-text-main mb-8">
+                당신의 리딩은 여덟 글자로 시작됩니다.
+            </p>
+<button class="w-full bg-text-main text-surface font-sans-kr text-[11px] font-medium tracking-[0.08em] py-4 rounded-none hover:bg-accent transition-colors duration-300">
+                내 패턴 읽기
+            </button>
+</section>
+</main>
+<!-- 6. Footer -->
+<footer class="w-full py-section-gap bg-background flex flex-col items-center gap-4 px-margin-mobile text-center hairline-t">
+<p class="font-sans-kr text-[11px] leading-[1.6] text-text-main/50 max-w-[280px]">
+            SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.
+        </p>
+<div class="font-myeongjo text-[14px] text-text-main/60 mt-4">
+            © 2024 SAJU Editorial. All rights reserved.
+        </div>
+<div class="flex gap-4 mt-2">
+<a class="font-myeongjo text-[14px] text-text-main/60 hover:text-text-main transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-myeongjo text-[14px] text-text-main/60 hover:text-text-main transition-colors duration-200" href="#">Terms of Service</a>
+<a class="font-myeongjo text-[14px] text-text-main/60 hover:text-text-main transition-colors duration-200" href="#">Journal Ethics</a>
+</div>
+</footer>
+</body></html>

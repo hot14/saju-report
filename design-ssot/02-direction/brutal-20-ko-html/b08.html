@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - Sticker Sheet Landing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jua&display=swap');
+    
+    body {
+        background-color: #F7F3EA;
+        background-image: 
+            linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    h1, h2, h3, h4, .font-jua {
+        font-family: 'Jua', sans-serif;
+    }
+
+    .sticker-border {
+        border: 3px solid #111111;
+    }
+
+    .sticker-shadow-sm {
+        box-shadow: 4px 4px 0px #111111;
+    }
+
+    .sticker-shadow-lg {
+        box-shadow: 8px 8px 0px #111111;
+    }
+
+    .hover-invert:hover {
+        background-color: #111111;
+        color: #F7F3EA;
+        box-shadow: 2px 2px 0px #111111;
+        transform: translate(6px, 6px);
+        transition: all 0.2s ease;
+    }
+
+    .rotate-1 { transform: rotate(-2deg); }
+    .rotate-2 { transform: rotate(3deg); }
+    .rotate-3 { transform: rotate(-1deg); }
+    
+    .barcode-line {
+        display: inline-block;
+        height: 24px;
+        background: #111111;
+        margin-right: 2px;
+    }
+
+    .perforation {
+        border-bottom: 2px dashed #111111;
+        width: 100%;
+        margin: 16px 0;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-lowest": "#ffffff",
+            "outline": "#747878",
+            "on-primary-fixed": "#1c1b1b",
+            "on-error": "#ffffff",
+            "inverse-surface": "#2f3131",
+            "surface-dim": "#dadada",
+            "on-secondary": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#474646",
+            "tertiary-fixed-dim": "#c7c6c6",
+            "surface-container-highest": "#e2e2e2",
+            "on-tertiary-container": "#848484",
+            "on-secondary-container": "#5c0003",
+            "surface-variant": "#e2e2e2",
+            "tertiary": "#000000",
+            "surface-tint": "#5f5e5e",
+            "surface-container": "#eeeeee",
+            "primary-fixed": "#e5e2e1",
+            "inverse-primary": "#c8c6c5",
+            "secondary-fixed": "#ffdad5",
+            "error-container": "#ffdad6",
+            "secondary-fixed-dim": "#ffb4aa",
+            "tertiary-fixed": "#e3e2e2",
+            "surface-bright": "#f9f9f9",
+            "primary-fixed-dim": "#c8c6c5",
+            "on-surface": "#1a1c1c",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed": "#410001",
+            "secondary-container": "#fe5549",
+            "on-surface-variant": "#444748",
+            "background": "#f9f9f9",
+            "on-primary-container": "#858383",
+            "tertiary-container": "#1b1c1c",
+            "primary-container": "#1c1b1b",
+            "on-error-container": "#93000a",
+            "surface-container-high": "#e8e8e8",
+            "on-tertiary-fixed-variant": "#464747",
+            "on-secondary-fixed-variant": "#930008",
+            "inverse-on-surface": "#f0f1f1",
+            "on-tertiary-fixed": "#1b1c1c",
+            "surface": "#f9f9f9",
+            "primary": "#000000",
+            "outline-variant": "#c4c7c7",
+            "on-background": "#1a1c1c",
+            "error": "#ba1a1a",
+            "secondary": "#b7211d",
+            "surface-container-low": "#f3f3f4",
+            "accent": "#FF4D00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "20px",
+            "gutter": "16px",
+            "column-gap": "24px",
+            "baseline": "4px",
+            "margin-desktop": "64px"
+          },
+          "fontFamily": {
+            "data-mono": ["IBM Plex Mono"],
+            "body-sm": ["IBM Plex Mono"],
+            "display-lg-mobile": ["Jua"],
+            "label-caps": ["IBM Plex Mono"],
+            "headline-md": ["Jua"],
+            "display-lg": ["Jua"],
+            "body-lg": ["IBM Plex Mono"]
+          },
+          "fontSize": {
+            "data-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "display-lg-mobile": ["40px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700"}],
+            "headline-md": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+            "display-lg": ["72px", {"lineHeight": "64px", "letterSpacing": "-0.04em", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Header (TopAppBar JSON) -->
+<header class="w-full top-0 sticky bg-surface z-50 border-b-2 border-primary flat no shadows">
+<div class="flex justify-between items-center px-margin-mobile py-4 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:text-secondary transition-colors" data-icon="menu">menu</span>
+</div>
+<div class="font-display-lg-mobile text-display-lg-mobile tracking-tighter text-primary">SAJU</div>
+<div class="w-6"></div> <!-- Spacer for center alignment -->
+</div>
+</header>
+<main class="flex-grow flex flex-col gap-12 px-margin-mobile py-12 md:max-w-2xl md:mx-auto w-full">
+<!-- Hero Section -->
+<section class="flex flex-col gap-6 items-center text-center relative z-10 pt-8">
+<div class="bg-white sticker-border p-6 sticker-shadow-sm rotate-1 max-w-sm w-full mx-auto">
+<h1 class="font-display-lg-mobile text-display-lg-mobile leading-tight mb-4 text-primary">당신은 거울<br/>호수입니다.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 text-left">짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.</p>
+<button class="w-full bg-accent text-white sticker-border py-4 font-label-caps text-label-caps sticker-shadow-lg hover-invert uppercase tracking-widest relative z-20">
+          내 패턴 읽기
+        </button>
+</div>
+</section>
+<!-- Sticker Strip Section -->
+<section class="flex flex-col gap-6 pt-8">
+<div class="bg-white sticker-border p-6 sticker-shadow-sm rotate-3">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">열 가지 형태</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 border-b-2 border-primary pb-4">생년월일시가 열 가지 형태 중 하나를 정합니다.</p>
+<div class="flex flex-wrap gap-4 justify-center">
+<div class="bg-[#F7F3EA] sticker-border px-4 py-2 font-jua text-xl sticker-shadow-sm rotate-2">
+                거울 호수 壬
+            </div>
+<div class="bg-white sticker-border px-4 py-2 font-jua text-xl sticker-shadow-sm rotate-[-4deg]">
+                깊은 심목 甲
+            </div>
+<div class="bg-[#E5E2E1] sticker-border px-4 py-2 font-jua text-xl sticker-shadow-sm rotate-1">
+                정오 표식 丙
+            </div>
+</div>
+</div>
+</section>
+<!-- Card Preview Section -->
+<section class="flex flex-col gap-6 pt-8 pb-12">
+<div class="text-center mb-4 bg-primary text-white sticker-border inline-block px-4 py-2 mx-auto rotate-1 sticker-shadow-sm">
+<h3 class="font-jua text-2xl">결과는 단 하나의 카드로 남습니다.</h3>
+</div>
+<div class="bg-white sticker-border p-8 sticker-shadow-lg rotate-[-1deg] max-w-sm mx-auto w-full relative overflow-hidden">
+<!-- Tech/Barcode Header -->
+<div class="flex justify-between items-start mb-6 border-b-2 border-primary pb-4">
+<div>
+<div class="font-data-mono text-data-mono text-outline mb-1">SERIAL:</div>
+<div class="font-data-mono text-data-mono font-bold text-primary">9A-2B-X1</div>
+</div>
+<div class="flex items-center gap-1">
+<span class="barcode-line w-1"></span>
+<span class="barcode-line w-2"></span>
+<span class="barcode-line w-1"></span>
+<span class="barcode-line w-3"></span>
+<span class="barcode-line w-1"></span>
+<span class="barcode-line w-2"></span>
+</div>
+</div>
+<!-- Data Points -->
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-[#F7F3EA] sticker-border p-3">
+<div class="font-label-caps text-label-caps text-outline mb-1">ELEMENT</div>
+<div class="font-jua text-2xl text-primary">물</div>
+</div>
+<div class="bg-[#F7F3EA] sticker-border p-3">
+<div class="font-label-caps text-label-caps text-outline mb-1">POLARITY</div>
+<div class="font-jua text-2xl text-primary">양</div>
+</div>
+</div>
+<div class="perforation"></div>
+<!-- Main Pattern -->
+<div class="text-center py-6 bg-accent sticker-border mt-6">
+<div class="font-label-caps text-label-caps text-white mb-2 tracking-widest">MAIN PATTERN</div>
+<div class="font-jua text-5xl text-white tracking-tight">거울 호수</div>
+</div>
+<!-- Decorative corner -->
+<div class="absolute top-0 right-0 w-8 h-8 bg-[#F7F3EA] border-l-3 border-b-3 border-primary"></div>
+</div>
+</section>
+<!-- Closing CTA -->
+<section class="flex flex-col items-center text-center py-12 border-t-2 border-primary border-dashed">
+<div class="bg-white sticker-border p-6 sticker-shadow-sm rotate-2 w-full max-w-sm mx-auto">
+<p class="font-body-lg text-body-lg text-primary mb-6 font-bold">당신의 리딩은 여덟 글자로 시작됩니다.</p>
+<button class="w-full bg-accent text-white sticker-border py-4 font-label-caps text-label-caps sticker-shadow-lg hover-invert uppercase tracking-widest">
+            내 패턴 읽기
+          </button>
+</div>
+</section>
+</main>
+<!-- Footer (Footer JSON) -->
+<footer class="w-full mt-auto bg-surface border-t-2 border-primary flat no shadows flex flex-col gap-gutter px-margin-mobile py-12 z-50">
+<div class="flex flex-col gap-4">
+<div class="font-display-lg-mobile text-display-lg-mobile text-primary tracking-tighter">SAJU</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+              SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.
+          </div>
+</div>
+<div class="flex flex-wrap gap-4 mt-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary cursor-pointer transition-colors" href="#">TERMS OF SERVICE</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary cursor-pointer transition-colors" href="#">PRIVACY POLICY</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary cursor-pointer transition-colors" href="#">LEGAL NOTICE</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary cursor-pointer transition-colors" href="#">CONTACT</a>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mt-4">
+          © 2024 SAJU BUREAU. ALL RIGHTS RESERVED.
+      </div>
+</footer>
+</body></html>

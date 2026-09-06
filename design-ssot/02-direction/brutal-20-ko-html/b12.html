@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - Registry Card</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&amp;family=IBM+Plex+Sans+KR:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;700;800&amp;family=Hanken+Grotesk:wght@400;500;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "inverse-primary": "#c8c6c5",
+                "on-secondary-fixed-variant": "#930008",
+                "primary-fixed-dim": "#c8c6c5",
+                "surface-container-low": "#f3f3f4",
+                "tertiary-fixed-dim": "#c7c6c6",
+                "primary": "#000000",
+                "surface-bright": "#f9f9f9",
+                "outline": "#747878",
+                "on-secondary": "#ffffff",
+                "outline-variant": "#c4c7c7",
+                "on-secondary-fixed": "#410001",
+                "inverse-surface": "#2f3131",
+                "on-tertiary-fixed": "#1b1c1c",
+                "on-secondary-container": "#5c0003",
+                "on-background": "#1a1c1c",
+                "error-container": "#ffdad6",
+                "surface-variant": "#e2e2e2",
+                "on-surface": "#1a1c1c",
+                "tertiary-container": "#1b1c1c",
+                "on-primary-fixed": "#1c1b1b",
+                "surface": "#f9f9f9",
+                "primary-container": "#1c1b1b",
+                "error": "#ba1a1a",
+                "on-tertiary-container": "#848484",
+                "on-surface-variant": "#444748",
+                "secondary-fixed": "#ffdad5",
+                "on-error": "#ffffff",
+                "surface-container-high": "#e8e8e8",
+                "tertiary-fixed": "#e3e2e2",
+                "on-tertiary-fixed-variant": "#464747",
+                "on-primary-container": "#858383",
+                "on-primary-fixed-variant": "#474646",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "on-error-container": "#93000a",
+                "surface-tint": "#5f5e5e",
+                "background": "#f9f9f9",
+                "surface-container-highest": "#e2e2e2",
+                "surface-container": "#eeeeee",
+                "secondary-fixed-dim": "#ffb4aa",
+                "secondary": "#b7211d",
+                "primary-fixed": "#e5e2e1",
+                "on-primary": "#ffffff",
+                "tertiary": "#000000",
+                "secondary-container": "#fe5549",
+                "surface-dim": "#dadada",
+                "inverse-on-surface": "#f0f1f1"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "column-gap": "24px",
+                "gutter": "16px",
+                "baseline": "4px",
+                "margin-mobile": "20px",
+                "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                "data-mono": [
+                  "JetBrains Mono", "IBM Plex Mono", "monospace"
+                ],
+                "body-lg": [
+                  "Hanken Grotesk", "IBM Plex Sans KR", "sans-serif"
+                ],
+                "display-lg": [
+                  "Hanken Grotesk", "IBM Plex Sans KR", "sans-serif"
+                ],
+                "headline-md": [
+                  "Hanken Grotesk", "IBM Plex Sans KR", "sans-serif"
+                ],
+                "display-lg-mobile": [
+                  "Hanken Grotesk", "IBM Plex Sans KR", "sans-serif"
+                ],
+                "label-caps": [
+                  "Hanken Grotesk", "IBM Plex Sans KR", "sans-serif"
+                ],
+                "body-sm": [
+                  "Hanken Grotesk", "IBM Plex Sans KR", "sans-serif"
+                ]
+              },
+              "fontSize": {
+                "data-mono": [
+                  "14px",
+                  {
+                    "lineHeight": "20px",
+                    "letterSpacing": "-0.02em",
+                    "fontWeight": "500"
+                  }
+                ],
+                "body-lg": [
+                  "18px",
+                  {
+                    "lineHeight": "28px",
+                    "letterSpacing": "-0.01em",
+                    "fontWeight": "400"
+                  }
+                ],
+                "display-lg": [
+                  "72px",
+                  {
+                    "lineHeight": "64px",
+                    "letterSpacing": "-0.04em",
+                    "fontWeight": "800"
+                  }
+                ],
+                "headline-md": [
+                  "32px",
+                  {
+                    "lineHeight": "36px",
+                    "letterSpacing": "-0.02em",
+                    "fontWeight": "700"
+                  }
+                ],
+                "display-lg-mobile": [
+                  "40px",
+                  {
+                    "lineHeight": "40px",
+                    "letterSpacing": "-0.03em",
+                    "fontWeight": "800"
+                  }
+                ],
+                "label-caps": [
+                  "12px",
+                  {
+                    "lineHeight": "16px",
+                    "letterSpacing": "0.06em",
+                    "fontWeight": "700"
+                  }
+                ],
+                "body-sm": [
+                  "14px",
+                  {
+                    "lineHeight": "20px",
+                    "letterSpacing": "0em",
+                    "fontWeight": "400"
+                  }
+                ]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        /* Neo-Brutalist utility classes for specific overrides not easily handled by standard tailwind config in this constrained environment */
+        .neo-bg { background-color: #F4F1EC; }
+        .neo-border { border: 2px solid #111111; }
+        .neo-border-b { border-bottom: 2px solid #111111; }
+        .neo-shadow { box-shadow: 8px 8px 0px 0px #111111; }
+        .neo-shadow-sm { box-shadow: 4px 4px 0px 0px #111111; }
+        .neo-accent { background-color: #FF4D00; }
+        .neo-accent-text { color: #FF4D00; }
+        .grid-bg {
+            background-image: linear-gradient(#111111 1px, transparent 1px), linear-gradient(90deg, #111111 1px, transparent 1px);
+            background-size: 24px 24px;
+            background-color: #F4F1EC;
+            opacity: 0.05;
+        }
+        .bracket-tl { position: absolute; top: 0; left: 0; width: 16px; height: 16px; border-top: 2px solid #111111; border-left: 2px solid #111111; }
+        .bracket-tr { position: absolute; top: 0; right: 0; width: 16px; height: 16px; border-top: 2px solid #111111; border-right: 2px solid #111111; }
+        .bracket-bl { position: absolute; bottom: 0; left: 0; width: 16px; height: 16px; border-bottom: 2px solid #111111; border-left: 2px solid #111111; }
+        .bracket-br { position: absolute; bottom: 0; right: 0; width: 16px; height: 16px; border-bottom: 2px solid #111111; border-right: 2px solid #111111; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="neo-bg text-primary font-body-sm min-h-screen relative overflow-x-hidden">
+<!-- Grid Overlay -->
+<div class="fixed inset-0 grid-bg pointer-events-none z-0"></div>
+<div class="relative z-10 max-w-md mx-auto min-h-screen flex flex-col bg-surface-bright neo-border-x md:neo-border md:my-8 md:neo-shadow">
+<!-- TopAppBar -->
+<header class="flex items-center justify-between px-margin-mobile py-4 w-full bg-surface w-full top-0 sticky border-b border-primary z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl leading-none">menu</span>
+<span class="font-display-lg-mobile text-display-lg-mobile tracking-tighter text-primary leading-none uppercase">SAJU</span>
+</div>
+<span class="material-symbols-outlined text-primary text-2xl leading-none">account_circle</span>
+</header>
+<main class="flex-grow flex flex-col">
+<!-- Hero Section -->
+<section class="px-margin-mobile py-12 flex flex-col gap-6 border-b-2 border-primary relative">
+<div class="bracket-tl m-4"></div>
+<div class="bracket-tr m-4"></div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile tracking-tighter leading-tight text-primary mt-4">
+                    당신은<br/>거울 호수입니다.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[280px]">
+                    짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+                </p>
+<div class="mt-4 flex justify-start">
+<button class="neo-accent neo-border neo-shadow text-on-secondary font-label-caps text-label-caps uppercase px-8 py-4 tracking-wider active:translate-y-1 active:translate-x-1 active:neo-shadow-sm transition-all">
+                        내 패턴 읽기
+                    </button>
+</div>
+</section>
+<!-- Ten Forms Section -->
+<section class="px-margin-mobile py-12 flex flex-col gap-8 border-b-2 border-primary bg-surface-container-lowest">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">열 가지 형태</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        생년월일시가 열 가지 형태 중 하나를 정합니다.
+                    </p>
+</div>
+<div class="flex flex-col gap-4 relative">
+<!-- Badges -->
+<div class="neo-border bg-surface px-4 py-2 self-start rotate-[-2deg] neo-shadow-sm font-data-mono text-data-mono flex items-center gap-2">
+<span class="w-3 h-3 bg-primary block"></span>
+                        거울 호수 壬
+                    </div>
+<div class="neo-border bg-surface px-4 py-2 self-center rotate-[3deg] neo-shadow-sm font-data-mono text-data-mono flex items-center gap-2 ml-12">
+<span class="w-3 h-3 bg-secondary block"></span>
+                        깊은 심목 甲
+                    </div>
+<div class="neo-border bg-surface px-4 py-2 self-end rotate-[-1deg] neo-shadow-sm font-data-mono text-data-mono flex items-center gap-2 mr-4">
+<span class="w-3 h-3 neo-accent block"></span>
+                        정오 표식 丙
+                    </div>
+</div>
+</section>
+<!-- Card Preview Section -->
+<section class="px-margin-mobile py-12 flex flex-col gap-8 border-b-2 border-primary bg-surface-container-low relative">
+<h2 class="font-headline-md text-headline-md text-primary">결과는 단 하나의 카드로 남습니다.</h2>
+<!-- Registry Card -->
+<div class="neo-border bg-surface-bright relative p-6 mt-4 rotate-[1deg] neo-shadow">
+<div class="bracket-tl"></div>
+<div class="bracket-tr"></div>
+<div class="bracket-bl"></div>
+<div class="bracket-br"></div>
+<div class="flex justify-between items-start border-b border-primary pb-4 mb-4">
+<span class="font-display-lg-mobile text-display-lg-mobile tracking-tighter text-primary leading-none uppercase">SAJU</span>
+<div class="text-right">
+<span class="font-label-caps text-label-caps text-on-surface-variant block uppercase mb-1">REGISTRY ID</span>
+<span class="font-data-mono text-data-mono text-primary font-bold">SAJU-R09</span>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center border-b-[0.5px] border-primary pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">일련번호</span>
+<span class="font-data-mono text-data-mono text-primary">9A-2B-X1</span>
+</div>
+<div class="flex justify-between items-center border-b-[0.5px] border-primary pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">오행</span>
+<span class="font-data-mono text-data-mono text-primary">물</span>
+</div>
+<div class="flex justify-between items-center border-b-[0.5px] border-primary pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">음양</span>
+<span class="font-data-mono text-data-mono text-primary">양</span>
+</div>
+<div class="flex justify-between items-center pt-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">주요 패턴</span>
+<span class="font-data-mono text-data-mono text-primary neo-accent-text font-bold">거울 호수</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="px-margin-mobile py-16 flex flex-col gap-8 items-center text-center bg-surface-container-highest">
+<h2 class="font-headline-md text-headline-md text-primary max-w-[280px]">
+                    당신의 리딩은 여덟 글자로 시작됩니다.
+                </h2>
+<button class="neo-accent neo-border neo-shadow text-on-secondary font-label-caps text-label-caps uppercase px-8 py-4 tracking-wider active:translate-y-1 active:translate-x-1 active:neo-shadow-sm transition-all mt-4 w-full md:w-auto">
+                    내 패턴 읽기
+                </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col gap-4 px-margin-mobile py-8 w-full bg-surface w-full mt-auto border-t-2 border-primary">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-primary uppercase">© 2024 SAJU BUREAU. ALL RIGHTS RESERVED.</span>
+<p class="font-data-mono text-[11px] text-on-surface-variant leading-tight mt-2 max-w-[300px]">
+                    SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.
+                </p>
+</div>
+<div class="flex gap-4 mt-4">
+<a class="font-data-mono text-data-mono text-on-surface-variant hover:text-secondary transition-opacity duration-200" href="#">Terms of Service</a>
+<a class="font-data-mono text-data-mono text-on-surface-variant hover:text-secondary transition-opacity duration-200" href="#">Privacy Policy</a>
+<a class="font-data-mono text-data-mono text-on-surface-variant hover:text-secondary transition-opacity duration-200" href="#">Formal Disclaimer</a>
+</div>
+</footer>
+</div>
+</body></html>

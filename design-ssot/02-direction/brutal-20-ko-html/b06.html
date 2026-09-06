@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&amp;family=Noto+Sans+KR:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "inverse-surface": "#2f3131",
+                        "surface-container": "#eeeeee",
+                        "outline-variant": "#c4c7c7",
+                        "tertiary-container": "#1b1c1c",
+                        "secondary-fixed-dim": "#ffb4aa",
+                        "secondary-container": "#fe5549",
+                        "outline": "#747878",
+                        "secondary": "#FF4D00", /* User requested accent #FF4D00 */
+                        "tertiary-fixed": "#e3e2e2",
+                        "surface-container-low": "#f3f3f4",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#111111", /* User requested #111111 */
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-container": "#858383",
+                        "inverse-primary": "#c8c6c5",
+                        "secondary-fixed": "#ffdad5",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-bright": "#F9F9F9", /* User requested #F9F9F9 */
+                        "on-tertiary-fixed-variant": "#464747",
+                        "surface-container-high": "#e8e8e8",
+                        "error-container": "#ffdad6",
+                        "surface": "#F9F9F9", /* User requested #F9F9F9 */
+                        "on-error": "#ffffff",
+                        "primary-container": "#111111",
+                        "on-secondary-fixed": "#410001",
+                        "surface-tint": "#5f5e5e",
+                        "on-background": "#111111", /* User requested #111111 */
+                        "on-surface-variant": "#444748",
+                        "on-tertiary-container": "#848484",
+                        "on-secondary-container": "#ffffff",
+                        "on-primary-fixed": "#111111",
+                        "on-secondary-fixed-variant": "#930008",
+                        "surface-variant": "#e2e2e2",
+                        "primary": "#111111", /* User requested #111111 */
+                        "tertiary": "#111111",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#e5e2e1",
+                        "surface-dim": "#dadada",
+                        "on-tertiary": "#ffffff",
+                        "background": "#F9F9F9", /* User requested #F9F9F9 */
+                        "on-primary-fixed-variant": "#474646",
+                        "tertiary-fixed-dim": "#c7c6c6"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px", /* Brutalist flat */
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    spacing: {
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "margin-desktop": "64px",
+                        "column-gap": "24px",
+                        "baseline": "4px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Black Han Sans", "sans-serif"], /* Replaced per prompt */
+                        "display-lg-mobile": ["Black Han Sans", "sans-serif"],
+                        "body-lg": ["Noto Sans KR", "sans-serif"], /* Replaced per prompt */
+                        "label-caps": ["Noto Sans KR", "sans-serif"],
+                        "body-sm": ["Noto Sans KR", "sans-serif"],
+                        "display-lg": ["Black Han Sans", "sans-serif"],
+                        "data-mono": ["Noto Sans KR", "monospace"]
+                    },
+                    fontSize: {
+                        "headline-md": ["32px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "400" }], /* Adjusted for Black Han Sans */
+                        "display-lg-mobile": ["48px", { lineHeight: "48px", letterSpacing: "-0.03em", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "400" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.06em", fontWeight: "900" }], /* Changed to 900 for Noto Sans KR */
+                        "body-sm": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }],
+                        "display-lg": ["72px", { lineHeight: "64px", letterSpacing: "-0.04em", fontWeight: "400" }],
+                        "data-mono": ["14px", { lineHeight: "20px", letterSpacing: "-0.02em", fontWeight: "700" }] /* Changed to 700 */
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Brutalist Hard Shadows and Borders */
+        .brutal-border { border: 2px solid #111111; }
+        .brutal-border-b { border-bottom: 2px solid #111111; }
+        .brutal-border-t { border-top: 2px solid #111111; }
+        .brutal-shadow { box-shadow: 4px 4px 0px 0px #111111; }
+        .brutal-shadow:active { box-shadow: 0px 0px 0px 0px #111111; transform: translate(4px, 4px); }
+        
+        /* Ticket Perforation */
+        .perforated-divider {
+            height: 1px;
+            background-image: linear-gradient(to right, #111111 50%, transparent 50%);
+            background-size: 8px 100%;
+            background-repeat: repeat-x;
+        }
+
+        /* Blueprint styling */
+        .grid-bg {
+            background-image: 
+                linear-gradient(to right, #e2e2e2 1px, transparent 1px),
+                linear-gradient(to bottom, #e2e2e2 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        body {
+            background-color: #F9F9F9;
+            color: #111111;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-sm text-on-background min-h-screen grid-bg relative w-full overflow-x-hidden selection:bg-secondary selection:text-white">
+<!-- JSON Component: TopAppBar -->
+<header class="bg-surface border-b-2 border-primary w-full top-0 sticky z-50 flex justify-between items-center px-margin-mobile py-4 brutal-border-b">
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-display-lg-mobile text-3xl uppercase tracking-tighter text-primary">SAJU.SYSTEM</span>
+</div>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full flex flex-col md:hidden pb-24"> <!-- Mobile only layout as requested, keeping bottom padding for BottomNavBar if it existed -->
+<!-- Hero Section -->
+<section class="w-full px-margin-mobile pt-12 pb-8 border-b-2 border-primary brutal-border-b relative">
+<div class="absolute top-2 left-margin-mobile text-[10px] font-data-mono text-outline uppercase">
+                SEC_01 // INTRO
+            </div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary mt-6 mb-4 leading-tight break-keep">
+                당신은<br/>거울 호수입니다.
+            </h1>
+<p class="font-body-lg text-body-lg text-primary mb-8 max-w-[280px]">
+                짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+            </p>
+<button class="w-full bg-secondary text-white font-label-caps text-label-caps uppercase py-4 brutal-border brutal-shadow transition-all duration-75">
+                내 패턴 읽기
+            </button>
+<!-- Blueprint Dimension Arrow -->
+<div class="hidden sm:flex absolute right-margin-mobile top-1/2 -translate-y-1/2 flex-col items-center gap-1 opacity-50">
+<div class="h-px w-4 bg-primary"></div>
+<div class="h-16 w-px bg-primary relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 border-t border-l border-primary rotate-45"></div>
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 border-b border-r border-primary rotate-45"></div>
+</div>
+<div class="h-px w-4 bg-primary"></div>
+<span class="text-[10px] font-data-mono rotate-90 mt-4">H: 100VH</span>
+</div>
+</section>
+<!-- Badge Strip Section -->
+<section class="w-full bg-surface-container py-10 px-margin-mobile brutal-border-b relative overflow-hidden">
+<div class="absolute -top-4 -right-4 text-9xl font-display-lg text-outline-variant opacity-10 leading-none">10</div>
+<div class="mb-6">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">열 가지 형태</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">생년월일시가 열 가지 형태 중 하나를 정합니다.</p>
+</div>
+<!-- Bento-style Stickers -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface p-4 brutal-border brutal-shadow relative">
+<span class="material-symbols-outlined text-secondary absolute top-2 right-2 text-sm" style="font-variation-settings: 'FILL' 1;">water</span>
+<div class="font-data-mono text-xs text-outline mb-1">TYPE: 01</div>
+<div class="font-label-caps text-lg">거울 호수 壬</div>
+</div>
+<div class="bg-surface p-4 brutal-border brutal-shadow relative">
+<span class="material-symbols-outlined text-secondary absolute top-2 right-2 text-sm" style="font-variation-settings: 'FILL' 1;">park</span>
+<div class="font-data-mono text-xs text-outline mb-1">TYPE: 02</div>
+<div class="font-label-caps text-lg">깊은 심목 甲</div>
+</div>
+<div class="bg-surface p-4 brutal-border brutal-shadow relative col-span-2 flex justify-between items-center">
+<div>
+<div class="font-data-mono text-xs text-outline mb-1">TYPE: 03</div>
+<div class="font-label-caps text-lg">정오 표식 丙</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">wb_sunny</span>
+</div>
+</div>
+<div class="mt-8 perforated-divider w-full"></div>
+</section>
+<!-- Card Preview Section -->
+<section class="w-full px-margin-mobile py-12 relative">
+<h2 class="font-headline-md text-headline-md text-primary mb-8 leading-tight">결과는 단 하나의<br/>카드로 남습니다.</h2>
+<!-- Glassmorphism/Blueprint Card Hybrid -->
+<div class="w-full bg-surface-container-lowest brutal-border p-6 relative">
+<!-- Card Header -->
+<div class="flex justify-between items-start border-b-2 border-primary pb-4 mb-4">
+<div class="font-display-lg-mobile text-2xl tracking-tighter">DATA CARD</div>
+<span class="material-symbols-outlined text-secondary">memory</span>
+</div>
+<!-- Card Fields -->
+<div class="flex flex-col gap-4 font-data-mono text-data-mono">
+<div class="flex justify-between items-end border-b border-outline-variant pb-1">
+<span class="text-outline text-xs">일련번호</span>
+<span class="text-primary font-bold">9A-2B-X1</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant pb-1">
+<span class="text-outline text-xs">오행</span>
+<span class="text-primary font-bold">물</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant pb-1">
+<span class="text-outline text-xs">음양</span>
+<span class="text-primary font-bold">양</span>
+</div>
+<div class="flex justify-between items-end border-b border-primary pb-1 bg-secondary text-white p-2 mt-2 -mx-2 brutal-border">
+<span class="text-white text-xs opacity-80">주요 패턴</span>
+<span class="font-bold text-lg">거울 호수</span>
+</div>
+</div>
+<!-- Overlay blueprint markers -->
+<div class="absolute -left-2 -top-2 w-4 h-4 border-t-2 border-l-2 border-secondary"></div>
+<div class="absolute -right-2 -bottom-2 w-4 h-4 border-b-2 border-r-2 border-secondary"></div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="w-full px-margin-mobile py-12 bg-primary text-white text-center brutal-border-y relative">
+<h2 class="font-display-lg-mobile text-3xl mb-8 leading-tight text-white">
+                당신의 리딩은<br/>여덟 글자로 시작됩니다.
+            </h2>
+<button class="w-full bg-white text-primary font-label-caps text-label-caps uppercase py-4 brutal-border shadow-[4px_4px_0px_0px_#FF4D00] transition-all duration-75 active:shadow-none active:translate-x-1 active:translate-y-1">
+                내 패턴 읽기
+            </button>
+</section>
+</main>
+<!-- JSON Component: Footer -->
+<footer class="bg-surface border-t-2 border-primary flex flex-col md:flex-row justify-between items-start md:items-center px-margin-mobile py-12 w-full mt-auto relative z-10">
+<div class="flex flex-col gap-4 mb-8 md:mb-0">
+<span class="font-display-lg-mobile text-2xl font-black text-primary">SAJU</span>
+<p class="font-body-sm text-body-sm text-outline max-w-xs">
+                SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.
+            </p>
+</div>
+<div class="flex flex-col gap-2 font-data-mono text-data-mono uppercase text-primary">
+<a class="hover:underline hover:text-secondary" href="#">TERMINAL</a>
+<a class="hover:underline hover:text-secondary" href="#">LOGS</a>
+<a class="hover:underline hover:text-secondary" href="#">PROTOCOL</a>
+</div>
+<div class="w-full border-t border-primary mt-8 pt-4 md:mt-0 md:pt-0 md:border-t-0 text-left md:text-right font-data-mono text-xs text-outline">
+            SYS.VER.01 © 2024 SAJU REGISTRY
+        </div>
+</footer>
+</body></html>

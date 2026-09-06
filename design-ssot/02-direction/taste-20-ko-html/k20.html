@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Source+Serif+4:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&amp;family=Gowun+Dodum&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#1b1c1a",
+                        "on-secondary-fixed": "#400200",
+                        "on-primary-container": "#878380",
+                        "surface-container-high": "#ece8e0",
+                        "tertiary": "#000000",
+                        "on-background": "#1c1c17",
+                        "surface-container-highest": "#e6e2da",
+                        "on-surface-variant": "#4c4640",
+                        "on-tertiary-fixed": "#1b1c1a",
+                        "tertiary-fixed-dim": "#c8c6c3",
+                        "surface-variant": "#e6e2da",
+                        "surface-container-low": "#f7f3eb",
+                        "on-tertiary-container": "#848481",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#cbc5c2",
+                        "surface-dim": "#dddad2",
+                        "on-primary-fixed-variant": "#494643",
+                        "outline": "#7d766f",
+                        "secondary-fixed": "#ffdad4",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f4f0e8",
+                        "outline-variant": "#cec5bd",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#615e5b",
+                        "inverse-surface": "#32302b",
+                        "primary": "#000000",
+                        "primary-fixed-dim": "#cbc5c2",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb4a7",
+                        "background": "#fdf9f1",
+                        "secondary": "#9d4132",
+                        "on-surface": "#1c1c17",
+                        "on-secondary-container": "#742317",
+                        "surface": "#fdf9f1",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#e8e1dd",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#e4e2de",
+                        "primary-container": "#1d1b19",
+                        "surface-bright": "#fdf9f1",
+                        "on-primary-fixed": "#1d1b19",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#fd8b77",
+                        "surface-container": "#f2ede5",
+                        "on-secondary-fixed-variant": "#7e2a1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "64px",
+                        "margin-mobile": "20px",
+                        "card-max-width": "800px",
+                        "card-width-desktop": "85%",
+                        "gutter-base": "24px"
+                    },
+                    "fontFamily": {
+                        "ui-button": [
+                            "Hanken Grotesk"
+                        ],
+                        "display-lg": [
+                            "\"Source Serif 4\""
+                        ],
+                        "body-lg": [
+                            "Hanken Grotesk"
+                        ],
+                        "headline-card-mobile": [
+                            "\"Source Serif 4\""
+                        ],
+                        "body-md": [
+                            "Hanken Grotesk"
+                        ],
+                        "label-caps": [
+                            "Hanken Grotesk"
+                        ],
+                        "headline-card": [
+                            "\"Source Serif 4\""
+                        ],
+                        "nanum": ["'Nanum Myeongjo'", "serif"],
+                        "gowun": ["'Gowun Dodum'", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "ui-button": [
+                            "14px",
+                            {
+                                "lineHeight": "20px",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "display-lg": [
+                            "48px",
+                            {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-card-mobile": [
+                            "24px",
+                            {
+                                "lineHeight": "32px",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "label-caps": [
+                            "12px",
+                            {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "headline-card": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "500"
+                            }
+                        ]
+                    },
+                    "boxShadow": {
+                        "card": "4px 4px 0px rgba(20, 18, 16, 0.05)"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Base styles mapped from JSON and guidance */
+        body {
+            background-color: #fdf9f1; /* Match design guidance background */
+            color: #1c1c17;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .border-ink {
+            border-color: #141210;
+        }
+
+        .bg-ink {
+            background-color: #141210;
+        }
+
+        .text-ink {
+            color: #141210;
+        }
+
+        .hover-walnut:hover {
+            border-color: #8A3325;
+            color: #8A3325;
+        }
+
+        .bg-walnut {
+            background-color: #8A3325;
+        }
+        
+        .shadow-hard {
+            box-shadow: 4px 4px 0px rgba(20, 18, 16, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center">
+<!-- TopAppBar (from JSON) -->
+<header class="bg-background fixed top-0 w-full z-50 border-b border-ink">
+<div class="flex justify-between items-center px-margin-mobile py-4 max-w-card-max-width mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">menu</span>
+<span class="font-display-lg text-[24px] font-bold tracking-tighter text-primary">SAJU</span>
+</div>
+<div class="flex items-center gap-2 font-label-caps text-label-caps text-on-surface-variant">
+<span class="text-ink font-bold border-b border-ink">KO</span>
+<span class="w-1 h-1 bg-outline rounded-full"></span>
+<span class="w-1 h-1 bg-outline rounded-full"></span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full flex-grow pt-[80px] pb-section-gap flex flex-col items-center">
+<!-- Hero Section: The Focus Card -->
+<section class="w-full px-margin-mobile mt-8 flex justify-center">
+<div class="w-[85%] max-w-card-max-width bg-surface-container-lowest border border-ink shadow-hard flex flex-col items-center p-[40px] pt-[60px]">
+<div class="w-full aspect-square mb-12 border border-ink overflow-hidden">
+<img alt="Abstract high-end photography of surface tension on water. Macro shot showing the clean curvature and tension of a calm water surface. No visible ripples or splashes, just the pure physical property of liquid. Minimalist, bright lighting, high contrast, clean white and soft grey tones. Fine art photography style. Consistent with a premium Korean aesthetic." class="w-full h-full object-cover grayscale opacity-90 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida/AEtjO1WWmqF0cTgC1A-hdz8lI_aL0Ke1StWnkegfBEWumFTi9HebMYKm3g6zacCMnHGpFi36OLJsCZDwGJ3nkjVJucse5XCKDtPrusV3-H0UVmhqJyOkyI1B5EX3wBWE1HEzE_IJAmh20vWnhboTX2xt2pkKSsrlRkV9URfO2hogTih-JV3qTLP1xm-l15HBCYoGVzXAlHMZHEQrNF5cLGC17ekBmgo9ruOLLK76J5Sz3LtoTpzXngr7mLHv"/>
+</div>
+<div class="flex flex-col items-center text-center space-y-6 w-full">
+<span class="font-nanum text-display-lg font-bold text-ink">壬</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant border border-ink px-4 py-2">임수 — 넓은 호수</span>
+<h1 class="font-nanum text-[28px] md:text-headline-card leading-tight text-ink max-w-[90%] mt-8 mb-4">
+                        당신은 거울 호수입니다.
+                    </h1>
+<p class="font-gowun text-body-md text-on-surface-variant leading-relaxed max-w-[80%] mb-12">
+                        짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+                    </p>
+<button class="w-full max-w-[240px] bg-ink text-on-primary font-ui-button text-ui-button py-4 px-6 border border-ink transition-colors duration-200 hover:bg-background hover:text-ink">
+                        내 패턴 읽기
+                    </button>
+</div>
+</div>
+</section>
+<!-- Badge Strip Section -->
+<section class="w-full max-w-card-max-width px-margin-mobile mt-section-gap flex flex-col items-center text-center">
+<h2 class="font-nanum text-headline-card-mobile text-ink mb-2">열 가지 형태</h2>
+<p class="font-gowun text-body-md text-on-surface-variant mb-8">생년월일시가 열 가지 형태 중 하나를 정합니다.</p>
+<div class="flex flex-wrap justify-center gap-4 w-full">
+<span class="font-label-caps text-label-caps text-ink border border-ink px-4 py-2 bg-surface-container-lowest">거울 호수 壬</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant border border-outline-variant px-4 py-2 bg-transparent opacity-60">깊은 심목 甲</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant border border-outline-variant px-4 py-2 bg-transparent opacity-60">정오 표식 丙</span>
+</div>
+</section>
+<!-- Preview Section -->
+<section class="w-full max-w-card-max-width px-margin-mobile mt-section-gap flex flex-col items-center">
+<h2 class="font-nanum text-headline-card-mobile text-ink mb-8 text-center">결과는 단 하나의 카드로 남습니다.</h2>
+<div class="w-[85%] border border-ink bg-surface-container-lowest shadow-hard p-6 flex flex-col gap-4">
+<div class="flex justify-between border-b border-ink pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SERIAL</span>
+<span class="font-body-md font-medium text-ink">9A-2B-X1</span>
+</div>
+<div class="flex justify-between border-b border-ink pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">ELEMENT</span>
+<span class="font-body-md font-medium text-ink">WATER</span>
+</div>
+<div class="flex justify-between border-b border-ink pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">POLARITY</span>
+<span class="font-body-md font-medium text-ink">YANG</span>
+</div>
+<div class="flex justify-between pt-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">PRIMARY PATTERN</span>
+<span class="font-body-md font-medium text-ink">MIRROR LAKE</span>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="w-full max-w-card-max-width px-margin-mobile mt-section-gap flex flex-col items-center text-center mb-16">
+<h2 class="font-nanum text-headline-card-mobile text-ink mb-8">당신의 리딩은 여덟 글자로 시작됩니다.</h2>
+<button class="w-[85%] max-w-[240px] bg-ink text-on-primary font-ui-button text-ui-button py-4 px-6 border border-ink transition-colors duration-200 hover:bg-background hover:text-ink">
+                내 패턴 읽기
+            </button>
+</section>
+</main>
+<!-- Footer (from JSON) -->
+<footer class="bg-background w-full py-section-gap border-t border-ink flex flex-col items-center gap-4 px-margin-mobile text-center mt-auto">
+<span class="font-display-lg text-[20px] font-bold tracking-tighter text-ink opacity-80">SAJU</span>
+<div class="flex gap-6 font-label-caps text-label-caps">
+<a class="text-on-surface-variant hover:text-ink hover:underline transition-all" href="#">이용약관</a>
+<a class="text-on-surface-variant hover:text-ink hover:underline transition-all" href="#">개인정보처리방침</a>
+</div>
+<p class="font-label-caps text-[10px] text-on-surface-variant opacity-60 mt-4">© 2024 SAJU. All rights reserved.</p>
+</footer>
+</body></html>

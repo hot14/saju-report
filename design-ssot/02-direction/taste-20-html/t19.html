@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - You are Mirror Lake</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "primary-fixed": "#d8e2ff",
+                "on-background": "#1b1c19",
+                "tertiary-container": "#9c4500",
+                "tertiary": "#773300",
+                "primary": "#004494",
+                "surface-bright": "#fbf9f3",
+                "surface-container-lowest": "#ffffff",
+                "secondary": "#5d5e64",
+                "on-error": "#ffffff",
+                "inverse-surface": "#30312d",
+                "on-surface-variant": "#424752",
+                "on-primary-fixed": "#001a41",
+                "surface-container": "#efeee8",
+                "surface-variant": "#e4e3dd",
+                "surface-dim": "#dbdad4",
+                "on-secondary-container": "#616268",
+                "on-tertiary-fixed": "#331200",
+                "primary-fixed-dim": "#adc6ff",
+                "surface-tint": "#1a5cb8",
+                "on-tertiary-fixed-variant": "#773300",
+                "outline": "#737783",
+                "secondary-fixed": "#e2e2e9",
+                "on-tertiary-container": "#ffcfb6",
+                "primary-container": "#1b5cb8",
+                "error": "#ba1a1a",
+                "secondary-container": "#dfdfe6",
+                "surface": "#fbf9f3",
+                "on-secondary-fixed-variant": "#45474c",
+                "tertiary-fixed": "#ffdbca",
+                "tertiary-fixed-dim": "#ffb68e",
+                "on-secondary-fixed": "#1a1b21",
+                "surface-container-high": "#e9e8e2",
+                "on-primary-container": "#cad9ff",
+                "on-tertiary": "#ffffff",
+                "inverse-on-surface": "#f2f1eb",
+                "on-primary": "#ffffff",
+                "on-primary-fixed-variant": "#004493",
+                "on-surface": "#1b1c19",
+                "background": "#fbf9f3",
+                "on-error-container": "#93000a",
+                "surface-container-low": "#f5f4ee",
+                "on-secondary": "#ffffff",
+                "secondary-fixed-dim": "#c6c6cd",
+                "inverse-primary": "#adc6ff",
+                "error-container": "#ffdad6",
+                "surface-container-highest": "#e4e3dd",
+                "outline-variant": "#c2c6d4"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "gutter": "24px",
+                "margin-desktop": "64px",
+                "unit": "4px",
+                "max-width": "1440px",
+                "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                "display-lg-mobile": ["Sora"],
+                "headline-md": ["Sora"],
+                "display-lg": ["Sora"],
+                "label-mono-caps": ["Space Mono"],
+                "label-mono-sm": ["Space Mono"],
+                "body-md": ["Sora"],
+                "data-point": ["Space Mono"]
+              },
+              "fontSize": {
+                "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "label-mono-caps": ["10px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                "label-mono-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "data-point": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: #F4F4F2; /* Enforced Cool Paper override */
+            color: #16181D; /* Enforced Graphite override */
+        }
+        /* Geometric specific overrides for exact visual match to prompt if tailwind config misses subtle specific hexes */
+        .border-graphite { border-color: #16181D; }
+        .text-graphite { color: #16181D; }
+        .bg-graphite { background-color: #16181D; }
+        .text-klein { color: #1B5CB8; }
+        .border-klein { border-color: #1B5CB8; }
+        
+        .orbital-svg circle {
+            fill: none;
+            stroke-width: 0.5px;
+            stroke: #16181D;
+        }
+        .orbital-svg .node {
+            fill: #1B5CB8;
+            stroke: none;
+        }
+        .crosshair::before, .crosshair::after, .crosshair-b::before, .crosshair-b::after {
+            content: '';
+            position: absolute;
+            background-color: #16181D;
+        }
+        .crosshair::before { top: 0; left: -4px; width: 8px; height: 1px; }
+        .crosshair::after { top: -4px; left: 0; width: 1px; height: 8px; }
+        .crosshair-b::before { bottom: 0; right: -4px; width: 8px; height: 1px; }
+        .crosshair-b::after { bottom: -4px; right: 0; width: 1px; height: 8px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface border-b border-on-surface/10 flat no shadows transition-opacity duration-200 z-40">
+<div class="flex items-center justify-between px-margin-mobile h-16">
+<div class="flex items-center justify-center w-8 h-8 cursor-pointer">
+<span class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">menu</span>
+</div>
+<div class="font-display-lg-mobile text-display-lg-mobile tracking-tighter text-on-surface">SAJU</div>
+<div class="w-8 h-8"></div>
+</div>
+</header>
+<main class="w-full max-w-[1440px] mx-auto overflow-hidden">
+<!-- Hero Section -->
+<section class="px-margin-mobile pt-16 pb-12 flex flex-col items-center text-center border-b border-graphite/20 relative">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-graphite mb-12 max-w-sm">
+                You are<br/>Mirror Lake.
+            </h1>
+<!-- Orbital Diagram Illustration -->
+<div class="relative w-full max-w-[320px] aspect-square mb-12 flex items-center justify-center">
+<svg class="orbital-svg w-full h-full absolute inset-0" viewbox="0 0 200 200">
+<!-- Concentric Paths -->
+<circle cx="100" cy="100" r="40"></circle>
+<circle cx="100" cy="100" r="60" stroke="#1B5CB8" stroke-width="1px"></circle>
+<circle cx="100" cy="100" r="80"></circle>
+<!-- Nodes (The Eight Letters abstraction) -->
+<!-- Inner Orbit -->
+<circle class="node" cx="100" cy="60" r="3"></circle>
+<circle class="node" cx="100" cy="140" r="3"></circle>
+<!-- Middle Orbit (Klein Blue) -->
+<circle class="node" cx="40" cy="100" r="3"></circle>
+<circle class="node" cx="160" cy="100" r="3"></circle>
+<!-- Outer Orbit -->
+<circle class="node" cx="43.43" cy="43.43" r="3"></circle>
+<circle class="node" cx="156.57" cy="156.57" r="3"></circle>
+<circle class="node" cx="156.57" cy="43.43" r="3"></circle>
+<circle class="node" cx="43.43" cy="156.57" r="3"></circle>
+<!-- Center Core -->
+<circle cx="100" cy="100" fill="#16181D" r="6"></circle>
+</svg>
+</div>
+<p class="font-body-md text-body-md text-graphite mb-8 max-w-sm">
+                A short video shows the letters of your day. SAJU reads the lifelong pattern they make.
+            </p>
+<button class="bg-graphite text-[#F4F4F2] font-label-mono-caps text-label-mono-caps uppercase px-8 py-4 rounded-none hover:opacity-90 transition-opacity w-full max-w-[280px]">
+                READ MY PATTERN
+            </button>
+</section>
+<!-- Badge Strip Section -->
+<section class="px-margin-mobile py-16 border-b border-graphite/20">
+<div class="mb-8">
+<h2 class="font-headline-md text-headline-md text-graphite mb-2">THE TEN FORMS</h2>
+<p class="font-body-md text-body-md text-graphite">Your birth date assigns you one of ten forms.</p>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Badge 1 -->
+<div class="border border-graphite p-4 flex justify-between items-center relative group">
+<div class="absolute top-0 left-0 crosshair w-full h-full pointer-events-none"></div>
+<div class="absolute bottom-0 right-0 crosshair-b w-full h-full pointer-events-none"></div>
+<span class="font-label-mono-caps text-label-mono-caps uppercase text-graphite">MIRROR LAKE</span>
+<span class="font-headline-md text-headline-md text-graphite">壬</span>
+</div>
+<!-- Badge 2 -->
+<div class="border border-graphite/30 p-4 flex justify-between items-center opacity-60">
+<span class="font-label-mono-caps text-label-mono-caps uppercase text-graphite">HEARTWOOD</span>
+<span class="font-headline-md text-headline-md text-graphite">甲</span>
+</div>
+<!-- Badge 3 -->
+<div class="border border-graphite/30 p-4 flex justify-between items-center opacity-60">
+<span class="font-label-mono-caps text-label-mono-caps uppercase text-graphite">NOON MARK</span>
+<span class="font-headline-md text-headline-md text-graphite">丙</span>
+</div>
+</div>
+</section>
+<!-- Card Preview Section -->
+<section class="px-margin-mobile py-16 border-b border-graphite/20 bg-[#EDEDEA]">
+<h2 class="font-headline-md text-headline-md text-graphite mb-12 text-center max-w-[280px] mx-auto">
+                THE RESULT STAYS AS A SINGLE CARD.
+            </h2>
+<div class="border border-graphite bg-[#F4F4F2] p-6 relative mx-auto max-w-[300px] shadow-sm">
+<div class="absolute top-0 left-0 crosshair w-full h-full pointer-events-none"></div>
+<div class="absolute bottom-0 right-0 crosshair-b w-full h-full pointer-events-none"></div>
+<div class="flex justify-between items-end border-b border-graphite pb-4 mb-4">
+<div>
+<div class="font-label-mono-caps text-label-mono-caps text-graphite mb-1">SERIAL</div>
+<div class="font-data-point text-data-point text-graphite">ML-8492</div>
+</div>
+<div class="w-12 h-12 rounded-full border border-klein flex items-center justify-center">
+<div class="w-2 h-2 bg-klein rounded-full"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<div class="font-label-mono-caps text-label-mono-caps text-graphite mb-1">ELEM</div>
+<div class="font-data-point text-data-point text-graphite">WATER</div>
+</div>
+<div>
+<div class="font-label-mono-caps text-label-mono-caps text-graphite mb-1">PLRT</div>
+<div class="font-data-point text-data-point text-graphite">YANG</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="px-margin-mobile py-24 flex flex-col items-center text-center">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-graphite mb-10 max-w-[280px]">
+                YOUR READING BEGINS WITH EIGHT LETTERS.
+            </h2>
+<button class="bg-graphite text-[#F4F4F2] font-label-mono-caps text-label-mono-caps uppercase px-8 py-4 rounded-none hover:opacity-90 transition-opacity w-full max-w-[280px]">
+                READ MY PATTERN
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-low border-t border-on-surface/5 flat no shadows flex flex-col items-center gap-4 px-margin-mobile py-8 pb-32 text-center z-30 relative">
+<p class="font-label-mono-sm text-label-mono-sm text-on-surface-variant max-w-sm">SAJU is a reading tool for self-understanding. It is not medical, legal, or financial advice.</p>
+<div class="flex gap-6 mt-2">
+<a class="font-label-mono-caps text-label-mono-caps text-on-surface hover:text-primary transition-colors duration-200 underline" href="#">Privacy</a>
+<a class="font-label-mono-caps text-label-mono-caps text-on-surface hover:text-primary transition-colors duration-200 underline" href="#">Terms</a>
+</div>
+</footer>
+<!-- BottomNavBar (Hidden on md, visible on mobile, no nav context implies linear flow, but user is on landing page which isn't a dead end. However, instructions say hide if linear/transactional. We'll include as requested by shared components logic if it's a top level destination. Let's assume landing is top level but often suppresses nav. Since we must use bottom nav bar for 'Pattern'/'Archive' as per JSON, and it's a landing page, we will render it but it feels slightly at odds with a pure landing flow. I will render it to satisfy the JSON requirement). -->
+<!-- Actually, the rules state: "Automatic Suppression: You MUST exclude the navigation shell if the page intent is: Linear/Transactional: Login, Sign-up, Onboarding, Checkout, or "Success/Confirmation" splash screens. " A landing page focused on "READ MY PATTERN" acts as an onboarding/acquisition screen. Navigation should probably be suppressed. I will SUPPRESS the Bottom Nav to prioritize the canvas as per UX Goal. -->
+</body></html>

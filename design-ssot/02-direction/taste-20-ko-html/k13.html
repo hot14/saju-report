@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - 리딩 도구</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed-variant": "#474746",
+            "surface-container": "#f1edec",
+            "secondary-fixed-dim": "#ffb4a2",
+            "on-error-container": "#93000a",
+            "surface-container-highest": "#e5e2e1",
+            "surface-variant": "#e5e2e1",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#1c1b1a",
+            "primary-fixed": "#e5e2e1",
+            "on-primary-fixed": "#1c1b1b",
+            "on-secondary-container": "#5e1100",
+            "surface": "#fdf8f8",
+            "on-tertiary-container": "#868382",
+            "on-secondary-fixed": "#3c0700",
+            "surface-container-low": "#f7f3f2",
+            "tertiary-fixed-dim": "#cac6c4",
+            "on-surface-variant": "#444748",
+            "secondary": "#b12d09",
+            "secondary-fixed": "#ffdad2",
+            "surface-dim": "#ddd9d8",
+            "outline": "#747878",
+            "on-background": "#1c1b1b",
+            "on-primary-container": "#858383",
+            "inverse-surface": "#313030",
+            "surface-container-high": "#ebe7e6",
+            "primary": "#000000",
+            "tertiary-fixed": "#e6e2df",
+            "tertiary": "#000000",
+            "background": "#fdf8f8",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "tertiary-container": "#1c1b1a",
+            "surface-bright": "#fdf8f8",
+            "on-surface": "#1c1b1b",
+            "inverse-primary": "#c8c6c5",
+            "primary-fixed-dim": "#c8c6c5",
+            "secondary-container": "#fe643d",
+            "inverse-on-surface": "#f4f0ef",
+            "on-tertiary-fixed-variant": "#484645",
+            "surface-tint": "#5f5e5e",
+            "on-error": "#ffffff",
+            "on-secondary": "#ffffff",
+            "primary-container": "#1c1b1b",
+            "on-secondary-fixed-variant": "#8a1d00",
+            "outline-variant": "#c4c7c7",
+            
+            // Custom palette overrides for this specific prompt request, mapped to theme logic where possible.
+            "zine-bg": "#F4EFE6",
+            "zine-ink": "#1A1A1A",
+            "zine-orange": "#E8542F"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-desktop": "40px",
+            "border-weight": "2px",
+            "unit": "4px",
+            "gutter": "16px",
+            "margin-mobile": "16px"
+          },
+          "fontFamily": {
+            "body-lg": [
+              "IBM Plex Mono"
+            ],
+            "headline-md": [
+              "Bricolage Grotesque"
+            ],
+            "headline-sm": [
+              "Bricolage Grotesque"
+            ],
+            "display-lg-mobile": [
+              "Bricolage Grotesque"
+            ],
+            "body-md": [
+              "IBM Plex Mono"
+            ],
+            "display-lg": [
+              "Bricolage Grotesque"
+            ],
+            "label-caps": [
+              "IBM Plex Mono"
+            ]
+          },
+          "fontSize": {
+            "body-lg": [
+              "18px",
+              {
+                "lineHeight": "1.6",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-md": [
+              "32px",
+              {
+                "lineHeight": "1.2",
+                "fontWeight": "700"
+              }
+            ],
+            "headline-sm": [
+              "24px",
+              {
+                "lineHeight": "1.2",
+                "fontWeight": "700"
+              }
+            ],
+            "display-lg-mobile": [
+              "42px",
+              {
+                "lineHeight": "1.1",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "800"
+              }
+            ],
+            "body-md": [
+              "14px",
+              {
+                "lineHeight": "1.5",
+                "fontWeight": "400"
+              }
+            ],
+            "display-lg": [
+              "64px",
+              {
+                "lineHeight": "1.0",
+                "letterSpacing": "-0.04em",
+                "fontWeight": "800"
+              }
+            ],
+            "label-caps": [
+              "12px",
+              {
+                "lineHeight": "1.0",
+                "letterSpacing": "0.1em",
+                "fontWeight": "600"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Riso Print Halftone Simulation & Effects */
+    body {
+      background-color: #F4EFE6;
+      color: #1A1A1A;
+    }
+    
+    .riso-border {
+      border: 2px solid #1A1A1A;
+    }
+    
+    .riso-dashed-border {
+      border: 2px dashed #1A1A1A;
+    }
+    
+    .halftone-bg {
+      background-image: radial-gradient(#1A1A1A 20%, transparent 20%), radial-gradient(#1A1A1A 20%, transparent 20%);
+      background-size: 8px 8px;
+      background-position: 0 0, 4px 4px;
+      opacity: 0.15;
+    }
+
+    .halftone-orange-bg {
+      background-image: radial-gradient(#E8542F 30%, transparent 30%), radial-gradient(#E8542F 30%, transparent 30%);
+      background-size: 6px 6px;
+      background-position: 0 0, 3px 3px;
+    }
+
+    .multiply-blend {
+      mix-blend-mode: multiply;
+    }
+
+    /* Button Hover Effect */
+    .riso-btn {
+      transition: transform 0.1s ease-out;
+    }
+    .riso-btn:active {
+      transform: translate(-2px, -2px);
+    }
+    .riso-btn-shadow {
+      background-color: #E8542F;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md bg-[#F4EFE6] text-[#1A1A1A] antialiased max-w-[390px] mx-auto min-h-screen flex flex-col relative overflow-x-hidden border-l-[1px] border-r-[1px] border-black/10 shadow-2xl md:my-8 md:rounded-lg">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#F4EFE6] border-b-2 border-[#1A1A1A] flex justify-between items-center px-margin-mobile py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="menu" data-weight="regular">menu</span>
+</div>
+<div class="font-headline-md text-headline-md uppercase tracking-tighter text-[#1A1A1A]">
+      SAJU
+    </div>
+<div class="flex items-center gap-2 cursor-pointer group">
+<div class="font-label-caps text-label-caps text-[#1A1A1A] font-bold underline group-hover:text-[#E8542F] transition-colors">
+        KO
+      </div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col w-full relative z-10 pt-8 pb-16">
+<!-- Hero Section -->
+<section class="px-margin-mobile pb-12 flex flex-col gap-6">
+<div class="relative inline-block w-fit">
+<!-- Misregistered Background Box -->
+<div class="absolute top-[6px] left-[6px] w-full h-full bg-[#E8542F] opacity-90 multiply-blend"></div>
+<h1 class="relative font-display-lg-mobile text-display-lg-mobile text-[#1A1A1A] bg-[#F4EFE6] p-2 border-2 border-[#1A1A1A] z-10 leading-tight">
+          당신은<br/>거울 호수입니다.
+        </h1>
+</div>
+<p class="font-body-lg text-body-lg text-[#1A1A1A] leading-relaxed mt-4">
+        짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+      </p>
+<!-- Primary CTA -->
+<div class="relative w-full mt-6 group">
+<div class="absolute inset-0 top-[4px] left-[4px] bg-[#E8542F] border-2 border-[#1A1A1A]"></div>
+<button class="relative w-full bg-[#F4EFE6] border-2 border-[#1A1A1A] py-4 text-center font-label-caps text-label-caps tracking-widest text-[#1A1A1A] font-bold uppercase transition-transform active:-translate-x-0.5 active:-translate-y-0.5 group-hover:-translate-y-1 group-hover:-translate-x-1 duration-150">
+          내 패턴 읽기
+        </button>
+</div>
+</section>
+<hr class="border-t-2 border-dashed border-[#1A1A1A] w-full my-4"/>
+<!-- Badge Section -->
+<section class="px-margin-mobile py-8 flex flex-col gap-6">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-[#1A1A1A]">열 가지 형태</h2>
+<p class="font-body-md text-body-md text-[#444748] mt-2">생년월일시가 열 가지 형태 중 하나를 정합니다.</p>
+</div>
+<div class="flex flex-col gap-4 pl-4 relative">
+<!-- Decorative vertical rule -->
+<div class="absolute left-0 top-0 bottom-0 w-[2px] bg-[#1A1A1A]"></div>
+<!-- Badges as overlapped sticker-like tiles -->
+<div class="relative p-3 border-2 border-[#1A1A1A] bg-[#F4EFE6] w-[80%] z-10 transform -rotate-2 ml-4">
+<div class="absolute inset-0 halftone-bg -z-10"></div>
+<span class="font-label-caps text-label-caps font-bold">거울 호수 壬</span>
+</div>
+<div class="relative p-3 border-2 border-[#1A1A1A] bg-[#E8542F] text-white w-[75%] z-20 transform translate-x-12 -translate-y-4">
+<span class="font-label-caps text-label-caps font-bold">깊은 심목 甲</span>
+</div>
+<div class="relative p-3 border-2 border-[#1A1A1A] bg-[#F4EFE6] w-[85%] z-30 transform rotate-1 -translate-y-6 ml-2">
+<div class="absolute right-2 top-2 text-[#E8542F] text-[10px] leading-none">+</div>
+<span class="font-label-caps text-label-caps font-bold">정오 표식 丙</span>
+<div class="absolute left-2 bottom-2 text-[#E8542F] text-[10px] leading-none">+</div>
+</div>
+</div>
+</section>
+<!-- Card Preview Section -->
+<section class="px-margin-mobile py-8 bg-[#E5E2E1] border-y-2 border-[#1A1A1A] relative overflow-hidden">
+<!-- Halftone overlay for the muted section -->
+<div class="absolute inset-0 halftone-bg opacity-30"></div>
+<div class="relative z-10 flex flex-col gap-6">
+<h2 class="font-headline-sm text-headline-sm text-[#1A1A1A] bg-[#F4EFE6] border-2 border-[#1A1A1A] inline-block w-fit px-2 py-1 transform -rotate-1">
+          결과는 단 하나의 카드로 남습니다.
+        </h2>
+<!-- Data Card -->
+<div class="relative w-full mt-4">
+<div class="absolute inset-0 top-[6px] left-[6px] bg-[#1A1A1A]"></div>
+<div class="relative w-full bg-[#F4EFE6] border-2 border-[#1A1A1A] flex flex-col">
+<div class="border-b-2 border-[#1A1A1A] p-4 flex justify-between items-center bg-[#E8542F] text-[#F4EFE6]">
+<span class="font-label-caps text-label-caps font-bold tracking-widest">일련번호</span>
+<span class="font-body-md text-body-md">9A-2B-X1</span>
+</div>
+<div class="p-4 flex flex-col gap-3 relative">
+<div class="absolute right-4 bottom-4 w-12 h-12 halftone-orange-bg rounded-full border-2 border-[#1A1A1A] flex items-center justify-center transform rotate-[15deg]">
+<span class="font-label-caps text-label-caps text-[10px] font-bold bg-[#F4EFE6] px-1 border border-[#1A1A1A]">NEW</span>
+</div>
+<div class="flex justify-between border-b-2 border-dashed border-[#1A1A1A] pb-2">
+<span class="font-label-caps text-label-caps">오행</span>
+<span class="font-body-md text-body-md font-bold">물</span>
+</div>
+<div class="flex justify-between border-b-2 border-dashed border-[#1A1A1A] pb-2">
+<span class="font-label-caps text-label-caps">음양</span>
+<span class="font-body-md text-body-md font-bold">양</span>
+</div>
+<div class="flex justify-between pt-1">
+<span class="font-label-caps text-label-caps">주요 패턴</span>
+<span class="font-body-md text-body-md font-bold text-[#E8542F]">거울 호수</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="px-margin-mobile py-16 flex flex-col items-center text-center gap-8">
+<h3 class="font-headline-sm text-headline-sm text-[#1A1A1A]">
+        당신의 리딩은<br/>여덟 글자로 시작됩니다.
+      </h3>
+<div class="relative w-full max-w-[240px] group">
+<div class="absolute inset-0 top-[4px] left-[4px] bg-[#E8542F] border-2 border-[#1A1A1A]"></div>
+<button class="relative w-full bg-[#1A1A1A] border-2 border-[#1A1A1A] py-4 text-center font-label-caps text-label-caps tracking-widest text-[#F4EFE6] font-bold uppercase transition-transform active:-translate-x-0.5 active:-translate-y-0.5 group-hover:-translate-y-1 group-hover:-translate-x-1 duration-150">
+          내 패턴 읽기
+        </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-[#e5e2e1] border-t-2 border-dashed border-[#1A1A1A] px-margin-mobile py-8 flex flex-col gap-4 relative z-0">
+<div class="absolute inset-0 halftone-bg opacity-20 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-4">
+<div class="font-label-caps text-label-caps text-[#1A1A1A] font-bold">
+        SAJU
+      </div>
+<p class="font-body-md text-body-md text-[#1A1A1A]">
+        SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.
+      </p>
+<div class="flex gap-4 mt-2">
+<a class="font-body-md text-body-md text-[#444748] hover:text-[#E8542F] transition-colors underline decoration-[#1A1A1A]/30 underline-offset-4" href="#">Privacy</a>
+<a class="font-body-md text-body-md text-[#444748] hover:text-[#E8542F] transition-colors underline decoration-[#1A1A1A]/30 underline-offset-4" href="#">Terms</a>
+</div>
+</div>
+</footer>
+</body></html>

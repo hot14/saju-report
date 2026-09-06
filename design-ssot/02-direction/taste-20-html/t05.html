@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - Read Your Pattern</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;family=Archivo:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#1d1b1a",
+                        "surface-bright": "#ffffff", /* Override to pure white based on prompt */
+                        "outline-variant": "#c4c7c7",
+                        "on-background": "#111111", /* Ink */
+                        "secondary": "#FF4D00", /* Vermilion override based on prompt */
+                        "on-secondary-fixed": "#3a0b00",
+                        "on-secondary-fixed-variant": "#852400",
+                        "on-surface": "#111111", /* Ink */
+                        "on-tertiary-fixed-variant": "#484645",
+                        "on-surface-variant": "#444748",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-container": "#868381",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#d43f00",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-container-low": "#f3f3f4",
+                        "on-primary-fixed": "#111111",
+                        "tertiary": "#111111",
+                        "secondary-fixed-dim": "#ffb59e",
+                        "tertiary-fixed-dim": "#cac6c3",
+                        "primary-fixed": "#e5e2e1",
+                        "background": "#ffffff",
+                        "on-secondary-container": "#ffffff",
+                        "inverse-primary": "#c8c6c5",
+                        "on-tertiary-fixed": "#111111",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#111111", /* Ink */
+                        "surface": "#ffffff",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#111111", /* Ink */
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#858383",
+                        "on-primary-fixed-variant": "#474646",
+                        "surface-tint": "#5f5e5e",
+                        "primary-container": "#111111", /* Ink */
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dadada",
+                        "surface-variant": "#e2e2e2",
+                        "primary": "#111111", /* Ink */
+                        "tertiary-fixed": "#e6e1df",
+                        "secondary-fixed": "#ffdbd0",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container": "#eeeeee"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px", /* Neo-brutalism override */
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "spacing": {
+                        "gutter": "0px",
+                        "stack-md": "40px",
+                        "margin-desktop": "40px",
+                        "baseline": "4px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Archivo Black"],
+                        "headline-xl": ["Archivo Black"],
+                        "headline-md": ["Archivo Black"],
+                        "body-lg": ["Archivo"],
+                        "label-caps": ["Archivo Narrow"],
+                        "label-ui": ["Archivo Narrow"],
+                        "headline-lg": ["Archivo Black"],
+                        "body-md": ["Archivo"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["48px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "headline-xl": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "headline-md": ["64px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "body-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "label-caps": ["16px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "label-ui": ["14px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "headline-lg": ["96px", {"lineHeight": "90px", "letterSpacing": "-0.03em", "fontWeight": "900"}],
+                        "body-md": ["18px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    },
+                    boxShadow: {
+                        'solid': '4px 4px 0px 0px #111111',
+                        'solid-lg': '8px 8px 0px 0px #111111',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #ffffff;
+            color: #111111;
+            font-family: 'Archivo', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Utility for extreme tight leading in headline */
+        .leading-extreme {
+            line-height: 0.85 !important;
+        }
+        
+        .shadow-hover:hover {
+            box-shadow: 4px 4px 0px 0px #111111;
+            transform: translate(-2px, -2px);
+            transition: all 0.1s ease-out;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-primary antialiased flex flex-col min-h-screen pt-[72px]">
+<!-- Shared Component: TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-surface border-b-2 border-primary">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:text-secondary transition-colors duration-100" style="font-variation-settings: 'FILL' 0;">menu</span>
+</div>
+<div class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tighter cursor-pointer">
+            SAJU
+        </div>
+<div class="flex items-center gap-4">
+<button class="font-label-caps text-label-caps text-primary hover:text-secondary transition-colors duration-100 border-2 border-primary px-4 py-2 hover:bg-surface-variant">JOIN</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col w-full px-margin-mobile md:px-margin-desktop gap-stack-lg py-stack-md">
+<!-- Hero Section -->
+<section class="flex flex-col gap-6 relative mt-8">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-primary uppercase tracking-widest font-bold mb-2">YOU ARE</span>
+<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary leading-extreme tracking-tighter break-words hyphens-auto">
+                    MIRROR<br/>LAKE.
+                </h1>
+</div>
+<p class="font-body-lg text-body-lg text-primary max-w-2xl mt-4 border-l-4 border-secondary pl-4">
+                A short video shows the letters of your day. SAJU reads the lifelong pattern they make.
+            </p>
+<div class="mt-8">
+<button class="w-full md:w-auto bg-secondary text-on-secondary font-label-caps text-label-caps px-8 py-4 border-2 border-primary shadow-solid hover:shadow-solid-lg transition-all active:translate-x-1 active:translate-y-1">
+                    READ MY PATTERN
+                </button>
+</div>
+</section>
+<!-- The Ten Forms Badge Strip -->
+<section class="flex flex-col gap-4 border-t-2 border-primary pt-8">
+<div class="flex flex-col md:flex-row md:items-baseline gap-2 mb-4">
+<span class="font-label-caps text-label-caps bg-primary text-on-primary px-2 py-1 inline-block self-start">THE TEN FORMS</span>
+<p class="font-body-md text-body-md text-primary">Your birth date assigns you one of ten forms.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Badge 1 -->
+<div class="border-2 border-primary p-4 flex justify-between items-center bg-surface hover:bg-secondary hover:text-on-secondary transition-colors group cursor-default">
+<span class="font-headline-md text-body-lg md:text-body-lg font-black tracking-tight">MIRROR LAKE</span>
+<span class="font-body-lg text-body-lg font-bold group-hover:text-on-secondary">壬</span>
+</div>
+<!-- Badge 2 -->
+<div class="border-2 border-primary p-4 flex justify-between items-center bg-surface hover:bg-secondary hover:text-on-secondary transition-colors group cursor-default">
+<span class="font-headline-md text-body-lg md:text-body-lg font-black tracking-tight">HEARTWOOD</span>
+<span class="font-body-lg text-body-lg font-bold group-hover:text-on-secondary">甲</span>
+</div>
+<!-- Badge 3 -->
+<div class="border-2 border-primary p-4 flex justify-between items-center bg-surface hover:bg-secondary hover:text-on-secondary transition-colors group cursor-default">
+<span class="font-headline-md text-body-lg md:text-body-lg font-black tracking-tight">NOON MARK</span>
+<span class="font-body-lg text-body-lg font-bold group-hover:text-on-secondary">丙</span>
+</div>
+</div>
+</section>
+<!-- Card Preview Section -->
+<section class="flex flex-col gap-8 border-t-2 border-primary pt-8">
+<h2 class="font-headline-md text-headline-md md:text-headline-md text-primary leading-tight tracking-tighter uppercase max-w-4xl">
+                THE RESULT STAYS AS A SINGLE CARD.
+            </h2>
+<!-- Typographic Card Visual -->
+<div class="border-4 border-primary p-6 md:p-12 flex flex-col gap-8 bg-surface-container-low max-w-2xl mx-auto w-full shadow-solid-lg relative overflow-hidden">
+<!-- Decorative geometric overlay -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary opacity-10 rounded-bl-full"></div>
+<div class="flex justify-between items-end border-b-2 border-primary pb-4">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SERIAL</span>
+<span class="font-headline-md text-body-lg md:text-body-lg tracking-widest text-primary">001-A99</span>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-secondary leading-none">壬</span>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col border-r-2 border-primary pr-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-2">ELEM</span>
+<span class="font-headline-md text-body-lg text-primary uppercase">WATER</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-2">PLRT</span>
+<span class="font-headline-md text-body-lg text-primary uppercase">YANG</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t-2 border-primary">
+<span class="font-headline-md text-headline-lg-mobile text-primary tracking-tighter w-full text-center block">MIRROR LAKE</span>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="flex flex-col items-center text-center gap-8 border-t-2 border-primary pt-16 pb-8">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-md text-primary leading-tight tracking-tighter uppercase max-w-3xl">
+                YOUR READING BEGINS WITH EIGHT LETTERS.
+            </h2>
+<button class="w-full md:w-auto bg-secondary text-on-secondary font-label-caps text-label-caps px-12 py-6 border-2 border-primary shadow-solid hover:shadow-solid-lg transition-all active:translate-x-1 active:translate-y-1 mt-4 text-xl">
+                READ MY PATTERN
+            </button>
+</section>
+</main>
+<!-- Shared Component: Footer -->
+<footer class="w-full py-stack-md flex flex-col md:flex-row justify-between items-start gap-4 px-margin-mobile md:px-margin-desktop border-t-2 border-primary bg-surface mt-auto">
+<div class="flex flex-col gap-4 max-w-md">
+<div class="font-headline-md text-headline-md text-primary">SAJU</div>
+<p class="font-body-md text-sm md:text-sm text-primary leading-snug">
+                SAJU is a reading tool for self-understanding. It is not medical, legal, or financial advice.
+            </p>
+<div class="font-label-caps text-xs md:text-xs text-primary mt-2">
+                ©2024 SAJU. ALL RIGHTS RESERVED. NO UNAUTHORIZED REPRODUCTION.
+            </div>
+</div>
+<div class="flex flex-col md:flex-row gap-6 mt-6 md:mt-0">
+<a class="font-label-caps text-label-caps text-primary hover:text-secondary underline font-bold transition-colors" href="#">TERMS</a>
+<a class="font-label-caps text-label-caps text-primary hover:text-secondary underline font-bold transition-colors" href="#">PRIVACY</a>
+<a class="font-label-caps text-label-caps text-primary hover:text-secondary underline font-bold transition-colors" href="#">CONTACT</a>
+</div>
+</footer>
+</body></html>

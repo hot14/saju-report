@@ -1,0 +1,9 @@
+/* SAJU 다국어 타이포그래피 시스템 (복구본 2026-09-06) */
+:root{
+  --font-display: "Noto Serif KR","Playfair Display",Georgia,serif;
+  --font-body: "Noto Sans KR","Hanken Grotesk",-apple-system,"Apple SD Gothic Neo",sans-serif;
+  --font-mono: "IBM Plex Mono",ui-monospace,"SF Mono",monospace;
+}
+body{font-family:var(--font-body)}
+h1,h2,h3,.display{font-family:var(--font-display)}
+.mono,.label,code,kbd{font-family:var(--font-mono)}

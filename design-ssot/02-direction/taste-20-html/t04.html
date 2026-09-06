@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - You are Mirror Lake</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#eae8e4",
+            "surface-container": "#efeeea",
+            "secondary-container": "#e5dfd9",
+            "secondary-fixed-dim": "#cbc5c0",
+            "surface-container-low": "#f5f3ef",
+            "on-error": "#ffffff",
+            "surface-bright": "#fbf9f5",
+            "tertiary-fixed": "#98f2ec",
+            "primary": "#972b25",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#e4e2de",
+            "on-tertiary-fixed": "#00201f",
+            "outline": "#8b716e",
+            "on-primary-container": "#ffe7e3",
+            "on-primary-fixed-variant": "#871f1b",
+            "on-tertiary-container": "#a1fbf6",
+            "on-surface-variant": "#57413f",
+            "primary-fixed": "#ffdad6",
+            "on-surface": "#1b1c1a",
+            "tertiary-container": "#007773",
+            "tertiary": "#005c59",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed-variant": "#494643",
+            "on-secondary-fixed": "#1d1b18",
+            "on-secondary-container": "#66625e",
+            "error": "#ba1a1a",
+            "inverse-on-surface": "#f2f0ed",
+            "background": "#fbf9f5",
+            "secondary-fixed": "#e8e1dc",
+            "on-tertiary-fixed-variant": "#00504d",
+            "surface-dim": "#dbdad6",
+            "on-background": "#1b1c1a",
+            "inverse-surface": "#30312e",
+            "surface": "#fbf9f5",
+            "primary-fixed-dim": "#ffb4ab",
+            "tertiary-fixed-dim": "#7cd5d0",
+            "inverse-primary": "#ffb4ab",
+            "error-container": "#ffdad6",
+            "surface-tint": "#a8372f",
+            "on-secondary": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "secondary": "#615e5a",
+            "outline-variant": "#dfbfbc",
+            "on-primary-fixed": "#410002",
+            "surface-variant": "#e4e2de",
+            "primary-container": "#b8433a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "max-width": "1280px",
+            "unit": "4px",
+            "margin-mobile": "20px",
+            "margin-desktop": "64px"
+          },
+          "fontFamily": {
+            "kicker": [
+              "\"Source Sans 3\""
+            ],
+            "body-md": [
+              "\"Source Sans 3\""
+            ],
+            "display-lg": [
+              "Playfair Display"
+            ],
+            "label-sm": [
+              "\"Source Sans 3\""
+            ],
+            "body-lg": [
+              "\"Source Sans 3\""
+            ],
+            "display-lg-mobile": [
+              "Playfair Display"
+            ],
+            "headline-sm": [
+              "Playfair Display"
+            ],
+            "headline-md": [
+              "Playfair Display"
+            ]
+          },
+          "fontSize": {
+            "kicker": [
+              "12px",
+              {
+                "lineHeight": "1",
+                "letterSpacing": "0.1em",
+                "fontWeight": "700"
+              }
+            ],
+            "body-md": [
+              "16px",
+              {
+                "lineHeight": "1.6",
+                "fontWeight": "400"
+              }
+            ],
+            "display-lg": [
+              "64px",
+              {
+                "lineHeight": "1.1",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "label-sm": [
+              "11px",
+              {
+                "lineHeight": "1",
+                "letterSpacing": "0.05em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-lg": [
+              "20px",
+              {
+                "lineHeight": "1.6",
+                "fontWeight": "400"
+              }
+            ],
+            "display-lg-mobile": [
+              "40px",
+              {
+                "lineHeight": "1.1",
+                "fontWeight": "700"
+              }
+            ],
+            "headline-sm": [
+              "24px",
+              {
+                "lineHeight": "1.3",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-md": [
+              "32px",
+              {
+                "lineHeight": "1.2",
+                "fontWeight": "400"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #FBF9F5;
+      color: #1A1815;
+    }
+    .thin-rule {
+      border-top: 1px solid #D1CEC8;
+    }
+    .thin-rule-bottom {
+      border-bottom: 1px solid #D1CEC8;
+    }
+    .drop-cap {
+      float: left;
+      font-size: 3rem;
+      line-height: 0.8;
+      margin-right: 0.5rem;
+      margin-top: 0.1rem;
+      color: #1A1815;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile py-4 bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline">
+<button class="text-on-surface hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-display-lg-mobile text-display-lg-mobile text-on-surface tracking-tighter">
+      SAJU
+    </div>
+<div class="flex gap-2 text-on-surface font-label-sm text-label-sm uppercase items-center">
+<span class="opacity-50">KO</span>
+<span class="opacity-50">/</span>
+<span>EN</span>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow pt-[80px] pb-[80px]">
+<!-- Hero Section -->
+<section class="px-margin-mobile pt-16 pb-12 flex flex-col items-start gap-8">
+<h1 class="font-display-lg-mobile text-display-lg-mobile max-w-sm">
+        You are<br/>Mirror Lake.
+      </h1>
+<div class="max-w-md font-body-md text-body-md text-on-surface-variant">
+<span class="drop-cap font-headline-md">A</span> short video shows the letters of your day. SAJU reads the lifelong pattern they make.
+      </div>
+<button class="bg-[#1A1815] text-[#FBF9F5] font-kicker text-kicker uppercase px-6 py-4 hover:opacity-90 transition-opacity w-full sm:w-auto mt-4 text-center">
+        READ MY PATTERN
+      </button>
+</section>
+<!-- Section 2: The Ten Forms -->
+<section class="px-margin-mobile py-12 thin-rule">
+<div class="mb-8">
+<span class="font-kicker text-kicker text-primary-container uppercase block mb-4">THE TEN FORMS</span>
+<p class="font-body-md text-body-md text-on-surface">Your birth date assigns you one of ten forms.</p>
+</div>
+<div class="flex overflow-x-auto gap-4 pb-4 snap-x">
+<!-- Badge 1 -->
+<div class="snap-start shrink-0 w-48 border border-[#D1CEC8] p-6 flex flex-col items-center justify-center gap-4 bg-surface-container-low">
+<span class="text-4xl font-headline-sm">壬</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Mirror Lake</span>
+</div>
+<!-- Badge 2 -->
+<div class="snap-start shrink-0 w-48 border border-[#D1CEC8] p-6 flex flex-col items-center justify-center gap-4 bg-surface-container-low">
+<span class="text-4xl font-headline-sm">甲</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Heartwood</span>
+</div>
+<!-- Badge 3 -->
+<div class="snap-start shrink-0 w-48 border border-[#D1CEC8] p-6 flex flex-col items-center justify-center gap-4 bg-surface-container-low">
+<span class="text-4xl font-headline-sm">丙</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Noon Mark</span>
+</div>
+</div>
+</section>
+<!-- Section 3: The Result Card -->
+<section class="px-margin-mobile py-16 thin-rule flex flex-col items-center">
+<h2 class="font-headline-sm text-headline-sm mb-12 text-center max-w-sm">
+        THE RESULT STAYS AS A SINGLE CARD.
+      </h2>
+<!-- Card -->
+<div class="w-full max-w-sm border border-[#D1CEC8] bg-surface-bright flex flex-col">
+<div class="p-8 text-center thin-rule-bottom">
+<h3 class="font-headline-md text-headline-md mb-2">Mirror Lake</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">壬 WATER YANG</p>
+</div>
+<div class="p-6 grid grid-cols-2 gap-y-4 gap-x-8 font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">
+<div class="flex flex-col gap-1">
+<span class="opacity-60 text-[9px]">Serial</span>
+<span class="text-on-surface">8392-A</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="opacity-60 text-[9px]">Elem</span>
+<span class="text-on-surface">Water</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="opacity-60 text-[9px]">Plrt</span>
+<span class="text-on-surface">Yang</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="px-margin-mobile py-20 thin-rule flex flex-col items-center text-center gap-8 bg-surface-container-low">
+<h2 class="font-display-lg-mobile text-display-lg-mobile italic max-w-md mx-auto">
+        YOUR READING BEGINS WITH EIGHT LETTERS.
+      </h2>
+<button class="bg-[#1A1815] text-[#FBF9F5] font-kicker text-kicker uppercase px-8 py-4 hover:opacity-90 transition-opacity">
+        READ MY PATTERN
+      </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-mobile py-12 flex flex-col items-center gap-6 bg-surface-container-low dark:bg-inverse-surface border-t border-outline-variant dark:border-outline pb-24">
+<div class="font-display-lg-mobile text-display-lg-mobile">
+      SAJU
+    </div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center max-w-md text-sm">
+      SAJU is a reading tool for self-understanding. It is not medical, legal, or financial advice.
+    </p>
+<div class="flex gap-6 font-label-sm text-label-sm uppercase text-on-surface-variant mt-4">
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Support</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-4 opacity-50">
+      © 2024 SAJU. ALL RIGHTS RESERVED.
+    </div>
+</footer>
+<!-- BottomNavBar (Mobile Shell) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-3 bg-surface dark:bg-surface border-t border-outline-variant dark:border-outline md:hidden">
+<!-- Active Tab: Form -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">auto_stories</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[9px]">Reading</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">pentagon</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[9px]">Form</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">inventory_2</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[9px]">Archive</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[9px]">Me</span>
+</a>
+</nav>
+</body></html>

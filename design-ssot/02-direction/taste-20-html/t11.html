@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - You are Mirror Lake</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#d4e3ff",
+            "secondary-container": "#e5e2e1",
+            "on-secondary-fixed-variant": "#474646",
+            "outline": "#916f65",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#0075d5",
+            "primary": "#FF4D00", // Vermilion mapped to primary for ease
+            "on-surface": "#111111", // Ink mapped to on-surface
+            "outline-variant": "#e6beb2",
+            "surface-container": "#efeded",
+            "tertiary-fixed-dim": "#a5c8ff",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#1c1b1b",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "on-tertiary-container": "#fefcff",
+            "on-secondary-container": "#656464",
+            "surface-container-highest": "#e4e2e2",
+            "surface-variant": "#e4e2e2",
+            "background": "#F0EEE9", // Bone mapped to background
+            "on-secondary": "#ffffff",
+            "surface": "#F0EEE9", // Bone mapped to surface
+            "secondary-fixed": "#e5e2e1",
+            "surface-tint": "#ae3200",
+            "on-primary-container": "#fffbff",
+            "primary-fixed": "#ffdbd0",
+            "on-primary-fixed": "#3a0b00",
+            "secondary": "#5f5e5e",
+            "on-tertiary-fixed": "#001c3a",
+            "on-background": "#111111", // Ink
+            "tertiary": "#005daa",
+            "inverse-primary": "#ffb59e",
+            "inverse-surface": "#303031",
+            "surface-container-low": "#f5f3f3",
+            "error": "#ba1a1a",
+            "surface-container-high": "#e9e8e7",
+            "on-surface-variant": "#5c4037",
+            "on-primary-fixed-variant": "#852400",
+            "secondary-fixed-dim": "#c8c6c5",
+            "primary-fixed-dim": "#ffb59e",
+            "inverse-on-surface": "#f2f0f0",
+            "surface-dim": "#dbdad9",
+            "on-tertiary-fixed-variant": "#004785",
+            "on-primary": "#F0EEE9", // Bone on Vermilion
+            "primary-container": "#FF4D00",
+            "surface-bright": "#fbf9f8"
+          },
+          "borderRadius": {
+            "DEFAULT": "0px", // Stripped radius for harsh modern look unless specified
+            "lg": "0px",
+            "xl": "0px",
+            "full": "9999px"
+          },
+          "spacing": {
+            "base": "8px",
+            "container-margin": "40px",
+            "border-width": "2px",
+            "offset-shift": "32px",
+            "gutter": "24px"
+          },
+          "fontFamily": {
+            "mono-data": ["Space Grotesk"],
+            "label-caps": ["Space Grotesk"],
+            "display-lg": ["Syne"],
+            "headline-lg": ["Syne"],
+            "display-lg-mobile": ["Syne"],
+            "body-md": ["Space Grotesk"],
+            "headline-xl": ["Syne"],
+            "body-lg": ["Space Grotesk"]
+          },
+          "fontSize": {
+            "mono-data": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+            "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "700"}],
+            "display-lg": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+            "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+            "display-lg-mobile": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #F0EEE9;
+      color: #111111;
+      overflow-x: hidden;
+    }
+    
+    .border-ink-2 {
+      border: 2px solid #111111;
+    }
+    
+    .bg-vermilion {
+      background-color: #FF4D00;
+    }
+    
+    .text-vermilion {
+      color: #FF4D00;
+    }
+    
+    .bg-bone {
+      background-color: #F0EEE9;
+    }
+    
+    .text-bone {
+      color: #F0EEE9;
+    }
+    
+    .text-ink {
+      color: #111111;
+    }
+    
+    .hard-shadow {
+      box-shadow: 4px 4px 0px 0px #111111;
+    }
+    
+    .hard-shadow-hover:hover {
+      box-shadow: 6px 6px 0px 0px #111111;
+      transform: translate(-2px, -2px);
+    }
+    
+    .diagonal-tension-r {
+      transform: rotate(3deg);
+    }
+    
+    .diagonal-tension-l {
+      transform: rotate(-2deg);
+    }
+    
+    .broken-grid-offset {
+      margin-left: -1rem;
+      margin-right: 2rem;
+    }
+    
+    .overlap-top {
+      margin-top: -3rem;
+      z-index: 10;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar from JSON -->
+<header class="bg-background dark:bg-background text-on-surface dark:text-on-surface font-display-lg text-display-lg dark:text-on-surface w-full top-0 sticky border-b-2 border-on-surface dark:border-on-surface z-50">
+<div class="flex items-center justify-between px-gutter py-base w-full">
+<div class="cursor-pointer active:translate-y-1 hover:bg-primary hover:text-on-primary transition-colors duration-200 p-2">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</div>
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface dark:text-on-surface uppercase tracking-tighter">
+        SAJU
+      </div>
+<div class="w-10"></div> <!-- Spacer for center alignment -->
+</div>
+</header>
+<main class="flex-grow flex flex-col w-full max-w-7xl mx-auto pb-32">
+<!-- Hero Section -->
+<section class="relative pt-24 pb-32 px-6 md:px-12">
+<div class="absolute top-10 right-0 w-3/4 h-64 border-ink-2 bg-transparent opacity-20 -z-10 translate-x-12"></div>
+<div class="relative z-10 broken-grid-offset max-w-2xl">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-ink leading-none mb-6">
+          You are<br/>Mirror Lake.
+        </h1>
+</div>
+<div class="mt-12 md:mt-24 ml-auto w-[85%] md:w-1/2 border-ink-2 p-6 md:p-8 bg-bone overlap-top relative z-20">
+<p class="font-body-lg text-body-lg text-ink mb-8">
+          A short video shows the letters of your day. SAJU reads the lifelong pattern they make.
+        </p>
+<button class="w-full md:w-auto bg-vermilion text-bone border-ink-2 py-4 px-8 font-headline-lg-mobile text-headline-lg-mobile uppercase hard-shadow hard-shadow-hover transition-all duration-200">
+          READ MY PATTERN
+        </button>
+</div>
+<!-- Decorative element -->
+<div class="absolute bottom-10 left-10 w-24 h-24 border-ink-2 border-b-0 border-l-0 diagonal-tension-r"></div>
+</section>
+<!-- Badge Strip Section -->
+<section class="py-24 relative overflow-hidden">
+<!-- Background structural rule -->
+<div class="absolute top-1/2 left-0 w-full h-[2px] bg-on-surface -z-10"></div>
+<div class="px-6 md:px-12 mb-16 relative bg-bone inline-block border-ink-2 ml-4 md:ml-12 p-4 diagonal-tension-l">
+<h2 class="font-headline-xl text-headline-xl text-ink uppercase">THE TEN FORMS</h2>
+<p class="font-body-md text-body-md text-ink mt-2">Your birth date assigns you one of ten forms.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-8 px-6 md:px-12 mt-12 overflow-visible">
+<!-- Badge 1 -->
+<div class="border-ink-2 bg-bone p-4 flex items-center justify-between w-full md:w-64 hard-shadow diagonal-tension-r">
+<span class="font-label-caps text-label-caps text-ink uppercase tracking-widest">MIRROR LAKE</span>
+<span class="font-headline-lg text-headline-lg text-vermilion">壬</span>
+</div>
+<!-- Badge 2 -->
+<div class="border-ink-2 bg-bone p-4 flex items-center justify-between w-full md:w-64 hard-shadow -mt-4 md:mt-8 ml-4 md:ml-0 diagonal-tension-l">
+<span class="font-label-caps text-label-caps text-ink uppercase tracking-widest">HEARTWOOD</span>
+<span class="font-headline-lg text-headline-lg text-vermilion">甲</span>
+</div>
+<!-- Badge 3 -->
+<div class="border-ink-2 bg-bone p-4 flex items-center justify-between w-full md:w-64 hard-shadow mt-6 md:-mt-6 ml-auto md:ml-0">
+<span class="font-label-caps text-label-caps text-ink uppercase tracking-widest">NOON MARK</span>
+<span class="font-headline-lg text-headline-lg text-vermilion">丙</span>
+</div>
+</div>
+</section>
+<!-- Card Preview Section -->
+<section class="py-24 px-6 md:px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1 relative">
+<!-- The Insight Block L-frame -->
+<div class="border-l-2 border-b-2 border-primary pl-6 pb-6 pt-12 pr-4 relative">
+<h2 class="font-headline-xl text-headline-xl text-ink uppercase mb-4">THE RESULT STAYS AS A SINGLE CARD.</h2>
+<div class="w-12 h-[2px] bg-on-surface mb-8"></div>
+<p class="font-body-lg text-body-lg text-ink">
+              Structured revelation through technical minimalism.
+            </p>
+</div>
+</div>
+<div class="order-1 md:order-2 flex justify-center md:justify-end">
+<!-- Minimalist Card -->
+<div class="w-full max-w-sm border-ink-2 bg-bone p-6 pb-12 hard-shadow diagonal-tension-r relative">
+<!-- Asymmetrical Inset -->
+<div class="border-ink-2 h-64 p-4 flex flex-col justify-between" style="padding: 24px 24px 24px 48px;">
+<div class="flex justify-between border-b-2 border-ink-2 pb-2">
+<span class="font-label-caps text-label-caps text-ink">SERIAL</span>
+<span class="font-mono-data text-mono-data text-ink">009.4.A</span>
+</div>
+<div class="flex justify-between border-b-2 border-ink-2 pb-2">
+<span class="font-label-caps text-label-caps text-ink">ELEM</span>
+<span class="font-mono-data text-mono-data text-vermilion">WATER</span>
+</div>
+<div class="flex justify-between border-b-2 border-ink-2 pb-2">
+<span class="font-label-caps text-label-caps text-ink">PLRT</span>
+<span class="font-mono-data text-mono-data text-ink">YANG</span>
+</div>
+<div class="mt-auto">
+<div class="w-full h-12 bg-on-surface opacity-10"></div>
+</div>
+</div>
+<!-- Decorative tag -->
+<div class="absolute -bottom-4 -left-4 border-ink-2 bg-vermilion text-bone px-3 py-1 font-mono-data text-mono-data">
+              INDEX_01
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="py-32 px-6 md:px-12 relative">
+<div class="border-ink-2 p-8 md:p-16 max-w-3xl mx-auto text-center relative z-10 bg-bone">
+<!-- Breaking across container edge -->
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-ink uppercase absolute -top-12 left-1/2 transform -translate-x-1/2 w-[120%] text-center bg-bone border-ink-2 py-4 diagonal-tension-l">
+          YOUR READING BEGINS<br/>WITH EIGHT LETTERS.
+        </h2>
+<div class="mt-32 md:mt-40">
+<button class="w-full md:w-auto bg-vermilion text-bone border-ink-2 py-5 px-12 font-headline-lg-mobile text-headline-lg-mobile uppercase hard-shadow hard-shadow-hover transition-all duration-200">
+            READ MY PATTERN
+          </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer from JSON -->
+<footer class="bg-background dark:bg-background text-on-surface dark:text-on-surface font-body-md text-body-md dark:text-on-surface-variant w-full mt-auto border-t-2 border-on-surface dark:border-on-surface">
+<div class="w-full px-container-margin py-offset-shift flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="font-label-caps text-label-caps text-on-surface mb-4 md:mb-0">
+        SAJU
+      </div>
+<div class="text-on-surface-variant max-w-md md:text-right">
+        SAJU is a reading tool for self-understanding. It is not medical, legal, or financial advice.
+      </div>
+</div>
+</footer>
+</body></html>

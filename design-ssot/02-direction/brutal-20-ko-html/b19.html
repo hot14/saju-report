@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - Neo-Brutalist Sticker Deck</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&amp;family=Jua&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "neo-bg": "#F4F1EC",
+                        "neo-ink": "#111111",
+                        "neo-accent": "#FF4D00",
+                        // Mappings to standard tokens as required, though overriding with neo colors in logic
+                        "primary": "#111111",
+                        "on-primary": "#F4F1EC",
+                        "secondary": "#FF4D00",
+                        "surface": "#F4F1EC",
+                        "on-surface": "#111111",
+                        "outline": "#111111"
+                    },
+                    fontFamily: {
+                        "display": ['"Black Han Sans"', 'sans-serif'],
+                        "body": ['"Jua"', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'neo-heavy': '8px 8px 0px 0px #111111',
+                        'neo-sm': '4px 4px 0px 0px #111111'
+                    },
+                    backgroundImage: {
+                        'playful-grid': 'radial-gradient(#111111 1px, transparent 1px)',
+                    },
+                    backgroundSize: {
+                        'grid-size': '24px 24px'
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #F4F1EC;
+            color: #111111;
+        }
+        .neo-border {
+            border: 2px solid #111111;
+        }
+        .bg-playful {
+            background-image: radial-gradient(#11111120 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body bg-neo-bg bg-playful min-h-screen flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-neo-bg neo-border border-x-0 border-t-0 flex justify-center items-center px-5 py-4 z-50">
+<h1 class="font-display text-4xl tracking-tighter text-neo-ink">SAJU</h1>
+</header>
+<main class="w-full max-w-md mx-auto flex flex-col gap-12 px-5 py-10 pb-24 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="flex flex-col gap-6 pt-4">
+<h2 class="font-display text-5xl leading-tight text-neo-ink break-keep">당신은<br/>거울 호수입니다.</h2>
+<p class="font-body text-lg text-neo-ink leading-relaxed">
+                짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+            </p>
+<button class="mt-4 bg-neo-accent text-neo-ink font-display text-2xl py-4 px-8 neo-border shadow-neo-heavy hover:-translate-y-1 hover:translate-x-1 hover:shadow-[4px_4px_0px_0px_#111111] transition-all duration-200">
+                내 패턴 읽기
+            </button>
+</section>
+<!-- 'Ten Forms' Section -->
+<section class="flex flex-col gap-8 py-8">
+<div class="flex flex-col gap-2">
+<h3 class="font-display text-3xl text-neo-ink">열 가지 형태</h3>
+<p class="font-body text-base text-neo-ink">생년월일시가 열 가지 형태 중 하나를 정합니다.</p>
+</div>
+<div class="flex flex-wrap gap-4 justify-center py-6">
+<!-- Sticker 1 -->
+<div class="bg-white px-5 py-2 neo-border shadow-neo-sm -rotate-3 hover:rotate-0 transition-transform cursor-default">
+<span class="font-display text-xl text-neo-ink">거울 호수 壬</span>
+</div>
+<!-- Sticker 2 -->
+<div class="bg-neo-accent px-5 py-2 neo-border shadow-neo-sm rotate-6 hover:rotate-0 transition-transform cursor-default">
+<span class="font-display text-xl text-neo-ink">깊은 심목 甲</span>
+</div>
+<!-- Sticker 3 -->
+<div class="bg-white px-5 py-2 neo-border shadow-neo-sm -rotate-6 hover:rotate-0 transition-transform cursor-default translate-y-2">
+<span class="font-display text-xl text-neo-ink">정오 표식 丙</span>
+</div>
+</div>
+</section>
+<!-- 'Result Card' Preview Section -->
+<section class="flex flex-col gap-8 py-8 items-center">
+<h3 class="font-display text-2xl text-neo-ink text-center w-full">결과는 단 하나의 카드로 남습니다.</h3>
+<!-- Rotated Pattern Card -->
+<div class="w-full max-w-sm bg-white p-6 neo-border shadow-neo-heavy rotate-2 hover:-rotate-1 transition-transform duration-300">
+<div class="flex justify-between items-start border-b-2 border-neo-ink pb-4 mb-4">
+<span class="font-body text-sm uppercase">일련번호</span>
+<span class="font-display text-lg">9A-2B-X1</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="flex flex-col p-3 bg-neo-bg neo-border">
+<span class="font-body text-xs text-gray-600">오행</span>
+<span class="font-display text-xl">물</span>
+</div>
+<div class="flex flex-col p-3 bg-neo-bg neo-border">
+<span class="font-body text-xs text-gray-600">음양</span>
+<span class="font-display text-xl">양</span>
+</div>
+</div>
+<div class="flex flex-col p-4 bg-neo-accent neo-border mt-auto">
+<span class="font-body text-sm">주요 패턴</span>
+<span class="font-display text-3xl mt-1">거울 호수</span>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="flex flex-col gap-6 py-12 items-center text-center">
+<h2 class="font-display text-3xl text-neo-ink break-keep">당신의 리딩은<br/>여덟 글자로 시작됩니다.</h2>
+<button class="mt-4 bg-neo-accent text-neo-ink font-display text-2xl py-4 px-10 neo-border shadow-neo-heavy hover:-translate-y-1 hover:translate-x-1 hover:shadow-[4px_4px_0px_0px_#111111] transition-all duration-200 w-full max-w-xs">
+                내 패턴 읽기
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-neo-bg neo-border border-x-0 border-b-0 px-5 py-8 flex flex-col items-center">
+<p class="font-body text-sm text-neo-ink text-center max-w-xs break-keep">
+            SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.
+        </p>
+</footer>
+</body></html>

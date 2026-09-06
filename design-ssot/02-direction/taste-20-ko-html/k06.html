@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&amp;family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "error-container": "#ffdad6",
+              "surface-dim": "#dfdacd",
+              "primary-container": "#f7f3ea",
+              "on-tertiary-fixed-variant": "#7e2a1d",
+              "on-background": "#2B2724", 
+              "surface-bright": "#fff9eb",
+              "secondary": "#635d5a",
+              "inverse-primary": "#c9c6be",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed": "#1e1b18",
+              "error": "#ba1a1a",
+              "inverse-on-surface": "#f6f0e3",
+              "on-surface-variant": "#484740",
+              "secondary-fixed-dim": "#cdc5c0",
+              "surface-container-low": "#f9f3e6",
+              "on-error": "#ffffff",
+              "surface": "#F7F3EA", 
+              "on-error-container": "#93000a",
+              "tertiary": "#8A3325", 
+              "tertiary-fixed-dim": "#ffb4a7",
+              "secondary-fixed": "#e9e1dc",
+              "background": "#F7F3EA", 
+              "primary-fixed-dim": "#c9c6be",
+              "on-primary-fixed": "#1c1c16",
+              "surface-tint": "#605e58",
+              "on-surface": "#2B2724",
+              "surface-container-highest": "#e7e2d5",
+              "outline": "#2B2724", 
+              "primary-fixed": "#e6e2d9",
+              "on-secondary-container": "#67615e",
+              "on-primary-container": "#716f68",
+              "inverse-surface": "#323028",
+              "secondary-container": "#e7ded9",
+              "on-secondary": "#ffffff",
+              "on-tertiary-container": "#b25141",
+              "tertiary-container": "#fff0ed",
+              "surface-variant": "#e7e2d5",
+              "surface-container": "#f3ede0",
+              "on-primary-fixed-variant": "#484740",
+              "on-primary": "#ffffff",
+              "outline-variant": "#cac6bd",
+              "surface-container-high": "#ede8da",
+              "tertiary-fixed": "#ffdad4",
+              "primary": "#2B2724", 
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed-variant": "#4b4642",
+              "on-tertiary-fixed": "#400200"
+            },
+            "borderRadius": {
+              "DEFAULT": "0px", 
+              "lg": "0px",
+              "xl": "0px",
+              "full": "0px"
+            },
+            "spacing": {
+              "gutter": "32px",
+              "margin-mobile": "24px",
+              "margin-page": "64px",
+              "unit": "8px",
+              "stack-xl": "80px",
+              "stack-md": "40px"
+            },
+            "fontFamily": {
+              "body-lg": ["\"Noto Sans KR\""],
+              "body-md": ["\"Noto Sans KR\""],
+              "label-caps": ["\"Noto Sans KR\""],
+              "headline-lg": ["\"Gowun Batang\""],
+              "headline-lg-mobile": ["\"Gowun Batang\""],
+              "headline-xl": ["\"Gowun Batang\""]
+            },
+            "fontSize": {
+              "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+              "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+              "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+              "headline-lg": ["32px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+              "headline-lg-mobile": ["28px", {"lineHeight": "38px", "fontWeight": "400"}],
+              "headline-xl": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .stamp-mark {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: theme('colors.tertiary');
+            color: theme('colors.surface');
+            font-family: 'Gowun Batang', serif;
+            font-size: 14px;
+            line-height: 1;
+            padding-bottom: 2px; /* slight visual balance for CJK */
+        }
+        
+        .thin-border {
+            border: 1px solid theme('colors.outline');
+        }
+        
+        .divider-short {
+            width: 40px;
+            height: 1px;
+            background-color: theme('colors.outline');
+            margin: 32px 0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased selection:bg-tertiary selection:text-on-tertiary min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 flex items-center justify-between px-margin-mobile h-16 border-b border-outline/10">
+<div class="flex items-center gap-4">
+<button class="text-on-background hover:opacity-70 transition-opacity flex items-center justify-center p-2 -ml-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile tracking-widest text-on-background font-bold uppercase pt-1">
+                SAJU
+            </h1>
+</div>
+<button class="font-label-caps text-label-caps text-on-background hover:opacity-70 transition-opacity">
+            EN
+        </button>
+</header>
+<main class="flex-grow pt-16 flex flex-col">
+<!-- Hero Section -->
+<section class="flex flex-col px-margin-mobile py-stack-xl md:py-[120px] items-start w-full max-w-4xl mx-auto">
+<h2 class="font-headline-xl text-headline-xl text-on-background mb-6 leading-tight break-keep">
+                당신은<br/>거울 호수입니다.
+            </h2>
+<div class="divider-short"></div>
+<p class="font-body-lg text-body-lg text-secondary mb-12 max-w-md break-keep">
+                짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+            </p>
+<button class="bg-primary text-on-primary font-body-md text-body-md px-8 py-4 w-full md:w-auto hover:bg-[#1a1816] transition-colors flex items-center justify-center gap-3 group">
+                내 패턴 읽기
+                <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</section>
+<!-- Image Break -->
+<div class="w-full h-[353px] md:h-[530px] relative border-y border-outline/10">
+<div class="bg-cover bg-center w-full h-full opacity-90 grayscale contrast-125" data-alt="A macro, minimalist photograph of stark black ink slowly dispersing and blooming in clear water against a soft cream background. The lighting is bright and even, casting no deep shadows. The mood is calm, meditative, and precise, resembling high-end editorial photography with a tactile, analog quality." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzVZTN1eKjKD4pwiHrNn0EDmz58MoeXhMnUDYHbYCacHcbFlqxYwheXsQhwhlxfIsBuLKmNoCF6W8MOQ7OPcUDKj0QOsZ4j7dtzZPB_YCSX8EoZ4kKEFveAiWpNUI88TgNKuTvUJiv7OzzePXXa4Okpk7nGm5o3xAc_9_Nk_YcgTs1Zag8derKrixDMLTKGNByLkmujoanjGsCzLBFHAhxn52RzNzD9uRMKQnn24QUf3jFsKp97qbWxdGB25BZIasLO5qg_8q_IA')"></div>
+</div>
+<!-- Badge Strip Section -->
+<section class="flex flex-col px-margin-mobile py-stack-xl w-full max-w-4xl mx-auto">
+<div class="mb-10 flex flex-col items-start">
+<span class="stamp-mark mb-4">十</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-4">열 가지 형태</h3>
+<p class="font-body-md text-body-md text-secondary break-keep">
+                    생년월일시가 열 가지 형태 중 하나를 정합니다.
+                </p>
+</div>
+<div class="flex flex-col gap-4 w-full">
+<div class="thin-border p-6 flex justify-between items-center bg-surface-bright">
+<span class="font-body-lg text-body-lg text-on-background">거울 호수</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-tertiary">壬</span>
+</div>
+<div class="thin-border p-6 flex justify-between items-center bg-surface-bright">
+<span class="font-body-lg text-body-lg text-on-background">깊은 심목</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-outline/40">甲</span>
+</div>
+<div class="thin-border p-6 flex justify-between items-center bg-surface-bright">
+<span class="font-body-lg text-body-lg text-on-background">정오 표식</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-outline/40">丙</span>
+</div>
+</div>
+</section>
+<!-- Card Preview Section -->
+<section class="flex flex-col px-margin-mobile py-stack-xl w-full max-w-4xl mx-auto bg-surface-container-low border-y border-outline/10">
+<div class="mb-12 flex flex-col items-start text-center w-full">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-4 w-full text-left">결과는 단 하나의 카드로 남습니다.</h3>
+</div>
+<div class="thin-border bg-surface w-full p-8 relative flex flex-col gap-8 shadow-sm">
+<!-- Card Header -->
+<div class="flex justify-between items-start border-b border-outline/20 pb-4">
+<span class="font-label-caps text-label-caps text-secondary">일련번호</span>
+<span class="font-body-md text-body-md tracking-wider text-on-background">9A-2B-X1</span>
+</div>
+<!-- Card Body -->
+<div class="flex flex-col gap-6">
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-secondary">오행</span>
+<span class="font-body-lg text-body-lg text-on-background">물</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-secondary">음양</span>
+<span class="font-body-lg text-body-lg text-on-background">양</span>
+</div>
+</div>
+<div class="pt-4 border-t border-outline/10 flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-secondary">주요 패턴</span>
+<div class="flex items-center gap-3">
+<span class="font-headline-lg text-headline-lg text-on-background">거울 호수</span>
+<div class="w-1.5 h-1.5 bg-tertiary rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Decorative element -->
+<div class="absolute bottom-8 right-8 opacity-10">
+<span class="material-symbols-outlined text-6xl" style="font-size: 64px;">fingerprint</span>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="flex flex-col px-margin-mobile py-[100px] items-center text-center w-full max-w-2xl mx-auto">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-10 break-keep leading-relaxed">
+                당신의 리딩은<br/>여덟 글자로 시작됩니다.
+            </h2>
+<button class="bg-primary text-on-primary font-body-md text-body-md px-10 py-4 w-full md:w-auto hover:bg-[#1a1816] transition-colors">
+                내 패턴 읽기
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-md border-t border-outline/20 bg-background flex flex-col items-center space-y-6 px-margin-mobile text-center">
+<p class="font-body-md text-body-md text-secondary max-w-md break-keep">
+            SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.
+        </p>
+<div class="flex gap-6 pt-4">
+<a class="font-body-md text-body-md text-secondary hover:text-on-background transition-colors" href="#">Privacy</a>
+<a class="font-body-md text-body-md text-secondary hover:text-on-background transition-colors" href="#">Terms</a>
+<a class="font-body-md text-body-md text-secondary hover:text-on-background transition-colors" href="#">Philosophy</a>
+</div>
+<div class="pt-8">
+<span class="font-label-caps text-label-caps text-tertiary">© 2024 SAJU. CRAFTED WITH INTENTION.</span>
+</div>
+</footer>
+</body></html>

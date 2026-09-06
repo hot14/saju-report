@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - Terminal Mono</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Noto+Sans+KR:wght@300;400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "paper": "#F4F2ED",
+                        "soft-black": "#16161A",
+                        "burnt-orange": "#C4501B",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "secondary": "#b7211d",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-variant": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e8e8e8",
+                        "on-surface": "#1a1c1c",
+                        "surface": "#f9f9f9",
+                        "tertiary": "#000000",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-background": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#930008",
+                        "background": "#F4F2ED", // Override background to paper color for consistency
+                        "tertiary-container": "#1b1c1c",
+                        "on-primary-container": "#858383",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary-container": "#fe5549",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-secondary-fixed": "#410001",
+                        "secondary-fixed": "#ffdad5",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "primary": "#16161A", // Override primary to soft black
+                        "inverse-surface": "#2f3131",
+                        "inverse-primary": "#c8c6c5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5c0003",
+                        "on-tertiary-container": "#848484",
+                        "on-surface-variant": "#444748",
+                        "surface-tint": "#5f5e5e",
+                        "secondary-fixed-dim": "#ffb4aa",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#e5e2e1",
+                        "error": "#ba1a1a",
+                        "outline": "#747878",
+                        "outline-variant": "#c4c7c7",
+                        "tertiary-fixed": "#e3e2e2",
+                        "primary-container": "#1c1b1b",
+                        "surface-dim": "#dadada",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container": "#eeeeee"
+                    },
+                    fontFamily: {
+                        "data-mono": ["'IBM Plex Mono'", "monospace"],
+                        "body-kr": ["'Noto Sans KR'", "sans-serif"],
+                        "label-caps": ["'Noto Sans KR'", "sans-serif"], // Fallback since Hanken isn't requested in prompt, using Noto for Korean support
+                        "display-lg-mobile": ["'Noto Sans KR'", "sans-serif"],
+                        "display-lg": ["'Noto Sans KR'", "sans-serif"],
+                        "body-lg": ["'Noto Sans KR'", "sans-serif"],
+                        "headline-md": ["'Noto Sans KR'", "sans-serif"],
+                        "body-sm": ["'Noto Sans KR'", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px", // Strict minimalist, no curves unless specified
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    spacing: {
+                        "margin-mobile": "20px",
+                        "column-gap": "24px",
+                        "gutter": "16px",
+                        "baseline": "4px",
+                        "margin-desktop": "64px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #F4F2ED;
+            color: #16161A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .border-hairline {
+            border-width: 1px;
+            border-color: #16161A;
+        }
+
+        .border-t-hairline {
+            border-top-width: 1px;
+            border-top-color: #16161A;
+        }
+
+        .border-b-hairline {
+            border-bottom-width: 1px;
+            border-bottom-color: #16161A;
+        }
+
+        .dotted-leader {
+            display: flex;
+            align-items: baseline;
+            width: 100%;
+        }
+
+        .dotted-leader::after {
+            content: "";
+            flex-grow: 1;
+            border-bottom: 1px dotted #16161A;
+            margin: 0 8px;
+            position: relative;
+            top: -4px;
+        }
+
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background-color: currentColor;
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .terminal-grid {
+            background-image: 
+                linear-gradient(to right, rgba(22, 22, 26, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(22, 22, 26, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-kr min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- TopAppBar from JSON -->
+<header class="w-full top-0 sticky bg-background border-b border-primary z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+</div>
+<h1 class="font-headline-md text-[24px] font-bold tracking-tighter text-primary">SAJU</h1>
+<div class="w-6"></div> <!-- Spacer for center alignment -->
+</div>
+</header>
+<main class="flex-grow flex flex-col w-full max-w-2xl mx-auto terminal-grid">
+<!-- Hero Section -->
+<section class="px-margin-mobile py-20 flex flex-col gap-6 border-b-hairline bg-paper/90 backdrop-blur-sm">
+<h2 class="font-body-kr text-[32px] font-bold leading-tight tracking-tight text-primary break-keep">
+                당신은 거울 호수입니다.
+            </h2>
+<p class="font-body-kr text-[16px] leading-relaxed text-primary/80 break-keep">
+                짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+            </p>
+<button class="mt-8 self-start font-data-mono text-[14px] font-medium text-burnt-orange bg-transparent border-none p-0 flex items-center hover:opacity-70 transition-opacity">
+                &gt; 내 패턴 읽기<span class="cursor-blink bg-burnt-orange"></span>
+</button>
+</section>
+<!-- Badge Strip Section -->
+<section class="px-margin-mobile py-16 flex flex-col gap-8 border-b-hairline bg-paper">
+<div class="flex flex-col gap-2">
+<h3 class="font-data-mono text-[14px] font-bold text-primary tracking-widest uppercase">열 가지 형태</h3>
+<p class="font-body-kr text-[14px] text-primary/70">생년월일시가 열 가지 형태 중 하나를 정합니다.</p>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="border-hairline px-3 py-1 font-data-mono text-[13px] text-primary bg-white/50">
+                    [거울 호수 壬]
+                </div>
+<div class="border-hairline px-3 py-1 font-data-mono text-[13px] text-primary bg-white/50">
+                    [깊은 심목 甲]
+                </div>
+<div class="border-hairline px-3 py-1 font-data-mono text-[13px] text-primary bg-white/50">
+                    [정오 표식 丙]
+                </div>
+</div>
+</section>
+<!-- Card Preview Section -->
+<section class="px-margin-mobile py-16 flex flex-col gap-8 border-b-hairline bg-paper/80">
+<h3 class="font-data-mono text-[14px] font-bold text-primary tracking-widest uppercase">결과는 단 하나의 카드로 남습니다.</h3>
+<div class="border-hairline bg-white p-6 shadow-[4px_4px_0_0_rgba(22,22,26,1)] transition-transform hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_rgba(22,22,26,1)] duration-200">
+<div class="flex flex-col gap-4 font-data-mono text-[14px]">
+<div class="flex justify-between">
+<span class="dotted-leader">일련번호</span>
+<span class="font-medium">9A-2B-X1</span>
+</div>
+<div class="flex justify-between">
+<span class="dotted-leader">오행</span>
+<span class="font-medium">물</span>
+</div>
+<div class="flex justify-between">
+<span class="dotted-leader">음양</span>
+<span class="font-medium">양</span>
+</div>
+<div class="flex justify-between text-burnt-orange mt-4 border-t-hairline pt-4 border-dashed border-opacity-50">
+<span class="dotted-leader">주요 패턴</span>
+<span class="font-bold">거울 호수</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="px-margin-mobile py-24 flex flex-col items-center justify-center gap-8 bg-paper text-center">
+<p class="font-body-kr text-[18px] font-medium text-primary">당신의 리딩은 여덟 글자로 시작됩니다.</p>
+<button class="font-data-mono text-[16px] font-bold text-burnt-orange border border-burnt-orange px-6 py-3 hover:bg-burnt-orange hover:text-white transition-colors duration-200 flex items-center gap-2">
+                &gt; 내 패턴 읽기<span class="cursor-blink bg-current h-4"></span>
+</button>
+</section>
+</main>
+<!-- Footer from JSON & Prompt -->
+<footer class="w-full border-t border-primary bg-background mb-20 md:mb-0">
+<div class="flex flex-col md:flex-row justify-between items-start px-margin-mobile md:px-margin-desktop py-8 gap-6 w-full max-w-2xl mx-auto">
+<div class="flex flex-col gap-2">
+<p class="font-data-mono text-[12px] font-bold text-primary">SYS.VER.01 © SAJU BUREAU</p>
+<p class="font-body-kr text-[12px] text-primary/70 max-w-xs break-keep">SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.</p>
+</div>
+<div class="flex flex-col gap-2 font-data-mono text-[10px] text-on-surface-variant">
+<a class="hover:text-secondary transition-opacity duration-200" href="#">LEGAL DISCLAIMER: FOR SELF-UNDERSTANDING ONLY</a>
+<a class="hover:text-secondary transition-opacity duration-200" href="#">NOT PROFESSIONAL ADVICE</a>
+<a class="hover:text-secondary transition-opacity duration-200" href="#">DATA PRIVACY</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar from JSON (Rendered only on mobile md:hidden) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-background border-t border-primary md:hidden">
+<a class="flex flex-col items-center justify-center text-primary p-2 w-full hover:bg-surface-container-low transition-all active:bg-surface-container scale-95" href="#">
+<span class="material-symbols-outlined mb-1">article</span>
+<span class="font-data-mono text-[10px]">REGISTRY</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary font-bold border-t-2 border-secondary p-2 w-full hover:bg-surface-container-low transition-all active:bg-surface-container scale-95" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-data-mono text-[10px]">ANALYSIS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary p-2 w-full hover:bg-surface-container-low transition-all active:bg-surface-container scale-95" href="#">
+<span class="material-symbols-outlined mb-1">monitoring</span>
+<span class="font-data-mono text-[10px]">CHART</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary p-2 w-full hover:bg-surface-container-low transition-all active:bg-surface-container scale-95" href="#">
+<span class="material-symbols-outlined mb-1">settings_input_component</span>
+<span class="font-data-mono text-[10px]">SYSTEM</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - Mirror Lake</title>
+<!-- Tailwind Configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6",
+            "background": "#fcf9f4",
+            "tertiary-container": "#0075d5",
+            "on-error-container": "#93000a",
+            "surface-container-high": "#ebe8e3",
+            "surface-container-lowest": "#ffffff",
+            "tertiary": "#005daa",
+            "on-tertiary-fixed-variant": "#004785",
+            "surface-tint": "#ae3200",
+            "secondary": "#5f5e5e",
+            "surface-container-low": "#f6f3ee",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#e5e2dd",
+            "surface-container": "#f0ede8",
+            "primary-fixed": "#ffdbd0",
+            "primary": "#aa3000",
+            "on-surface": "#1c1c19",
+            "on-tertiary": "#ffffff",
+            "outline": "#916f65",
+            "tertiary-fixed-dim": "#a5c8ff",
+            "on-background": "#1c1c19",
+            "on-secondary-fixed": "#1c1b1b",
+            "surface-bright": "#fcf9f4",
+            "outline-variant": "#e6beb2",
+            "secondary-fixed-dim": "#c8c6c5",
+            "on-primary-fixed": "#3a0b00",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#d4e3ff",
+            "on-surface-variant": "#5c4037",
+            "surface-container-highest": "#e5e2dd",
+            "on-primary-container": "#fffbff",
+            "surface-dim": "#dcdad5",
+            "on-tertiary-fixed": "#001c3a",
+            "on-primary": "#ffffff",
+            "secondary-container": "#e5e2e1",
+            "primary-fixed-dim": "#ffb59e",
+            "on-tertiary-container": "#fefcff",
+            "secondary-fixed": "#e5e2e1",
+            "inverse-primary": "#ffb59e",
+            "on-error": "#ffffff",
+            "inverse-surface": "#31302d",
+            "surface": "#fcf9f4",
+            "primary-container": "#d43f00",
+            "on-primary-fixed-variant": "#852400",
+            "on-secondary-container": "#656464",
+            "on-secondary-fixed-variant": "#474646",
+            "inverse-on-surface": "#f3f0eb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "border-width": "2px",
+            "offset-shadow": "6px",
+            "gutter": "16px",
+            "margin-mobile": "16px",
+            "margin-desktop": "32px",
+            "unit": "4px"
+          },
+          "fontFamily": {
+            "body-md": [
+              "IBM Plex Mono"
+            ],
+            "headline-lg-mobile": [
+              "Archivo Narrow"
+            ],
+            "headline-xl": [
+              "Archivo Narrow"
+            ],
+            "label-caps": [
+              "IBM Plex Mono"
+            ],
+            "data-mono": [
+              "IBM Plex Mono"
+            ],
+            "headline-lg": [
+              "Archivo Narrow"
+            ]
+          },
+          "fontSize": {
+            "body-md": [
+              "16px",
+              {
+                "lineHeight": "1.5",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-lg-mobile": [
+              "28px",
+              {
+                "lineHeight": "1.1",
+                "fontWeight": "900"
+              }
+            ],
+            "headline-xl": [
+              "48px",
+              {
+                "lineHeight": "1.0",
+                "letterSpacing": "-0.04em",
+                "fontWeight": "900"
+              }
+            ],
+            "label-caps": [
+              "12px",
+              {
+                "lineHeight": "1.2",
+                "letterSpacing": "0.1em",
+                "fontWeight": "700"
+              }
+            ],
+            "data-mono": [
+              "14px",
+              {
+                "lineHeight": "1.4",
+                "fontWeight": "500"
+              }
+            ],
+            "headline-lg": [
+              "32px",
+              {
+                "lineHeight": "1.1",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "900"
+              }
+            }
+          }
+        },
+      },
+    }
+  </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    /* Neo-Brutalist Global Styles */
+    body {
+      background-color: #F4F1EC;
+      color: #111111;
+      font-family: 'IBM Plex Mono', monospace;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-headline {
+      font-family: 'Archivo Narrow', sans-serif;
+    }
+
+    /* Standardized Hard Shadows & Borders */
+    .ink-border { border: 2px solid #111111; }
+    .ink-shadow { box-shadow: 6px 6px 0px 0px #111111; }
+    
+    .interactive-press {
+      transition: transform 0.05s ease, box-shadow 0.05s ease;
+    }
+    .interactive-press:active {
+      transform: translate(6px, 6px);
+      box-shadow: 0px 0px 0px 0px #111111;
+    }
+
+    /* Barcode Divider */
+    .barcode-divider {
+      height: 24px;
+      background-image: repeating-linear-gradient(to right, #111111, #111111 2px, transparent 2px, transparent 4px, #111111 4px, #111111 5px, transparent 5px, transparent 8px, #111111 8px, #111111 12px, transparent 12px, transparent 14px);
+      border-top: 2px solid #111111;
+      border-bottom: 2px solid #111111;
+      width: 100%;
+    }
+    
+    .barcode-strip-thin {
+        height: 12px;
+        background-image: repeating-linear-gradient(to right, #111111, #111111 1px, transparent 1px, transparent 3px, #111111 3px, #111111 4px, transparent 4px, transparent 6px, #111111 6px, #111111 8px, transparent 8px, transparent 9px);
+    }
+
+    /* Rubber Stamp */
+    .rubber-stamp {
+      font-family: 'Archivo Narrow', sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      border: 2px solid #FF4D00;
+      color: #FF4D00;
+      padding: 4px 8px;
+      transform: rotate(-12deg);
+      position: absolute;
+      background: rgba(244, 241, 236, 0.9);
+      letter-spacing: 0.05em;
+      z-index: 10;
+    }
+    
+    .rubber-stamp.ink {
+        border-color: #111111;
+        color: #111111;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="relative min-h-screen flex flex-col items-center">
+<!-- TopAppBar from JSON Component 1 -->
+<header class="w-full top-0 sticky z-50 bg-[#F4F1EC] border-b-2 border-[#111111] flex justify-between items-center px-margin-mobile h-16">
+<button class="w-10 h-10 flex items-center justify-center ink-border hover:bg-surface-container interactive-press bg-[#F4F1EC]">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-[#111111] uppercase tracking-tighter">
+      SAJU
+    </div>
+<button class="w-10 h-10 flex items-center justify-center ink-border hover:bg-surface-container interactive-press bg-[#F4F1EC]">
+<span class="material-symbols-outlined" data-icon="qr_code_2">qr_code_2</span>
+</button>
+</header>
+<main class="w-full max-w-md mx-auto flex-grow flex flex-col bg-[#F4F1EC]">
+<!-- Hero Section -->
+<section class="px-margin-mobile pt-12 pb-16 relative">
+<!-- Decorative Stamp -->
+<div class="rubber-stamp ink top-8 right-8 text-xl">ID: ML-0847</div>
+<h1 class="font-headline-xl text-[56px] leading-[0.9] font-black text-[#111111] uppercase mb-6 mt-8 relative z-20">
+        You are<br/>Mirror Lake.
+      </h1>
+<p class="font-body-md text-body-md text-[#111111] mb-10 max-w-[280px]">
+        A short video shows the letters of your day. SAJU reads the lifelong pattern they make.
+      </p>
+<button class="w-full py-4 bg-[#FF4D00] text-[#111111] ink-border ink-shadow interactive-press font-label-caps text-label-caps flex justify-center items-center gap-2">
+<span>READ MY PATTERN</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</section>
+<!-- Barcode Divider -->
+<div class="barcode-divider"></div>
+<!-- Forms Section -->
+<section class="px-margin-mobile py-12 relative">
+<div class="mb-8">
+<span class="font-label-caps text-label-caps bg-[#111111] text-[#F4F1EC] px-2 py-1 uppercase inline-block mb-4">THE TEN FORMS</span>
+<p class="font-data-mono text-data-mono text-[#111111]">Your birth date assigns you one of ten forms.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Form Tile 1 -->
+<div class="ink-border ink-shadow bg-surface-container-lowest p-4 flex flex-col justify-between aspect-square relative interactive-press">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-black mb-2 leading-none">壬</div>
+<div class="font-label-caps text-label-caps uppercase mt-auto">MIRROR LAKE</div>
+<div class="absolute top-2 right-2 w-2 h-2 bg-[#FF4D00] rounded-full"></div>
+</div>
+<!-- Form Tile 2 -->
+<div class="ink-border ink-shadow bg-[#F4F1EC] p-4 flex flex-col justify-between aspect-square interactive-press">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-black mb-2 leading-none">甲</div>
+<div class="font-label-caps text-label-caps uppercase mt-auto">HEARTWOOD</div>
+</div>
+<!-- Form Tile 3 -->
+<div class="ink-border ink-shadow bg-[#F4F1EC] p-4 flex flex-col justify-between aspect-square interactive-press">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-black mb-2 leading-none">丙</div>
+<div class="font-label-caps text-label-caps uppercase mt-auto">NOON MARK</div>
+</div>
+</div>
+</section>
+<!-- Barcode Divider -->
+<div class="barcode-divider"></div>
+<!-- Card Preview Section -->
+<section class="px-margin-mobile py-12 bg-surface-variant relative overflow-hidden">
+<h2 class="font-headline-lg-mobile text-[32px] leading-[1.0] font-black text-[#111111] uppercase mb-10 max-w-[280px]">
+        THE RESULT STAYS AS A SINGLE CARD.
+      </h2>
+<!-- Data Card Visual -->
+<div class="ink-border ink-shadow bg-surface-container-lowest flex flex-col relative w-full max-w-[320px] mx-auto rotate-1 hover:rotate-0 transition-transform duration-300">
+<!-- Stamp Overlay -->
+<div class="rubber-stamp top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl z-20">APPROVED</div>
+<!-- Card Header -->
+<div class="border-b-2 border-[#111111] p-3 flex justify-between items-center bg-[#F4F1EC]">
+<span class="font-label-caps text-[10px] tracking-widest">RECORD.DAT</span>
+<span class="material-symbols-outlined text-sm">qr_code_scanner</span>
+</div>
+<!-- Image Area -->
+<div class="border-b-2 border-[#111111] h-40 relative p-2 bg-[#111111]">
+<div class="bg-cover bg-center w-full h-full ink-border" data-alt="A striking minimalist digital artwork representing water. Deep black background with pristine white geometric waves and intense vibrant red accents. The style is heavily influenced by technical blueprints and high contrast ink printing." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXsAflw1URErQeiDAtdl5ldfFumKE6q9AQQx_CYOvBaumZqDz3RqyihsU2KgMIx-ZVVrjXbVMbhX7LDbMlXdGBjyyeYNKAjYZXnOJ618uF_GAOZvJ9QGRNfU6s1YGSDT-zuUOoEtAqu2DclMy-0tkV1-gNyBReGJ72fPL0BBT6kHUvx9B7Styddln1nuJ9kn84mORRRnhhBo6iptdZu8QWm8SlDX6QxvjvUuEMS1p4qtfuiZrrYG6o0jCruPGMqcJUAVM1t4esow')"></div>
+</div>
+<!-- Data Fields -->
+<div class="p-4 grid grid-cols-2 gap-y-4 font-data-mono text-xs">
+<div class="col-span-2 border-b border-[#111111] pb-2">
+<div class="text-[#5f5e5e] mb-1">SERIAL</div>
+<div class="font-bold text-sm">ML-0847-XYZ</div>
+</div>
+<div class="border-b border-[#111111] pb-2 pr-2 border-r">
+<div class="text-[#5f5e5e] mb-1">ELEM</div>
+<div class="font-bold">WATER</div>
+</div>
+<div class="border-b border-[#111111] pb-2 pl-2">
+<div class="text-[#5f5e5e] mb-1">PLRT</div>
+<div class="font-bold">YANG</div>
+</div>
+</div>
+<!-- Card Footer -->
+<div class="p-3 bg-[#F4F1EC] flex justify-between items-end border-t-2 border-[#111111]">
+<div class="barcode-strip-thin w-24"></div>
+<div class="font-label-caps text-[10px]">V.1.0</div>
+</div>
+</div>
+</section>
+<!-- Barcode Divider -->
+<div class="barcode-divider"></div>
+<!-- Closing CTA Section -->
+<section class="px-margin-mobile py-16 text-center">
+<h3 class="font-headline-lg-mobile text-[28px] leading-[1.1] font-black text-[#111111] uppercase mb-8">
+            YOUR READING BEGINS WITH EIGHT LETTERS.
+        </h3>
+<button class="w-full py-4 bg-[#FF4D00] text-[#111111] ink-border ink-shadow interactive-press font-label-caps text-label-caps flex justify-center items-center gap-2">
+<span>READ MY PATTERN</span>
+<span class="material-symbols-outlined text-sm">fingerprint</span>
+</button>
+</section>
+</main>
+<!-- Footer from JSON Component 3 -->
+<footer class="w-full p-margin-mobile mb-16 bg-[#f0ede8] border-t-2 border-[#111111] flex flex-col gap-unit text-left max-w-md mx-auto">
+<div class="font-label-caps text-label-caps text-[#111111] mb-4">
+      © 2024 SAJU INDUSTRIAL REGISTRY SYSTEM
+    </div>
+<div class="flex flex-col gap-2 font-data-mono text-data-mono">
+<a class="text-secondary hover:text-primary transition-opacity duration-200" href="#">PROTOCOL-01</a>
+<a class="text-secondary hover:text-primary transition-opacity duration-200" href="#">PRIVACY_ENCRYPT</a>
+<a class="text-secondary hover:text-primary transition-opacity duration-200" href="#">TERMS_OF_USE</a>
+</div>
+</footer>
+</body></html>

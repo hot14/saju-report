@@ -1,80 +1,296 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=390">
-<style>
-/* ===== BASE STRUCTURE (shared) ===== */
-*{box-sizing:border-box;margin:0;padding:0}
-body{width:390px;font-family:var(--font-body);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
-img{max-width:100%}
-.top{display:flex;justify-content:space-between;align-items:center;padding:var(--pad) 20px;border-bottom:var(--bw) solid var(--border)}
-.wordmark{font-family:var(--font-display);font-weight:900;font-size:18px;letter-spacing:var(--wm-ls)}
-.serial{font-family:var(--font-mono);font-size:10px;color:var(--mute)}
-.hero{padding:var(--hero-pad) 20px 28px}
-.stamp{display:inline-block;font-family:var(--font-mono);font-size:10px;border:var(--bw) solid var(--border);padding:3px 10px;transform:rotate(var(--stamp-rot));margin-bottom:16px;letter-spacing:.1em}
-h1{font-family:var(--font-display);font-size:var(--h1-size);font-weight:900;letter-spacing:var(--h1-ls);line-height:var(--h1-lh);text-transform:var(--h1-tc)}
-h1 .accent{color:var(--accent)}
-.sub{font-size:14px;color:var(--sub-color);margin-top:12px;line-height:1.65;max-width:340px}
-.cta{display:inline-block;margin-top:22px;background:var(--cta-bg);color:var(--cta-color);padding:var(--cta-pad);font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border:var(--bw) solid var(--border);box-shadow:var(--shadow);cursor:pointer;font-family:var(--font-body)}
-.badges{padding:24px 20px;border-top:var(--sep-w) var(--sep-style) var(--border)}
-.badges .label{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;color:var(--mute);margin-bottom:4px;font-weight:700}
-.badges .line{font-size:13px;color:var(--sub-color);margin-bottom:16px}
-.badge-row{display:flex;gap:12px}
-.badge{flex:1;text-align:center;padding:var(--badge-pad);border:var(--badge-bw) solid var(--border);background:var(--badge-bg);box-shadow:var(--badge-shadow)}
-.badge .hanja{font-size:26px;font-weight:300}
-.badge .name{font-family:var(--font-mono);font-size:8px;letter-spacing:.1em;margin-top:6px;color:var(--mute)}
-.badge.hl{border-color:var(--accent);border-width:var(--bw)}
-.badge.hl .hanja{color:var(--accent)}
-.preview{padding:24px 20px;border-top:var(--sep-w) var(--sep-style) var(--border)}
-.preview .head{font-family:var(--font-display);font-size:20px;font-weight:800;letter-spacing:-.01em}
-.preview .cap{font-size:13px;color:var(--sub-color);margin-top:4px}
-.closing{padding:var(--close-pad) 20px;text-align:center;border-top:var(--sep-w) var(--sep-style) var(--border)}
-.closing h2{font-family:var(--font-display);font-size:var(--close-h);font-weight:900;letter-spacing:-.02em;line-height:1.1}
-.closing .cta2{display:inline-block;margin-top:18px;background:var(--cta-bg);color:var(--cta-color);padding:14px 32px;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border:var(--bw) solid var(--border);box-shadow:var(--shadow)}
-.foot{padding:16px 20px;font-size:10.5px;color:var(--foot-color);border-top:var(--bw) solid var(--border);line-height:1.6}
-.perf{border-top:2px dotted var(--border);margin:0 20px}
-.barcode{height:28px;background:repeating-linear-gradient(90deg,var(--ink) 0,var(--ink) 2px,transparent 2px,transparent 5px);opacity:.7}
-.callout{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:9px;color:var(--mute);margin:12px 0}
-.callout .arr{flex:1;height:1px;background:var(--border);position:relative}
-.callout .arr::after{content:'';position:absolute;right:0;top:-3px;border:3px solid transparent;border-left-color:var(--mute)}
-.dim-tag{font-family:var(--font-mono);font-size:9px;color:var(--mute);padding:2px 6px;border:1px solid var(--border)}
-.sticker-rot{transform:rotate(var(--s-rot))}
-</style>
-<style>
-/* ===== VARIANT CSS (per-variant override) ===== */
 
-:root{--bg:#F4F1EC;--ink:#111;--accent:#FF4D00;--border:#111;--mute:#6f6a63;--sub-color:#444;--foot-color:#888;--cta-bg:#FF4D00;--cta-color:#fff;--badge-bg:#fff;--badge-shadow:3px 3px 0 #111;--badge-bw:2px;--badge-pad:12px 8px;--sep-w:2px;--sep-style:dashed;--bw:2px;--shadow:5px 5px 0 #111;--s-rot:1deg;--stamp-rot:2deg;--pad:14px 20px;--hero-pad:32px;--close-pad:32px;--close-h:26px;--h1-size:46px;--h1-ls:-.02em;--h1-lh:.98;--h1-tc:uppercase;--h1-ls:-.02em;--wm-ls:0em;--cta-pad:15px 34px;--font-display:'Archivo Black','Helvetica Neue',sans-serif;--font-body:'Helvetica Neue',Arial,sans-serif;--font-mono:'Courier New',monospace}
-
-</style>
-</head>
-<body>
-<div class="top"><div class="wordmark">SAJU.</div><div class="serial">NO. 03</div></div>
-<div class="hero">
-  <div class="stamp">ZINE · CUT · PASTE</div>
-  <h1>You are<br><span class="accent">Mirror</span><br>Lake.</h1>
-  <div class="sub">A short video shows the letters of your day. SAJU reads the lifelong pattern they make.</div>
-  <button class="cta">READ MY PATTERN</button>
-  <div class="callout"><span>[REF: 01-HERO]</span><div class="arr"></div><span>[CTA-BLOCK]</span></div>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - You are Mirror Lake</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;family=Hanken+Grotesk:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#ffb4aa",
+            "tertiary-fixed-dim": "#c7c6c6",
+            "on-surface-variant": "#444748",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#f9f9f9",
+            "inverse-on-surface": "#f0f1f1",
+            "tertiary-fixed": "#e3e2e2",
+            "inverse-primary": "#c8c6c5",
+            "surface-dim": "#dadada",
+            "on-primary": "#ffffff",
+            "surface-container": "#eeeeee",
+            "on-error-container": "#93000a",
+            "inverse-surface": "#2f3131",
+            "surface-tint": "#5f5e5e",
+            "on-tertiary-container": "#848484",
+            "tertiary": "#000000",
+            "surface-container-highest": "#e2e2e2",
+            "surface-bright": "#f9f9f9",
+            "outline": "#747878",
+            "surface-container-low": "#f3f3f4",
+            "on-tertiary-fixed-variant": "#464747",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed-variant": "#474646",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#ffdad5",
+            "on-secondary-container": "#5c0003",
+            "surface-variant": "#e2e2e2",
+            "primary": "#000000",
+            "on-primary-fixed": "#1c1b1b",
+            "on-background": "#1a1c1c",
+            "secondary": "#b7211d",
+            "primary-container": "#1c1b1b",
+            "on-secondary-fixed": "#410001",
+            "outline-variant": "#c4c7c7",
+            "on-surface": "#1a1c1c",
+            "tertiary-container": "#1b1c1c",
+            "on-secondary-fixed-variant": "#930008",
+            "on-primary-container": "#858383",
+            "background": "#f9f9f9",
+            "primary-fixed": "#e5e2e1",
+            "surface-container-high": "#e8e8e8",
+            "secondary-container": "#fe5549",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#1b1c1c",
+            "primary-fixed-dim": "#c8c6c5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "column-gap": "24px",
+            "baseline": "4px",
+            "gutter": "16px",
+            "margin-mobile": "20px",
+            "margin-desktop": "64px"
+          },
+          "fontFamily": {
+            "data-mono": ["JetBrains Mono"],
+            "body-lg": ["Hanken Grotesk"],
+            "label-caps": ["Hanken Grotesk"],
+            "headline-md": ["Hanken Grotesk"],
+            "display-lg": ["Hanken Grotesk"],
+            "body-sm": ["Hanken Grotesk"],
+            "display-lg-mobile": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "data-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700"}],
+            "headline-md": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "display-lg": ["72px", {"lineHeight": "64px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "display-lg-mobile": ["40px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .barcode-strip {
+      display: flex;
+      height: 32px;
+      width: 100%;
+      background: #f9f9f9;
+      background-image: 
+        linear-gradient(90deg, 
+          #000 1%, transparent 1%, transparent 3%, 
+          #000 3%, #000 4%, transparent 4%, transparent 7%, 
+          #000 7%, #000 9%, transparent 9%, transparent 11%, 
+          #000 11%, #000 12%, transparent 12%, transparent 16%, 
+          #000 16%, #000 20%, transparent 20%, transparent 22%, 
+          #000 22%, #000 23%, transparent 23%, transparent 25%, 
+          #000 25%, #000 28%, transparent 28%, transparent 32%,
+          #000 32%, #000 33%, transparent 33%, transparent 35%,
+          #000 35%, #000 38%, transparent 38%, transparent 41%,
+          #000 41%, #000 42%, transparent 42%, transparent 45%,
+          #000 45%, #000 48%, transparent 48%, transparent 50%,
+          #000 50%, #000 52%, transparent 52%, transparent 55%,
+          #000 55%, #000 56%, transparent 56%, transparent 59%,
+          #000 59%, #000 62%, transparent 62%, transparent 64%,
+          #000 64%, #000 65%, transparent 65%, transparent 68%,
+          #000 68%, #000 71%, transparent 71%, transparent 74%,
+          #000 74%, #000 75%, transparent 75%, transparent 78%,
+          #000 78%, #000 81%, transparent 81%, transparent 84%,
+          #000 84%, #000 85%, transparent 85%, transparent 88%,
+          #000 88%, #000 91%, transparent 91%, transparent 94%,
+          #000 94%, #000 95%, transparent 95%, transparent 98%,
+          #000 98%, #000 100%
+        );
+      background-size: 120px 100%;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
+    .neo-brutal-btn {
+      background-color: #fe5549; /* secondary-container closest to #FF4D00 */
+      color: #000;
+      border: 2px solid #000;
+      box-shadow: 6px 6px 0px 0px #000;
+      transition: all 0.1s ease;
+    }
+    .neo-brutal-btn:active {
+      box-shadow: 2px 2px 0px 0px #000;
+      transform: translate(4px, 4px);
+    }
+    .neo-brutal-badge {
+      border: 3px solid #000;
+      background-color: #fff;
+    }
+    .neo-brutal-card {
+      border: 2px solid #000;
+      background-color: #fff;
+      box-shadow: 8px 8px 0px 0px #000;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen text-on-background selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="w-full top-0 bg-background flex justify-between items-center px-margin-mobile py-4 border-b border-outline">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">menu</span>
 </div>
-<div class="badges">
-  <div class="label">CUT · KEEP · SHARE</div>
-  <div class="line">Your birth date assigns you one of ten forms.</div>
-  <div class="badge-row">
-    <div class="badge hl sticker-rot"><div class="hanja">壬</div><div class="name">MIRROR LAKE</div></div>
-    <div class="badge"><div class="hanja">甲</div><div class="name">HEARTWOOD</div></div>
-    <div class="badge"><div class="hanja">丙</div><div class="name">NOON MARK</div></div>
-  </div>
+<div class="font-headline-md text-headline-md-mobile tracking-tighter text-primary">SAJU</div>
+<div class="w-6 h-6"></div> <!-- Spacer for centering -->
+</header>
+<main class="w-full max-w-md mx-auto">
+<!-- Hero Section -->
+<section class="px-margin-mobile py-16 flex flex-col gap-6">
+<h1 class="font-display-lg-mobile text-display-lg-mobile uppercase break-words">
+        You are<br/>Mirror Lake.
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm">
+        A short video shows the letters of your day. SAJU reads the lifelong pattern they make.
+      </p>
+<div class="mt-4">
+<button class="neo-brutal-btn font-label-caps text-label-caps w-full py-4 text-center uppercase tracking-widest cursor-pointer">
+          Read My Pattern
+        </button>
 </div>
-<div class="preview">
-  <div class="head">The result stays as a single card.</div>
-  <div class="cap">The badge and one line carry the meaning on their own.</div>
+</section>
+<!-- Divider -->
+<div aria-hidden="true" class="barcode-strip my-8"></div>
+<!-- Badge Strip Section -->
+<section class="px-margin-mobile py-8 flex flex-col gap-8">
+<div class="flex flex-col gap-2">
+<span class="font-data-mono text-data-mono text-outline uppercase tracking-widest text-xs">THE TEN FORMS</span>
+<h2 class="font-headline-md text-headline-md-mobile">Your birth date assigns you one of ten forms.</h2>
 </div>
-<div class="perf"></div>
-<div class="closing">
-  <h2>YOUR READING BEGINS WITH EIGHT LETTERS.</h2>
-  <button class="cta2">READ MY PATTERN</button>
+<div class="flex flex-col gap-4">
+<!-- Badge 1 -->
+<div class="neo-brutal-badge p-4 flex justify-between items-center relative overflow-hidden group">
+<div class="flex flex-col">
+<span class="font-data-mono text-[10px] text-outline">ID: 01</span>
+<span class="font-headline-md text-xl uppercase mt-1">Mirror Lake</span>
 </div>
-<div class="foot">SAJU is a reading tool for self-understanding. It is not medical, legal, or financial advice.</div>
-</body>
-</html>
+<span class="font-display-lg-mobile text-3xl font-bold">壬</span>
+<!-- Decorative cutouts -->
+<div class="absolute -top-2 -left-2 w-4 h-4 rounded-full border-2 border-black bg-background"></div>
+<div class="absolute -bottom-2 -right-2 w-4 h-4 rounded-full border-2 border-black bg-background"></div>
+</div>
+<!-- Badge 2 -->
+<div class="neo-brutal-badge p-4 flex justify-between items-center relative overflow-hidden">
+<div class="flex flex-col">
+<span class="font-data-mono text-[10px] text-outline">ID: 02</span>
+<span class="font-headline-md text-xl uppercase mt-1">Heartwood</span>
+</div>
+<span class="font-display-lg-mobile text-3xl font-bold">甲</span>
+<div class="absolute -top-2 -right-2 w-4 h-4 rounded-full border-2 border-black bg-background"></div>
+<div class="absolute -bottom-2 -left-2 w-4 h-4 rounded-full border-2 border-black bg-background"></div>
+</div>
+<!-- Badge 3 -->
+<div class="neo-brutal-badge p-4 flex justify-between items-center relative overflow-hidden">
+<div class="flex flex-col">
+<span class="font-data-mono text-[10px] text-outline">ID: 03</span>
+<span class="font-headline-md text-xl uppercase mt-1">Noon Mark</span>
+</div>
+<span class="font-display-lg-mobile text-3xl font-bold">丙</span>
+<div class="absolute -top-2 -left-2 w-4 h-4 rounded-full border-2 border-black bg-background"></div>
+<div class="absolute -bottom-2 -right-2 w-4 h-4 rounded-full border-2 border-black bg-background"></div>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div aria-hidden="true" class="barcode-strip my-8"></div>
+<!-- Card Preview Section -->
+<section class="px-margin-mobile py-8 flex flex-col gap-6">
+<h2 class="font-headline-md text-headline-md-mobile uppercase">The result stays as a single card.</h2>
+<div class="neo-brutal-card p-6 mt-4 relative aspect-[3/4] flex flex-col justify-between">
+<!-- Card Header -->
+<div class="flex justify-between items-start border-b border-black pb-4">
+<div class="flex flex-col">
+<span class="font-data-mono text-[10px] uppercase">Form Type</span>
+<span class="font-headline-md text-lg uppercase leading-tight">Mirror Lake</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-data-mono text-[10px] uppercase">Sector</span>
+<span class="font-data-mono text-sm font-bold">N-01</span>
+</div>
+</div>
+<!-- Card Center Visual -->
+<div class="flex-grow flex items-center justify-center relative">
+<!-- Geometric representation of lake/water -->
+<div class="w-32 h-32 border-2 border-black flex flex-col justify-evenly p-2 relative">
+<div class="w-full h-1 bg-black"></div>
+<div class="w-3/4 h-1 bg-black mx-auto"></div>
+<div class="w-1/2 h-1 bg-black mx-auto"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl bg-white px-2">water</span>
+</div>
+</div>
+</div>
+<!-- Card Footer -->
+<div class="border-t border-black pt-4 grid grid-cols-2 gap-4">
+<div class="flex flex-col">
+<span class="font-data-mono text-[10px] uppercase">Vector</span>
+<span class="font-data-mono text-sm">34.9/A</span>
+</div>
+<div class="flex flex-col">
+<span class="font-data-mono text-[10px] uppercase">State</span>
+<span class="font-data-mono text-sm">Active</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div aria-hidden="true" class="barcode-strip my-8"></div>
+<!-- Closing Section -->
+<section class="px-margin-mobile py-16 flex flex-col gap-8 pb-32">
+<h2 class="font-display-lg-mobile text-display-lg-mobile uppercase break-words text-center">
+        Your reading begins with eight letters.
+      </h2>
+<div class="mt-4">
+<button class="neo-brutal-btn font-label-caps text-label-caps w-full py-4 text-center uppercase tracking-widest cursor-pointer">
+          Read My Pattern
+        </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container-highest flex flex-col gap-baseline p-margin-mobile border-t-2 border-primary">
+<div class="font-label-caps text-label-caps mb-4">SAJU</div>
+<div class="flex flex-col gap-2 font-data-mono text-data-mono text-on-tertiary-fixed-variant">
+<a class="hover:text-primary" href="#">DISCLAIMER: This report is for self-understanding only. It does not constitute professional, financial, or medical advice.</a>
+<a class="hover:text-primary" href="#">Data Protocols</a>
+<a class="hover:text-primary" href="#">Terms of Use</a>
+</div>
+<div class="font-data-mono text-data-mono text-on-tertiary-fixed-variant mt-8">
+      © 2024 SAJU RESEARCH BUREAU. ALL RIGHTS RESERVED.
+    </div>
+</footer>
+</body></html>

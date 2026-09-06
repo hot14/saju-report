@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - Neo-Brutalist Zine</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&amp;family=Noto+Sans+KR:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed": "#410001",
+            "inverse-primary": "#c8c6c5",
+            "error-container": "#ffdad6",
+            "surface-dim": "#dadada",
+            "on-secondary-container": "#5c0003",
+            "secondary-fixed": "#ffdad5",
+            "on-primary-fixed-variant": "#474646",
+            "on-tertiary-container": "#848484",
+            "on-primary-fixed": "#1c1b1b",
+            "primary-fixed": "#e5e2e1",
+            "error": "#ba1a1a",
+            "tertiary-container": "#1b1c1c",
+            "primary-fixed-dim": "#c8c6c5",
+            "tertiary": "#000000",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#858383",
+            "on-background": "#1a1c1c",
+            "surface-tint": "#5f5e5e",
+            "on-error": "#ffffff",
+            "inverse-surface": "#2f3131",
+            "secondary": "#FF4D00", // Adjusted to vibrant Orange as requested for accent
+            "surface": "#f4f4f0", // Off-white zine background
+            "on-tertiary-fixed-variant": "#464747",
+            "surface-container-low": "#f3f3f4",
+            "surface-container-highest": "#e2e2e2",
+            "primary-container": "#1c1b1b",
+            "primary": "#111111", // Ink Black
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "background": "#f4f4f0", // Off-white zine background
+            "on-surface": "#111111", // Ink Black
+            "tertiary-fixed-dim": "#c7c6c6",
+            "surface-variant": "#e2e2e2",
+            "on-surface-variant": "#444748",
+            "surface-container-high": "#e8e8e8",
+            "tertiary-fixed": "#e3e2e2",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#c4c7c7",
+            "on-secondary-fixed-variant": "#930008",
+            "secondary-fixed-dim": "#ffb4aa",
+            "inverse-on-surface": "#f0f1f1",
+            "surface-container": "#eeeeee",
+            "secondary-container": "#fe5549",
+            "on-error-container": "#93000a",
+            "outline": "#747878",
+            "surface-bright": "#f9f9f9",
+            "on-tertiary-fixed": "#1b1c1c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0px",
+            "lg": "0px",
+            "xl": "0px",
+            "full": "0px"
+          },
+          "spacing": {
+            "margin-desktop": "64px",
+            "margin-mobile": "20px",
+            "gutter": "16px",
+            "column-gap": "24px",
+            "baseline": "4px"
+          },
+          "fontFamily": {
+            "data-mono": ["JetBrains Mono"],
+            "label-caps": ["Noto Sans KR"],
+            "headline-md": ["Black Han Sans"],
+            "body-sm": ["Noto Sans KR"],
+            "display-lg-mobile": ["Black Han Sans"],
+            "display-lg": ["Black Han Sans"],
+            "body-lg": ["Noto Sans KR"]
+          },
+          "fontSize": {
+            "data-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700"}],
+            "headline-md": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "display-lg-mobile": ["40px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "400"}],
+            "display-lg": ["72px", {"lineHeight": "64px", "letterSpacing": "-0.04em", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Xerography Texture Overlay */
+    .xerox-grain {
+      position: relative;
+    }
+    .xerox-grain::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+      z-index: 50;
+      mix-blend-mode: multiply;
+    }
+    
+    /* Tape Accents */
+    .tape-accent {
+      position: absolute;
+      width: 60px;
+      height: 20px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+      z-index: 10;
+      transform: rotate(-15deg);
+    }
+    .tape-top-left { top: -10px; left: -20px; }
+    .tape-top-right { top: -5px; right: -25px; transform: rotate(20deg); }
+    
+    /* Torn Edge Dividers */
+    .torn-edge {
+      width: 100%;
+      height: 10px;
+      background: linear-gradient(-45deg, transparent 5px, #111111 5px, #111111 6px, transparent 6px) repeat-x;
+      background-size: 10px 10px;
+      margin-top: -5px;
+      z-index: 20;
+    }
+
+    /* Zine specific shadow */
+    .shadow-hard {
+      box-shadow: 8px 8px 0px 0px rgba(17, 17, 17, 1);
+    }
+    
+    /* Rotate utilities */
+    .rotate-slight-1 { transform: rotate(-1deg); }
+    .rotate-slight-2 { transform: rotate(1.5deg); }
+    
+    /* Hide scrollbar for badge strip */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface xerox-grain min-h-screen flex flex-col font-body-sm relative selection:bg-secondary selection:text-white">
+<!-- Shared Component: TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 px-gutter h-16 flex items-center justify-center bg-background border-b-2 border-on-surface">
+<h1 class="font-display-lg-mobile text-display-lg-mobile tracking-tighter text-on-surface">SAJU</h1>
+<div class="absolute left-4 tape-accent tape-top-left opacity-70"></div>
+</header>
+<main class="flex-grow pt-24 px-gutter pb-margin-mobile md:pb-margin-desktop overflow-x-hidden">
+<!-- Hero Section -->
+<section class="relative border-4 border-on-surface p-6 mb-12 bg-white rotate-slight-1 max-w-2xl mx-auto">
+<div class="tape-accent tape-top-right opacity-80"></div>
+<div class="text-center mb-8">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-4 leading-tight break-keep">당신은<br/>거울 호수입니다.</h2>
+<div class="h-0.5 w-full bg-on-surface mb-6 mx-auto relative">
+<div class="absolute -top-1 left-1/2 -translate-x-1/2 w-4 h-4 bg-secondary rotate-45 border border-on-surface"></div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant font-medium break-keep">
+          짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+        </p>
+</div>
+<div class="flex justify-center">
+<button class="bg-secondary text-white border-2 border-primary py-4 px-8 font-label-caps text-label-caps text-lg shadow-hard hover:translate-y-1 hover:translate-x-1 hover:shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] transition-all active:translate-y-2 active:translate-x-2 active:shadow-none w-full max-w-sm">
+          내 패턴 읽기
+        </button>
+</div>
+</section>
+<!-- Badge Strip Section -->
+<section class="mb-12 relative max-w-4xl mx-auto">
+<div class="torn-edge mb-6"></div>
+<div class="border-y-2 border-on-surface py-4 bg-surface-container-low mb-6 rotate-slight-2 -mx-4 px-4">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">열 가지 형태</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">생년월일시가 열 가지 형태 중 하나를 정합니다.</p>
+</div>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-6 pt-2 snap-x px-4 -mx-4">
+<!-- Badge 1 -->
+<div class="min-w-[140px] flex-shrink-0 bg-white border-2 border-on-surface p-4 flex flex-col items-center justify-center gap-2 rotate-2 snap-center hover:scale-105 transition-transform cursor-pointer">
+<div class="w-12 h-12 bg-on-surface text-white flex items-center justify-center font-display-lg-mobile text-3xl">壬</div>
+<span class="font-label-caps text-label-caps">거울 호수</span>
+</div>
+<!-- Badge 2 -->
+<div class="min-w-[140px] flex-shrink-0 bg-secondary border-2 border-on-surface p-4 flex flex-col items-center justify-center gap-2 -rotate-3 snap-center hover:scale-105 transition-transform cursor-pointer">
+<div class="w-12 h-12 bg-white text-secondary border-2 border-on-surface flex items-center justify-center font-display-lg-mobile text-3xl">甲</div>
+<span class="font-label-caps text-label-caps text-white">깊은 심목</span>
+</div>
+<!-- Badge 3 -->
+<div class="min-w-[140px] flex-shrink-0 bg-white border-2 border-on-surface p-4 flex flex-col items-center justify-center gap-2 rotate-1 snap-center hover:scale-105 transition-transform cursor-pointer">
+<div class="w-12 h-12 bg-on-surface text-white flex items-center justify-center font-display-lg-mobile text-3xl">丙</div>
+<span class="font-label-caps text-label-caps">정오 표식</span>
+</div>
+</div>
+<div class="torn-edge mt-2 rotate-180"></div>
+</section>
+<!-- Card Preview Section -->
+<section class="mb-16 max-w-2xl mx-auto">
+<h3 class="font-headline-md text-headline-md text-primary mb-6 border-l-8 border-secondary pl-4">결과는 단 하나의 카드로 남습니다.</h3>
+<div class="relative w-full max-w-sm mx-auto bg-white border-2 border-on-surface p-6 shadow-hard -rotate-1">
+<div class="absolute top-0 right-0 w-8 h-8 bg-surface-container-high border-l-2 border-b-2 border-on-surface"></div>
+<div class="mb-8 border-b border-outline pb-4 flex justify-between items-end">
+<span class="font-label-caps text-label-caps text-outline">ID FILE</span>
+<span class="font-data-mono text-data-mono font-bold tracking-widest text-primary">9A-2B-X1</span>
+</div>
+<div class="grid grid-cols-2 gap-y-6 gap-x-4 mb-8">
+<div>
+<div class="font-label-caps text-label-caps text-outline mb-1 uppercase text-xs">오행</div>
+<div class="font-headline-md text-2xl text-primary">물</div>
+</div>
+<div>
+<div class="font-label-caps text-label-caps text-outline mb-1 uppercase text-xs">음양</div>
+<div class="font-headline-md text-2xl text-primary">양</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 border border-on-surface">
+<div class="font-label-caps text-label-caps text-outline mb-2 uppercase text-xs">주요 패턴</div>
+<div class="font-display-lg-mobile text-3xl text-secondary">거울 호수</div>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="text-center max-w-xl mx-auto border-t-2 border-dashed border-on-surface pt-12 pb-8">
+<p class="font-body-lg text-body-lg text-primary font-bold mb-8">당신의 리딩은 여덟 글자로 시작됩니다.</p>
+<button class="bg-primary text-white border-2 border-primary py-4 px-8 font-label-caps text-label-caps text-lg shadow-hard hover:bg-secondary hover:translate-y-1 hover:translate-x-1 hover:shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] transition-all active:translate-y-2 active:translate-x-2 active:shadow-none w-full max-w-xs mx-auto">
+        내 패턴 읽기
+      </button>
+</section>
+</main>
+<!-- Shared Component: Footer -->
+<footer class="w-full px-gutter py-8 flex flex-col gap-4 bg-surface-container-highest border-t-2 border-on-surface z-10 relative">
+<div class="font-label-mono text-label-mono uppercase tracking-widest text-on-secondary-fixed-variant text-xs mb-2">
+      SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.
+    </div>
+<div class="flex flex-wrap gap-4 font-label-caps text-label-caps text-on-secondary-fixed-variant text-[10px]">
+<a class="hover:text-primary underline transition-colors duration-100" href="#">NO. 000847</a>
+<a class="hover:text-primary underline transition-colors duration-100" href="#">LEGAL REQUISITIONS</a>
+<a class="hover:text-primary underline transition-colors duration-100" href="#">TECHNICAL SPECS</a>
+</div>
+<div class="font-data-mono text-xs text-outline mt-4">
+      © 2024 SAJU ARCHIVE. ALL RIGHTS RESERVED. [SYS.VER: 2.0.4]
+    </div>
+</footer>
+</body></html>

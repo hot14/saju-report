@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - Scroll Narrative</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline": "#7d766f",
+            "on-surface-variant": "#4c4640",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#c8c6c8",
+            "on-error": "#ffffff",
+            "surface-container-highest": "#e6e2d9",
+            "secondary-container": "#fe776a",
+            "secondary": "#a8372f",
+            "on-secondary-fixed": "#410002",
+            "primary": "#000000",
+            "tertiary-container": "#1b1b1d",
+            "primary-fixed-dim": "#ccc5c0",
+            "on-background": "#1c1c16",
+            "surface-dim": "#dedad1",
+            "surface-tint": "#625d59",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#f5f0e7",
+            "surface-container-high": "#ece8df",
+            "tertiary": "#000000",
+            "surface-container-low": "#f7f3ea",
+            "on-tertiary-fixed": "#1b1b1d",
+            "on-tertiary-container": "#858386",
+            "surface-container-lowest": "#ffffff",
+            "background": "#fdf9f0",
+            "on-primary-fixed": "#1e1b18",
+            "on-surface": "#1c1c16",
+            "primary-container": "#1e1b18",
+            "on-primary-fixed-variant": "#4a4642",
+            "inverse-surface": "#32302a",
+            "tertiary-fixed": "#e4e2e4",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#e9e1dc",
+            "outline-variant": "#cfc5bd",
+            "surface-container": "#f2ede4",
+            "surface-bright": "#fdf9f0",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#ffdad6",
+            "on-tertiary-fixed-variant": "#474649",
+            "on-primary": "#ffffff",
+            "secondary-fixed-dim": "#ffb4ab",
+            "inverse-primary": "#ccc5c0",
+            "on-primary-container": "#89837e",
+            "error": "#ba1a1a",
+            "surface-variant": "#e6e2d9",
+            "surface": "#fdf9f0",
+            "on-secondary-container": "#710e0d",
+            "on-secondary-fixed-variant": "#871f1b"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "unit": "8px",
+            "section-gap": "120px",
+            "margin-desktop": "64px",
+            "margin-mobile": "20px",
+            "gutter": "24px"
+          },
+          "fontFamily": {
+            "display-lg": ["\"Source Serif 4\""],
+            "label-sm": ["Noto Sans"],
+            "headline-lg-mobile": ["\"Source Serif 4\""],
+            "body-lg": ["Noto Sans"],
+            "headline-md": ["\"Source Serif 4\""],
+            "body-md": ["Noto Sans"],
+            "headline-lg": ["\"Source Serif 4\""]
+          },
+          "fontSize": {
+            "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.08em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "headline-md": ["20px", { "lineHeight": "1.4", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    /* Thin Umber lines (0.5px) approximation */
+    .border-thin {
+      border-width: 1px;
+      border-color: #7d766f; /* Using outline color from config as Umber */
+      opacity: 0.5;
+    }
+    .border-b-thin {
+      border-bottom-width: 1px;
+      border-color: #7d766f;
+      opacity: 0.5;
+    }
+    .border-l-thin {
+      border-left-width: 1px;
+      border-color: #7d766f;
+      opacity: 0.5;
+    }
+    .border-r-thin {
+      border-right-width: 1px;
+      border-color: #7d766f;
+      opacity: 0.5;
+    }
+    
+    /* Specific Accent Color for this design */
+    .bg-crimson { background-color: #a8372f; }
+    .text-crimson { color: #a8372f; }
+    .border-crimson { border-color: #a8372f; }
+    
+    /* Custom styles for narrative flow */
+    body {
+      background-color: #fdf9f0; /* Map #F7F4EE to background */
+      color: #1c1c16; /* Map #191613 to on-surface */
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .vertical-text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden min-h-screen pb-section-gap">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full bg-background border-b border-outline-variant flat no shadows flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 z-50 transition-all duration-300">
+<button class="text-primary cursor-pointer transition-opacity active:opacity-70 flex items-center justify-center">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-display-lg text-headline-md text-primary after:content-['.'] after:text-secondary cursor-pointer transition-opacity active:opacity-70 tracking-tight font-bold">
+      SAJU
+    </div>
+<button class="text-primary cursor-pointer transition-opacity active:opacity-70 flex items-center justify-center hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</header>
+<main class="pt-24 px-margin-mobile max-w-lg mx-auto">
+<!-- 1. Hero -->
+<section class="min-h-[70vh] flex flex-col justify-center relative pb-section-gap">
+<div class="space-y-6 z-10">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight max-w-[280px]">
+          당신은<br/>거울 호수입니다.
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[280px] leading-relaxed">
+          짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+        </p>
+<div class="pt-8">
+<button class="bg-outline text-background font-label-sm text-label-sm uppercase tracking-widest px-8 py-4 border border-outline hover:bg-background hover:text-outline transition-colors duration-300 w-full sm:w-auto text-center block">
+            내 패턴 읽기
+          </button>
+</div>
+</div>
+<!-- Decorative structural lines -->
+<div class="absolute right-0 top-1/4 w-1/2 h-1/2 border-l border-t border-outline-variant opacity-30 z-0"></div>
+</section>
+<!-- 2. Step 1: ORIGIN -->
+<section class="relative py-section-gap border-t border-outline-variant opacity-80">
+<!-- Side chapter marker -->
+<div class="absolute left-0 top-section-gap -ml-4 flex flex-col items-center gap-2">
+<div class="w-px h-8 bg-secondary"></div>
+<span class="vertical-text font-label-sm text-label-sm text-on-surface-variant tracking-widest uppercase transform rotate-180">ORIGIN</span>
+</div>
+<div class="pl-12">
+<div class="grid grid-cols-2 border border-outline-variant divide-x divide-outline-variant bg-surface-container-low">
+<!-- Systematic archival grid -->
+<div class="p-6 flex flex-col justify-between aspect-square">
+<span class="font-label-sm text-label-sm text-on-surface-variant">YEAR</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary self-end">甲</span>
+</div>
+<div class="p-6 flex flex-col justify-between aspect-square border-b border-outline-variant">
+<span class="font-label-sm text-label-sm text-on-surface-variant">MONTH</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary self-end">子</span>
+</div>
+<div class="p-6 flex flex-col justify-between aspect-square col-span-2 bg-background">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              여덟 글자 중 첫 번째 쌍은 기원의 연도를 기록합니다. 거시적인 환경과 시대적 맥락을 형성하는 토대입니다.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Step 2 (The Forms): TRANSIT -->
+<section class="relative py-section-gap border-t border-outline-variant opacity-80">
+<!-- Side chapter marker -->
+<div class="absolute left-0 top-section-gap -ml-4 flex flex-col items-center gap-2">
+<div class="w-px h-8 bg-secondary"></div>
+<span class="vertical-text font-label-sm text-label-sm text-on-surface-variant tracking-widest uppercase transform rotate-180">TRANSIT</span>
+</div>
+<div class="pl-12 space-y-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">열 가지 형태</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            생년월일시가 열 가지 형태 중 하나를 정합니다.
+          </p>
+</div>
+<div class="space-y-4">
+<!-- Refined tiles -->
+<div class="border border-outline-variant p-4 flex items-center justify-between bg-surface-container-highest">
+<span class="font-body-md text-body-md text-primary">거울 호수 壬</span>
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+<div class="border border-outline-variant p-4 flex items-center justify-between opacity-50 hover:opacity-100 transition-opacity">
+<span class="font-body-md text-body-md text-on-surface-variant">깊은 심목 甲</span>
+</div>
+<div class="border border-outline-variant p-4 flex items-center justify-between opacity-50 hover:opacity-100 transition-opacity">
+<span class="font-body-md text-body-md text-on-surface-variant">정오 표식 丙</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Step 3 (The Card): DESTINY -->
+<section class="relative py-section-gap border-t border-outline-variant opacity-80">
+<!-- Side chapter marker -->
+<div class="absolute right-0 top-section-gap -mr-4 flex flex-col items-center gap-2">
+<div class="w-px h-8 bg-secondary"></div>
+<span class="vertical-text font-label-sm text-label-sm text-on-surface-variant tracking-widest uppercase">DESTINY</span>
+</div>
+<div class="pr-12 space-y-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">결과는 단 하나의 카드로 남습니다.</h2>
+</div>
+<!-- High-fidelity card preview -->
+<div class="border border-outline bg-background p-2">
+<div class="border border-outline-variant relative">
+<div class="aspect-square w-full bg-surface-variant">
+<img alt="Abstract high-end photography of surface tension on water. Macro shot showing the clean curvature and tension of a calm water surface. No visible ripples or splashes, just the pure physical property of liquid. Minimalist, bright lighting, high contrast, clean white and soft grey tones. Fine art photography style. Consistent with a premium Korean aesthetic." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WWmqF0cTgC1A-hdz8lI_aL0Ke1StWnkegfBEWumFTi9HebMYKm3g6zacCMnHGpFi36OLJsCZDwGJ3nkjVJucse5XCKDtPrusV3-H0UVmhqJyOkyI1B5EX3wBWE1HEzE_IJAmh20vWnhboTX2xt2pkKSsrlRkV9URfO2hogTih-JV3qTLP1xm-l15HBCYoGVzXAlHMZHEQrNF5cLGC17ekBmgo9ruOLLK76J5Sz3LtoTpzXngr7mLHv"/>
+</div>
+<div class="p-6 space-y-4 bg-background">
+<div class="flex justify-between items-end border-b border-outline-variant pb-4">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">ID: 9A-2B-X1</div>
+<div class="font-headline-md text-headline-md text-primary">거울 호수</div>
+</div>
+<div class="grid grid-cols-2 gap-4 pt-2">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Element</div>
+<div class="font-body-md text-body-md text-primary">물</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Polarity</div>
+<div class="font-body-md text-body-md text-primary">양</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Closing: RECORD -->
+<section class="relative py-section-gap border-t border-outline-variant opacity-80 text-center flex flex-col items-center">
+<!-- Side chapter marker -->
+<div class="absolute left-0 top-section-gap -ml-4 flex flex-col items-center gap-2">
+<div class="w-px h-8 bg-secondary"></div>
+<span class="vertical-text font-label-sm text-label-sm text-on-surface-variant tracking-widest uppercase transform rotate-180">RECORD</span>
+</div>
+<p class="font-headline-md text-headline-md text-primary mb-12 max-w-[200px] leading-relaxed">
+        당신의 리딩은 여덟 글자로 시작됩니다.
+      </p>
+<button class="bg-outline text-background font-label-sm text-label-sm uppercase tracking-widest px-12 py-4 border border-outline hover:bg-background hover:text-outline transition-colors duration-300">
+        내 패턴 읽기
+      </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-outline-variant bg-background flex flex-col items-center gap-4 px-margin-mobile text-center mt-12">
+<div class="font-display-lg text-headline-md text-primary">SAJU</div>
+<div class="flex gap-4 font-label-sm text-label-sm text-on-surface-variant">
+<a class="hover:text-secondary transition-colors duration-200" href="#">PRIVACY POLICY</a>
+<span class="text-outline-variant">|</span>
+<a class="hover:text-secondary transition-colors duration-200" href="#">TERMS OF SERVICE</a>
+<span class="text-outline-variant">|</span>
+<a class="hover:text-secondary transition-colors duration-200" href="#">METHODOLOGY</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-4">
+      © 2024 SAJU ARCHIVE. ALL RIGHTS RESERVED.
+    </div>
+</footer>
+</body></html>

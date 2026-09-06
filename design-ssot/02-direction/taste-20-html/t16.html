@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - Mirror Lake</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "on-secondary-container": "#656464",
+                "surface-container": "#eeeeeb",
+                "on-tertiary": "#ffffff",
+                "tertiary-container": "#007ac6",
+                "secondary-fixed-dim": "#c8c6c5",
+                "secondary": "#5f5e5e",
+                "surface": "#f9f9f6",
+                "inverse-on-surface": "#f1f1ee",
+                "on-error-container": "#93000a",
+                "primary-container": "#d93a1f",
+                "on-error": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "surface-tint": "#b82107",
+                "on-secondary-fixed": "#1c1b1b",
+                "inverse-primary": "#ffb4a5",
+                "inverse-surface": "#2f312f",
+                "on-secondary-fixed-variant": "#474646",
+                "tertiary-fixed-dim": "#9ccaff",
+                "surface-bright": "#f9f9f6",
+                "on-primary-container": "#fffdff",
+                "on-tertiary-container": "#fffeff",
+                "background": "#f9f9f6",
+                "primary-fixed": "#ffdad3",
+                "tertiary-fixed": "#d0e4ff",
+                "outline-variant": "#e4beb7",
+                "on-primary-fixed": "#3f0400",
+                "on-surface": "#1a1c1b",
+                "surface-container-highest": "#e2e3e0",
+                "error": "#ba1a1a",
+                "on-background": "#1a1c1b",
+                "primary-fixed-dim": "#ffb4a5",
+                "primary": "#b51f05",
+                "surface-dim": "#dadad7",
+                "on-tertiary-fixed-variant": "#00497a",
+                "error-container": "#ffdad6",
+                "surface-variant": "#e2e3e0",
+                "on-secondary": "#ffffff",
+                "surface-container-low": "#f4f4f1",
+                "surface-container-high": "#e8e8e5",
+                "tertiary": "#00609e",
+                "on-primary": "#ffffff",
+                "outline": "#8f7069",
+                "secondary-fixed": "#e5e2e1",
+                "on-primary-fixed-variant": "#8f1200",
+                "on-surface-variant": "#5b403b",
+                "on-tertiary-fixed": "#001d35",
+                "secondary-container": "#e5e2e1"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "dot-size": "1px",
+                "margin-mobile": "16px",
+                "dot-gap": "24px",
+                "grid-unit": "8px",
+                "margin-desktop": "48px",
+                "gutter": "24px"
+              },
+              "fontFamily": {
+                "headline-md": ["Space Mono"],
+                "headline-lg": ["Space Mono"],
+                "body-lg": ["Hanken Grotesk"],
+                "headline-lg-mobile": ["Space Mono"],
+                "body-md": ["Hanken Grotesk"],
+                "label-md": ["Space Mono"],
+                "label-sm": ["Space Mono"]
+              },
+              "fontSize": {
+                "headline-md": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "label-md": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
+                "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f6;
+            background-image: radial-gradient(#e5e2e1 1px, transparent 0);
+            background-size: 24px 24px;
+            background-position: -19px -19px;
+            color: #1a1c1b;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .stamp-active:active {
+            transform: translate(2px, 2px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b border-on-surface dark:border-on-surface-variant flex justify-between items-center px-margin-mobile py-4 w-full z-50 sticky top-0 max-w-md w-full">
+<button aria-label="Menu" class="text-on-surface hover:bg-surface-container transition-all duration-75 active:translate-x-0.5 active:translate-y-0.5 p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-headline-md text-headline-md text-on-surface dark:text-on-surface">SAJU ●</div>
+<button aria-label="Search" class="text-on-surface hover:bg-surface-container transition-all duration-75 active:translate-x-0.5 active:translate-y-0.5 p-2">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<main class="w-full max-w-md flex-1 flex flex-col">
+<!-- Hero Section -->
+<section class="px-margin-mobile pt-16 pb-12 flex flex-col border-b border-on-surface">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile mb-6 uppercase tracking-tight">You are Mirror Lake.</h1>
+<p class="font-body-md text-body-md mb-10 text-on-surface-variant">A short video shows the letters of your day. SAJU reads the lifelong pattern they make.</p>
+<button class="self-start border border-on-surface bg-[#111111] text-surface font-label-md text-label-md px-6 py-4 uppercase tracking-wider stamp-active transition-transform relative overflow-hidden group">
+                READ MY PATTERN
+                <span class="absolute bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary-container rounded-full hidden group-hover:block"></span>
+</button>
+</section>
+<!-- Badge Strip -->
+<section class="px-margin-mobile py-12 border-b border-on-surface flex flex-col gap-6">
+<div class="flex items-center gap-4">
+<span class="w-2 h-2 bg-on-surface"></span>
+<h2 class="font-label-md text-label-md uppercase tracking-wider">THE TEN FORMS</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Your birth date assigns you one of ten forms.</p>
+<div class="flex flex-col gap-3 mt-4">
+<div class="border border-primary-container p-4 bg-surface flex justify-between items-center relative overflow-hidden group stamp-active cursor-pointer">
+<span class="font-headline-md text-headline-md text-primary-container">MIRROR LAKE</span>
+<span class="font-headline-md text-headline-md text-primary-container">壬</span>
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container"></div>
+</div>
+<div class="border border-on-surface p-4 bg-surface flex justify-between items-center stamp-active cursor-pointer">
+<span class="font-headline-md text-headline-md text-on-surface">HEARTWOOD</span>
+<span class="font-headline-md text-headline-md text-on-surface">甲</span>
+</div>
+<div class="border border-on-surface p-4 bg-surface flex justify-between items-center stamp-active cursor-pointer">
+<span class="font-headline-md text-headline-md text-on-surface">NOON MARK</span>
+<span class="font-headline-md text-headline-md text-on-surface">丙</span>
+</div>
+</div>
+</section>
+<!-- Card Preview -->
+<section class="px-margin-mobile py-12 border-b border-on-surface">
+<div class="flex items-center gap-4 mb-8">
+<span class="w-2 h-2 bg-on-surface"></span>
+<h2 class="font-label-md text-label-md uppercase tracking-wider">THE RESULT STAYS AS A SINGLE CARD.</h2>
+</div>
+<div class="border border-on-surface bg-surface flex flex-col">
+<div class="border-b border-on-surface p-4 flex justify-between items-center bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Index</span>
+<span class="font-headline-md text-headline-md">壬</span>
+</div>
+<div class="p-6 flex flex-col gap-6">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase block mb-1">SERIAL</label>
+<div class="border-b border-on-surface pb-1 font-headline-md text-headline-md">9.2.14</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase block mb-1">ELEM</label>
+<div class="border-b border-on-surface pb-1 font-headline-md text-headline-md">WATER</div>
+</div>
+<div class="flex-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase block mb-1">PLRT</label>
+<div class="border-b border-on-surface pb-1 font-headline-md text-headline-md">YANG</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="px-margin-mobile py-16 flex flex-col items-center text-center">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile mb-8 uppercase tracking-tight max-w-[280px]">YOUR READING BEGINS WITH EIGHT LETTERS.</h2>
+<button class="border border-on-surface bg-[#111111] text-surface font-label-md text-label-md px-8 py-4 uppercase tracking-wider stamp-active">
+                READ MY PATTERN
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-surface border-t border-on-surface dark:border-on-surface-variant flex flex-col md:flex-row justify-between items-start md:items-center px-margin-mobile py-gutter w-full mt-auto max-w-md w-full">
+<div class="flex flex-col gap-6 w-full">
+<p class="font-body-md text-body-md text-on-surface-variant border-b border-on-surface-variant pb-6">
+                SAJU is a reading tool for self-understanding. It is not medical, legal, or financial advice.
+            </p>
+<div class="flex justify-between items-center w-full">
+<span class="font-label-md text-label-md uppercase">© 2024 SAJU ARCHIVAL SYSTEMS. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-4">
+<a class="font-body-md text-body-md uppercase tracking-wider text-on-surface hover:text-primary transition-colors duration-200" href="#">LOGISTICS</a>
+<a class="font-body-md text-body-md uppercase tracking-wider text-on-surface hover:text-primary transition-colors duration-200" href="#">COMPLIANCE</a>
+<a class="font-body-md text-body-md uppercase tracking-wider text-on-surface hover:text-primary transition-colors duration-200" href="#">ARCHIVE</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

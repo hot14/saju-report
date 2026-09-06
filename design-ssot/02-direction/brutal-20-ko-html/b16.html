@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - 당신의 패턴</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Jua&amp;family=Noto+Sans+KR:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "saju-bg": "#F4F1EC",
+                        "saju-ink": "#111111",
+                        "saju-accent": "#FF4D00",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "primary-fixed": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#fe5549",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "tertiary-fixed": "#e3e2e2",
+                        "tertiary-container": "#1b1c1c",
+                        "on-secondary-fixed": "#410001",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#747878",
+                        "on-surface": "#1a1c1c",
+                        "on-surface-variant": "#444748",
+                        "on-primary-fixed-variant": "#474646",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2f3131",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#858383",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-secondary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "tertiary": "#000000",
+                        "secondary-fixed": "#ffdad5",
+                        "surface": "#f9f9f9",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-primary": "#c8c6c5",
+                        "surface-dim": "#dadada",
+                        "surface-variant": "#e2e2e2",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary-container": "#848484",
+                        "on-secondary-fixed-variant": "#930008",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c4c7c7",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "surface-bright": "#f9f9f9",
+                        "secondary-fixed-dim": "#ffb4aa",
+                        "on-secondary-container": "#5c0003",
+                        "surface-tint": "#5f5e5e",
+                        "primary-container": "#1c1b1b",
+                        "surface-container": "#eeeeee",
+                        "secondary": "#b7211d",
+                        "surface-container-low": "#f3f3f4",
+                        "primary": "#000000"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Jua", "sans-serif"],
+                        "label-caps": ["Jua", "sans-serif"],
+                        "body-sm": ["Noto Sans KR", "sans-serif"],
+                        "display-lg": ["Jua", "sans-serif"],
+                        "body-lg": ["Noto Sans KR", "sans-serif"],
+                        "display-lg-mobile": ["Jua", "sans-serif"],
+                        "data-mono": ["JetBrains Mono", "monospace"]
+                    },
+                    fontSize: {
+                        "headline-md": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "display-lg": ["72px", { "lineHeight": "64px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.02em", "fontWeight": "500" }]
+                    },
+                    boxShadow: {
+                        'brutal': '8px 8px 0px 0px #111111',
+                        'brutal-sm': '4px 4px 0px 0px #111111',
+                    },
+                    spacing: {
+                        "gutter": "16px",
+                        "baseline": "4px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "column-gap": "24px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F4F1EC; color: #111111; }
+        .tear-line {
+            background-image: radial-gradient(circle at 10px 0px, transparent 10px, #111111 11px);
+            background-size: 24px 12px;
+            background-repeat: repeat-x;
+            height: 12px;
+            width: 100%;
+        }
+        .tear-line-bottom {
+            background-image: radial-gradient(circle at 10px 12px, transparent 10px, #111111 11px);
+            background-size: 24px 12px;
+            background-repeat: repeat-x;
+            height: 12px;
+            width: 100%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="w-full bg-surface-container-lowest border-b-2 border-saju-ink flex justify-between items-center px-margin-mobile py-4 sticky top-0 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-saju-ink">grid_view</span>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-saju-ink m-0 tracking-tighter">SAJU</h1>
+<div>
+<span class="font-label-caps text-label-caps text-saju-ink uppercase tracking-widest border-2 border-saju-ink px-2 py-1 bg-white cursor-pointer hover:bg-saju-ink hover:text-white transition-colors">LOGIN</span>
+</div>
+</header>
+<main class="w-full max-w-md flex flex-col gap-12 py-12">
+<!-- Hero Section -->
+<section class="px-margin-mobile flex flex-col gap-6 items-start">
+<h2 class="font-headline-md text-headline-md text-saju-ink leading-tight">당신은<br/>거울 호수입니다.</h2>
+<p class="font-body-lg text-body-lg text-saju-ink font-medium leading-relaxed">짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.</p>
+<button class="w-full bg-saju-accent text-saju-ink font-headline-md text-2xl py-4 border-2 border-saju-ink shadow-brutal active:translate-y-1 active:translate-x-1 active:shadow-brutal-sm transition-all uppercase">내 패턴 읽기</button>
+</section>
+<!-- Badge Strip Section -->
+<section class="w-full relative py-8 flex flex-col gap-6">
+<div class="absolute top-0 w-full border-t-2 border-saju-ink border-dashed"></div>
+<div class="px-margin-mobile flex flex-col gap-2">
+<h3 class="font-headline-md text-headline-md text-saju-ink">열 가지 형태</h3>
+<p class="font-body-sm text-body-sm text-saju-ink">생년월일시가 열 가지 형태 중 하나를 정합니다.</p>
+</div>
+<div class="flex overflow-x-auto gap-4 px-margin-mobile pb-4 snap-x hide-scrollbar">
+<!-- Sticker 1 -->
+<div class="flex-none bg-white border-2 border-saju-ink px-4 py-2 transform -rotate-2 snap-center">
+<span class="font-label-caps text-label-caps text-saju-ink text-lg tracking-widest">거울 호수 壬</span>
+</div>
+<!-- Sticker 2 -->
+<div class="flex-none bg-saju-ink text-white border-2 border-saju-ink px-4 py-2 transform rotate-3 snap-center">
+<span class="font-label-caps text-label-caps text-lg tracking-widest">깊은 심목 甲</span>
+</div>
+<!-- Sticker 3 -->
+<div class="flex-none bg-white border-2 border-saju-ink px-4 py-2 transform -rotate-1 snap-center">
+<span class="font-label-caps text-label-caps text-saju-ink text-lg tracking-widest">정오 표식 丙</span>
+</div>
+</div>
+<div class="absolute bottom-0 w-full border-b-2 border-saju-ink border-dashed"></div>
+</section>
+<!-- Card Preview Section -->
+<section class="px-margin-mobile flex flex-col gap-6 items-center">
+<h3 class="font-headline-md text-headline-md text-saju-ink text-center">결과는 단 하나의 카드로 남습니다.</h3>
+<div class="w-full max-w-[300px] bg-white border-2 border-saju-ink p-6 flex flex-col gap-4 shadow-brutal">
+<div class="border-b-2 border-saju-ink pb-2">
+<span class="block font-label-caps text-label-caps text-saju-ink uppercase">ID</span>
+<span class="font-data-mono text-data-mono text-lg text-saju-ink block text-right">9A-2B-X1</span>
+</div>
+<div class="grid grid-cols-2 gap-4 border-b-2 border-saju-ink pb-4">
+<div>
+<span class="block font-label-caps text-label-caps text-saju-ink uppercase">오행</span>
+<span class="font-data-mono text-data-mono text-saju-ink block text-right mt-1">물</span>
+</div>
+<div>
+<span class="block font-label-caps text-label-caps text-saju-ink uppercase">음양</span>
+<span class="font-data-mono text-data-mono text-saju-ink block text-right mt-1">양</span>
+</div>
+</div>
+<div>
+<span class="block font-label-caps text-label-caps text-saju-ink uppercase mb-2">주요 패턴</span>
+<div class="bg-saju-ink text-white font-data-mono text-data-mono text-center py-2 px-4 uppercase w-full">거울 호수</div>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="px-margin-mobile flex flex-col gap-8 items-center mt-8 border-t-2 border-saju-ink pt-12">
+<h2 class="font-headline-md text-headline-md text-saju-ink text-center">당신의 리딩은 여덟 글자로 시작됩니다.</h2>
+<button class="w-full max-w-sm bg-saju-accent text-saju-ink font-headline-md text-2xl py-4 border-2 border-saju-ink shadow-brutal active:translate-y-1 active:translate-x-1 active:shadow-brutal-sm transition-all uppercase">내 패턴 읽기</button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest border-t-2 border-saju-ink mt-auto py-8 px-margin-mobile">
+<div class="flex flex-col gap-4 items-center">
+<span class="font-label-caps text-label-caps text-saju-ink">SAJU BUREAU</span>
+<p class="font-body-sm text-body-sm text-saju-ink text-center opacity-80 max-w-xs">SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.</p>
+<p class="font-data-mono text-data-mono text-xs text-saju-ink text-center mt-4 uppercase">© 2024 SAJU BUREAU. ALL RIGHTS RESERVED. DATA ACCURACY SUBJECT TO THEORETICAL INTERPRETATION.</p>
+<div class="flex gap-4 mt-2">
+<a class="font-data-mono text-data-mono text-xs text-saju-ink underline hover:text-saju-accent" href="#">TERMS</a>
+<a class="font-data-mono text-data-mono text-xs text-saju-ink underline hover:text-saju-accent" href="#">PRIVACY</a>
+<a class="font-data-mono text-data-mono text-xs text-saju-ink underline hover:text-saju-accent" href="#">METHODOLOGY</a>
+<a class="font-data-mono text-data-mono text-xs text-saju-ink underline hover:text-saju-accent" href="#">CONTACT</a>
+</div>
+</div>
+</footer>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - Neo-Brutalist Sticker CTA Landing Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Jua&amp;family=Noto+Sans+KR:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    /* Custom Neo-Brutalist Utilities beyond config */
+    .brutal-shadow {
+      box-shadow: 8px 8px 0px #1B1B1E;
+    }
+    .brutal-shadow-sm {
+      box-shadow: 4px 4px 0px #1B1B1E;
+    }
+    .perforation-divider {
+      border-bottom: 2px dashed #1B1B1E;
+      width: 100%;
+      margin: 2rem 0;
+    }
+    
+    /* Font overriding for this specific brutalist request */
+    body {
+        font-family: 'Noto Sans KR', sans-serif;
+        background-color: #F4F1EC;
+        color: #1B1B1E;
+    }
+    .font-jua {
+        font-family: 'Jua', sans-serif;
+    }
+  </style>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-low": "#f3f3f4",
+          "on-surface": "#1a1c1c",
+          "primary-fixed": "#e5e2e1",
+          "on-secondary-fixed": "#410001",
+          "on-primary-fixed": "#1c1b1b",
+          "tertiary-container": "#1b1c1c",
+          "surface-bright": "#f9f9f9",
+          "surface-container-high": "#e8e8e8",
+          "secondary": "#FF4D00", /* Override secondary for brutalist accent */
+          "on-secondary": "#1B1B1E",
+          "on-error": "#ffffff",
+          "tertiary": "#000000",
+          "on-error-container": "#93000a",
+          "on-surface-variant": "#444748",
+          "on-secondary-container": "#5c0003",
+          "tertiary-fixed": "#e3e2e2",
+          "secondary-fixed-dim": "#ffb4aa",
+          "background": "#F4F1EC", /* Off-white background */
+          "tertiary-fixed-dim": "#c7c6c6",
+          "surface-container-highest": "#e2e2e2",
+          "surface-variant": "#e2e2e2",
+          "outline": "#1B1B1E",
+          "on-secondary-fixed-variant": "#930008",
+          "primary": "#1B1B1E", /* Ink Black primary */
+          "error-container": "#ffdad6",
+          "surface": "#F4F1EC",
+          "on-tertiary-fixed": "#1b1c1c",
+          "inverse-primary": "#c8c6c5",
+          "primary-container": "#1B1B1E",
+          "on-primary-container": "#F4F1EC",
+          "surface-tint": "#1B1B1E",
+          "on-primary-fixed-variant": "#474646",
+          "outline-variant": "#1B1B1E",
+          "error": "#ba1a1a",
+          "on-tertiary": "#ffffff",
+          "primary-fixed-dim": "#c8c6c5",
+          "on-primary": "#ffffff",
+          "inverse-surface": "#2f3131",
+          "on-background": "#1B1B1E",
+          "surface-container-lowest": "#F4F1EC",
+          "surface-dim": "#dadada",
+          "secondary-container": "#FF4D00",
+          "on-tertiary-fixed-variant": "#464747",
+          "inverse-on-surface": "#f0f1f1",
+          "on-tertiary-container": "#848484",
+          "surface-container": "#eeeeee",
+          "secondary-fixed": "#ffdad5"
+        },
+        "borderRadius": {
+          "DEFAULT": "0px", /* Brutalist hard edges */
+          "lg": "0px",
+          "xl": "0px",
+          "full": "0px"
+        },
+        "spacing": {
+          "baseline": "4px",
+          "margin-mobile": "20px",
+          "gutter": "16px",
+          "column-gap": "24px",
+          "margin-desktop": "64px"
+        },
+        "fontFamily": {
+          "label-caps": [
+            "Noto Sans KR", "sans-serif"
+          ],
+          "headline-md": [
+            "Jua", "sans-serif"
+          ],
+          "display-lg": [
+            "Jua", "sans-serif"
+          ],
+          "data-mono": [
+            "JetBrains Mono"
+          ],
+          "body-sm": [
+            "Noto Sans KR", "sans-serif"
+          ],
+          "display-lg-mobile": [
+            "Jua", "sans-serif"
+          ],
+          "body-lg": [
+            "Noto Sans KR", "sans-serif"
+          ]
+        },
+        "fontSize": {
+          "label-caps": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.06em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "32px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "display-lg": [
+            "72px",
+            {
+              "lineHeight": "64px",
+              "letterSpacing": "-0.04em",
+              "fontWeight": "800"
+            }
+          ],
+          "data-mono": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "500"
+            }
+          ],
+          "body-sm": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "display-lg-mobile": [
+            "40px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "800"
+            }
+          ],
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }
+</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-primary font-body-sm min-h-screen flex flex-col items-center">
+<!-- Mobile Container (Max Width to simulate mobile app on desktop) -->
+<div class="w-full max-w-md bg-background min-h-screen relative border-x-2 border-primary border-opacity-10 sm:border-opacity-100 flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface-container-lowest text-primary font-headline-md text-headline-md font-bold tracking-tighter w-full px-margin-mobile py-4 border-b-2 border-primary sticky top-0 z-50 flex justify-between items-center bg-opacity-95 backdrop-blur-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl font-bold">menu</span>
+</div>
+<div class="font-jua text-2xl tracking-widest uppercase">
+                SAJU
+            </div>
+<div>
+<!-- Empty trailing space to balance flex -->
+</div>
+</header>
+<main class="flex-grow flex flex-col px-margin-mobile pt-8 pb-16">
+<!-- 2. Hero Section -->
+<section class="flex flex-col gap-6 items-center text-center mb-4 mt-8">
+<h1 class="font-jua text-5xl leading-tight">
+                    당신은<br/>거울 호수입니다.
+                </h1>
+<p class="font-body-lg text-body-lg max-w-[280px] font-bold">
+                    짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+                </p>
+<button class="mt-4 bg-secondary text-on-secondary font-jua text-2xl px-8 py-4 border-2 border-primary brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all active:translate-x-2 active:translate-y-2 uppercase w-full max-w-[300px]">
+                    내 패턴 읽기
+                </button>
+</section>
+<div class="perforation-divider"></div>
+<!-- 3. Badge Strip Section -->
+<section class="flex flex-col gap-6 py-6">
+<div class="text-center">
+<h2 class="font-jua text-3xl mb-2">열 가지 형태</h2>
+<p class="font-body-sm text-body-sm font-bold">생년월일시가 열 가지 형태 중 하나를 정합니다.</p>
+</div>
+<div class="flex flex-col gap-4 items-center">
+<!-- Badge 1 -->
+<div class="bg-surface text-primary border-[3px] border-primary px-6 py-3 font-jua text-xl w-full max-w-[260px] text-center brutal-shadow-sm rotate-1 hover:rotate-0 transition-transform">
+                        거울 호수 壬
+                    </div>
+<!-- Badge 2 -->
+<div class="bg-surface text-primary border-[3px] border-primary px-6 py-3 font-jua text-xl w-full max-w-[260px] text-center brutal-shadow-sm -rotate-2 hover:rotate-0 transition-transform">
+                        깊은 심목 甲
+                    </div>
+<!-- Badge 3 -->
+<div class="bg-surface text-primary border-[3px] border-primary px-6 py-3 font-jua text-xl w-full max-w-[260px] text-center brutal-shadow-sm rotate-2 hover:rotate-0 transition-transform">
+                        정오 표식 丙
+                    </div>
+</div>
+</section>
+<div class="perforation-divider"></div>
+<!-- 4. Card Preview Section -->
+<section class="flex flex-col gap-6 py-6 items-center">
+<h2 class="font-jua text-3xl text-center px-4 leading-snug">
+                    결과는 단 하나의 카드로 남습니다.
+                </h2>
+<!-- Ticket Container -->
+<div class="w-full bg-white border-2 border-primary brutal-shadow relative p-6 mt-4">
+<!-- Ticket cutouts visual -->
+<div class="absolute -left-3 top-1/2 w-6 h-6 bg-background border-r-2 border-y-2 border-primary rounded-r-full transform -translate-y-1/2"></div>
+<div class="absolute -right-3 top-1/2 w-6 h-6 bg-background border-l-2 border-y-2 border-primary rounded-l-full transform -translate-y-1/2"></div>
+<div class="flex flex-col gap-4 font-body-sm text-body-sm font-bold border-b-2 border-dashed border-primary pb-4 mb-4">
+<div class="flex justify-between items-center border-b border-primary pb-2">
+<span class="text-on-surface-variant">일련번호:</span>
+<span class="font-data-mono text-data-mono text-lg">9A-2B-X1</span>
+</div>
+<div class="flex justify-between items-center border-b border-primary pb-2">
+<span class="text-on-surface-variant">오행:</span>
+<span class="text-lg">물</span>
+</div>
+<div class="flex justify-between items-center border-b border-primary pb-2">
+<span class="text-on-surface-variant">음양:</span>
+<span class="text-lg">양</span>
+</div>
+</div>
+<div class="text-center pt-2">
+<span class="text-on-surface-variant block mb-1">주요 패턴:</span>
+<span class="font-jua text-4xl block">거울 호수</span>
+</div>
+</div>
+</section>
+<div class="perforation-divider"></div>
+<!-- 5. Closing Section -->
+<section class="flex flex-col gap-6 py-8 items-center text-center">
+<h2 class="font-jua text-4xl leading-tight">
+                    당신의 리딩은<br/>여덟 글자로 시작됩니다.
+                </h2>
+<button class="mt-6 bg-secondary text-on-secondary font-jua text-2xl px-8 py-4 border-2 border-primary brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all active:translate-x-2 active:translate-y-2 uppercase w-full max-w-[300px]">
+                    내 패턴 읽기
+                </button>
+</section>
+</main>
+<!-- 6. Footer -->
+<footer class="w-full bg-surface-container-lowest text-primary font-body-sm text-body-sm px-margin-mobile py-8 border-t-2 border-primary flex flex-col gap-gutter text-center">
+<p class="font-bold border-2 border-primary p-4 bg-white brutal-shadow-sm">
+                SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.
+            </p>
+<div class="font-label-caps text-label-caps font-bold mt-4">
+                © 2024 SAJU BUREAU. ALL RIGHTS RESERVED.
+            </div>
+<div class="flex justify-center gap-4 text-xs font-bold underline mt-2">
+<a class="hover:text-secondary" href="#">TERMS OF SERVICE</a>
+<a class="hover:text-secondary" href="#">PRIVACY POLICY</a>
+</div>
+</footer>
+</div>
+</body></html>

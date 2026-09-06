@@ -1,66 +1,269 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=390, initial-scale=1">
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - Your Identity Pattern</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@900&amp;family=Noto+Sans+KR:wght@400;700&amp;family=IBM+Plex+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "primary-fixed": "#e5e2e1",
+                        "inverse-surface": "#2f3131",
+                        "surface-tint": "#5f5e5e",
+                        "on-surface-variant": "#444748",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c4c7c7",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "on-tertiary-container": "#848484",
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface-container": "#eeeeee",
+                        "secondary-fixed": "#ffdad5",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dadada",
+                        "outline": "#747878",
+                        "secondary": "#E0311D",
+                        "primary": "#111111",
+                        "secondary-container": "#fe5549",
+                        "on-primary-container": "#858383",
+                        "on-primary": "#ffffff",
+                        "surface": "#FFFFFF",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#410001",
+                        "tertiary-container": "#1b1c1c",
+                        "on-secondary-fixed-variant": "#930008",
+                        "on-primary-fixed-variant": "#474646",
+                        "inverse-on-surface": "#f0f1f1",
+                        "background": "#FFFFFF",
+                        "on-background": "#111111",
+                        "on-secondary-container": "#5c0003",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e3e2e2",
+                        "tertiary": "#000000",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-high": "#e8e8e8",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#FFFFFF",
+                        "on-surface": "#111111",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#c8c6c5",
+                        "secondary-fixed-dim": "#ffb4aa",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "primary-container": "#1c1b1b",
+                        "error": "#ba1a1a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    spacing: {
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "column-gap": "24px",
+                        "gutter": "16px",
+                        "baseline": "4px"
+                    },
+                    fontFamily: {
+                        "display-lg": ["'Noto Serif KR'", "serif"],
+                        "label-caps": ["'IBM Plex Mono'", "monospace"],
+                        "data-mono": ["'IBM Plex Mono'", "monospace"],
+                        "body-sm": ["'Noto Sans KR'", "sans-serif"],
+                        "headline-md": ["'Noto Serif KR'", "serif"],
+                        "body-lg": ["'Noto Sans KR'", "sans-serif"],
+                        "display-lg-mobile": ["'Noto Serif KR'", "serif"]
+                    },
+                    fontSize: {
+                        "display-lg": ["72px", { lineHeight: "64px", letterSpacing: "-0.04em", fontWeight: "900" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.06em", fontWeight: "700" }],
+                        "data-mono": ["14px", { lineHeight: "20px", letterSpacing: "-0.02em", fontWeight: "500" }],
+                        "body-sm": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }],
+                        "headline-md": ["32px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "900" }],
+                        "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "400" }],
+                        "display-lg-mobile": ["40px", { lineHeight: "40px", letterSpacing: "-0.03em", fontWeight: "900" }]
+                    }
+                }
+            }
+        }
+    </script>
 <style>
-*{box-sizing:border-box;margin:0;padding:0;word-break:keep-all}
-body{width:390px;background:#fff;color:#111;font-family:'Noto Sans KR','Apple SD Gothic Neo','Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-.top{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #e0e0e0}
-.wordmark{font-weight:900;font-size:16px;letter-spacing:.12em}
-.wordmark span{color:#D0342C}
-.hero{padding:48px 20px 32px;position:relative}
-.hero .fig{font-family:'Courier New',monospace;font-size:10px;letter-spacing:.14em;color:#999;margin-bottom:16px}
-.hero h1{font-size:42px;font-weight:800;letter-spacing:-.03em;line-height:1.05}
-.hero h1 .dot{color:#D0342C}
-.hero .sub{font-size:14px;color:#666;margin-top:12px;max-width:320px;line-height:1.6}
-.cta{display:inline-block;margin-top:24px;background:#111;color:#fff;padding:14px 32px;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer}
-.cta:hover{background:#D0342C}
-.badges{padding:32px 20px;border-top:1px solid #e0e0e0}
-.badges .label{font-family:'Courier New',monospace;font-size:10px;letter-spacing:.14em;color:#999;margin-bottom:4px}
-.badges .line{font-size:13px;color:#333;margin-bottom:16px}
-.badge-row{display:flex;gap:12px}
-.badge{flex:1;border:1px solid #ccc;padding:14px 10px;text-align:center}
-.badge .hanja{font-size:28px;font-weight:300}
-.badge .name{font-family:'Courier New',monospace;font-size:9px;letter-spacing:.1em;margin-top:6px;color:#666}
-.badge.hl{border-color:#D0342C;border-width:2px}
-.badge.hl .hanja{color:#D0342C}
-.card-preview{padding:32px 20px;background:#f9f9f9;border-top:1px solid #e0e0e0}
-.card-preview .head{font-size:22px;font-weight:800;letter-spacing:-.02em;margin-bottom:4px}
-.card-preview .cap{font-size:13px;color:#666}
-.closing{padding:48px 20px;text-align:center;border-top:1px solid #e0e0e0}
-.closing h2{font-size:26px;font-weight:800;letter-spacing:-.02em}
-.closing .cta2{display:inline-block;margin-top:20px;background:#D0342C;color:#fff;padding:14px 36px;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.foot{padding:20px;font-size:11px;color:#999;border-top:1px solid #e0e0e0;line-height:1.6}
-.foot a{color:#D0342C;text-decoration:none}
-</style>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600;900&family=Gowun+Dodum&family=Black+Han+Sans&display=swap" rel="stylesheet"/>
-</head>
-<body>
-<div class="top"><div class="wordmark">SAJU<span>.</span></div><div style="font-family:'Courier New',monospace;font-size:10px;color:#999">EN · KO · JA +7</div></div>
-<div class="hero">
-  <div class="fig">도판 01 — LANDING</div>
-  <h1>당신은 거울 호수입니다<span class="dot">.</span></h1>
-  <div class="sub">짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.</div>
-  <button class="cta">내 패턴 읽기</button>
+        .hairline-b { border-bottom: 1px solid #111111; }
+        .hairline-t { border-top: 1px solid #111111; }
+        .hairline-r { border-right: 1px solid #111111; }
+        .hairline-l { border-left: 1px solid #111111; }
+        .hairline-box { border: 1px solid #111111; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-sm selection:bg-primary selection:text-on-primary antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 bg-surface border-b border-primary transition-colors duration-150 ease-in-out hover:bg-surface-container-high">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:text-secondary transition-colors" style="font-variation-settings: 'FILL' 0;">menu</span>
+<span class="font-data-mono text-data-mono font-bold text-primary tracking-tighter">SAJU</span>
 </div>
-<div class="badges">
-  <div class="label">열 가지 형태</div>
-  <div class="line">생년월일시가 열 가지 형태 중 하나를 정합니다.</div>
-  <div class="badge-row">
-    <div class="badge hl"><div class="hanja">壬</div><div class="name">거울 호수</div></div>
-    <div class="badge"><div class="hanja">甲</div><div class="name">깊은 심목</div></div>
-    <div class="badge"><div class="hanja">丙</div><div class="name">정오 표식</div></div>
-  </div>
+<div class="flex items-center gap-2 font-data-mono text-data-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="text-secondary font-bold ml-1 cursor-pointer">KO</span>
 </div>
-<div class="card-preview">
-  <div class="head">결과는 단 하나의 카드로 남습니다.</div>
-  <div class="cap">배지와 한 줄이 그 자체로 의미를 전달합니다.</div>
+</header>
+<!-- Main Content -->
+<main class="pt-24 pb-32">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop mb-24">
+<h1 class="font-display-lg-mobile md:font-display-lg text-primary mb-6 max-w-2xl leading-tight">
+                당신은 거울 호수입니다<span class="text-secondary">.</span>
+</h1>
+<p class="font-body-lg text-on-surface-variant max-w-lg mb-10 leading-relaxed border-l-2 border-primary pl-4">
+                짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+            </p>
+<button class="bg-primary text-on-primary font-data-mono text-data-mono px-6 py-4 w-full md:w-auto hover:bg-surface hover:text-primary border border-primary transition-colors duration-200 uppercase tracking-widest">
+                내 패턴 읽기
+            </button>
+</section>
+<hr class="border-t border-primary my-16 mx-margin-mobile md:mx-margin-desktop"/>
+<!-- 'Ten Forms' Section -->
+<section class="px-margin-mobile md:px-margin-desktop mb-24">
+<div class="mb-8">
+<h2 class="font-headline-md text-primary mb-2">열 가지 형태</h2>
+<p class="font-body-sm text-on-surface-variant font-data-mono uppercase">생년월일시가 열 가지 형태 중 하나를 정합니다.</p>
 </div>
-<div class="closing">
-  <h2>당신의 리딩은 여덟 글자로 시작됩니다.</h2>
-  <button class="cta2">내 패턴 읽기</button>
+<div class="border-t border-l border-r border-primary">
+<!-- Row 1 -->
+<div class="flex border-b border-primary hover:bg-surface-container-low transition-colors">
+<div class="w-24 md:w-32 border-r border-primary p-4 flex items-center justify-center font-display-lg-mobile text-primary bg-surface-container-lowest">
+                        壬
+                    </div>
+<div class="flex-1 p-4 flex flex-col justify-center">
+<span class="font-label-caps text-on-surface-variant mb-1">FORM 01</span>
+<span class="font-data-mono text-primary font-bold text-lg">거울 호수</span>
 </div>
-<div class="foot">SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.<br><a href="#">개인정보처리방침</a> · <a href="#">서비스 이용약관</a></div>
-</body>
-</html>
+</div>
+<!-- Row 2 -->
+<div class="flex border-b border-primary hover:bg-surface-container-low transition-colors">
+<div class="w-24 md:w-32 border-r border-primary p-4 flex items-center justify-center font-display-lg-mobile text-primary bg-surface-container-lowest">
+                        甲
+                    </div>
+<div class="flex-1 p-4 flex flex-col justify-center">
+<span class="font-label-caps text-on-surface-variant mb-1">FORM 02</span>
+<span class="font-data-mono text-primary font-bold text-lg">깊은 심목</span>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex border-b border-primary hover:bg-surface-container-low transition-colors">
+<div class="w-24 md:w-32 border-r border-primary p-4 flex items-center justify-center font-display-lg-mobile text-primary bg-surface-container-lowest">
+                        丙
+                    </div>
+<div class="flex-1 p-4 flex flex-col justify-center">
+<span class="font-label-caps text-on-surface-variant mb-1">FORM 03</span>
+<span class="font-data-mono text-primary font-bold text-lg">정오 표식</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Card Preview Section -->
+<section class="bg-surface-container px-margin-mobile md:px-margin-desktop py-24 mb-24 border-y border-primary">
+<div class="max-w-4xl mx-auto">
+<h2 class="font-headline-md text-primary mb-12 text-center md:text-left">결과는 단 하나의 카드로 남습니다<span class="text-secondary">.</span></h2>
+<div class="flex flex-col md:flex-row gap-12 items-center md:items-start">
+<!-- Card Graphic -->
+<div class="w-full max-w-sm shrink-0">
+<div class="bg-surface border-2 border-primary p-6 relative group hover:-translate-y-1 transition-transform duration-300">
+<!-- Card Header -->
+<div class="flex justify-between items-center border-b border-primary pb-4 mb-4">
+<span class="font-data-mono font-bold text-primary">PATTERN_CARD</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">fingerprint</span>
+</div>
+<!-- Card Data -->
+<div class="space-y-4 font-data-mono text-sm">
+<div class="flex justify-between border-b border-outline-variant pb-2">
+<span class="text-on-surface-variant uppercase text-xs">Serial</span>
+<span class="text-primary font-bold">9A-2B-X1</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant pb-2">
+<span class="text-on-surface-variant uppercase text-xs">Element</span>
+<span class="text-primary font-bold">물 [WATER]</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant pb-2">
+<span class="text-on-surface-variant uppercase text-xs">Polarity</span>
+<span class="text-primary font-bold">양 [YANG]</span>
+</div>
+<div class="flex justify-between pt-2">
+<span class="text-on-surface-variant uppercase text-xs">Primary Pattern</span>
+<span class="text-primary font-bold">거울 호수</span>
+</div>
+</div>
+<!-- Card Footer Visual -->
+<div class="mt-8 pt-4 border-t border-primary flex justify-between items-end">
+<div class="w-16 h-16 bg-primary flex items-center justify-center text-surface font-display-lg-mobile text-2xl">
+                                    壬
+                                </div>
+<div class="flex gap-1">
+<div class="w-1 h-4 bg-primary"></div>
+<div class="w-2 h-4 bg-primary"></div>
+<div class="w-1 h-4 bg-primary"></div>
+<div class="w-3 h-4 bg-primary"></div>
+<div class="w-1 h-4 bg-primary"></div>
+</div>
+</div>
+<!-- Decorative Corner -->
+<div class="absolute -top-2 -right-2 w-4 h-4 bg-secondary border border-primary"></div>
+</div>
+<p class="font-label-caps text-on-surface-variant text-center mt-4 tracking-widest">도판 01 - 정체성</p>
+</div>
+<!-- Card Description (Hidden on small mobile, visible on md+) -->
+<div class="hidden md:flex flex-col justify-center flex-1 h-full py-12 border-l border-primary pl-8">
+<p class="font-body-lg text-primary leading-relaxed mb-6">
+                            당신의 여덟 글자는 단일한 식별 코드로 변환됩니다. 이는 임의의 해석이 아닌, 엄밀한 데이터 매핑의 결과입니다.
+                         </p>
+<ul class="font-data-mono text-sm space-y-3 text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="w-2 h-2 bg-primary"></span> 고유 시리얼 부여</li>
+<li class="flex items-center gap-2"><span class="w-2 h-2 bg-primary"></span> 속성 및 극성 분류</li>
+<li class="flex items-center gap-2"><span class="w-2 h-2 bg-primary"></span> 핵심 패턴 도출</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing CTA -->
+<section class="px-margin-mobile md:px-margin-desktop text-center py-16">
+<h2 class="font-display-lg-mobile md:font-headline-md text-primary mb-8 max-w-xl mx-auto">
+                당신의 리딩은 여덟 글자로 시작됩니다<span class="text-secondary">.</span>
+</h2>
+<button class="bg-primary text-on-primary font-data-mono text-data-mono px-8 py-4 hover:bg-surface hover:text-primary border border-primary transition-colors duration-200 uppercase tracking-widest w-full md:w-auto">
+                내 패턴 읽기
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-mobile md:px-margin-desktop py-8 flex flex-col gap-4 border-t border-primary bg-surface-container">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-outline-variant pb-4">
+<span class="font-data-mono text-data-mono text-primary font-bold">SAJU</span>
+<div class="flex gap-4 font-data-mono text-sm">
+<a class="text-on-surface-variant hover:text-secondary underline transition-opacity duration-200" href="#">개인정보처리방침</a>
+<a class="text-on-surface-variant hover:text-secondary underline transition-opacity duration-200" href="#">서비스 이용약관</a>
+</div>
+</div>
+<p class="font-body-sm text-on-surface-variant max-w-2xl text-xs md:text-sm">
+            SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.
+            <br/>
+<span class="font-data-mono">© 2024 SAJU // SYS.LOG.V1</span>
+</p>
+</footer>
+</body></html>

@@ -1,80 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=390">
-<style>
-/* ===== BASE STRUCTURE (shared) ===== */
-*{box-sizing:border-box;margin:0;padding:0}
-body{width:390px;font-family:var(--font-body);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
-img{max-width:100%}
-.top{display:flex;justify-content:space-between;align-items:center;padding:var(--pad) 20px;border-bottom:var(--bw) solid var(--border)}
-.wordmark{font-family:var(--font-display);font-weight:900;font-size:18px;letter-spacing:var(--wm-ls)}
-.serial{font-family:var(--font-mono);font-size:10px;color:var(--mute)}
-.hero{padding:var(--hero-pad) 20px 28px}
-.stamp{display:inline-block;font-family:var(--font-mono);font-size:10px;border:var(--bw) solid var(--border);padding:3px 10px;transform:rotate(var(--stamp-rot));margin-bottom:16px;letter-spacing:.1em}
-h1{font-family:var(--font-display);font-size:var(--h1-size);font-weight:900;letter-spacing:var(--h1-ls);line-height:var(--h1-lh);text-transform:var(--h1-tc)}
-h1 .accent{color:var(--accent)}
-.sub{font-size:14px;color:var(--sub-color);margin-top:12px;line-height:1.65;max-width:340px}
-.cta{display:inline-block;margin-top:22px;background:var(--cta-bg);color:var(--cta-color);padding:var(--cta-pad);font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border:var(--bw) solid var(--border);box-shadow:var(--shadow);cursor:pointer;font-family:var(--font-body)}
-.badges{padding:24px 20px;border-top:var(--sep-w) var(--sep-style) var(--border)}
-.badges .label{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;color:var(--mute);margin-bottom:4px;font-weight:700}
-.badges .line{font-size:13px;color:var(--sub-color);margin-bottom:16px}
-.badge-row{display:flex;gap:12px}
-.badge{flex:1;text-align:center;padding:var(--badge-pad);border:var(--badge-bw) solid var(--border);background:var(--badge-bg);box-shadow:var(--badge-shadow)}
-.badge .hanja{font-size:26px;font-weight:300}
-.badge .name{font-family:var(--font-mono);font-size:8px;letter-spacing:.1em;margin-top:6px;color:var(--mute)}
-.badge.hl{border-color:var(--accent);border-width:var(--bw)}
-.badge.hl .hanja{color:var(--accent)}
-.preview{padding:24px 20px;border-top:var(--sep-w) var(--sep-style) var(--border)}
-.preview .head{font-family:var(--font-display);font-size:20px;font-weight:800;letter-spacing:-.01em}
-.preview .cap{font-size:13px;color:var(--sub-color);margin-top:4px}
-.closing{padding:var(--close-pad) 20px;text-align:center;border-top:var(--sep-w) var(--sep-style) var(--border)}
-.closing h2{font-family:var(--font-display);font-size:var(--close-h);font-weight:900;letter-spacing:-.02em;line-height:1.1}
-.closing .cta2{display:inline-block;margin-top:18px;background:var(--cta-bg);color:var(--cta-color);padding:14px 32px;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border:var(--bw) solid var(--border);box-shadow:var(--shadow)}
-.foot{padding:16px 20px;font-size:10.5px;color:var(--foot-color);border-top:var(--bw) solid var(--border);line-height:1.6}
-.perf{border-top:2px dotted var(--border);margin:0 20px}
-.barcode{height:28px;background:repeating-linear-gradient(90deg,var(--ink) 0,var(--ink) 2px,transparent 2px,transparent 5px);opacity:.7}
-.callout{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:9px;color:var(--mute);margin:12px 0}
-.callout .arr{flex:1;height:1px;background:var(--border);position:relative}
-.callout .arr::after{content:'';position:absolute;right:0;top:-3px;border:3px solid transparent;border-left-color:var(--mute)}
-.dim-tag{font-family:var(--font-mono);font-size:9px;color:var(--mute);padding:2px 6px;border:1px solid var(--border)}
-.sticker-rot{transform:rotate(var(--s-rot))}
-</style>
-<style>
-/* ===== VARIANT CSS (per-variant override) ===== */
 
-:root{--bg:#F4F1EC;--ink:#111;--accent:#FF4D00;--border:#111;--mute:#6f6a63;--sub-color:#444;--foot-color:#888;--cta-bg:#FF4D00;--cta-color:#fff;--badge-bg:#fff;--badge-shadow:4px 4px 0 #111;--badge-bw:2px;--badge-pad:14px 8px;--sep-w:3px;--sep-style:solid;--bw:2px;--shadow:8px 8px 0 #111;--s-rot:1deg;--stamp-rot:0deg;--pad:14px 20px;--hero-pad:32px;--close-pad:32px;--close-h:26px;--h1-size:44px;--h1-ls:-.02em;--h1-lh:.98;--h1-tc:uppercase;--h1-ls:-.02em;--wm-ls:-.01em;--cta-pad:15px 34px;--font-display:'Archivo Black','Helvetica Neue',sans-serif;--font-body:'Helvetica Neue',Arial,sans-serif;--font-mono:'Courier New',monospace}
-
-</style>
-</head>
-<body>
-<div class="top"><div class="wordmark">SAJU.</div><div class="serial">NO. 000847</div></div>
-<div class="hero">
-  <div class="stamp">CARD DECK · NO.1</div>
-  <h1>You are<br><span class="accent">Mirror</span><br>Lake.</h1>
-  <div class="sub">A short video shows the letters of your day. SAJU reads the lifelong pattern they make.</div>
-  <button class="cta">READ MY PATTERN</button>
-  <div class="callout"><span>[REF: 01-HERO]</span><div class="arr"></div><span>[CTA-BLOCK]</span></div>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - Mobile Landing Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dadada",
+                        "outline": "#747878",
+                        "secondary": "#b7211d",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "background": "#f9f9f9",
+                        "surface-tint": "#5f5e5e",
+                        "on-tertiary-container": "#848484",
+                        "tertiary-fixed": "#e3e2e2",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-container": "#1b1c1c",
+                        "primary-container": "#1c1b1b",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface-bright": "#f9f9f9",
+                        "secondary-fixed-dim": "#ffb4aa",
+                        "secondary-container": "#fe5549",
+                        "on-secondary-fixed-variant": "#930008",
+                        "on-secondary-container": "#5c0003",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "outline-variant": "#c4c7c7",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-low": "#f3f3f4",
+                        "on-background": "#1a1c1c",
+                        "tertiary": "#000000",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface": "#f9f9f9",
+                        "on-surface-variant": "#444748",
+                        "on-primary-container": "#858383",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#c8c6c5",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed": "#e5e2e1",
+                        "primary": "#000000",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary-fixed": "#ffdad5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#410001",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#1c1b1b",
+                        "brand-orange": "#FF4D00",
+                        "brand-bg": "#F8F7F4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "baseline": "4px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "16px",
+                        "column-gap": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "data-mono": ["JetBrains Mono"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-sm": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "display-lg": ["72px", { "lineHeight": "64px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+                    },
+                    "backgroundImage": {
+                        "grid-pattern": "linear-gradient(to right, #e5e5e5 1px, transparent 1px), linear-gradient(to bottom, #e5e5e5 1px, transparent 1px)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #F8F7F4;
+            background-size: 20px 20px;
+            background-image: linear-gradient(to right, #e2e2e2 1px, transparent 1px), linear-gradient(to bottom, #e2e2e2 1px, transparent 1px);
+        }
+        .brutalist-border {
+            border: 2px solid #000000;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #000000;
+        }
+        .brutalist-shadow-lg {
+            box-shadow: 8px 8px 0px 0px #000000;
+        }
+        .neo-card {
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            position: relative;
+        }
+        .corner-ref {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            font-size: 10px;
+            color: #747878;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-brand-bg z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop w-full border-b-[2px] border-primary h-[64px]">
+<button class="flex items-center justify-center p-2 hover:bg-primary hover:text-on-primary transition-colors duration-75 ease-linear brutalist-border brutalist-shadow bg-surface-lowest">
+<span class="material-symbols-outlined text-primary">grid_view</span>
+</button>
+<div class="font-display-lg-mobile text-display-lg-mobile tracking-tighter text-primary">SAJU</div>
+<button class="flex items-center justify-center p-2 hover:bg-primary hover:text-on-primary transition-colors duration-75 ease-linear brutalist-border brutalist-shadow bg-surface-lowest">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+</button>
 </div>
-<div class="badges">
-  <div class="label">THE TEN FORMS</div>
-  <div class="line">Your birth date assigns you one of ten forms.</div>
-  <div class="badge-row">
-    <div class="badge hl sticker-rot"><div class="hanja">壬</div><div class="name">MIRROR LAKE</div></div>
-    <div class="badge"><div class="hanja">甲</div><div class="name">HEARTWOOD</div></div>
-    <div class="badge"><div class="hanja">丙</div><div class="name">NOON MARK</div></div>
-  </div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center p-margin-mobile md:p-margin-desktop space-y-8 max-w-lg mx-auto w-full relative">
+<!-- Hero Section Card -->
+<section class="neo-card w-full p-6 brutalist-shadow">
+<span class="corner-ref font-data-mono text-data-mono">[REF:001]</span>
+<div class="mb-4">
+<div class="font-data-mono text-data-mono text-outline mb-2 uppercase">Subject Analysis</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile leading-tight mb-2">You are<br/>Mirror Lake.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">A short video shows the letters of your day. SAJU reads the lifelong pattern they make.</p>
 </div>
-<div class="preview">
-  <div class="head">The result stays as a single card.</div>
-  <div class="cap">The badge and one line carry the meaning on their own.</div>
+<div class="mt-8 mb-4 border-t-2 border-primary pt-4 relative">
+<div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-white px-2 border-2 border-primary">
+<span class="material-symbols-outlined">south</span>
 </div>
-<div class="perf"></div>
-<div class="closing">
-  <h2>YOUR READING BEGINS WITH EIGHT LETTERS.</h2>
-  <button class="cta2">READ MY PATTERN</button>
+<button class="w-full py-4 px-6 bg-brand-orange text-white font-headline-md text-headline-md brutalist-border brutalist-shadow-lg hover:bg-black transition-colors duration-150 uppercase tracking-wide">
+                    READ MY PATTERN
+                </button>
 </div>
-<div class="foot">SAJU is a reading tool for self-understanding. It is not medical, legal, or financial advice.</div>
-</body>
-</html>
+<div class="flex justify-between text-xs font-data-mono text-data-mono text-outline mt-2">
+<span>W: 100%</span>
+<span>H: AUTO</span>
+</div>
+</section>
+<!-- Badge Strip Card -->
+<section class="neo-card w-full p-6 brutalist-shadow">
+<span class="corner-ref font-data-mono text-data-mono">[REF:002]</span>
+<div class="mb-6 border-b-2 border-primary pb-4">
+<h2 class="font-headline-md text-headline-md uppercase mb-2">THE TEN FORMS</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Your birth date assigns you one of ten forms.</p>
+</div>
+<div class="flex flex-col space-y-4">
+<!-- Badge 1 -->
+<div class="flex items-center justify-between p-3 border-2 border-primary bg-surface hover:bg-surface-dim transition-colors">
+<span class="font-label-caps text-label-caps">MIRROR LAKE</span>
+<span class="font-data-mono text-data-mono text-xl">壬</span>
+</div>
+<!-- Badge 2 -->
+<div class="flex items-center justify-between p-3 border-2 border-primary bg-surface hover:bg-surface-dim transition-colors">
+<span class="font-label-caps text-label-caps">HEARTWOOD</span>
+<span class="font-data-mono text-data-mono text-xl">甲</span>
+</div>
+<!-- Badge 3 -->
+<div class="flex items-center justify-between p-3 border-2 border-primary bg-surface hover:bg-surface-dim transition-colors">
+<span class="font-label-caps text-label-caps">NOON MARK</span>
+<span class="font-data-mono text-data-mono text-xl">丙</span>
+</div>
+</div>
+</section>
+<!-- Card Preview Section -->
+<section class="neo-card w-full p-6 brutalist-shadow">
+<span class="corner-ref font-data-mono text-data-mono">[REF:003]</span>
+<h2 class="font-headline-md text-headline-md uppercase mb-6 pb-2 border-b-2 border-primary">THE RESULT STAYS AS A SINGLE CARD.</h2>
+<div class="w-full h-64 border-2 border-primary bg-surface-container-low relative flex items-center justify-center overflow-hidden">
+<!-- Abstract Wireframe Visual -->
+<div class="absolute inset-4 border border-outline border-dashed"></div>
+<div class="absolute inset-8 border border-outline border-dashed"></div>
+<div class="w-1/2 h-1/2 border-2 border-primary bg-white flex flex-col justify-between p-2 transform rotate-3 brutalist-shadow">
+<div class="w-full h-2 bg-primary"></div>
+<div class="w-2/3 h-1 bg-outline"></div>
+<div class="w-full h-8 border border-primary flex gap-1 p-1">
+<div class="flex-1 bg-surface-dim"></div>
+<div class="flex-1 bg-surface-dim"></div>
+</div>
+</div>
+<span class="absolute bottom-2 left-2 font-data-mono text-data-mono text-xs text-outline">FIG. 1: DATA STRUCTURE</span>
+</div>
+</section>
+<!-- Closing Section Card -->
+<section class="neo-card w-full p-6 brutalist-shadow bg-surface-container">
+<span class="corner-ref font-data-mono text-data-mono">[REF:004]</span>
+<h2 class="font-headline-md text-headline-md uppercase mb-6">YOUR READING BEGINS WITH EIGHT LETTERS.</h2>
+<button class="w-full py-3 px-4 bg-white text-black font-data-mono text-data-mono uppercase brutalist-border brutalist-shadow hover:bg-brand-orange hover:text-white transition-colors duration-150 flex justify-between items-center">
+<span>INITIATE SEQUENCE</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full relative mt-12 bg-white">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center px-margin-mobile md:px-margin-desktop py-8 w-full border-t-[2px] border-primary">
+<div class="font-label-caps text-label-caps mb-4 md:mb-0">
+                © 2024 SAJU TECHNICAL BUREAU. ALL RIGHTS RESERVED.
+            </div>
+<div class="flex flex-col md:flex-row gap-4 font-data-mono text-data-mono uppercase text-on-surface-variant">
+<a class="hover:text-primary hover:underline decoration-primary decoration-2 transition-colors" href="#">TERMS OF SERVICE</a>
+<a class="hover:text-primary hover:underline decoration-primary decoration-2 transition-colors" href="#">PRIVACY POLICY</a>
+<a class="hover:text-primary hover:underline decoration-primary decoration-2 transition-colors" href="#">METHODOLOGY</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - 당신은 거울 호수입니다</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;family=Jua&amp;family=IBM+Plex+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Jua&family=IBM+Plex+Mono:wght@400;600;700&display=swap');
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#000000",
+                        "inverse-surface": "#2f3131",
+                        "on-primary-container": "#858383",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "on-surface-variant": "#444748",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "primary-container": "#1c1b1b",
+                        "on-secondary-container": "#5c0003",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-background": "#1a1c1c",
+                        "inverse-primary": "#c8c6c5",
+                        "primary-fixed": "#e5e2e1",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#fe5549",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary": "#b7211d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-tertiary-container": "#848484",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#e8e8e8",
+                        "primary": "#000000",
+                        "secondary-fixed-dim": "#ffb4aa",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#dadada",
+                        "outline-variant": "#c4c7c7",
+                        "on-secondary-fixed": "#410001",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e3e2e2",
+                        "surface-container": "#eeeeee",
+                        "outline": "#747878",
+                        "surface-variant": "#e2e2e2",
+                        "surface-tint": "#5f5e5e",
+                        "surface-bright": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "on-surface": "#1a1c1c",
+                        "secondary-fixed": "#ffdad5",
+                        "on-secondary-fixed-variant": "#930008",
+                        "error-container": "#ffdad6",
+                        "background": "#f9f9f9",
+                        "tertiary-container": "#1b1c1c",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#474646",
+                        "saju-black": "#111111",
+                        "saju-orange": "#FF4D00",
+                        "saju-bg": "#F9F9F9"
+                    },
+                    "fontFamily": {
+                        "jua": ["Jua", "sans-serif"],
+                        "plex-mono": ["IBM Plex Mono", "monospace"],
+                        "data-mono": ["JetBrains Mono"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-sm": ["Hanken Grotesk"]
+                    },
+                    boxShadow: {
+                        'neo': '4px 4px 0px 0px #111111',
+                        'neo-lg': '8px 8px 0px 0px #111111',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F9F9F9; color: #111111; font-family: 'IBM Plex Mono', monospace; }
+        .barcode-bg {
+            background-image: repeating-linear-gradient(
+                90deg,
+                #111111,
+                #111111 2px,
+                transparent 2px,
+                transparent 6px,
+                #111111 6px,
+                #111111 9px,
+                transparent 9px,
+                transparent 14px
+            );
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-saju-bg min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-surface-container-lowest text-primary dark:text-on-background flex justify-between items-center w-full px-margin-mobile py-4 border-b border-primary dark:border-outline docked full-width top-0 flat no shadows border-b-2 border-saju-black sticky z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined hover:bg-primary hover:text-on-primary transition-colors duration-150 p-1 cursor-pointer">menu</span>
+<span class="font-jua text-2xl font-bold tracking-tighter text-primary dark:text-on-background text-saju-black uppercase">SAJU</span>
+</div>
+</header>
+<!-- Hero Section -->
+<main class="flex-grow flex flex-col p-6 gap-12 max-w-lg mx-auto w-full border-x-2 border-saju-black bg-white shadow-neo-lg relative mt-8 mb-12">
+<div class="absolute -top-4 -left-4 w-12 h-12 bg-saju-orange border-2 border-saju-black flex items-center justify-center font-bold text-xl rotate-[-10deg] shadow-neo">!</div>
+<section class="flex flex-col gap-6 pt-8">
+<h1 class="font-jua text-5xl leading-tight text-saju-black tracking-tight">당신은<br/>거울 호수입니다.</h1>
+<p class="font-plex-mono text-base font-semibold border-l-4 border-saju-black pl-4 py-2 bg-gray-100">
+                짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+            </p>
+<button class="bg-saju-orange text-saju-black border-2 border-saju-black shadow-neo font-jua text-2xl py-4 px-6 uppercase active:translate-y-1 active:translate-x-1 active:shadow-none transition-all mt-4 w-full">내 패턴 읽기</button>
+</section>
+<!-- Divider Barcode -->
+<div class="h-8 w-full barcode-bg opacity-80 my-4"></div>
+<!-- Ten Forms Strip Section -->
+<section class="flex flex-col gap-6 border-2 border-saju-black p-6 relative bg-[#f0f0f0]">
+<div class="absolute -top-4 right-4 bg-white border-2 border-saju-black px-3 py-1 font-jua text-lg shadow-neo rotate-[5deg]">열 가지 형태</div>
+<p class="font-plex-mono font-bold text-sm mt-4">생년월일시가 열 가지 형태 중 하나를 정합니다.</p>
+<div class="flex flex-wrap gap-4 mt-2">
+<div class="bg-white border-4 border-saju-black px-4 py-2 font-jua text-lg shadow-[3px_3px_0px_0px_#111111] rounded-full rotate-[-2deg]">거울 호수 壬</div>
+<div class="bg-white border-4 border-saju-black px-4 py-2 font-jua text-lg shadow-[3px_3px_0px_0px_#111111] rounded-full rotate-[3deg]">깊은 심목 甲</div>
+<div class="bg-white border-4 border-saju-black px-4 py-2 font-jua text-lg shadow-[3px_3px_0px_0px_#111111] rounded-full rotate-[-1deg]">정오 표식 丙</div>
+</div>
+</section>
+<!-- Divider Perforation -->
+<div class="h-2 w-full border-t-2 border-dashed border-saju-black my-2"></div>
+<!-- Result Preview Section -->
+<section class="flex flex-col gap-6">
+<h2 class="font-jua text-2xl bg-saju-black text-white p-2 inline-block self-start shadow-neo">결과는 단 하나의 카드로 남습니다.</h2>
+<div class="border-2 border-saju-black bg-white shadow-neo flex flex-col mt-4">
+<div class="border-b-2 border-saju-black bg-[#e0e0e0] p-2 flex justify-between items-center font-plex-mono text-xs font-bold uppercase">
+<span>Data Card</span>
+<span>ID: SAJU-X</span>
+</div>
+<div class="p-6 flex flex-col gap-4 font-plex-mono">
+<div class="flex justify-between border-b border-gray-300 pb-2">
+<span class="text-gray-500 uppercase text-xs">일련번호</span>
+<span class="font-bold">9A-2B-X1</span>
+</div>
+<div class="flex justify-between border-b border-gray-300 pb-2">
+<span class="text-gray-500 uppercase text-xs">오행</span>
+<span class="font-bold">물</span>
+</div>
+<div class="flex justify-between border-b border-gray-300 pb-2">
+<span class="text-gray-500 uppercase text-xs">음양</span>
+<span class="font-bold">양</span>
+</div>
+<div class="flex justify-between border-b border-saju-black pb-2 mt-4">
+<span class="text-gray-800 font-bold uppercase text-sm">주요 패턴</span>
+<span class="font-jua text-xl text-saju-orange">거울 호수</span>
+</div>
+</div>
+<!-- Card Barcode -->
+<div class="h-12 w-full barcode-bg border-t-2 border-saju-black"></div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="flex flex-col gap-6 items-center text-center mt-8 pb-8">
+<p class="font-plex-mono font-bold text-lg">당신의 리딩은 여덟 글자로 시작됩니다.</p>
+<button class="bg-saju-orange text-saju-black border-2 border-saju-black shadow-neo font-jua text-2xl py-4 px-8 uppercase active:translate-y-1 active:translate-x-1 active:shadow-none transition-all w-full">내 패턴 읽기</button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background dark:bg-surface-container-lowest text-primary dark:text-on-background flex flex-col md:flex-row justify-between items-start w-full px-margin-mobile py-8 gap-4 border-t-2 border-saju-black flat no shadows mt-auto">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-primary dark:text-on-background font-bold tracking-widest text-xs uppercase">SAJU</span>
+<p class="font-body-sm text-body-sm text-xs font-plex-mono">SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.</p>
+</div>
+<div class="flex flex-col gap-1 mt-4 md:mt-0 font-plex-mono text-xs">
+<span class="text-primary dark:text-on-background hover:text-secondary transition-colors duration-200 cursor-pointer">TERMS</span>
+<span class="text-primary dark:text-on-background hover:text-secondary transition-colors duration-200 cursor-pointer">PRIVACY</span>
+<span class="text-primary dark:text-on-background hover:text-secondary transition-colors duration-200 cursor-pointer">DATA ARCHIVE</span>
+</div>
+<div class="text-xs font-plex-mono mt-4 md:mt-0 text-gray-500">
+            © 2024 SAJU BUREAU. ALL RIGHTS RESERVED. [REF: LEG-01]
+        </div>
+</footer>
+</body></html>

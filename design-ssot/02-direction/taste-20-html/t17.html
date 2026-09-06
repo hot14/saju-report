@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&amp;family=Inter:wght@100..900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "surface-container": "#f3ede5",
+                "tertiary-container": "#1b1b1d",
+                "primary-fixed": "#e9e1dc",
+                "surface-container-highest": "#e8e2da",
+                "on-tertiary-fixed": "#1b1b1d",
+                "background": "#fff8f1",
+                "on-secondary-fixed": "#1c1c18",
+                "on-error": "#ffffff",
+                "secondary-fixed": "#e5e2dc",
+                "on-secondary-fixed-variant": "#474743",
+                "surface-container-lowest": "#ffffff",
+                "on-surface": "#1e1b17",
+                "surface": "#fff8f1",
+                "primary-fixed-dim": "#ccc5c0",
+                "on-tertiary": "#ffffff",
+                "on-primary-fixed": "#1e1b18",
+                "on-surface-variant": "#4c4640",
+                "on-secondary-container": "#656460",
+                "secondary-container": "#e5e2dc",
+                "surface-container-high": "#eee7df",
+                "surface-dim": "#dfd9d1",
+                "error": "#ba1a1a",
+                "primary-container": "#1e1b18",
+                "inverse-primary": "#ccc5c0",
+                "surface-bright": "#fff8f1",
+                "outline-variant": "#cfc5bd",
+                "on-secondary": "#ffffff",
+                "on-tertiary-fixed-variant": "#474649",
+                "on-primary-fixed-variant": "#4a4642",
+                "inverse-on-surface": "#f6f0e8",
+                "secondary": "#5f5e5a",
+                "inverse-surface": "#33302b",
+                "primary": "#000000",
+                "secondary-fixed-dim": "#c9c6c1",
+                "on-primary": "#ffffff",
+                "surface-container-low": "#f9f3ea",
+                "on-background": "#1e1b17",
+                "on-primary-container": "#89837e",
+                "tertiary-fixed-dim": "#c8c6c8",
+                "on-tertiary-container": "#858386",
+                "surface-tint": "#625d59",
+                "error-container": "#ffdad6",
+                "tertiary": "#000000",
+                "on-error-container": "#93000a",
+                "outline": "#7d766f",
+                "tertiary-fixed": "#e4e2e4",
+                "surface-variant": "#e8e2da",
+                "linen": "#F7F4EE",
+                "umber": "#191613",
+                "crimson": "#B8433A"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "gutter": "24px",
+                "container-max": "1120px",
+                "margin-mobile": "24px",
+                "margin-desktop": "64px",
+                "section-gap": "120px",
+                "unit": "8px"
+              },
+              "fontFamily": {
+                "headline-lg-mobile": [
+                  "\"Source Serif 4\""
+                ],
+                "body-lg": [
+                  "Inter"
+                ],
+                "headline-lg": [
+                  "\"Source Serif 4\""
+                ],
+                "display-lg": [
+                  "\"Source Serif 4\""
+                ],
+                "body-md": [
+                  "Inter"
+                ],
+                "headline-xl": [
+                  "\"Source Serif 4\""
+                ],
+                "label-sm": [
+                  "Inter"
+                ]
+              },
+              "fontSize": {
+                "headline-lg-mobile": [
+                  "28px",
+                  {
+                    "lineHeight": "36px",
+                    "fontWeight": "400"
+                  }
+                ],
+                "body-lg": [
+                  "18px",
+                  {
+                    "lineHeight": "28px",
+                    "fontWeight": "400"
+                  }
+                ],
+                "headline-lg": [
+                  "32px",
+                  {
+                    "lineHeight": "40px",
+                    "fontWeight": "400"
+                  }
+                ],
+                "display-lg": [
+                  "64px",
+                  {
+                    "lineHeight": "72px",
+                    "letterSpacing": "-0.02em",
+                    "fontWeight": "300"
+                  }
+                ],
+                "body-md": [
+                  "16px",
+                  {
+                    "lineHeight": "24px",
+                    "fontWeight": "400"
+                  }
+                ],
+                "headline-xl": [
+                  "48px",
+                  {
+                    "lineHeight": "56px",
+                    "fontWeight": "400"
+                  }
+                ],
+                "label-sm": [
+                  "12px",
+                  {
+                    "lineHeight": "16px",
+                    "letterSpacing": "0.05em",
+                    "fontWeight": "600"
+                  }
+                ]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #F7F4EE;
+            color: #191613;
+        }
+        .text-umber { color: #191613; }
+        .bg-linen { background-color: #F7F4EE; }
+        .border-umber { border-color: #191613; }
+        .bg-umber { background-color: #191613; }
+        .text-linen { color: #F7F4EE; }
+        .bg-crimson { background-color: #B8433A; }
+        .text-crimson { color: #B8433A; }
+        .border-crimson { border-color: #B8433A; }
+
+        .font-fraunces { font-family: 'Fraunces', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased font-inter flex justify-center pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-40 bg-surface border-b border-outline-variant flex items-center justify-between px-margin-mobile h-16 md:hidden">
+<button class="text-primary hover:opacity-70 transition-opacity scale-95 duration-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-headline-lg-mobile text-headline-lg-mobile tracking-widest text-primary uppercase">SAJU</div>
+<div class="w-6"></div> <!-- Spacer for centering -->
+</header>
+<!-- TopAppBar Desktop -->
+<header class="fixed top-0 w-full z-40 bg-surface border-b border-outline-variant items-center justify-between px-margin-desktop h-16 hidden md:flex">
+<div class="font-headline-lg-mobile text-headline-lg-mobile tracking-widest text-primary uppercase">SAJU</div>
+<nav class="flex gap-8">
+<a class="font-label-sm text-label-sm text-primary font-bold" href="#">READ MY PATTERN</a>
+<a class="font-label-sm text-label-sm text-secondary" href="#">THE TEN FORMS</a>
+</nav>
+</header>
+<main class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-24 md:pt-32 relative">
+<!-- Narrative Marker Left (Desktop Only) -->
+<div class="hidden md:block absolute left-8 top-32 h-full">
+<div class="sticky top-32 flex flex-col items-center gap-4">
+<div class="h-24 w-px bg-umber"></div>
+<span class="vertical-text font-label-sm text-label-sm text-secondary uppercase tracking-widest">Chapter 1</span>
+</div>
+</div>
+<!-- Section: Hero -->
+<section class="mb-section-gap pt-12 md:pl-24">
+<h1 class="font-fraunces text-display-lg md:text-[80px] leading-tight mb-8">
+                You are<br/>Mirror Lake.
+            </h1>
+<div class="w-full md:w-2/3 h-px bg-umber mb-8"></div>
+<p class="font-body-lg text-body-lg max-w-2xl text-secondary">
+                A short video shows the letters of your day. SAJU reads the lifelong pattern they make.
+            </p>
+</section>
+<!-- Section: Step 1 -->
+<section class="mb-section-gap relative">
+<div class="absolute -left-6 top-0 h-full w-px bg-outline-variant md:hidden"></div>
+<div class="flex items-center gap-4 mb-8 md:pl-24">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Step 1</span>
+<div class="h-px w-12 bg-umber"></div>
+</div>
+<div class="md:pl-24 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8">
+<h2 class="font-fraunces text-headline-xl md:text-display-lg mb-8">Birth Letters</h2>
+<div class="bg-surface border border-umber p-8 md:p-12 mb-8">
+<div class="grid grid-cols-4 gap-4 h-48 md:h-64">
+<div class="border border-outline-variant flex items-center justify-center bg-surface-container">
+<span class="font-fraunces text-headline-xl text-secondary">年</span>
+</div>
+<div class="border border-outline-variant flex items-center justify-center bg-surface-container">
+<span class="font-fraunces text-headline-xl text-secondary">月</span>
+</div>
+<div class="border border-outline-variant flex items-center justify-center bg-surface-container">
+<span class="font-fraunces text-headline-xl text-secondary">日</span>
+</div>
+<div class="border border-outline-variant flex items-center justify-center bg-surface-container">
+<span class="font-fraunces text-headline-xl text-secondary">時</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Step 2 -->
+<section class="mb-section-gap relative">
+<div class="absolute -left-6 top-0 h-full w-px bg-outline-variant md:hidden"></div>
+<div class="flex items-center gap-4 mb-8 md:pl-24">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Step 2</span>
+<div class="h-px w-12 bg-umber"></div>
+</div>
+<div class="md:pl-24 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-10">
+<h2 class="font-fraunces text-headline-xl md:text-display-lg mb-8 uppercase">THE TEN FORMS</h2>
+<div class="w-full h-px bg-umber mb-8"></div>
+<p class="font-body-lg text-body-lg mb-12">
+                        Your birth date assigns you one of ten forms.
+                    </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="border border-umber p-6 bg-surface hover:bg-surface-container transition-colors">
+<div class="font-fraunces text-headline-xl mb-4 text-center">壬</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-center mb-2">Mirror Lake</h3>
+</div>
+<!-- Card 2 -->
+<div class="border border-outline-variant p-6 bg-surface-container-low">
+<div class="font-fraunces text-headline-xl mb-4 text-center text-secondary">甲</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-center mb-2 text-secondary">Heartwood</h3>
+</div>
+<!-- Card 3 -->
+<div class="border border-outline-variant p-6 bg-surface-container-low">
+<div class="font-fraunces text-headline-xl mb-4 text-center text-secondary">丙</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-center mb-2 text-secondary">Noon Mark</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Step 3 -->
+<section class="mb-section-gap relative">
+<div class="absolute -left-6 top-0 h-full w-px bg-outline-variant md:hidden"></div>
+<div class="flex items-center gap-4 mb-8 md:pl-24">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Step 3</span>
+<div class="h-px w-12 bg-umber"></div>
+</div>
+<div class="md:pl-24 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8">
+<h2 class="font-fraunces text-headline-xl md:text-headline-lg uppercase mb-8">THE RESULT STAYS AS A SINGLE CARD.</h2>
+<div class="border border-umber bg-linen p-8 shadow-sm">
+<div class="flex justify-between items-end border-b border-umber pb-4 mb-8">
+<div class="font-fraunces text-headline-xl">壬</div>
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-widest text-right">
+<div>Form</div>
+<div class="text-primary mt-1">Mirror Lake</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 border-b border-outline-variant pb-8 mb-8">
+<div>
+<div class="font-label-sm text-label-sm text-secondary mb-2">SERIAL</div>
+<div class="font-body-md text-body-md">084-291</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-secondary mb-2">ELEM</div>
+<div class="font-body-md text-body-md">Water</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-secondary mb-2">PLRT</div>
+<div class="font-body-md text-body-md">Yang</div>
+</div>
+</div>
+<div class="h-32 bg-surface-container border border-outline-variant flex items-center justify-center">
+<span class="font-label-sm text-label-sm text-secondary">PATTERN VISUALIZATION</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing CTA -->
+<section class="mb-section-gap md:pl-24 text-center">
+<div class="w-full max-w-md mx-auto">
+<h2 class="font-fraunces text-headline-lg md:text-headline-xl mb-8 uppercase leading-tight">YOUR READING BEGINS WITH EIGHT LETTERS.</h2>
+<button class="bg-umber text-linen font-label-sm text-label-sm tracking-widest uppercase px-8 py-4 w-full md:w-auto hover:bg-opacity-90 transition-opacity">
+                    READ MY PATTERN
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container dark:bg-surface-container text-on-surface dark:text-on-surface font-label-sm text-label-sm border-t border-primary flex flex-col gap-unit px-margin-mobile py-margin-mobile max-w-container-max mx-auto mt-24 mb-16 md:mb-0">
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-4 uppercase tracking-widest">SAJU</div>
+<p class="mb-4">© 2024 SAJU. ALL RIGHTS RESERVED.</p>
+<div class="flex flex-col gap-2">
+<a class="hover:text-primary transition-colors text-secondary" href="#">TERMS</a>
+<a class="hover:text-primary transition-colors text-secondary" href="#">PRIVACY</a>
+<span class="text-secondary">SAJU is a reading tool for self-understanding. It is not medical, legal, or financial advice.</span>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 border-t border-outline-variant flex w-full p-margin-mobile bg-surface dark:bg-surface text-on-primary dark:text-on-primary font-label-sm text-label-sm">
+<button class="bg-error text-on-error w-full flex items-center justify-center py-4 font-bold tracking-widest uppercase hover:brightness-110 transition-all active:scale-[0.99] duration-150">
+<span>READ MY PATTERN</span>
+<span class="material-symbols-outlined ml-2">arrow_forward</span>
+</button>
+</nav>
+</body></html>

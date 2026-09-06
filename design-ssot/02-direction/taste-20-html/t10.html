@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - Premium Editorial Wellness</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&amp;family=Vollkorn:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#7e7362",
+                        "on-secondary-fixed": "#251912",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f5f0e6",
+                        "surface-tint": "#9e4216",
+                        "on-tertiary-fixed": "#221a0e",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e7e2d8",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f8f3e9",
+                        "on-surface": "#1d1c16",
+                        "secondary-container": "#f2dbd0",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#6c5b52",
+                        "surface-dim": "#dedad0",
+                        "on-primary-container": "#fffbff",
+                        "tertiary": "#655a4b",
+                        "surface": "#fef9ef",
+                        "primary-fixed-dim": "#ffb598",
+                        "inverse-surface": "#32302a",
+                        "surface-variant": "#e7e2d8",
+                        "outline-variant": "#ddc1b6",
+                        "on-secondary-container": "#705f57",
+                        "on-primary-fixed-variant": "#7e2c00",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#897269",
+                        "on-secondary-fixed-variant": "#53443c",
+                        "on-primary-fixed": "#370e00",
+                        "secondary-fixed": "#f5ded3",
+                        "on-tertiary-container": "#fffbff",
+                        "tertiary-fixed-dim": "#d3c4b1",
+                        "on-tertiary-fixed-variant": "#4f4537",
+                        "primary-container": "#bb572b",
+                        "surface-container-high": "#ede8de",
+                        "surface-container": "#f2ede3",
+                        "on-background": "#1d1c16",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#d8c2b8",
+                        "primary": "#9b4014",
+                        "surface-bright": "#fef9ef",
+                        "tertiary-fixed": "#f0e0cc",
+                        "inverse-primary": "#ffb598",
+                        "on-surface-variant": "#56423b",
+                        "primary-fixed": "#ffdbce",
+                        "background": "#fef9ef"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "24px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Karla"],
+                        "body-lg": ["Karla"],
+                        "headline-sm": ["Vollkorn"],
+                        "display-lg-mobile": ["Vollkorn"],
+                        "body-md": ["Karla"],
+                        "display-lg": ["Vollkorn"],
+                        "headline-md": ["Vollkorn"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+            font-family: 'Karla', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        h1, h2, h3, h4, h5, h6, .vollkorn {
+            font-family: 'Vollkorn', serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface border-b border-on-surface/10 z-40 transition-shadow duration-300">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-surface-variant transition-colors group">
+<span class="material-symbols-outlined text-primary group-hover:opacity-80 transition-opacity active:scale-95 duration-200" data-icon="menu">menu</span>
+</button>
+<div class="font-headline-md text-headline-md font-medium text-on-surface text-center flex-1 tracking-tight">SAJU</div>
+<button class="flex items-center justify-center rounded-full overflow-hidden w-10 h-10 border border-outline-variant hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A sophisticated close-up portrait of a thoughtful person in soft natural light, warm beige and espresso tones, conveying a calm and introspective premium editorial style. Natural textures, high-quality photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAFmFhsalNGN4EYbiK3zGK1OEOOL_a9dODFxUel4ujALQgzPdlFyIxmOAJgXnQJQYv2dz_kyF_teyPEElOAJU14d6OTC_faYE_K9CtSPl-cvhsW3zUiruz9i9lEQRYBSInJF33C-QKn8V0f4qALz5MG_oBIifm1G9yRNdGTPG5r8WbYKpd712DqouA-fWfOIdcFOBHSZxxl8bzSnbS7iDzNhsBzCoNOFwbdyxUnSAa4KFOobUlWADp1xtFe1jqi1kkiuxdWb4GBA"/>
+</button>
+</div>
+</header>
+<main class="w-full mx-auto max-w-7xl overflow-x-hidden">
+<!-- Hero Section -->
+<section class="px-margin-mobile pt-16 pb-section-gap flex flex-col items-center text-center">
+<div class="max-w-[680px] w-full flex flex-col items-center gap-stack-lg">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">You are Mirror Lake.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[480px]">
+                    A short video shows the letters of your day. SAJU reads the lifelong pattern they make.
+                </p>
+<div class="w-full max-w-[320px] aspect-square rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(51,38,31,0.06)] relative bg-surface-container mb-4 group cursor-pointer">
+<img alt="Mirror Lake representation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A beautifully styled still life depicting a pristine reflective surface resembling a mirror lake, with soft ripples and warm, soft lighting. Premium editorial aesthetic, grounded introspection, minimalist organic textures, ivory and soft terracotta tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW7TcWTehN9923yH7asouMTbeqk-KqoD46UmdA4R6b7fa2XxMe5z9S86bcBJ2GSAKpjNYCQvPQbCVFLloXckW3nfBVUzOkdZWRNKPK2vCD3wx3v5gFmdMcfiWoWqVlPswpr6UUq_RHBaM0wfSd8HPqMcAhRsYUISwycMFwdzcAKCCU8g2bXQCOAvzfEGiN1nUTD5RIyGRpDPGq0jQb_qzlTEnpmNSgREG2TMl2qdzDabB5iXw3QPEkEibaGIKi9Ira_GU35wphcw"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition-colors duration-300">
+<span class="material-symbols-outlined text-white text-6xl opacity-90" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-10 py-4 rounded-full hover:bg-surface-tint active:scale-95 transition-all shadow-sm w-full md:w-auto tracking-wider uppercase">
+                    READ MY PATTERN
+                </button>
+</div>
+</section>
+<!-- Badge Strip: The Ten Forms -->
+<section class="px-margin-mobile py-section-gap bg-surface-container-low flex flex-col items-center">
+<div class="max-w-[1000px] w-full flex flex-col items-center gap-stack-lg">
+<div class="text-center flex flex-col gap-stack-sm mb-8">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">THE TEN FORMS</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Your birth date assigns you one of ten forms.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter w-full">
+<!-- Form Card 1 -->
+<div class="bg-surface-container hover:shadow-[0_4px_12px_rgba(51,38,31,0.06)] transition-all duration-300 rounded-xl p-8 flex flex-col items-center gap-stack-md text-center group cursor-pointer border border-transparent hover:border-outline-variant">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline-md text-headline-md mb-2 group-hover:-translate-y-1 transition-transform">
+                            壬
+                        </div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">MIRROR LAKE</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Reflective, deep, and ever-changing in its stillness.</p>
+</div>
+<!-- Form Card 2 -->
+<div class="bg-surface-container hover:shadow-[0_4px_12px_rgba(51,38,31,0.06)] transition-all duration-300 rounded-xl p-8 flex flex-col items-center gap-stack-md text-center group cursor-pointer border border-transparent hover:border-outline-variant">
+<div class="w-16 h-16 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-center font-headline-md text-headline-md mb-2 group-hover:-translate-y-1 transition-transform">
+                            甲
+                        </div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">HEARTWOOD</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Rooted, growing steadily upward with grounded resilience.</p>
+</div>
+<!-- Form Card 3 -->
+<div class="bg-surface-container hover:shadow-[0_4px_12px_rgba(51,38,31,0.06)] transition-all duration-300 rounded-xl p-8 flex flex-col items-center gap-stack-md text-center group cursor-pointer border border-transparent hover:border-outline-variant">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md text-headline-md mb-2 group-hover:-translate-y-1 transition-transform">
+                            丙
+                        </div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">NOON MARK</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Radiant, warm, casting light and clarity in all directions.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Card Preview Section -->
+<section class="px-margin-mobile py-section-gap flex flex-col items-center">
+<div class="max-w-[800px] w-full flex flex-col items-center gap-stack-lg text-center">
+<h2 class="font-headline-md text-headline-md text-on-surface max-w-[500px]">THE RESULT STAYS AS A SINGLE CARD.</h2>
+<div class="w-full max-w-[400px] aspect-[3/4] bg-surface-container-lowest border border-outline-variant rounded-2xl shadow-[0_12px_40px_rgba(51,38,31,0.08)] p-8 flex flex-col justify-between mt-8 relative overflow-hidden group">
+<!-- Subtle texture overlay -->
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPHBhdGggZD0iTTAgMEwyIDBMMiAyTDAgMloiIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPgo8L3N2Zz4=')] opacity-50 pointer-events-none"></div>
+<div class="flex justify-between items-start w-full relative z-10">
+<div class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">SERIAL</div>
+<div class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">ELEM</div>
+</div>
+<div class="flex flex-col items-center justify-center flex-1 relative z-10 gap-4">
+<div class="w-24 h-24 rounded-full border border-outline/30 flex items-center justify-center">
+<span class="font-display-lg text-display-lg text-primary">壬</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface">MIRROR LAKE</div>
+</div>
+<div class="flex justify-between items-end w-full relative z-10 border-t border-outline-variant/30 pt-4">
+<div class="font-body-md text-body-md text-on-surface-variant">Pattern #0892</div>
+<div class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">PLRT</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="px-margin-mobile py-section-gap flex flex-col items-center text-center bg-surface-container-high rounded-t-[40px] mt-16">
+<div class="max-w-[680px] w-full flex flex-col items-center gap-stack-lg">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">YOUR READING BEGINS WITH EIGHT LETTERS.</h2>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-10 py-4 rounded-full hover:bg-surface-tint active:scale-95 transition-all shadow-sm w-full md:w-auto tracking-wider uppercase mt-4">
+                    READ MY PATTERN
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface border-t border-on-surface/10 py-stack-lg px-margin-mobile pb-32">
+<div class="max-w-7xl mx-auto flex flex-col items-center gap-stack-md text-center">
+<div class="font-headline-sm text-headline-sm text-on-surface mb-2">SAJU</div>
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 opacity-70">© 2024 SAJU Wellness. All rights reserved.</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface border-t border-on-surface/5 shadow-[0_-4px_12px_rgba(51,38,31,0.04)] pb-6 pt-2 px-4 flex justify-around items-center">
+<!-- Dashboard/Today (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-highest transition-colors rounded-full active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-md text-label-md text-[10px] leading-tight">Today</span>
+</button>
+<!-- Elements (Active for Landing/Exploration) -->
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 hover:bg-surface-container-highest transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-md text-label-md text-[10px] leading-tight">Elements</span>
+</button>
+<!-- Journal (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-highest transition-colors rounded-full active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="edit_note">edit_note</span>
+<span class="font-label-md text-label-md text-[10px] leading-tight">Journal</span>
+</button>
+<!-- Profile (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-highest transition-colors rounded-full active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-md text-label-md text-[10px] leading-tight">Profile</span>
+</button>
+</nav>
+<script>
+        // Simple scroll effect for header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-[0_4px_12px_rgba(51,38,31,0.04)]');
+            } else {
+                header.classList.remove('shadow-[0_4px_12px_rgba(51,38,31,0.04)]');
+            }
+        });
+    </script>
+</body></html>

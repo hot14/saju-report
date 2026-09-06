@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - System V.01</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#e7e2db",
+                        "surface": "#fef9f1",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f8f3ec",
+                        "background": "#fef9f1",
+                        "inverse-primary": "#abc9f2",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ecbf80",
+                        "secondary-fixed-dim": "#ffb599",
+                        "on-tertiary-fixed-variant": "#5f410c",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e7e2db",
+                        "surface-container-high": "#ece7e0",
+                        "on-primary-fixed": "#001c38",
+                        "on-primary-container": "#87a4cc",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffddb1",
+                        "tertiary": "#331f00",
+                        "surface-bright": "#fef9f1",
+                        "surface-dim": "#ded9d3",
+                        "on-background": "#1d1b17",
+                        "inverse-surface": "#32302c",
+                        "on-secondary-fixed-variant": "#7f2b00",
+                        "inverse-on-surface": "#f5f0e9",
+                        "tertiary-container": "#4f3300",
+                        "secondary-container": "#fe7a43",
+                        "primary": "#002444",
+                        "on-surface-variant": "#43474e",
+                        "secondary-fixed": "#ffdbce",
+                        "on-surface": "#1d1b17",
+                        "on-tertiary-container": "#c49b5f",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f2ede6",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#d2e4ff",
+                        "primary-container": "#1b3a5c",
+                        "on-tertiary-fixed": "#291800",
+                        "on-primary-fixed-variant": "#2b486b",
+                        "on-secondary-fixed": "#370e00",
+                        "outline-variant": "#c3c6cf",
+                        "secondary": "#a63b02",
+                        "surface-tint": "#436084",
+                        "on-secondary-container": "#662000",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#abc9f2",
+                        "outline": "#73777f"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "technical-offset": "4px",
+                        "margin-desktop": "48px",
+                        "grid-unit": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "technical-data": ["IBM Plex Mono", "monospace"],
+                        "technical-label": ["IBM Plex Mono", "monospace"],
+                        "body-lg": ["IBM Plex Sans KR", "sans-serif"],
+                        "display-lg-mobile": ["IBM Plex Sans KR", "sans-serif"],
+                        "headline-md": ["IBM Plex Sans KR", "sans-serif"],
+                        "body-md": ["IBM Plex Sans KR", "sans-serif"],
+                        "display-lg": ["IBM Plex Sans KR", "sans-serif"]
+                    },
+                    fontSize: {
+                        "technical-data": ["10px", { "lineHeight": "1", "fontWeight": "400" }],
+                        "technical-label": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #EFEAE3; color: #1B3A5C; }
+        .grid-bg {
+            background-image: linear-gradient(to right, rgba(27,58,92,0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(27,58,92,0.05) 1px, transparent 1px);
+            background-size: 8px 8px;
+        }
+        .ruler-left {
+            border-left: 1px solid rgba(27,58,92,0.2);
+            background: repeating-linear-gradient(to bottom, rgba(27,58,92,0.2) 0, rgba(27,58,92,0.2) 1px, transparent 1px, transparent 8px);
+            width: 4px;
+        }
+        .bracket-card {
+            position: relative;
+        }
+        .bracket-card::before, .bracket-card::after {
+            content: ''; position: absolute; width: 12px; height: 12px; border: 1px solid #1B3A5C;
+        }
+        .bracket-card::before { top: 0; left: 0; border-right: none; border-bottom: none; }
+        .bracket-card::after { bottom: 0; right: 0; border-left: none; border-top: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col relative grid-bg md:hidden font-body-md">
+<!-- Edge Ruler -->
+<div class="fixed left-0 top-0 bottom-0 ruler-left z-0"></div>
+<!-- TopAppBar from JSON -->
+<header class="bg-background dark:bg-on-background text-primary dark:text-primary-fixed fixed top-0 w-full z-50 border-b border-outline dark:border-outline-variant flat no shadows flex justify-between items-center px-margin-mobile h-16 w-full">
+<div class="flex items-center gap-2 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-primary-container transition-colors opacity-80 duration-150">
+<span class="material-symbols-outlined font-[FILL:0]">terminal</span>
+</div>
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary dark:text-primary-fixed">
+            SAJU_SYS_V.01
+        </div>
+<div class="flex items-center gap-2 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-primary-container transition-colors opacity-80 duration-150">
+<span class="material-symbols-outlined font-[FILL:0]">language</span>
+</div>
+</header>
+<main class="flex-grow pt-24 px-margin-mobile pb-12 z-10 relative">
+<!-- Hero Section -->
+<section class="mb-16 relative">
+<div class="font-technical-label text-technical-label mb-4 opacity-70">[REF: 01-HERO]</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile mb-6 leading-tight">
+                당신은 거울<br/>호수입니다.
+            </h1>
+<p class="font-body-md text-body-md mb-8 max-w-sm border-l border-primary pl-4 py-1">
+                짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+            </p>
+<div class="relative inline-block w-full">
+<div class="absolute -top-3 right-0 font-technical-data text-technical-data text-[#C4501B]">[DIM: 358px]</div>
+<button class="w-full bg-primary text-on-primary font-technical-label text-technical-label h-12 uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center justify-center gap-2 rounded-none relative">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+                    내 패턴 읽기
+                    <div class="absolute top-1 right-1 font-technical-data text-technical-data opacity-50">[CMD: EXEC]</div>
+</button>
+</div>
+<!-- Technical alignment line -->
+<div class="absolute -right-4 top-1/2 w-8 h-[0.5pt] bg-primary opacity-20"></div>
+</section>
+<!-- Badge Strip -->
+<section class="mb-16 relative">
+<div class="flex flex-col gap-2 mb-6">
+<h2 class="font-headline-md text-headline-md">열 가지 형태</h2>
+<p class="font-body-md text-body-md opacity-80 border-b border-primary/20 pb-4">생년월일시가 열 가지 형태 중 하나를 정합니다.</p>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Badge 1 -->
+<div class="border border-primary/40 p-3 flex justify-between items-center bg-surface-container-lowest/50 backdrop-blur-sm relative overflow-hidden group hover:border-primary transition-colors">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-[#C4501B]/20 group-hover:bg-[#C4501B]/60 transition-colors"></div>
+<div class="font-body-md text-body-md font-medium pl-2">거울 호수 壬</div>
+<div class="font-technical-data text-technical-data border border-primary px-1">+ TYPE_01</div>
+</div>
+<!-- Badge 2 -->
+<div class="border border-primary/40 p-3 flex justify-between items-center bg-surface-container-lowest/50 backdrop-blur-sm relative overflow-hidden group hover:border-primary transition-colors">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary/10 group-hover:bg-primary/30 transition-colors"></div>
+<div class="font-body-md text-body-md font-medium pl-2">깊은 심목 甲</div>
+<div class="font-technical-data text-technical-data border border-primary px-1">+ TYPE_02</div>
+</div>
+<!-- Badge 3 -->
+<div class="border border-primary/40 p-3 flex justify-between items-center bg-surface-container-lowest/50 backdrop-blur-sm relative overflow-hidden group hover:border-primary transition-colors">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary/10 group-hover:bg-primary/30 transition-colors"></div>
+<div class="font-body-md text-body-md font-medium pl-2">정오 표식 丙</div>
+<div class="font-technical-data text-technical-data border border-primary px-1">+ TYPE_03</div>
+</div>
+</div>
+</section>
+<!-- Card Preview -->
+<section class="mb-16">
+<h2 class="font-headline-md text-headline-md mb-6">결과는 단 하나의 카드로 남습니다.</h2>
+<div class="bracket-card p-6 bg-surface-container-lowest border border-primary/10 grid-bg">
+<div class="flex justify-between items-start mb-6">
+<span class="font-technical-label text-technical-label border-b border-primary/30 pb-1">DATA_RECORD</span>
+<span class="material-symbols-outlined text-primary/50">qr_code_scanner</span>
+</div>
+<div class="space-y-4 font-technical-label text-technical-label uppercase">
+<div class="flex justify-between border-b border-primary/20 pb-2">
+<span class="opacity-60">일련번호</span>
+<span class="text-[#C4501B]">9A-2B-X1</span>
+</div>
+<div class="flex justify-between border-b border-primary/20 pb-2">
+<span class="opacity-60">오행</span>
+<span>물</span>
+</div>
+<div class="flex justify-between border-b border-primary/20 pb-2">
+<span class="opacity-60">음양</span>
+<span>양</span>
+</div>
+<div class="flex justify-between border-b border-primary/20 pb-2">
+<span class="opacity-60">주요 패턴</span>
+<span class="font-medium">거울 호수</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing -->
+<section class="text-center relative pt-8 border-t border-primary/20">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#EFEAE3] px-2 font-technical-data text-technical-data">END_OF_RECORD</div>
+<p class="font-headline-md text-headline-md mb-6">
+                당신의 리딩은 여덟 글자로 시작됩니다.
+            </p>
+<button class="w-full border border-primary text-primary font-technical-label text-technical-label h-12 uppercase tracking-widest hover:bg-primary/5 transition-colors flex items-center justify-center gap-2 rounded-none relative">
+                내 패턴 읽기
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<div class="mt-12 font-technical-data text-technical-data opacity-50 flex justify-between items-center">
+<span>SYS.VER.01</span>
+<span>DATE: 2024</span>
+<span>STATUS: ACTIVE</span>
+</div>
+</section>
+</main>
+<!-- Footer from JSON -->
+<footer class="bg-surface-container-high dark:bg-surface-container-lowest w-full relative bottom-0 border-t border-outline dark:border-outline-variant flat no shadows flex flex-col gap-4 p-margin-mobile w-full border-t border-primary/20">
+<div class="font-technical-label text-technical-label text-secondary">
+            SAJU_LABS
+        </div>
+<div class="flex flex-wrap gap-4 font-technical-data text-technical-data uppercase">
+<a class="text-on-surface-variant opacity-70 hover:text-secondary dark:hover:text-secondary-fixed transition-transform active:scale-[0.99]" href="#">PRIVACY_PROT</a>
+<a class="text-on-surface-variant opacity-70 hover:text-secondary dark:hover:text-secondary-fixed transition-transform active:scale-[0.99]" href="#">TERMS_EXEC</a>
+<a class="text-on-surface-variant opacity-70 hover:text-secondary dark:hover:text-secondary-fixed transition-transform active:scale-[0.99]" href="#">SYS_STAT</a>
+</div>
+<div class="font-technical-data text-technical-data uppercase text-primary dark:text-primary-fixed mt-4">
+            © 2024 SAJU_LABS // [REF: LEGAL_24]
+        </div>
+</footer>
+</body></html>

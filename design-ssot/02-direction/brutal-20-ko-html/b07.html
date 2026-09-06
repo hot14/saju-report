@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - Neo-Brutalist Landing Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#FF4D00", 
+            "on-secondary-fixed-variant": "#930008",
+            "on-secondary-container": "#5c0003",
+            "surface-container": "#eeeeee",
+            "primary": "#111111", 
+            "on-tertiary-fixed-variant": "#464747",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#111111", 
+            "on-primary-fixed-variant": "#474646",
+            "outline": "#111111", 
+            "on-tertiary-container": "#848484",
+            "inverse-on-surface": "#f0f1f1",
+            "tertiary-fixed": "#e3e2e2",
+            "on-surface-variant": "#444748",
+            "on-primary-fixed": "#1c1b1b",
+            "secondary-fixed-dim": "#ffb4aa",
+            "on-primary-container": "#858383",
+            "tertiary": "#000000",
+            "secondary-fixed": "#ffdad5",
+            "error": "#ba1a1a",
+            "on-secondary": "#111111", 
+            "inverse-surface": "#2f3131",
+            "background": "#F4F1EC", 
+            "inverse-primary": "#c8c6c5",
+            "surface-tint": "#5f5e5e",
+            "on-background": "#111111", 
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed": "#1b1c1c",
+            "on-error": "#ffffff",
+            "surface-container-highest": "#e2e2e2",
+            "tertiary-fixed-dim": "#c7c6c6",
+            "surface-variant": "#F4F1EC", 
+            "surface-bright": "#F4F1EC", 
+            "surface": "#F4F1EC", 
+            "primary-fixed": "#e5e2e1",
+            "on-secondary-fixed": "#410001",
+            "surface-container-low": "#f3f3f4",
+            "primary-container": "#111111", 
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "surface-dim": "#dadada",
+            "tertiary-container": "#1b1c1c",
+            "on-error-container": "#93000a",
+            "surface-container-high": "#e8e8e8",
+            "secondary-container": "#FF4D00", 
+            "primary-fixed-dim": "#c8c6c5",
+            "outline-variant": "#111111" 
+          },
+          "borderRadius": {
+            "DEFAULT": "0px",
+            "lg": "0px",
+            "xl": "0px",
+            "full": "0px"
+          },
+          "spacing": {
+            "margin-desktop": "64px",
+            "gutter": "16px",
+            "baseline": "4px",
+            "column-gap": "24px",
+            "margin-mobile": "20px"
+          },
+          "fontFamily": {
+            "label-caps": ["'Noto Sans KR'"],
+            "display-lg": ["'Black Han Sans'"],
+            "body-sm": ["'Noto Sans KR'"],
+            "headline-md": ["'Black Han Sans'"],
+            "body-lg": ["'Noto Sans KR'"],
+            "display-lg-mobile": ["'Black Han Sans'"],
+            "data-mono": ["'JetBrains Mono'"]
+          },
+          "fontSize": {
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700"}],
+            "display-lg": ["72px", {"lineHeight": "64px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "headline-md": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+            "display-lg-mobile": ["40px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+            "data-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "-0.02em", "fontWeight": "500"}]
+          },
+          "boxShadow": {
+            "brutal": "8px 8px 0px 0px #111111",
+            "brutal-sm": "4px 4px 0px 0px #111111",
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #F4F1EC;
+      color: #111111;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6, .display, .headline {
+      font-family: 'Black Han Sans', sans-serif;
+    }
+    .brutal-border {
+      border: 2px solid #111111;
+    }
+    .brutal-shadow {
+      box-shadow: 8px 8px 0px 0px #111111;
+    }
+    .rotate-1 { transform: rotate(1deg); }
+    .rotate-minus-1 { transform: rotate(-1deg); }
+    .rotate-2 { transform: rotate(2deg); }
+    .rotate-minus-2 { transform: rotate(-2deg); }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col antialiased pb-24 md:pb-0">
+<!-- TopAppBar (From JSON) -->
+<header class="bg-surface border-b border-outline-variant opacity-100 flex justify-between items-center px-margin-mobile h-16 z-50 fixed top-0 w-full brutal-border brutal-shadow">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl font-bold cursor-pointer hover:text-secondary transition-colors duration-300" data-icon="menu">menu</span>
+</div>
+<div class="font-display-lg-mobile text-display-lg-mobile text-primary tracking-tighter">SAJU</div>
+<div class="font-label-caps text-label-caps text-primary cursor-pointer hover:text-secondary transition-colors duration-300 font-bold">RU</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-24 px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto w-full flex flex-col gap-12 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="flex flex-col gap-6 mt-8">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg leading-tight uppercase">
+        당신은 거울 호수입니다.
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg brutal-border p-4 bg-white rotate-minus-1">
+        짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+      </p>
+<button class="brutal-border brutal-shadow bg-secondary text-primary font-headline-md text-headline-md-mobile py-4 px-8 uppercase hover:bg-surface hover:text-secondary transition-colors duration-200 self-start mt-4 rotate-1">
+        내 패턴 읽기
+      </button>
+</section>
+<hr class="border-t-2 border-primary"/>
+<!-- Badge Strip Section -->
+<section class="flex flex-col gap-8">
+<div class="flex flex-col gap-2">
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md uppercase">열 가지 형태</h2>
+<p class="font-body-sm text-body-sm bg-primary text-on-primary inline-block px-2 py-1 self-start">생년월일시가 열 가지 형태 중 하나를 정합니다.</p>
+</div>
+<div class="flex flex-wrap gap-6 justify-center md:justify-start mt-4">
+<div class="brutal-border brutal-shadow bg-white p-6 rotate-2 flex flex-col items-center justify-center w-40 h-40">
+<span class="font-display-lg-mobile text-display-lg-mobile text-secondary">壬</span>
+<span class="font-label-caps text-label-caps mt-2 text-center">거울 호수</span>
+</div>
+<div class="brutal-border brutal-shadow bg-white p-6 rotate-minus-2 flex flex-col items-center justify-center w-40 h-40">
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary">甲</span>
+<span class="font-label-caps text-label-caps mt-2 text-center">깊은 심목</span>
+</div>
+<div class="brutal-border brutal-shadow bg-white p-6 rotate-1 flex flex-col items-center justify-center w-40 h-40">
+<span class="font-display-lg-mobile text-display-lg-mobile text-secondary">丙</span>
+<span class="font-label-caps text-label-caps mt-2 text-center">정오 표식</span>
+</div>
+</div>
+</section>
+<hr class="border-t-2 border-primary"/>
+<!-- Result Card Preview -->
+<section class="flex flex-col gap-8">
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md uppercase text-center md:text-left">결과는 단 하나의 카드로 남습니다.</h2>
+<div class="relative max-w-md mx-auto md:mx-0 w-full mt-4">
+<!-- Background Card (Stack effect) -->
+<div class="absolute inset-0 brutal-border bg-surface-container-high translate-x-4 translate-y-4 rotate-2"></div>
+<!-- Foreground Card -->
+<div class="relative brutal-border brutal-shadow bg-white p-6 rotate-minus-1 flex flex-col gap-6">
+<div class="flex justify-between items-start border-b-2 border-primary pb-4">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-1">SERIAL</span>
+<span class="font-data-mono text-data-mono text-lg font-bold">9A-2B-X1</span>
+</div>
+<div class="text-right">
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-1">TYPE</span>
+<span class="font-label-caps text-label-caps bg-primary text-on-primary px-2 py-1">WATER</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="brutal-border p-3 text-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-2">ELEMENT</span>
+<span class="font-headline-md text-headline-md-mobile">물</span>
+</div>
+<div class="brutal-border p-3 text-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-2">POLARITY</span>
+<span class="font-headline-md text-headline-md-mobile">양</span>
+</div>
+</div>
+<div class="brutal-border bg-surface p-4 text-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-2">PATTERN</span>
+<span class="font-display-lg-mobile text-display-lg-mobile">거울 호수</span>
+</div>
+<div class="mt-2 border-t-2 border-primary pt-4 flex flex-col items-center">
+<div class="flex gap-1 h-8 w-full justify-center">
+<div class="w-1 bg-primary h-full"></div>
+<div class="w-2 bg-primary h-full"></div>
+<div class="w-1 bg-primary h-full"></div>
+<div class="w-3 bg-primary h-full"></div>
+<div class="w-1 bg-primary h-full"></div>
+<div class="w-1 bg-primary h-full"></div>
+<div class="w-4 bg-primary h-full"></div>
+<div class="w-2 bg-primary h-full"></div>
+<div class="w-1 bg-primary h-full"></div>
+<div class="w-2 bg-primary h-full"></div>
+<div class="w-3 bg-primary h-full"></div>
+<div class="w-1 bg-primary h-full"></div>
+<div class="w-1 bg-primary h-full"></div>
+<div class="w-2 bg-primary h-full"></div>
+</div>
+<span class="font-data-mono text-[10px] mt-1 tracking-widest text-on-surface-variant">4093928173645</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing -->
+<section class="flex flex-col items-center gap-8 py-16 text-center">
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md uppercase max-w-md">당신의 리딩은 여덟 글자로 시작됩니다.</h2>
+<button class="brutal-border brutal-shadow bg-secondary text-primary font-headline-md text-headline-md-mobile py-4 px-8 uppercase hover:bg-surface hover:text-secondary transition-colors duration-200">
+        내 패턴 읽기
+      </button>
+</section>
+</main>
+<!-- Footer (From JSON) -->
+<footer class="bg-surface-container-low border-t-2 border-primary w-full flex flex-col items-center gap-6 py-12 px-margin-mobile text-center mt-12 mb-20 md:mb-0">
+<div class="font-display-lg text-display-lg-mobile tracking-tighter">SAJU</div>
+<div class="font-body-md text-body-md text-on-surface-variant max-w-lg brutal-border bg-white p-4">
+      SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.
+      <br/><br/>
+      © 2024 Saju. 모든 권리 보유.
+    </div>
+<div class="flex flex-wrap justify-center gap-4 mt-4 font-label-caps text-label-caps">
+<a class="text-primary hover:text-secondary hover:bg-primary hover:text-on-primary px-2 py-1 transition-colors border border-transparent hover:border-primary" href="#">Конфиденциальность</a>
+<a class="text-primary hover:text-secondary hover:bg-primary hover:text-on-primary px-2 py-1 transition-colors border border-transparent hover:border-primary" href="#">Условия использования</a>
+<a class="text-primary hover:text-secondary hover:bg-primary hover:text-on-primary px-2 py-1 transition-colors border border-transparent hover:border-primary" href="#">Безопасность платежей</a>
+</div>
+</footer>
+<!-- BottomNavBar (From JSON) - Mobile Only -->
+<nav class="bg-surface border-t-2 border-primary flex justify-around items-center h-20 pb-safe px-4 fixed bottom-0 w-full z-50 md:hidden brutal-border brutal-shadow">
+<div class="flex flex-col items-center justify-center text-primary border-t-4 border-secondary pt-2 px-4 cursor-pointer hover:text-secondary transition-all duration-200 ease-in-out">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="home_max">home_max</span>
+<span class="font-label-caps text-label-caps">Главная</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 pt-2 px-4 cursor-pointer hover:text-primary transition-all duration-200 ease-in-out hover:opacity-100">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-caps text-label-caps">Судьба</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 pt-2 px-4 cursor-pointer hover:text-primary transition-all duration-200 ease-in-out hover:opacity-100">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-caps text-label-caps">Чат</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 pt-2 px-4 cursor-pointer hover:text-primary transition-all duration-200 ease-in-out hover:opacity-100">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="person">person</span>
+<span class="font-label-caps text-label-caps">Профиль</span>
+</div>
+</nav>
+</body></html>

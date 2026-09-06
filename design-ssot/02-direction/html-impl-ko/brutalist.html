@@ -1,61 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=390, initial-scale=1">
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - 당신은 거울 호수입니다</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&amp;family=IBM+Plex+Mono:wght@400;600&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "saju-bg": "#F4F1EC",
+                        "saju-ink": "#111111",
+                        "saju-accent": "#FF4D00",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary": "#FF4D00",
+                        "on-surface": "#111111",
+                        "on-background": "#111111",
+                        "surface-tint": "#5f5e5e",
+                        "on-secondary-fixed": "#410001",
+                        "secondary-fixed": "#ffdad5",
+                        "secondary-container": "#fe5549",
+                        "primary": "#111111",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "error": "#ba1a1a",
+                        "surface": "#F4F1EC",
+                        "background": "#F4F1EC",
+                        "primary-fixed": "#e5e2e1",
+                        "on-tertiary-container": "#848484",
+                        "tertiary": "#111111",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "outline": "#111111",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "tertiary-fixed": "#e3e2e2",
+                        "primary-container": "#111111",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary-fixed-dim": "#ffb4aa",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#474646",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-container": "#858383",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#930008",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#c8c6c5",
+                        "surface-bright": "#F4F1EC",
+                        "on-surface-variant": "#444748",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "surface-variant": "#e2e2e2",
+                        "surface-dim": "#dadada",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#111111",
+                        "on-tertiary-fixed": "#111111",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#111111",
+                        "on-secondary-container": "#5c0003"
+                    },
+                    boxShadow: {
+                        'neo': '6px 6px 0px 0px #111111',
+                        'neo-sm': '4px 4px 0px 0px #111111',
+                    },
+                    fontFamily: {
+                        "display": ["'Black Han Sans'", "sans-serif"],
+                        "mono": ["'IBM Plex Mono'", "monospace"],
+                        "body": ["'Noto Sans KR'", "sans-serif"],
+                        "label-caps": ["'IBM Plex Mono'", "monospace"],
+                        "display-lg": ["'Black Han Sans'", "sans-serif"],
+                        "body-lg": ["'Noto Sans KR'", "sans-serif"],
+                        "body-sm": ["'Noto Sans KR'", "sans-serif"],
+                        "headline-md": ["'Black Han Sans'", "sans-serif"],
+                        "display-lg-mobile": ["'Black Han Sans'", "sans-serif"],
+                        "data-mono": ["'IBM Plex Mono'", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{width:390px;background:#F4F1EC;color:#111;font-family:'Black Han Sans','Archivo Black','Noto Sans KR','Apple SD Gothic Neo','Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}
-.top{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:3px solid #111}
-.wordmark{font-weight:900;font-size:18px;letter-spacing:-.02em}
-.no{font-family:'Courier New',monospace;font-size:10px;color:#666}
-.hero{padding:36px 20px 28px;border-bottom:3px solid #111}
-.stamp{display:inline-block;font-family:'Courier New',monospace;font-size:10px;border:2px solid #111;padding:3px 10px;transform:rotate(-2deg);margin-bottom:16px}
-h1{font-size:52px;font-weight:900;letter-spacing:-.03em;line-height:.95;text-transform:uppercase}
-h1 .orange{color:#FF4D00}
-.sub{font-family:'Noto Sans KR','Apple SD Gothic Neo','Helvetica Neue',sans-serif;font-size:14px;color:#555;margin-top:12px;line-height:1.6}
-.cta{display:inline-block;margin-top:24px;background:#FF4D00;color:#fff;padding:16px 36px;font-size:15px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;border:3px solid #111;box-shadow:6px 6px 0 #111;cursor:pointer}
-.cta:active{transform:translate(3px,3px);box-shadow:3px 3px 0 #111}
-.badges{padding:28px 20px;border-bottom:3px solid #111}
-.badges .label{font-family:'Courier New',monospace;font-size:11px;letter-spacing:.15em;font-weight:700;margin-bottom:14px}
-.badge-row{display:flex;gap:12px}
-.badge{flex:1;border:3px solid #111;background:#fff;padding:14px 8px;text-align:center;box-shadow:4px 4px 0 #111}
-.badge .hanja{font-size:30px}
-.badge .name{font-family:'Courier New',monospace;font-size:9px;letter-spacing:.1em;margin-top:8px;font-weight:700}
-.card-preview{padding:28px 20px;border-bottom:3px solid #111}
-.card-preview .head{font-size:22px;font-weight:900;text-transform:uppercase;letter-spacing:-.01em}
-.card-preview .cap{font-size:13px;color:#666;margin-top:4px;font-family:'Noto Sans KR','Apple SD Gothic Neo','Helvetica Neue',sans-serif}
-.closing{padding:36px 20px;text-align:center;background:#111;color:#F4F1EC}
-.closing h2{font-size:28px;font-weight:900;text-transform:uppercase;letter-spacing:-.02em}
-.closing .cta2{display:inline-block;margin-top:18px;background:#FF4D00;color:#fff;padding:14px 32px;font-size:14px;font-weight:900;text-transform:uppercase;border:2px solid #F4F1EC}
-.foot{padding:16px 20px;font-size:10.5px;color:#888;border-top:3px solid #111;font-family:'Courier New',monospace}
-</style>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600;900&family=Gowun+Dodum&family=Black+Han+Sans&display=swap" rel="stylesheet"/>
-</head>
-<body>
-<div class="top"><div class="wordmark">SAJU.</div><div class="no">NO. 000847</div></div>
-<div class="hero">
-  <div class="stamp">SAJU READING NO.1</div>
-  <h1>You are<br><span class="orange">Mirror</span><br>Lake.</h1>
-  <div class="sub">짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.</div>
-  <button class="cta">내 패턴 읽기</button>
+        body { background-color: #F4F1EC; color: #111111; }
+        .neo-border { border: 2px solid #111111; }
+        .neo-button { transition: transform 0.1s, box-shadow 0.1s; }
+        .neo-button:active { transform: translate(4px, 4px); box-shadow: 2px 2px 0px 0px #111111; }
+        
+        /* Barcode CSS Pattern */
+        .barcode-strip {
+            background-image: repeating-linear-gradient(
+                90deg,
+                #111111,
+                #111111 2px,
+                transparent 2px,
+                transparent 6px,
+                #111111 6px,
+                #111111 9px,
+                transparent 9px,
+                transparent 12px
+            );
+            height: 40px;
+            width: 100%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body min-h-screen flex flex-col relative pb-20 md:pb-0">
+<!-- JSON: TopAppBar -->
+<header class="bg-surface dark:bg-surface text-primary dark:text-primary w-full top-0 z-50 border-b-2 border-primary dark:border-primary flex justify-between items-center px-margin-mobile py-4 sticky">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl font-bold">grid_view</span>
 </div>
-<div class="badges">
-  <div class="label">열 가지 형태</div>
-  <div class="badge-row">
-    <div class="badge"><div class="hanja">壬</div><div class="name">거울 호수</div></div>
-    <div class="badge"><div class="hanja">甲</div><div class="name">깊은 심목</div></div>
-    <div class="badge"><div class="hanja">丙</div><div class="name">정오 표식</div></div>
-  </div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile uppercase tracking-tighter text-primary dark:text-primary leading-none" style="font-family: 'Black Han Sans', sans-serif;">SAJU</h1>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl">account_circle</span>
 </div>
-<div class="card-preview">
-  <div class="head">결과는 단 하나의 카드로 남습니다.</div>
-  <div class="cap">배지와 한 줄이 그 자체로 의미를 전달합니다.</div>
+</header>
+<main class="flex-grow flex flex-col items-center w-full max-w-md mx-auto relative overflow-hidden">
+<!-- Hero Section -->
+<section class="w-full px-5 py-12 flex flex-col relative">
+<!-- Tilted Stamp -->
+<div class="absolute top-4 right-4 transform rotate-12 bg-surface neo-border px-2 py-1 shadow-neo-sm z-10 font-mono text-sm font-bold tracking-tighter text-primary">
+                [일련: ML-0847]
+            </div>
+<h2 class="font-display text-5xl leading-tight mb-6 text-primary tracking-tight">당신은<br/>거울 호수입니다.</h2>
+<p class="font-body text-lg leading-relaxed mb-8 text-primary font-medium border-l-2 border-primary pl-4">
+                짧은 영상이 오늘의 여덟 글자를 보여줍니다. SAJU는 그 글자가 만드는 평생의 패턴을 읽습니다.
+            </p>
+<button class="w-full bg-secondary text-on-secondary neo-border shadow-neo py-4 text-xl font-display uppercase tracking-widest neo-button mb-10">
+                내 패턴 읽기
+            </button>
+<div class="barcode-strip neo-border w-full opacity-80 mb-6"></div>
+</section>
+<!-- Badge Strip Section -->
+<section class="w-full px-5 py-10 bg-surface border-t-2 border-b-2 border-primary flex flex-col">
+<div class="mb-6">
+<h3 class="font-display text-3xl mb-2 text-primary uppercase">열 가지 형태</h3>
+<p class="font-body text-sm text-primary font-medium">생년월일시가 열 가지 형태 중 하나를 정합니다.</p>
 </div>
-<div class="closing">
-  <h2>Your reading<br>begins with<br>eight letters.</h2>
-  <button class="cta2">내 패턴 읽기</button>
+<div class="flex flex-col gap-4">
+<!-- Badge 1 -->
+<div class="flex items-center justify-between bg-surface neo-border p-4 shadow-neo-sm">
+<span class="font-body font-bold text-lg text-primary">거울 호수</span>
+<span class="font-mono text-2xl font-bold bg-primary text-surface px-3 py-1 neo-border">壬</span>
 </div>
-<div class="foot">SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.</div>
-</body>
-</html>
+<!-- Badge 2 -->
+<div class="flex items-center justify-between bg-surface neo-border p-4 shadow-neo-sm">
+<span class="font-body font-bold text-lg text-primary">깊은 심목</span>
+<span class="font-mono text-2xl font-bold bg-surface text-primary px-3 py-1 neo-border">甲</span>
+</div>
+<!-- Badge 3 -->
+<div class="flex items-center justify-between bg-surface neo-border p-4 shadow-neo-sm">
+<span class="font-body font-bold text-lg text-primary">정오 표식</span>
+<span class="font-mono text-2xl font-bold bg-surface text-primary px-3 py-1 neo-border">丙</span>
+</div>
+</div>
+</section>
+<!-- Card Preview Section -->
+<section class="w-full px-5 py-12 flex flex-col items-center">
+<h3 class="font-display text-2xl mb-8 text-primary text-center w-full pb-4 border-b-2 border-primary">결과는 단 하나의 카드로 남습니다.</h3>
+<div class="w-full bg-surface neo-border shadow-neo p-6 flex flex-col relative aspect-[3/4] max-w-[320px]">
+<div class="absolute top-0 right-0 p-2 font-mono text-xs border-b-2 border-l-2 border-primary">DATA_CARD_V1</div>
+<div class="flex-grow flex flex-col justify-center gap-6 mt-6">
+<div class="flex flex-col border-b-2 border-primary pb-2">
+<span class="font-mono text-xs text-on-surface-variant uppercase mb-1">일련번호</span>
+<span class="font-mono text-lg font-bold">9A-2B-X1</span>
+</div>
+<div class="flex gap-4 border-b-2 border-primary pb-2">
+<div class="flex flex-col flex-1 border-r-2 border-primary">
+<span class="font-mono text-xs text-on-surface-variant uppercase mb-1">오행</span>
+<span class="font-body text-lg font-bold">물</span>
+</div>
+<div class="flex flex-col flex-1">
+<span class="font-mono text-xs text-on-surface-variant uppercase mb-1">음양</span>
+<span class="font-body text-lg font-bold">양</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-mono text-xs text-on-surface-variant uppercase mb-1">주요 패턴</span>
+<span class="font-display text-3xl">거울 호수</span>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t-2 border-primary">
+<div class="barcode-strip h-6 w-1/2 opacity-50"></div>
+</div>
+</div>
+</section>
+<!-- Closing Section -->
+<section class="w-full px-5 py-12 flex flex-col items-center border-t-2 border-primary">
+<h3 class="font-display text-3xl mb-8 text-primary text-center leading-tight">당신의 리딩은<br/>여덟 글자로 시작됩니다.</h3>
+<button class="w-full max-w-[320px] bg-secondary text-on-secondary neo-border shadow-neo py-4 text-xl font-display uppercase tracking-widest neo-button">
+                내 패턴 읽기
+            </button>
+</section>
+</main>
+<!-- JSON: Footer -->
+<footer class="bg-surface-container dark:bg-surface-container text-primary dark:text-primary w-full border-t-2 border-primary dark:border-primary flex flex-col gap-4 px-margin-mobile py-8 mb-16 md:mb-0 mt-auto max-w-md mx-auto">
+<p class="font-body text-xs text-primary mb-2 font-medium">SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.</p>
+<div class="flex flex-wrap gap-x-4 gap-y-2 mb-4">
+<a class="font-mono text-xs font-bold underline hover:text-secondary cursor-pointer" href="#">개인정보처리방침</a>
+<a class="font-mono text-xs font-bold underline hover:text-secondary cursor-pointer" href="#">서비스 이용약관</a>
+</div>
+<p class="font-mono text-xs uppercase font-bold text-on-surface-variant">© 2024 SAJU RESEARCH BUREAU. ALL RIGHTS RESERVED.</p>
+</footer>
+<!-- JSON: BottomNavBar (Mobile Only) -->
+<nav class="bg-surface dark:bg-surface text-primary dark:text-primary font-label-caps text-label-caps fixed bottom-0 w-full z-50 border-t-2 border-primary dark:border-primary flex justify-around items-center h-16 md:hidden">
+<!-- Inactive -->
+<div class="flex flex-col items-center justify-center text-primary dark:text-primary p-2 hover:bg-surface-container-high transition-all active:scale-95 w-full h-full cursor-pointer">
+<span class="material-symbols-outlined mb-1">analytics</span>
+<span>ANALYSIS</span>
+</div>
+<!-- Active -->
+<div class="flex flex-col items-center justify-center bg-secondary dark:bg-secondary text-on-secondary p-2 hover:bg-surface-container-high transition-all active:scale-95 w-full h-full cursor-pointer neo-border border-y-0 border-r-2 border-l-2 border-primary border-t-0">
+<span class="material-symbols-outlined mb-1">database</span>
+<span>ELEMENTS</span>
+</div>
+<!-- Inactive -->
+<div class="flex flex-col items-center justify-center text-primary dark:text-primary p-2 hover:bg-surface-container-high transition-all active:scale-95 w-full h-full cursor-pointer neo-border border-y-0 border-r-2 border-l-0 border-primary border-t-0">
+<span class="material-symbols-outlined mb-1">swipe_left_alt</span>
+<span>DECK</span>
+</div>
+<!-- Inactive -->
+<div class="flex flex-col items-center justify-center text-primary dark:text-primary p-2 hover:bg-surface-container-high transition-all active:scale-95 w-full h-full cursor-pointer">
+<span class="material-symbols-outlined mb-1">person</span>
+<span>PROFILE</span>
+</div>
+</nav>
+</body></html>
