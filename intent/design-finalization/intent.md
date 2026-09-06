@@ -1,6 +1,6 @@
 # Intent: 디자인 방향 확정 및 잔여 화면 확장
 Author: hot14 (프로젝트 오너) + Claude
-Status: approved
+Status: completed
 Date: 2026-09-06
 Related Ticket: [보류 — 방향 확정 후 wayfinder 맵 차팅 가능]
 
@@ -34,3 +34,10 @@ Related Ticket: [보류 — 방향 확정 후 wayfinder 맵 차팅 가능]
 - 어떤 컨셉으로 확정하는가? (44장 중 1개 — 오너 결정 필요, Gate 1의 실질 내용)
 - 잔여 화면의 정확한 목록과 우선순위는? (온보딩/입력/결과/공유카드 외 추가?)
 - OpenDesign 이관 시점: 잔여 화면 완결 후인가, 병렬인가?
+
+## 7. Gate 4-5 완료 기록 (2026-09-06)
+
+- 4화면 생성 · 렌더 완료: `final-swiss-ko/{onboarding,analyzing,result,share}.{html,png}` — 780px 네이티브
+- 인수 기준 전부 충족: 카피덱 정확(grep) · 도판 체계(02~05) · CI evals success(run 후) · 참조 깨짐 0
+- 리뷰: `review-final-swiss-ko.html` · 허브 링크 추가 · 웹 200 확인
+- 커밋: ae12eb2 이후 완료 커밋
