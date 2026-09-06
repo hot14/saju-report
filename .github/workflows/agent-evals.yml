@@ -1,0 +1,87 @@
+name: agent-evals
+
+# AI-Native SDLC Stage 4 — 연속 평가
+# 코드 커버리지가 아닌, 실무 태스크 기반 검증을 CI에서 실행한다.
+# 이 리포(디자인 SSOT + intent 체인)에 맞는 태스크 평가:
+#   eval 1) 문서 무결성 — 전체 페이지 참조(링크·이미지) 깨짐 검사
+#   eval 2) intent 게이트 — 폴더당 1세트 원칙 + Status 필드 유효성
+#   eval 3) 브랜드 법 — 오컬트 어휘·em-dash 유무 (허브·카피덱·intent)
+
+on:
+  push:
+    branches: [design-ssot, main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  evals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Eval 1 — 문서 무결성 (참조 깨짐 0)
+        run: |
+          python3 - <<'PY'
+          import re, os, glob, sys
+          pages = sorted(set(glob.glob("index.html") + glob.glob("design-ssot/02-direction/review-*.html")))
+          broken = []
+          for p in pages:
+              s = open(p, encoding="utf-8", errors="replace").read()
+              base = os.path.dirname(p)
+              for m in re.findall(r'(?:src|href)="([^"#]+)"', s):
+                  if m.startswith(("http", "mailto", "data:", "javascript")): continue
+                  ref = m.split("?")[0].split("#")[0]
+                  if not ref: continue
+                  if not os.path.exists(os.path.normpath(os.path.join(base, ref))):
+                      broken.append(f"{p} -> {m}")
+          print(f"pages={len(pages)} broken={len(broken)}")
+          for b in broken: print(" ", b)
+          sys.exit(1 if broken else 0)
+          PY
+
+      - name: Eval 2 — intent 게이트 (폴더당 1세트 + Status 유효)
+        run: |
+          python3 - <<'PY'
+          import re, os, glob, sys
+          errors = []
+          for d in sorted(glob.glob("intent/*/")):
+              if d == "intent/templates/": continue
+              slug = os.path.basename(d.rstrip("/"))
+              for f in ("intent.md", "spec.md", "plan.md"):
+                  # plan.md/spec.md는 빌드 단계 전까지 없을 수 있음 — intent.md만 필수
+                  if f == "intent.md" and not os.path.exists(d + f):
+                      errors.append(f"{d}: intent.md 누락")
+              cnt = {f: len(glob.glob(d + f)) for f in ("intent.md", "spec.md", "plan.md")}
+              for f, n in cnt.items():
+                  if n > 1: errors.append(f"{d}: {f} {n}개 — 폴더당 1세트 위반")
+              im = os.path.join(d, "intent.md")
+              if os.path.exists(im):
+                  head = open(im, encoding="utf-8").read()[:600]
+                  m = re.search(r"Status:\s*(draft|approved|completed)", head)
+                  if not m: errors.append(f"{im}: Status 필드 없음/무효")
+          print(f"errors={len(errors)}")
+          for e in errors: print(" ", e)
+          sys.exit(1 if errors else 0)
+          PY
+
+      - name: Eval 3 — 브랜드 법 (시안 렌더 산출물 한정: 오컬트 어휘 · em-dash 0)
+        run: |
+          python3 - <<'PY'
+          import re, glob, sys
+          banned = re.compile(r"(fortune-telling|destiny|점성술|타로)", re.I)
+          emdash = re.compile(r"—")
+          targets = (glob.glob("design-ssot/02-direction/taste-20-html/*.html")
+                     + glob.glob("design-ssot/02-direction/taste-20-ko-html/*.html")
+                     + glob.glob("design-ssot/02-direction/brutal-20-html/bt*.html")
+                     + glob.glob("design-ssot/02-direction/brutal-20-ko-html/*.html")
+                     + glob.glob("design-ssot/02-direction/html-impl-ko/*.html"))
+          errors = []
+          for p in targets:
+              s = open(p, encoding="utf-8", errors="replace").read()
+              text = re.sub(r"<style.*?</style>|<script.*?</script>|<[^>]+>", " ", s, flags=re.S)
+              if banned.search(text): errors.append(f"{p}: 금지 어휘")
+              if emdash.search(text): errors.append(f"{p}: em-dash")
+          print(f"targets={len(targets)} errors={len(errors)}")
+          for e in errors[:20]: print(" ", e)
+          sys.exit(1 if errors else 0)
+          PY
