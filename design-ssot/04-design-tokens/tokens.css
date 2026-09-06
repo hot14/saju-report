@@ -1,0 +1,76 @@
+/* ============================================================
+   K-Saju Service · Design Tokens v0.2 "Nocturne Obang"
+   Source of truth: 04-design-tokens/DESIGN.md
+   Generated: 2026-09-04 · 사용: 웹 구현 + Stitch 검수 기준
+   ============================================================ */
+
+:root {
+  /* --- Neutrals (chrome 전용) --- */
+  --ink-base: #141416;        /* 페이지 배경 (다크 기본) */
+  --ink-base-2: #1B1B1E;      /* 페이지 배경 그라데이션 하단 */
+  --ink-surface: #202024;     /* 카드·섹션 */
+  --ink-surface-2: #26262B;   /* 호버 카드 */
+  --hanji: #F5F1E6;           /* 본문 텍스트 · 라이트 모드 베이스 */
+  --hanji-muted: #A8A29A;     /* 서브 텍스트 · 메타 */
+  --line-dark: rgba(245, 241, 230, 0.12);  /* 다크 헤어라인 1.1px */
+
+  /* --- 라이트 읽기 모드 (유료 결과 전용 토글) --- */
+  --paper: #FAF7F2;           /* 한지 배경 (구 v0.1 베이스) */
+  --paper-card: #FFFFFF;
+  --line-light: #D8D2C7;      /* 흐린 회색선 */
+  --ink-text: #2A2724;        /* 먹 텍스트 */
+  --ink-body: #57514A;
+  --ink-mute: #A39B8E;
+
+  /* --- Obang (다크 웹 조정) : 배지·도트·시그니처 전용 --- */
+  --wood:  #2E5A87;           /* 木 청 */
+  --fire:  #B33B24;           /* 火 적 */
+  --earth: #C9A227;           /* 土 황·금박 → CTA·시그니처 */
+  --metal: #C0C6CD;           /* 金 백금 */
+  --water: #3B4A6B;           /* 水 흑청 */
+
+  /* --- 보조 천간 팔레트 (물상 배지 확장용, 텍스트 사용 금지) --- */
+  --gapja: #2F6B54;  --eul: #7CC2A6;   --byeong: #C2543D; --jeong: #E5A18C;
+  --mu:    #A07C3C;  --gi: #DCBE84;    --gyeong: #5E6E78; --sin: #AFBBC2;
+  --im:    #2C4463;  --gae: #7B9BBD;
+
+  /* --- Typography --- */
+  --font-display: "Noto Serif KR", "Cinzel", serif;   /* 히어로·카드 */
+  --font-body: "MaruBuri", "Cormorant Garamond", serif; /* 리포트 본문 */
+  --font-ui: "Pretendard", "IBM Plex Sans KR", sans-serif; /* UI 보조 */
+  --font-num: "Italiana", "IBM Plex Mono", serif;     /* 대형 숫자·CTA */
+  --font-mono: "IBM Plex Mono", monospace;            /* 데이터·근거 태그 */
+
+  --fs-hero: clamp(34px, 6vw, 64px);
+  --fs-h2: clamp(24px, 4vw, 36px);
+  --fs-body: 16px;            /* 모바일 기준, 데스크톱 17px */
+  --lh-body: 1.8;
+  --measure: 640px;           /* 리딩 컬럼 폭 */
+  --tracking-display: -0.01em;
+
+  /* --- Space & Shape --- */
+  --space-unit: 8px;
+  --r-card: 14px;
+  --r-badge: 999px;
+  --r-card-lg: 20px;
+  --border-hair: 1.1px;
+
+  /* --- Elevation (절제) --- */
+  --shadow-card: 0 14px 38px rgba(0, 0, 0, 0.36);
+  --shadow-whisper: 0 40px 80px rgba(0, 0, 0, 0.05);
+  --grain-opacity: 0.04;      /* 한지 그레인 3~6% */
+
+  /* --- Motion (결정론) --- */
+  --t-fast: 200ms;
+  --t-base: 300ms;
+  --t-reveal: 600ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --calc-stages: 4;           /* 계산 중 조립 단계 (스킵 가능) */
+}
+
+/* 사용 규칙 요약 (위반 = 빌드 실패)
+   1. 오행 5색·천간 10색은 배지·도트·시그니처·오브제에만 사용. 텍스트 색 금지.
+   2. --earth(골드)는 CTA fill과 공유 카드 시그니처에만.
+   3. 순검정 #000, 순백 #fff 전면 금지 (다크: --ink-base, 라이트: --paper).
+   4. 글로우는 공유 카드 시그니처에 한정. 나머지 전환은 200~300ms ease-out.
+   5. 가격은 변수 처리 — 하드코딩 금지. */
