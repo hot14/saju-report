@@ -1101,6 +1101,53 @@
    ]
   },
   {
+   "dir": "kpop-competitors",
+   "query": "K-pop 사주 직접 경쟁 (2026-09-05 확대 정찰)",
+   "count": 8,
+   "entries": [
+    {
+     "file": "idolsaju-01-top.png",
+     "source": null,
+     "bytes": 0
+    },
+    {
+     "file": "idolsaju-02-mid.png",
+     "source": null,
+     "bytes": 0
+    },
+    {
+     "file": "sajufromseoul-01-top.png",
+     "source": null,
+     "bytes": 0
+    },
+    {
+     "file": "sajufromseoul-02-mid.png",
+     "source": null,
+     "bytes": 0
+    },
+    {
+     "file": "jayinseoul-01-top.png",
+     "source": null,
+     "bytes": 0
+    },
+    {
+     "file": "jayinseoul-02-mid.png",
+     "source": null,
+     "bytes": 0
+    },
+    {
+     "file": "sajumuse-01-top.png",
+     "source": null,
+     "bytes": 0
+    },
+    {
+     "file": "sajumuse-02-mid.png",
+     "source": null,
+     "bytes": 0
+    }
+   ]
+  },
+  {
    "dir": "trend-galleries",
    "query": "트렌드 갤러리",
    "count": 15,

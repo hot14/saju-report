@@ -37,7 +37,7 @@ design-ssot/
 └── raw/            pinterest_*.json (수집 매니페스트: 이미지 URL + 핀 링크)
 ```
 
-이미지 카테고리 16종 291건: astrology_app_ui · tarot_app_ui · mystic_website · celestial_branding · korean_traditional_pattern · minhwa_art · saju_design · personality_app_ui · share_card_design · editorial_serif_web · luxury_dark_landing · competitors(사이트+앱스토어 54건) · ink-wash(라이선스) · ink-illustration · typography(스펙imen 16종) · trend-galleries
+이미지 카테고리 17종 299건 (kpop-competitors 추가): astrology_app_ui · tarot_app_ui · mystic_website · celestial_branding · korean_traditional_pattern · minhwa_art · saju_design · personality_app_ui · share_card_design · editorial_serif_web · luxury_dark_landing · competitors(사이트+앱스토어 54건) · ink-wash(라이선스) · ink-illustration · typography(스펙imen 16종) · trend-galleries
 
 ## 운용 규칙 (SSOT 유지 조건)
 
@@ -48,6 +48,7 @@ design-ssot/
 
 ## 갱신 이력
 
+- v0.3 (2026-09-05): K-pop 사주 니치 확대 정찰(idolsaju·sajufromseoul·jayinseoul·sajumuse·sajuatelier - jayinseoul 최근접 위협). stitch-prompts v0.2(다크) 재작성, tokens.css 코드화, 스타일 봉인 시트(style-seal.md) 신설, 레퍼런스 299건.
 - v0.2 (2026-09-04 심야): Stitch 3안 검증으로 Nocturne Obang 확정 반영. DESIGN.md v0.2 재작성, 경쟁사 실측 보강(혼빛 CSS 해석·포스텔러·사주아이), 오염 파일 정제(에러페이지·게이트페이지 6건 삭제·재캡처), 앱스토어 스크린샷 30컷·먹선 일러스트 14컷·타입 스펙imen 3종 추가, 통합 대시보드(index.html) 구축.
 
 ## 현재 상태와 다음 액션
