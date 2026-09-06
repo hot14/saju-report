@@ -7,7 +7,8 @@
 
 | 슬러그 | 제목 | 상태 | 게이트 |
 |---|---|---|---|
-| [design-finalization](design-finalization/intent.md) | 디자인 방향 확정 및 잔여 화면 확장 | `completed` | 전 게이트 통과 · 4화면 완결 |
+| [design-finalization](design-finalization/intent.md) | 디자인 방향 확정 및 잔여 화면 확장 | `completed` | 전 게이트 통과 · 6화면 완결 |
+| [result-report](result-report/intent.md) | 결과 상세 리포트 화면 | `completed` | 리포트 + 형태 도감 2화면 완결 |
 
 (새 intent 추가 시 이 표에 한 줄 추가)
 

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - 열 가지 형태</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Noto+Serif+KR:wght@900&amp;family=Noto+Sans+KR:wght@300;400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-container": "#858383",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-surface": "#111111", /* Adjusted for Ink Black */
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#930008",
+                        "inverse-surface": "#2f3131",
+                        "outline-variant": "#c4c7c7",
+                        "on-secondary-container": "#5c0003",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "tertiary-container": "#1b1c1c",
+                        "surface-container": "#eeeeee",
+                        "outline": "#e5e5e5", /* Subtle gray for grid lines */
+                        "on-tertiary-container": "#848484",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#ffb4aa",
+                        "tertiary": "#000000",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffdad5",
+                        "primary": "#111111", /* Ink Black */
+                        "secondary-container": "#fe5549",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-primary": "#c8c6c5",
+                        "surface-container-low": "#f3f3f4",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#5f5e5e",
+                        "surface-dim": "#dadada",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#111111", /* Ink Black */
+                        "tertiary-fixed": "#e3e2e2",
+                        "surface-variant": "#e2e2e2",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-primary": "#ffffff",
+                        "background": "#ffffff", /* Pure White */
+                        "surface-container-highest": "#e2e2e2",
+                        "primary-container": "#111111",
+                        "on-secondary-fixed": "#410001",
+                        "surface-bright": "#ffffff",
+                        "surface": "#ffffff", /* Pure White */
+                        "secondary": "#E0311D", /* Accent Red */
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "on-surface-variant": "#111111",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "primary-fixed": "#e5e2e1"
+                    },
+                    fontFamily: {
+                        "data-mono": ["'IBM Plex Mono'", "monospace"],
+                        "serif-kr": ["'Noto Serif KR'", "serif"],
+                        "sans-kr": ["'Noto Sans KR'", "sans-serif"],
+                        "headline-md": ["'Noto Sans KR'", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #ffffff; color: #111111; }
+        .grid-bg {
+            background-size: 100px 100px;
+            background-image: 
+                linear-gradient(to right, #e5e5e5 1px, transparent 1px),
+                linear-gradient(to bottom, #e5e5e5 1px, transparent 1px);
+            background-position: top left;
+        }
+        .hairline-b { border-bottom: 1px solid #e5e5e5; }
+        .hairline-t { border-top: 1px solid #e5e5e5; }
+        .hairline-x { border-left: 1px solid #e5e5e5; border-right: 1px solid #e5e5e5; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen bg-background font-sans-kr grid-bg relative selection:bg-secondary selection:text-white pb-24">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center h-16 px-6 md:px-16 bg-surface border-b border-outline">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-colors duration-150 text-on-surface" data-icon="menu">menu</span>
+</div>
+<div class="font-headline-md text-3xl font-bold tracking-tighter text-primary">
+            SAJU
+        </div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-colors duration-150 text-on-surface" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="pt-24 px-4 sm:px-6 md:px-16 max-w-6xl mx-auto">
+<!-- Editorial Header -->
+<div class="mb-12 pt-8">
+<div class="font-data-mono text-sm tracking-wider text-on-surface uppercase mb-4">도판 07 - 열 가지 형태</div>
+<h1 class="font-serif-kr font-black text-5xl md:text-7xl tracking-tighter leading-tight mb-6">
+                열 가지 형태<span class="text-secondary">.</span>
+</h1>
+<p class="font-sans-kr font-light text-xl md:text-2xl text-on-surface max-w-2xl">
+                생년월일시가 열 가지 형태 중 하나를 정합니다.
+            </p>
+</div>
+<!-- Data Registry Table -->
+<div class="border-t border-outline border-l border-r bg-surface shadow-sm mb-16">
+<!-- Table Header -->
+<div class="flex flex-row hairline-b bg-surface-container-lowest font-data-mono text-xs uppercase tracking-widest text-on-surface-variant p-4">
+<div class="w-16 shrink-0">기호</div>
+<div class="w-32 shrink-0 border-l border-outline pl-4">형태</div>
+<div class="flex-1 border-l border-outline pl-4">설명</div>
+</div>
+<!-- Rows -->
+<div class="flex flex-col">
+<!-- Row 1 -->
+<div class="flex flex-row items-center hairline-b p-4 hover:bg-surface-container-low transition-colors group">
+<div class="w-16 shrink-0 font-data-mono text-lg font-medium">甲</div>
+<div class="w-32 shrink-0 border-l border-outline pl-4 font-bold text-sm">깊은 심목</div>
+<div class="flex-1 border-l border-outline pl-4 font-light text-sm text-on-surface-variant">수직으로 뻗어나가는 강직한 생명력</div>
+</div>
+<!-- Row 2 -->
+<div class="flex flex-row items-center hairline-b p-4 hover:bg-surface-container-low transition-colors group">
+<div class="w-16 shrink-0 font-data-mono text-lg font-medium">乙</div>
+<div class="w-32 shrink-0 border-l border-outline pl-4 font-bold text-sm">유연 초록</div>
+<div class="flex-1 border-l border-outline pl-4 font-light text-sm text-on-surface-variant">담장을 넘는 유연함과 적응의 힘</div>
+</div>
+<!-- Row 3 -->
+<div class="flex flex-row items-center hairline-b p-4 hover:bg-surface-container-low transition-colors group">
+<div class="w-16 shrink-0 font-data-mono text-lg font-medium">丙</div>
+<div class="w-32 shrink-0 border-l border-outline pl-4 font-bold text-sm">정오 표식</div>
+<div class="flex-1 border-l border-outline pl-4 font-light text-sm text-on-surface-variant">만물을 비추는 태양의 명료한 빛</div>
+</div>
+<!-- Row 4 -->
+<div class="flex flex-row items-center hairline-b p-4 hover:bg-surface-container-low transition-colors group">
+<div class="w-16 shrink-0 font-data-mono text-lg font-medium">丁</div>
+<div class="w-32 shrink-0 border-l border-outline pl-4 font-bold text-sm">등불</div>
+<div class="flex-1 border-l border-outline pl-4 font-light text-sm text-on-surface-variant">어둠 속을 밝히는 따뜻하고 세밀한 시선</div>
+</div>
+<!-- Row 5 -->
+<div class="flex flex-row items-center hairline-b p-4 hover:bg-surface-container-low transition-colors group">
+<div class="w-16 shrink-0 font-data-mono text-lg font-medium">戊</div>
+<div class="w-32 shrink-0 border-l border-outline pl-4 font-bold text-sm">큰 산</div>
+<div class="flex-1 border-l border-outline pl-4 font-light text-sm text-on-surface-variant">변치 않는 무게감으로 중심을 잡는 포용</div>
+</div>
+<!-- Row 6 -->
+<div class="flex flex-row items-center hairline-b p-4 hover:bg-surface-container-low transition-colors group">
+<div class="w-16 shrink-0 font-data-mono text-lg font-medium">己</div>
+<div class="w-32 shrink-0 border-l border-outline pl-4 font-bold text-sm">밭 흙</div>
+<div class="flex-1 border-l border-outline pl-4 font-light text-sm text-on-surface-variant">생명을 기르는 비옥하고 섬세한 대지</div>
+</div>
+<!-- Row 7 -->
+<div class="flex flex-row items-center hairline-b p-4 hover:bg-surface-container-low transition-colors group">
+<div class="w-16 shrink-0 font-data-mono text-lg font-medium">庚</div>
+<div class="w-32 shrink-0 border-l border-outline pl-4 font-bold text-sm">거친 쇠</div>
+<div class="flex-1 border-l border-outline pl-4 font-light text-sm text-on-surface-variant">원석에서 칼이 되는 결단과 변혁</div>
+</div>
+<!-- Row 8 -->
+<div class="flex flex-row items-center hairline-b p-4 hover:bg-surface-container-low transition-colors group">
+<div class="w-16 shrink-0 font-data-mono text-lg font-medium">辛</div>
+<div class="w-32 shrink-0 border-l border-outline pl-4 font-bold text-sm">보석 결</div>
+<div class="flex-1 border-l border-outline pl-4 font-light text-sm text-on-surface-variant">날카로움 끝에 맺히는 고결한 완결성</div>
+</div>
+<!-- Row 9 (HIGHLIGHT) -->
+<div class="flex flex-row items-center p-4 bg-surface border-2 border-secondary relative z-10 shadow-[0_0_0_4px_rgba(255,255,255,1)]">
+<div class="absolute -top-3 left-4 bg-surface px-2 border border-secondary font-data-mono text-[10px] text-secondary font-bold tracking-widest">YOU</div>
+<div class="w-16 shrink-0 font-data-mono text-lg font-bold text-secondary">壬</div>
+<div class="w-32 shrink-0 border-l border-secondary/20 pl-4 font-bold text-sm text-secondary">거울 호수</div>
+<div class="flex-1 border-l border-secondary/20 pl-4 font-medium text-sm text-on-surface">모든 것을 담아내는 깊고 넓은 수용</div>
+</div>
+<!-- Row 10 -->
+<div class="flex flex-row items-center hairline-b p-4 hover:bg-surface-container-low transition-colors group">
+<div class="w-16 shrink-0 font-data-mono text-lg font-medium">癸</div>
+<div class="w-32 shrink-0 border-l border-outline pl-4 font-bold text-sm">이슬</div>
+<div class="flex-1 border-l border-outline pl-4 font-light text-sm text-on-surface-variant">소리 없이 스며들어 생명을 적시는 지혜</div>
+</div>
+</div>
+</div>
+<!-- Bottom CTA -->
+<div class="flex justify-start">
+<button class="bg-primary text-white font-sans-kr font-bold text-sm px-8 py-4 hover:bg-secondary hover:text-white transition-colors duration-200 uppercase tracking-widest border border-primary hover:border-secondary flex items-center gap-2">
+                내 패턴 읽기
+                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Footer from JSON -->
+<footer class="flex flex-col md:flex-row justify-between items-start md:items-center py-8 px-6 md:px-16 gap-4 bg-surface border-t border-outline mt-24 w-full">
+<div class="font-headline-md text-2xl text-primary font-bold">
+            SAJU
+        </div>
+<div class="flex flex-wrap gap-6 font-data-mono text-sm uppercase">
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">METHODOLOGY</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">LEGAL</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">PRIVACY</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">CONTACT</a>
+</div>
+<div class="font-data-mono text-xs text-on-surface-variant uppercase">
+            © 2024 SAJU BUREAU. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>

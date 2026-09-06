@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU Report</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "secondary": "#b7211d",
+                "tertiary": "#000000",
+                "surface-container-high": "#e8e8e8",
+                "on-tertiary-fixed": "#1b1c1c",
+                "on-tertiary-fixed-variant": "#464747",
+                "background": "#f9f9f9",
+                "on-error-container": "#93000a",
+                "error": "#ba1a1a",
+                "on-surface": "#1a1c1c",
+                "secondary-fixed-dim": "#ffb4aa",
+                "on-error": "#ffffff",
+                "primary": "#000000",
+                "on-primary-fixed-variant": "#474646",
+                "primary-fixed-dim": "#c8c6c5",
+                "outline": "#747878",
+                "surface-container-low": "#f3f3f4",
+                "on-tertiary-container": "#848484",
+                "primary-fixed": "#e5e2e1",
+                "surface-bright": "#f9f9f9",
+                "secondary-fixed": "#ffdad5",
+                "error-container": "#ffdad6",
+                "on-primary-fixed": "#1c1b1b",
+                "on-secondary-fixed-variant": "#930008",
+                "on-secondary-container": "#5c0003",
+                "tertiary-container": "#1b1c1c",
+                "on-secondary-fixed": "#410001",
+                "inverse-primary": "#c8c6c5",
+                "on-tertiary": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-highest": "#e2e2e2",
+                "inverse-surface": "#2f3131",
+                "tertiary-fixed-dim": "#c7c6c6",
+                "tertiary-fixed": "#e3e2e2",
+                "surface": "#f9f9f9",
+                "surface-dim": "#dadada",
+                "secondary-container": "#fe5549",
+                "on-surface-variant": "#444748",
+                "outline-variant": "#c4c7c7",
+                "on-primary-container": "#858383",
+                "surface-container": "#eeeeee",
+                "on-background": "#1a1c1c",
+                "surface-tint": "#5f5e5e",
+                "on-secondary": "#ffffff",
+                "on-primary": "#ffffff",
+                "surface-variant": "#e2e2e2",
+                "inverse-on-surface": "#f0f1f1",
+                "primary-container": "#1c1b1b"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "margin-mobile": "20px",
+                "gutter": "16px",
+                "baseline": "4px",
+                "margin-desktop": "64px",
+                "column-gap": "24px"
+              },
+              "fontFamily": {
+                "display-lg": ["Hanken Grotesk"],
+                "body-sm": ["Hanken Grotesk"],
+                "data-mono": ["JetBrains Mono"],
+                "label-caps": ["Hanken Grotesk"],
+                "body-lg": ["Hanken Grotesk"],
+                "headline-md": ["Hanken Grotesk"],
+                "display-lg-mobile": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                "display-lg": ["72px", {"lineHeight": "64px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                "data-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                "headline-md": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "display-lg-mobile": ["40px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Fallback for Korean typography requested by user not in config */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Noto+Serif+KR:wght@900&family=IBM+Plex+Mono:wght@400;500&display=swap');
+        
+        .font-ko-serif { font-family: 'Noto Serif KR', serif; font-weight: 900; }
+        .font-ko-sans { font-family: 'Noto Sans KR', sans-serif; }
+        .font-ko-mono { font-family: 'IBM Plex Mono', monospace; }
+        
+        /* Grid Rules */
+        .grid-rule-top { border-top: 1px solid #111111; }
+        .grid-rule-bottom { border-bottom: 1px solid #111111; }
+        .grid-rule-y { border-top: 0.5px solid #111111; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest text-primary antialiased font-ko-sans min-h-screen flex justify-center w-full">
+<div class="w-full max-w-[390px] mx-auto min-h-screen relative grid-rule-x flex flex-col border-x border-primary">
+<!-- TopAppBar Shared Component -->
+<header class="bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary w-full border-b border-primary flat no shadows flex justify-between items-center px-margin-mobile py-4 sticky top-0 z-50">
+<div class="flex items-center gap-2 cursor-pointer active:translate-y-0.5">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">grid_view</span>
+</div>
+<div class="font-display-lg-mobile tracking-tighter text-primary dark:text-primary">SAJU</div>
+<div class="cursor-pointer active:translate-y-0.5 font-label-caps text-label-caps text-primary hover:bg-secondary hover:text-on-secondary transition-colors duration-150 px-2 py-1">
+                LOGIN
+            </div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col px-margin-mobile py-8 gap-8">
+<!-- Header Section -->
+<section class="flex flex-col gap-2">
+<div class="font-ko-mono text-[10px] tracking-widest text-primary uppercase">도판 06 - 리포트</div>
+<h1 class="font-ko-serif text-display-lg-mobile leading-tight text-primary">
+                    당신의 여덟 글자<span class="text-secondary">.</span>
+</h1>
+<p class="font-ko-sans text-body-lg text-primary mt-4">
+                    여덟 글자가 만드는 평생의 패턴을 읽습니다.
+                </p>
+</section>
+<!-- Main Data Table -->
+<section class="w-full mt-4">
+<div class="grid-rule-top grid-rule-bottom">
+<!-- Row 1 -->
+<div class="flex items-center justify-between py-4 grid-rule-y first:border-none">
+<div class="font-ko-mono text-data-mono text-primary w-12">年</div>
+<div class="font-ko-sans text-headline-md font-bold tracking-widest text-primary flex-1 text-center">
+                            갑(甲) 신(申)
+                        </div>
+<div class="font-ko-mono text-data-mono text-primary text-right whitespace-nowrap">오행 나무 · 양</div>
+</div>
+<!-- Row 2 -->
+<div class="flex items-center justify-between py-4 grid-rule-y">
+<div class="font-ko-mono text-data-mono text-primary w-12">月</div>
+<div class="font-ko-sans text-headline-md font-bold tracking-widest text-primary flex-1 text-center">
+                            을(乙) 유(酉)
+                        </div>
+<div class="font-ko-mono text-data-mono text-primary text-right whitespace-nowrap">오행 쇠 · 음</div>
+</div>
+<!-- Row 3 -->
+<div class="flex items-center justify-between py-4 grid-rule-y bg-primary text-on-primary -mx-margin-mobile px-margin-mobile">
+<div class="font-ko-mono text-data-mono w-12">日</div>
+<div class="font-ko-sans text-headline-md font-bold tracking-widest flex-1 text-center">
+                            병(丙) 술(戌)
+                        </div>
+<div class="font-ko-mono text-data-mono text-right whitespace-nowrap">오행 흙 · 양</div>
+</div>
+<!-- Row 4 -->
+<div class="flex items-center justify-between py-4 grid-rule-y">
+<div class="font-ko-mono text-data-mono text-primary w-12">時</div>
+<div class="font-ko-sans text-headline-md font-bold tracking-widest text-primary flex-1 text-center">
+                            정(丁) 해(亥)
+                        </div>
+<div class="font-ko-mono text-data-mono text-primary text-right whitespace-nowrap">오행 물 · 음</div>
+</div>
+</div>
+</section>
+<!-- Element Distribution Mini-table -->
+<section class="w-full mt-8 grid-rule-top grid-rule-bottom py-6">
+<h2 class="font-ko-mono text-data-mono text-primary mb-4 uppercase">요소 분포</h2>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between font-ko-sans text-body-sm text-primary">
+<span>물</span>
+<span class="font-ko-mono">2</span>
+</div>
+<div class="flex justify-between font-ko-sans text-body-sm text-primary">
+<span>나무</span>
+<span class="font-ko-mono">2</span>
+</div>
+<div class="flex justify-between font-ko-sans text-body-sm text-primary">
+<span>불</span>
+<span class="font-ko-mono">1</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary w-full border-t border-primary flat no shadows flex flex-col items-start px-margin-mobile py-8 gap-gutter mt-auto">
+<div class="font-label-caps text-label-caps text-primary mb-2">SAJU</div>
+<div class="font-ko-sans font-body-sm text-body-sm max-w-[280px]">
+                SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.
+            </div>
+<div class="flex flex-wrap gap-4 mt-4 font-ko-sans font-body-sm text-body-sm">
+<a class="text-primary opacity-80 hover:text-secondary transition-opacity duration-200" href="#">TERMS</a>
+<a class="text-primary opacity-80 hover:text-secondary transition-opacity duration-200" href="#">PRIVACY</a>
+<a class="text-primary opacity-80 hover:text-secondary transition-opacity duration-200" href="#">METHODOLOGY</a>
+<a class="text-primary opacity-80 hover:text-secondary transition-opacity duration-200" href="#">CONTACT</a>
+</div>
+<div class="font-data-mono text-data-mono text-primary opacity-50 mt-4 text-[10px]">
+                © 2024 SAJU BUREAU. ALL RIGHTS RESERVED. DATA ACCURACY SUBJECT TO THEORETICAL INTERPRETATION.
+            </div>
+</footer>
+</div>
+</body></html>
