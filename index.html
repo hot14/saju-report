@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAJU 디자인 SSOT — 갤러리 허브</title>
+<style>
+:root{--paper:#F4F1EC;--ink:#111;--ver:#FF4D00;--line:#d0cdc6;--mute:#6f6a63}
+*{box-sizing:border-box;margin:0;padding:0;word-break:keep-all}
+body{background:var(--paper);color:var(--ink);font:15px/1.7 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;padding:48px 24px}
+.wrap{max-width:1000px;margin:0 auto}
+.eyebrow{font-size:11px;letter-spacing:.28em;color:var(--ver);text-transform:uppercase}
+h1{font-size:32px;letter-spacing:-.02em;margin:10px 0 8px}
+.lede{color:var(--mute);max-width:760px;font-size:14.5px}
+.sec{font-size:20px;margin:40px 0 6px;padding-top:20px;border-top:2px solid var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-top:16px}
+.card{background:#fff;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:18px;text-decoration:none;color:var(--ink);display:block}
+.card:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.card .tag{font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.14em;background:var(--ink);color:#fff;display:inline-block;padding:3px 10px;margin-bottom:10px}
+.card.ko .tag{background:var(--ver)}
+.card h2{font-size:17px;margin-bottom:4px}
+.card p{font-size:13px;color:var(--mute);margin:0}
+footer{margin-top:48px;padding-top:16px;border-top:2px solid var(--ink);font-size:12px;color:var(--mute);font-family:ui-monospace,monospace;line-height:1.7}
+footer a{color:var(--mute)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="eyebrow">SAJU Design SSOT · Stitch × Taste Skill v2 · 2026-09</div>
+<h1>디자인 시안 갤러리 허브</h1>
+<p class="lede">프리미엄 한국식 사주 자기이해 서비스 SAJU의 랜딩 시안 전체. 모든 시안은 Stitch(GEMINI_3_PRO + SAJU 리서치 DS)로 생성한 완전체 HTML을 390px@2x 네이티브 렌더한 것. 카피덱 근거는 저장소 <code>design-ssot/02-direction/copy-deck-v2-en.md · -ko.md</code> 참조.</p>
+
+<h2 class="sec">메인 갤러리 — 현재 검토 대상</h2>
+<div class="grid">
+  <a class="card ko" href="design-ssot/02-direction/review-taste-20-ko.html"><span class="tag">한국어 · 20컨셉</span><h2>Taste Skill 20컨셉 (KO)</h2><p>5개 패밀리 × 20 디자인 언어. 한국어 카피덱 v2-KO + 한국어 폰트 매핑.</p></a>
+  <a class="card" href="design-ssot/02-direction/review-taste-20.html"><span class="tag">EN · 20컨셉</span><h2>Taste Skill 20컨셉 (EN)</h2><p>동일 20컨셉의 영어 카피 버전. 컨셉별 근거·다이얼 표기 포함.</p></a>
+  <a class="card ko" href="design-ssot/02-direction/review-brutal-20-ko.html"><span class="tag">한국어 · 20변형</span><h2>네오-브루탈리스트 믹스 20변형 (KO)</h2><p>티켓·블루프린트·카드덱·스티커 4문법 조합 매트릭스. 한국어 카피.</p></a>
+  <a class="card" href="design-ssot/02-direction/review-brutal-20.html"><span class="tag">EN · 20변형</span><h2>네오-브루탈리스트 믹스 20변형 (EN)</h2><p>동일 20변형의 영어 카피 버전.</p></a>
+  <a class="card ko" href="design-ssot/02-direction/review-html-impl-ko.html"><span class="tag">한국어 · 4방향</span><h2>구현 4방향 (KO)</h2><p>스위스 에디토리얼 · 파스텔 캄 · 블루프린트 · 네오-브루탈리스트. 한국어 카피.</p></a>
+  <a class="card" href="design-ssot/02-direction/review-html-impl.html"><span class="tag">EN · 4방향</span><h2>구현 4방향 (EN)</h2><p>동일 4방향의 영어 카피 버전.</p></a>
+</div>
+
+<h2 class="sec">아카이브 — 이전 라운드</h2>
+<div class="grid">
+  <a class="card" href="design-ssot/02-direction/review-brutal-10.html"><span class="tag">EN · 10변형</span><h2>브루탈리스트 10</h2><p>초기 네오-브루탈리스트 10변형.</p></a>
+  <a class="card" href="design-ssot/02-direction/review-kr.html"><span class="tag">라운드</span><h2>국문 초기 시안</h2><p>초기 한국어 방향 검토.</p></a>
+  <a class="card" href="design-ssot/02-direction/review-styles-5.html"><span class="tag">5스타일</span><h2>스타일 5종</h2><p>초기 5스타일 비교.</p></a>
+  <a class="card" href="design-ssot/02-direction/review-swiss-variants.html"><span class="tag">스위스</span><h2>스위스 변형</h2><p>스위스 계열 변형 검토.</p></a>
+  <a class="card" href="design-ssot/02-direction/review-v2.html"><span class="tag">v2</span><h2>브라이트 V2</h2><p>브라이트 톤 V2 라운드.</p></a>
+</div>
+
+<footer>
+카피덱: <a href="design-ssot/02-direction/copy-deck-v2-en.md">copy-deck-v2-en.md</a> · <a href="design-ssot/02-direction/copy-deck-v2-ko.md">copy-deck-v2-ko.md</a> (십천간 네이밍 근거 포함) ·
+컨셉 정의: <a href="design-ssot/02-direction/taste-20-concepts.md">taste-20-concepts.md</a><br>
+파이프라인: Stitch generate_screen_from_text → htmlCode 다운로드 → 개행 복원 → HTTP 서빙 → Tailwind JIT 대기 → 390px@2x 네이티브 렌더 · 전 시안 프리플라이트 통과 (em-dash 0 · 오컬트 0 · 테마 고정 · 액센트 1색)
+</footer>
+</div>
+</body>
+</html>
