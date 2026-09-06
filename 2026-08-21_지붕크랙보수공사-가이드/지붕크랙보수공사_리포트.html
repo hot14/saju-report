@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>지붕 크랙 보수공사 총정리 리포트 | 방법·비용·인원·예산·업체</title>
+<style>
+  :root{
+    --navy:#1f3864; --blue:#2563eb; --blue-lt:#dbeafe; --orange:#f59e0b; --orange-lt:#fef3c7;
+    --red:#c2410c; --bg:#f4f6f9; --card:#ffffff; --line:#e5e7eb; --txt:#1f2937; --sub:#6b7280;
+    --green:#15803d; --green-lt:#dcfce7;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:var(--bg);color:var(--txt);line-height:1.65}
+  .wrap{max-width:1080px;margin:0 auto;padding:32px 20px 64px}
+  header{background:linear-gradient(135deg,#1f3864 0%,#2a4a8a 100%);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:24px}
+  header .tag{display:inline-block;background:rgba(255,255,255,.16);padding:4px 12px;border-radius:99px;font-size:12.5px;letter-spacing:.4px;margin-bottom:12px}
+  header h1{font-size:26px;font-weight:800;margin-bottom:8px}
+  header .sub{font-size:14px;opacity:.85}
+  header .meta{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px;font-size:12.5px;opacity:.75}
+  header .meta span{display:inline-flex;align-items:center;gap:6px}
+  nav.toc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 22px;margin-bottom:24px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+  nav.toc b{font-size:13px;color:var(--navy)}
+  nav.toc a{display:inline-block;font-size:12.5px;color:var(--blue);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:4px 11px;margin:4px 4px 0 0;background:#f8fafc}
+  nav.toc a:hover{background:var(--blue-lt);border-color:var(--blue)}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-bottom:24px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+  .kpi .label{font-size:12.5px;color:var(--sub);font-weight:600}
+  .kpi .value{font-size:24px;font-weight:800;margin-top:6px;letter-spacing:-.5px}
+  .kpi .value small{font-size:13px;font-weight:600;color:var(--sub)}
+  .kpi .range{font-size:12px;color:var(--sub);margin-top:4px}
+  .kpi .badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin-left:8px;vertical-align:middle}
+  .badge.blue{background:var(--blue-lt);color:var(--blue)} .badge.orange{background:var(--orange-lt);color:#b45309} .badge.green{background:var(--green-lt);color:var(--green)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin-bottom:24px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+  .card h2{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:4px}
+  .card h2 .no{color:#93a3c4;font-weight:800;margin-right:6px}
+  .card .desc{font-size:13px;color:var(--sub);margin-bottom:16px}
+  .card h3{font-size:14.5px;font-weight:800;color:var(--navy);margin:20px 0 8px}
+  .card p{font-size:13.5px;margin-bottom:10px}
+  .card ul,.card ol{margin:0 0 12px 20px;font-size:13.5px}
+  .card li{margin-bottom:6px}
+  .note{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:16px 20px;font-size:13px;color:#78350f;margin-bottom:24px}
+  .note b{font-weight:800}
+  .tips{background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;padding:16px 20px;font-size:13px;color:#1e3a8a}
+  .tips b{font-weight:800}
+  .tbl-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+  .chip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 14px;font-size:12.5px;font-weight:700;color:var(--sub);cursor:pointer}
+  .chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+  table{width:100%;border-collapse:collapse;font-size:12.8px}
+  thead th{background:#f8fafc;color:#374151;font-weight:700;padding:9px 11px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}
+  tbody td{padding:8px 11px;border-bottom:1px solid #f1f5f9;text-align:center;vertical-align:top}
+  tbody td:first-child{text-align:left;font-weight:600}
+  tbody tr:hover{background:#f8fafc}
+  td.l,th.l{text-align:left}
+  sup a{color:var(--blue);text-decoration:none;font-size:10.5px;font-weight:700}
+  .src{font-size:11.5px;color:var(--sub);margin-top:8px}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:10px 0 4px}
+  .step{flex:1 1 120px;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:12px}
+  .step b{display:block;color:var(--navy);font-size:12.5px;margin-bottom:3px}
+  .step .n{display:inline-block;background:var(--navy);color:#fff;border-radius:6px;font-size:10.5px;font-weight:800;padding:1px 7px;margin-bottom:5px}
+  .cols2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){.cols2{grid-template-columns:1fr}}
+  .pill{display:inline-block;border-radius:8px;padding:1px 8px;font-size:11.5px;font-weight:700}
+  .pill.g{background:var(--green-lt);color:var(--green)} .pill.r{background:#fee2e2;color:#b91c1c} .pill.o{background:var(--orange-lt);color:#b45309} .pill.b{background:var(--blue-lt);color:var(--blue)}
+  .calc{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:16px 20px;font-size:13px;color:#14532d}
+  .calc b{font-weight:800}
+  ol.srcs{margin-left:0;list-style:none;counter-reset:s}
+  ol.srcs li{counter-increment:s;font-size:12.3px;color:#4b5563;margin-bottom:7px;padding-left:32px;position:relative}
+  ol.srcs li::before{content:"["counter(s)"]";position:absolute;left:0;top:0;font-weight:800;color:var(--navy)}
+  ol.srcs a{color:var(--blue);text-decoration:none;word-break:break-all}
+  footer{font-size:12px;color:var(--sub);padding:0 8px}
+  footer p{margin-bottom:6px}
+  @media(max-width:640px){header{padding:26px 22px}header h1{font-size:20px}.kpi .value{font-size:20px}.card{padding:18px 16px}}
+  @media print{body{background:#fff}.card,.kpi,header,nav.toc{box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="tag">건축물 유지관리 · 실측·공식 자료 기반 종합 가이드</div>
+    <h1>지붕 크랙 보수공사 총정리 리포트 (한국)</h1>
+    <div class="sub">크랙 원인·진단 / 보수 공법과 시공 노하우 / 공법별 비용 / 투입 인원과 공기 / 예산 시나리오 / 주요 업체 현황</div>
+    <div class="meta">
+      <span>작성 기준일 2026-08-21</span><span>|</span>
+      <span>공식 근거: 국토부 표준품셈(2025) · 대한건설협회 노임단가(2025) · 공동주택관리법</span><span>|</span>
+      <span>28개 출처 교차 검증</span>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <b>목차</b>
+    <a href="#s1">1. 크랙 원인·진단</a>
+    <a href="#s2">2. 공법 총정리</a>
+    <a href="#s3">3. 시공 공정·노하우</a>
+    <a href="#s4">4. 비용</a>
+    <a href="#s5">5. 인원·공기</a>
+    <a href="#s6">6. 예산 시나리오</a>
+    <a href="#s7">7. 주요 업체</a>
+    <a href="#s8">8. 법적 기준·계약</a>
+    <a href="#srcs">출처</a>
+  </nav>
+
+  <div class="kpis">
+    <div class="kpi"><div class="label">우레탄 도막방수 시세 (평당)</div><div class="value">7.8만<small>~</small>15만<small>원</small><span class="badge blue">최다 시공</span></div><div class="range">m²당 약 24,000원 환산 시 평당 약 7.9만원 <sup><a href="#src16">[16]</a><a href="#src11">[11]</a><a href="#src20">[20]</a></sup></div></div>
+    <div class="kpi"><div class="label">폴리우레아 방수 (평당)</div><div class="value">4.2만<small>~</small>8만<small>원</small><span class="badge orange">고내구</span></div><div class="range">자재 단가는 우레탄의 3~5배, 수명 20년 이상 <sup><a href="#src14">[14]</a><a href="#src15">[15]</a></sup></div></div>
+    <div class="kpi"><div class="label">방수공 일당 (2025)</div><div class="value">22.1만<small>원</small><span class="badge green">공식</span></div><div class="range">보통인부 17.0만원 · 9월부터 22.6만원 <sup><a href="#src2">[2]</a></sup></div></div>
+    <div class="kpi"><div class="label">공동주택 방수공사 하자담보</div><div class="value">5년<span class="badge green">법정</span></div><div class="range">지붕공사 5년 · 내력구조부 10년 (공동주택관리법 시행령 별표 4) <sup><a href="#src3">[3]</a></sup></div></div>
+    <div class="kpi"><div class="label">옥상방수 시공 평균 거래가</div><div class="value">약 350만<small>원</small></div><div class="range">숨고 플랫폼 옥상공사/방수 평균(시공당) <sup><a href="#src15b">[15]</a></sup></div></div>
+    <div class="kpi"><div class="label">30평 우레탄 방수 표준 노무</div><div class="value">방수공 9.2<small>인·일</small></div><div class="range">+ 보통인부 4.4인·일 (표준품셈 계수 적용) <sup><a href="#src1">[1]</a></sup></div></div>
+  </div>
+
+  <div class="card" id="s0">
+    <h2><span class="no">■</span>핵심 요약</h2>
+    <div class="desc">본 리포트의 결론을 먼저 6줄로 정리합니다. 각 수치의 근거는 해당 섹션과 출처 번호를 참고하세요.</div>
+    <ul>
+      <li><b>진단이 공법보다 먼저다.</b> 크랙은 폭(허용 기준 습윤 환경 0.3mm)보다 위치·방향·진행성·누수 여부로 판단하며, 구조체 균열은 에폭시 인젝션으로 접착 보강해야 도막 재도장으로는 해결되지 않는다<sup><a href="#src23">[23]</a><a href="#src24">[24]</a><a href="#src10">[10]</a></sup>.</li>
+      <li><b>부분보수와 전체 방수를 구분해야 한다.</b> 국소 크랙은 인젝션(주입) + 표면처리로 대응 가능하고, 방수층 전체 노후(들뜸·다수 균열·누수 반복)면 전면 재시공(우레탄·시트·폴리우레아·스틸)이 경제적이다<sup><a href="#src6">[6]</a><a href="#src24">[24]</a></sup>.</li>
+      <li><b>시세 범위:</b> 우레탄 도막 평당 7.8만~15만원, 폴리우레아 평당 4.2만~8만원(2025년 사례), 칼라강판 스틀 방수 평당 17만~25만원, 시트는 우레탄 대비 평당 +3만~5만원<sup><a href="#src11">[11]</a><a href="#src14">[14]</a><a href="#src13">[13]</a><a href="#src18">[18]</a></sup>.</li>
+      <li><b>인원·공기:</b> 소규모(20~30평)는 3~4인 팀 2~3일, 100평 내외는 5~6인 팀 3~5일이 일반적이며, 표준품셈 기준으로도 30평 노무 총량은 방수공 9.2인·일 + 보통인부 4.4인·일 수준이다<sup><a href="#src17">[17]</a><a href="#src16">[16]</a><a href="#src1">[1]</a></sup>.</li>
+      <li><b>예산 실례:</b> 30평 옥상 우레탄 230만~450만원, 100평 780만~1,500만원, 스틀 방수 30평 510만~750만원. 크랙 보강·철거·양중 접근성은 별도 가산이 붙는다(추가금 사례 +300만원)<sup><a href="#src14">[14]</a></sup>.</li>
+      <li><b>업체 선택:</b> 전문방수 등록업체(시공능력평가 상위: 아이알에스건설·거정건설·대몽건설 등)부터 지역 전문업체, 숨고 같은 플랫폼까지 선택지가 넓다. 3~5곳 비교 견적과 하자보증(법정 5년 또는 업체 3년) 명시가 핵심이다<sup><a href="#src4">[4]</a><a href="#src18">[18]</a></sup>.</li>
+    </ul>
+  </div>
+
+  <div class="card" id="s1">
+    <h2><span class="no">1</span>왜 지붕에 크랙이 생기는가: 원인과 진단 기준</h2>
+    <div class="desc">보수 공법은 크랙의 "원인·움직임·수밀 요구"에 따라 정해진다. 폭만 보고 공법을 고르면 진행성 균열을 가리는 결과가 될 수 있다<sup><a href="#src24">[24]</a></sup>.</div>
+
+    <h3>1-1. 크랙의 주요 원인</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th class="l">원인</th><th class="l">특징</th><th class="l">대응 방향</th></tr></thead>
+      <tbody>
+        <tr><td>온도 팽창·수축 / 동해</td><td class="l">계절별·일일 온도차로 콘크리트와 방수층이 반복 신축. 바탕이 동해로 부서지면 도막·시트 부착 자체가 불가</td><td class="l">탄성 재료(우레탄·폴리우레아), 바탕 불량 시 스틀 방수 검토<sup><a href="#src9">[9]</a></sup></td></tr>
+        <tr><td>구조체 균열 (침하·하중·진동)</td><td class="l">슬래브·벽체 자체가 갈라짐. 탄성에폭시·폴리머몰탈 표면처리로는 재발생</td><td class="l">에폭시 주입(인젝션)으로 구조체를 접착·일체화<sup><a href="#src10">[10]</a><a href="#src6">[6]</a></sup></td></tr>
+        <tr><td>방수층 노후</td><td class="l">들뜸·균열·변색. 우레탄 도막은 UV 노출 성능 저하, 하자 재발률 존재</td><td class="l">구도막 철거 후 전면 재시공<sup><a href="#src12">[12]</a><a href="#src14">[14]</a></sup></td></tr>
+        <tr><td>시공 불량·관리 부재</td><td class="l">바탕 수분 잔존 시 우레탄 기포, 중도를 얇게 1회만 시공하는 공정 생략 등</td><td class="l">바탕 건조·청소, 도막 다회 얇게 도포<sup><a href="#src18">[18]</a></sup></td></tr>
+        <tr><td>배수·물길 문제</td><td class="l">물고임, 배수구·파라펫·관통부(입축부) 접합부 취약</td><td class="l">배수 개선 + 치켜올림부·드레인 보강 테이프·실란트<sup><a href="#src24">[24]</a></sup></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>1-2. 균열 폭 판정 기준 (KDS 14 20 30 허용균열폭)</h3>
+    <p>국토교통부 콘크리트 내구성 가이드(KDS 14 20 30 부록)의 철근콘크리트 허용균열폭은 노출환경과 피복두께(c<sub>c</sub>)로 정한다. "0.3mm"는 설계 검토값이지 안전 판정표는 아니며, 기존 균열은 폭 외에 위치·방향·깊이·진행성·누수 징후를 함께 조사한다<sup><a href="#src24">[24]</a></sup>.</p>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th class="l">환경 조건</th><th>허용 균열폭</th></tr></thead>
+      <tbody>
+        <tr><td>건조 환경</td><td>0.4mm와 0.006×c<sub>c</sub> 중 큰 값</td></tr>
+        <tr><td>습윤 환경 (지붕·옥상 해당)</td><td>0.3mm와 0.005×c<sub>c</sub> 중 큰 값</td></tr>
+        <tr><td>부식성 환경</td><td>0.3mm와 0.004×c<sub>c</sub> 중 큰 값</td></tr>
+        <tr><td>고부식성 환경</td><td>0.3mm와 0.0035×c<sub>c</sub> 중 큰 값</td></tr>
+        <tr><td>수처리 구조물 (오염 안 된 물)</td><td>휨인장 균열 0.25mm / 전단면 인장 0.20mm</td></tr>
+      </tbody>
+    </table></div>
+    <div class="src">출처: 건설현장 실무노트(2026-07-29)가 정리한 국토부 콘크리트 내구성 가이드 <sup><a href="#src24">[24]</a></sup>. 하자 분쟁에서는 법원이 균열폭 0.3mm 이상을 원칙적으로 시공상 하자로 판단하며, 수밀성이 요구되는 외벽·지하 등에서는 누수·철근 노출 시 폭과 무관하게 하자로 본다<sup><a href="#src23">[23]</a></sup>.</div>
+
+    <h3>1-3. 진단 체크리스트 (현장 기록 요령)</h3>
+    <ul>
+      <li><b>부재·위치 고정:</b> 도면·스케치에 부재명과 좌표(예: 지하 1층 B3기둥 북측면, 바닥에서 1.2m)를 먼저 기록<sup><a href="#src24">[24]</a></sup></li>
+      <li><b>방향·형상:</b> 수직/수평/대각, 철근 방향과의 관계(수축·부식·휨 원인 구분)<sup><a href="#src24">[24]</a></sup></li>
+      <li><b>폭·길이:</b> 균열 게이지로 여러 지점 측정, 최대값·대표값 구분. 마감층 위 값인지 콘크리트 면 값인지 기록<sup><a href="#src24">[24]</a></sup></li>
+      <li><b>동반 징후:</b> 단차, 누수·백태·녹물, 철근 노출, 들뜸<sup><a href="#src24">[24]</a></sup></li>
+      <li><b>진행성 확인:</b> 진행 중 균열은 원인(변형)을 먼저 안정화한 뒤 보수 시점 결정<sup><a href="#src24">[24]</a></sup></li>
+      <li><b>누수 테스트:</b> 전문업체들은 물막이(장수) 테스트로 누수 경로를 진단한 뒤 공법을 정한다<sup><a href="#src10b">[10]</a></sup></li>
+    </ul>
+  </div>
+
+  <div class="card" id="s2">
+    <h2><span class="no">2</span>보수 공법 총정리: 크랙 보수 3대 접근 + 옥상 방수 5대 공법</h2>
+    <div class="desc">크랙 보수는 재료를 어디에 넣느냐에 따라 표면처리 / 주입(인젝션) / 충전으로 나뉘고<sup><a href="#src24">[24]</a></sup>, 지붕 전체 방수는 도막 / 시트 / 몰탈 / 폴리우레아 / 스틀로 나뉜다<sup><a href="#src9">[9]</a></sup>.</div>
+
+    <h3>2-1. 크랙 보수 3대 접근 방식</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th class="l">방식</th><th class="l">개념</th><th class="l">적합한 경우</th><th class="l">주재료</th></tr></thead>
+      <tbody>
+        <tr><td>표면처리</td><td class="l">균열 위를 따라 표면 밀봉. 물·이물질 유입 차단</td><td class="l">움직임이 거의 없는 비구조적 표면 균열, 미세균열</td><td class="l">우레탄 실란트, 고무계 아크릴 퍼티, 방수테이프<sup><a href="#src7">[7]</a><a href="#src24">[24]</a></sup></td></tr>
+        <tr><td>주입 (인젝션)</td><td class="l">균열 내부에 저압/고압으로 수지 주입, 균열면을 접착·충전</td><td class="l">구조 부재의 0.1mm 이상 균열, 수밀성 필요 균열, 누수 균열</td><td class="l">에폭시계(구조 접착), 폴리우레탄계(탄성·누수), 아크릴레이트계<sup><a href="#src6">[6]</a><a href="#src7">[7]</a></sup></td></tr>
+        <tr><td>충전 (V컷 몰탈)</td><td class="l">균열을 V자로 절개 후 몰탈·퍼티 충전</td><td class="l">넓고 얕은 균열, 들뜸 제거 후 단면 복구</td><td class="l">폴리머 시멘트 몰탈, 무기질 방수몰탈<sup><a href="#src24">[24]</a></sup></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>2-2. 옥상·지붕 방수 공법 비교</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th class="l">공법</th><th class="l">개요</th><th>평당 단가(원)</th><th>수명</th><th class="l">장점</th><th class="l">단점</th></tr></thead>
+      <tbody>
+        <tr><td>우레탄 도막방수</td><td class="l">액상 도막재를 하도-중도-상도로 나누어 도포. 국내 옥상 최다 보급 공법 (빌라 옥상의 녹색 코팅 대부분)</td><td>78,000~150,000<sup><a href="#src20">[20]</a><a href="#src11">[11]</a><a href="#src21">[21]</a></sup></td><td>3~10년<sup><a href="#src9">[9]</a></sup></td><td class="l">이음새 없음, 복잡한 형상 시공 용이, 공정 단순, 상대적 저렴</td><td class="l">바탕 습기 시 기포, UV 노출 성능 저하, 균열 추종성 한계로 하자 재발 가능</td></tr>
+        <tr><td>폴리우레아 스프레이</td><td class="l">A제(이소시아네이트)+B제(아민 레진)를 약 2,000psi 고압 분사, 수 초 내 초속 경화로 일체형 도막 형성</td><td>42,000~80,000<sup><a href="#src14">[14]</a></sup></td><td>20~30년<sup><a href="#src19">[19]</a></sup></td><td class="l">우레탄 대비 인장강도 3~5배, 영하 30~40도~100도 유연성 유지, 5분 내 도보 통행(공기 단축)</td><td class="l">전용 고압장비 필수, 작업자 숙련도가 품질 결정, 자재 단가는 우레탄의 3~5배<sup><a href="#src15">[15]</a></sup></td></tr>
+        <tr><td>시트 방수 (가열식/접착식/자착식)</td><td class="l">아스팔트·TPO 등 시트를 토치 가열 또는 접착제로 부착. 두께 1.0~3.0mm</td><td>우레탄 대비 +30,000~50,000<sup><a href="#src18">[18]</a></sup></td><td>5~10년<sup><a href="#src9">[9]</a></sup></td><td class="l">인장강도 높아 건물 미세 거동에 유리, 적층 시공 신뢰성</td><td class="l">시공 난도 높음, 접합부 품질관리 중요, 누수부 확인 어려움, 토치 화기 취급</td></tr>
+        <tr><td>시멘트계·몰탈 방수</td><td class="l">시멘트 액체방수, 폴리머 시멘트 몰탈(2~3회 바름), 무기질 방수몰탈</td><td>개소당 계약 사례 800,000원 (1칸)<sup><a href="#src12">[12]</a></sup></td><td>10년 이상<sup><a href="#src12">[12]</a></sup></td><td class="l">저렴, 무기질 친환경, 관공서·학교 옥상 등 복합방수에 활용</td><td class="l">자체 균열 가능성, 정기 유지보수 필요</td></tr>
+        <tr><td>스틀 방수 (칼라강판 지붕)</td><td class="l">옥상에 목조틀을 짜고 칼라강판(S골 등)으로 지붕을 씌우는 공법</td><td>170,000~250,000<sup><a href="#src13">[13]</a><a href="#src12">[12]</a></sup></td><td>30~50년<sup><a href="#src9">[9]</a><a href="#src12">[12]</a></sup></td><td class="l">반영구적 내구성, 단열 성능, 우천 중에도 실내 영향 적음</td><td class="l">초기 비용 최고, 조인트 파단 주의 필요, 하지틀 목재 부패 관리<sup><a href="#src9">[9]</a></sup></td></tr>
+      </tbody>
+    </table></div>
+    <div class="src">수명 표기는 각 출처가 제시하는 범위(도막 3년~10년 이상 등)가 상이해 원 출처의 주장대로 병기했다. 보증은 업체별로 3년(무상하자보수)~5년(AS) 사례가 확인된다<sup><a href="#src20">[20]</a><a href="#src21">[21]</a><a href="#src19">[19]</a></sup>.</div>
+
+    <h3>2-3. 공법 선택 기준</h3>
+    <ul>
+      <li><b>건물 바탕 상태:</b> 콘크리트가 동해·박리로 부서지면 도막·시트 부착이 불가하므로 스틀 방수 등을 검토<sup><a href="#src9">[9]</a></sup></li>
+      <li><b>누수 원인 파악:</b> 부분보수로 물을 잡을 수 있는지, 전면 재시공이 필요한지 먼저 판단<sup><a href="#src9">[9]</a></sup></li>
+      <li><b>예산 규모와 접근성:</b> 골목길 등 사다리차 진입 불가 시 인력 운반 인건비 가산<sup><a href="#src18">[18]</a></sup></li>
+      <li><b>배수로·관통부 복잡도:</b> 드레인·파라펫·입축부가 많으면 일체형인 도막·폴리우레아가 유리<sup><a href="#src24">[24]</a></sup></li>
+      <li><b>노출 여부·보수 접근성:</b> 비노출 복합방수(증축 시), 열융착(조용한 시공) 등 조건별 대안 존재<sup><a href="#src19">[19]</a></sup></li>
+    </ul>
+  </div>
+
+  <div class="card" id="s3">
+    <h2><span class="no">3</span>시공 공정과 현장 노하우</h2>
+    <div class="desc">자재 성적이 좋아도 물길과 접합부가 끊기면 옥상 전체가 샌다. 공정 관리 포인트 중심으로 정리했다<sup><a href="#src24">[24]</a></sup>.</div>
+
+    <h3>3-1. 크랙 인젝션(주입) 표준 공정 9단계</h3>
+    <div class="desc">대화정밀공업(인젝션 장비·자재 제조사)의 리인젝터 주입공법 시방서 기준<sup><a href="#src6">[6]</a></sup>.</div>
+    <div class="flow">
+      <div class="step"><span class="n">1</span><b>균열 조사</b>폭·깊이·상태를 사전 체크해 공정 결정. 균열 내부 수분 잠재 염두</div>
+      <div class="step"><span class="n">2</span><b>사전 처리</b>와이어브러시로 먼지·오물 제거, 기름은 비누·신나로 세척. 필요시 버너 건조</div>
+      <div class="step"><span class="n">3</span><b>좌대 위치 결정</b>좌대(주입구) 간격 15~20cm. 1m당 5~6개소가 적정</div>
+      <div class="step"><span class="n">4</span><b>균열 씰링</b>좌대 부위 외 균열을 두께 1mm·폭 30mm로 에폭시 씰링제 밀봉</div>
+      <div class="step"><span class="n">5</span><b>좌대 부착</b>씰링제로 주입 좌대를 균열부에 접착 고정</div>
+      <div class="step"><span class="n">6</span><b>씰링 경화 확인</b>통상 12~24시간 경화 대기. 완전 경화 확인 후 주입</div>
+      <div class="step"><span class="n">7</span><b>주입</b>건축용 주사기·리인젝터로 저압 주입. 스프링 인장력으로 미세 균열까지 2차 침투</div>
+      <div class="step"><span class="n">8</span><b>주입제 경화·양생</b>초기경화 여름 1일·겨울 2일, 주입 후 최소 24~36시간 양생</div>
+      <div class="step"><span class="n">9</span><b>마감</b>좌대 제거, 그라인더로 씰링부 연마. 필요시 크랙카바제 마감 + 도장</div>
+    </div>
+
+    <h3>3-2. 우레탄 도막방수 표준 공정</h3>
+    <div class="flow">
+      <div class="step"><span class="n">1</span><b>바탕 청소</b>들뜸·요철 제거, 홈 메우기, 유분·수분 제거. 물청소 시 완전 건조 대기</div>
+      <div class="step"><span class="n">2</span><b>하도 (프라이머)</b>롤러 1회. 바탕과 방수재 접착력 확보. 보조붓칠 포함</div>
+      <div class="step"><span class="n">3</span><b>크랙 메꾸기</b>우레탄 실리콘·퍼티로 균열 충전. 취약부(치켜올림·드레인)는 방수테이프·실란트 덧바름</div>
+      <div class="step"><span class="n">4</span><b>중도</b>우레탄 도막재 2회 이상. 얇게 여러 번 나누어 롤러 작업(기포 주의). 보강포(부직포) 병행 가능</div>
+      <div class="step"><span class="n">5</span><b>상도 (Top-coat)</b>자외선 차단 마감도료 1회. 색상은 녹색·회색 일반적</div>
+    </div>
+    <div class="src">공정 순서는 다나와 셀프 가이드(2021)와 표준품셈 품목 구성(바탕처리-프라이머-도막바름-보강포-마감도료)을 교차 정리<sup><a href="#src8">[8]</a><a href="#src1">[1]</a></sup>.</div>
+
+    <h3>3-3. 시공 환경 조건과 실패 포인트 (현장 노하우)</h3>
+    <ul>
+      <li><b>기온 5도 이하 시공 금지 원칙:</b> 에폭시 주입은 5도 이하에서 가급적 작업하지 않으며, 부득이하면 간접 가열로 온도를 올려 사용한다. 주제·경화제 배합비율을 임의로 바꾸면 경화 후 물성이 크게 저하된다<sup><a href="#src6">[6]</a></sup>.</li>
+      <li><b>바탕 수분 관리:</b> 우레탄은 바닥에 습기가 남으면 기포가 생기기 쉽다. 중도를 두껍게 1회가 아니라 얇게 여러 번 올리는 숙련도가 수명을 좌우한다<sup><a href="#src18">[18]</a></sup>.</li>
+      <li><b>면적 산정 시 벽면 포함 여부:</b> 난간 벽면 방수는 높이 30cm 이상이면 추가 비용이 발생한다. 포함하지 않은 낮은 견적은 추후 추가금 근거가 된다<sup><a href="#src18">[18]</a></sup>.</li>
+      <li><b>구도막 철거:</b> 들뜬 기존 우레탄은 모두 걷어내고 연석기(그라인더)로 갈아내야 접착이 확실하다. 인천 가정고 500평 옥상처럼 구도막 철거가 별도 공정이 되기도 한다<sup><a href="#src21">[21]</a></sup>.</li>
+      <li><b>인젝션 실패 유형:</b> 전기·수도·인터넷 배관이 매립된 경로 천공 시 파손 주의. 균열은 계속 진행하는 경우가 많아 이중·삼중 안전장치(다중 주입)가 필요하다는 31년 경력자 지적이 있다<sup><a href="#src28">[28]</a></sup>.</li>
+      <li><b>폴리우레아 장비 의존성:</b> 전용 고압 장비와 숙련 작업자가 품질을 결정한다. 경화가 수 초이므로 도포 계획 없이 분사하면 균일 두께 확보가 어렵다<sup><a href="#src19">[19]</a></sup>.</li>
+      <li><b>공정별 사진 기록:</b> 공공 시방서는 공정별 작업 상황을 사진 촬영해 사진첩으로 준공계에 제출하도록 요구한다. 민간 계약에서도 동일 요구가 하자 분쟁 대비 수단이 된다<sup><a href="#src27">[27]</a></sup>.</li>
+    </ul>
+  </div>
+
+  <div class="card" id="s4">
+    <h2><span class="no">4</span>비용: 공법별 단가와 변동 요인</h2>
+    <div class="desc">평당 단가는 누수 원인, 바탕 상태, 자재 등급에 따라 산출 방식이 달라진다. 관행상 10만~20만원 사이에서 형성되며 인건비·자재비·장비운용료가 포함된 값이다<sup><a href="#src18">[18]</a></sup>.</div>
+
+    <h3>4-1. 공법별 단가 총모음</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th class="l">항목</th><th>단가</th><th class="l">근거</th></tr></thead>
+      <tbody>
+        <tr><td>우레탄 도막방수</td><td>평당 78,000원 (업체 공개가, 무상하자 3년)</td><td class="l">서울방수 공개 단가<sup><a href="#src20">[20]</a></sup></td></tr>
+        <tr><td>우레탄 도막방수</td><td>m²당 약 24,000원 = 평당 약 79,000원</td><td class="l">전문가 답변(아하, 2021)<sup><a href="#src16">[16]</a></sup></td></tr>
+        <tr><td>우레탄 도막방수</td><td>평당 100,000~150,000원 (수명 10년 이상 표기)</td><td class="l">블로그 비교자료(2026-02), 빌라 방수 비용정리(2023)<sup><a href="#src11">[11]</a><a href="#src12">[12]</a></sup></td></tr>
+        <tr><td>우레탄 도막방수</td><td>평균 견적 평당 100,000원 (2026년 237건 의뢰 기준)</td><td class="l">제이엠도장솔루션 공개 통계<sup><a href="#src21">[21]</a></sup></td></tr>
+        <tr><td>폴리우레아</td><td>평당 40,000~80,000원. 실례: 지하주차장 78,000 / 옥상+크랙보수 58,000 / 외벽 67,000 / 신축옥상 42,000원</td><td class="l">현장별 사례표(2025-05)<sup><a href="#src14">[14]</a></sup></td></tr>
+        <tr><td>폴리우레아 자재</td><td>일반 방수우레탄 대비 자재 단가 3~5배</td><td class="l">숨고 시공고수 답변<sup><a href="#src15">[15]</a></sup></td></tr>
+        <tr><td>시트 방수</td><td>우레탄 대비 평당 +30,000~50,000원</td><td class="l">현장 전문가 정리(2026-06)<sup><a href="#src18">[18]</a></sup></td></tr>
+        <tr><td>칼라강판 스틀 방수</td><td>평당 170,000~250,000원 (30평 기준, 구조에 따라 가산)</td><td class="l">베테랑지붕(2023), KOI스틸(2023)<sup><a href="#src13">[13]</a><a href="#src12">[12]</a></sup></td></tr>
+        <tr><td>몰탈 방수</td><td>1칸(개소) 작업 시 800,000원</td><td class="l">KOI스틸 비교표<sup><a href="#src12">[12]</a></sup></td></tr>
+        <tr><td>크랙 인젝션</td><td>m당 9,500~13,000원 (재료+인건, 2013년 시세). 하루 출장 기본 50만원(재료·인건·식대 포함)</td><td class="l">31년 경력 방수 시공자(2013-09, 참고용)<sup><a href="#src28">[28]</a></sup></td></tr>
+        <tr><td>옥상공사/방수 거래 평균</td><td>시공당 평균 3,504,433원</td><td class="l">숨고 플랫폼 평균가<sup><a href="#src15b">[15]</a></sup></td></tr>
+        <tr><td>참고 (소비자 사례)</td><td>50평 폴리우레아 2,500만원 계약 후 크랙 보강·장비 추가료로 +300만원 초과</td><td class="l">소비자 후기 소개(2025-05)<sup><a href="#src14">[14]</a></sup></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>4-2. 비용을 좌우하는 5가지 변수</h3>
+    <ol>
+      <li><b>바탕 정리비:</b> 구도막 철거 + 연석기 연마 포함 여부<sup><a href="#src18">[18]</a></sup></li>
+      <li><b>현장 접근성:</b> 사다리차 진입 불가 골목은 인력 운반 인건비 상승<sup><a href="#src18">[18]</a></sup></li>
+      <li><b>방수층 두께:</b> 3mm와 5mm는 재료 소모량 차이가 크다<sup><a href="#src18">[18]</a></sup></li>
+      <li><b>크랙 개수·보강 공정:</b> 균열이 많으면 보강작업·프라이머·크랙 보수가 추가되어 단가 급등<sup><a href="#src14">[14]</a></sup></li>
+      <li><b>부대비용:</b> 폐기물 처리, 바닥보수, 사다리차 사용료 등 사전 협의 필요<sup><a href="#src19">[19]</a></sup></li>
+    </ol>
+    <div class="note"><b>주의</b> 평당 단가만 보고 결정하지 말 것. 같은 평수라도 벽면(치켜올림) 30cm 이상 포함 여부, 크랙 보강 포함 여부에 따라 최종 금액이 크게 달라진다. 최소 3곳 이상 항목별 견적 비교를 권장한다<sup><a href="#src18">[18]</a></sup>. 인건비 비중이 높은 분야이므로 터무니없이 싼 견적은 피하는 것이 상책이다.</div>
+  </div>
+
+  <div class="card" id="s5">
+    <h2><span class="no">5</span>인원 구성과 공기: 표준품셈·노임단가로 계산하기</h2>
+    <div class="desc">인원과 공기는 공공 발주의 표준인 국토교통부 표준품셈(2025년 개정) 계수와 대한건설협회 노임단가(2025년)로 검증할 수 있다.</div>
+
+    <h3>5-1. 표준품셈 방수공사 인력 계수 (㎡당, 인·일)</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th class="l">품목</th><th>방수공 (바닥)</th><th>보통인부 (바닥)</th><th class="l">비고</th></tr></thead>
+      <tbody>
+        <tr><td>바탕처리 (보통)</td><td>0.030</td><td>0.012</td><td class="l">들뜸·요철 제거, 홈 메우기, 퍼티 포함. 불량 바탕은 0.032/0.014</td></tr>
+        <tr><td>방수 프라이머 바름</td><td>0.011</td><td>0.005</td><td class="l">롤러 1회, 보조붓칠 포함</td></tr>
+        <tr><td>도막 바름 (우레탄·아크릴·고무아스팔트)</td><td>0.015</td><td>0.009</td><td class="l">1회 기준. 치켜올림·드레인 테이프·실란트 포함</td></tr>
+        <tr><td>보강포 붙임</td><td>0.010</td><td>0.004</td><td class="l">부직포 등 1회</td></tr>
+        <tr><td>마감도료 (Top-coat)</td><td>0.012</td><td>0.005</td><td class="l">노출 방수층 마감 1회</td></tr>
+        <tr><td>가열식 시트 붙임</td><td>0.060</td><td>0.030</td><td class="l">토치 접착 1겹. 시트 소요량 1.2㎡/㎡</td></tr>
+        <tr><td>접착식 시트 붙임</td><td>0.034</td><td>0.020</td><td class="l">접착제 시공</td></tr>
+        <tr><td>자착식 시트 붙임</td><td>0.026</td><td>0.016</td><td class="l">자착형 1겹</td></tr>
+        <tr><td>시멘트 액체방수</td><td>0.075</td><td>0.040</td><td class="l">모르타르 비빔 + 면잡기 포함</td></tr>
+        <tr><td>폴리머 시멘트 몰탈방수</td><td>0.040~0.060</td><td>0.020~0.040</td><td class="l">2종(2회)~1종(3회)</td></tr>
+        <tr><td>수밀 코킹 (m당)</td><td colspan="2">코킹공 0.025</td><td class="l">마스킹 포함. 실란트 1.2m/m</td></tr>
+      </tbody>
+    </table></div>
+    <div class="src">출처: 2025년 건설공사 표준품셈 건축부문 제6장 방수공사 (국토교통부 고시 반영본). 공구손료·경장비는 인력품의 2~6%를 별도 계상<sup><a href="#src1">[1]</a></sup>. 표준품셈은 관급 기준이므로 소규모 민간 시장 실제 공기는 더 짧게 잡히는 경우가 많다.</div>
+
+    <h3>5-2. 직종별 노임단가 (2025년, 일당)</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th class="l">직종</th><th>2025.1.1~8.31</th><th>2025.9.1~12.31</th></tr></thead>
+      <tbody>
+        <tr><td>방수공</td><td>220,722원</td><td>226,204원</td></tr>
+        <tr><td>보통인부</td><td>169,804원</td><td>171,037원</td></tr>
+        <tr><td>작업반장</td><td>213,033원</td><td>214,661원</td></tr>
+        <tr><td>미장공 (몰탈방수 관련)</td><td>272,354원</td><td>278,998원</td></tr>
+        <tr><td>도장공 (마감도료)</td><td>253,409원</td><td>258,362원</td></tr>
+        <tr><td>철거공 (구도막 철거, 2025 신설)</td><td>264,828원</td><td>해당없음</td></tr>
+      </tbody>
+    </table></div>
+    <div class="src">출처: 대한건설협회 건설계약연구원 「2025년도 적용 건설시중노임」(전국 2,000개 건설현장 임금실태조사)<sup><a href="#src2">[2]</a></sup>.</div>
+
+    <h3>5-3. 계산 사례: 30평(99㎡) 옥상 우레탄 노출 도막방수</h3>
+    <div class="calc">
+      <b>[가정]</b> 바탕처리(보통) 1회 + 프라이머 1회 + 우레탄 중도 2회 + 상도(마감도료) 1회 + 보강포 전면 1회<br>
+      <b>[노무량]</b> 방수공 = (0.030 + 0.011 + 0.015×2 + 0.012 + 0.010) × 99㎡ ≈ <b>9.2인·일</b> / 보통인부 = (0.012 + 0.005 + 0.009×2 + 0.005 + 0.004) × 99㎡ ≈ <b>4.4인·일</b><br>
+      <b>[노무비]</b> 9.2 × 220,722원 + 4.4 × 169,804원 ≈ 2,031,000 + 747,000 ≈ <b>약 278만원</b> (재료비·공구손료·경비·일반관리비·이윤 별도)<br>
+      <b>[투입 인원·공기 환산]</b> 방수공 2 + 보통인부 1~2 (3~4인 팀)이면 품셈 기준 4~5일. 시장 실제로는 숙련팀이 30평을 2~3일에 마감하는 사례가 보고된다<sup><a href="#src16">[16]</a><a href="#src17">[17]</a></sup>.
+    </div>
+
+    <h3>5-4. 공기 사례</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th class="l">현장</th><th class="l">공기</th><th class="l">근거</th></tr></thead>
+      <tbody>
+        <tr><td>10~14평 소규모 (샌딩+물길+방수페인트+기와 고정 포함)</td><td class="l">약 2일</td><td class="l">실제 시공 사례 답변(2021)<sup><a href="#src16">[16]</a></sup></td></tr>
+        <tr><td>100평 우레탄 옥상방수</td><td class="l">3~5일</td><td class="l">시공업체 경험치(2010)<sup><a href="#src17">[17]</a></sup></td></tr>
+        <tr><td>주택 옥상 칼라강판 스틀 방수 (전남 화순)</td><td class="l">4일</td><td class="l">베테랑지붕 시공기록<sup><a href="#src13">[13]</a></sup></td></tr>
+        <tr><td>폴리우레아 (도포 후)</td><td class="l">수 초 경화, 5분 내 도보 통행 가능</td><td class="l">(주)방수우레아 기술자료. 주말 시공도 가능하다고 홍보<sup><a href="#src19">[19]</a></sup></td></tr>
+        <tr><td>크랙 인젝션 (10m 내외)</td><td class="l">씰링 경화 12~24h + 양생 24~36h로 1~2일</td><td class="l">인젝션 시방서<sup><a href="#src6">[6]</a></sup></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="card" id="s6">
+    <h2><span class="no">6</span>예산 시나리오: 규모·공법별 총액 추정</h2>
+    <div class="desc">4장의 출처 단가를 곱해 산출한 참고 범위다. 현장 조건(바탕 상태·접근성·철거물량)에 따라 변동된다.</div>
+    <div class="tbl-bar">
+      <button class="chip on" data-f="all">전체</button>
+      <button class="chip" data-f="part">부분보수</button>
+      <button class="chip" data-f="full">전체 방수시공</button>
+    </div>
+    <div class="tbl-wrap"><table id="tbl6">
+      <thead><tr><th>No</th><th class="l">시나리오</th><th class="l">공법</th><th>면적/물량</th><th>단가 적용</th><th class="l">예산 범위</th><th>인원</th><th>공기</th></tr></thead>
+      <tbody>
+        <tr data-c="part"><td>A</td><td class="l">국소 크랙 부분보수</td><td class="l">에폭시/우레탄 인젝션 + 표면처리</td><td>10m</td><td class="l">m당 0.95~1.3만 + 출장기본 50만 (2013 단가)<sup><a href="#src28">[28]</a></sup></td><td class="l"><b>약 60만~100만원</b><br>(최근 견적은 이보다 높을 수 있음)</td><td>2~3명</td><td>1~2일</td></tr>
+        <tr data-c="part"><td>B</td><td class="l">크랙 다수 + 방수층 국부 들뜸</td><td class="l">구도막 부분철거 + 인젝션 + 우레탄 부분재도포</td><td>10~20평</td><td class="l">우레탄 단가의 1.5~2배 (협소작업 할증 관행)<sup><a href="#src18">[18]</a></sup></td><td class="l"><b>약 150만~450만원</b></td><td>3~4명</td><td>2~3일</td></tr>
+        <tr data-c="full"><td>C</td><td class="l">단독주택·빌라 옥상 전체방수 (경제형)</td><td class="l">우레탄 도막 (하도+중도+상도)</td><td>20평</td><td class="l">평당 7.8만~15만<sup><a href="#src20">[20]</a><a href="#src11">[11]</a></sup></td><td class="l"><b>약 156만~300만원</b></td><td>3~4명</td><td>2일</td></tr>
+        <tr data-c="full"><td>D</td><td class="l">빌라 옥상 전체방수 (표준)</td><td class="l">우레탄 도막 + 크랙 보강</td><td>30평</td><td class="l">평당 7.8만~15만 (크랙보강 가산)<sup><a href="#src14">[14]</a></sup></td><td class="l"><b>약 230만~450만원</b></td><td>3~4명</td><td>2~3일</td></tr>
+        <tr data-c="full"><td>E</td><td class="l">노후 옥상 장기 보전 (고내구)</td><td class="l">폴리우레아 스프레이</td><td>30평</td><td class="l">평당 4.2만~8만<sup><a href="#src14">[14]</a></sup></td><td class="l"><b>약 126만~240만원</b><br>(장비·바탕 이슈 시 상향)</td><td>3~4명</td><td>1~2일</td></tr>
+        <tr data-c="full"><td>F</td><td class="l">주택 옥상 반영구 시공</td><td class="l">칼라강판 스틀 방수 (목조틀+강판)</td><td>30평</td><td class="l">평당 17만~25만<sup><a href="#src13">[13]</a><a href="#src12">[12]</a></sup></td><td class="l"><b>약 510만~750만원</b></td><td>4~5명</td><td>4일</td></tr>
+        <tr data-c="full"><td>G</td><td class="l">공동주택·상가 옥상 대면적</td><td class="l">우레탄 도막 전면 재시공</td><td>100평</td><td class="l">평당 7.8만~15만<sup><a href="#src20">[20]</a><a href="#src11">[11]</a></sup></td><td class="l"><b>약 780만~1,500만원</b></td><td>5~6명</td><td>3~5일</td></tr>
+        <tr data-c="full"><td>H</td><td class="l">공장·창고 지붕 누수 (판넬)</td><td class="l">폴리우레아 스프레이</td><td>100평</td><td class="l">평당 4.2만~8만<sup><a href="#src14">[14]</a></sup></td><td class="l"><b>약 420만~800만원</b></td><td>3~4명</td><td>2~3일</td></tr>
+        <tr data-c="full"><td>I</td><td class="l">시트 방수 시공 시</td><td class="l">가열식/접착식 시트</td><td>100평</td><td class="l">우레탄 단가 + 평당 3만~5만<sup><a href="#src18">[18]</a></sup></td><td class="l"><b>약 1,080만~2,000만원</b></td><td>5~6명</td><td>5~7일</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>예산 수립 체크리스트</h3>
+    <ul>
+      <li>견적서에 <b>바탕처리(구도막 철거)·폐기물·사다리차/양중·벽면 30cm 이상 치켜올림</b> 포함 여부를 항목별로 확인한다<sup><a href="#src18">[18]</a><a href="#src19">[19]</a></sup>.</li>
+      <li><b>최소 3~5곳 견적 비교</b>를 권장한다(현장 전문가·업체 공통 권고)<sup><a href="#src18">[18]</a><a href="#src19">[19]</a></sup>.</li>
+      <li>계약서에 <b>하자보증 기간과 범위, 방수층 두께, 도포 회수, 사용 자재명</b>을 명시한다<sup><a href="#src21">[21]</a></sup>.</li>
+      <li><b>공정별 사진첩 제출</b>을 계약 조건으로 넣어 시공 품질을 검증한다<sup><a href="#src27">[27]</a></sup>.</li>
+      <li>우천·동절기(5도 이하) 일정은 배제하고 <b>봄~가을 시공</b>을 계획한다<sup><a href="#src6">[6]</a></sup>.</li>
+      <li>아파트 등 공동주택은 관리주체(입주자대표회의·관리사무소) 경유 및 <b>하자접수(adc.go.kr 하자관리정보시스템)</b> 절차를 먼저 확인한다<sup><a href="#src3">[3]</a></sup>.</li>
+    </ul>
+  </div>
+
+  <div class="card" id="s7">
+    <h2><span class="no">7</span>주요 업체 현황: 누가 시공하나</h2>
+    <div class="desc">지붕·옥상 방수 시장은 (1) 전문건설(습식·방수공사업) 면허 대형업체, (2) 지역 소규모 전문·특화업체, (3) 플랫폼 매칭으로 구성된다.</div>
+
+    <h3>7-1. 시공능력평가 습식·방수공사 상위 10개사 (2026년)</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>순위</th><th class="l">업체명</th><th>시공능력평가액</th><th>소재지</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="l">(주)아이알에스건설</td><td>913억원</td><td>경기도</td></tr>
+        <tr><td>2</td><td class="l">거정건설(주)</td><td>905억원</td><td>서울</td></tr>
+        <tr><td>3</td><td class="l">(주)대몽건설</td><td>769억원</td><td>서울</td></tr>
+        <tr><td>4</td><td class="l">삼호개발(주)</td><td>607억원</td><td>충청남도</td></tr>
+        <tr><td>5</td><td class="l">엘티삼보(주)</td><td>599억원</td><td>부산</td></tr>
+        <tr><td>6</td><td class="l">화승토건(주)</td><td>532억원</td><td>서울</td></tr>
+        <tr><td>7</td><td class="l">(주)우신에이스</td><td>510억원</td><td>인천</td></tr>
+        <tr><td>8</td><td class="l">기준건설(주)</td><td>452억원</td><td>경기도</td></tr>
+        <tr><td>9</td><td class="l">미창건설(주)</td><td>437억원</td><td>경기도</td></tr>
+        <tr><td>10</td><td class="l">(주)혜진건설</td><td>437억원</td><td>서울</td></tr>
+      </tbody>
+    </table></div>
+    <div class="src">출처: 산군(건설DB)가 정리한 대한전문건설협회 시공능력평가 기반 2026년 습식·방수공사 도급순위(2026-07-31)<sup><a href="#src4">[4]</a></sup>. 2025년 발표에서는 세보엠이씨, 우신에이스, 대몽건설 등이 상위권이었다<sup><a href="#src5">[5]</a></sup>. 이들 대형 전문방수업체는 주로 신축 현장·대규모 리모델링 발주에 참여하며, 소규모 주택 옥상은 아래 지역 업체가 담당하는 구조다.</div>
+
+    <h3>7-2. 방수자재 제조·공급사</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th class="l">분야</th><th class="l">업체</th></tr></thead>
+      <tbody>
+        <tr><td>도막 방수제·방수페인트</td><td class="l">삼화페인트, 노루페인트, KCC (시장 주도)<sup><a href="#src25">[25]</a></sup></td></tr>
+        <tr><td>시트 방수·우레탄 방수재</td><td class="l">신성에스앤씨, 동양화학<sup><a href="#src25">[25]</a></sup></td></tr>
+        <tr><td>크랙·균열 보수용 (주입재·퍼티)</td><td class="l">씨카코리아(Sika): 에폭시계·폴리우레탄계·아크릴레이트계·시멘트계 전 구성<sup><a href="#src7">[7]</a></sup></td></tr>
+        <tr><td>인젝션 장비·자재</td><td class="l">대화정밀공업 (리인젝터·건축용 주사기·씰링제 국내 제조)<sup><a href="#src6">[6]</a></sup></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>7-3. 지역·특화 시공업체 예시 (공개 정보 기준)</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th class="l">업체</th><th class="l">특화 분야</th><th class="l">공개된 조건</th></tr></thead>
+      <tbody>
+        <tr><td>(주)방수우레아</td><td class="l">폴리우레아 전문 (옥상·판넬지붕·수영장)</td><td class="l">대구 기반 전국 시공, 수명 30년 보장·AS 5년 책임<sup><a href="#src19">[19]</a></sup></td></tr>
+        <tr><td>물사랑특수방수</td><td class="l">악성 누수·특허공법 (R.T.T 고압주입)</td><td class="l">1997년 설립 30년, 특허 2건 보유, 하자보증 3년, 전국 지사<sup><a href="#src22">[22]</a></sup></td></tr>
+        <tr><td>베테랑지붕</td><td class="l">칼라강판 스틀 방수·지붕공사</td><td class="l">광주·전남권, 평당 17만~25만원 공개, 무료 방문견적<sup><a href="#src13">[13]</a></sup></td></tr>
+        <tr><td>포스코지붕공사</td><td class="l">지붕공사·스틀 방수 (바닥형/지붕형/하이브리드)</td><td class="l">대형 건물·난간공사 병행<sup><a href="#src26b">[26]</a></sup></td></tr>
+        <tr><td>제이엠도장솔루션</td><td class="l">옥상방수·에폭시·도장</td><td class="l">30년 기술력, 방수 3년 하자증권 발행, 옥상방수 평균 평당 10만원(2026)<sup><a href="#src21">[21]</a></sup></td></tr>
+        <tr><td>건기넷 (프랜차이즈)</td><td class="l">단열·방수 전문점 체인</td><td class="l">건축·인테리어·방수단열·철거 복합 서비스<sup><a href="#src26c">[26]</a></sup></td></tr>
+        <tr><td>숨고 (플랫폼)</td><td class="l">시공고수 매칭</td><td class="l">옥상공사/방수 평균 시공당 3,504,433원<sup><a href="#src15b">[15]</a></sup></td></tr>
+      </tbody>
+    </table></div>
+    <div class="src">위 업체 목록은 각 사 공개 자료에 근거한 "예시"이며 특정 업체 추천이 아니다. 계약 전 면허(습식·방수공사업 등 전문건설업 등록), 실적, 하자보증 조건을 반드시 별도 확인해야 한다.</div>
+
+    <h3>7-4. 업체 선택 실무 기준</h3>
+    <ul>
+      <li>공동주택·대형 건물: 전문건설협회 등록 습식·방수공사 전문업체(시공능력평가 확인) 또는 관리주체 추천 업체<sup><a href="#src4">[4]</a></sup></li>
+      <li>단독주택·소규모: 지역 방수 전문업체 방문견적 3~5곳 비교<sup><a href="#src18">[18]</a></sup></li>
+      <li>악성 누수(재시공 반복): 특허공법·주입 전문업체 검토<sup><a href="#src22">[22]</a></sup></li>
+      <li>업체가 제시하는 공법이 왜 해당 건물에 적합한지 논리적으로 설명하지 못하면 재고려<sup><a href="#src18">[18]</a></sup></li>
+      <li>터무니없이 싼 견적(인건비 비중이 높은 공종)은 공정 생략 우려가 있으므로 피한다<sup><a href="#src18">[18]</a></sup></li>
+    </ul>
+  </div>
+
+  <div class="card" id="s8">
+    <h2><span class="no">8</span>법적 기준과 계약 보호</h2>
+    <div class="desc">하자는 "공사상 잘못으로 균열·침하·파손·들뜸·누수 등이 발생해 안전·기능·미관상 지장을 초래하는 결함"이다(공동주택관리법 시행령 제37조)<sup><a href="#src3">[3]</a></sup>.</div>
+
+    <h3>8-1. 공동주택 하자담보책임기간 (공동주택관리법 시행령 별표 4)</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th class="l">구분</th><th>기간</th></tr></thead>
+      <tbody>
+        <tr><td>내력구조부 (기둥·보·내력벽·바닥·지붕틀·주계단 등)</td><td><span class="pill r">10년</span></td></tr>
+        <tr><td>방수공사</td><td><span class="pill o">5년</span></td></tr>
+        <tr><td>지붕공사 (홈통·우수관 포함)</td><td><span class="pill o">5년</span></td></tr>
+        <tr><td>철근콘크리트·조적·철골공사</td><td><span class="pill o">5년</span></td></tr>
+        <tr><td>설비공사 (급배수·전기·소방·난방 등)</td><td><span class="pill b">3년</span></td></tr>
+        <tr><td>마감공사 (미장·타일·도장·도배 등)</td><td><span class="pill g">2년</span></td></tr>
+      </tbody>
+    </table></div>
+    <div class="src">기산일: 전유부분은 입주자 인도일, 공용부분(옥상 포함)은 사용검사일부터. 입주자대표회의가 임의 설치한 시설물은 법정 기간이 아닌 계약 내용 따름<sup><a href="#src3">[3]</a></sup>. 참고로 일반 건설공사 계약의 하자보수 기간은 건설산업기본법상 3년이며, 공공발주에서 방수공사는 하자보증금을 10년으로 정하는 사례도 있다<sup><a href="#src26">[26]</a></sup>.</div>
+
+    <h3>8-2. 업체 보증 실태</h3>
+    <ul>
+      <li>민간 업체 무상 하자보증: 3년 (서울방수, 제이엠도장솔루션 하자증권, 물사랑특수방수)<sup><a href="#src20">[20]</a><a href="#src21">[21]</a><a href="#src22">[22]</a></sup></li>
+      <li>폴리우레아 전문: AS 5년 책임 보장 사례<sup><a href="#src19">[19]</a></sup></li>
+      <li>계약서에 하자보증 기간·범위·보증보험 가입 여부를 명시해야 분쟁 시 대응이 가능하다.</li>
+    </ul>
+
+    <h3>8-3. 계약 전 최종 체크리스트</h3>
+    <ol>
+      <li>누수 경로 진단 자료(사진·물막이 테스트 결과)를 견적 전에 받는다<sup><a href="#src10b">[10]</a></sup>.</li>
+      <li>공법·자재(제품명)·도포 회수·두께를 견적서에 항목화한다<sup><a href="#src21">[21]</a></sup>.</li>
+      <li>철거·폐기물·양중·벽면 처리 포함 여부를 확인한다<sup><a href="#src19">[19]</a></sup>.</li>
+      <li>공정별 사진첩 제출 조건을 넣는다<sup><a href="#src27">[27]</a></sup>.</li>
+      <li>하자보증 기간(업체 3~5년)과 보증 방식(증권·보험)을 확인한다<sup><a href="#src19">[19]</a><a href="#src21">[21]</a></sup>.</li>
+      <li>공동주택은 사용승인·하자 접수 이력(adc.go.kr)과 관리규약상 의결 절차를 확인한다<sup><a href="#src3">[3]</a></sup>.</li>
+    </ol>
+
+    <div class="tips"><b>DIY는 언제까지 가능한가</b> 부분 크랙 보수는 DIY 가이드(청소 - 하도 - 우레탄 퍼티 균열 메꾸기 - 중도 - 상도)와 저가 자재(크랙 주입제·필러 등)로 접근할 수 있다<sup><a href="#src8">[8]</a></sup>. 다만 고압 장비가 필요한 폴리우레아, 접착 관리가 중요한 시트, 구조체 인젝션은 숙련도가 품질을 결정하며, 잘못된 DIY는 재시공 비용으로 돌아온다는 것이 업계 공통 견해다<sup><a href="#src19">[19]</a><a href="#src14">[14]</a></sup>.</div>
+  </div>
+
+  <div class="card" id="srcs">
+    <h2><span class="no">※</span>출처 목록 (접근일: 2026-08-21)</h2>
+    <div class="desc">공식 문서·제조사 자료·업체 공개 단가·시공 사례를 구분해 표기했다. 블로그 출처는 시점을 명시했으므로 참고용으로 활용한다.</div>
+    <ol class="srcs">
+      <li id="src1">국토교통부 고시 반영 2025 건설공사 표준품셈 건축부문 제6장 방수공사 (공개 게시본) - <a href="http://cyeng.iptime.org/xe/board_moct/86788" target="_blank">cyeng.iptime.org/xe/board_moct/86788</a> · 원문 고시: <a href="https://www.molit.go.kr/LCMS/DWN.jsp?fold=/N01_B/&fileName=%EA%B5%AD%ED%86%A0%EA%B5%90%ED%86%B5%EB%B6%80_%EA%B3%A0%EC%8B%9C_%EC%A0%9C2025-406%ED%98%B8,_%EC%A0%9C1026%ED%98%B8_%EA%B1%B4%EC%84%A4%EC%8B%A0%EA%B8%B0%EC%88%A0_%EC%A7%80%EC%A0%95(2686).pdf" target="_blank">국토교통부고시 제2025-406호</a></li>
+      <li id="src2">대한건설협회 건설계약연구원, 2025년도 적용 건설시중노임 (직종별 일당) - <a href="http://www.csr.co.kr/pds_data/noim2025.htm" target="_blank">csr.co.kr/pds_data/noim2025.htm</a></li>
+      <li id="src3">생활법령정보, 아파트 하자의 범위 및 하자담보책임기간 (공동주택관리법 시행령 제36조·별표 4, 기준일 2026-07-15) - <a href="https://easylaw.go.kr/CSP/CnpClsMain.laf?csmSeq=1222&ccfNo=3&cciNo=1&cnpClsNo=1" target="_blank">easylaw.go.kr</a></li>
+      <li id="src4">산군(Sankun) 건설DB, 2026년 습식·방수공사 건설사 도급순위 (시공능력평가, 2026-07-31) - <a href="https://www.sankun.com/construction-company/%EC%A0%84%EB%AC%B8%EA%B1%B4%EC%84%A4%EC%97%85/%EC%8A%B5%EC%8B%9D%E2%88%99%EB%B0%A9%EC%88%98%EA%B3%B5%EC%82%AC/%EC%A0%84%EC%B2%B4" target="_blank">sankun.com</a></li>
+      <li id="src5">산군 블로그, 2025년 습식·방수공사 시공능력평가 순위 발표 (대한전문건설협회, 2025-07-31) - <a href="https://www.sankun.com/blog/detail/1121" target="_blank">sankun.com/blog/detail/1121</a></li>
+      <li id="src6">대화정밀공업, 인젝션공법(리인젝터 주입공법) 시방서 (9단계 공정·시공 유의사항) - <a href="https://daehwa.info/new/html/injection/reinjector.html" target="_blank">daehwa.info</a></li>
+      <li id="src7">씨카코리아(Sika Korea), 크랙·균열 보수용 제품 및 공법 안내 - <a href="https://kor.sika.com/ko/construction/46911/46912.html" target="_blank">kor.sika.com</a></li>
+      <li id="src8">다나와 DPG, 우레탄 옥상 방수공사 하는 방법 (셀프 가이드, 2021-06-24) - <a href="https://dpg.danawa.com/news/view?boardSeq=66&listSeq=4744769" target="_blank">dpg.danawa.com</a></li>
+      <li id="src9">Legendary.moca, 옥상방수 공법 종류 및 장단점 비교 (TPO·우레탄·폴리우레아·아스팔트, 2023-05-22) - <a href="https://dnoa.tistory.com/entry/%EC%98%A5%EC%83%81%EB%B0%A9%EC%88%98-%EA%B3%B5%EB%B2%95-%EC%A2%85%EB%A5%98-%EB%B0%8F-%EC%9E%A5%EB%8B%A8%EC%A0%90-%EB%B9%84%EA%B5%90-TPO-%EC%9A%B0%EB%A0%88%ED%83%84-%ED%8F%B4%EB%A6%AC%EC%9A%B0%EB%A0%88%EC%95%84-%EC%95%84%EC%8A%A4%ED%8C%94%ED%8A%B8" target="_blank">dnoa.tistory.com</a></li>
+      <li id="src10">PHIKO 지식인 사례, 옥상 우레탄방수 크랙 보수 관련 질문 (구조체 크랙은 에폭시 주입, 2024-10-02) - <a href="https://www.phiko.kr/bbs/board.php?bo_table=z4_03&wr_id=40397" target="_blank">phiko.kr</a> <span id="src10b"></span></li>
+      <li id="src11">ihometree 네이버블로그, 옥상 방수 종류와 가격 비교 (2026-02-13) - <a href="https://m.blog.naver.com/ihometree/224182618844" target="_blank">blog.naver.com/ihometree</a></li>
+      <li id="src12">KOI스틸, 빌라 옥상방수 비용 정리 (2023-12-11) - <a href="https://koisteel.net/portfolio/%EB%B9%8C%EB%9D%BC%EC%98%A5%EC%83%81%EB%B0%A9%EC%88%98-%EB%B9%84%EC%9A%A9/" target="_blank">koisteel.net</a></li>
+      <li id="src13">베테랑지붕, 옥상방수 비용 책정과 스틀 방수 시공기 (2023-12-21, 2025-05-28) - <a href="https://roofveteran.tistory.com/141" target="_blank">roofveteran.tistory.com/141</a> · <a href="https://roofveteran.tistory.com/140" target="_blank">/140</a></li>
+      <li id="src14">momopong, 폴리우레아 방수 단가 결정 기준과 현장 사례표 (2025-05-02) - <a href="https://momopong.tistory.com/entry/%ED%8F%B4%EB%A6%AC-%EC%9A%B0%EB%A0%88%EC%95%84-%EB%B0%A9%EC%88%98-%EB%8B%A8%EA%B0%80%EA%B0%80-%EA%B2%B0%EC%A0%95%EB%90%98%EB%8A%94-%EA%B8%B0%EC%A4%80%EC%9D%80" target="_blank">momopong.tistory.com</a></li>
+      <li id="src15b">숨고, 옥상공사/방수 예상 견적 (평균 시공당 3,504,433원) - <a href="https://soomgo.com/prices/%EC%98%A5%EC%83%81%EA%B3%B5%EC%82%AC-%EB%B0%A9%EC%88%98" target="_blank">soomgo.com/prices</a> · 고수 답변(우레아 자재 3~5배) - <a href="https://soomgo.com/community/soomgo-life/posts/67274c1acd5b62c2fbb16dcc" target="_blank">숨고 커뮤니티</a> <span id="src15"></span></li>
+      <li id="src16">아하(a-ha), 30평 미만 옥상 방수 비용 전문가 답변 (m²당 24,000원·공기 2일, 2021-03-29) - <a href="https://www.a-ha.io/questions/408b52cff7a1108dbceaf6a6c0a8469c" target="_blank">a-ha.io</a></li>
+      <li id="src17">successblue 네이버블로그, 옥상 방수공사 공기 (100평 3~5일, 2010-06-05) - <a href="https://m.blog.naver.com/successblue/20107139095" target="_blank">blog.naver.com/successblue</a></li>
+      <li id="src18">프로방수마스터, 옥상방수가격 평당 적정선과 비용 결정 요인 (2026-06-21) - <a href="https://bangsoo.jisun.love/856/" target="_blank">bangsoo.jisun.love/856</a></li>
+      <li id="src19">(주)방수우레아, 옥상 지붕 방수 종류 및 폴리우레아 가격 안내 (2026-05-03) - <a href="https://armorthanekorea.tistory.com/entry/%EC%98%A5%EC%83%81-%EC%A7%80%EB%B6%95-%EB%B0%A9%EC%88%98%EC%9D%98-%EC%A2%85%EB%A5%98-%EB%B0%8F-%EC%8B%9C%EA%B3%B5-%EA%B0%80%EA%B2%A9-%EC%95%88%EB%82%B4" target="_blank">armorthanekorea.tistory.com</a> · <a href="https://amthane.com/roofing2" target="_blank">amthane.com/roofing2</a></li>
+      <li id="src20">서울방수(coking79), 우레탄 방수 평당 78,000원·무상하자보수 3년 공개 - <a href="http://coking79.com/" target="_blank">coking79.com</a></li>
+      <li id="src21">제이엠도장솔루션, 옥상방수 평균 견적(평당 10만원, 2026 237건)·3년 하자증권 - <a href="https://www.jmpaintsol.com/" target="_blank">jmpaintsol.com</a></li>
+      <li id="src22">물사랑특수방수, 업체 소개 (1997년 설립·특허공법·하자보증 3년) - <a href="http://moolsarang.com/" target="_blank">moolsarang.com</a></li>
+      <li id="src23">대륜법률사무소, 아파트 하자보수소송 보상금 산정 방식 (균열 0.3mm 기준, 2026-08-04 수정) - <a href="https://www.daeryunlaw-compensation.com/lawInfo_new/2396" target="_blank">daeryunlaw-compensation.com</a></li>
+      <li id="src24">건설현장 실무노트, 콘크리트 균열폭 0.3mm 판정(KDS 14 20 30)·균열 조사법·보수 공법 선택 (2026-07-29) - <a href="https://idh1258.tistory.com/171" target="_blank">idh1258.tistory.com/171</a> · <a href="https://idh1258.tistory.com/174" target="_blank">/174</a></li>
+      <li id="src25">danggur, 대한민국 방수 업계 현황 (자재사: 삼화페인트·노루페인트·KCC·신성에스앤씨·동양화학, 2025-02-28) - <a href="https://danggur.tistory.com/entry/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD-%EB%B0%A9%EC%88%98-%EC%97%85%EA%B3%84-%ED%98%84%ED%99%A9" target="_blank">danggur.tistory.com</a></li>
+      <li id="src26">한국부동산신문(hapt), 옥상방수 공사 하자보증기간 논점 (건설산업기본법 3년·보증금 10년, 2022-02-16) - <a href="https://www.hapt.co.kr/news/articleView.html?idxno=154720" target="_blank">hapt.co.kr</a> <span id="src26b"></span><span id="src26c"></span></li>
+      <li id="src27">옥상 방수 공사 시방서 (공정별 사진촬영 사진첩 제출 요구) - <a href="https://88countryclub.co.kr/Board/File.aspx?attach=1608&post=4164&mode=down&cfgid=tender" target="_blank">88countryclub.co.kr 첨부파일</a></li>
+      <li id="src28">천리향의 블로그, 콘크리트 크랙 인젝션 단가와 실무 (31년 경력 시공자, 2013-09-08) - <a href="https://kyn8287.tistory.com/606" target="_blank">kyn8287.tistory.com/606</a></li>
+    </ol>
+  </div>
+
+  <footer>
+    <p><b>작성 기준</b> 2026-08-21 공개 자료 기반. 공식 문서(표준품셈·노임단가·생활법령정보)와 업체 공개 단가, 시공 사례를 교차 검증해 수치마다 출처를 병기했다.</p>
+    <p><b>유의사항</b> 평당 단가와 예산 범위는 시점별 시장 시세이며 현장 조건(바탕 상태·접근성·철거 물량·지역)에 따라 크게 변동된다. 본 리포트는 실제 계약 전 최소 3곳 이상 방문 견적을 대체하지 않는다. 방수공사 하자 관련 법적 분쟁은 하자관리정보시스템(adc.go.kr)과 전문가 확인이 필요하다.</p>
+    <p><b>면책</b> 업체 순위는 대한전문건설협회 시공능력평가 공개 자료를 인용한 것이며 특정 업체 추천이 아니다. 수명(내구연한) 표기는 각 출처의 주장 범위를 그대로 병기한 것이다.</p>
+  </footer>
+</div>
+
+<script>
+  // 예산 시나리오 필터
+  document.querySelectorAll('#s6 .chip').forEach(function(ch){
+    ch.addEventListener('click', function(){
+      document.querySelectorAll('#s6 .chip').forEach(function(c){c.classList.remove('on')});
+      ch.classList.add('on');
+      var f = ch.getAttribute('data-f');
+      document.querySelectorAll('#tbl6 tbody tr').forEach(function(tr){
+        tr.style.display = (f==='all' || tr.getAttribute('data-c')===f) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

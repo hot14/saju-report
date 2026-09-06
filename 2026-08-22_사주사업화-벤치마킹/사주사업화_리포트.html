@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사주 사업화 벤치마킹 리포트 v4 | 비판적 검토·해결방안·실행 도구</title>
+<style>
+  :root{
+    --navy:#1f3864; --blue:#2563eb; --blue-lt:#dbeafe; --orange:#f59e0b; --orange-lt:#fef3c7;
+    --red:#c2410c; --purple:#7c3aed; --purple-lt:#ede9fe; --teal:#0d9488; --teal-lt:#ccfbf1;
+    --bg:#f4f6f9; --card:#ffffff; --line:#e5e7eb; --txt:#1f2937; --sub:#6b7280;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:var(--bg);color:var(--txt);line-height:1.65}
+  .wrap{max-width:1080px;margin:0 auto;padding:32px 20px 64px}
+  header{background:linear-gradient(135deg,#1f3864 0%,#4c1d95 100%);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:24px}
+  header .tag{display:inline-block;background:rgba(255,255,255,.16);padding:4px 12px;border-radius:99px;font-size:12.5px;letter-spacing:.4px;margin-bottom:12px}
+  header h1{font-size:26px;font-weight:800;margin-bottom:8px}
+  header .sub{font-size:14px;opacity:.85}
+  header .meta{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px;font-size:12.5px;opacity:.75}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:16px;margin-bottom:24px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+  .kpi .label{font-size:12.5px;color:var(--sub);font-weight:600}
+  .kpi .value{font-size:23px;font-weight:800;margin-top:6px;letter-spacing:-.5px}
+  .kpi .value small{font-size:13px;font-weight:600;color:var(--sub)}
+  .kpi .range{font-size:12px;color:var(--sub);margin-top:4px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin-bottom:24px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+  .card h2{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:4px}
+  .card .desc{font-size:13px;color:var(--sub);margin-bottom:18px}
+  .note{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:16px 20px;font-size:13px;color:#78350f;margin-bottom:24px}
+  .note b{font-weight:800}
+  .note.green{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}
+  h3.sec{font-size:14.5px;font-weight:800;color:var(--navy);margin:22px 0 10px;display:flex;align-items:center;gap:8px}
+  h3.sec .n{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;background:var(--blue-lt);color:var(--blue);font-size:12px;font-weight:800}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+  table{width:100%;border-collapse:collapse;font-size:12.6px;white-space:nowrap}
+  thead th{background:#f8fafc;color:#374151;font-weight:700;padding:10px 12px;border-bottom:1px solid var(--line);text-align:left}
+  tbody td{padding:9px 12px;border-bottom:1px solid #f1f5f9;text-align:left;vertical-align:top}
+  tbody tr:hover{background:#f8fafc}
+  tbody tr:last-child td{border-bottom:none}
+  td .p{font-weight:800;color:var(--navy)}
+  .tagchip{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin:1px 2px 1px 0}
+  .tc{background:var(--blue-lt);color:var(--blue)} .to{background:var(--orange-lt);color:#b45309}
+  .tp{background:var(--purple-lt);color:var(--purple)} .tt{background:var(--teal-lt);color:#0f766e}
+  .models{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px;margin-bottom:8px}
+  .model{border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:#fbfcfe}
+  .model h4{font-size:14.5px;font-weight:800;color:var(--navy);margin-bottom:6px}
+  .model .who{font-size:12px;color:var(--sub);margin-bottom:8px}
+  .model ul{list-style:none;font-size:12.8px}
+  .model li{padding:3px 0;padding-left:16px;position:relative;color:#374151}
+  .model li::before{content:'·';position:absolute;left:4px;color:var(--blue);font-weight:800}
+  .pband{display:grid;grid-template-columns:110px 1fr 200px;gap:12px;align-items:center;padding:8px 0;border-bottom:1px dashed #e5e7eb;font-size:12.8px}
+  .pband:last-child{border-bottom:none}
+  .pband .pl{font-weight:800;color:var(--navy)}
+  .pband .bar{height:14px;border-radius:7px;background:#eef2f7;position:relative}
+  .pband .bar .fill{position:absolute;inset:0;border-radius:7px;opacity:.85}
+  .pband .ex{color:var(--sub);font-size:11.8px}
+  .swot{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+  .swot>div{border-radius:10px;padding:12px 14px;font-size:12.6px}
+  .sw{background:#ecfdf5;border:1px solid #a7f3d0} .sw b{color:#065f46}
+  .swd{background:#fef2f2;border:1px solid #fecaca} .swd b{color:#991b1b}
+  .road{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+  .phase{border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:linear-gradient(180deg,#fbfcfe,#fff)}
+  .phase .ph{font-size:11px;font-weight:800;letter-spacing:1px;color:var(--blue);margin-bottom:4px}
+  .phase h4{font-size:14.5px;font-weight:800;color:var(--navy);margin-bottom:8px}
+  .phase ul{list-style:none;font-size:12.8px}
+  .phase li{padding:3px 0 3px 16px;position:relative;color:#374151}
+  .phase li::before{content:'→';position:absolute;left:0;color:var(--blue);font-weight:800;font-size:11px}
+  .budget{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;margin-bottom:12px}
+  .bcard{border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:#fbfcfe}
+  .bcard .bt{font-size:11px;font-weight:800;letter-spacing:.8px;color:var(--purple);margin-bottom:4px}
+  .bcard h4{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:2px}
+  .bcard .total{font-size:20px;font-weight:800;color:var(--navy);margin:6px 0 10px}
+  .bcard .total small{font-size:12px;color:var(--sub);font-weight:600}
+  .bcard ul{list-style:none;font-size:12.4px}
+  .bcard li{padding:3px 0 3px 14px;position:relative;color:#374151;border-bottom:1px dashed #eef2f7}
+  .bcard li:last-child{border-bottom:none}
+  .bcard li::before{content:'₩';position:absolute;left:0;color:var(--purple);font-weight:800;font-size:11px}
+  .bars{margin-top:6px}
+  .brow{display:grid;grid-template-columns:150px 1fr 90px;gap:10px;align-items:center;font-size:12.2px;padding:5px 0}
+  .brow .bl{font-weight:700;color:#374151}
+  .brow .track{height:12px;background:#eef2f7;border-radius:6px;overflow:hidden}
+  .brow .fillb{height:100%;border-radius:6px}
+  .brow .bv{text-align:right;color:var(--sub);font-weight:600}
+  .kpi-tbl td b{color:var(--navy)}
+  .src{font-size:12px;color:var(--sub);line-height:1.9}
+  footer{font-size:12px;color:var(--sub);padding:0 8px}
+  @media(max-width:640px){header{padding:26px 22px}header h1{font-size:20px}.kpi .value{font-size:19px}.swot{grid-template-columns:1fr}.pband{grid-template-columns:88px 1fr;}.pband .ex{grid-column:1/-1}}
+  @media print{body{background:#fff}.card,.kpi,header{box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="tag">사업 아이디어 검증 · 심화 리포트 v3 (시장·KPI·예산 + 비판적 검토·실행 해결방안)</div>
+    <h1>사주(四柱) 사업화 벤치마킹 리포트</h1>
+    <div class="sub">Part 1. 시장·벤치마킹·가격·노하우·KPI·예산 · Part 2. 비판적 검토·해결방안 · Part 3. 검증 데이터·실행 도구</div>
+    <div class="meta">
+      <span>작성 2026-08-22</span><span>|</span>
+      <span>벤치마킹 14개 서비스</span><span>|</span>
+      <span>비판 12항목 + 해결방안 5본 + Part 3 (크몽 실측·계산기·템플릿)</span><span>|</span>
+      <span>90일 실행 계획 · Go/No-Go 판정 기준 포함</span>
+    </div>
+  </header>
+
+  <div class="kpis">
+    <div class="kpi"><div class="label">운세 앱 시장 (최근 5년)</div><div class="value">약 3배<small> 성장</small></div><div class="range">상위 3개 앱 점유율 80%+ (모바일인덱스)</div></div>
+    <div class="kpi"><div class="label">점신 매출 (2023)</div><div class="value">830<small>억원</small></div><div class="range">MAU 95만 · 누적 다운로드 1,700만+</div></div>
+    <div class="kpi"><div class="label">핵심 고객 (2030 여성)</div><div class="value">61.8<small>%</small></div><div class="range">타이트사주 이용자 중 · 여성 전체 75.4%</div></div>
+    <div class="kpi"><div class="label">AI 풀이 원가 (1건)</div><div class="value">약 10~30<small>원</small></div><div class="range">990원 상품 대비 원가율 1~3%</div></div>
+  </div>
+
+  <div class="card">
+    <h2>1. 시장 구조: 누가 얼마나 버는가</h2>
+    <div class="desc">오프라인 점집(건당 3만~수십만원) 수요가 앱·AI로 이전되며 시장이 재편된 중. 상위 앱 독점이 강하고, 틈새는 AI·니치에서 열려 있다.</div>
+    <div class="bars">
+      <div class="brow"><div class="bl">점신 (MAU)</div><div class="track"><div class="fillb" style="width:100%;background:#2563eb"></div></div><div class="bv">95만 · 46.5%</div></div>
+      <div class="brow"><div class="bl">포스텔러</div><div class="track"><div class="fillb" style="width:60%;background:#3b82f6"></div></div><div class="bv">57만 · 28.0%</div></div>
+      <div class="brow"><div class="bl">운세비결</div><div class="track"><div class="fillb" style="width:17%;background:#60a5fa"></div></div><div class="bv">16만 · 7.6%</div></div>
+      <div class="brow"><div class="bl">헬로우봇</div><div class="track"><div class="fillb" style="width:10%;background:#93c5fd"></div></div><div class="bv">9만 · 4.6%</div></div>
+      <div class="brow"><div class="bl">우주고양이 보라</div><div class="track"><div class="fillb" style="width:7%;background:#a5b4fc"></div></div><div class="bv">7만 · 3.4%</div></div>
+      <div class="brow"><div class="bl">원광만세력</div><div class="track"><div class="fillb" style="width:7%;background:#c7d2fe"></div></div><div class="bv">7만 · 3.3%</div></div>
+    </div>
+    <ul style="font-size:13.2px;padding-left:18px;color:#374151;margin-top:14px">
+      <li><b>성장세</b>: 포스텔러 MAU 62.8만(2024.12, 국제신문)→142만(2025.5, 매경·신년시즌 집중 효과 포함, 집계 시점 상이 유의), 점신 MAU +16.6% YoY, 타이트사주 MAU 전월 +28%·전년 +81%. 운세 앱 시장은 최근 5년간 약 3배 성장.</li>
+      <li><b>비대면 전환</b>: 신규 상담의 절반 이상이 채팅·전화 등 비대면, 일부 플랫폼은 70%+. 상담 플랫폼 수수료는 20~40%.</li>
+      <li><b>자본 시장</b>: 포스텔러 시리즈B 30억 (2020), 헬로우봇 운영사 띵스플로우를 크래프톤이 인수 (2021, 당시 연매출 약 60억), 점신 운영사 테크랩스 매출 830억 (2023).</li>
+      <li><b>AI 진입</b>: 사주핑 출시 3개월 사용자 1만·유료 800명, 타이트사주 2030 여성 이용자 전년 대비 약 1,400% 증가. 무료 AI(운세박사 GPT 300만+, 뤼튼, 캔바)가 동시에 가격 상한을 끌어내림.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>2. 사업 구성: 6가지 모델 유형 중 하나를 골라야 한다</h2>
+    <div class="desc">"사주 사업"은 하나가 아니라 수익 구조가 전혀 다른 여섯 개의 사업이다. 하나를 정하고 나머지는 파트너/확장 영역으로 둔다.</div>
+    <div class="models">
+      <div class="model">
+        <h4>A. 무료 콘텐츠 + 광고 + 부분유료 앱</h4>
+        <div class="who">점신 · 포스텔러 · 헬로우봇</div>
+        <ul>
+          <li>무료 운세로 트래픽 → 광고 + 건당 결제 혼합</li>
+          <li>캐시 선충전(포스텔러 '포스')·구독(점신 '행운패스')</li>
+          <li>게임처럼 운영. 콘텐츠 6,000종+ 필요</li>
+          <li>자본·운영 역량 대형. 신규 진입 부적합</li>
+        </ul>
+      </div>
+      <div class="model">
+        <h4>B. AI 소액결제·구독형</h4>
+        <div class="who">찐사주(990원) · 사주핑 · 타이트사주</div>
+        <ul>
+          <li>990원~수천원 단건 + 무료 오늘운세 리텐션</li>
+          <li>대화 기억·개인화로 구독 전환 (사주핑)</li>
+          <li>AI 원가 1~3%로 마진 구조 우수</li>
+          <li>1인~소규모팀 진입 가능. 본 리포트 권장</li>
+        </ul>
+      </div>
+      <div class="model">
+        <h4>C. 전문가 매칭 플랫폼</h4>
+        <div class="who">천명 · 사주나루 · 출장도사 · 점신 1:1</div>
+        <ul>
+          <li>역술인 입점 → 전화/채팅 상담 중개</li>
+          <li>분당·건당 과금, 수수료 20~40% 수익</li>
+          <li>후기·평점 데이터가 해자 (천명 25만건+)</li>
+          <li>상담사 미인출이 실패 1순위 리스크</li>
+        </ul>
+      </div>
+      <div class="model">
+        <h4>D. 1인 크리에이터·프리랜서</h4>
+        <div class="who">크몽 '사주읽어주는남자' · 인스타·카페 리더</div>
+        <ul>
+          <li>전화상담 + PDF 리포트 결합 상품</li>
+          <li>자본 0~수십만원. 가장 빠른 검증 경로</li>
+          <li>건당 수천~수만원, 플랫폼 수수료 ~20%</li>
+          <li>내 시간이 매출 한계. 확장 시 브랜드 전환</li>
+        </ul>
+      </div>
+      <div class="model">
+        <h4>E. 도구(만세력)·B2B API</h4>
+        <div class="who">천을귀인 · 포스텔러 만세력 · 사주GPT</div>
+        <ul>
+          <li>정확한 명식 계산 엔진 + 전문가용 기능</li>
+          <li>광고·유료옵션 소액 수익, 니치 충성층</li>
+          <li>경도·서머타임 보정 투명성이 신뢰 포인트</li>
+          <li>다른 서비스에 만세력 API 공급으로 확장</li>
+        </ul>
+      </div>
+      <div class="model">
+        <h4>F. 니치 특화·캐릭터 IP</h4>
+        <div class="who">타이트사주(웹툰형) · 마이파이(진로) · 더사주(재회) · 쇼페이스(AI관상)</div>
+        <ul>
+          <li>한 주제(연애·커리어·관상·궁합)만 깊게</li>
+          <li>MZ무당 캐릭터 등 IP로 차별화 성공 사례</li>
+          <li>검색 키워드 선점으로 유입 잡기 유리</li>
+          <li>재구매 구조(궁합·연애) 설계가 핵심</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>3. 가격 스펙트럼: 990원부터 수십만원까지</h2>
+    <div class="desc">질문하신 990원/9,900원/39,000원 라인은 각각 "AI 소액결제 / 리포트형 중가 / 사람 감명 고가"라는 서로 다른 상품군이다.</div>
+    <div class="pricebar">
+      <div class="pband"><div class="pl">0원 (무료)</div><div class="bar"><div class="fill" style="width:8%;background:linear-gradient(90deg,#a5b4fc,#6366f1)"></div></div><div class="ex">점신·포스텔러 기본 콘텐츠 / 찐사주 오늘운세 / 운세박사GPT / 뤼튼 / 캔바(무료 50회)</div></div>
+      <div class="pband"><div class="pl">990원</div><div class="bar"><div class="fill" style="width:18%;background:linear-gradient(90deg,#93c5fd,#3b82f6)"></div></div><div class="ex">찐사주 '구슬 1개 990원' — 평생사주·궁합·양자택일·반려동물 궁합까지 단일 단가</div></div>
+      <div class="pband"><div class="pl">3,000~9,900원</div><div class="bar"><div class="fill" style="width:40%;background:linear-gradient(90deg,#60a5fa,#2563eb)"></div></div><div class="ex">헬로우봇 상세(3천~1만) / 리얼미 궁합(5천 내외) / 포스텔러 심층(3천~2만·포스 캐시) / 전화상담 5~10분(5천~2만)</div></div>
+      <div class="pband"><div class="pl">15,000~22,000원</div><div class="bar"><div class="fill" style="width:57%;background:linear-gradient(90deg,#818cf8,#4f46e5)"></div></div><div class="ex">포스텔러 신년운세 200쪽 리포트(약 1.5만) / 인연궁합 프리미엄(2.2만)</div></div>
+      <div class="pband"><div class="pl">33,000~55,000원</div><div class="bar"><div class="fill" style="width:75%;background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div><div class="ex">인기 상담가 건당 3만+ / 점신PRO 5.5만 / 포스텔러 3,000포스 4.1만~ / 사주핑 객단가 약 1.25만(누적 기준)</div></div>
+      <div class="pband"><div class="pl">수십만원</div><div class="bar"><div class="fill" style="width:100%;background:linear-gradient(90deg,#c084fc,#9333ea)"></div></div><div class="ex">오프라인 점집·철학관 종합상담 — 온라인이 대체 중인 영역</div></div>
+    </div>
+    <div class="note" style="margin-top:14px"><b>가격대별 사업 의미</b>: 990원대는 "첫 결제 장벽 최소화 + 재구매" 설계(찐사주가 전 기능을 990원 단일가로 통일해 소액 결제 심리를 극대화). 9,900원대는 "AI 심층 리포트" 표준가. 39,000원 이상은 "사람 감명 + 리포트"로 마진은 크지만 개인 브랜드·후기 자산이 먼저 필요하다. 신규 진입 표준 경로는 990~9,900원 검증 후 상위 라인 확장.</div>
+  </div>
+
+  <div class="card">
+    <h2>4. 벤치마킹 상세: 14개 서비스 종합 비교</h2>
+    <div class="desc">서비스 방식·가격·공개 지표·장단점. 이용자 수·매출은 언론 보도·공식 등록정보 기준 (조사일 2026-08-22).</div>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:135px">서비스</th><th style="width:145px">유형</th><th style="width:220px">가격 정책</th><th style="width:185px">공개 지표</th><th>장점 (+) / 단점 (-)</th></tr></thead>
+      <tbody>
+        <tr><td><span class="p">점신</span><br><span style="font-size:11.5px;color:var(--sub)">(주)테크랩스</span></td><td><span class="tagchip tc">콘텐츠 앱</span><span class="tagchip to">전문가 매칭</span></td><td>기본 무료(광고) · 행운패스 월정액 · 점신PRO 55,000원 · 전문가 전화상담 첫 3분 무료 후 분당 과금</td><td>MAU 95만 (점유율 46.5%) · 누적 다운로드 1,700만+ · 2023 매출 830억·영업익 100억 · 상담사 400명+</td><td>+ 국내 1위. 관상·심리테스트 등 콘텐츠 폭, 무료→상담가 연결 퍼널<br>- 광고 과다 지적(리뷰 95명 공감), 무료 영역 축소 이력, 자동 풀이 한계</td></tr>
+        <tr><td><span class="p">포스텔러</span><br><span style="font-size:11.5px;color:var(--sub)">(주)운칠기삼</span></td><td><span class="tagchip tc">콘텐츠 앱</span><span class="tagchip tp">AI(아이샤)</span></td><td>기본 무료 · 캐시 '포스' 선충전(200포스 3,300원~5,000포스 6.7만원) · 심층 콘텐츠 건당 3,000~20,000원 · 신년운세 약 15,000원</td><td>가입자 900만 · MAU 142만 (2025.5) · 연 매출 100억+ · 2030 비중 80%+</td><td>+ 자체 분석시스템 FAS, 200쪽+ 리포트, 60갑자 캐릭터 IP, 무료는 무광고<br>- '매크로식 평면 해석' 후기, 앱 내 리뷰 기능 부재로 만족도 검증 불가</td></tr>
+        <tr><td><span class="p">헬로우봇</span><br><span style="font-size:11.5px;color:var(--sub)">띵스플로우(크래프톤)</span></td><td><span class="tagchip tp">AI 챗봇 앱</span></td><td>기본 무료 · 상세 운세 건당 3,000~10,000원</td><td>MAU 9만 (2025.2) · 누적 500만+ · 2021 연매출 약 60억 · MZ 비중 90%</td><td>+ 캐릭터 채팅 접근성, 월 상세 운세 2만자+, 게임회사 인수로 운영 안정<br>- 최근 정확도·광고 불만 후기, 유료 아카이빙 약함</td></tr>
+        <tr><td><span class="p">찐사주</span><br><span style="font-size:11.5px;color:var(--sub)">BITBRIDGE</span></td><td><span class="tagchip tp">AI 소액결제</span></td><td>구슬 1개 990원 단일 단가 · 오늘운세 무료 · 카카오 로그인 3초 시작 · 결과 카카오톡 공유</td><td>Play 평점 4.2~4.3 · 다운로드 1천+ (초기)</td><td>+ 990원 단일가로 결제 심리 최소화, 반려동물 궁합·양자택일 등 기획 파격, 공유 루프 내장<br>- 초기라 지표·신뢰 데이터 부족, 저가 전략이라 객단가 낮음</td></tr>
+        <tr><td><span class="p">사주핑</span><br><span style="font-size:11.5px;color:var(--sub)">원테라피</span></td><td><span class="tagchip tp">AI 구독형</span></td><td>기본 무료 · 정기구독 확장 중 · 유료 사용자 기준 객단가 약 12,500원 추정 (누적 매출 1,000만 ÷ 유료 800명)</td><td>출시 3개월 사용자 1만 · 대화 40만 건(人均 40회) · 유료 800명(전환율 8%) · D+7 재방문 15% · 평점 4.5+</td><td>+ 대화 맥락 기억·감정 데이터 축적, 멘탈케어 포지셔닝, 초기 지표 공개 검증<br>- 매출 규모 아직 작음, 무료 AI와 차별화 유지 과제</td></tr>
+        <tr><td><span class="p">타이트사주</span><br><span style="font-size:11.5px;color:var(--sub)">사이버네틱스</span></td><td><span class="tagchip tt">니치(숏폼)</span></td><td>웹툰형·스토리형 콘텐츠 기반 (세부 가격 비공개)</td><td>여성 75.4% · 2030 여성 61.8% · 2030 여성 YoY +1,400% · MAU MoM +28%, YoY +81%</td><td>+ 긴 텍스트 대신 숏폼형 콘텐츠로 MZ 공략 성공, MZ무당 캐릭터·연애·커리어 니치 적중<br>- 콘텐츠 제작 비용 지속 발생, 수익 구조 비공개</td></tr>
+        <tr><td><span class="p">천명</span></td><td><span class="tagchip to">상담 플랫폼</span></td><td>전화·채팅 상담 건당/분당 결제</td><td>누적 상담 후기 25만 건+</td><td>+ 후기 데이터 자산, 비대면 수요 흡수<br>- 상담사 품질 편차, 수수료 구조로 인한 이탈 리스크</td></tr>
+        <tr><td><span class="p">사주나루</span></td><td><span class="tagchip to">전화상담 플랫폼</span></td><td>코인 선충전 · 후불(첫 40초 무료, 이후 30초당 과금)</td><td>전화운세 대표 플랫폼</td><td>+ 40초 무료로 진입 장벽 최소화, 전통 시장 장악<br>- UX 구식, 시장 자체가 앱으로 이동 중</td></tr>
+        <tr><td><span class="p">더사주</span></td><td><span class="tagchip tt">니치(재회)</span></td><td>1:1 전화상담 건당 결제</td><td>재회·짝사랑 특화</td><td>+ 단일 키워드 압도적 선점<br>- 니치 특성상 재구매·확장 한계</td></tr>
+        <tr><td><span class="p">크몽 사주 리딩</span><br><span style="font-size:11.5px;color:var(--sub)">예: 사주읽어주는남자</span></td><td><span class="tagchip tt">1인 프리랜서</span></td><td>건당 수천~수만원 · 전화상담 + PDF 리포트 결합 · 수수료 실질 약 20% (서비스이용료 16.4% + 결제망 3.3% + 부가세, 구매수수료 3.5% 별도)</td><td>평점 5.0 · 평균 응답 1시간 이내</td><td>+ 자본 0원 창업, 그래프·수치 리포트가 호평 포인트, 리뷰가 곧 마케팅<br>- 내 시간이 매출 한계, 수수료 20%+, 브랜드 확장 어려움</td></tr>
+        <tr><td><span class="p">운세박사 GPT</span><br><span style="font-size:11.5px;color:var(--sub)">ChatGPT 스토어</span></td><td><span class="tagchip tp">무료 AI</span></td><td>무료 (Plus 구독자 장문 분석)</td><td>사용자 300만+</td><td>+ 설치 없는 최저 진입장벽, 맥락형 답변<br>- 과금 통제 불가, 스토어 정책 종속</td></tr>
+        <tr><td><span class="p">뤼튼 운세</span><br><span style="font-size:11.5px;color:var(--sub)">wrtn.ai/fortune</span></td><td><span class="tagchip tp">무료 AI</span></td><td>회원가입 무료</td><td>한국어 특화 LLM</td><td>+ 명리 용어 쉬운 풀이, 절기·간지 반영<br>- 수익화 아닌 리텐션용 서비스</td></tr>
+        <tr><td><span class="p">마이파이</span></td><td><span class="tagchip tt">니치(진로)</span></td><td>기질 분석 리포트 + 유료 상담사 연결</td><td>한국일보 소개</td><td>+ "동양의 MBTI" 진로·커리어 연결, B2B 여지<br>- 인지도·상담 의존 매출 과제</td></tr>
+        <tr><td><span class="p">리얼미 / 인연궁합</span></td><td><span class="tagchip tt">니치(궁합)</span></td><td>리얼미 궁합 5,000원 내외 · 인연궁합 프리미엄 22,000원 (1회 결제로 상대 무제한 교체)</td><td>그룹 궁합 등 차별 기능</td><td>+ 궁합은 '여러 명 반복 조회'라는 재구매 구조, 그룹궁합 신선<br>- 콘텐츠 돌려막기 지적, 금액 대비 체감 만족도 이슈</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>5. 노하우와 방법: 실제로 작동하는 것들</h2>
+    <div class="desc">벤치마킹 대상 14개 서비스에서 공통으로 발견되는 성공 패턴과 구현 방법. 모두 공개 사례 기반.</div>
+
+    <h3 class="sec"><span class="n">1</span>상품 설계 노하우 — "무료로 데려오고, 소액으로 첫 결제를 뚫는다"</h3>
+    <ul style="font-size:13px;padding-left:18px;color:#374151">
+      <li><b>무료 훅</b>: 찐사주는 오늘의 운세(연애·금전·건강)를 매일 무료로 준다. 매일 열 이유가 생기면 D+7 재방문이 만들어진다(사주핑 15%).</li>
+      <li><b>첫 결제 990원</b>: 찐사주의 '구슬 1개 990원' 단일 단가는 결제 고민 시간을 없앤다. 상품별 가격표(3천/5천/1만)보다 전환율이 높은 구조.</li>
+      <li><b>캐시 선충전</b>: 포스텔러 '포스'(200개 3,300원~)처럼 선충전하면 재구매 마찰이 사라지고 잔여 캐시가 이탈을 막는다.</li>
+      <li><b>재구매 상품</b>: 궁합은 상대를 바꿔 여러 번 본다(인연궁합: 1회 결제로 무제한). 연애·재회·커리어처럼 "상황이 바뀌면 다시 보는" 주제가 재구매율이 높다.</li>
+      <li><b>상위 라인</b>: 15,000~22,000원 리포트(포스텔러 신년운세 200쪽)와 33,000원+ 사람 감명(전화 30분 + PDF)을 단계적으로 올린다.</li>
+    </ul>
+
+    <h3 class="sec"><span class="n">2</span>콘텐츠 노하우 — "긴 풀이는 안 읽힌다"</h3>
+    <ul style="font-size:13px;padding-left:18px;color:#374151">
+      <li><b>숏폼/웹툰형</b>: 타이트사주는 명리학 해설 텍스트를 웹툰형·스토리형으로 바꿔 2030 여성 61.8%를 확보. 긴 해설 나열은 이탈 요인.</li>
+      <li><b>캐릭터 IP</b>: 포스텔러 60갑자 캐릭터, 타이트사주 'MZ무당', 헬로우봇 챗봇 캐릭터. 친밀한 캐릭터가 신뢰·재방문을 만든다.</li>
+      <li><b>쉬운 언어</b>: 뤼튼이 주목받은 이유는 "편관이 강하다"가 아니라 "리더십이 강한 성격이라 올해 팀을 이끄는 역할에서 빛난다"로 풀기 때문. 초보자용 언어 변환이 곧 상품력.</li>
+      <li><b>공유 설계</b>: 찐사주는 결과를 카카오톡 공유. 결과 이미지에 브랜딩을 심으면 공유 자체가 마케팅이 된다(캔바 부적 템플릿과 동일 원리).</li>
+    </ul>
+
+    <h3 class="sec"><span class="n">3</span>기술 노하우 — "만세력 정확도가 곧 신뢰"</h3>
+    <ul style="font-size:13px;padding-left:18px;color:#374151">
+      <li><b>계산 엔진</b>: 오픈소스 만세력 라이브러리 + 경도/서머타임/야자시·조자시 보정(천을귀인·포스텔러 만세력이 강조하는 지점). 계산 오류는 즉시 이탈로 이어진다(챗GPT 사주의 신뢰성 불만 사례).</li>
+      <li><b>AI 파이프라인</b>: 만세력 계산(결정적) → 십신·대운 구조화(룰) → LLM 통변(자연어). LLM이 사주를 '계산'하게 하지 말고 '말로 풀게'만 한다. 환각 방지 + 비용 절감.</li>
+      <li><b>기억 구조</b>: 사주핑은 대화를 과거·현재·미래 흐름으로 구조화해 개인 맥락을 기억. RAG + 사용자 프로파일 저장이 핵심 기술.</li>
+      <li><b>비용 제어</b>: 캐시 입력 활용(입력 캐시 시 최대 90% 할인), 배치 처리(50% 할인), 출력 길이 제한. 사주 리포트 1건 AI 원가를 10~30원 수준으로 유지 가능.</li>
+    </ul>
+
+    <h3 class="sec"><span class="n">4</span>운영·신뢰 노하우</h3>
+    <ul style="font-size:13px;padding-left:18px;color:#374151">
+      <li><b>포지셔닝</b>: "점"이 아니라 "자기이해·멘탈케어 도구"로 말한다(사주핑·타이트사주). 이용자 69.8%도 '적당히 참고' 목적이므로 과장 예언은 리스크만 키운다.</li>
+      <li><b>후기 자산</b>: 크몽 리딩은 평점 5.0과 상세 후기가 곧 전환율. 초기에 저가로 후기를 쌓는 전략이 표준(크몽 실제 사례: 저가 시작 → 3주 7건 후기 축적).</li>
+      <li><b>응답 속도</b>: 크몽 상위 전문가는 평균 응답 1시간 이내. AI 서비스도 첫 응답 3초(찐사주 카카오 로그인) 수준의 즉시성을 유지해야 한다.</li>
+      <li><b>CS·환불</b>: 포스텔러는 결제 오류 시 CS 지연이 평판 이슈가 된 사례. 환불 조건 명시와 빠른 대응이 재구매를 좌우한다.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>6. 타게팅: 누구를 겨냥할 것인가 (데이터로)</h2>
+    <div class="desc">성별·연령·심리 데이터가 충분히 쌓인 시장이다. 핵심 타게팅 근거만 추리면 아래와 같다.</div>
+    <div class="tbl-wrap">
+    <table class="kpi-tbl">
+      <thead><tr><th style="width:230px">지표</th><th style="width:150px">수치</th><th>출처·의미</th></tr></thead>
+      <tbody>
+        <tr><td>성인의 운세 서비스 이용 경험</td><td><b>85.5%</b></td><td>엠브레인 트렌드모니터 2026.1, n=1,000 (19~59세). 시장 침투율 자체가 매우 높음</td></tr>
+        <tr><td>이용 유형 중 AI 서비스 비중</td><td><b>40.7%</b></td><td>동일 조사. 20대 52.1% / 30대 45.1% / 40대 36.4% / 50대 25.5% — AI 이용은 젊을수록 급증</td></tr>
+        <tr><td>운세 확인 채널: 앱·사이트</td><td><b>51.4%</b></td><td>어피티 2024.2, MZ n=537. 오프라인 방문 25.5%, 유튜브 9.5%</td></tr>
+        <tr><td>운세 종류 중 사주 선호</td><td><b>48.2%</b></td><td>동일 조사. 타로 26.6%, 별자리 17.8% — 사주가 압도적 1위 카테고리</td></tr>
+        <tr><td>AI 사주 이용자 중 여성</td><td><b>75.4%</b></td><td>타이트사주 2026.5 공개 데이터</td></tr>
+        <tr><td>2030 여성 비중</td><td><b>61.8%</b></td><td>동일. 2030 여성 이용자는 전년 대비 약 +1,400%. 핵심 타게팅 = 2030 여성</td></tr>
+        <tr><td>점신·포스텔러의 2030 비중</td><td><b>65.6% / 57%</b></td><td>충청투데이 2026.8 (포스텔러는 2025.5 기준 80%+ 집계도 존재)</td></tr>
+        <tr><td>이용 목적 '적당히 참고'</td><td><b>69.8%</b></td><td>어피티. '많이 의존'은 4.9%뿐 — 마케팅 톤은 '예언'이 아니라 '위로·재미·자기이해'</td></tr>
+        <tr><td>이용 빈도 연 1회 / 수개월 1회</td><td><b>33.4% / 32.4%</b></td><td>동일. 신년·계절 전환기에 수요 집중 → 시즌 마케팅 필수</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note green" style="margin-top:14px"><b>타게팅 요약</b>: 1순위 2030 여성(연애·궁합·커리어 고민), 2순위 2040 직장인(이직·관계·팀 궁합 — 팀장·팀원 궁합 보는 사례 보도), 3순위 반려인(반려동물 궁합, 찐사주 신규 수요). 채널은 인스타·숏폼·카카오톡 공유가 중심.</div>
+  </div>
+
+  <div class="card">
+    <h2>7. 사업 KPI: 어느 순간 무엇을 봐야 하나</h2>
+    <div class="desc">공개된 벤치마크 수치 기준. 스타트업 단계에서 통용되는 목표치로 잡은 근거까지 표기.</div>
+    <div class="tbl-wrap">
+    <table class="kpi-tbl">
+      <thead><tr><th style="width:190px">KPI</th><th style="width:180px">벤치마크 수치</th><th>출처·해석</th></tr></thead>
+      <tbody>
+        <tr><td>D+7 재방문율</td><td><b>15%</b></td><td>사주핑(출시 3개월). AI 사주 초기 서비스의 현실적 상한선. 무료 오늘운세로 끌어올리는 게 정석</td></tr>
+        <tr><td>유료 전환율</td><td><b>약 8%</b></td><td>사주핑 유료 800명 ÷ 사용자 1만. 990원 소액 상품이 있다면 목표 5~10%</td></tr>
+        <tr><td>사용자당 대화 수</td><td><b>약 40회</b></td><td>사주핑 대화 40만 건 ÷ 1만 명. 대화형 서비스의 참여도 벤치마크</td></tr>
+        <tr><td>MAU 성장률</td><td><b>MOM +28%</b></td><td>타이트사주(2026.5). 니치 콘텐츠 적중 시 가능한 성장 곡선</td></tr>
+        <tr><td>다운로드→MAU 전환</td><td><b>약 5.6%</b></td><td>점신 1,700만 다운로드 ÷ MAU 95만. 대형 앱도 유지율은 낮음 — MAU만이 실질 지표</td></tr>
+        <tr><td>가입→MAU 전환</td><td><b>약 16%</b></td><td>포스텔러 900만 가입 ÷ MAU 142만</td></tr>
+        <tr><td>객단가(ARPPU)</td><td><b>약 12,500원</b></td><td>사주핑 누적 매출 1,000만 ÷ 유료 800명. 리포트 상품군이면 1.5만~2.2만원(포스텔러·인연궁합)도 형성됨</td></tr>
+        <tr><td>상담 단가(사람)</td><td><b>5천~3만원+</b></td><td>5~10분 5천~2만원, 인기 상담가 건당 3만원+ (한국경제)</td></tr>
+        <tr><td>스토어 평점</td><td><b>4.3~4.6</b></td><td>찐사주 4.2~4.3 / 점신 Play 4.4 / 포스텔러 App 4.6 / 사주핑 4.5+. 4.3 미만이면 전환율 급락</td></tr>
+        <tr><td>플랫폼 수수료(마진)</td><td><b>15~40%</b></td><td>구글플레이 구독 10%·IAP 15~20% (2026.12 한국 적용), 애플 15~30%, 크몽 ~20%, 상담 플랫폼 20~40%. 채널 선택이 곧 마진</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>8. 사업 예산: 3가지 시나리오</h2>
+    <div class="desc">개발 외주 시세(서울 기준 2026: MVP 3,000~9,000만원·2-4개월, 일반 비즈니스 앱 9,000만~2.5억), AI 챗봇 외주(FAQ급 1,000~2,500만원, 간단 연동형 15만~60만원), LLM 원가로 산출.</div>
+    <div class="budget">
+      <div class="bcard">
+        <div class="bt">SCENARIO A · 검증형 (1인/부업)</div>
+        <h4>플랫폼 입점 + AI 도구 활용</h4>
+        <div class="total">50만 ~ 300만원<small> (월 고정 5~15만)</small></div>
+        <ul>
+          <li>크몽/숨고 입점 비용 0원 (수수료 ~20%는 판매 시만)</li>
+          <li>ChatGPT Plus 등 AI 구독 월 3~5만원</li>
+          <li>리포트 템플릿·굿즈 제작 10~30만원</li>
+          <li>인스타·카페 콘텐츠 자가 제작 0원</li>
+          <li>도메인+랜딩(옵션) 연 5~15만원</li>
+        </ul>
+        <div class="note" style="margin:10px 0 0;padding:10px 12px;font-size:12px">손익분기: 건당 9,900원 상품 기준 월 10건 판매 시 수수료 제외 월 약 8~10만원. 후기 20개 시점에 가격 인상 검토.</div>
+      </div>
+      <div class="bcard">
+        <div class="bt">SCENARIO B · AI 서비스형 (권장)</div>
+        <h4>웹앱 MVP + 소액결제/구독</h4>
+        <div class="total">3,000만 ~ 1억원<small> (6개월 운영 포함)</small></div>
+        <ul>
+          <li>웹앱 MVP 외주 3,000~9,000만원 (2-4개월) 또는 자체 개발 시 인건비로 대체</li>
+          <li>만세력 엔진: 오픈소스 활용 0원 ~ 라이선스 수십만원</li>
+          <li>LLM API 월 30만~100만원 (MAU 1만 가정, 캐시·배치 활용 시)</li>
+          <li>PG/스토어 수수료 10~30% (매출 발생 시)</li>
+          <li>마케팅·퍼포먼스 월 100~300만원</li>
+          <li>서버·모니터링 월 30만~50만원</li>
+        </ul>
+        <div class="note" style="margin:10px 0 0;padding:10px 12px;font-size:12px">AI 원가: 사주 리포트 1건(입력 2K+출력 3K 토큰) ≈ GPT-5.4 mini 기준 약 20원, gpt-5-mini 약 9원. 990원 상품 원가율 1~2%, 9,900원 리포트 원가율 0.2% 수준.</div>
+      </div>
+      <div class="bcard">
+        <div class="bt">SCENARIO C · 플랫폼형</div>
+        <h4>상담사 매칭 마켓 운영</h4>
+        <div class="total">1억 ~ 3억원<small>+ (12개월)</small></div>
+        <ul>
+          <li>앱+어드민 개발 9,000만~2.5억원 (4-8개월)</li>
+          <li>정산·녹취·보안 시스템 별도 2,000만~5,000만원</li>
+          <li>상담사 20~50명 온보딩 인건비·교육</li>
+          <li>초기 유저 마케팅 월 500만~1,500만원</li>
+          <li>CS 인력 1~2명 상시</li>
+        </ul>
+        <div class="note" style="margin:10px 0 0;padding:10px 12px;font-size:12px">수익: 상담 수익의 20~40% 수수료. 천명 후기 25만 건이 쌓이는 데 걸린 시간이 해자. 상담사 미인출이 최대 리스크.</div>
+      </div>
+    </div>
+    <h3 class="sec"><span class="n">참고</span>수수료·원가 구조 상세 (2026-08 확인)</h3>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:190px">항목</th><th style="width:220px">요율</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>Google Play (한국)</td><td><b>IAP 15~20% / 구독 10%</b></td><td>2026-12-31부터 신규 체계 적용(신규 설치 15%, 기존 20%, 구독 10%, 연 첫 $1M 10%). 결제 수수료 별도. 기존 요율 30%</td></tr>
+        <tr><td>Apple App Store</td><td><b>15~30%</b></td><td>표준 30%, 소규모 사업자(연 매출 $1M 이하) 15%, 한국 외부결제 경유 시 26%</td></tr>
+        <tr><td>크몽</td><td><b>실질 약 20%</b></td><td>서비스 이용료 1구간(70만원 이하) 16.4% + 결제망 3.3% + 부가세. 구매자 구매수수료 3.5% 별도</td></tr>
+        <tr><td>상담 플랫폼 수수료</td><td><b>20~40%</b></td><td>점신·천명 등 입점 상담사 기준 (한국경제 2026.2)</td></tr>
+        <tr><td>PG (직접 결제 시)</td><td><b>약 2.9~3.5%</b></td><td>웹 결제 직접 구축 시. 스토어 우회로 수수료 절감 가능하나 결제 플로우 손실 감안</td></tr>
+        <tr><td>LLM API (OpenAI 공식)</td><td><b>$0.25~$4.50 /1M 입력</b></td><td>gpt-5-mini $0.25/$2.00, GPT-5.4 mini $0.75/$4.50, GPT-5.4 $2.50/$15. 캐시 입력 최대 90% 할인, 배치 50% 할인</td></tr>
+        <tr><td>AI 원가 계산 예시</td><td><b>리포트 1건 약 9~50원</b></td><td>입력 2K+출력 3K 토큰 가정. gpt-5-mini ≈9원, GPT-5.4 mini ≈20원, GPT-5.4 ≈50원 (환율 1,380원 적용)</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>9. 사업화 접근법: 역량별 추천 경로</h2>
+    <h3 class="sec"><span class="n">1</span>자본 거의 없음 → D 유형 (크몽/인스타 1인)</h3>
+    <div class="swot">
+      <div class="sw"><b>방법</b><br>AI(운세박사급 품질)로 초안을 만들고 내가 통변·감명을 더해 "전화 30분 + PDF 리포트" 9,900~30,000원 상품. 그래프·수치형 리포트가 후기 호평 포인트(벤치마크: 크몽 사주읽어주는남자). 후기 20개 쌓이면 자체 채널 이관해 수수료 20% 회피.</div>
+      <div class="swd"><b>주의</b><br>의료·법률·투자 판단 대리 표현 금지. 환불 조건 명시. 개인 시간이 매출 한계이므로 채널 전환 시점을 미리 설계.</div>
+    </div>
+    <h3 class="sec"><span class="n">2</span>개발 역량 보유 → B 유형 (AI 소액결제·구독)</h3>
+    <div class="swot">
+      <div class="sw"><b>방법</b><br>찐사주 구조 벤치마킹: 무료 오늘운세(리텐션) + 990원 단일 단가(첫 결제) + 카카오톡 공유(바이럴). 여기에 사주핑의 대화 기억(개인화)을 얹으면 구독(월 9,900~19,900원) 전환. 목표 지표: D+7 재방문 15%, 유료전환 8%, 평점 4.3+.</div>
+      <div class="swd"><b>주의</b><br>무료 AI가 가격 상한을 계속 끌어내리는 중. "만세력 정확도 + 기억 + 리포트 품질" 중 최소 하나는 확실히. 앱스토어 심사 시 사주는 오락 카테고리 명시 관행.</div>
+    </div>
+    <h3 class="sec"><span class="n">3</span>콘텐츠 기획 강점 → F 유형 (니치·캐릭터)</h3>
+    <div class="swot">
+      <div class="sw"><b>방법</b><br>타이트사주 벤치마킹: 웹툰형·스토리형 콘텐츠 + 캐릭터(예: MZ무당류)로 2030 여성 타게팅. 인기 순위 = 몰입형 캐릭터 콘텐츠 > 솔로탈출 연애운 > 커리어 사주. 결과 공유 이미지가 마케팅 루프.</div>
+      <div class="swd"><b>주의</b><br>콘텐츠 제작 비용이 계속 나감. 캐릭터 IP 저작권은 초기에 정리. 시즌성(신년) 집중 대비.</div>
+    </div>
+    <h3 class="sec"><span class="n">4</span>자본·운영 역량 → C 유형 (상담 플랫폼)</h3>
+    <div class="swot">
+      <div class="sw"><b>방법</b><br>점신(상담사 400명)·천명(후기 25만) 구조. 수수료 20~40% 시장. 외국어 상담, 이직·창업·관계 세분화 등 기존 플랫폼이 못 하는 우회로. 정산·녹취·분쟁 처리 인프라가 초기 투자의 대부분.</div>
+      <div class="swd"><b>주의</b><br>점신이 콘텐츠·유입을 장악한 시장. 정면 승부 대신 세로 시장. 상담사 미인출이 실패 1순위.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>10. 3단계 로드맵</h2>
+    <div class="road">
+      <div class="phase"><div class="ph">PHASE 1 · 검증 (0~3개월)</div><h4>소액 상품으로 수요 확인</h4>
+        <ul>
+          <li>무료 미니 풀이(카카오채널·인스타·웹) 진입 제공</li>
+          <li>990~9,900원 단건: AI 풀이 + PDF 리포트 자동 생성</li>
+          <li>지표: 결제 전환율 5~10%, D+7 재방문 15%, 평점 4.3+</li>
+          <li>크몽 병행으로 후기 자산 선축적</li>
+          <li>예산: A 시나리오 50만~300만원</li>
+        </ul>
+      </div>
+      <div class="phase"><div class="ph">PHASE 2 · 확장 (3~12개월)</div><h4>구독 + 상위 라인 구축</h4>
+        <ul>
+          <li>월 9,900~19,900원 구독: 월운 리포트 + 대화형 AI 기억</li>
+          <li>15,000~22,000원 리포트, 39,000원대 사람 감명 결합</li>
+          <li>궁합·연애·커리어 니치 추가(재구매 구조)</li>
+          <li>카카오톡 결과 공유 → 바이럴 루프 설계</li>
+          <li>예산: B 시나리오 3,000만~1억원</li>
+        </ul>
+      </div>
+      <div class="phase"><div class="ph">PHASE 3 · 계열화 (12개월~)</div><h4>B2B·IP·플랫폼화</h4>
+        <ul>
+          <li>HR 커리어·소개팅/결혼 서비스 제휴 (마이파이 모델)</li>
+          <li>캐릭터 IP·굿즈·사주툰 2차 수익 (포스텔러 모델)</li>
+          <li>상담사 입점 마켓 전환 (수수료 20~40%)</li>
+          <li>만세력 API B2B 공급 (도구→인프라)</li>
+          <li>채널 수수료 최적화: 웹 결제 유도(10~15%p 절감)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>11. 리스크 체크리스트</h2>
+    <div class="desc">점술 관련 자격증이 100여 종 난립하며 전문성·윤리 논란이 커지는 시장이다. 아래는 실제 사례 기반 리스크.</div>
+    <ul style="font-size:13.2px;padding-left:18px;color:#374151">
+      <li><b>광고 피로</b>: 점신은 광고 과다가 이탈 사유(리뷰 95명 공감). 무료+광고 모델이면 '광고 제거 구독'(행운패스) 옵션 필수.</li>
+      <li><b>품질 후기 이슈</b>: 포스텔러는 '매크로식 평면 해석'·'무료 월운과 동일한 내용' 후기로 재구매 이탈. 유료 콘텐츠는 무료와 확실히 차별화.</li>
+      <li><b>환불·CS</b>: 결제 후 오류 시 CS 지연이 평판 하락 사례. 환불 정책 명시 + 24시간 내 대응 체계.</li>
+      <li><b>개인정보</b>: 생년월일시는 식별정보. 저장·삭제 정책 명시. 자체 서비스는 이용자 데이터 보호를 더 엄격하게 설계해야 함.</li>
+      <li><b>윤리</b>: 의료·법률·투자 판단 대리 금지. "참고용 자기이해 도구" 프레임 유지(이용자 69.8%도 그렇게 씀).</li>
+      <li><b>가격 경쟁</b>: 무료 AI 범람으로 자동 풀이만으론 수익 지속 불가. 기억·사람 감명·리포트 품질 중 하나는 우위 유지.</li>
+      <li><b>플랫폼 정책</b>: 스토어 수수료 정책이 계속 바뀜(구글 2026.12 한국 적용). 웹 결제 병행으로 채널 리스크 분산.</li>
+    </ul>
+  </div>
+
+
+  <div class="card" style="border:2px solid #7c3aed;background:linear-gradient(180deg,#faf5ff,#fff)">
+    <h2 style="color:#5b21b6">Part 2. 스스로에 대한 비판적 검토 — v2 리포트의 12가지 한계</h2>
+    <div class="desc">Part 1(v2)을 "실제 창업 결정 자료"로 쓰려면 아래 약점을 먼저 인정해야 한다. 심각도는 상(결정 오류 유발 가능) / 중(실행 리스크) / 하(보완 필요).</div>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:30px">#</th><th style="width:210px">한계</th><th style="width:50px">심각도</th><th>왜 문제인가</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><b>유닛 이코노믹스 부재</b> (CAC-LTV 미계산)</td><td><span class="tagchip to">상</span></td><td>"마케팅 월 100~300만"이라고만 쓰고 고객획득비용을 매출과 묶지 않았다. 실제로 계산하면 국내 CPI 2,200~10,200원 ÷ 유료전환 8% = <b>유료고객 1명 획득비 2.8만~12.8만원</b>. ARPPU 12,500원보다 크므로 <b>광고 의존 유입은 첫 결제로도 회수 불가</b>하다. 이걸 안 쓴 리포트는 예산표가 허수다.</td></tr>
+        <tr><td>2</td><td><b>법률·컴플라이언스 공백</b></td><td><span class="tagchip to">상</span></td><td>점술 관련 형사·행정 리스크(사기죄 판례, 표시광고법, 전자상거래법 환불)를 한 줄도 다루지 않았다. 대법원 판례는 "불행을 고지하고 굿을 팔면 사기죄"로 유죄(2017도12460). 금감원도 2026.2 사주 미끼 가짜주식앱 사기를 경보했다. 법률 없이 진출하면 서비스 자체가 위험하다.</td></tr>
+        <tr><td>3</td><td><b>콜드스타트 해법 부재</b></td><td><span class="tagchip to">상</span></td><td>1호 고객을 어떻게 데려올지 없다. 점신(마케팅 예산 대기업)과 사주핑(앱스토어 AI사주 1위 노출)의 지표를 봤지만, 후보 없는 신규 서비스가 초기 유입을 만드는 구체 경로(크몽·릴스·SEO·커뮤니티)를 설계하지 않았다.</td></tr>
+        <tr><td>4</td><td><b>"권장 모델"의 근거 약함</b></td><td><span class="tagchip to">상</span></td><td>B유형(AI 소액결제)을 권장했지만 근거가 "원가율 1~2%"뿐이다. 원가율이 낮다고 수익이 나는 게 아니다. 매출 원가가 아니라 <b>CAC·리텐션·시즌성</b>이 사업 성패를 결정하는데 이 검증이 없었다. 사주핑조차 3개월 매출 1,000만원(월 333만)이다. "AI 원가가 싸다"와 "돈이 된다"는 다른 문제.</td></tr>
+        <tr><td>5</td><td><b>시즌성 정량화 부재</b></td><td><span class="tagchip tc">중</span></td><td>이용 빈도 "연 1회 33.4%"를 인용만 했다. 이는 곧 <b>매출이 신년(12~2월)에 몰리고 나머지 9개월은 급감</b>한다는 뜻인데, 연 매출 계획·현금흐름에 반영하지 않았다. 찐사주·사주핑의 연중 지표도 시즌 보정 없이 인용했다.</td></tr>
+        <tr><td>6</td><td><b>실패 사례 부재 — 생존 편향</b></td><td><span class="tagchip tc">중</span></td><td>보도되는 서비스는 살아남은 것들뿐이다. 죽은 사주 앱·폐업한 1인 리딩·심사 거절당한 앱은 데이터에 없다. 생존 편향 상태에서 "성공 패턴"만 나열하면 진입 성공률을 과대평가하게 된다.</td></tr>
+        <tr><td>7</td><td><b>무료 AI 위협 대응이 구호 수준</b></td><td><span class="tagchip tc">중</span></td><td>"차별화하라"고만 썼다. ChatGPT가 무료로 하는 것 대비 우리가 유료를 받을 수 있는 구체적 이유(불가능 목록 → 가치 영역 매핑)가 없었다.</td></tr>
+        <tr><td>8</td><td><b>콘텐츠 제작 역량·비용 누락</b></td><td><span class="tagchip tc">중</span></td><td>타이트사주식 숏폼·캐릭터 콘텐츠를 권했지만 제작 인력·비용·주기(주 3회 릴스 등)를 예산에 안 넣었다. 콘텐츠 유닛이 멈추면 유입이 끊기는 모델이다.</td></tr>
+        <tr><td>9</td><td><b>데이터 시점·출처 혼재</b></td><td><span class="tagchip tt">하</span></td><td>MAU 통계가 2022~2026 제각각이고 글로벌 시장규모(62억 달러)는 비공식 블로그 인용이라 신뢰도가 낮다. 같은 지표(포스텔러 2030 비중 57% vs 80%)도 시점별로 충돌하는데 그대로 병기했다.</td></tr>
+        <tr><td>10</td><td><b>팀·역량 요구사항 부재</b></td><td><span class="tagchip tt">하</span></td><td>개발/기획/명리 지식/마케팅 중 무엇을 갖춰야 하는지, 없으면 어디서 얻는지(파트너·자문) 미정이다. 1인에게는 B안도 사실상 풀스택 요구라는 점을 안탔다.</td></tr>
+        <tr><td>11</td><td><b>재무 시뮬레이션 부재</b></td><td><span class="tagchip tt">하</span></td><td>예산(지출)만 있고 매출 예측·손익분기·현금흐름이 없다. "3,000만~1억 쓴다"는 말과 "언제 얼마가 돌아온다"는 별개다.</td></tr>
+        <tr><td>12</td><td><b>앱 심사·정책 실무 부재</b></td><td><span class="tagchip tt">하</span></td><td>운세 앱은 스토어에서 '오락' 분류·연령 등급·무료앱 정책 심사 이슈가 반복되는 카테고리다. 심사 리젝 사유와 대응을 다루지 않았다.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note" style="margin-top:14px"><b>종합 판정</b>: Part 1은 "시장 지도"로는 유효하지만 "실행 계획서"로는 불충분하다. 특히 1~4번(유닛 이코노믹스·법률·콜드스타트·권장 근거)은 진출 결정을 내리기 전 반드시 해결해야 하는 항목이다. 아래 5개 해결방안이 그 답이다.</div>
+  </div>
+
+  <div class="card">
+    <h2>13. 해결방안 ① 법률·컴플라이언스 체크리스트 (진입 전 필수)</h2>
+    <div class="desc">사주 사업의 법적 지위: 점술 자체는 불법이 아니지만 표현·판매 방식이 법에 걸린다. 실제 판례·제재 사례 기준.</div>
+    <h3 class="sec"><span class="n">A</span>형사 리스크 — 절대 금지선</h3>
+    <ul style="font-size:13px;padding-left:18px;color:#374151">
+      <li><b>액운 고지 + 대가 판매 = 사기죠 성립 가능</b>: 대법원 2017도12460 — 점술가가 불행을 고지하고 굿·부적·의식을 팔면 편죄(사기)로 유죄. "이대로면 가족이 위험하니 굿하세요"류 카피는 원천 금지. 온라인 버전(무료 상담 → 풍수 팔찌 구매 유도, 200만동 피해 사례 보도)도 동일 구조.</li>
+      <li><b>사주 미끼 금융사기 연계 금지</b>: 금감원 경보(2026.2) — 사주·풍수 콘텐츠로 유입시켜 가짜 주식앱 설치 유도 사기. 제휴·광고 파트너 스크리닝 필수.</li>
+      <li><b>의료·법률·투자 판단 대리 표현 금지</b>: "이 병이 낫는다", "이 주식을 사라", "이혼하세요" 등 결정 지시 문구 금지. 사주핑이 "정신과 상담 대체가 아님"을 공식 명시한 것도 같은 맥락.</li>
+    </ul>
+    <h3 class="sec"><span class="n">B</span>행정 리스크 — 표시광고법 (과징금 최대 매출 2%, 금액 산정 곤란 시 5억원 이내)</h3>
+    <ul style="font-size:13px;padding-left:18px;color:#374151">
+      <li><b>근거 없는 "1위·최고·정확도 NO.1" 금지</b>: 공정위가 던롭 '1위' 광고에 과징금 2억 600만원(2026). "가장 잘 맞는 사주"도 실증자료 없으면 동일 리스크. 사주핑 "앱스토어 AI사주 1위"처럼 <b>스토어 공개 순위를 인용할 때도 순위·시점·기관을 명시</b>해야 한다.</li>
+      <li><b>적중·보장 표현 금지</b>: "100% 정확", "꼭 만납니다", "재회 보장" 등은 소비자 오인 유도. 결과는 "참고용 콘텐츠"임을 결과 화면·결제 직전에 표기.</li>
+    </ul>
+    <h3 class="sec"><span class="n">C</span>전자상거래법·환불 실무</h3>
+    <ul style="font-size:13px;padding-left:18px;color:#374151">
+      <li><b>디지털 콘텐츠 환불</b>: 콘텐츠 특성상 청약철회 제한이 가능하나 "열람 즉시 제한" 고지를 결제 전에 해야 유효. 소비자원 앱 분쟁의 71.4%가 결제·환불 — <b>환불 정책 페이지 + 결제 직전 재고지</b>가 분쟁 1차 방어선.</li>
+      <li><b>구독(자동갱신)</b>: 갱신일 사전 고지 의무. 월 구독 상품은 해지 경로를 설정 2클릭 이내 유지 (앱스토어 심사 반려 사유 1위).</li>
+      <li><b>사업자 등록·통신판매업 신고</b>: 개인사업자로 시작 가능(크몽도 가능). 매출 발생 즉시 과세. 부가세 별도 견적 표기.</li>
+    </ul>
+    <h3 class="sec"><span class="n">D</span>개인정보보호법</h3>
+    <ul style="font-size:13px;padding-left:18px;color:#374151">
+      <li>생년월일시+성별은 개인식별정보. 수집 최소화, 목적 고지, <b>LLM API 전송 시 비식별화(이름 마스킹 등)</b> 처리. 해외 API 사용 시 국외이전 고지.</li>
+      <li>대화 기록(고민 상담)은 민감정보에 준함 — 저장 암호화, 이용자 열람·삭제 기능 필수. 찐사주가 "데이터 제3자 공유 없음"을 스토어에 명시한 것이 예시.</li>
+    </ul>
+    <div class="note green" style="margin-top:10px"><b>금지어 → 대체어 예시</b>: "정확히 맞힙니다"→"명리학 기반으로 풀이합니다" / "액운이 온다"→"이 시기에는 이런 이슈를 조심하는 게 좋습니다" / "굿·부적으로 해결"→판매 자체 금지 / "재회됩니다"→"재회 관점의 흐름을 봅니다".</div>
+  </div>
+
+  <div class="card">
+    <h2>14. 해결방안 ② 유닛 이코노믹스 — 계산하고 나서 전략이 나온다</h2>
+    <div class="desc">한계 1·4·5번(무계산·근거 약함·시즌성)의 해결. 국내 CPI 성과 데이터 기준으로 직접 계산했다.</div>
+    <h3 class="sec"><span class="n">1</span>핵심 계산: 유료고객 획득비용 vs 객단가</h3>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>항목</th><th style="width:140px">값</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr><td>국내 앱 설치당 비용 (CPI)</td><td><b>2,200~10,200원</b></td><td>국내 평균 2~10달러, 구글 GFA 성과형 약 2,000원 (모비인사이드·아케이드 2026)</td></tr>
+        <tr><td>설치 → 유료 전환율</td><td><b>5~8%</b></td><td>사주핑 8% 벤치마크 (보수적으로 5% 적용)</td></tr>
+        <tr><td><b>유료고객 1명 획득비용 (CPA)</b></td><td><b>2.8만~20만원</b></td><td>CPI 2,200~10,200원 ÷ 5~8%</td></tr>
+        <tr><td>객단가 (ARPPU)</td><td><b>약 12,500원</b></td><td>사주핑 누적 기준</td></tr>
+        <tr><td><b>1회 구매 기준 수지</b></td><td><b>손실 (적자)</b></td><td>CPA 2.8만~20만 > ARPPU 1.25만 → 첫 결제로 회수 불가</td></tr>
+        <tr><td>손익분기에 필요한 재구매</td><td><b>유료고객당 3~12회</b></td><td>(CPA ÷ ARPPU). 재구매 3회 이상 구조(구독·궁합 반복) 없으면 광고 스케일 불가</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note" style="margin-top:12px"><b>결론 1</b>: 사주 사업은 <b>"광고로 시작하면 지는 구조"</b>다. 유료 검색·앱 설치 광고는 이미 ARPPU가 5만원+인 대형 앱(점신·포스텔러)의 영역. 신규는 <b>유기적 채널(0원 CAC)로만 시작</b>하고, 재구매 구조(구독·궁합 반복·연운)가 확인된 뒤 광고를 얹어야 한다.</div>
+    <h3 class="sec"><span class="n">2</span>시즌성 반영 연 매출 모델 (B안, MAU 1만 기준)</h3>
+    <div class="bars">
+      <div class="brow"><div class="bl">1월 (신년 피크)</div><div class="track"><div class="fillb" style="width:100%;background:#9333ea"></div></div><div class="bv">월 매출 지수 100</div></div>
+      <div class="brow"><div class="bl">12월·2월</div><div class="track"><div class="fillb" style="width:65%;background:#7c3aed"></div></div><div class="bv">65</div></div>
+      <div class="brow"><div class="bl">3~5월</div><div class="track"><div class="fillb" style="width:40%;background:#60a5fa"></div></div><div class="bv">40</div></div>
+      <div class="brow"><div class="bl">6~11월 (비수기)</div><div class="track"><div class="fillb" style="width:25%;background:#93c5fd"></div></div><div class="bv">25~30</div></div>
+    </div>
+    <ul style="font-size:13px;padding-left:18px;color:#374151;margin-top:10px">
+      <li>연 1회 이용자 33.4% → 신년 3개월(12~2월)에 연 매출의 약 45~50% 집중 가정. <b>비수기 대응 상품(생일운·반기 운세·학기 커리어)을 설계에 반영</b>해야 연 매출이 평탄해진다.</li>
+      <li>월 구독(9,900원)은 시즌 허들을 매꾸는 핵심 장치 — 구독 비중 30%면 비수기 매출 지수 25→45로 상승.</li>
+    </ul>
+    <h3 class="sec"><span class="n">3</span>3단계 재무 시뮬레이션 (B안, 월 단위)</h3>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>시나리오</th><th>MAU</th><th>유료전환</th><th>ARPPU</th><th>월 매출</th><th>월 비용(AI+서버+마케팅)</th><th>월 손익</th></tr></thead>
+      <tbody>
+        <tr><td>보수 (6개월차)</td><td>3,000</td><td>4%</td><td>10,000원</td><td>120만</td><td>180만 (유기적 마케팅만)</td><td><b>-60만</b></td></tr>
+        <tr><td>기본 (12개월차)</td><td>10,000</td><td>6%</td><td>12,500원 + 구독 15%</td><td>1,050만</td><td>350만</td><td><b>+700만</b></td></tr>
+        <tr><td>낙관 (18개월차)</td><td>30,000</td><td>8%</td><td>15,000원 + 구독 30%</td><td>4,900만</td><td>1,200만</td><td><b>+3,700만</b></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note" style="margin-top:12px"><b>결론 2</b>: MAU 1만 도달 전까지는 적자가 정상 설계다. 초기 투자 3,000만~1억 중 <b>최소 6~9개월 운전자금(월 150~350만)을 별도 확보</b>해야 신년 시즌(연 매출 절반)까지 버틴다. 신년 시즌을 놓치면 1년을 기다려야 하므로 <b>출시 목표 시점은 10~11월</b>이 정답이다.</div>
+  </div>
+
+  <div class="card">
+    <h2>15. 해결방안 ③ 콜드스타트 GTM — 1호 고객부터 1만 MAU까지</h2>
+    <div class="desc">한계 3번(콜드스타트)·8번(콘텐츠 비용)의 해결. 광고 없이 작동하는 채널만 단계별로 배치한다.</div>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:80px">단계</th><th style="width:190px">채널</th><th style="width:210px">실행 방법 (벤치마킹 근거)</th><th>목표 지표</th></tr></thead>
+      <tbody>
+        <tr><td><b>0~4주</b></td><td>크몽·숨고 입점</td><td>"AI 초안 + 사람 통변" 리딩 상품 오픈. 저가(9,900원)로 후기 20개 선축적 (크몽 실사례: 3주 7건·평점 5.0)</td><td>후기 20개 · 응답 1시간 이내</td></tr>
+        <tr><td><b>2~8주</b></td><td>인스타 릴스·숏폼</td><td>타이트사주 모델: 웹툰형 사주 콘텐츠 주 3회. "2030 여성 연애운" 단일 타게팅. 캐릭터 1개 고정 (MZ무당류)</td><td>팔로워 1,000 · 릴스 조회 1만+</td></tr>
+        <tr><td><b>4~12주</b></td><td>무료 웹 툴 + 공유 루프</td><td>찐사주 모델: 무료 오늘운세 + 결과 카카오톡 공유 이미지(브랜드 삽입). 공유받은 사람의 10%가 재공유하면 루프 성립</td><td>신규의 30%+가 공유 유입</td></tr>
+        <tr><td><b>8~16주</b></td><td>네이버 블로그·카페 SEO</td><td>"사주 무료", "궁합 무료 테스트" 롱테일 키워드 콘텐츠 30편. 블로그→웹툴 랜딩 연결</td><td>검색 유입 월 3,000+</td></tr>
+        <tr><td><b>12주~</b></td><td>커뮤니티·제휴</td><td>심리테스트 확산 커뮤니티 게시 + 소개팅/커뮤니티 앱 제휴(궁합 위젯 제공)</td><td>제휴 유입 MAU 10%+</td></tr>
+        <tr><td><b>시즌 D-day</b></td><td>신년 캠페인</td><td>10~11월 출시 → 12~1월 신년운세 대량 전환. 연 매출 45%를 8주에 회수하는 설계</td><td>시즌 매출 지수 100 (1월)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note" style="margin-top:12px"><b>원칙</b>: 유료 광고는 "재구매 3회+ 구조 확인 후"(해결방안 ② 결론)에만 소액(월 50만~100만)으로 시작한다. 초기 전 채널을 유기적으로 운영하는 것이 이 사업의 생존 조건이다.</div>
+  </div>
+
+  <div class="card">
+    <h2>16. 해결방안 ④ 무료 AI(ChatGPT) 대응 — 돈을 받을 수 있는 영역만 남긴다</h2>
+    <div class="desc">한계 7번의 해결. "무료 AI가 못 하는 것"을 역산해 유료 가치 영역을 특정한다.</div>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:230px">ChatGPT가 못 하는 것</th><th style="width:280px">우리가 유료로 파는 것</th><th>가격 근거</th></tr></thead>
+      <tbody>
+        <tr><td>만세력 계산 오류 (경도·서머타임·야자시 미보정, 사용자 신뢰성 불만 보도)</td><td><b>검증된 명식 계산 엔진</b> + 계산 근거 표기</td><td>계산 신뢰가 곧 결제 사유. 천을귀인·포스텔러 만세력의 포지션</td></tr>
+        <tr><td>대화 맥락을 매번 잃음 (반복 답변 불만 후기)</td><td><b>나를 기억하는 개인 프로파일</b> (사주+상황+감정 누적)</td><td>사주핑 평균 40회 대화·구독 전환의 핵심</td></tr>
+        <tr><td>결과물이 텍스트뿐 (공유 불가)</td><td><b>공유용 카드·리포트 이미지</b> (카톡 공유 최적화)</td><td>찐사주 카톡 공유 / 캔바 부적 템플릿과 동일한 바이럴 상품</td></tr>
+        <tr><td>정서적 몰입 없음</td><td><b>캐릭터·스토리 콘텐츠</b> (웹툰형 풀이)</td><td>타이트사주가 2030 여성 61.8%를 얻은 방식</td></tr>
+        <tr><td>사람의 확신·책임 있는 통변 없음</td><td><b>전문가 감명 연결</b> (AI → 사람 하이브리드)</td><td>5천~3만원대 상담 시장, 마진 최대. 크몽·더사주 모델</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note green" style="margin-top:12px"><b>포지셔닝 한 줄</b>: "ChatGPT는 만세력을 틀리고 나를 기억하지 못한다. 우리는 정확한 명식과 당신의 흐름을 기억합니다." — 이 문장이 유료 결제의 근거가 되고, 광고 카피의 방향이 된다.</div>
+  </div>
+
+  <div class="card">
+    <h2>17. 해결방안 ⑤ 90일 실행 계획과 Go/No-Go 판정</h2>
+    <div class="desc">한계 10·11번(팀·재무)의 해결. 니치는 "2030 여성 연애·궁합"으로 가정 (데이터상 최대 수요). 주차별 게이트가 있는 계획.</div>
+    <div class="road">
+      <div class="phase"><div class="ph">DAY 1~14 · 준비</div><h4>니치 확정 + 법률 세팅</h4>
+        <ul>
+          <li>니치 1개 확정 (연애·궁합·커리어 중 1)</li>
+          <li>개인사업자·통신판매업 신고</li>
+          <li>금지어·환불 정책 문서화 (해결방안 ①)</li>
+          <li>개발 파트너/자체 역량 확정 (만세력 오픈소스 검증)</li>
+          <li>경쟁 3개 서비스 직접 결제·체험 리포트</li>
+        </ul>
+      </div>
+      <div class="phase"><div class="ph">DAY 15~45 · 제작</div><h4>MVP + 크몽 동시 오픈</h4>
+        <ul>
+          <li>무료 오늘운세 + 990원 단건 + PDF 리포트</li>
+          <li>카카오 로그인, 결과 카톡 공유 이미지</li>
+          <li>크몽 상품 오픈 → 후기 수집 병행</li>
+          <li>인스타 캐릭터 콘텐츠 주 3회 시작</li>
+          <li>게이트: 크몽 첫 10건 판매 + 후기 4.8+</li>
+        </ul>
+      </div>
+      <div class="phase"><div class="ph">DAY 46~75 · 검증</div><h4>베타 500명 + 지표 확인</h4>
+        <ul>
+          <li>웹툴 오픈, 베타 유저 500명 (유기 채널)</li>
+          <li>지표: D+7 재방문 10%+ / 유료전환 3%+</li>
+          <li>가격 A/B (990원 vs 4,900원 리포트)</li>
+          <li>공유율 20%+ 미달 시 결과 카드 재설계</li>
+          <li>게이트: 3개 지표 중 2개 달성</li>
+        </ul>
+      </div>
+      <div class="phase"><div class="ph">DAY 76~90 · 결정</div><h4>Go / Pivot / Stop</h4>
+        <ul>
+          <li><b>Go</b>: 전환 5%+ & 재방문 12%+ → 신년 시즌 캠페인 투입 (10~11월 출시 맞춤)</li>
+          <li><b>Pivot</b>: 지표 미달이지만 후기 만족 높으면 → 사람 감명 하이브리드(크몽 강화)로 전환</li>
+          <li><b>Stop</b>: 전환 2% 미만 & 공유 루프 부재 → 채널 자체가 없는 것. 추가 투입 금지</li>
+          <li>이 시점 누적 지출 목표: 500만~1,500만원 이내</li>
+        </ul>
+      </div>
+    </div>
+    <h3 class="sec"><span class="n">팀</span>최소 구성 (1~2인)</h3>
+    <ul style="font-size:13px;padding-left:18px;color:#374151">
+      <li><b>필수 1인</b>: 기획+운영 (상품·카피·채널). 명리 지식은 자문으로 대체 가능 — 감명 검수 역할의 명리 자문 1명 (건당 검수비 또는 매출 셰어) 을 두면 통변 품질과 신뢰가 동시에 확보된다.</li>
+      <li><b>개발</b>: 자체 역량 없으면 MVP만 외주(최소 범위) + 이후 노코드/1인 유지보수. 전체 외주 장기 유지보수는 위험.</li>
+      <li><b>콘텐츠</b>: 릴스 3회/주는 창업자 본인이 직접 (목소리·얼굴 기반 채널이 이 카테고리에선 유리).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>18. 종합 결론: 이 사업, 진출해도 되는가</h2>
+    <div class="desc">Part 1 + Part 2를 종합한 최종 판정.</div>
+    <div class="swot">
+      <div class="sw"><b>진출 근거 (해도 되는 이유)</b><br>· 시장 성장 명확 (5년 3배, 비대면 50%+)<br>· 원가 구조 우수 (AI 원가율 1~2%)<br>· 990원~3만원대로 검증된 지불 의욕<br>· 유기적 채널로 시작 가능한 저자본 진입로 존재 (A안 50만~300만원)<br>· "2030 여성 연애·궁합"이라는 집중 가능한 니치 데이터 존재</div>
+      <div class="swd"><b>진출 조건 (이것 없으면 하지 말 것)</b><br>· 광고 의존 금지 — 유기 채널 설계가 우선 (CPA 2.8만~20만 > ARPPU 1.25만)<br>· 재구매 3회+ 구조(구독·궁합 반복) 없으면 스케일 불가<br>· 법률 체크리스트(사기죄·표시광고·환불) 미이행 시 진출 자체가 리스크<br>· 6~9개월 운전자금 없이 신년 시즌(12~2월) 도달 불가 시 연기<br>· 90일 게이트(전환 5%·재방문 12%·공유 20%) 미달 시 Stop 원칙 준수</div>
+    </div>
+    <div class="note green" style="margin-top:12px"><b>최종 권고</b>: 조건 충족 시 진출. 경로는 "A안(크몽+유기 채널)으로 90일 검증 → 지표 달성 시 B안(웹앱+구독)으로 확장 → 신년 시즌에 매출 회수". 초기 한도 500만~1,500만원, Go 판정 후에만 3,000만~1억 투입. 리스크 원칙(법률·게이트·운전자금)을 지키면 잃을 수 있는 최대금액이 1,500만원으로 제한되는 구조다.</div>
+  </div>
+
+
+  <div class="card" style="border:2px solid #0d9488;background:linear-gradient(180deg,#f0fdfa,#fff)">
+    <h2 style="color:#0f766e">Part 3. 검증 데이터와 실행 도구 (v4 업그레이드)</h2>
+    <div class="desc">v3의 비판 항목 중 "니치 특정 없음·크몽 실데이터 없음·만세력 불명확·상표·세금·앱vs웹·경쟁 대응·도구 부재"를 해결하는 실행 파트. 크몽 데이터는 2026-08-22 직접 수집, 상표는 특허청·KIPRIS 공식 수치, 만세력은 npm/GitHub 실검증.</div>
+    <div class="kpis">
+      <div class="kpi"><div class="label">크몽 사주 상품 최다 리뷰</div><div class="value">15,504<small> 건</small></div><div class="range">동호호령 30,000원 — 누적 추정 매출 4.6억+</div></div>
+      <div class="kpi"><div class="label">크몽 상품 가격 중앙값</div><div class="value">약 25,000<small>원</small></div><div class="range">직접 수집 44개 상품 (8천~20만원)</div></div>
+      <div class="kpi"><div class="label">상표 출원 (9·42·45류 셀프)</div><div class="value">약 75<small>만원</small></div><div class="range">출원 13.8만 + 등록 61.2만 · 심사 12.8개월</div></div>
+      <div class="kpi"><div class="label">만세력 엔진 (MIT)</div><div class="value">0<small>원</small></div><div class="range">manseryeok — KASI 정본·진태양시·서머타임·야자시 3관법</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>19. 니치 화이트스페이스 매트릭스 — 어디가 비어 있는가</h2>
+    <div class="desc">"니치를 골라라"가 아니라 "어디가 비었는지"를 보여준다. 포화도는 기존 강자 수와 콘텐츠 밀도 기준.</div>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:130px">니치</th><th style="width:190px">기존 강자</th><th style="width:70px">포화도</th><th style="width:80px">진입 난이도</th><th>판단</th></tr></thead>
+      <tbody>
+        <tr><td><b>연애·궁합</b></td><td>포스텔러·찐사주·인연궁합·리얼미</td><td><span class="tagchip to">높음</span></td><td>쉬움</td><td>수요 최대지만 카피 러시. 캐릭터·기억 없으면 묻힘</td></tr>
+        <tr><td><b>재회·짝사랑</b></td><td>더사주·베누스타로(크몽 781리뷰)</td><td><span class="tagchip tc">중간</span></td><td>쉬움</td><td>리더 존재하나 시장 자체가 작음. 객단가 높은 편</td></tr>
+        <tr><td><b>커리어·이직</b></td><td>마이파이·타이트사주 커리어사주</td><td><span class="tagchip tc">중간</span></td><td>보통</td><td>"팀장-팀원 궁합" 실수요 보도(한경 2026.6). B2B 확장 여지 최대</td></tr>
+        <tr><td><b>반려동물 궁합</b></td><td>찐사주(유일)</td><td><span class="tagchip tt">낮음</span></td><td>쉬움</td><td><b>화이트스페이스</b>. 입양일 기반 접근 신선. 시장 크기 검증 필요</td></tr>
+        <tr><td><b>양자택일(결정)</b></td><td>찐사주(유일)</td><td><span class="tagchip tt">낮음</span></td><td>쉬움</td><td>"이직 A vs B" 등 상황형 수요. 반복 소비 구조 (결정할 때마다)</td></tr>
+        <tr><td><b>직장관계·팀궁합</b></td><td>사실상 없음</td><td><span class="tagchip tt">낮음</span></td><td>보통</td><td><b>최대 화이트스페이스</b>. 일주만 입력하는 가벼운 B2B형 테스트. HR 제휴 연결</td></tr>
+        <tr><td><b>웹툰·숏폼형</b></td><td>타이트사주</td><td><span class="tagchip tc">중간</span></td><td>어려움</td><td>제작 역량이 관문. 성공 시 MZ 유입 최강</td></tr>
+        <tr><td><b>AI 관상</b></td><td>쇼페이스·알파페이스·점신</td><td><span class="tagchip tc">중간</span></td><td>어려움</td><td>얼굴 데이터 개인정보 리스크 높음. 후발 불리</td></tr>
+        <tr><td><b>부모·가족궁합</b></td><td>일부(찐사주 '부모' 포함)</td><td><span class="tagchip tt">낮음</span></td><td>쉬움</td><td>명절 선물성 소비("부모님 사주 리포트") — 시즌 상품 가능</td></tr>
+        <tr><td><b>B2B(HR·소개팅 제휴)</b></td><td>거의 없음(마이파이 시도)</td><td><span class="tagchip tt">낮음</span></td><td>어려움</td><td>영업 역량 필요하지만 경쟁 0. API 공급형 매출</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note green" style="margin-top:12px"><b>권장 조합</b>: 1차 진입 "직장관계·팀궁합"(공백+수요 보도 확인) 또는 "반려동물·양자택일"(찐사주 검증 후 재해석) → 2차 확장 "커리어"(B2B 연결) → 시즌 상품 "부모님 사주 리포트". 정면 대결이 필요 없는 순서다.</div>
+  </div>
+
+  <div class="card">
+    <h2>20. 크몽 실제 판매 데이터 — 직접 수집 (2026-08-22)</h2>
+    <div class="desc">'사주' 검색 인기순 상위 44개 상품 전수 수집. 리뷰 수는 누적 판매의 프록시(최소 주문 이상). 이것이 "시장 조사"가 아니라 "지불 증거"다.</div>
+    <h3 class="sec"><span class="n">1</span>리뷰 수 상위 10 — 이 시장의 실제 크기</h3>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>판매자</th><th style="width:110px">가격</th><th style="width:100px">리뷰 수</th><th style="width:150px">누적 매출 추정</th><th>상품 유형</th></tr></thead>
+      <tbody>
+        <tr><td>동호호령</td><td>30,000원</td><td><b>15,504</b></td><td>약 4.6억원</td><td>신점+명리 상담</td></tr>
+        <tr><td>독사과</td><td>10,000원~</td><td><b>7,603</b></td><td>약 7,600만원+</td><td>저가 진입형 상담</td></tr>
+        <tr><td>주산</td><td>24,000원~</td><td><b>4,085</b></td><td>약 9,800만원+</td><td><b>운명감정서(리포트형)</b></td></tr>
+        <tr><td>네잎클로바</td><td>35,000원</td><td><b>3,500</b></td><td>약 1.2억원</td><td>궁합·속마음</td></tr>
+        <tr><td>국호당용도령</td><td>30,000원~</td><td><b>3,234</b></td><td>약 9,700만원+</td><td>신점</td></tr>
+        <tr><td>태인궁</td><td>65,000원~</td><td><b>2,269</b></td><td>약 1.5억원</td><td>고단가 신점</td></tr>
+        <tr><td>청포도타로</td><td>15,000원~</td><td><b>2,016</b></td><td>약 3,000만원+</td><td>타로 (사주 진입점)</td></tr>
+        <tr><td>국현</td><td>32,000원~</td><td><b>1,894</b></td><td>약 6,100만원+</td><td>발복 대운 특화</td></tr>
+        <tr><td>비케이사주타로</td><td>9,000원~</td><td><b>1,799</b></td><td>약 1,600만원+</td><td>저가 사주+타로</td></tr>
+        <tr><td>아르카ARCANA</td><td>15,000원~</td><td><b>1,472</b></td><td>약 2,200만원+</td><td>타로</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="sec"><span class="n">2</span>가격 분포 (44개)</h3>
+    <div class="bars">
+      <div class="brow"><div class="bl">8,000~9,900원</div><div class="track"><div class="fillb" style="width:20%;background:#93c5fd"></div></div><div class="bv">9개 (20%)</div></div>
+      <div class="brow"><div class="bl">10,000~19,000원</div><div class="track"><div class="fillb" style="width:33%;background:#60a5fa"></div></div><div class="bv">15개 (34%)</div></div>
+      <div class="brow"><div class="bl">20,000~39,000원</div><div class="track"><div class="fillb" style="width:31%;background:#2563eb"></div></div><div class="bv">14개 (32%)</div></div>
+      <div class="brow"><div class="bl">40,000~65,000원</div><div class="track"><div class="fillb" style="width:11%;background:#7c3aed"></div></div><div class="bv">5개 (11%)</div></div>
+      <div class="brow"><div class="bl">100,000원+</div><div class="track"><div class="fillb" style="width:4%;background:#9333ea"></div></div><div class="bv">2개 (4%)</div></div>
+    </div>
+    <h3 class="sec"><span class="n">3</span>핵심 인사이트 (기획에 직접 반영)</h3>
+    <ul style="font-size:13px;padding-left:18px;color:#374151">
+      <li><b>중앙값 2.5만원</b>: 9,900원은 "체험·진입" 가격이고 실제 시장 중심은 2~3만원. AI 리포트 정가를 19,000~24,000원으로 잡고 990원은 첫결제 유도용으로만 쓰는 게 데이터에 맞다.</li>
+      <li><b>리포트형이 팔린다</b>: "운명감정서 전송"(주산, 24,000원)이 4,085리뷰 — 통화 없이 문서로만 팔리는 상품이 상위권. 우리 AI PDF 리포트 모델의 직접적 수요 증거.</li>
+      <li><b>수수료 감안 가격 설계</b>: 크몽 수수료 실질 ~20% → 24,000원 판매 시 수령 약 19,200원. 자체 채널로 이관하면 동일 수령에 19,200원 가격표 가능(경쟁력 +20%).</li>
+      <li><b>정보상품 시장도 존재</b>: "AI로 사주 부업 시작하기" 강의 99,000원·리뷰 21건. 노하우를 강의로 파는 2차 수익 라인 검증.</li>
+      <li><b>시즌 무관 상시 수요</b>: 리뷰 누적이 특정 시즌 치우침 없이 상시 분포 → 앱과 달리 1:1 상품은 연중 판매됨. 시즌 집중 리스크는 앱형에 크다.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>21. 기술 스택 확정 — 만세력 엔진과 데이터 소스</h2>
+    <div class="desc">npm·PyPI·GitHub을 직접 검증한 결과. 모두 MIT(상업 이용 가능). 계산 엔진을 직접 짤 필요가 없다.</div>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:200px">라이브러리</th><th style="width:70px">언어</th><th style="width:70px">라이선스</th><th style="width:210px">지원 기능</th><th>평가</th></tr></thead>
+      <tbody>
+        <tr><td><b>manseryeok</b> v2.0.0<br><span style="font-size:11px;color:var(--sub)">yhj1024/manseryeok</span></td><td>TypeScript</td><td>MIT</td><td>진태양시(경도+균시차) · 서머타임(1948-51/55-60/87-88) · 야자시 3관법 · 십신·대운·공망</td><td><b>권장</b>. KASI 음력 정본(1391-2049). 의존성 0·40KB. 주간 3,000 DL</td></tr>
+        <tr><td>sajupy v0.2.0</td><td>Python</td><td>MIT</td><td>진태양시 · 조자시 처리 (서머타임 미지원)</td><td>Python 백엔드 선택지</td></tr>
+        <tr><td>korean-lunar-calendar</td><td>JS/Py/Java</td><td>MIT</td><td>음양력 변환·갑자만 (사주 미지원)</td><td>변환만 필요 시. 주간 12,600 DL</td></tr>
+        <tr><td>lunar-javascript 등 6tail 계열</td><td>JS/TS/Py</td><td>MIT</td><td>팔자·십신 기능 최다 (한국 윤달·절기 기준 상이)</td><td>중국 표준 — 국내 서비스 부적합 가능</td></tr>
+        <tr><td><b>KASI 공공 API</b></td><td>REST</td><td>무료·상업가능</td><td>음양력 정보·24절기·특일 (사주 계산은 없음)</td><td>"이용허락범위 제한 없음" 공식 명시. data.go.kr 자동승인</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note green" style="margin-top:12px"><b>스택 결론</b>: 웹 MVP는 <b>manseryeok(TS) 하나로 계산층 완결</b>(프론트에서 바로, 백엔드 불필요한 수준). 계산 투명성 화면("동경 135도 기준·경도 보정 +30분 적용" 표기)을 결과에 노출하면 신뢰 차별화가 된다. 개발 추정이 "만세력 엔진 0~수십만원"에서 <b>"엔진 0원(라이브러리) + 보정 로직 검증 2주"</b>로 확정된다.</div>
+  </div>
+
+  <div class="card">
+    <h2>22. 앱 vs 웹 — 결정 트리</h2>
+    <div class="desc">같은 매출에 수수료 차이가 최대 27%p. 90일 검증 단계의 정답은 대부분 웹이다.</div>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:250px">질문</th><th style="width:170px">예 →</th><th>아니오 →</th></tr></thead>
+      <tbody>
+        <tr><td>예산 5,000만원 미만이고 90일 검증 단계인가?</td><td><b>웹 (PWA)</b></td><td>앱 후보 — 다음 질문으로</td></tr>
+        <tr><td>핵심 루프가 "매일 오늘 운세 푸시" 리텐션인가?</td><td>앱 필요 → PWA 푸시로 대체 가능 검토</td><td>웹 우선</td></tr>
+        <tr><td>고액 인앱결제(3만원+)가 매출 핵심인가?</td><td>앱 결제 신뢰도 유리 (단 수수료 15~30%)</td><td>웹 PG (2.9~3.5%)</td></tr>
+        <tr><td>"앱스토어 1위" 사회적 증명을 마케팅에 쓸 것인가?</td><td>앱 (무료 랭킹 진입 전략)</td><td>웹</td></tr>
+        <tr><td>릴스·SEO → 랜딩 퍼널이 주 유입인가?</td><td><b>웹이 압도적</b> (앱스토어 경유 이탈 제거)</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="swot" style="margin-top:12px">
+      <div class="sw"><b>웹(PWA) 선택 시</b><br>· 수수료 2.9~3.5% (앱 대비 +12~27%p 마진)<br>· 심사 없음 — 주 1회 배포 가능<br>· 릴스→랜딩 즉시 전환, 설치 마찰 0<br>· PWA로 홈화면 추가·푸시(Web Push) 부분 대체</div>
+      <div class="swd"><b>웹의 한계 → 대응</b><br>· 결제 신뢰도: PG 브랜드 노출 + 환불 보증 표시<br>· 랭킹 증명 없음: 크몽 평점·후기를 대체 증거로<br>· 확장: 검증 후 앱 출시 시 웹 회원 그대로 마이그레이션 (점신·포스텔러도 웹+앱 병행 구조)</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>23. 상표·브랜드 실무 — 이름 보호의 최소 비용</h2>
+    <div class="desc">특허청 관납료·심사 기준·니스분류 고시명까지 확인한 실무 수치 (2025-2026).</div>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:220px">항목</th><th style="width:200px">수치</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>출원료 (전자·고시명칭 사용)</td><td><b>류당 46,000원</b></td><td>고시명 미사용 시 52,000원. 지정상품 10개 초과 개당 2,000원 (2023.8 개정)</td></tr>
+        <tr><td>설정등록료 (10년분)</td><td><b>류당 201,000원</b></td><td>분할납부 시 류당 122,000×2 + 지방세 9,120원</td></tr>
+        <tr><td><b>운세앱 필수 3류 (셀프)</b></td><td><b>합계 약 75만원</b></td><td>9류(앱) + 42류(SaaS) + <b>45류(운세 정보제공업)</b>. 운세 본류는 41류가 아닌 45류 — 흔한 실수</td></tr>
+        <tr><td>변리사 대리 시</td><td>+ 10만~75만원</td><td>플랫폼형 10~30만 / 일반 사무소 30~75만</td></tr>
+        <tr><td>심사 기간</td><td>평균 12.8개월 (1차)</td><td>등록까지 17.2개월. <b>선출원 우선</b>이므로 출시 전 출원만으로 선점 효과</td></tr>
+        <tr><td>사전 확인</td><td>0원</td><td>KIPRIS(kipris.or.kr) 무료 검색으로 유사 상표 사전 배제 필수</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note" style="margin-top:12px"><b>실행 순서</b>: ① KIPRIS 검색으로 이름 3개 후보 충돌 확인 (0원) → ② 서비스명 확정 즉시 3류 전자출원 (13.8만원, 셀프 가능) → ③ 등록료는 심사 통과 후 납부. 90일 계획의 DAY 15 전후에 출원하면 시즌 출시와 겹치지 않는다.</div>
+  </div>
+
+  <div class="card">
+    <h2>24. 경쟁사 반응 시나리오 — 뜨면 따라 온다</h2>
+    <div class="desc">니치가 검증되면 대형 앱은 3개월 내 복제 가능하다(포스텔러 콘텐츠 6,000종 인프라). 시나리오별 방어선.</div>
+    <div class="swot">
+      <div class="sw"><b>시나리오 1: 점신·포스텔러가 기능 카피</b><br>방어: 캐릭터·브랜드 IP(등록 상표로 보호), 후기 데이터(카피 불가), 팬 커뮤니티. 대형 앱은 콘텐츠 다양성이 약점 — "이 주제만 깊이" 포지션 유지</div>
+      <div class="sw"><b>시나리오 2: 무료 AI가 품질 상승</b><br>방어: 계산 정확도(manseryeok+보정 표기)·기억·리포트 품질. ChatGPT가 만세력을 정확히 풀게 되는 날엔 '기억+사람 감명' 상위 라인으로 이동</div>
+      <div class="sw"><b>시나리오 3: 플랫폼 정책 변화</b><br>구글 수수료 개편(2026.12 한국 적용)·애플 외부결제 등. 방어: 웹 직접결제 비중 확대로 채널 리스크 분산 (본 리포트 22번과 연결)</div>
+      <div class="sw"><b>시나리오 4: 후발 추격자 등장</b><br>방어: 속도 — 후기 100개·구독자 1,000명 선점이 사실상 진입장벽. B2B 제휴 계약(HR·소개팅)은 배타 조건으로 잠그면 복제 불가</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>25. 세금 보정 — 시뮬레이션의 마지막 조각</h2>
+    <div class="desc">v3 재무 시뮬레이션(월 +700만 등)은 세전 수치였다. 실수령 기준으로 보정하면:</div>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>과세 형태</th><th style="width:160px">요건</th><th style="width:130px">부가세</th><th>월 700만 매출 시 실질</th></tr></thead>
+      <tbody>
+        <tr><td><b>간이과세</b></td><td>연 8,000만원 미만 + 단순·소규모</td><td>1.5% (2026 기준)</td><td>연 8,400만 초과 → <b>일반과세 전환</b>. 창업 첫해만 간이 가능 구간</td></tr>
+        <tr><td><b>일반과세</b></td><td>연 8,000만원 초과 시</td><td>10% (매출-매입 공제)</td><td>월 700만 = 부가세 별도 과세 시 실질 약 636만 + 소득세(6~45% 누진) 추가</td></tr>
+        <tr><td>스토어/플랫폼 수수료</td><td>—</td><td>—</td><td>수수료(10~40%)에도 부가세 포함 — 비용처리 시 매입세액공제로 일부 회수</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note" style="margin-top:12px"><b>결론</b>: 기본 시나리오(월 +700만)는 세후·수수료후 실수령 <b>월 400~500만원대</b>로 보는 것이 안전하다. 손익분기 판정은 세전 매출이 아니라 실수령 기준으로 잡을 것. 세무사 1회 상담(20~30만원)을 창업 비용에 포함 권장.</div>
+  </div>
+
+  <div class="card">
+    <h2>26. 유닛 이코노믹스 계산기 (인터랙티브)</h2>
+    <div class="desc">값을 바꾸면 즉시 재계산된다. 기본값은 본 리포트의 벤치마크 수치.</div>
+    <style>
+      .calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:16px}
+      .calc label{font-size:12px;font-weight:700;color:#374151;display:block;margin-bottom:4px}
+      .calc input{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-weight:600}
+      .calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+      .co{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:#f8fafc}
+      .co .l{font-size:11.5px;color:var(--sub);font-weight:700}
+      .co .v{font-size:19px;font-weight:800;color:var(--navy);margin-top:3px}
+      .co.bad .v{color:#c2410c} .co.good .v{color:#0f766e}
+    </style>
+    <div class="calc">
+      <div><label>월 방문자 (명)</label><input type="number" id="c_visits" value="10000"></div>
+      <div><label>방문→회원 전환 (%)</label><input type="number" id="c_signup" value="30"></div>
+      <div><label>회원→유료 전환 (%)</label><input type="number" id="c_conv" value="6"></div>
+      <div><label>ARPPU (원)</label><input type="number" id="c_arppu" value="12500"></div>
+      <div><label>연간 재구매 (회)</label><input type="number" id="c_repeat" value="2"></div>
+      <div><label>월 광고비 (원)</label><input type="number" id="c_ad" value="1000000"></div>
+      <div><label>CPI (원)</label><input type="number" id="c_cpi" value="4000"></div>
+    </div>
+    <div class="calc-out">
+      <div class="co"><div class="l">월 유료고객</div><div class="v" id="o_paid">-</div></div>
+      <div class="co"><div class="l">월 매출</div><div class="v" id="o_rev">-</div></div>
+      <div class="co"><div class="l">광고 순획득 (명)</div><div class="v" id="o_gain">-</div></div>
+      <div class="co bad"><div class="l">월 손익 (광고 포함)</div><div class="v" id="o_pnl">-</div></div>
+      <div class="co"><div class="l">손익분기 필요 재구매</div><div class="v" id="o_bep">-</div></div>
+    </div>
+    <div class="note" style="margin-top:14px" id="o_verdict">-</div>
+    <script>
+      (function(){
+        const ids=['c_visits','c_signup','c_conv','c_arppu','c_repeat','c_ad','c_cpi'];
+        function fmt(n){return n.toLocaleString('ko-KR');}
+        function calc(){
+          const v=id=>parseFloat(document.getElementById(id).value)||0;
+          const visits=v('c_visits'),signup=v('c_signup')/100,conv=v('c_conv')/100,
+                arppu=v('c_arppu'),repeat=v('c_repeat'),ad=v('c_ad'),cpi=v('c_cpi');
+          const members=visits*signup;
+          const paidMonth=members*conv;
+          const rev=paidMonth*arppu*repeat/12;
+          const adGain=ad/cpi;
+          const adPaid=adGain*conv;
+          const adRev=adPaid*arppu*repeat/12;
+          const pnl=(rev-adRev)-(ad);
+          const bep=ad>0? Math.ceil((ad)/(adPaid*arppu/12)) : 0;
+          document.getElementById('o_paid').textContent=fmt(Math.round(paidMonth))+'명';
+          document.getElementById('o_rev').textContent='₩'+fmt(Math.round(rev));
+          document.getElementById('o_gain').textContent=fmt(Math.round(adGain))+'명';
+          const pnlEl=document.getElementById('o_pnl');
+          pnlEl.textContent=(pnl>=0?'+':'')+'₩'+fmt(Math.round(pnl));
+          pnlEl.parentElement.className='co '+(pnl>=0?'good':'bad');
+          document.getElementById('o_bep').textContent=ad>0?fmt(bep)+'회/년':'—';
+          const vd=document.getElementById('o_verdict');
+          if(pnl<0&&bep>3){vd.innerHTML='<b>판정: 광고 의존 불가</b> — 유기 채널로 전환하거나 ARPPU·재구매를 올려야 합니다. 재구매 '+bep+'회는 사주 카테고리에서 달성하기 어려운 수준입니다.';}
+          else if(pnl<0){vd.innerHTML='<b>판정: 근접</b> — 재구매 '+bep+'회 달성 시 손익분기. 궁합·연애 등 반복 상품 비중을 올리세요.';}
+          else{vd.innerHTML='<b>판정: 흑자 구조</b> — 이 지표가 유지된다면 광고 확대 후보입니다. 채널별 CAC를 나눠 추적하세요.';}
+        }
+        ids.forEach(i=>document.getElementById(i).addEventListener('input',calc));
+        calc();
+      })();
+    </script>
+  </div>
+
+  <div class="card">
+    <h2>27. 실행 템플릿 부록 — 복사해서 쓰는 문서</h2>
+    <div class="desc">바로 서비스에 붙여넣을 수 있는 실무 문구. 법률 자문을 대체하지 않으나 1차 방어선이 된다.</div>
+
+    <h3 class="sec"><span class="n">A</span>금지어 → 대체어 전체 리스트</h3>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:260px">금지 표현</th><th style="width:90px">위험</th><th>대체 표현</th></tr></thead>
+      <tbody>
+        <tr><td>"액운이 온다 / 큰일 난다"</td><td><span class="tagchip to">형사</span></td><td>"이 시기에는 ○○ 이슈를 조심하는 게 좋습니다"</td></tr>
+        <tr><td>"굿·부적·의식으로 해결"</td><td><span class="tagchip to">형사</span></td><td>해결 상품 자체 판매 금지 (사기죄 구조)</td></tr>
+        <tr><td>"100% 정확 / 확실합니다"</td><td><span class="tagchip tc">광고</span></td><td>"명리학 이론에 근거해 풀이합니다"</td></tr>
+        <tr><td>"업계 1위 / 가장 정확한 사주"</td><td><span class="tagchip tc">광고</span></td><td>"앱스토어 ○○카테고리 1위 (2026.○월 기준)" — 기관·시점 명시</td></tr>
+        <tr><td>"소름 돋는 적중률"</td><td><span class="tagchip tc">광고</span></td><td>"이용자 후기 ○○건 (평점 4.★)"</td></tr>
+        <tr><td>"재회 보장 / 꼭 만납니다"</td><td><span class="tagchip tc">광고</span></td><td>"재회 관점의 흐름을 짚어드립니다"</td></tr>
+        <tr><td>"이 병이 낫는다 / 투자하세요"</td><td><span class="tagchip to">형사</span></td><td>의료·법률·투자 판단 문구 전면 금지</td></tr>
+        <tr><td>"당신의 운명은 ○○다" (단정)</td><td><span class="tagchip tt">오인</span></td><td>"사주 구조상 이런 경향이 있습니다"</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 class="sec"><span class="n">B</span>개인정보 처리방침 골격 (6항목)</h3>
+    <ul style="font-size:12.8px;padding-left:18px;color:#374151">
+      <li><b>수집 항목</b>: 생년월일시, 성별, (선택) 출생지, 서비스 이용 기록. 이름은 수집하지 않는 것을 권장(비식별 설계).</li>
+      <li><b>목적</b>: 사주 계산 및 맞춤 풀이 제공, 서비스 개선(통계). 목적 외 미사용 고지.</li>
+      <li><b>보관·파기</b>: 회원 탈퇴 시 즉시 파기. 대화 기록 암호화 저장, 이용자 열람·삭제 메뉴 제공.</li>
+      <li><b>제3자 제공</b>: 원칙 없음. 통계 목적 시 비식별 후 사용 명시.</li>
+      <li><b>국외 이전</b>: AI API 사용 시 "생년월일 등 일부 정보가 ○○국 소재 처리 업체(OpenAI 등)로 전송되며, 전송 시 이름 등 식별정보는 마스킹됩니다" 고지.</li>
+      <li><b>이용자 권리</b>: 열람·정정·삭제·처리정지 청구 절차와 응답 기한(10일 내) 표기.</li>
+    </ul>
+
+    <h3 class="sec"><span class="n">C</span>환불 정책 문구 (결제 화면 직전 표기)</h3>
+    <div class="note" style="margin-bottom:0">"본 상품은 디지털 콘텐츠로, 결제 후 결과 열람 시 청약철회가 제한됩니다(전자상거래법 제17조). 열람 전 취소는 100% 환불되며, 결과 품질 불만은 7일 내 1회 재발급 또는 환불해 드립니다. 구독 상품은 다음 결제일 7일 전 사전 고지하며, 설정에서 언제든 즉시 해지할 수 있습니다."</div>
+
+    <h3 class="sec"><span class="n">D</span>크몽 상품 설명 구조 (후기 잘 받는 포맷)</h3>
+    <ul style="font-size:12.8px;padding-left:18px;color:#374151">
+      <li><b>제목</b>: 결과물 + 소요시간 + 가격 신호. 예) "AI 정밀 사주감정서 + 사람 통변 검수, 24시간 내 PDF 전송"</li>
+      <li><b>첫 문단</b>: 구체적 결과물 미리보기 (목차 5개 + 페이지 수 + 샘플 이미지)</li>
+      <li><b>감명 방식</b>: "AI가 초안을 만들고 10년 경력 감수자가 검수합니다" — 속도+신뢰 동시 확보 (크몽 상위권 패턴)</li>
+      <li><b>전달물</b>: PDF 리포트 + 그래프 + 다음 시기 캘린더 1장</li>
+      <li><b>마감</b>: "평균 응답 1시간 이내 / 24시간 내 전달" — 크몽 상위 전문가의 공통 표기</li>
+    </ul>
+
+    <h3 class="sec"><span class="n">E</span>릴스 콘텐츠 30선 (주 3회 = 10주 치)</h3>
+    <div class="swot" style="margin-top:6px">
+      <div class="sw"><b>캐릭터·세계관 (10)</b><br>일주 캐릭터 소개 시리즈 10화 · "MZ무당이 본 오늘" · 사주 용어 초간단 (편관/식신/양인) · 내 오행 색깔은? · 계절별 기질</div>
+      <div class="sw"><b>상황형 테스트 (10)</b><br>팀장-팀원 궁합 · 재회 가능성 시그널 · 이직 A vs B · 솔로탈출 타이밍 · 반려동물과 나 · 첫인상 오행 · 연봉협상 좋은 날 · 이사 길일 · 발표 전 초긴장 풀이 · 시험운</div>
+      <div class="sw"><b>공유 유도 (10)</b><br>"친구 사주 맞추기 챌린지" · 커플 궁합 결과 카드 공로 · 부모님 사주 리포트 선물 · 회사 동료 일주 맞추기 · "우리 그룹 궁합은?" · 올해 나의 키워드 3개 · 부적 이미지 저장 · 명절 대화 주고 ·생일 운세 자동알림 · 팔로워 사주 풀이</div>
+    </div>
+    <div class="note green" style="margin-top:12px"><b>운영 팁</b>: 30선을 모두 만들지 말고 3개 카테고리에서 1개씩 시험 → 조회수 상위 카테고리로 몰빵. 캐릭터는 동일 인물/보이스로 고정해 브랜드 자산을 쌓는다.</div>
+  </div>
+
+  <div class="card">
+    <h2>28. 출처</h2>
+    <div class="src">
+      · 모바일인덱스 / 톱스타뉴스 (2025-03-26) — 2025.2 운세 앱 MAU·점유율: 점신 95만(46.5%), 포스텔러 57만(28.0%), 운세비결 16만, 헬로우봇 9만 등<br>
+      · 국제신문 (2025-09-09) — 포스텔러 MAU 62.8만(+28.2% YoY), 점신 96.7만(+16.6%) @2024.12<br>
+      · 매일경제 스톡 (2025-05) — 포스텔러 가입자 900만, MAU 142만, 2030 비중 80%+<br>
+      · 한국경제 (2026-02-10) — 테크랩스 매출 830억, 비대면 50%+, 상담 단가 5천~3만원, 수수료 20~40%<br>
+      · 한국경제 (2026-06-19) — 타이트사주 여성 75.4%·2030 여성 61.8%·YoY +1,400%, MAU +28%, 인기 콘텐츠 순위 / 엠브레인 트렌드모니터 AI 이용률 40.7%, 20대 52.1%<br>
+      · 충청투데이 (2026-08) — 점신 2030 비중 65.6%, 포스텔러 57%, 타이트사주 2030 여성 70%<br>
+      · 어피티 (2024-02, n=537) — MZ 91.6% 운세 경험, 앱 51.4%, 사주 48.2%, 적당히 참고 69.8%<br>
+      · 매경이코노미 (2022-01) — 운세 앱 시장 5년 3배, 헬로우봇 MZ 90%·매출 60억·크래프톤 인수, 포스텔러 시리즈B 30억·FAS, 출장도사 500명<br>
+      · 조선비즈·플래텀 (2026-02) — 사주핑 3개월 사용자 1만·대화 40만·유료 800·매출 1,000만·D+7 15%<br>
+      · Google Play 찐사주 등록정보 — 구슬 1개 990원, 기능 구성, 평점 4.2~4.3<br>
+      · Apple App Store 포스텔러 등록정보 — 포스 캐시 가격표(200포스 3,300원~5,000포스 6.7만원)<br>
+      · BODA 비교·별결 후기 분석 — 점신PRO 55,000원, 광고 과다 리뷰, 포스텔러 심층 3천~2만원<br>
+      · 크몽 공식 수수료 정책 + 판매 후기 블로그 — 1구간 16.4%+3.3%+부가세(실질 ~20%), 구매수수료 3.5%<br>
+      · 구글 공식 블로그 (2026-03-24) — 구글플레이 신규 수수료 체계: 신규설치 IAP 15%, 기존 20%, 구독 10%, 연 첫 $1M 10%, 한국 적용 2026-12-31<br>
+      · OpenAI 공식 API 가격 (2026-08 확인) — GPT-5.4 mini $0.75/$4.50, gpt-5-mini $0.25/$2.00, 캐시·배치 할인<br>
+      · Hitek Software (2026, 서울) — 앱 개발 비용: MVP 3,000만~9,000만원(2-4개월), 일반 비즈니스 앱 9,000만~2.5억(4-8개월)<br>
+      · 위시켓 블로그 — AI 챗봇 개발: FAQ급 1,000만~2,500만원 / 크몽 AI·GPT 챗봇 외주 15만~60만원<br>
+      · sajuai.io 사주 앱 추천(2026) — 헬로우봇 600만+, 더사주, 마이파이, 천을귀인, 리얼미 등 / 네이버 블로그 앱 20개 후기 — 리얼미 5천원, 인연궁합 2.2만원
+      <br>— Part 2 (비판 검토·해결방안) 추가 출처 —<br>
+      · 대법원 2017. 11. 9. 선고 2017도12460 판결 — 불행 고지 후 굿·의식 대가 편취 시 사기죄 성립<br>
+      · 공정거래위원회 던롭스포츠코리아 '1위 광고' 제재 (과징금 2억 600만원, 표시광고법 제3조·제5조 실증책임) / 로톡 표시광고 분석 (2026-08)<br>
+      · 금융감독원 (2026-02-11) — 사주·풍수 콘텐츠 미끼 가짜 주식거래 앱 사기 경보 / SISA저널<br>
+      · 아세안데일리 (2026-03-08) — 무료 운세 상담 → 풍수 팔찌 구매 유도 온라인 점술 사기(200만동) 사례<br>
+      · 한국소비자원 피해예방주의보 — 앱 관련 상담 84건 중 71.4%(60건)가 결제요금 환불 관련<br>
+      · 모비인사이드·아케이드·Appier (2026) — 국내 CPI 약 2,200~10,200원(2~10달러), 구글 GFA 성과형 약 2,000원<br>
+      · 국제신문 (2025-09) — 챗GPT 사주의 반복 답변·생년월일 입력 오류 등 신뢰성 불만 인터뷰
+      <br>— Part 3 (v4 검증 데이터·실행 도구) 추가 출처 —<br>
+      · 크몽 '사주' 검색 인기순 상위 44개 상품 — 가격·리뷰 수 직접 수집 (2026-08-22, 세션 내 브라우저 조사)<br>
+      · 특허로 상표 수수료 표 (patent.go.kr) — 전자출원 류당 46,000원, 설정등록 류당 201,000원, 지정상품 10개 초과 개당 2,000원 (2023.8.1 개정)<br>
+      · 특허청 심사 통계 — 상표 1차 심사 평균 12.8개월 ('24년 기준) · KIPRIS 니스분류 13판 고시명 (운세 정보제공업 = 45류)<br>
+      · manseryeok v2.0.0 (github.com/yhj1024/manseryeok, MIT) — KASI 음력 정본·진태양시·균시차·서머타임·야자시 3관법 지원 (npm/GitHub 직접 검증)<br>
+      · sajupy v0.2.0 (github.com/0ssw1/sajupy, MIT) · KASI Open API (astro.kasi.re.kr / data.go.kr 15012679·15012690) — 이용허락범위 제한 없음(상업 가능)<br>
+      · 변리사 수수료 시세 — 온라인 사무소 10~30만 / 일반 30~75만 (2025~2026 공개 요금표)
+    </div>
+  </div>
+
+  <footer>
+    <p>본 리포트는 공개 자료(언론 보도, 앱 마켓 등록정보, 플랫폼 공식 요금표, 공개 후기) 기준으로 작성되었습니다. MAU·매출·가격은 각 조사 시점 기준이며 최신 수치와 다를 수 있습니다. 개발 비용은 외주 시세 예시이며 실제 견적과 다를 수 있습니다. 결제 전 각 서비스 화면에서 재확인이 필요합니다.</p>
+    <p style="margin-top:6px">사주 사업화 벤치마킹 리포트 v4 · 2026-08-22 · Aside Research</p>
+  </footer>
+
+</div>
+</body>
+</html>

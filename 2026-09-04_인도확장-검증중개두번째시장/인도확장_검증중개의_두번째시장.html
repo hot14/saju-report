@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인도 확장, 검증 중개의 두 번째 시장 · 한국의 포지셔닝</title>
+<style>
+:root{
+  --bg:#0d1117; --panel:#161b22; --panel2:#1c2129; --border:#2d333b;
+  --text:#e6edf3; --muted:#8b949e; --accent:#5eb0ff; --green:#3fb950; --red:#f85149; --amber:#d29922;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{background:var(--bg); color:var(--text); font-family:'Apple SD Gothic Neo','Pretendard','Noto Sans KR',sans-serif; font-size:15.5px; line-height:1.75;}
+.wrap{max-width:960px; margin:0 auto; padding:32px 20px 80px;}
+a{color:var(--accent); text-decoration:none;}
+a:hover{text-decoration:underline;}
+header{border-bottom:1px solid var(--border); padding-bottom:24px; margin-bottom:24px;}
+.kicker{font-size:13px; font-weight:700; letter-spacing:.08em; color:var(--accent); margin-bottom:8px;}
+h1{font-size:28px; line-height:1.35; margin-bottom:10px;}
+.lede{font-size:16.5px; color:var(--text); max-width:65ch;}
+.meta{font-size:13.5px; color:var(--muted); margin-top:8px;}
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:22px;}
+.card{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:12px 14px;}
+.card .k{font-size:12px; color:var(--muted); margin-bottom:4px;}
+.card .v{font-size:20px; font-weight:700;}
+.card .s{font-size:12px; color:var(--muted);}
+.v.pos{color:var(--green);} .v.neg{color:var(--red);} .v.neu{color:var(--amber);}
+.toc{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:14px 18px; font-size:14px; margin-bottom:8px;}
+.toc b{color:var(--muted); font-size:13px;}
+h2{font-size:21px; border-top:1px solid var(--border); margin:44px 0 14px; padding-top:24px;}
+h3{font-size:16.5px; color:var(--accent); margin:26px 0 8px;}
+p{margin:10px 0; max-width:70ch;}
+.muted{color:var(--muted); font-size:13.5px;}
+.callout{background:var(--panel); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:8px; padding:14px 18px; margin:16px 0; max-width:75ch;}
+.callout.warn{border-left-color:var(--red);}
+.callout.good{border-left-color:var(--green);}
+.callout .t{font-weight:700; margin-bottom:4px;}
+table{width:100%; border-collapse:collapse; margin:14px 0; font-size:14.5px;}
+th{background:var(--panel2); font-weight:700; text-align:left; padding:9px 12px; border:1px solid var(--border);}
+td{padding:9px 12px; border:1px solid var(--border); vertical-align:top;}
+tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.pos{color:var(--green); font-weight:700;} .neg{color:var(--red); font-weight:700;} .neu{color:var(--amber); font-weight:700;}
+.src{font-size:12.5px; color:var(--muted); margin:8px 0 0; line-height:1.6; max-width:80ch;}
+.chartbox{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:18px; margin:18px 0;}
+.chartbox .ct{font-weight:700; font-size:14.5px; margin-bottom:10px;}
+.sim{background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:20px; margin:18px 0;}
+.sim .ct{font-weight:700; margin-bottom:6px;}
+.simgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin:12px 0;}
+.simgrid label{font-size:12.5px; color:var(--muted); display:block; margin-bottom:4px;}
+.simgrid input{width:100%; background:var(--panel2); border:1px solid var(--border); color:var(--text); border-radius:8px; padding:8px 10px; font-size:14.5px;}
+.out{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:14px;}
+.out .card .v{font-size:18px;}
+.flow{display:grid; grid-template-columns:1fr auto 1fr auto 1fr; gap:8px; align-items:center; margin:18px 0; text-align:center;}
+.flow .node{background:var(--panel2); border:1px solid var(--border); border-radius:10px; padding:12px 8px; font-size:13.5px;}
+.flow .node b{display:block; font-size:14.5px; margin-bottom:2px;}
+.flow .arr{color:var(--accent); font-weight:700; font-size:18px;}
+.foot{border-top:1px solid var(--border); margin-top:48px; padding-top:18px; font-size:12.5px; color:var(--muted); line-height:1.7;}
+.foot b{color:var(--text);}
+ul{margin:8px 0 8px 22px;}
+li{margin:5px 0;}
+.small{font-size:13.5px;}
+@media (max-width:640px){ .flow{grid-template-columns:1fr;} .flow .arr{transform:rotate(90deg);} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">무역전략 리서치 속편 · 2026-09-04</div>
+  <h1>인도 확장, 검증 중개의 두 번째 시장</h1>
+  <p class="lede">"중국 입력, 미국 판매" 구조가 인도에서 증폭되고 있다. 질문은 이번엔 반대 방향이다. 인도라는 공장이 커질수록, 그 공장의 입력과 출력을 누가 검증하는가.</p>
+  <div class="meta">전편 "직접판매 시대, 중개의 재설계"의 해자 5계층 프레임을 인도 회랑에 적용 · 공개 자료 60여 건 기반</div>
+  <div class="cards">
+    <div class="card"><div class="k">인도의 대중 수입 (FY26)</div><div class="v neg">1,316억$</div><div class="s">사상 최대, 5년새 2배</div></div>
+    <div class="card"><div class="k">전자 수입 중 중국 비중</div><div class="v neg">43%</div><div class="s">기계 40%·유기화학 44%</div></div>
+    <div class="card"><div class="k">인도 스마트폰 수출 (CY25)</div><div class="v pos">301억$</div><div class="s">전년 +47%, 인도 1위 수출품</div></div>
+    <div class="card"><div class="k">미국 우회수출 감시 티어</div><div class="v neu">1티어</div><div class="s">한국·일본·멕시코와 동급</div></div>
+    <div class="card"><div class="k">인도 BIS 의무 인증 품목</div><div class="v neu">1,437개+</div><div class="s">2019년 88건 → 2024년 765건</div></div>
+    <div class="card"><div class="k">희토류 매그네트 대중 의존</div><div class="v neg">81~93%</div><div class="s">2025년 중국 발 공급 중단 사태</div></div>
+    <div class="card"><div class="k">한인도 교역 (FY26)</div><div class="v pos">273억$</div><div class="s">2030년 540억$ 목표</div></div>
+    <div class="card"><div class="k">한국계 BIS 인정 시험소</div><div class="v neg">0개</div><div class="s">진입 공백 = 기회</div></div>
+  </div>
+</header>
+
+<div class="toc"><b>목차</b> &nbsp; <a href="#s1">1. 판정 요약</a> · <a href="#s2">2. 인도의 구조</a> · <a href="#s3">3. 검증 병목</a> · <a href="#s4">4. 3자 납득 인도판</a> · <a href="#s5">5. 한국의 포지셔닝</a> · <a href="#s6">6. 실행 설계</a> · <a href="#s7">7. 리스크와 반론</a> · <a href="#s8">8. 결론</a></div>
+
+<h2 id="s1">1. 판정 요약: 증폭한다. 단, 한국의 자리는 이전과 다르다</h2>
+<p>질문에 대한 나의 판정부터 말한다. 인도에서 "중국에서 사서 서방에 파는" 중개 니즈는 증폭된다. 근거는 이미 숫자로 나타나 있다. 다만 한국이 그 자리를 차지하는 방식은 중미 회랑과 같을 수 없다. 인도는 바이어가 아니라 공장이라는 점, 그리고 그 공장이 국가 규모의 검증 장벽(QCO·BIS)으로 스스로를 지키고 있다는 점이 구조를 바꾼다.</p>
+<div class="callout good">
+  <div class="t">판정 1. 인도는 같은 삼각형의 새 정점이다.</div>
+  <p class="small">인도는 스마트폰 수출 301억 달러(CY2025, +47%)로 미국향 공장이 됐지만, 전자 수입의 43%, 기계의 40%, 유기화학의 44%를 중국에서 산다. "중국 입력, 인도 가공, 미국 판매" 삼각형이 이미 가동 중인 것이다. 미국은 이 삼각형을 백악관 우회수출 보고서의 최상위 감시 티어에 올려놓았고, 최종 협정에 역우회 조항을 넣을 것이라고 예고했다. 검증 수요의 조건 세 가지(입력 의존, 출력 성장, 단속)가 모두 갖춰진 유일한 신규 시장이다.</p>
+</div>
+<div class="callout good">
+  <div class="t">판정 2. 인도는 스스로 검증 병목을 만들었다.</div>
+  <p class="small">인도는 2019년 88건이던 품질관리명령(QCO)을 2024년 765건으로 늘렸고, 현재 1,437개 이상 품목이 BIS 의무 인증 대상이다. 외국 제조사의 BIS 인증은 최소 1년(인국 내 기업은 3개월 미만), 현실 소요는 6~9개월 이상이며, 시험 역량 부족으로 기계·전기 분야 시행이 2026년 9월 1일로 연기된 상태다. 규제가 만든 병목은 병목을 통과시켜주는 서비스에 가격을 준다.</p>
+</div>
+<div class="callout warn">
+  <div class="t">판정 3. 한국이 가져갈 자리는 "인증 게이트와 오리진 클린 공급망"이다.</div>
+  <p class="small">한국 검증기관의 인도 진출은 사실상 공백이다. BIS 인정 시험소 목록에 한국 본사 기관이 0개, KTR·KCL은 인도 지점이 없다. 반면 한인도 교역 273억 달러, 인도 내 한국 기업 670곳, K뷰티 브랜드 60여 곳이 이미 같은 병목 앞에 서 있다. 이 공백이 한국의 진입 창이다.</p>
+</div>
+
+<h2 id="s2">2. 인도의 구조: 미국향 공장, 중국산 입력, 감시 1티어</h2>
+
+<h3>2-1. 미국 관세의 롤러코스터가 만든 협상력 시장</h3>
+<p>인도가 18개월간 겪은 미국 관세 변동을 타임라인으로 정리하면 다음과 같다. 같은 품목의 관세율이 18개월에 5번 바뀌었다. 이 변동성 자체가 관세 엔지니어링, 원산지 문서화, 시나리오 계약을 파는 사람에게는 수요다.</p>
+<table>
+  <tr><th>시점</th><th>미국의 인도산 관제 조치</th></tr>
+  <tr><td>2025-04-02</td><td>상호관세 26% 발표(EO 14257)</td></tr>
+  <tr><td>2025-08-27</td><td>러시아 원유 수입 징벌 25% 추가, 총 부담 약 50%</td></tr>
+  <tr><td>2026-02-03/06</td><td>미인도 잠정합의 프레임 발표, 25%→18% 인하·징벌 철회, 의약품·보석·스마트폰 등 무관세 대상 지정</td></tr>
+  <tr><td>2026-02-20</td><td>미 연대대법원이 IEEPA 상호관세 전면 무효화, 잠정합의 18%는 발효되지 못함</td></tr>
+  <tr><td>2026-02-24</td><td>Section 122 글로벌 10% 관세 발동(초회 사용, 150일 한도)</td></tr>
+  <tr><td>2026-07-23/24</td><td>Section 122 만료, USTR이 Section 301 강제노동 관세로 전환. 인도 10%(중국·베트남 12.5%), 상품의 약 92%가 MFN+10% 체제로</td></tr>
+  <tr><td>2026-09 현재</td><td>최종 협정(BTA) 서명 대기. 고얄 상무장관 "경쟁국 대비 관세 우위가 확보돼야 서명" (2026-09-03)</td></tr>
+</table>
+<p class="src">출처: 백악관 공동성명(2026-02-06), BBC(2026-02-23, 대법원 IEEPA 무효화), Gibson Dunn(2026-05-13, Section 122), USTR(2026-07-23, Section 301 강제노동 관세), Hindustan Times(2026-07-25), New Indian Express(2026-07-23, GTRI 인용), Economic Times(2026-09-03, 고얄 발언)</p>
+
+<h3>2-2. 미국향 수출의 엔진은 중국산 부품 위에 서 있다</h3>
+<p>인도 수출의 1위 품목은 이제 스마트폰이다. CY2025 스마트폰 수출 301.3억 달러(+47%), 그중 아이폰이 약 230억 달러(76%)다. 대미 스마트폰 수출은 FY26년 4~11월 기준 125.4억 달러로 전년 같은 기간 대비 200% 이상 늘었다. 그런데 이 공장의 입력은 중국산이다. 인도의 대중 수입은 FY26 1,316억 달러로 5년 만에 두 배가 됐고, 전자·기계·컴퓨터·유기화학 4개 품목(826억 달러)이 대중 수입의 66%를 차지한다. 애플의 5개 인도 조립공장(타타 3곳, 폭스콘 2곳)이 가동할수록 중국산 부품 수입도 함께 늘어나는 구조다.</p>
+<div class="flow">
+  <div class="node"><b>중국</b>부품·소재·희토류<br>전자 수입의 43%</div>
+  <div class="arr">→</div>
+  <div class="node"><b>인도</b>조립·가공<br>스마트폰 301억$ 수출</div>
+  <div class="arr">→</div>
+  <div class="node"><b>미국</b>1티어 감시<br>역추적 관세 경고</div>
+</div>
+<p>여기에 희토류라는 급소가 있다. 인도는 희토류 영구자석의 81~93%를 중국에서 수입하며, 2025년 8월 중국의 수출 통제로 인도 EV 생산이 멈췄다가 정상화됐다. 인도 정부는 7,300크로르(약 8억 달러) 규모 국내 자석 생산 계획을 승인했지만, 자체 가공 역량 갖추기까지는 시간이 걸린다. 입력 다변화가 인도의 국가 과제로 공식화된 셈이다.</p>
+<p class="src">출처: Fortune India(2026-04-29, GTRI 분석), Angel One(2026-02-23, 스마트폰·아이폰 수출), Business Standard(2026-01-25, 대미 스마트폰 +200%), The Hindu(2026-07-14, H1 2026 대중 수입 800억$), PIB(2025-08-01, 자석 수입 공식 데이터), BBC(2026-01-16, 자석 국산화 계획), Al Jazeera(2025-08-28, EV 공급 중단), Open Magazine(2026-08-13, 감시 1티어 분류)</p>
+<div class="chartbox">
+  <div class="ct">차트 1. 인도의 대중국 수입액 추이 (십억 달러)</div>
+  <canvas id="chart1" height="150"></canvas>
+  <div class="src">출처: GTAIC(2017·2021·2024 역년 기준), Fortune India·GTRI(FY26 회계연도). 기준이 혼재된 점은 각주로 표기. 2026년 상반기 800억 달러(+21.8%)로 작년 대비 증세 지속.</div>
+</div>
+
+<h2 id="s3">3. 검증 병목: 인도가 스스로 만든 규제 장벽이 곧 시장이다</h2>
+<p>인도 정부는 "자립(아트마니르바르)" 정책의 수단으로 품질관리명령(QCO)을 폭발적으로 확대했다. QCO 대상 품목은 2019년 88건에서 2024년 12월 기준 765건으로 늘었고, 2025년 한 해에만 125개 품목이 추가돼 현재 1,437개 이상 품목이 BIS 의무 인증을 요구받는다. 문제는 인도의 시험·인증 인프라가 이 확대 속도를 못 따라간다는 점이다.</p>
+<table>
+  <tr><th>병목 항목</th><th>실측 수치</th><th>의미</th></tr>
+  <tr><td>외국 제조사 BIS 인증 기간</td><td>최소 1년 (인도 기업은 3개월 미만)</td><td>외국 공급자에게 구조적 불리, 인증 대행 수요의 원천</td></tr>
+  <tr><td>FMCS(외국제조사인증) 현실 소요</td><td>6~9개월 이상</td><td>시험 지연·심사 일정이 최대 병목</td></tr>
+  <tr><td>기계·전기 의무인증(Scheme X)</td><td>2025-08-28 → 2026-09-01로 연기</td><td>시험 역량 부족을 인도 정부 스스로 인정</td></tr>
+  <tr><td>시험소 요건 완화</td><td>2025-12~2026-01 공동시험소·17025 위탁 허용</td><td>시험 용량 수급이 규제보다 시급하다는 반증</td></tr>
+  <tr><td>한국계 BIS 인정 시험소</td><td>0개 (독일 TUV·영국 Intertek·미국 UL은 진입 완료)</td><td>한국의 진입 공백, 동시에 선발대가 이미 있는 경쟁 구도</td></tr>
+</table>
+<div class="chartbox">
+  <div class="ct">차트 2. 인도 품질관리명령(QCO) 확대와 인증 대상 폭발</div>
+  <canvas id="chart2" height="150"></canvas>
+  <div class="src">출처: CSEP(2025-09-24, QCO 88건→765건), LKS Law(2026-08-12, 2025년 125개 추가·1,437개 이상 의무 인증·인도 기준 총 23,293개 표준)</div>
+</div>
+<p>이 병목은 양면 시장이다. 인도로 파는 외국 기업(한국 포함)에게는 진입 장벽이고, 인도에서 미국으로 파는 인도 제조업체에게는 수출 증빙 역량 부족이다. 미국이 요구하는 역우회 증빙(원산지·실질변형 문서)까지 겹치면, 인도 회랑의 모든 거래는 이제 두 겹의 검증을 통과해야 한다. 인도 국내 검증 산업(독일 TUV 라인란드 인도, Intertek 인도, UL 인도가 이미 BIS 인정 시험소로 자리 잡음)이 이 수요를 흡수하고 있고, 한국은 이 테이블에 아직 앉지 못했다.</p>
+
+<h2 id="s4">4. 3자 납득, 인도판: 누가 무엇을 원하는가</h2>
+<p>전편의 원칙(차익 중개 폐기, 어느 편도 들지 않기, 책임 수용, 데이터 축적)은 동일하게 적용된다. 당사자만 바뀐다. 인도 회랑의 3자는 인도 정부(및 인도 제조사·브랜드), 미국 정부(및 미국 바이어), 그리고 검증 중개자다.</p>
+<table>
+  <tr><th>당사자</th><th>최대 관심</th><th>최대 두려움</th><th>한국 중개가 줄 답</th></tr>
+  <tr><td>인도 정부·제조사</td><td>수출 엔진(전자 480억$) 유지, 중국 의존도 30% 미만으로 압축</td><td>미국 감시 1티어 지정으로 인한 수출 신뢰 훼손, 중국의 희토류·부품 차단</td><td>중국 대체 입력 소싱(한국·제3국), 원산지 문서화 패키지, BIS 통과 대행으로 자국 산업 보호 목표 달성 지원</td></tr>
+  <tr><td>미국 정부·바이어</td><td>역우회 조항의 실효성, 아이폰 공급 안정</td><td>"나사 조립 공장"으로 위장한 중국산 유입, 소급 추징</td><td>인도산 수출물의 원산지·실질변형 검증 리포트, 검증 가능한 공급망 문서</td></tr>
+  <tr><td>한국 중개·검증자</td><td>지속 마진, CEPA 개정($54억→540억$ 목표) 수혜</td><td>TUV·SGS류 선발대가 공백 선점, 인도 보호주의 역풍</td><td>한국어 지원 인증 게이트 + 오리진 클린 공급망 구축으로 이중 검증 수요 흡수</td></tr>
+</table>
+<div class="callout">
+  <div class="t">전편 원칙의 인도판 번역</div>
+  <p class="small">차익을 숨기지 말고 서비스 가격으로 명시한다. 인도 편도 들지 않는다(인도의 자립 정책을 대변하면 중국 입력 실무가 막히고, 중국 편도 들면 미국 감시에 걸린다). 검증과 책임을 파는 것이 여전히 본업이다. 모든 인증·검증 이력은 데이터베이스가 된다.</p>
+</div>
+
+<h2 id="s5">5. 한국의 포지셔닝: 3개 사업 포인트와 해자 매핑</h2>
+<p>한국이 인도 회랑에서 먼저 점유할 수 있는 자리는 세 개다. 공통점은 하나다. 이미 존재하는 한국의 자산(한인도 교역 273억$, 한국 기업 670곳, K뷰티 60여 브랜드, BIS 세미나를 직접 연 KTL의 인도 경험)을 검증 서비스 쪽으로 재배치하는 일이다.</p>
+
+<h3>5-1. 사업 포인트 A: 인도 인증 게이트(BIS·CDSCO·FSSAI 대행)</h3>
+<p>인도로 수출하는 모든 한국 중소기업이 같은 벽 앞에 선다. BIS 의무 인증 1,437개 품목, 외국 제조사 최소 1년, 인도 내 대리인(AIR) 의무, 시험 성적서는 BIS 인정 시험소 것만 유효. 한국계 인정 시험소가 0개인 상태에서 K뷰티 60여 브랜드와 670곳의 한국 기업이 독일·미국·영국 기관에 달러를 쓰고 있다. 첫 상품은 단순하다. 한국어로 BIS 등록 전 과정(품목 분류, 시험 성적서, 인도 현지 대리인, 공장 심사 일정)을 묶음으로 파는 것. KoINDEX 2026이 KTL을 인도로 불러 BIS 세미나를 열 정도로 수요는 실증돼 있다.</p>
+
+<h3>5-2. 사업 포인트 B: 오리진 클린 공급망(인도 공장의 입력 설계)</h3>
+<p>인도의 미국향 공장들은 부품의 출처 문서를 요구받는다. 미국 감시 1티어에 올라 있는 나라의 수출물이기 때문이다. 여기서 한국의 역할은 두 가지다. 중국산 대체가 가능한 입력(부품·소재)을 한국 및 제3국의 검증된 공급자로 연결하고, 어쩔 수 없이 중국산이 들어가는 부분은 실질변형(substantial transformation) 문서를 미국 기준에 맞춰 준비시키는 것이다. 이것은 우회수출 조력이 아니라 정반대다. 단속이 강할수록 증빙 능력의 가격이 오르는 것은 전편에서 확인한 구조이고, 인도는 그 단속의 최전선에 새로 올라온 시장이다.</p>
+
+<h3>5-3. 사업 포인트 C: K-소비재의 인도 유통 검증 대행</h3>
+<p>인도 K뷰티 시장은 2024년 4억 달러에서 2030년 15억 달러로 성장 전망(CAGR 25.9%)이고, 한국은 이미 세계 2위 화장품 수출국이다. 스킨1004의 인도 매출은 2025년 1~7월 +345%다. 그러나 화장품은 CDSCO 등록, 식품은 FSSAI, 기기는 BIS를 통과해야 한다. 인도 유통망(니어·아마존 인도 등)은 자국 판매자 우대가 강해 외국 브랜드 단독 진출이 어렵다. 규제 등록 + 현지 대리인 + 유통사 실사를 묶은 진출 대행이 자연스러운 상품이 된다.</p>
+
+<h3>5-4. 해자 5계층 매핑 (인도 회랑 버전)</h3>
+<table>
+  <tr><th>계층</th><th>인도 회랑에서 나타나는 형태</th><th>근거</th><th>첫 액션</th></tr>
+  <tr><td><b>L1 물리</b></td><td>부산 환적 게이트 + 인도 서안 항만(먼드라·첸나이) 직항로 제휴</td><td>부산 환적 세계 2위, 한인도 물류 수요 증가</td><td>인도발·인도행 화물의 보세 검수 워크스테이션</td></tr>
+  <tr><td><b>L2 제도</b></td><td>BIS 인정 시험소 진출(한국계 0개의 공백), CEPA 개정 원산지 규정 전문성</td><td>시험 인프라 부족을 인도 정부가 공식 인정(Scheme X 연기)</td><td>KTL·KTR과 인도 진출 파트너십, 인정 시험소 신청</td></tr>
+  <tr><td><b>L3 책임</b></td><td>인도 현지 대리인(AIR) 제도를 활용한 책임 수용 모델</td><td>외국 제조사는 인도 내 대리인 의무</td><td>대리인 서비스 + 하자·등록 만기 관리 묶음</td></tr>
+  <tr><td><b>L4 워크플로</b></td><td>품목분류→시험→심사→갱신의 12개월 프로세스 오케스트레이션</td><td>FMCS 6~9개월+, 서류·심사 일정이 병목</td><td>한국어 인증 체크리스트 + 진행 추적기</td></tr>
+  <tr><td><b>L5 데이터</b></td><td>QCO 1,437개 품목 변화 추적 DB, 부적합·반려 사례 DB</td><td>QCO가 매년 수십 건 추가되는 유일한 대국</td><td>품목별 규제 변경 알림 구독 상품화</td></tr>
+</table>
+
+<h2 id="s6">6. 실행 설계: 12개월 로드맵과 인도 게이트 시뮬레이터</h2>
+
+<h3>6-1. 먼저 하지 말아야 할 것</h3>
+<div class="callout warn">
+  <div class="t">3대 금지</div>
+  <ul class="small">
+    <li><b>원산지 세탁 조력:</b> 인도는 감시 1티어다. "인도에서 갈아태우기"는 미 인도 협정의 역우회 조항과 소급 과세의 직접 표적이다.</li>
+    <li><b>인도 편 중개:</b> 인도의 자립 정책(QCO)은 중국산 견제가 목적이다. 인도 정부 편에 서서 중국 입력을 끊어주는 척하다가 실무 신뢰를 잃거나, 반대로 중국 공급망에 붙었다가 인도 규제에 걸린다. 검증 기구로 남는다.</li>
+    <li><b>PLI 보조금 기대 베팅:</b> PLI 지급 집행은 승인액의 약 12%에 그쳤다. 보조금이 아니라 검증 수익으로 설계한다.</li>
+  </ul>
+</div>
+
+<h3>6-2. 12개월 3단계</h3>
+<table>
+  <tr><th>기간</th><th>단계</th><th>핵심 작업</th></tr>
+  <tr><td>1~3개월</td><td><b>규제 지도 작성</b></td><td>자사 품목의 BIS/CDSCO/FSSAI 해당 여부 확정. QCO 1,437개 품목 DB에서 자사·경쟁 품목 추적 체계 구축. KITA 인도무역관·KOTRA 인도 자료로 수수 사례 수집</td></tr>
+  <tr><td>4~6개월</td><td><b>첫 인증 게이트 거래</b></td><td>품목 1개의 BIS 등록을 인도 현지 파트너(대리인 서비스 제공기관)와 공동 수행. 소요 기간·비용·반려 사유를 리포트로 축적. K뷰티·소부장 중 한쪽 니치 선택</td></tr>
+  <tr><td>7~12개월</td><td><b>묶음 상품화</b></td><td>인증+물류+원산지 문서 묶음 상품 출시. CEPA 개정 협상(12차, 2026-05 개시) 결과를 원산지 전략에 반영. 미인도 BTA 체결 시 역우회 조항 문구를 계약 표준 조항으로 내재화</td></tr>
+</table>
+
+<h3>6-3. 인도 게이트 시뮬레이터</h3>
+<p class="small muted">BIS 인증을 통과하고 진출한 경우와, 인증 없이 시도했다가 세관에서 걸린 경우의 연 수익을 비교한다. 기본값은 예시 가정이며 실제 품목·규모로 바꿔 넣으면 된다.</p>
+<div class="sim">
+  <div class="ct">직접 진출 vs 인증 게이트 경유</div>
+  <div class="simgrid">
+    <div><label>연 목표 매출 (달러)</label><input type="number" id="rv" value="300000" min="0" step="50000"></div>
+    <div><label>순마진율 (%)</label><input type="number" id="mm" value="18" min="0" step="1"></div>
+    <div><label>BIS 등록 총비용 (달러, 시험+대리인+컨설팅)</label><input type="number" id="bc" value="25000" min="0" step="5000"></div>
+    <div><label>등록 소요 기간 (개월, 그동안 매출 0)</label><input type="number" id="bm" value="8" min="0" max="12" step="1"></div>
+    <div><label>무인증 판매의 연 적발 확률 (%)</label><input type="number" id="dp" value="30" min="0" step="5"></div>
+    <div><label>적발 시 손실 (매출 몰수+과태료+폐기, 매출 대비 %)</label><input type="number" id="dl" value="60" min="0" step="10"></div>
+  </div>
+  <div class="out">
+    <div class="card"><div class="k">A. 무인증 직접 진출 · 기대 수익</div><div class="v" id="oA">-</div><div class="s">적발 기대 손실 차감 후</div></div>
+    <div class="card"><div class="k">B. 인증 게이트 경유 · 첫해 수익</div><div class="v pos" id="oB">-</div><div class="s">등록비용·공백기 반영</div></div>
+    <div class="card"><div class="k">B. 인증 게이트 · 2년차 수익</div><div class="v pos" id="oB2">-</div><div class="s">등록비용 없음(갱신만 가정)</div></div>
+    <div class="card"><div class="k">B−A 격차 · 2년 누적</div><div class="v pos" id="oD">-</div><div class="s">인증이 만드는 순이득</div></div>
+  </div>
+  <p class="src" style="margin-top:12px">가정: 등록 통과 후 동일한 판매 역량 유지. 적발 손실률에는 물량 몰수·재수출 비용·평판 손실을 포함한 거시값. 실제 확률은 품목·통관 경로에 따라 다르다.</p>
+</div>
+
+<h2 id="s7">7. 리스크와 반론</h2>
+<table>
+  <tr><th>반론·리스크</th><th>검토</th><th>대응</th></tr>
+  <tr><td>"인도 보호주의가 한국에도 역풍이다"</td><td>QCO는 명목상 품질이지만 중국산 견제 성격이 강하다. 다만 분쟁 사례에서 한국 제품이 표적된 경우는 제한적이고, 인도는 한국산 입력을 대체 공급원으로 원한다.</td><td>인도 정부의 자립 목표에 부합하는 '대체 소싱 검증'으로 포지셔닝해 규제의 편에 서지 않고 규제의 고객이 된다</td></tr>
+  <tr><td>"TUV·SGS·Intertek이 이미 있다"</td><td>사실이다. 독일·영국·미국 기관이 BIS 인정 시험소를 이미 운영한다. 다만 한국어 지원, 한인도 교역 채널, K브랜드 묶음 수요는 한국계가 갖는 고유 틈새다.</td><td>전면 경쟁이 아니라 한국계 고객(670곳) 전담 데스크로 차별화. 시험은 기존 인정 시험소 위탁으로 시작</td></tr>
+  <tr><td>"미인도 협정이 또 지연된다"</td><td>고얄 장관이 관세 우위 요구로 서명을 묶어뒀고, 러시아 원유 제재법(최대 100% 추가 관세)이 상원을 통과한 상태다. 변동성이 크다.</td><td>협정 체결 여부와 무관하게 검증 수요는 양쪽(인도의 QCO, 미국의 감시)에서 독립적으로 성장한다. 관측 포인트만 문서화</td></tr>
+  <tr><td>"인도 시장은 속도가 느리다"</td><td>BIS 등록 6~12개월, 인증 후 유통 개척까지 추가 시간. 첫해 수익은 작을 수밖에 없다.</td><td>시뮬레이터가 보여주듯 수익은 2년차에 만개한다. 12개월 로드맵을 '첫해는 인프라 구축'으로 정서 조정</td></tr>
+  <tr><td>"GCC·디지털이 더 크지 않은가"</td><td>인도 GCC는 2,117개 센터·984억$ 매출로 성장 중이다. 다만 그것은 별개의 사업이다. 본 리포트의 검증 중개 논리는 물품 무역 회랑에 적용된다.</td><td>후속 과제로 분리. 한국 중견기업의 인도 GCC 활용은 별도 조사 권장</td></tr>
+</table>
+
+<h2 id="s8">8. 결론: 인도는 두 번째 검증 시장이고, 창은 지금이다</h2>
+<p>사용자 가설을 검증하면 이렇게 된다. 인도에서 검증 중개 니즈는 증폭된다. 중국 입력 의존(전자 43%), 미국향 수출 폭증(스마트폰 +47%), 미국의 감시 1티어 지정, 그리고 인도 스스로의 QCO 확대(1,437개 품목)가 수요의 네 기둥이다. 이 네 가지는 관세 협상의 성패와 무관하게 작동하는 구조적 수요다.</p>
+<p>한국이 가져가야 할 것은 세 개다. 한국어 인증 게이트(BIS 등록 묶음 대행), 오리진 클린 공급망 설계(인도 공장의 입력과 원산지 문서), K-소비재 인도 진출 대행(규제+대리인+유통 실사). 해자는 이전과 같은 5계층에 세우되, L2 제도 계층에서 한국계 BIS 인정 시험소 0개라는 공백이 지금의 진입 창이다. 이 창은 독일·미국·영국 기관이 이미 인도에 앉아 있다는 점에서, 시간이 지나면 닫힌다.</p>
+<div class="callout good">
+  <div class="t">한 줄 결론</div>
+  <p class="small">중미 회랑에서 한국의 역할은 "검증된 문"이었다면, 인도 회랑에서는 "문을 만들어 파는 사람"이 될 수 있다. 인도가 규제로 만든 병목 앞에, 같은 언어를 쓰는 검증 서비스를 먼저 세우는 것이 이번 라운드의 해자다.</p>
+</div>
+<p><b>다음 액션 3가지:</b> ① 자사 품목의 BIS/CDSCO/FSSAI 해당 여부를 QCO 품목 DB에서 확인한다. ② 인도 현지 대리인 서비스 제공기관 후보 3곳을 조사해 견적을 받는다. ③ CEPA 개정 12차 협상 결과와 미인도 BTA의 역우회 조항 문구를 분기마다 추적한다.</p>
+
+<div class="foot">
+  <p><b>조사 방법:</b> 백악관·USTR·인도 PIB 공식 문서, GTRI·CSEP·Zinnov 분석, Reuters·Business Standard·The Hindu·Fortune India·Economic Times 보도, 한국무역협회 인도무역관 자료를 2026-09-04 기준 교차 확인했다. 관세율은 법적 근거(EO·Section)별로 표기했고 기준 혼재 수치(대중 무역 수치의 역년·회계연도 차이)는 각주로 구분했다. 미검증 항목과 상업적 전망치는 본문에서 구분해 표기했다.</p>
+  <p><b>유의:</b> 본 리포트는 공개 자료 기반 분석이며 투자·계약 자문이 아니다. 시뮬레이터 기본값은 예시 가정이다.</p>
+  <p id="gateline"><b>윤문 게이트:</b> 경로 light | 변경률 0% | 엠대시 0 | 법령 검증 해당없음(국내 법령 조문 인용 없음, 미국 EO·Section 명칭은 정책 사실 표기) | stop-slop 43/50 · lint S1 0건 S2 0건</p>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script>
+const cA=document.getElementById('chart1');
+new Chart(cA,{type:'bar',data:{labels:['2017','2021','2024','FY26'],datasets:[
+ {label:'인도의 대중국 수입',data:[72.0,87.5,128.9,131.6],backgroundColor:'#f85149'}]},
+ options:{plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8b949e'},grid:{display:false}},y:{ticks:{color:'#8b949e',callback:v=>'$'+v+'B'},grid:{color:'#2d333b'}}}}});
+
+const cB=document.getElementById('chart2');
+new Chart(cB,{type:'bar',data:{labels:['2019 (QCO 건수)','2024 (QCO 건수)','2025~ (의무인증 품목)'],datasets:[
+ {label:'규제 확대',data:[88,765,1437],backgroundColor:'#d29922'}]},
+ options:{plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8b949e',font:{size:12}},grid:{display:false}},y:{ticks:{color:'#8b949e'},grid:{color:'#2d333b'}}}}});
+
+function num(id){return parseFloat(document.getElementById(id).value)||0;}
+function won(n){return Math.round(n).toLocaleString('ko-KR')+'$';}
+function calc(){
+  const rev=num('rv'), m=num('mm')/100, cost=num('bc'), gapM=num('bm')/12, p=num('dp')/100, l=num('dl')/100;
+  const fullProfit=rev*m;
+  const expLoss=rev*p*l;
+  const netA=fullProfit-expLoss;
+  const netB1=fullProfit*(1-gapM)-cost;
+  const netB2=fullProfit;
+  document.getElementById('oA').textContent=won(netA);
+  document.getElementById('oA').className='v '+(netA>=0?'neu':'neg');
+  document.getElementById('oB').textContent=won(netB1);
+  document.getElementById('oB').className='v '+(netB1>=0?'pos':'neg');
+  document.getElementById('oB2').textContent=won(netB2);
+  const gap=(netB1+netB2)-(netA*2);
+  document.getElementById('oD').textContent=(gap>=0?'+':'')+won(gap);
+  document.getElementById('oD').className='v '+(gap>=0?'pos':'neg');
+}
+['rv','mm','bc','bm','dp','dl'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+calc();
+</script>
+</body>
+</html>

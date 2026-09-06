@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>남촌학파 명리학 자료 아카이빙 마스터 플랜 · 서적 재선정과 소스 백업</title>
+<style>
+  :root{
+    --bg:#FAF7F2; --line:#D8D2C7; --ink:#2A2724; --sub:#6B655C;
+    --wood:#2F6B54; --fire:#C2543D; --earth:#A07C3C; --metal:#5E6E78; --water:#2C4463;
+    --card:#FFFFFF; --warnbg:#FDF3EE; --okbg:#F0F5F1;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--ink); font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; line-height:1.75; font-size:15.5px;}
+  .wrap{max-width:1060px; margin:0 auto; padding:28px 20px 80px;}
+  header.hero{border-bottom:3px double var(--line); padding:34px 0 26px; margin-bottom:22px;}
+  .kicker{font-size:12.5px; letter-spacing:.22em; color:var(--sub); text-transform:uppercase;}
+  h1{font-size:29px; line-height:1.35; margin:10px 0 8px; font-weight:800;}
+  .meta{color:var(--sub); font-size:13.5px;}
+  .meta b{color:var(--ink);}
+  nav.toc{position:sticky; top:0; z-index:50; background:rgba(250,247,242,.96); border-bottom:1px solid var(--line); margin:0 -20px 26px; padding:9px 20px; display:flex; flex-wrap:wrap; gap:6px 14px; font-size:13px;}
+  nav.toc a{color:var(--water); text-decoration:none; white-space:nowrap;}
+  nav.toc a:hover{text-decoration:underline;}
+  section{margin-bottom:46px;}
+  h2{font-size:21px; margin-bottom:6px; padding-left:12px; border-left:5px solid var(--fire);}
+  h2 .n{color:var(--sub); font-weight:600; font-size:15px; margin-right:8px;}
+  .lede{color:var(--sub); font-size:14px; margin-bottom:16px; padding-left:17px;}
+  h3{font-size:16.5px; margin:22px 0 10px;}
+  p{margin:9px 0;}
+  table{width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); font-size:13.8px; margin:12px 0;}
+  th{background:#F1EDE4; font-weight:700; text-align:left; padding:9px 11px; border:1px solid var(--line); font-size:13px; white-space:nowrap;}
+  td{padding:8px 11px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:#FBF9F5;}
+  .sc{white-space:nowrap;}
+  .tag{display:inline-block; font-size:11.5px; font-weight:700; border-radius:4px; padding:1px 7px; margin-right:4px; vertical-align:1px;}
+  .t-keep{background:var(--okbg); color:var(--wood); border:1px solid #BCD3C3;}
+  .t-down{background:#F4F1E8; color:var(--earth); border:1px solid #D9CBA8;}
+  .t-drop{background:var(--warnbg); color:var(--fire); border:1px solid #E3B7A9;}
+  .t-T1{background:var(--fire); color:#fff; border:1px solid var(--fire);}
+  .t-T2{background:var(--earth); color:#fff; border:1px solid var(--earth);}
+  .t-T3{background:var(--metal); color:#fff; border:1px solid var(--metal);}
+  .t-risk{background:var(--warnbg); color:var(--fire); border:1px solid #E3B7A9;}
+  .t-now{background:var(--water); color:#fff;}
+  .kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin:16px 0 6px;}
+  .kpi{background:var(--card); border:1px solid var(--line); border-top:4px solid var(--water); padding:12px 14px;}
+  .kpi .v{font-size:21px; font-weight:800;}
+  .kpi .k{font-size:12.3px; color:var(--sub);}
+  .kpi.f1{border-top-color:var(--fire);} .kpi.f2{border-top-color:var(--earth);} .kpi.f3{border-top-color:var(--wood);} .kpi.f4{border-top-color:var(--metal);}
+  .box{border:1px solid var(--line); background:var(--card); padding:14px 18px; margin:14px 0; border-left:5px solid var(--water);}
+  .box.warn{border-left-color:var(--fire); background:var(--warnbg);}
+  .box.ok{border-left-color:var(--wood); background:var(--okbg);}
+  .box h4{font-size:14.5px; margin-bottom:6px;}
+  .box ul{margin-left:18px;}
+  .box li{margin:4px 0;}
+  ul.plain{margin:8px 0 8px 20px;}
+  ul.plain li{margin:5px 0;}
+  code, .mono{font-family:ui-monospace,Menlo,monospace; font-size:12.6px; background:#F1EDE4; padding:1px 5px; border-radius:3px; word-break:break-all;}
+  a{color:var(--water);}
+  .muted{color:var(--sub); font-size:12.8px;}
+  .footer{border-top:3px double var(--line); margin-top:40px; padding-top:16px; color:var(--sub); font-size:12.5px;}
+  .gate{margin-top:10px; background:#F1EDE4; border:1px solid var(--line); padding:8px 12px; border-radius:5px; font-size:12.5px;}
+  ol.steps{margin:10px 0 10px 22px;}
+  ol.steps li{margin:7px 0;}
+  .two{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media (max-width:760px){ .two{grid-template-columns:1fr;} h1{font-size:23px;} body{font-size:14.5px;} }
+  @media print{ nav.toc{display:none;} body{font-size:11px;} .wrap{padding:10px;} section{page-break-inside:auto;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Namchon Modern Object-Theory · Archiving Master Plan</div>
+  <h1>남촌학파 명리학 자료 아카이빙 마스터 플랜</h1>
+  <p class="meta"><b>서적 재선정 + 소스 백업 목록</b> · 자료 확인일 <b>2026-08-28</b> · 기준 문서: 「사주 앱 방향 수정 제안 v2」 + K-사주 글로벌 진출 최종 리포트(2026-08-24) · <b>공개판</b></p>
+</header>
+
+<nav class="toc">
+  <a href="#s1">1 요약</a>
+  <a href="#s2">2 판정 기준</a>
+  <a href="#s3">3 기존 15종 재판정</a>
+  <a href="#s4">4 신규 서적</a>
+  <a href="#s5">5 자료 목록</a>
+  <a href="#s6">6 선결 과제 매핑</a>
+  <a href="#s7">7 실행 순서</a>
+  <a href="#s8">8 리스크</a>
+  <a href="#s9">9 미확인 항목</a>
+  <a href="#s10">10 출처</a>
+</nav>
+
+<section id="s1">
+  <h2><span class="n">1</span>한눈 요약</h2>
+  <p class="lede">v2 문서가 요구한 것은 두 가지다. 물상론과 맞지 않는 기존 참고 서적 15종을 다시 고르는 일, 그리고 강의 자료에 명시되지 않은 이론 규칙 8건을 확인할 1차 자료를 모으는 일. 이 문서는 그 두 가지를 오늘(2026-08-28) 서점·유튜브·카페·논문 DB를 직접 열어 실측한 값으로 정리했다.</p>
+
+  <div class="kpis">
+    <div class="kpi f1"><div class="v">2종 + 1건</div><div class="k">필수 서적 2종 + 석사논문 1건</div></div>
+    <div class="kpi f1"><div class="v">97,200원</div><div class="k">필수+권장 구매 비용 (배송비 제외)</div></div>
+    <div class="kpi f2"><div class="v">9 : 6 : 1</div><div class="k">기존 15종 중 유지 9·강등 6·완전 제외 1</div></div>
+    <div class="kpi f3"><div class="v">19건</div><div class="k">아카이빙 대상 자료 (A~D 4분류)</div></div>
+    <div class="kpi f4"><div class="v">9월 1일</div><div class="k">동방 기초반 2학기 개강 (선결 과제 8건의 직접 경로)</div></div>
+  </div>
+
+  <div class="box warn">
+    <h4>지금 결정이 필요한 발견 4건</h4>
+    <ul>
+      <li><b>교재 1종이 절판 상태다.</b> 『남촌현대물상론』(2020)은 전 서점 유통이 중단됐고 중고가가 정가 3배(90,000~150,000원)다. 합법적 신규 입수 경로는 플라이북 전자책(27,000원) 하나뿐이므로 구매 지연이 곧 비용 상승이다.</li>
+      <li><b>"남촌물상론 기초편"은 별도의 책이 아니다.</b> 2020-01-17 뉴스와이어 보도 제목이 "사주명리학 기초편 '남촌현대물상론' 펴내"이고 스펙(352페이지, 정가 3만원)이 일치한다. 김대영(남촌) 저서는 총 2권뿐이다.</li>
+      <li><b>사례집 목차에 궁합 전용 챕터가 없다.</b> 구성이 1장 갑목부터 10장 계수까지 일간별 사례 10장이다. v2 선결 과제 1번(일간 대 일간 궁합법)은 교재만으로 해결되지 않으므로 수강 확인이 필수라는 판단이 재확인됐다.</li>
+      <li><b>"남촌" 상표 등록이 사실로 확인됐다.</b> KIPRIS 상표 검색(2026-08-28 실측)에서 "남촌" 2건이 김대영 명의 등록 상태다(출원번호 4020210062382·16류 도서, 4020210062383·45류 운세 정보제공, 2021년 출원). 45류는 운세 서비스의 표준 분류라서 앱에서 학파 명칭을 상업적으로 쓰기 전에 브랜드 분리나 라이선스 협의를 검토해야 한다.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s2">
+  <h2><span class="n">2</span>판정 기준</h2>
+  <p class="lede">무엇을 남기고 무엇을 버릴지는 v2 문서의 원칙에서 그대로 따른다.</p>
+  <ol class="steps">
+    <li><b>단일 학파 원칙.</b> 남촌현대물상론은 격국·용신·조후·신살론·지장간·십이운성을 일체 사용하지 않는 체계다(역학동 개강 공지 원문, 2019·2025 확인). 이 개념을 해석 도구로 쓰는 서적은 해석 근거 자격이 없다.</li>
+    <li><b>선결 과제 우선 원칙.</b> 강의 자료에 없는 규칙 8건(일간 대 일간 궁합법, 천간합 성립 조건, 대운 구조 등)을 추측으로 채우면 다른 학파 논리가 섞여 전체가 오염된다. 그래서 아카이빙 우선순위는 "규칙 원문에 얼마나 가까운가"로 정한다.</li>
+    <li><b>소실 위험 가중 원칙.</b> 휴면 블로그·카페 게시물·1인 운영 유튜브는 언제든 사라질 수 있다. 같은 가치라면 위험한 쪽을 먼저 저장한다.</li>
+  </ol>
+</section>
+
+<section id="s3">
+  <h2><span class="n">3</span>기존 서적 15종 재판정</h2>
+  <p class="lede">K-사주 리포트 18탭의 "서적·참고자료 15종"을 v2 원칙으로 다시 판정했다. 결론은 유지 9건, 강등 6건, 완전 제외 1건이다. 강등이 곧 폐기는 아니고, 해석 근거 자격을 박탈하고 고증용으로 내리는 것이다. 근거는 남촌 본인의 석사논문이 고전 4종을 "물상 연원 분석 대상"으로 실제 인용했다는 점이다.</p>
+  <table>
+    <tr><th>분류</th><th>서적</th><th>기존 용도(리포트)</th><th>판정</th><th>이유와 후속 조치</th></tr>
+    <tr><td>점술 비즈니스</td><td>야노경제연구소 占い市場調査</td><td>일본 시장 997억엔 갱신</td><td><span class="tag t-keep">유지</span></td><td>1차 언어가 영어로 바뀌어 우선순위는 내려가지만, 시장 지표 자체는 v2가 유효하다고 명시했다.</td></tr>
+    <tr><td>점술 비즈니스</td><td>State of Subscription Apps (RevenueCat)</td><td>전환율 2.1% 출처</td><td><span class="tag t-keep">유지</span></td><td>단건 결제 설계의 전환율 근거로 계속 유효.</td></tr>
+    <tr><td>점술 비즈니스</td><td>Psychic Services 미국 리포트 (IBISWorld)</td><td>미국 시장 $23억</td><td><span class="tag t-keep">유지</span></td><td>영어권 1차 진입 전략과 직결, 오히려 중요도 상승.</td></tr>
+    <tr><td>크로스보더/D2C</td><td>The Culture Map (에린 메이어)</td><td>문화 톤 설계</td><td><span class="tag t-keep">유지</span></td><td>영어권 톤 설계에 그대로 쓴다.</td></tr>
+    <tr><td>크로스보더/D2C</td><td>Crossing the Chasm (제프리 무어)</td><td>니치 확장 게이트</td><td><span class="tag t-keep">유지</span></td><td>K-팝 팬덤 니치 진입 프레임과 정합.</td></tr>
+    <tr><td>크로스보더/D2C</td><td>Merchant of Record 공식 문서 (Paddle)</td><td>결제·세무 규격</td><td><span class="tag t-keep">유지</span></td><td>단건 $12 + Apple Pay 설계로 검토 필요성 유지.</td></tr>
+    <tr><td>문화·소비자 심리</td><td>종교/점술 인식 조사 (Pew Research)</td><td>미국 이용률 근거</td><td><span class="tag t-keep">유지</span></td><td>타깃을 "자기 이해" 세대로 좁힌 v2와도 상충하지 않는다.</td></tr>
+    <tr><td>문화·소비자 심리</td><td>일본 선호도 조사 보도 (마이나비·IID)</td><td>일본 선호도 갱신</td><td><span class="tag t-keep">유지</span></td><td>2차 언어 검토(12월) 때 다시 쓴다.</td></tr>
+    <tr><td>국가 비교</td><td>Hofstede Insights 무료 버전</td><td>국가 문화 축 보조</td><td><span class="tag t-keep">유지</span></td><td>고정관념 주석 4건 규칙과 함께 유지.</td></tr>
+    <tr><td>명리 원전</td><td>적천수(滴天髓) 평주본</td><td>해석 최상위 근거·격국 논리</td><td><span class="tag t-down">강등</span></td><td>격국 논리 자체가 배제 대상이라 해석 근거 자격 상실. 남촌 논문 3장의 분석 대상이므로 "물상 연원 고증용"으로 선택 보관.</td></tr>
+    <tr><td>명리 원전</td><td>자평진전(子平眞詮)</td><td>용신·격국 체계</td><td><span class="tag t-drop">완전 제외</span></td><td>용신·격국은 남촌이 명시적으로 버린 틀이고, 남촌 논문의 분석 대상 4종에도 없다. 대체 없이 목록에서 뺀다.</td></tr>
+    <tr><td>명리 원전</td><td>궁통보감(窮通寶鑑)</td><td>조후 해석 보조</td><td><span class="tag t-down">강등</span></td><td>조후(계절 가중)도 미사용 개념. 고증용으로만 선택.</td></tr>
+    <tr><td>명리 원전</td><td>삼명통회(三命通會)</td><td>신살·용어 사전</td><td><span class="tag t-down">강등</span></td><td>신살은 배제 대상이지만 용어집 67개 검증용 사전 가치는 남는다. 고증용 선택.</td></tr>
+    <tr><td>명리 원전</td><td>연해자평(淵海子平)</td><td>기초 체계·입문 소재</td><td><span class="tag t-down">강등</span></td><td>물상 표현의 연원을 보는 고증용으로만 의미. 2025-09 문원북 신간이 유통 중.</td></tr>
+    <tr><td>현대 해설</td><td>적천수 현대 평석서·사주 입문서 각 1권</td><td>십성 템플릿·신강/신약 문장 톤</td><td><span class="tag t-drop">교체</span></td><td>십성·신강/신약 분기는 v2가 삭제한 콘텐츠 설계다. 이 자리는 남촌 교재 2종이 대신한다.</td></tr>
+  </table>
+  <p class="muted">판정 논리: v2가 "물상론과 불일치, 재선정 필요"라고만 적었지만, 석사논문(김대영, 원광대 동양학대학원)이 연해자평·삼명통회·적천수·궁통보감 4종을 실제 분석 대상으로 인용한 사실까지 확인했기 때문에 "완전 폐기"가 아니라 "고증용 강등"이 정확한 판정이다. 자평진전만 예외로 뺀다.</p>
+</section>
+
+<section id="s4">
+  <h2><span class="n">4</span>신규 서적 아카이빙 목록</h2>
+  <p class="lede">2026-08-28 알라딘·예스24·교보문고·플라이북 상품 페이지를 직접 열어 서지값을 실측했고, 뉴스와이어 보도자료 2건으로 교차 검증했다. 김대영 저서는 서점 유통 기준 총 2권이며, 응용편·개정판·강의자료집은 존재하지 않는다.</p>
+
+  <h3>T1 · 필수 (이번 주 구매)</h3>
+  <table>
+    <tr><th>서명</th><th>서지 실측값</th><th>현재 상태와 구매 경로</th><th>아카이빙 용도</th></tr>
+    <tr>
+      <td class="sc"><span class="tag t-T1">T1</span><b>남촌물상론 사례집</b><br><span class="muted">김대영 · 문학공원 · 2025-09-12<br>ISBN 9788965775720 · 526쪽 · 정가 48,000원</span></td>
+      <td>목차가 1장 갑목(甲)부터 10장 계수(癸)까지 일간별 사례 10장 구성. 천간합 원리(안심법)와 재관 관법 사례 포함. 전자책 없음.</td>
+      <td><b>신품 판매중.</b> 교보 43,200원(무료배송) / 예스24 48,000원. 중고(44,630원+배송)가 신품보다 비싸므로 신품 권장.<br><span class="muted">교보 S000217556300 · 예스24 153917159</span></td>
+      <td>규칙 원문 1순위. 창업반 교재이며 1주차 병목 작업(일간 관계 문장 100종)의 직접 재료가 된다.</td>
+    </tr>
+    <tr>
+      <td class="sc"><span class="tag t-T1">T1</span><b>남촌현대물상론</b><br><span class="muted">김대영 · 문학공원 · 2020-01-12<br>ISBN 9788965773238 · 351쪽 양장 · 정가 30,000원<br>부제 "인생의 길잡이! 사주팔자 신패러다임"</span></td>
+      <td>오행 물상으로 정립한 천간합 변화원리 기초이론서. 동방대학원 기초반 1년 과정 교재. 목차는 3대 서점 어디에도 미게재라 구매 후 직접 스캔이 필요하다.</td>
+      <td><b>전 서점 품절·유통 중단.</b> 알라딘 품절(2021-01-12 확인), 교보 재입고 알림만 가능. 중고는 알라딘에 3건(90,000 / 92,000 / 150,000원 + 배송). <b>플라이북 전자책 27,000원이 유일한 신규 정가 경로.</b></td>
+      <td>규칙 원문 2순위. 천간합 성립 조건 등 선결 과제 2번의 1차 근거. 절판 리스크 때문에 지금 사야 한다.</td>
+    </tr>
+  </table>
+
+  <h3>T2 · 권장 (이론 근거 확보)</h3>
+  <table>
+    <tr><th>문헌</th><th>서지 실측값</th><th>확보 경로</th><th>아카이빙 용도</th></tr>
+    <tr>
+      <td class="sc"><span class="tag t-T2">T2</span><b>석사논문 「陰陽五行의 木行에 대한 硏究」</b><br><span class="muted">김대영 · 원광대학교 동양학대학원(과제 정보 기준 2017)</span></td>
+      <td>초록·목차 전문 확인 완료. 고전 4종(연해자평·삼명통회·적천수·궁통보감)과 현대 2종을 분석 대상으로 명시하고, "고전을 격국·용신·지장간·십이신살 없이 현대 물상론으로 재정리"가 목적이다.</td>
+      <td>DBpia PDF 구매 27,000원(정기구독 시 무료). 주의: <code>dbpia.co.kr/journal/detail/T14572527</code> 형태는 사망 링크이고 <code>detail?nodeId=T14572527</code> 파라미터형만 살아 있다.</td>
+      <td>창시자 본인의 유일한 학술 문헌. 앱의 이론 근거 표기(Chart basis)와 외부 신뢰 확보에 쓰는 원본 증빙.</td>
+    </tr>
+  </table>
+
+  <h3>T3 · 선택 (용도를 정해둔 대조용)</h3>
+  <table>
+    <tr><th>군</th><th>서적</th><th>상태 (2026-08-28 실측)</th><th>용도 제한</th></tr>
+    <tr><td class="sc"><span class="tag t-T3">T3</span>고전 고증 4종</td><td>연해자평·삼명통회·적천수·궁통보감 (문원북 역주 등 다수 유통)</td><td>모두 판매중, 1~4만원대. 연해자평은 2025-09 문원북 신간도 있다.</td><td>물상 연원 고증 전용. 해석 근거 사용 금지.</td></tr>
+    <tr><td class="sc"><span class="tag t-T3">T3</span>타 유파 대조 2종</td><td>김동완 『사주명리학 물상론분석』(동학사 2010, 25,000원) · 김낙범 『사주명리 완전정복 5: 5차원 물상』(문원북 2019, 25,000원·전자책 15,750원)</td><td>둘 다 판매중. 남촌 계열이 아닌 별개 유파다.</td><td>시장·개념 대조 검토 전용. <b>해석 소스로 쓰면 학파 오염.</b></td></tr>
+    <tr><td class="sc"><span class="tag t-T3">T3</span>절판 참고</td><td>박정윤·김인호 『물상론 사주명조 사례집』 시리즈 1~10 (북씽크 2011~2016) · 김태현 『육효와 사주(하): 물상편』(백송학당 2013)</td><td>전량 절판(판권 소멸 표기 포함). 『신증철학』·임원진전은 국내 유통 [미확인].</td><td>중고 수집은 선택 사항. 우선순위 최하.</td></tr>
+  </table>
+
+  <div class="box ok">
+    <h4>비용 합계</h4>
+    <ul>
+      <li>필수(T1): 사례집 43,200원 + 전자책 27,000원 = <b>70,200원</b></li>
+      <li>권장(T2) 포함: <b>97,200원</b></li>
+      <li>선택(T3) 최대: 고전 고증 1~4권 + 대조 2종 약 <b>17만원</b> 추가</li>
+      <li>별도 예산: 동방 기초반 수강료 35만원/학기 (선결 과제 8건의 직접 확인 수단)</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h4>서적 시장 단서 (전략 문서와의 연결)</h4>
+    <ul>
+      <li>지금 살아 있는 물상 중심 명리서는 김동완·김낙범 2종뿐이고, 남촌 계열 해석 체계는 교재가 2권으로 고정돼 있다. v2가 말한 "복제 불가 자산"의 실체가 서점 단계에서 확인된 셈이다.</li>
+      <li>1권이 절판돼 중고가가 정가 3배인 상태는, 이 학파가 아직 대중 유통으로 퍼지지 않았다는 증거이면서 동시에 우리가 원문을 확보해야 할 이유다.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s5">
+  <h2><span class="n">5</span>자료 아카이빙 목록 (19건)</h2>
+  <p class="lede">서적 밖의 1차 자료를 4분류로 나눴다. A는 규칙 원문과 강의, B는 사라질 수 있는 웹 1차 소스, C는 인물·계보·권리 증빙, D는 이미 만들어 둔 프로젝트 자산의 보전이다. 우선순위는 소실 위험과 선결 과제 기여도로 매겼다.</p>
+
+  <h3>A · 규칙 원문과 강의 (선결 과제의 직접 경로)</h3>
+  <table>
+    <tr><th>#</th><th>자료</th><th>실측 내용 (2026-08-28)</th><th>확보 방법</th><th>우선순위</th></tr>
+    <tr><td>A1</td><td><b>동방미래교육원 과정 안내</b></td><td>과정명 남촌현대물상론기초, 담당 김대영, 1년 2학기제, 화 10:00~12:30, 수강료 35만원/1학기. 2026년 2학기는 9/1 개강(연구회 카페 공지).</td><td>education_info01.php 페이지 PDF·스크린샷 저장</td><td><span class="tag t-now">즉시</span></td></tr>
+    <tr><td>A2</td><td><b>원서접수와 수강</b></td><td>모집 50명, 대면 수업은 선착순 20명, 줌 병행. 접수 페이지 register_accept.php(전화 문의는 해당 페이지 참조). 수료 시 동방 총장명 명리상담사 수료증(2019 공지 기준).</td><td>9월 첫 주 접수. 수료증은 v2가 강조한 "사사 계보"의 실물 증빙이 된다.</td><td><span class="tag t-now">즉시</span></td></tr>
+    <tr><td>A3</td><td><b>남촌물상역학연구회(창업반) 카페 가입</b></td><td>cafe.daum.net/5011saju, 회원 565명, 창업반 매주 목요일(안양 소재 연구회 사무실). 2025년 개강 공지가 "강의 녹화를 카페에 올려 복습"이라고 명시, 즉 <b>강의 녹화의 공식 보관처</b>.</td><td>카페 가입 후 공지·자료실 백업</td><td><span class="tag t-now">즉시</span></td></tr>
+    <tr><td>A4</td><td>기초반 전용 카페</td><td>연구회 카페 공지(2026-03-04)로 존재만 확인. URL은 미확인.</td><td>A3 가입 후 공지에서 링크 확인</td><td>높음</td></tr>
+  </table>
+
+  <h3>B · 웹 1차 소스 (무료, 소실 위험, 지금 백업)</h3>
+  <table>
+    <tr><th>#</th><th>자료</th><th>실측 내용</th><th>백업 방법</th><th>우선순위</th></tr>
+    <tr><td>B1</td><td><b>티스토리 "남촌물상미래학회" 2편</b><br><span class="muted">kdy6645.tistory.com/2 · /4</span></td>
+      <td>운영자는 김대영 본인(블로그 ID가 본인 전화 접미사와 일치, 게시물 서명 확인). /2는 2019-07-11 국운 논평으로 국가 오행 설정(韓國 甲寅·美國 庚申·日本 丙午·中國 戊辰·유럽 辛酉·北韓 乙卯)을 담는다. /4는 2020년 개강 공지와 16주 강의계획표. 블로그 전체가 휴면(게시물 2개, 누적 방문 670, 최종 2020-08-10).</td>
+      <td>본문 전문 텍스트 저장. 소실 위험 최상.</td><td><span class="tag t-now">즉시</span></td></tr>
+    <tr><td>B2</td><td><b>역학동 개강 공지 시리즈</b><br><span class="muted">cafe.daum.net/2040 (역학장터)</span></td>
+      <td>게시자 '남촌' 본인. 2019-08-22 게시물(56289)은 15주 강의계획서 전문을 담고 있다(1주 물상론 기본 원리, 4주 천간합과 충, 5주 삼합·방합·육합, 6주부터 15주까지 천간별 물상 응용). 2025-02-05 게시물(64149)은 교재·줌·녹화·창업반 정보. 개별 URL 인덱스를 완성했다: 2018 방학특강(53217), 2020 개강(57314), 2020 안심법(57581), 2024-2학기 개강(63525), 커뮤니티 목록(63548), 2026 개강(65577), 즉석실관 초대(65886). 전체 목록은 아카이브 폴더의 URL 인덱스 파일에 있다.</td>
+      <td>게시물 전문 저장 + 개별 URL 목록화. 로그인 없이 읽히므로 지금 저장 가능.</td><td><span class="tag t-now">즉시</span></td></tr>
+    <tr><td>B3</td><td><b>남촌물상TV 유튜브</b><br><span class="muted">채널 UCYDMmKpZc5tn25ZEJsDDz5w</span></td>
+      <td>구독자 4.25천명, 영상 30개 이상(최신 15건은 RSS로 목록 확보). 기본원리 강의가 공개돼 있고, 채널 설명문이 프로필·저서·교육과정·연락처를 공식 서술한다. 2026-06~08 신규 영상이 주 1~2건씩 올라오는 활동 중 채널.</td>
+      <td>전체 영상 목록(제목·날짜·URL) 백업, 핵심 강의는 자막 확보. 구독도 해둔다.</td><td><span class="tag t-now">즉시</span></td></tr>
+    <tr><td>B4</td><td><b>네이버 블로그 "쉽게 배우는 명리학" 3편</b><br><span class="muted">blog.naver.com/resethdh (광주 청호작명철학원)</span></td>
+      <td>제3자 보급자의 정리 글. 222015412077(2020-06-29)은 오행별 물상 정의(갑목=고층건물·대학교육, 을목=저층건물, 병화=태양·일본, 경금=큰 칼·미국, 무토=산, 기토=텃밭, 임수=바다, 계수=샘물). 222032458188(2020-07-16)는 갑목과 금(官星) 관계. 222036164999(2020-07-20)는 물상론 소개와 규칙 세부(지지는 삼합·방합만 사용, 육합 중 2개만, 형충 통합 적용, 파·해 불사용).</td>
+      <td>본문 전문 저장. 청호는 별개 기관(광주)이므로 출처를 "제3자 보급자"로 라벨링해 보관.</td><td>높음</td></tr>
+  </table>
+
+  <h3>C · 인물·계보·권리 증빙</h3>
+  <table>
+    <tr><th>#</th><th>자료</th><th>실측 내용</th><th>확보 방법</th><th>우선순위</th></tr>
+    <tr><td>C1</td><td>뉴스와이어 2020-01-17 보도 (no=900189)</td><td>1책 출간 보도. "사주명리학 기초편 '남촌현대물상론' 펴내"라는 제목이 '기초편 = 남촌현대물상론' 판정의 직접 근거. 유방현·이병돈 추천사 언급.</td><td>URL 저장 + 전문 PDF</td><td>높음</td></tr>
+    <tr><td>C2</td><td>뉴스와이어 2025-10-13 보도 (no=1020458)</td><td>사례집 출간 보도. "남촌은 호이자 특허 등록된 명칭" 서술, 조성재 동방 총장 추천사, 소속을 남촌물상역학연구회 회장으로 표기(대영작명철학원 원장에서 명칭 변경).</td><td>URL 저장 + 전문 PDF</td><td><span class="tag t-now">즉시</span></td></tr>
+    <tr><td>C3</td><td>국민기자뉴스 2025-10-16 (idxno=86962)</td><td>C2의 재보도. 언론 노출 이력 증빙용.</td><td>URL 저장</td><td>보통</td></tr>
+    <tr><td>C4</td><td><b>KIPRIS 상표 검색 "남촌"</b></td><td><b>확인 완료(2026-08-28).</b> "남촌" 2건이 김대영 명의 등록 상태다(4020210062382·16류 도서, 4020210062383·45류 운세 정보제공, 2021년 출원).</td><td>검증 메모·스크린샷을 아카이브 폴더에 보존 완료</td><td><span class="tag t-risk">필수</span></td></tr>
+    <tr><td>C5</td><td>계보 정리 노트</td><td>청호작명철학원(광주)은 남촌학파와 별개 기관으로 판정됐고, 공식 제자 관계는 양측 소스 모두 부재라 [미확인]. 수료증(A2)이 실질 계보 증빙이 된다. 2024-08-29 게시물(63548)에 네이버카페 "남촌물상 아카데미. 기초반"이 명시돼 기초반 카페의 유력 후보를 확보했다.</td><td>판정 근거 URL 3건과 함께 노트화</td><td>보통</td></tr>
+  </table>
+
+  <h3>D · 기존 프로젝트 자산 보전</h3>
+  <table>
+    <tr><th>#</th><th>자산</th><th>현재 상태</th><th>조치</th></tr>
+    <tr><td>D1</td><td><b>HSH-P700 체인 전체 74파일 (940KB)</b><br><span class="muted">RUNBOOK·아키텍처·프롬프트 40종·handoff 26종</span></td>
+      <td>세션 artifacts 경로(<code>sessions/2026-08-22_a1MlxN4lXgnhI6BL/artifacts/HSH-P700_체인</code>)에 있어 <b>예기치 않게 정리될 수 있다.</b></td>
+      <td>영구 위치(reports 하위 또는 사용자 문서 폴더)로 복사. v2 원문, v3.7 전략전환 확정본·재구성계획 3종 포함.</td></tr>
+    <tr><td>D2</td><td>K-사주 리포트 폴더 9파일</td><td>이미 영구 위치(~/.aside/u/0/reports/2026-08-24_K사주-글로벌진출/). QA 감사·엔진검증 골든11종·상표 예비확인 포함.</td><td>유지. 추가 조치 없음.</td></tr>
+    <tr><td>D3</td><td>계산 엔진·용어집·법률 문서</td><td>manseryeok 2.0.0(npm), 용어집 67항목, 법제처 검증 문서는 v2가 "그대로 유지" 목록에 명시.</td><td>버전 고정(패키지 잠금)과 문서 백업을 D1 이동 때 함께 실행.</td></tr>
+  </table>
+</section>
+
+<section id="s6">
+  <h2><span class="n">6</span>선결 과제 8건 × 자료 매핑</h2>
+  <p class="lede">v2 문서 9장의 선결 과제를, 위 목록의 어떤 자료로 확인할 수 있는지 매핑했다. 공개 자료만으로 부분 확인이 가능한 건 3건(2·5·7번)이고, 나머지 5건은 수업 확인에 의존한다. 이것이 9/1 개강 원서접수를 프로젝트 크리티컬 패스로 만든다.</p>
+  <table>
+    <tr><th>순위</th><th>확인 항목 (v2)</th><th>확인 가능한 자료</th><th>공개 자료만으로 가능?</th></tr>
+    <tr><td><b>1</b></td><td><b>일간 대 일간 궁합법이 이 학파 방식인지</b></td><td>수업(A2). 사례집은 궁합 전용 챕터가 없어(일간별 10장 구성 확인) 교재만으로는 부족. 2019 강의계획서의 궁합 관련 서술은 "안심법으로 상대의 마음을 읽는다" 수준.</td><td><b>불가. 수강 필수 재확인</b></td></tr>
+    <tr><td>2</td><td>천간합 성립 조건 (붙어야 하는가)</td><td>『남촌현대물상론』이 천간합 변화원리 이론서로 출간됐고(보도자료), 청호 블로그 36편이 "천간합 원리를 역학계 최초"라고 정리.</td><td>부분 가능 (원문 확보 후)</td></tr>
+    <tr><td>3</td><td>대운의 내부 구조, 대운·세운 충돌 우선순위</td><td>교재 2종 + 수업(A2). 공개 자료에는 대운 논의가 사실상 없다.</td><td>불가</td></tr>
+    <tr><td>4</td><td>생장조건 충족도 판정</td><td>수업(A2). 주의: 남촌은 십이운성을 배제하므로 "생장조건"이라는 v2 용어 자체가 이 학파 개념과 맞는지 먼저 확인해야 한다.</td><td>불가 (용어 정합성 문제 포함)</td></tr>
+    <tr><td>5</td><td>쟁합·투합 처리</td><td>청호 블로그 36편의 "육합 중 2개만 사용" 기술이 유일한 공개 단서. 본가 확인은 수업.</td><td>부분 가능</td></tr>
+    <tr><td>6</td><td>지지 계절이 천간 판정에 미치는 영향</td><td>수업(A2). 조후(계절 가중)를 배제하는 원칙과 어떻게 공존하는지 확인 필요.</td><td>불가</td></tr>
+    <tr><td>7</td><td>지역 오행 배정 (방위인가 지형인가)</td><td>티스토리 국운 글이 실제 사용 사례다. 국가 단위 오행(韓國 甲寅 등)을 쓰므로 "국가·지역 오행"이 실전에서 작동한다는 증거.</td><td>사례 확보됨 (원리는 수업)</td></tr>
+    <tr><td>8</td><td>시주 부재 시 통변 범위</td><td>수업(A2). v2의 "생년월일만으로 궁합 성립" 전제를 직접 검증하는 자리이기도 하다.</td><td>불가</td></tr>
+  </table>
+</section>
+
+<section id="s7">
+  <h2><span class="n">7</span>실행 순서와 보관 구조</h2>
+  <h3>지금 (이번 주)</h3>
+  <ol class="steps">
+    <li>『남촌물상론 사례집』 신품 주문 (교보 43,200원)</li>
+    <li>『남촌현대물상론』 플라이북 전자책 구매 (27,000원, 절판 리스크 방어)</li>
+    <li>석사논문 PDF 구매 (DBpia 27,000원, 파라미터형 URL 사용)</li>
+    <li>남촌물상역학연구회 카페 가입 후 기초반 카페 링크 확인</li>
+    <li>B소스 4종 본문 전문 저장 (티스토리 2편, 역학동 공지, 유튜브 목록, 청호 블로그 3편)</li>
+    <li>HSH-P700 체인 폴더를 영구 위치로 복사 (D1)</li>
+    <li>역학동 2024-09-03·2026-03-03 개강 공지의 개별 URL 기록</li>
+  </ol>
+  <h3>9월 첫 주</h3>
+  <ol class="steps">
+    <li>동방미래교육원 원서접수 (모집 50명, 대면 20명 선착순)</li>
+    <li>KIPRIS에서 "남촌" 특허 검색 후 결과 보관 (C4)</li>
+    <li>교재 입고 후 목차 스캔, v2 1주차 병목 작업(일간 관계 문장) 개시</li>
+  </ol>
+  <h3>상시</h3>
+  <ol class="steps">
+    <li>강의 녹화·수업 노트를 학기별 폴더에 누적 (규칙 8건 확인 기록과 함께)</li>
+    <li>유튜브·카페 신규 게시물 월 1회 백업</li>
+    <li>역학동 개강 공지 시리즈 계속 수집 (학기마다 게시되는 계보 기록)</li>
+  </ol>
+  <h3>보관 구조 제안</h3>
+  <div class="box">
+<pre class="mono">남촌학파/
+  01_교재/        사례집, 남촌현대물상론(전자책 라이선스 메모 포함), 목차 스캔
+  02_논문/        석사논문 PDF, 초록·목차 발췌, 고전 인용 목록
+  03_강의/        강의계획서(2019·2020·현행), 수업 노트, 녹화 링크 목록
+  04_웹소스/      티스토리 2편, 역학동 공지, 유튜브 목록, 청호 블로그 3편
+  05_뉴스·권리/   뉴스와이어 2건, KIPRIS 검색 결과, 계보 노트
+  06_프로젝트보전/ HSH-P700 체인 복사본, v2 원문, v3.7 확정본</pre>
+    <p class="muted" style="margin-top:8px;">주의: 교재·강의 녹화는 개인 학습 범위에서만 사용하고 재배포하지 않는다. 앱 해석 문장은 학습 후 자작한다(v2의 1주차 작업이 "문장 작성"인 이유와 같다).</p>
+  </div>
+</section>
+
+<section id="s8">
+  <h2><span class="n">8</span>리스크와 주의</h2>
+  <table>
+    <tr><th>리스크</th><th>내용</th><th>대응</th></tr>
+    <tr><td><span class="tag t-risk">명칭 권리</span></td><td>보도자료 주장이 사실로 확인됐다. "남촌" 상표 2건이 김대영 명의 등록 상태(16류 도서, 45류 운세 정보제공, 2021년 출원, KIPRIS 2026-08-28 실측). 45류는 운세 서비스의 표준 분류다.</td><td>앱 브랜드와 학파 명칭을 분리하고, 학파는 "인용 출처·이론 출처"로만 표기하는 방식을 기본값으로 권한다. 상업적 사용이 필요하면 권리자와 라이선스 협의 또는 변리사 검토를 거친다. K-MUDANG의 특허출원 대응 관점에서도 이 등록 사실은 협상 카드가 된다.</td></tr>
+    <tr><td><span class="tag t-risk">저작권</span></td><td>교재·강의 녹화·블로그 글은 저작물이다. 이를 앱 콘텐츠로 복제하면 권리 침해가 된다.</td><td>사적 학습만 허용. 앱 해석 문장은 자작 원칙 유지. 근거 태그는 "남촌현대물상론 체계 기반 자체 해석"으로 표기하는 방식을 검토한다.</td></tr>
+    <tr><td><span class="tag t-risk">개인정보</span></td><td>본 문서가 모은 연락처·주소는 공개 소스 출처이지만, 공개 게시하면 제3자 개인정보 집계 문서로 읽힐 수 있다.</td><td>공개판 게시 시 연락처·상세 주소 마스킹 권장. 본 문서는 내부용으로 관리.</td></tr>
+    <tr><td><span class="tag t-risk">절판</span></td><td>『남촌현대물상론』은 이미 유통 중단. 전자책 플랫폼이 닫히면 중고 9만원대가 유일한 경로가 된다.</td><td>조기 구매가 최선의 보험. 구매 후 라이선스·다운로드 보관 규칙을 플랫폼 약관 범위에서 지킨다.</td></tr>
+  </table>
+</section>
+
+<section id="s9">
+  <h2><span class="n">9</span>미확인 항목 (정직한 공백 기록)</h2>
+  <p class="lede">확인되지 않은 것도 문서에 남긴다. 추측으로 채우지 않는 것이 이 프로젝트의 근거 표기 원칙이다.</p>
+  <table>
+    <tr><th>항목</th><th>현재 상태</th><th>확인 경로</th></tr>
+    <tr><td>교재 2종의 목차</td><td>서점 3곳+전자책 어디에도 미게재</td><td>구매 후 직접 스캔</td></tr>
+    <tr><td>기초반 전용 카페 URL</td><td>네이버카페 "남촌물상 아카데미. 기초반"이 유력 후보로 특정됨(2024-08-29 게시물 63548)</td><td>네이버 카페 검색 후 가입</td></tr>
+    <tr><td>"남촌" 상표 등록 여부</td><td><b>확인 완료.</b> 김대영 명의 등록 2건(16류·45류, 2021년 출원)</td><td>KIPRIS 실측 완료, 검증 메모 보존</td></tr>
+    <tr><td>김대영 박사 학위·국민대 재직 현황</td><td>채널 설명문의 자기 서술만 존재, 외부 검증 미실시</td><td>대학 공지·학술 DB</td></tr>
+    <tr><td>개강 공지 개별 URL</td><td><b>인덱스 완성.</b> 2018(53217)부터 2026(65577)까지 9건 확정</td><td>아카이브 폴더 URL 인덱스 파일 참조</td></tr>
+    <tr><td>2019년 교재명과 2025년 "기초편" 표기의 관계</td><td>동일 서적으로 판정(2020-01-17 보도자료 제목·스펙 일치), 공지 표기만 상이</td><td>실물 입수 시 표지·판권면 확인</td></tr>
+    <tr><td>플라이북 전자책 대여가</td><td>페이지에 미표시</td><td>플랫폼에서 직접 확인</td></tr>
+    <tr><td>『신증철학』·임원진전 국내 유통</td><td>[미확인] 서점 매칭 실패</td><td>구두·중고 시장 확인</td></tr>
+  </table>
+</section>
+
+<section id="s10">
+  <h2><span class="n">10</span>출처 목록 (전부 2026-08-28 실측)</h2>
+  <ul class="plain">
+    <li>서점 실측: 알라딘 <code>aladin.co.kr/shop/wproduct.aspx?ItemId=228991010</code> · 예스24 <code>yes24.com/product/goods/153917159</code> · 교보 <code>product.kyobobook.co.kr/detail/S000217556300</code>·<code>S000001026774</code> · 플라이북 <code>flybook.kr/book/571481</code></li>
+    <li>논문: DBpia <code>dbpia.co.kr/journal/detail?nodeId=T14572527</code> (파라미터형 URL만 유효)</li>
+    <li>강의: 동방미래교육원 <code>dongbang.ac.kr/graduateUniv/html/education/education_info01.php</code> · 원서접수 <code>register_accept.php</code></li>
+    <li>커뮤니티: 역학동 <code>cafe.daum.net/2040</code> (게시물 56289·64149) · 연구회 <code>cafe.daum.net/5011saju</code></li>
+    <li>유튜브: 남촌물상TV <code>youtube.com/channel/UCYDMmKpZc5tn25ZEJsDDz5w</code> (채널 설명문·RSS 실측)</li>
+    <li>블로그: <code>kdy6645.tistory.com/2</code>·<code>/4</code> · <code>blog.naver.com/resethdh/222015412077</code>·<code>222032458188</code>·<code>222036164999</code></li>
+    <li>보도: 뉴스와이어 <code>newswire.co.kr/newsRead.php?no=900189</code>(2020-01-17)·<code>no=1020458</code>(2025-10-13) · 국민기자뉴스 <code>kmkj.kr/news/articleView.html?idxno=86962</code></li>
+    <li>기준 문서: 「사주 앱 방향 수정 제안 v2」(handoffs 보존본) · K-사주 글로벌 진출 최종 리포트 18탭(2026-08-24)</li>
+  </ul>
+</section>
+
+<div class="footer">
+  <p>남촌학파 명리학 자료 아카이빙 마스터 플랜 · 자료 확인일 2026-08-28 · 공개판: 개인 연락처와 상세 주소는 마스킹했고, 원문 백업은 비공개 아카이브에 보존한다</p>
+  <p>면책: 본 문서는 조사 정리이며 법률 자문이 아니다. 특허·저작권 판단은 관련 전문가 확인이 필요하다. 명리학 해석 자료는 학습 참고용이다.</p>
+  <div class="gate">윤문 게이트: 경로 light(risk 3/low) | 변경률 0.0% | 엠대시 0 | lint S3 1건(단건 통과) | P3 각주 4건은 표 평탄화 오탐(원본 각주 0건) | 법령 검증 해당없음 | stop-slop 42/50</div>
+</div>
+
+</div>
+</body>
+</html>
