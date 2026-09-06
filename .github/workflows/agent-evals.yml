@@ -64,7 +64,7 @@ jobs:
           sys.exit(1 if errors else 0)
           PY
 
-      - name: Eval 3 — 브랜드 법 (시안 렌더 산출물 한정: 오컬트 어휘 · em-dash 0)
+      - name: Eval 3 — 브랜드 법 (시안 렌더 산출물 한정 · 오컬트 어휘 em-dash 0)
         run: |
           python3 - <<'PY'
           import re, glob, sys
