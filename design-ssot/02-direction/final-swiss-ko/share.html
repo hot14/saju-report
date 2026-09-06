@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU - 도판 05 공유</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&amp;family=Noto+Sans+KR:wght@400;500;700&amp;family=Noto+Serif+KR:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary-container": "#5c0003",
+                        "on-primary-container": "#858383",
+                        "surface-container": "#eeeeee",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-surface": "#1a1c1c",
+                        "background": "#ffffff",
+                        "primary": "#111111",
+                        "tertiary-container": "#1b1c1c",
+                        "surface-dim": "#dadada",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#444748",
+                        "on-primary-fixed-variant": "#474646",
+                        "surface-bright": "#f9f9f9",
+                        "inverse-surface": "#2f3131",
+                        "primary-fixed": "#e5e2e1",
+                        "on-background": "#111111",
+                        "secondary-fixed": "#ffdad5",
+                        "outline": "#747878",
+                        "on-secondary-fixed-variant": "#930008",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-tertiary-container": "#848484",
+                        "on-secondary-fixed": "#410001",
+                        "surface-tint": "#5f5e5e",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "tertiary-fixed": "#e3e2e2",
+                        "tertiary": "#000000",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#ffffff",
+                        "secondary-fixed-dim": "#ffb4aa",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f0f1f1",
+                        "primary-container": "#1c1b1b",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary": "#E0311D",
+                        "secondary-container": "#fe5549",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f3f3f4",
+                        "outline-variant": "#c4c7c7",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-primary": "#c8c6c5"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    spacing: {
+                        "baseline": "4px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "margin-desktop": "64px",
+                        "column-gap": "24px"
+                    },
+                    fontFamily: {
+                        "display-lg": ["Noto Serif KR", "sans-serif"],
+                        "headline-md": ["Noto Serif KR", "sans-serif"],
+                        "label-caps": ["IBM Plex Mono", "monospace"],
+                        "display-lg-mobile": ["Noto Serif KR", "sans-serif"],
+                        "body-sm": ["Noto Sans KR", "sans-serif"],
+                        "data-mono": ["IBM Plex Mono", "monospace"],
+                        "body-lg": ["Noto Sans KR", "sans-serif"]
+                    },
+                    fontSize: {
+                        "display-lg": ["72px", { lineHeight: "64px", letterSpacing: "-0.04em", fontWeight: "900" }],
+                        "headline-md": ["32px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.06em", fontWeight: "700" }],
+                        "display-lg-mobile": ["40px", { lineHeight: "40px", letterSpacing: "-0.03em", fontWeight: "900" }],
+                        "body-sm": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }],
+                        "data-mono": ["14px", { lineHeight: "20px", letterSpacing: "-0.02em", fontWeight: "500" }],
+                        "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #ffffff;
+            color: #111111;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .hairline-top { border-top: 1px solid #111111; }
+        .hairline-bottom { border-bottom: 1px solid #111111; }
+        .hairline-left { border-left: 1px solid #111111; }
+        .hairline-right { border-right: 1px solid #111111; }
+        
+        .swiss-grid {
+            background-image: 
+                linear-gradient(to right, #f0f0f0 1px, transparent 1px),
+                linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col justify-between pt-8 pb-12 px-margin-mobile md:px-margin-desktop bg-background selection:bg-primary selection:text-on-primary">
+<!-- Top App Bar equivalent (Suppressed shell, but keeping a minimal brand anchor as per "Editorial Polish") -->
+<header class="w-full flex justify-between items-center pb-6 hairline-bottom mb-8">
+<span class="font-display-lg-mobile text-display-lg-mobile tracking-tighter text-primary">SAJU</span>
+<div class="flex items-center gap-2 cursor-pointer">
+<span class="font-label-caps text-label-caps text-primary uppercase">Close</span>
+<span class="material-symbols-outlined text-primary" data-icon="close">close</span>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center w-full max-w-[600px] mx-auto">
+<!-- Header Section -->
+<div class="w-full text-center mb-8">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4 tracking-widest">도판 05 - 공유</p>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary leading-tight">
+                당신은 거울 호수입니다<span class="text-secondary">.</span>
+</h1>
+</div>
+<!-- Shareable Card (PATTERN_CARD variant) -->
+<div class="w-[85%] sm:w-full bg-white border border-primary relative mb-12 shadow-none group transition-transform duration-300 hover:scale-[1.01]">
+<!-- Top Bar -->
+<div class="flex justify-between items-center px-4 py-2 hairline-bottom bg-surface-container-lowest">
+<span class="font-data-mono text-data-mono text-primary">ID: 89A-402</span>
+<span class="font-data-mono text-data-mono text-primary">壬</span>
+</div>
+<!-- Graphic Area -->
+<div class="w-full aspect-[4/5] bg-surface-bright relative overflow-hidden swiss-grid flex flex-col justify-center items-center p-6 border-b border-primary">
+<!-- Abstract 'Mirror Lake' representation using pure CSS/HTML geometry -->
+<div class="w-32 h-32 border-2 border-primary rounded-none flex items-center justify-center relative bg-white z-10">
+<div class="w-full h-1/2 bg-surface-variant absolute bottom-0 border-t-2 border-primary"></div>
+<span class="font-display-lg text-display-lg text-primary z-20 absolute top-1/4 -translate-y-1/2">壬</span>
+<span class="font-display-lg text-display-lg text-primary/30 z-20 absolute bottom-1/4 translate-y-1/2 rotate-180">壬</span>
+</div>
+<div class="absolute inset-x-0 bottom-8 text-center px-4 bg-white/80 backdrop-blur-sm py-2 hairline-top hairline-bottom">
+<p class="font-headline-md text-headline-md text-primary">거울 호수</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">MIRROR LAKE · WATER ELEMENT</p>
+</div>
+</div>
+<!-- Data Row -->
+<div class="grid grid-cols-2 hairline-bottom bg-white">
+<div class="p-3 hairline-right flex flex-col justify-between h-16">
+<span class="font-label-caps text-label-caps text-on-surface-variant">PRIMARY</span>
+<span class="font-data-mono text-data-mono text-primary text-right">0.842</span>
+</div>
+<div class="p-3 flex flex-col justify-between h-16">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SECONDARY</span>
+<span class="font-data-mono text-data-mono text-primary text-right">0.158</span>
+</div>
+</div>
+<!-- Bottom Brand Anchor -->
+<div class="px-4 py-3 bg-surface flex justify-between items-end">
+<span class="font-display-lg-mobile text-[24px] leading-none tracking-tighter text-primary">SAJU</span>
+<span class="font-data-mono text-[10px] text-on-surface-variant">SYS_GEN_2024</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="w-full flex flex-col gap-3">
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps py-4 px-6 border border-primary hover:bg-white hover:text-primary transition-colors duration-200 flex justify-center items-center gap-2">
+                내 패턴 읽기
+                <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full bg-transparent text-primary font-label-caps text-label-caps py-4 px-6 border border-primary hover:bg-surface-variant transition-colors duration-200 flex justify-center items-center gap-2">
+                결과 공유하기
+                <span class="material-symbols-outlined text-[16px]" data-icon="ios_share">ios_share</span>
+</button>
+</div>
+</main>
+<!-- Minimal Contextual Footer -->
+<footer class="w-full mt-12 pt-6 hairline-top flex flex-col items-center gap-4 max-w-[600px] mx-auto">
+<p class="font-body-sm text-[11px] text-on-surface-variant text-center max-w-[280px]">
+            SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.
+        </p>
+<div class="flex gap-4">
+<a class="font-label-caps text-[10px] text-primary underline hover:text-secondary transition-colors" href="#">개인정보처리방침</a>
+<a class="font-label-caps text-[10px] text-primary underline hover:text-secondary transition-colors" href="#">서비스 이용약관</a>
+</div>
+</footer>
+</body></html>

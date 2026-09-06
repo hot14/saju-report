@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAJU Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&amp;family=Noto+Serif+KR:wght@900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#410001",
+                        "background": "#ffffff", 
+                        "on-primary-container": "#858383",
+                        "secondary-container": "#fe5549",
+                        "primary-fixed": "#e5e2e1",
+                        "primary": "#111111", 
+                        "on-primary-fixed-variant": "#474646",
+                        "tertiary-fixed": "#e3e2e2",
+                        "tertiary": "#000000",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "surface-dim": "#dadada",
+                        "surface": "#ffffff",
+                        "surface-bright": "#ffffff",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "secondary": "#E0311D", 
+                        "on-secondary-fixed-variant": "#930008",
+                        "surface-container-low": "#f3f3f4",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#848484",
+                        "surface-tint": "#5f5e5e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container": "#eeeeee",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary-fixed-dim": "#ffb4aa",
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary-container": "#5c0003",
+                        "outline-variant": "#c4c7c7",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#111111",
+                        "inverse-surface": "#2f3131",
+                        "outline": "#e5e5e5", 
+                        "on-surface-variant": "#444748",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffdad5",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-primary-fixed": "#111111",
+                        "inverse-primary": "#c8c6c5",
+                        "tertiary-container": "#1b1c1c",
+                        "inverse-on-surface": "#f0f1f1",
+                        "primary-container": "#111111"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Noto Sans KR", "sans-serif"],
+                        "headline-md": ["Noto Serif KR", "serif"],
+                        "body-sm": ["Noto Sans KR", "sans-serif"],
+                        "display-lg": ["Noto Serif KR", "serif"],
+                        "data-mono": ["IBM Plex Mono", "monospace"],
+                        "label-caps": ["IBM Plex Mono", "monospace"],
+                        "display-lg-mobile": ["Noto Serif KR", "serif"]
+                    },
+                    spacing: {
+                        "baseline": "4px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "margin-desktop": "64px",
+                        "column-gap": "24px"
+                    },
+                    borderWidth: {
+                        'hairline': '0.5px'
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #ffffff; color: #111111; }
+        .grid-bg {
+            background-size: 20px 20px;
+            background-image: 
+                linear-gradient(to right, #f0f0f0 1px, transparent 1px),
+                linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen bg-background text-on-surface font-body-sm flex flex-col justify-between pt-16 pb-8 px-margin-mobile md:px-margin-desktop md:max-w-md md:mx-auto border-x border-outline/30 relative">
+<!-- Top Nav Replacement (Transactional/Task-Focused) -->
+<header class="w-full mb-12 flex justify-between items-center border-b border-primary/20 pb-4">
+<span class="font-data-mono text-xs uppercase tracking-widest">도판 02 - 입력</span>
+<button aria-label="Close" class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col gap-12">
+<!-- Headline -->
+<section class="mb-4">
+<h1 class="font-display-lg-mobile text-[32px] leading-[1.2] font-black tracking-tight text-primary">
+                당신의 리딩은 여덟 글자로 시작됩니다<span class="text-secondary">.</span>
+</h1>
+</section>
+<!-- Ledger Form -->
+<section class="flex flex-col border-t border-primary/40">
+<!-- Row 1 -->
+<div class="flex flex-row items-center justify-between py-4 border-b border-primary/20">
+<label class="font-data-mono text-sm w-1/4 uppercase" for="year">연도</label>
+<input autocomplete="off" class="font-data-mono text-right w-3/4 bg-transparent border-none outline-none focus:ring-0 p-0 text-base placeholder:text-outline-variant text-primary" id="year" placeholder="1998" type="text"/>
+</div>
+<!-- Row 2 -->
+<div class="flex flex-row items-center justify-between py-4 border-b border-primary/20">
+<label class="font-data-mono text-sm w-1/4 uppercase" for="month">월</label>
+<input autocomplete="off" class="font-data-mono text-right w-3/4 bg-transparent border-none outline-none focus:ring-0 p-0 text-base placeholder:text-outline-variant text-primary" id="month" placeholder="07" type="text"/>
+</div>
+<!-- Row 3 -->
+<div class="flex flex-row items-center justify-between py-4 border-b border-primary/20">
+<label class="font-data-mono text-sm w-1/4 uppercase" for="day">일</label>
+<input autocomplete="off" class="font-data-mono text-right w-3/4 bg-transparent border-none outline-none focus:ring-0 p-0 text-base placeholder:text-outline-variant text-primary" id="day" placeholder="16" type="text"/>
+</div>
+<!-- Row 4 -->
+<div class="flex flex-row items-center justify-between py-4 border-b border-primary/40">
+<label class="font-data-mono text-sm w-1/4 uppercase" for="time">시</label>
+<input autocomplete="off" class="font-data-mono text-right w-3/4 bg-transparent border-none outline-none focus:ring-0 p-0 text-base placeholder:text-outline-variant text-primary" id="time" placeholder="21시" type="text"/>
+</div>
+<!-- Helper Text -->
+<p class="font-body-sm text-xs mt-4 text-on-surface-variant">생년월일시가 열 가지 형태 중 하나를 정합니다.</p>
+</section>
+</main>
+<!-- Bottom Actions & Footer -->
+<footer class="w-full mt-12 flex flex-col gap-6">
+<button class="w-full bg-primary text-on-primary py-4 font-body-lg font-bold text-center hover:bg-primary/90 transition-colors border border-primary relative overflow-hidden group">
+<span class="relative z-10">내 패턴 읽기<span class="text-secondary">.</span></span>
+<div class="absolute inset-0 bg-secondary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
+</button>
+<div class="border-t border-primary/20 pt-6 flex flex-col gap-2">
+<p class="font-body-sm text-[10px] leading-tight text-on-surface-variant">
+                SAJU는 자기이해를 위한 리딩 도구입니다. 의료·법률·재정 조언이 아닙니다.
+            </p>
+<div class="flex gap-4">
+<a class="font-data-mono text-[10px] text-on-surface-variant hover:text-primary transition-colors underline decoration-outline-variant hover:decoration-primary" href="#">개인정보처리방침</a>
+<a class="font-data-mono text-[10px] text-on-surface-variant hover:text-primary transition-colors underline decoration-outline-variant hover:decoration-primary" href="#">서비스 이용약관</a>
+</div>
+</div>
+</footer>
+</body></html>

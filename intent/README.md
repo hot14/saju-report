@@ -7,7 +7,7 @@
 
 | 슬러그 | 제목 | 상태 | 게이트 |
 |---|---|---|---|
-| [design-finalization](design-finalization/intent.md) | 디자인 방향 확정 및 잔여 화면 확장 | `draft` | Gate 1 대기 |
+| [design-finalization](design-finalization/intent.md) | 디자인 방향 확정 및 잔여 화면 확장 | `approved` | Gate 4 진행 (스위스 레저 확정) |
 
 (새 intent 추가 시 이 표에 한 줄 추가)
 
