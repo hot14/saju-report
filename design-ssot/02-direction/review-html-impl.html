@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAJU · HTML/CSS 구현 4방향 (픽셀 퍼펙트)</title>
+<style>
+:root{--paper:#F4F1EC;--ink:#111;--orange:#FF4D00;--line:#d0cdc6;--mute:#6f6a63;--surface:#fff;--gold:#b98a2c}
+*{box-sizing:border-box;margin:0;padding:0;word-break:keep-all;overflow-wrap:break-word}
+body{background:var(--paper);color:var(--ink);font:15px/1.7 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+.wrap{max-width:1340px;margin:0 auto;padding:48px 24px 110px}
+.eyebrow{font-size:11px;letter-spacing:.28em;color:var(--orange);text-transform:uppercase}
+h1{font-family:Georgia,"Noto Serif KR",serif;font-size:30px;margin:10px 0 6px;letter-spacing:-.01em}
+.lede{color:var(--mute);max-width:860px}.lede b{color:var(--ink)}
+.lede .hl{background:linear-gradient(transparent 60%, #FF4D0033 60%);padding:0 2px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 4px}
+nav a{color:var(--mute);text-decoration:none;font-size:13px;padding:7px 14px;border:1px solid var(--line);border-radius:999px}
+nav a:hover{color:var(--ink);border-color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px;margin-top:30px}
+.card{background:var(--surface);border:2px solid var(--ink);border-radius:0;overflow:hidden}
+.card.hlx{box-shadow:6px 6px 0 var(--orange)}
+.card.hlx .tag{background:var(--orange)}
+.card .tag{background:var(--ink);color:#fff;font-family:'Courier New',monospace;font-size:10px;padding:6px 14px;letter-spacing:.14em}
+.shot img{display:block;width:100%;height:auto}
+.body{padding:16px 18px 18px}
+h2{font-size:16px;margin-bottom:4px}
+.desc{font-size:13px;color:var(--mute);margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{font-size:10px;border:1px solid var(--line);padding:2px 7px;border-radius:2px;color:var(--mute)}
+.chip.pass{border-color:#1e7a3c;color:#1e7a3c}
+.chip.hot{border-color:var(--orange);color:var(--orange)}
+.rec{margin-top:30px;border:3px solid var(--ink);padding:24px 26px;background:var(--surface);box-shadow:8px 8px 0 var(--orange)}
+.rec h3{font-size:15px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
+.rec p{font-size:14px;margin-bottom:8px}
+.rec .big{font-size:20px;font-weight:900;margin:12px 0 6px}
+footer{margin-top:50px;font-size:12px;color:#8a857c}
+a{color:var(--orange)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">HTML/CSS Implementation · Pixel Perfect · 2026-09-05</div>
+  <h1>디자인 구현 4방향 — 실제 HTML/CSS 렌더</h1>
+  <p class="lede">Stitch 썸네일이 아닌 <b>직접 작성한 HTML/CSS를 브라우저에서 렌더링</b>한 결과물. 780px @ 2x · 픽셀 퍼펙트 · <span class="hl">웹폰트 포함</span>. 각 파일은 실제 구현 코드이므로 그대로 개발에 사용 가능.</p>
+  <nav>
+    <a href="#swiss">Swiss Editorial</a>
+    <a href="#pastel">Pastel Calm</a>
+    <a href="#blueprint">Blueprint Technical</a>
+    <a href="#brutalist">Neo-Brutalist</a>
+    <a href="#compare">비교표</a>
+  </nav>
+
+  <div class="grid">
+    <div class="card" id="swiss">
+      <div class="tag">SWISS DATA-EDITORIAL</div>
+      <div class="shot"><img src="html-impl/swiss.png" alt="swiss"></div>
+      <div class="body">
+        <h2>Swiss Data-Editorial</h2>
+        <p class="desc">순백 · 먹 텍스트 · 시그널 레드 마침표 · FIG. 도판 넘버링 · 박물관 캡스. 데이터 저널리즘 무드. "연구기관의 정밀함" 포지셔닝.</p>
+        <div class="chips"><span class="chip pass">em-dash 0</span><span class="chip pass">금지어 0</span><span class="chip">FIG. 01</span><span class="chip">신뢰 최대</span></div>
+      </div>
+    </div>
+    <div class="card" id="pastel">
+      <div class="tag" style="background:#7C5CBF">PASTEL CALM</div>
+      <div class="shot"><img src="html-impl/pastel.png" alt="pastel"></div>
+      <div class="body">
+        <h2>Pastel Calm</h2>
+        <p class="desc">라벤더 페이퍼 + 세이지/클레이 원형 배지 + 라운드 28px CTA + 부드러운 섀도. 캘름·헤드스페이스 무드. 글로벌 여성층 강점.</p>
+        <div class="chips"><span class="chip pass">em-dash 0</span><span class="chip pass">원형 배지</span><span class="chip">캘름</span><span class="chip">접근성 최대</span></div>
+      </div>
+    </div>
+    <div class="card" id="blueprint">
+      <div class="tag" style="background:#16324F">BLUEPRINT TECHNICAL</div>
+      <div class="shot"><img src="html-impl/blueprint.png" alt="blueprint"></div>
+      <div class="body">
+        <h2>Blueprint Technical</h2>
+        <p class="desc">청사진 블루 #16324F + 백색 라인워크 · IBM Plex Mono · [SYS]·[REF]·[DIM] 콜아웃 · 타이틀 블록. "판정은 코드" 철학의 도면화.</p>
+        <div class="chips"><span class="chip pass">em-dash 0</span><span class="chip pass">SYS.VER.01</span><span class="chip">타이틀블록</span><span class="chip">근거 태그</span></div>
+      </div>
+    </div>
+    <div class="card hlx" id="brutalist">
+      <div class="tag" style="background:#F4F1EC;color:#111">NEO-BRUTALIST ★</div>
+      <div class="shot"><img src="html-impl/brutalist.png" alt="brutalist"></div>
+      <div class="body">
+        <h2>Neo-Brutalist Editorial</h2>
+        <p class="desc">오프화이트 #F4F1EC + 하드 3px 보더 + 블랙 오프셋 섀도 8px + 주황 #FF4D00 CTA · 스탬프 라벨 · 모노 마이크로라벨. 임팩트 최대.</p>
+        <div class="chips"><span class="chip pass">em-dash 0</span><span class="chip pass">스탬프 라벨</span><span class="chip hot">임팩트 최대</span><span class="chip">NO. 000847</span></div>
+      </div>
+    </div>
+  </div>
+
+  <table style="width:100%;border-collapse:collapse;margin-top:34px;font-size:14px">
+    <tr><th style="border:1px solid var(--line);padding:10px 14px;text-align:left;background:var(--ink);color:#fff">방향</th><th style="border:1px solid var(--line);padding:10px 14px;background:var(--ink);color:#fff">강점</th><th style="border:1px solid var(--line);padding:10px 14px;background:var(--ink);color:#fff">적합 페이즈</th></tr>
+    <tr><td><b>Swiss Data-Editorial</b></td><td>신뢰·정밀·데이터 저널리즘</td><td>메인 서비스 (전환 중시)</td></tr>
+    <tr><td><b>Pastel Calm</b></td><td>접근성·친화력·글로벌 여성층</td><td>온보딩·결과 화면</td></tr>
+    <tr><td><b>Blueprint Technical</b></td><td>엔지니어링·근거 시각화</td><td>리포트·분석 상세</td></tr>
+    <tr><td><b>Neo-Brutalist</b></td><td>임팩트·차별성·공유 카드</td><td>랜딩·공유 카드</td></tr>
+  </table>
+
+  <div style="margin-top:22px;padding:18px 22px;border:2px solid #111;background:#fff">
+    <p style="font-size:14px"><b>하이브리드 권장</b>: Swiss 본체(신뢰) + Neo-Brutalist 공유카드(임팩트) + Blueprint 근거 태그(정밀함) — 페이즈별로 최적 문법 배치.</p>
+  </div>
+
+  <footer style="margin-top:40px;color:#8a857c;font-size:12px">HTML/CSS 직접 구현 · /tmp/html_impl/ → design-ssot/02-direction/html-impl/ · LANCZOS 업스케일 불필요 (네이티브 780px)</footer>
+</div>
+</body>
+</html>
