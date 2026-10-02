@@ -223,3 +223,114 @@ input:disabled { color: var(--color-ink-mute); border-bottom-color: var(--color-
   .slot { height: 3.6rem; font-size: 1.7rem; }
   .badge-hanja { font-size: 4rem; }
 }
+
+/* ============================================================
+   무료 차트 전체 자산판 확장 섹션 (11종)
+   기존 토큰·법칙 유지: 라운드 0 · 그림자 없음 · 다크 배경 0
+   ============================================================ */
+
+/* 성별 선택 (대운용) */
+select {
+  width: 100%; border: 0; border-bottom: var(--border-strong) solid var(--color-ink);
+  font-family: var(--font-body); font-size: 1rem; padding: 0.45rem 0.1rem;
+  background: transparent; border-radius: 0; color: var(--color-ink); cursor: pointer;
+}
+select:focus { outline: none; border-bottom-color: var(--color-accent); }
+
+/* 공통 소문항 */
+.sub-label { font-weight: 700; margin: 1.2rem 0 0.2rem; }
+.lead-line { color: var(--color-ink-soft); margin-bottom: 0.9rem; }
+.src-line { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; color: var(--color-ink-mute); margin-top: 0.45rem; }
+.src-inline { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; color: var(--color-ink-mute); }
+.uv-flag {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.08em;
+  color: var(--color-accent); border: 1px solid var(--color-accent); padding: 0.05rem 0.35rem; margin-top: 0.4rem;
+}
+.exp-chip {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em;
+  border: 1px solid var(--color-ink); padding: 0.1rem 0.45rem; margin-bottom: 0.6rem;
+}
+.neutral-note { border-left: var(--border-strong) solid var(--color-hairline); padding-left: 0.9rem; color: var(--color-ink-soft); margin: 0.5rem 0; }
+.off-note { font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-ink-mute); }
+
+/* ① 오행 지형도 */
+.estate { margin-top: 0.4rem; }
+.estate-row { display: flex; align-items: center; gap: 0.6rem; padding-top: 0.8rem; }
+.estate-hanja { font-family: var(--font-display); font-weight: 900; font-size: 1.25rem; width: 1.6rem; flex: none; }
+.estate-count { display: inline-flex; gap: 0.25rem; align-items: center; flex: 1; min-width: 0; }
+.estate-count .edot.on { width: 0.5rem; height: 0.5rem; }
+.more-count, .none-count { font-family: var(--font-mono); font-size: 0.68rem; color: var(--color-ink-mute); }
+.state-chip {
+  flex: none; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.1em;
+  border: 1px solid var(--color-hairline); color: var(--color-ink-soft); padding: 0.08rem 0.4rem;
+}
+.state-chip.state-tooMuch { border-color: var(--color-accent); color: var(--color-accent); }
+.state-chip.state-tooLittle { border-style: dashed; border-color: var(--color-ink); color: var(--color-ink); }
+.dm-chip {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.56rem; letter-spacing: 0.1em;
+  border: 1px solid var(--color-accent); color: var(--color-accent); padding: 0.04rem 0.3rem; vertical-align: 2px;
+}
+.estate-role { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.04em; color: var(--color-ink-mute); margin-top: 0.25rem; }
+.estate-text { color: var(--color-ink-soft); margin-top: 0.2rem; }
+
+/* ② 천간 관계 · ⑦ 안심법 · 관계 읽기 카드 */
+.rel-list, .ansim-card, .partner-card { margin-top: 0.4rem; }
+.rel-item, .ansim-card { border-top: 1px solid var(--color-hairline); padding: 0.8rem 0; }
+.rel-off { color: var(--color-ink-mute); }
+.rel-pos { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--color-ink-mute); }
+.rel-hanja { font-family: var(--font-display); font-weight: 900; font-size: 1.2rem; color: var(--color-ink); }
+.rel-image { font-weight: 700; margin-top: 0.3rem; }
+.ansim-mind { font-family: var(--font-display); font-weight: 900; font-size: 1.05rem; line-height: 1.5; margin: 0.4rem 0 0.3rem; }
+.partner-card { border: 1px solid var(--color-hairline); padding: 0.8rem 0.9rem; margin-bottom: 0.9rem; }
+.partner-dm { font-weight: 700; margin: 0.2rem 0; }
+
+/* ③ 원국 변화 감지 */
+.dyn-intro { margin-bottom: 0.8rem; }
+.dyn-item { border-top: 1px solid var(--color-hairline); padding: 0.8rem 0; }
+.dyn-item.dyn-blocked { border-top-style: dashed; }
+.dyn-head { font-weight: 700; margin-bottom: 0.3rem; }
+.dyn-kind {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.1em;
+  border: 1px solid var(--color-ink); padding: 0.06rem 0.35rem; margin-right: 0.35rem; vertical-align: 2px;
+}
+.traits.small li { padding: 0.45rem 0; font-size: 0.86rem; color: var(--color-ink-soft); }
+
+/* ④ 기둥 시간축 */
+.role-block { border-top: 1px solid var(--color-hairline); padding: 0.8rem 0; }
+.role-block.role-off { color: var(--color-ink-mute); }
+.role-head { font-weight: 700; display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; }
+.role-years { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; color: var(--color-ink-mute); font-weight: 400; }
+.role-line { margin-top: 0.3rem; font-size: 0.9rem; }
+.role-k {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.1em;
+  color: var(--color-ink-mute); width: 3.2rem; flex: none;
+}
+.role-text { margin-top: 0.35rem; color: var(--color-ink-soft); font-size: 0.9rem; }
+
+/* ⑤ 대운 타임라인 */
+.luck-table thead th {
+  font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; font-weight: 500;
+  color: var(--color-ink-mute); text-align: left; border-bottom: 1px solid var(--color-ink); padding-bottom: 0.4rem;
+}
+.luck-table .luck-ganji { font-family: var(--font-display); font-weight: 900; font-size: 1rem; color: var(--color-ink); }
+.luck-table tr.luck-now th, .luck-table tr.luck-now td { border-bottom: var(--border-strong) solid var(--color-accent); }
+.luck-table tr.luck-now .luck-ganji { color: var(--color-accent); }
+
+/* ⑨ 성향 확장: 주의 신호 2단 (390px에서 1단) */
+.danger-grid { display: flex; gap: 1rem; }
+.danger-col { flex: 1; min-width: 0; }
+.danger-head { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.1em; color: var(--color-ink-mute); margin-bottom: 0.2rem; }
+
+/* ⑩ 더 깊은 읽기 한 줄 ({{PRICE}} 제거 자리) */
+.more-note { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--color-ink-mute); margin-bottom: var(--space-block); }
+
+/* 관계 읽기 폼 */
+.rel-form { margin-top: 0.5rem; }
+.cta-ghost { background: transparent; color: var(--color-ink); border: var(--border-width) solid var(--color-ink); margin-top: 0.9rem; }
+.cta-ghost:hover { opacity: 0.8; }
+#rel-result { margin-top: 1.2rem; }
+
+@media (max-width: 480px) {
+  .danger-grid { flex-direction: column; gap: 0; }
+  .danger-col + .danger-col { margin-top: 0.8rem; }
+}

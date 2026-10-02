@@ -1,19 +1,23 @@
 /*
- * SajuRoot 첫 유입 실험 · chart.html UI 로직 (wayfinder #14)
- * ---------------------------------------------------------
+ * SajuRoot 첫 유입 실험 · chart.html UI 로직 (wayfinder #14, 무료 차트 전체 자산판)
+ * ---------------------------------------------------------------------------------
  * 1) 유입 경로 추적: URL 쿼리 src를 읽어 localStorage와 폼 숨은 필드에 기록
- * 2) 생년월일 폼 처리: 카피덱 v2-KR 문구로 검증
- * 3) computeChart(브라우저 번들)로 계산해 결과 카드 렌더
- *    (구조는 service/prototype/server.cjs의 카드를 따름 · 정적·클라이언트 사이드)
- * 4) 결과 하단 이메일 수집: {{FORM_ENDPOINT}} 미설정 시 mailto 폴백 안내
+ * 2) 생년월일 폼 처리: 카피덱 v2-KR 문구로 검증 (성별은 선택, 대운 표시용)
+ * 3) computeChart + CORE.view(원국 판정 순수 함수)로 전체 섹션 렌더
+ *    오행 지형도 / 천간 관계 / 원국 변화 감지 / 기둥 시간축 / 대운 / 안심법 / 관계 읽기
+ * 4) 관계 읽기: 상대 생년월일 입력, 화면 안에서만 계산하고 저장하지 않음
+ * 5) 결과 하단 이메일 수집: {{FORM_ENDPOINT}} 미설정 시 mailto 폴백 안내
  *
- * 콘텐츠 출처: service/content/stems.json(재구성 물상), policy.json(고지문),
- * docs/copy-deck-v2-kr.md(배지명·한 줄·CTA·에러 문구). 남촌 원문 인용 없음.
+ * 콘텐츠 출처: service/content/{stems,relations,dynamics,regions}.json(재구성 물상,
+ * 검증 통과분), policy.json(고지문), docs/copy-deck-v2-kr.md(문구 톤).
+ * 태극성취 근거는 docs/wayfinder/namchon-8geon-panjeong.md(확정, T08-001)를 따른다.
+ * 남촌 원문 인용 없음.
  */
 (function () {
   "use strict";
 
   var CORE = window.SajuRoot;
+  var VIEW = CORE.view;
   var SRC_KEY = "sajuroot_src";
   var EMAIL_KEY = "sajuroot_email_ok";
   var VALID_SRC = ["seo", "community", "social", "direct"];
@@ -44,6 +48,8 @@
     nonAffiliation: "남촌물상역학연구회와 제휴 관계가 없습니다"
   };
 
+  var STATUS_LABEL = { tooMuch: "과다", tooLittle: "과소", balance: "조화" };
+
   // ---------------------------------------------------------------------------
   // 유틸
   // ---------------------------------------------------------------------------
@@ -69,6 +75,23 @@
 
   function emailDone() {
     try { return localStorage.getItem(EMAIL_KEY) === "1"; } catch (e) { return false; }
+  }
+
+  /* 근거(source id) 한 줄. unverified 깃발이 있으면 고지를 붙인다. */
+  function srcLine(sources, unverified, unverifiedSourceIds) {
+    var ids = (sources || []).slice();
+    if (unverified && unverifiedSourceIds && unverifiedSourceIds.length) {
+      for (var i = 0; i < unverifiedSourceIds.length; i++) {
+        if (ids.indexOf(unverifiedSourceIds[i]) === -1) ids.push(unverifiedSourceIds[i]);
+      }
+    }
+    var html = '<p class="src-line">근거 ' + esc(ids.join(", ")) + "</p>";
+    if (unverified) html += '<p class="uv-flag">비검증 근거 포함</p>';
+    return html;
+  }
+
+  function secOpen(label) {
+    return '<section class="sec"><p class="sec-label">' + esc(label) + "</p>";
   }
 
   // ---------------------------------------------------------------------------
@@ -109,6 +132,7 @@
   var dayEl = document.getElementById("f-day");
   var timeEl = document.getElementById("f-time");
   var unknownEl = document.getElementById("f-unknown");
+  var genderEl = document.getElementById("f-gender");
   var errDate = document.getElementById("err-date");
   var errTime = document.getElementById("err-time");
   var entrySec = document.getElementById("entry");
@@ -174,11 +198,11 @@
       showError(errDate, "확인해주세요.", err && err.message ? err.message : "계산에 실패했습니다.");
       return;
     }
-    render(chart);
+    render(chart, genderEl.value);
   });
 
   // ---------------------------------------------------------------------------
-  // 3) 결과 카드 렌더 (prototype 카드 구조 · 정적 렌더)
+  // 3) 기본 카드 · 기존 섹션 (네 개의 기둥 / 계산 근거 / 성향 / 성장)
   // ---------------------------------------------------------------------------
 
   function slotStrip(chart) {
@@ -258,6 +282,8 @@
       rows.push(["판정 가정", "당일 12:00 정오 가정 · 보정 후 " + chart.trueSolarTimeClock]);
     }
     rows.push(["출생지", "서울 기본값 · 북위 " + chart.input.latitude + ", 동경 " + chart.input.longitude]);
+    /* 공망: 엔진(manseryeok 역법)이 계산한 비어 있는 지지. 근거 표에 추가 */
+    rows.push(["공망 지지", chart.voidBranches.length ? chart.voidBranches.join(", ") + " (역법 라이브러리 계산)" : "해당 없음"]);
 
     var html = '<table class="registry"><caption>근거 표 · 진태양시 = 표준시 + (경도 - 135도) × 4분 + 균시차</caption><tbody>';
     for (var i = 0; i < rows.length; i++) {
@@ -271,6 +297,7 @@
     return html;
   }
 
+  /* 성향 섹션 확장: nature + metaphor + coreTraits + careerDirections + dangers(과잉·부족) */
   function traitsSection(stem) {
     var html = '<div class="prose"><p>성질은 ' + esc(stem.nature) + "입니다.</p><p>" + esc(stem.metaphor) + "</p></div>";
     html += '<ul class="traits">';
@@ -278,8 +305,26 @@
       html += "<li>" + esc(stem.coreTraits[i]) + "</li>";
     }
     html += "</ul>";
-    if (stem.unverified) html += '<p class="gov">' + esc(POLICY.unverified) + "</p>";
+    html += '<p class="sub-label">이 일 방향이 어울립니다</p><ul class="traits">';
+    for (var j = 0; j < stem.careerDirections.length; j++) {
+      html += "<li>" + esc(stem.careerDirections[j]) + "</li>";
+    }
+    html += "</ul>";
+    html += '<p class="sub-label">주의 신호</p>' +
+      '<div class="danger-grid">' +
+      '<div class="danger-col"><p class="danger-head">과할 때</p><ul class="traits">' +
+      dangersList(stem.dangers.excess) +
+      '</ul></div><div class="danger-col"><p class="danger-head">모자랄 때</p><ul class="traits">' +
+      dangersList(stem.dangers.deficit) +
+      "</ul></div></div>";
+    html += srcLine(stem.sources, stem.unverified, stem.unverifiedSourceIds);
     return html;
+  }
+
+  function dangersList(items) {
+    var out = "";
+    for (var i = 0; i < items.length; i++) out += "<li>" + esc(items[i]) + "</li>";
+    return out;
   }
 
   function growthSection(stem) {
@@ -287,8 +332,326 @@
     for (var i = 0; i < stem.growthNeeds.length; i++) {
       html += "<li>" + esc(stem.growthNeeds[i]) + "</li>";
     }
-    return html + "</ul>";
+    return html + "</ul>" + srcLine(stem.sources, stem.unverified, stem.unverifiedSourceIds);
   }
+
+  // ---------------------------------------------------------------------------
+  // 4) 확장 섹션 (오행 지형도 / 천간 관계 / 변화 감지 / 시간축 / 대운 / 안심법)
+  // ---------------------------------------------------------------------------
+
+  /* ① 오행 지형도: 8글자 집계, 일간 대비 상태 판정, dayStemVsElements 문장 */
+  function elementTerrainSection(chart) {
+    var states = VIEW.elementStates(chart);
+    var html = secOpen("오행 지형도");
+    html += '<p class="lead-line">여덟 글자를 오행별로 세어 ' + esc(BADGE[chart.dayMaster.hanja].name) +
+      "(" + esc(chart.dayMaster.hanja) + ")을 기준으로 판정합니다. " +
+      "세 글자 이상이면 과다, 없으면 과소로 봅니다.</p>";
+    html += '<div class="estate">';
+    for (var i = 0; i < states.length; i++) {
+      var s = states[i];
+      var dots = "";
+      var shown = Math.min(s.count, 5);
+      for (var d = 0; d < shown; d++) dots += '<span class="edot on"></span>';
+      if (s.count > 5) dots += '<span class="more-count">+' + (s.count - 5) + "</span>";
+      if (!dots) dots = '<span class="none-count">0</span>';
+      html += '<div class="estate-row">' +
+        '<span class="estate-hanja">' + esc(s.hanja) + "</span>" +
+        '<span class="estate-count" aria-label="' + esc(s.element) + " " + s.count + '개">' + dots + "</span>" +
+        '<span class="state-chip state-' + s.status + '">' + esc(STATUS_LABEL[s.status]) + "</span>" +
+        (s.isDayMaster ? '<span class="dm-chip">일간</span>' : "") +
+        "</div>";
+      html += '<p class="estate-role">' + esc(s.role) + " · " + esc(s.roleText) + "</p>";
+      html += '<p class="estate-text">' + esc(s.text) + "</p>";
+      html += srcLine(s.sources, s.unverified, s.unverifiedSourceIds);
+    }
+    html += "</div>";
+    html += '<p class="gov">역할 범례 · ' +
+      esc("비동=" + VIEW.ROLE_VOCAB["비동"]) + " / " + esc("식상=" + VIEW.ROLE_VOCAB["식상"]) + " / " +
+      esc("재성=" + VIEW.ROLE_VOCAB["재성"]) + " / " + esc("관성=" + VIEW.ROLE_VOCAB["관성"]) + " / " +
+      esc("인성=" + VIEW.ROLE_VOCAB["인성"]) + "</p>";
+    return html + "</section>";
+  }
+
+  /* ② 내 천간들과의 관계: 년간·월간·시간 × 일간 (일지 지지는 천간 관계가 아님) */
+  function stemRelationsSection(chart) {
+    var rels = VIEW.stemRelations(chart);
+    var html = secOpen("내 천간들과의 관계");
+    html += '<p class="lead-line">일간 ' + esc(chart.dayMaster.hanja) + "(" + esc(chart.dayMaster.hangul) +
+      ")을 기준으로, 나머지 세 기둥의 천간이 어떻게 작동하는지 읽습니다. " +
+      "일지 지지는 천간 관계가 아니어서 여기서 다루지 않습니다.</p>";
+    html += '<div class="rel-list">';
+    for (var i = 0; i < rels.length; i++) {
+      var r = rels[i];
+      if (r.excluded) {
+        html += '<div class="rel-item rel-off"><p class="rel-pos">' + esc(r.position) + "</p>" +
+          '<p class="off-note">시각 미상으로 제외</p></div>';
+        continue;
+      }
+      html += '<div class="rel-item"><p class="rel-pos">' + esc(r.position) + " " +
+        '<span class="rel-hanja">' + esc(r.hanja) + "</span> " + esc(r.hangul) + "</p>" +
+        '<p class="rel-image">' + esc(r.image) + "</p>" +
+        '<p class="estate-text">' + esc(r.rule) + "</p>" +
+        srcLine(r.sources, false, null) +
+        "</div>";
+    }
+    return html + "</div></section>";
+  }
+
+  /* ③ 원국 변화 감지: 천간 5쌍 합 + 지지 충·삼합·방합·육합 */
+  function dynamicsSection(chart) {
+    var g = VIEW.BRANCH_DYN.general;
+    var combos = VIEW.stemCombos(chart);
+    var branches = VIEW.branchDynamics(chart);
+    var html = secOpen("원국 변화 감지");
+    html += '<div class="dyn-intro"><p>' + esc(g.stemChungNote) + "</p>" +
+      '<p class="gov">' + esc("충 발동 기준: " + g.triggerRule) + "</p>" +
+      srcLine(g.sources, false, null) + "</div>";
+
+    html += '<p class="sub-label">천간 합</p>';
+    var formed = [];
+    var blocked = [];
+    for (var i = 0; i < combos.length; i++) (combos[i].status === "formed" ? formed : blocked).push(combos[i]);
+    if (!combos.length) {
+      html += '<p class="neutral-note">네 천간 가운데 합 쌍이 없습니다.</p>';
+    }
+    for (var f = 0; f < formed.length; f++) {
+      var c = formed[f].combo;
+      html += '<div class="dyn-item"><p class="dyn-head"><span class="dyn-kind">합 성립</span> ' +
+        esc(c.pairing) + " 합 · 만들어지는 오행 " + esc(c.resultElement) +
+        (formed[f].involvesDayMaster ? ' <span class="dm-chip">일간 묶임</span>' : "") + "</p>" +
+        '<p class="estate-text">' + esc(c.nature) + "</p>" +
+        '<p class="estate-text">' + esc("변화 원리: " + c.transformationRule) + "</p>" +
+        '<p class="estate-text">' + esc("끌어옴: " + c.pull.core) + "</p>" +
+        '<p class="gov">' + esc("뿌리 조건: " + c.pull.rootRule) + "</p>" +
+        '<p class="gov">' + esc(c.pull.weakPull) + "</p>" +
+        '<ul class="traits small"><li>' + esc("합이 풀리는 길: " + c.releaseRules.join(" / ")) + "</li></ul>" +
+        srcLine(c.sources, c.pull.unverified, c.pull.unverifiedSourceIds) + "</div>";
+    }
+    for (var b = 0; b < blocked.length; b++) {
+      var cb = blocked[b];
+      var cr02 = null;
+      for (var r = 0; r < VIEW.COMBO_RATIO_RULES.length; r++) {
+        if (VIEW.COMBO_RATIO_RULES[r].id === "CR02") cr02 = VIEW.COMBO_RATIO_RULES[r];
+      }
+      html += '<div class="dyn-item dyn-blocked"><p class="dyn-head"><span class="dyn-kind">비율 미성립</span> ' +
+        esc(cb.combo.pairing) + " · 천간 비율 " + esc(cb.ratio) + "</p>" +
+        '<p class="estate-text">' + esc(cr02 ? cr02.rule + ". " + cr02.detail : "원국에서는 1:1로만 합이 성립합니다.") + "</p>" +
+        (cr02 ? srcLine(cr02.sources, false, null) : "") + "</div>";
+    }
+
+    html += '<p class="sub-label">지지 변화</p>';
+    if (!branches.length) {
+      html += '<p class="neutral-note">이 명조는 원국에서 합과 충 없이 안정 구조입니다.</p>';
+    }
+    for (var k = 0; k < branches.length; k++) {
+      var d = branches[k];
+      html += '<div class="dyn-item"><p class="dyn-head"><span class="dyn-kind">' +
+        esc(KIND_LABEL[d.kind] || d.kind) + "</span> " + esc(d.label) +
+        " · " + esc(d.present.join("")) + "</p>" +
+        '<p class="estate-text">' + esc(d.text) + "</p>" +
+        srcLine(d.sources, d.unverified, d.unverifiedSourceIds) + "</div>";
+    }
+    html += '<p class="gov">' + esc("육합 실사용 쌍 안내: " + VIEW.BRANCH_DYN.yukhabs.rule) + "</p>";
+
+    html += '<p class="sub-label">합 비율 규칙 (운 상호작용 포함)</p><ul class="traits small">';
+    for (var q = 0; q < VIEW.COMBO_RATIO_RULES.length; q++) {
+      var cr = VIEW.COMBO_RATIO_RULES[q];
+      html += "<li>" + esc(cr.id + " " + cr.rule + ". " + cr.detail) + " " +
+        '<span class="src-inline">근거 ' + esc(cr.sources.join(", ")) + "</span></li>";
+    }
+    return html + "</ul></section>";
+  }
+
+  var KIND_LABEL = {
+    chung: "충", sanhap: "삼합", banhap: "반합", gonghyeop: "공협", banghap: "방합", yukhap: "육합"
+  };
+
+  /* ④ 기둥 시간축: pillarRoles (근거 regions.json) */
+  function pillarRolesSection(chart) {
+    var noHour = chart.mode === "noHour";
+    var roles = VIEW.PILLAR_ROLES;
+    var html = secOpen("기둥 시간축");
+    html += '<p class="lead-line">네 기둥은 각각 인생 구간을 나타냅니다. 앞 기둥일수록 이른 시기입니다.</p>';
+    html += '<div class="role-list">';
+    var posMap = { "년주": "年 연간", "월주": "月 월간", "일주": "日 일주·일지", "시주": "時 시주" };
+    for (var i = 0; i < roles.length; i++) {
+      var role = roles[i];
+      var off = noHour && role.pillar === "시주";
+      html += '<div class="role-block' + (off ? " role-off" : "") + '">' +
+        '<p class="role-head">' + esc(posMap[role.pillar] || role.pillar) +
+        '<span class="role-years">' + esc(role.years + " " + role.lifeStage) + "</span>" +
+        (off ? '<span class="state-chip state-off">제외</span>' : "") + "</p>" +
+        '<p class="role-line"><span class="role-k">무대</span>' + esc(role.domain) + "</p>" +
+        '<p class="role-line"><span class="role-k">인물</span>' + esc(role.personType) + "</p>" +
+        '<p class="role-text">' + esc(role.detail) + "</p>" +
+        (off
+          ? '<p class="gov">' + esc(VIEW.NO_HOUR_NOTE.rule) + "</p>" + srcLine(VIEW.NO_HOUR_NOTE.sources, false, null)
+          : srcLine(role.sources, false, null)) +
+        "</div>";
+    }
+    return html + "</div></section>";
+  }
+
+  /* ⑤ 대운 타임라인: 성별 선택 시 10구간 표 + 현재 구간 강조 */
+  function luckSection(chart, gender) {
+    var html = secOpen("10년 흐름");
+    var luck = VIEW.luckPillars(chart, gender);
+    if (!luck) {
+      html += '<p class="neutral-note">성별을 알려주면 10년 흐름도 함께 볼 수 있어요. ' +
+        "입력 화면의 성별은 이 계산에만 쓰입니다.</p>";
+      return html + "</section>";
+    }
+    var dirText = luck.forward ? "순행" : "역행";
+    html += '<p class="lead-line">월주 ' + esc(luck.monthPillar) + "에서 시작하는 " + esc(dirText) +
+      " 대운입니다. " + esc(luck.startAge) + "세부터 열 구간이 열립니다.</p>";
+    html += '<table class="registry luck-table"><caption>대운 10구간 · 나이는 만 나이 기준</caption><thead><tr>' +
+      '<th class="k">구간</th><th class="k">나이</th><th class="k">간지</th></tr></thead><tbody>';
+    for (var i = 0; i < luck.rows.length; i++) {
+      var row = luck.rows[i];
+      var now = i === luck.currentIndex;
+      html += "<tr" + (now ? ' class="luck-now"' : "") + "><th class=\"k\">" + (i + 1) + "구간</th>" +
+        '<td class="v">' + row.fromAge + "세부터 " + row.toAge + "세까지</td>" +
+        '<td class="v luck-ganji">' + esc(row.korean) + (now ? " · 지금" : "") + "</td></tr>";
+    }
+    html += "</tbody></table>";
+    if (luck.currentIndex === -1) {
+      html += '<p class="gov">첫 대운 시작 전입니다. ' + luck.startAge + "세부터 첫 구간이 열립니다.</p>";
+    }
+    html += '<p class="src-line">근거: 월주 기준 순행/역행 전개 · 대운수 = 출생에서 인접 절까지 일수 ÷ 3 (역법 라이브러리 manseryeok)</p>';
+    if (chart.mode === "noHour") {
+      html += '<p class="gov">시각 미상은 정오 가정으로 계산되어 대운 시작 나이에 오차가 있을 수 있습니다.</p>';
+    }
+    return html + "</section>";
+  }
+
+  /* ⑦ 안심법 마음 읽기: 정확 일치 조건만 */
+  function ansimSection(chart) {
+    var matched = VIEW.matchAnsim(chart);
+    if (!matched.length) return "";
+    var html = secOpen("마음 읽기");
+    html += '<p class="lead-line">명조 구성으로 확정되는 조건에만 근거한 읽기입니다. ' +
+      "두 사람 조건과 운 국면 조건은 제외합니다.</p>";
+    for (var i = 0; i < matched.length; i++) {
+      var p = matched[i];
+      html += '<div class="ansim-card"><p class="dyn-head"><span class="dyn-kind">' + esc(p.id) +
+        '</span> ' + esc(p.condition) + "</p>" +
+        '<p class="ansim-mind">' + esc(p.mind) + "</p>" +
+        '<p class="estate-text">' + esc(p.interpretation) + "</p>" +
+        srcLine(p.sources, p.unverified, p.unverifiedSourceIds) + "</div>";
+    }
+    return html + "</section>";
+  }
+
+  // ---------------------------------------------------------------------------
+  // 5) 관계 읽기 (실험 기능): 상대 생년월일 → 두 일간 합 · 관계 규칙 · 오행 보완
+  // ---------------------------------------------------------------------------
+
+  function relationSection() {
+    var html = secOpen("관계 읽기");
+    html += '<p class="exp-chip">실험 기능</p>';
+    html += '<p class="lead-line">상대 생년월일을 넣으면 두 일간의 관계를 읽어줍니다. ' +
+      "상대 생년월일은 화면에서만 쓰이며 저장하지 않습니다.</p>";
+    html += '<form id="rel-form" class="form rel-form" novalidate>' +
+      '<div class="date-row" role="group" aria-label="상대 생년월일">' +
+      '<div class="date-cell"><label for="f-p-year">상대 연도</label>' +
+      '<input id="f-p-year" type="text" inputmode="numeric" maxlength="4" placeholder="1990"></div>' +
+      '<div class="date-cell"><label for="f-p-month">월</label>' +
+      '<input id="f-p-month" type="text" inputmode="numeric" maxlength="2" placeholder="08"></div>' +
+      '<div class="date-cell"><label for="f-p-day">일</label>' +
+      '<input id="f-p-day" type="text" inputmode="numeric" maxlength="2" placeholder="15"></div>' +
+      "</div>" +
+      '<p class="error" id="rel-error" hidden></p>' +
+      '<button type="submit" class="cta cta-ghost">상대와 읽기</button></form>' +
+      '<div id="rel-result"></div>';
+    return html + "</section>";
+  }
+
+  function wireRelationForm(chart) {
+    var relForm = document.getElementById("rel-form");
+    if (!relForm) return;
+    relForm.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var errEl = document.getElementById("rel-error");
+      var outEl = document.getElementById("rel-result");
+      errEl.hidden = true;
+      var y = document.getElementById("f-p-year").value.trim();
+      var m = document.getElementById("f-p-month").value.trim();
+      var d = document.getElementById("f-p-day").value.trim();
+      if (!/^\d{4}$/.test(y) || Number(y) < 1900) {
+        showError(errEl, "상대 연도는 1900년 이후 4자리로 입력해주세요.");
+        return;
+      }
+      var dateISO = y + "-" + ("0" + m).slice(-2) + "-" + ("0" + d).slice(-2);
+      var partner;
+      try {
+        /* 상대 시각 미입력: 일간 판정은 당일 정오 가정으로 안정적이다 */
+        partner = CORE.computeChart({ dateISO: dateISO, timeISO: null });
+      } catch (err) {
+        showError(errEl, "확인해주세요.", err && err.message ? err.message : "상대 생년월일 계산에 실패했습니다.");
+        return;
+      }
+      outEl.innerHTML = relationResultHTML(chart, partner);
+    });
+  }
+
+  function relationResultHTML(me, partner) {
+    var myDm = me.dayMaster;
+    var pDm = partner.dayMaster;
+    var combo = VIEW.dayMasterCombo(myDm.hanja, pDm.hanja);
+    var rel = VIEW.DAY_VS_STEMS[myDm.hanja][pDm.hanja];
+    var fill = VIEW.fillCheck(VIEW.elementCounts(me), VIEW.elementCounts(partner));
+    var html = "";
+
+    /* 상대 일간 요약 */
+    html += '<div class="partner-card"><p class="rel-pos">상대 일간</p>' +
+      '<p class="partner-dm"><span class="rel-hanja">' + esc(pDm.hanja) + "</span> " +
+      esc(pDm.hangul + pDm.element) + " · " + esc(BADGE[pDm.hanja].name) + "</p>" +
+      '<p class="gov">상대 여섯 글자 ' + esc(partner.fourPillarsHanja) +
+      " · 시각 미입력이라 정오 가정</p></div>";
+
+    /* ① 두 일간 합 쌍 여부 */
+    if (combo) {
+      html += '<div class="rel-item"><p class="dyn-head"><span class="dyn-kind">일간 합</span> ' +
+        esc(combo.pairing) + " · 만들어지는 오행 " + esc(combo.resultElement) + "</p>" +
+        '<p class="estate-text">' + esc(combo.nature) + "</p>" +
+        srcLine(combo.sources, false, null) + "</div>";
+    } else {
+      html += '<div class="rel-item"><p class="dyn-head"><span class="dyn-kind">일간 합</span> 해당 없음</p>' +
+        '<p class="estate-text">두 일간 ' + esc(myDm.hanja + ", " + pDm.hanja) +
+        "은(는) 다섯 천간합 쌍에 해당하지 않습니다.</p></div>";
+    }
+
+    /* ② 내 일간 × 상대 일간 관계 규칙 */
+    html += '<div class="rel-item"><p class="rel-image">' + esc(rel.image) + "</p>" +
+      '<p class="estate-text">' + esc(rel.rule) + "</p>" +
+      srcLine(rel.sources, false, null) + "</div>";
+
+    /* ③ 오행 보완 (태극성취 구조 · 근거 T08-001, T08-002) */
+    var fillText;
+    if (!fill.absent.length) {
+      fillText = "내 여덟 글자에 비어 있는 오행이 없어, 보완 판정 대상이 아닙니다.";
+    } else if (fill.filled.length) {
+      var parts = [];
+      for (var i = 0; i < fill.filled.length; i++) {
+        var kor = fill.filled[i];
+        parts.push(CORE.ELEMENT_HANJA[kor] + "(" + kor + ")");
+      }
+      fillText = "내 패턴에 없는 " + parts.join(", ") + "을 상대 여섯 글자가 채워줍니다. " +
+        "서로의 빈 오행을 메우는 구조입니다.";
+    } else {
+      fillText = "내가 부족한 오행은 " + fill.absent.join(", ") +
+        "이지만, 상대 여섯 글자에는 이 오행이 없습니다.";
+    }
+    html += '<div class="rel-item"><p class="dyn-head"><span class="dyn-kind">오행 보완</span> 태극성취 구조</p>' +
+      '<p class="estate-text">' + esc(fillText) + "</p>" +
+      '<p class="gov">근거 T08-001, T08-002 · 태극성취론을 필요한 오행을 채워가는 과정으로 정의한 판정 문서 기준</p></div>';
+
+    return html;
+  }
+
+  // ---------------------------------------------------------------------------
+  // 6) 고지 · 이메일 (유료 컷 제거, {{PRICE}} 토큰 이 화면에서 제거)
+  // ---------------------------------------------------------------------------
 
   function policyNotice() {
     return '<div class="notice"><p>' + esc(POLICY.boundary) + "</p>" +
@@ -298,13 +661,13 @@
   function emailBlock() {
     if (emailDone()) {
       return '<section class="cut"><p class="email-done">알림 신청이 접수되어 있습니다.</p>' +
-        '<p class="helper">전체 리딩 · {{PRICE}}, 1회 결제, 구독 없음</p></section>';
+        '<p class="helper">더 깊은 읽기는 준비 중입니다. 준비되면 신청한 주소로 안내합니다.</p></section>';
     }
     return '<section class="cut">' +
       '<p class="sec-label">결과 받아두기</p>' +
       '<h2>전체 리딩이 준비되면 가장 먼저 알려드립니다<span class="accent">.</span></h2>' +
       '<p class="lead">지금 화면을 닫아도, 이 이메일 하나로 다시 찾아올 수 있습니다.</p>' +
-      '<p class="priceline">전체 리딩 · {{PRICE}}, 1회 결제, 구독 없음</p>' +
+      '<p class="more-note">더 깊은 읽기는 준비 중입니다.</p>' +
       '<form data-email-form action="{{FORM_ENDPOINT}}" method="post">' +
       '<input type="hidden" name="src" value="' + esc(src) + '">' +
       '<input type="hidden" name="page" value="chart">' +
@@ -317,7 +680,11 @@
       '<p class="helper">이메일은 안내 발송에만 쓰입니다.</p></section>';
   }
 
-  function render(chart) {
+  // ---------------------------------------------------------------------------
+  // 7) 렌더
+  // ---------------------------------------------------------------------------
+
+  function render(chart, gender) {
     var noHour = chart.mode === "noHour";
     var dm = chart.dayMaster;
     var badge = BADGE[dm.hanja];
@@ -360,6 +727,13 @@
     html += '<section class="sec"><p class="sec-label">계산 근거</p>' + evidenceTable(chart) + "</section>";
     html += '<section class="sec"><p class="sec-label">물상 성향</p>' + traitsSection(stem) + "</section>";
     html += '<section class="sec growth"><p class="sec-label">성장 조건</p>' + growthSection(stem) + "</section>";
+    html += elementTerrainSection(chart);
+    html += stemRelationsSection(chart);
+    html += dynamicsSection(chart);
+    html += pillarRolesSection(chart);
+    html += luckSection(chart, gender);
+    html += ansimSection(chart);
+    html += relationSection();
     html += policyNotice();
     html += emailBlock();
     html += '<nav class="foot-links" style="margin-top: 1.25rem;"><a href="chart.html">다시 입력하기</a><a href="index.html">처음으로</a></nav>';
@@ -369,10 +743,11 @@
     resultSec.hidden = false;
     resultSec.scrollIntoView({ behavior: "smooth", block: "start" });
     wireEmailForm(resultSec.querySelector("form[data-email-form]"));
+    wireRelationForm(chart);
   }
 
   // ---------------------------------------------------------------------------
-  // 4) 이메일 폼: {{FORM_ENDPOINT}} 미설정 시 mailto 폴백
+  // 8) 이메일 폼: {{FORM_ENDPOINT}} 미설정 시 mailto 폴백
   // ---------------------------------------------------------------------------
 
   function wireEmailForm(form2) {
