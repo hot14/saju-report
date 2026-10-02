@@ -220,13 +220,17 @@ const c41 = Seoul('1988-07-01', '12:00', { tzOffsetMinutes: 600 });
 check('4-1a KDT(+600) 해석 instant', c41.instantUTC, '1988-07-01T02:00:00.000Z');
 check('4-1b KDT 해석 4주', c41.fourPillarsHanja, '戊辰 戊午 丁巳 乙巳');
 
-// 4-2. 같은 벽시시각을 KST(+540)로 해석하면 순간이 60분 늦고 간지도 달라진다
-//   (서머타임 기록을 표준시로 잘못 해석하는 경우: 오프셋 명시의 중요성 시연).
+// 4-2. 1988-07-01 12:00은 한국 서머타임 구간이다: 기록된 시계 시각을 엔진이 자동으로
+//   표준시로 되돌려 계산한다(순간 02:00Z). 명시적으로 +600을 넣은 c41과 동일 순간이어야 하고,
+//   옵션을 끄면 구동작(KST 해석)으로 돌아간다.
 const c42 = Seoul('1988-07-01', '12:00', { tzOffsetMinutes: 540 });
-check('4-2a KST(+540) 해석 instant', c42.instantUTC, '1988-07-01T03:00:00.000Z');
-check('4-2b 시주가 한 시진 밀림', c42.hourPillar.hanja, '丙午');
-checkTrue('4-2c 두 해석의 instant 차 60분',
-  (new Date(c42.instantUTC) - new Date(c41.instantUTC)) === 3600000);
+check('4-2a 서머타임 자동 적용 instant', c42.instantUTC, '1988-07-01T02:00:00.000Z');
+check('4-2b 자동 적용 시주', c42.hourPillar.hanja, c41.hourPillar.hanja);
+checkTrue('4-2c 명시 오프셋(+600)과 동일 순간',
+  (new Date(c42.instantUTC) - new Date(c41.instantUTC)) === 0);
+checkTrue('4-2d dstApplied 기록', c42.dst.applied === true && c42.dst.offsetMinutes === 60);
+checkTrue('4-2e 옵션 off 시 구동작(순간 03:00Z)',
+  Seoul('1988-07-01', '12:00', { tzOffsetMinutes: 540, applyHistoricalDst: false }).instantUTC === '1988-07-01T03:00:00.000Z');
 
 // 4-3. 뉴욕 2024 서머타임 시작일(2024-03-10 02:00 EST → 03:00 EDT, 02:xx대 없음).
 //   01:30은 EST(-300)가 유효.

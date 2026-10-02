@@ -158,6 +158,10 @@ function normalizeInput(raw) {
     throw new EngineError(`dayBoundary는 'midnight'|'jasi'|'splitJasi' 중 하나여야 합니다: ${JSON.stringify(dayBoundary)}`);
   }
   const trueSolarTime = raw.trueSolarTime === undefined ? true : Boolean(raw.trueSolarTime);
+  const applyHistoricalDst = raw.applyHistoricalDst === undefined ? true : Boolean(raw.applyHistoricalDst);
+  if (typeof raw.applyHistoricalDst !== "undefined" && typeof raw.applyHistoricalDst !== "boolean") {
+    throw new EngineError("applyHistoricalDst는 불리언이어야 합니다.");
+  }
   return {
     date,
     time,
@@ -166,6 +170,7 @@ function normalizeInput(raw) {
     tzOffsetMinutes,
     dayBoundary,
     trueSolarTime,
+    applyHistoricalDst,
   };
 }
 
@@ -288,6 +293,36 @@ function round2(x) {
 }
 
 // ---------------------------------------------------------------------------
+// 한국 역사 서머타임 (표준시령대 기록 기준 12구간, KST 민간시 기준)
+// ---------------------------------------------------------------------------
+
+/** 서머타임 구간표. start는 민간시 기준 시작 순간(포함), end는 종료 순간(제외). */
+const KOREA_HISTORICAL_DST = [
+  { start: [1948, 6, 1, 0, 0], end: [1948, 9, 13, 0, 0] },
+  { start: [1949, 4, 3, 0, 0], end: [1949, 9, 11, 0, 0] },
+  { start: [1950, 4, 1, 0, 0], end: [1950, 9, 10, 0, 0] },
+  { start: [1951, 5, 6, 0, 0], end: [1951, 9, 9, 0, 0] },
+  { start: [1955, 5, 5, 0, 0], end: [1955, 9, 9, 0, 0] },
+  { start: [1956, 5, 20, 0, 0], end: [1956, 9, 30, 0, 0] },
+  { start: [1957, 5, 5, 0, 0], end: [1957, 9, 22, 0, 0] },
+  { start: [1958, 5, 4, 0, 0], end: [1958, 9, 21, 0, 0] },
+  { start: [1959, 5, 3, 0, 0], end: [1959, 9, 20, 0, 0] },
+  { start: [1960, 5, 1, 0, 0], end: [1960, 9, 18, 0, 0] },
+  { start: [1987, 5, 10, 2, 0], end: [1987, 10, 11, 3, 0] },
+  { start: [1988, 5, 8, 2, 0], end: [1988, 10, 9, 3, 0] },
+].map((iv) => ({
+  startMs: Date.UTC(iv.start[0], iv.start[1] - 1, iv.start[2], iv.start[3], iv.start[4]),
+  endMs: Date.UTC(iv.end[0], iv.end[1] - 1, iv.end[2], iv.end[3], iv.end[4]),
+  label: `${iv.start[0]}-${String(iv.start[1]).padStart(2, "0")}-${String(iv.start[2]).padStart(2, "0")} ${String(iv.start[3]).padStart(2, "0")}:00 ~ ${iv.end[0]}-${String(iv.end[1]).padStart(2, "0")}-${String(iv.end[2]).padStart(2, "0")} ${String(iv.end[3]).padStart(2, "0")}:00`,
+}));
+
+/** KST 민간시가 서머타임 구간에 있으면 해당 구간을 돌려준다(시작 포함·종료 제외). */
+function koreaDstInterval(year, month, day, hour, minute) {
+  const ms = Date.UTC(year, month - 1, day, hour, minute);
+  return KOREA_HISTORICAL_DST.find((iv) => ms >= iv.startMs && ms < iv.endMs) || null;
+}
+
+// ---------------------------------------------------------------------------
 // 진입점
 // ---------------------------------------------------------------------------
 
@@ -312,7 +347,19 @@ function computeChart(raw) {
   const wallHour = hasTime ? input.time.hour : NOON_ASSUMPTION.hour;
   const wallMinute = hasTime ? input.time.minute : NOON_ASSUMPTION.minute;
   const wallMs = Date.UTC(input.date.year, input.date.month - 1, input.date.day, wallHour, wallMinute, 0);
-  const instantUTCms = wallMs - input.tzOffsetMinutes * 60000;
+
+  // 1.5) 한국 역사 서머타임 자동 적용. 기록된 벽시시각이 서머타임 시계(표준시+60분)라면
+  // 진짜 순간은 60분 앞선다. KST 기본 오프셋(540) 입력일 때만 한국 표를 적용하고,
+  // 호출자가 명시적 오프셋(해외 등)을 넣으면 그것을 그대로 신뢰한다.
+  let dst = { applied: false, offsetMinutes: 0, interval: null };
+  if (input.applyHistoricalDst && input.tzOffsetMinutes === DEFAULT_TZ_OFFSET_MINUTES) {
+    const iv = koreaDstInterval(input.date.year, input.date.month, input.date.day, wallHour, wallMinute);
+    if (iv) dst = { applied: true, offsetMinutes: 60, interval: iv.label };
+  }
+  const instantUTCms = wallMs - input.tzOffsetMinutes * 60000 - dst.offsetMinutes * 60000;
+  const dstNote = dst.applied
+    ? `출생 기록 시각이 한국 서머타임 구간(${dst.interval})에 있어 표준시로 60분 되돌려 계산했다.`
+    : null;
 
   // 2) 라이브러리 전달용 KST 표준시 필드. applyHistoricalDst는 false 고정:
   //    해석은 이미 엔진의 명시적 오프셋으로 끝났으므로 라이브러리가 한국 과거
@@ -337,7 +384,8 @@ function computeChart(raw) {
   const totalCorrectionMinutes = longitudeMinutes + eotMinutes - tzDeltaMinutes;
   const apparentMs = instantUTCms + (input.longitude * 4 + eotMinutes) * 60000;
   // 진태양시 시각: '당일 0시 기준 경과 분'(0~1439) + 시계 표기 + 날짜 이동.
-  const wallMinutesOfDay = wallHour * 60 + wallMinute;
+  // 서머타임이 적용된 기록이면 벽시시각 자체가 60분 빠르므로 표준 벽시 분으로 되돌린 뒤 보정한다.
+  const wallMinutesOfDay = wallHour * 60 + wallMinute - dst.offsetMinutes;
   const trueSolarTimeMinutes = ((Math.round(wallMinutesOfDay + totalCorrectionMinutes) % 1440) + 1440) % 1440;
   const dayShift = Math.floor((wallMinutesOfDay + totalCorrectionMinutes) / 1440);
 
@@ -366,14 +414,17 @@ function computeChart(raw) {
       tzOffsetMinutes: input.tzOffsetMinutes,
       dayBoundary: input.dayBoundary,
       trueSolarTime: input.trueSolarTime,
+      applyHistoricalDst: input.applyHistoricalDst,
       calendar: "gregorian",
     },
     mode: hasTime ? "full" : "noHour",
+    dst,
     assumptions: hasTime
-      ? []
+      ? (dst.applied ? [dstNote] : [])
       : [
           `출생시각 미상: 연·월·일주는 당일 ${NOON_ASSUMPTION.hour.toString().padStart(2, "0")}:${NOON_ASSUMPTION.minute.toString().padStart(2, "0")}(입력 시간대) 가정으로 계산했다. 정오는 진태양시 보정을 적용해도 같은 날 안에 머무는 안전 지점이다.`,
           "시주는 제공하지 않는다(hourPillar=null).",
+          ...(dst.applied ? [dstNote] : []),
         ],
     instantUTC: new Date(instantUTCms).toISOString(),
     /** 진태양시 시각: 당일 0시 기준 경과 분(0~1439). branch = floor(((x+60)%1440)/120). */
@@ -387,7 +438,13 @@ function computeChart(raw) {
       tzOffsetMinutes: input.tzOffsetMinutes,
       tzDeltaFromMeridianMinutes: round2(tzDeltaMinutes),
       totalCorrectionMinutes: round2(totalCorrectionMinutes),
-      formula: "total = (longitude - 135) * 4 + equationOfTime - (tzOffsetMinutes - 540)",
+      dstApplied: dst.applied,
+      dstOffsetMinutes: dst.offsetMinutes,
+      dstInterval: dst.interval,
+      dstNote,
+      formula: dst.applied
+        ? "total = (longitude - 135) * 4 + equationOfTime - (tzOffsetMinutes - 540), 서머타임 60분은 벽시시각에서 선반영"
+        : "total = (longitude - 135) * 4 + equationOfTime - (tzOffsetMinutes - 540)",
     },
     solarTermInfo,
     yearPillar: pillars.year,
