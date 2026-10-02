@@ -1,14 +1,17 @@
 {
   "name": "saju-engine",
   "version": "0.1.0",
-  "description": "SAJU deterministic saju calculation engine (manseryeok based)",
+  "description": "SAJU deterministic saju (four-pillar) calculation engine. Pure calendrical computation via manseryeok; no interpretation logic, no LLM in the calculation path.",
   "main": "src/engine.cjs",
+  "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "test": "node test/golden.cjs",
-    "check": "node --check src/engine.cjs && node --check test/golden.cjs"
+    "check": "node --check src/engine.cjs && node --check test/golden.cjs && echo SYNTAX_OK"
   },
-  "license": "UNLICENSED",
-  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "manseryeok": "^2.0.0"
   }

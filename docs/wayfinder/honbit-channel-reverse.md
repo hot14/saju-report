@@ -45,8 +45,8 @@
 
 `data/idols.json`: 7,578행 = 842명 × 9언어. 아이돌별 행 키: slug, lang, name, birthDate, group, groupKo, dayMaster, dayMasterName, element, zodiac, dist(오행 분포).
 
-- URL 패턴: `/{lang}/idol/{영문이름}-{그룹}` (예: `/ko/idol/ahyeon-babymonster`) — `data/pages.json`
-- 타이틀 패턴 (언어별 현지화, 동일 골격): 842/842 페이지가 구분자(— 또는 -) 포함 단일 패턴
+- URL 패턴: `/{lang}/idol/{영문이름}-{그룹}` (예: `/ko/idol/ahyeon-babymonster`, 출처 `data/pages.json`)
+- 타이틀 패턴 (언어별 현지화, 동일 골격): 842/842 페이지가 구분자(엠대시 또는 하이픈) 포함 단일 패턴
   - ko: `아현 사주 — 베이비몬스터 일간·궁합 무료 | 혼빛`
   - en: `Ahyeon Birth Chart & Saju (BABYMONSTER) — Zodiac & Compatibility | Honbit`
   - ja: `Ahyeon 四柱推命・サジュ — BABYMONSTER 日主と相性診断 無料 | Honbit`
@@ -54,7 +54,7 @@
   - (`data/pages.json` title 필드, ahyeon-babymonster 샘플)
 - 메타 디스크립션도 템플릿: "아현 사주 — 일간 乙(木), 목(木) 기운이 2개로 가장 강해요. 베이비몬스터 멤버와 나의 궁합은 상위 몇 %일까? 생일만 넣으면 30초 무료 — 혼빛." (`site/ko/idol/ahyeon-babymonster.html.gz`)
 - 그룹 142개. Solo 25명(3.0%), tripleS 22, SEVENTEEN 13, TREASURE 10, THE BOYZ 10, xikers 10, CRAVITY 9, OH MY GIRL 9, NiziU 9, EXO 9 (`data/idols.json` group 필드 유니크 집계)
-- 출생연도 분포(842명): 2000~04년생 325명(38.6%), 1995~99년생 199명(23.6%), 1990~94년생 133명(15.8%), 2005~09년생 131명(15.6%), 1985~89년생 48명(5.7%), 1980~84년생 6명(0.7%) — 현역 K팝 4~5세대 중심. `data/idols.json` birthDate 집계
+- 출생연도 분포(842명): 2000~04년생 325명(38.6%), 1995~99년생 199명(23.6%), 1990~94년생 133명(15.8%), 2005~09년생 131명(15.6%), 1985~89년생 48명(5.7%), 1980~84년생 6명(0.7%). 현역 K팝 4~5세대 중심. `data/idols.json` birthDate 집계
 - 내부 링크: 아이돌 개인 페이지 1장(`site/ko/idol/ahyeon-babymonster.html.gz`, 302KB)에 총 273개 링크 중 207개가 다른 아이돌 페이지. 아이돌 페이지끼리 메시(mesh)로 연결해 크롤 깊이를 평평하게 만든다. JSON-LD 4블록(Organization+WebSite+WebApplication, Person+MusicArtist, FAQPage, BreadcrumbList), canonical 존재
 - 데이터 정합 주의: pages.json 842명, llms-full.txt "All idols (834)", idol-match 페이지 문구 "830명", llms.txt "830+". 스냅샷 시점(2026-08-30) 사이 소폭 증가. 보고서 인용 시 출처별 수치를 그대로 표기
 
