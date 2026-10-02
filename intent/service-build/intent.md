@@ -1,6 +1,6 @@
 # Intent: SAJU 서비스 구현 완성 (무료 코어 라이브)
 Author: hot14 (프로젝트 오너) + Aside
-Status: draft
+Status: approved
 Date: 2026-10-01
 Wayfinder Map: hot14/saju-report#7 (Wayfinder 지도: SAJU 서비스 구현 완성)
 
@@ -44,5 +44,4 @@ Wayfinder Map: hot14/saju-report#7 (Wayfinder 지도: SAJU 서비스 구현 완�
 
 ## 6. Gate 기록
 
-- Gate 1 (draft): 2026-10-01 Aside 발의. 오너 승인 대기.
-- 승인 시: Status를 approved로 바꾸고 커밋이 승인 기록이 된다.
+- Gate 1 (approved): 2026-10-01 Aside 발의, 2026-10-02 오너 승인("이어서"). 이 커밋이 승인 기록이다.
