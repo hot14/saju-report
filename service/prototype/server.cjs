@@ -12,7 +12,7 @@
  *
  * 출처
  *   디자인: design-ssot/05-handoff/tokens.css v1.0 + HANDOFF.md
- *   카피:   docs/copy-deck-v2-kr.md ({{BRAND}}, {{PRICE}} 토큰 유지)
+ *   카피:   docs/copy-deck-v2-kr.md (SajuRoot, {{PRICE}} 토큰 유지)
  *   엔진:   service/engine/src/engine.cjs (반환 키는 실측으로 확인)
  *   콘텐츠: service/content/stems.json + policy.json
  *
@@ -29,7 +29,7 @@ const { computeChart } = require(path.join(__dirname, "..", "engine", "src", "en
 const CONTENT_DIR = path.join(__dirname, "..", "content");
 const STEMS = JSON.parse(fs.readFileSync(path.join(CONTENT_DIR, "stems.json"), "utf8")).stems;
 const POLICY = JSON.parse(fs.readFileSync(path.join(CONTENT_DIR, "policy.json"), "utf8"));
-const PORT = 4173;
+const PORT = Number(process.env.PORT) || 4173;
 
 // ---------------------------------------------------------------------------
 // 화면 문안 뷰 레이어 (티켓 13 산출물)
@@ -205,9 +205,9 @@ function formPage(state) {
   const err = state.error || null;
   const errDate = err && err.field === "date" ? `<p class="error">${esc(err.message)}${err.detail ? ` <span class="error-detail">${esc(err.detail)}</span>` : ""}</p>` : "";
   const errTime = err && err.field === "time" ? `<p class="error">${esc(err.message)}</p>` : "";
-  return `${head("{{BRAND}} · 나는 무엇으로 이루어져 있는가")}
+  return `${head("SajuRoot · 나는 무엇으로 이루어져 있는가")}
 <body><main class="page">
-<header class="topbar"><span class="fig">도판 02 - 입력</span><span class="wordmark">{{BRAND}}</span></header>
+<header class="topbar"><span class="fig">도판 02 - 입력</span><span class="wordmark">SajuRoot</span></header>
 
 <section class="hero">
   <p class="eyebrow">열 개의 물상</p>
@@ -252,7 +252,7 @@ ${slotStripForm()}
 </form>
 
 <footer class="footer">
-  <p class="attribution">{{BRAND}}는 자기이해를 위한 읽기 도구입니다. 의료, 법률, 금융 조언이 아닙니다.</p>
+  <p class="attribution">SajuRoot는 자기이해를 위한 읽기 도구입니다. 의료, 법률, 금융 조언이 아닙니다.</p>
   <nav class="foot-links"><a href="#" aria-disabled="true">개인정보 처리방침</a><a href="#" aria-disabled="true">이용약관</a></nav>
 </footer>
 </main>
@@ -411,9 +411,9 @@ function resultPage(chart) {
     ? `<p class="gov">이 물상 요약에는 비검증(unverified) 근거가 포함되어 있습니다</p>`
     : "";
 
-  return `${head("{{BRAND}} · 결과 카드")}
+  return `${head("SajuRoot · 결과 카드")}
 <body><main class="page">
-<header class="topbar"><span class="fig">도판 03 - 계산</span><span class="wordmark">{{BRAND}}</span></header>
+<header class="topbar"><span class="fig">도판 03 - 계산</span><span class="wordmark">SajuRoot</span></header>
 
 <section id="analyzing" class="analyzing">
   <p class="cap">${noHour ? "시각 없이 날까지의 글자를 맞추고 있습니다." : "여덟 글자를 맞추고 있습니다."}</p>
@@ -434,7 +434,7 @@ function resultPage(chart) {
   ${noHourNotice}
 
   <article class="pattern-card">
-    <header class="pc-head"><span>${patternId}</span><span class="barcode" aria-hidden="true"></span><span>{{BRAND}}</span></header>
+    <header class="pc-head"><span>${patternId}</span><span class="barcode" aria-hidden="true"></span><span>SajuRoot</span></header>
     <div class="badge-row">
       <div class="badge-id">
         <span class="badge-hanja">${dm.hanja}</span>
