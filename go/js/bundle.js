@@ -2152,6 +2152,10 @@
           throw new EngineError(`dayBoundary\uB294 'midnight'|'jasi'|'splitJasi' \uC911 \uD558\uB098\uC5EC\uC57C \uD569\uB2C8\uB2E4: ${JSON.stringify(dayBoundary)}`);
         }
         const trueSolarTime = raw.trueSolarTime === void 0 ? true : Boolean(raw.trueSolarTime);
+        const applyHistoricalDst = raw.applyHistoricalDst === void 0 ? true : Boolean(raw.applyHistoricalDst);
+        if (typeof raw.applyHistoricalDst !== "undefined" && typeof raw.applyHistoricalDst !== "boolean") {
+          throw new EngineError("applyHistoricalDst\uB294 \uBD88\uB9AC\uC5B8\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4.");
+        }
         return {
           date,
           time,
@@ -2159,7 +2163,8 @@
           longitude,
           tzOffsetMinutes,
           dayBoundary,
-          trueSolarTime
+          trueSolarTime,
+          applyHistoricalDst
         };
       }
       function isoTimeFromUTCms(ms) {
@@ -2246,13 +2251,41 @@
       function round2(x) {
         return Math.round(x * 100) / 100;
       }
+      var KOREA_HISTORICAL_DST = [
+        { start: [1948, 6, 1, 0, 0], end: [1948, 9, 13, 0, 0] },
+        { start: [1949, 4, 3, 0, 0], end: [1949, 9, 11, 0, 0] },
+        { start: [1950, 4, 1, 0, 0], end: [1950, 9, 10, 0, 0] },
+        { start: [1951, 5, 6, 0, 0], end: [1951, 9, 9, 0, 0] },
+        { start: [1955, 5, 5, 0, 0], end: [1955, 9, 9, 0, 0] },
+        { start: [1956, 5, 20, 0, 0], end: [1956, 9, 30, 0, 0] },
+        { start: [1957, 5, 5, 0, 0], end: [1957, 9, 22, 0, 0] },
+        { start: [1958, 5, 4, 0, 0], end: [1958, 9, 21, 0, 0] },
+        { start: [1959, 5, 3, 0, 0], end: [1959, 9, 20, 0, 0] },
+        { start: [1960, 5, 1, 0, 0], end: [1960, 9, 18, 0, 0] },
+        { start: [1987, 5, 10, 2, 0], end: [1987, 10, 11, 3, 0] },
+        { start: [1988, 5, 8, 2, 0], end: [1988, 10, 9, 3, 0] }
+      ].map((iv) => ({
+        startMs: Date.UTC(iv.start[0], iv.start[1] - 1, iv.start[2], iv.start[3], iv.start[4]),
+        endMs: Date.UTC(iv.end[0], iv.end[1] - 1, iv.end[2], iv.end[3], iv.end[4]),
+        label: `${iv.start[0]}-${String(iv.start[1]).padStart(2, "0")}-${String(iv.start[2]).padStart(2, "0")} ${String(iv.start[3]).padStart(2, "0")}:00 ~ ${iv.end[0]}-${String(iv.end[1]).padStart(2, "0")}-${String(iv.end[2]).padStart(2, "0")} ${String(iv.end[3]).padStart(2, "0")}:00`
+      }));
+      function koreaDstInterval(year, month, day, hour, minute) {
+        const ms = Date.UTC(year, month - 1, day, hour, minute);
+        return KOREA_HISTORICAL_DST.find((iv) => ms >= iv.startMs && ms < iv.endMs) || null;
+      }
       function computeChart(raw) {
         const input = normalizeInput(raw);
         const hasTime = input.time !== null;
         const wallHour = hasTime ? input.time.hour : NOON_ASSUMPTION.hour;
         const wallMinute = hasTime ? input.time.minute : NOON_ASSUMPTION.minute;
         const wallMs = Date.UTC(input.date.year, input.date.month - 1, input.date.day, wallHour, wallMinute, 0);
-        const instantUTCms = wallMs - input.tzOffsetMinutes * 6e4;
+        let dst = { applied: false, offsetMinutes: 0, interval: null };
+        if (input.applyHistoricalDst && input.tzOffsetMinutes === DEFAULT_TZ_OFFSET_MINUTES) {
+          const iv = koreaDstInterval(input.date.year, input.date.month, input.date.day, wallHour, wallMinute);
+          if (iv) dst = { applied: true, offsetMinutes: 60, interval: iv.label };
+        }
+        const instantUTCms = wallMs - input.tzOffsetMinutes * 6e4 - dst.offsetMinutes * 6e4;
+        const dstNote = dst.applied ? `\uCD9C\uC0DD \uAE30\uB85D \uC2DC\uAC01\uC774 \uD55C\uAD6D \uC11C\uBA38\uD0C0\uC784 \uAD6C\uAC04(${dst.interval})\uC5D0 \uC788\uC5B4 \uD45C\uC900\uC2DC\uB85C 60\uBD84 \uB418\uB3CC\uB824 \uACC4\uC0B0\uD588\uB2E4.` : null;
         const kst = kstFieldsFromUTCms(instantUTCms);
         const trueSolarOptions = input.trueSolarTime ? { longitude: input.longitude, applyEquationOfTime: true, applyHistoricalDst: false } : { longitude: KST_STANDARD_MERIDIAN_DEG, applyEquationOfTime: false, applyHistoricalDst: false };
         const detail = calculateFourPillars({
@@ -2269,7 +2302,7 @@
         const tzDeltaMinutes = input.trueSolarTime ? input.tzOffsetMinutes - KST_STANDARD_MERIDIAN_DEG * 4 : 0;
         const totalCorrectionMinutes = longitudeMinutes + eotMinutes - tzDeltaMinutes;
         const apparentMs = instantUTCms + (input.longitude * 4 + eotMinutes) * 6e4;
-        const wallMinutesOfDay = wallHour * 60 + wallMinute;
+        const wallMinutesOfDay = wallHour * 60 + wallMinute - dst.offsetMinutes;
         const trueSolarTimeMinutes = (Math.round(wallMinutesOfDay + totalCorrectionMinutes) % 1440 + 1440) % 1440;
         const dayShift = Math.floor((wallMinutesOfDay + totalCorrectionMinutes) / 1440);
         const solarTermInfo = solarTermInfoFor(
@@ -2293,12 +2326,15 @@
             tzOffsetMinutes: input.tzOffsetMinutes,
             dayBoundary: input.dayBoundary,
             trueSolarTime: input.trueSolarTime,
+            applyHistoricalDst: input.applyHistoricalDst,
             calendar: "gregorian"
           },
           mode: hasTime ? "full" : "noHour",
-          assumptions: hasTime ? [] : [
+          dst,
+          assumptions: hasTime ? dst.applied ? [dstNote] : [] : [
             `\uCD9C\uC0DD\uC2DC\uAC01 \uBBF8\uC0C1: \uC5F0\xB7\uC6D4\xB7\uC77C\uC8FC\uB294 \uB2F9\uC77C ${NOON_ASSUMPTION.hour.toString().padStart(2, "0")}:${NOON_ASSUMPTION.minute.toString().padStart(2, "0")}(\uC785\uB825 \uC2DC\uAC04\uB300) \uAC00\uC815\uC73C\uB85C \uACC4\uC0B0\uD588\uB2E4. \uC815\uC624\uB294 \uC9C4\uD0DC\uC591\uC2DC \uBCF4\uC815\uC744 \uC801\uC6A9\uD574\uB3C4 \uAC19\uC740 \uB0A0 \uC548\uC5D0 \uBA38\uBB34\uB294 \uC548\uC804 \uC9C0\uC810\uC774\uB2E4.`,
-            "\uC2DC\uC8FC\uB294 \uC81C\uACF5\uD558\uC9C0 \uC54A\uB294\uB2E4(hourPillar=null)."
+            "\uC2DC\uC8FC\uB294 \uC81C\uACF5\uD558\uC9C0 \uC54A\uB294\uB2E4(hourPillar=null).",
+            ...dst.applied ? [dstNote] : []
           ],
           instantUTC: new Date(instantUTCms).toISOString(),
           /** 진태양시 시각: 당일 0시 기준 경과 분(0~1439). branch = floor(((x+60)%1440)/120). */
@@ -2312,7 +2348,11 @@
             tzOffsetMinutes: input.tzOffsetMinutes,
             tzDeltaFromMeridianMinutes: round2(tzDeltaMinutes),
             totalCorrectionMinutes: round2(totalCorrectionMinutes),
-            formula: "total = (longitude - 135) * 4 + equationOfTime - (tzOffsetMinutes - 540)"
+            dstApplied: dst.applied,
+            dstOffsetMinutes: dst.offsetMinutes,
+            dstInterval: dst.interval,
+            dstNote,
+            formula: dst.applied ? "total = (longitude - 135) * 4 + equationOfTime - (tzOffsetMinutes - 540), \uC11C\uBA38\uD0C0\uC784 60\uBD84\uC740 \uBCBD\uC2DC\uC2DC\uAC01\uC5D0\uC11C \uC120\uBC18\uC601" : "total = (longitude - 135) * 4 + equationOfTime - (tzOffsetMinutes - 540)"
           },
           solarTermInfo,
           yearPillar: pillars.year,
@@ -5474,6 +5514,31 @@
         sources: p.sources || []
       }));
       var ROLE_VOCAB = RELATIONS.meta.roleVocabulary;
+      var ROLE_DISPLAY = {
+        "\uBE44\uB3D9": "\uB098\uC640 \uAC19\uC740 \uC131\uC9C8\uC758 \uAE30\uC6B4",
+        "\uC2DD\uC0C1": "\uD45C\uD604\uACFC \uACB0\uC2E4\uC758 \uAE30\uC6B4",
+        "\uC7AC\uC131": "\uC7AC\uBB3C\xB7\uBC30\uC6B0\uC790\uC758 \uAE30\uC6B4",
+        "\uAD00\uC131": "\uC9C1\uC7A5\uACFC \uC9C8\uC11C\xB7\uBA85\uC608\uC758 \uAE30\uC6B4",
+        "\uC778\uC131": "\uACF5\uBD80\uC640 \uAE30\uC5B5\xB7\uC5B4\uBA38\uB2C8\uC758 \uAE30\uC6B4"
+      };
+      var GLOSSARY = [
+        { term: "\uC77C\uAC04", meaning: "\uB098\uB97C \uB098\uD0C0\uB0B4\uB294 \uC704 \uAE00\uC790" },
+        { term: "\uCC9C\uAC04", meaning: "\uC704 \uAE00\uC790(\uC2DC\uAC04\xB7\uBAA9\uD45C)" },
+        { term: "\uC9C0\uC9C0", meaning: "\uC544\uB798 \uAE00\uC790(\uACF5\uAC04\xB7\uBB34\uB300)" },
+        { term: "\uC6D0\uAD6D", meaning: "\uD0DC\uC5B4\uB09C \uC21C\uAC04\uC758 \uC5EC\uB35F \uAE00\uC790" },
+        { term: "\uD569", meaning: "\uB450 \uAE00\uC790\uAC00 \uBB36\uC5EC \uC131\uC9C8\uC774 \uBC14\uB00C\uB294 \uBCC0\uD654" },
+        { term: "\uCDA9", meaning: "\uBC29\uD5A5\uC774 \uC815\uBA74\uC73C\uB85C \uBD80\uB52A\uD788\uB294 \uBCC0\uD654" },
+        { term: "\uB300\uC6B4", meaning: "10\uB144 \uB2E8\uC704 \uD750\uB984" },
+        { term: "\uC9C4\uD0DC\uC591\uC2DC", meaning: "\uD587\uC591 \uC704\uCE58 \uAE30\uC900 \uC2E4\uC81C \uC2DC\uAC01" },
+        { term: "\uACF5\uB9DD", meaning: "\uBE44\uC5B4 \uC788\uB294 \uAE00\uC790 \uC790\uB9AC" },
+        { term: "\uBE44\uB3D9", meaning: ROLE_VOCAB["\uBE44\uB3D9"] },
+        { term: "\uC2DD\uC0C1", meaning: ROLE_VOCAB["\uC2DD\uC0C1"] },
+        { term: "\uC7AC\uC131", meaning: ROLE_VOCAB["\uC7AC\uC131"] },
+        { term: "\uAD00\uC131", meaning: ROLE_VOCAB["\uAD00\uC131"] },
+        { term: "\uC778\uC131", meaning: ROLE_VOCAB["\uC778\uC131"] },
+        { term: "\uC0BC\uD569\xB7\uBC18\uD569", meaning: "\uC138 \uAE00\uC790\uAC00 \uBAA8\uC5EC(\uB450 \uAE00\uC790\uBA74 \uBC18) \uD55C \uC624\uD589\uC73C\uB85C \uD798\uC774 \uBAA8\uC774\uB294 \uBCC0\uD654" },
+        { term: "\uACF5\uD611", meaning: "\uC911\uC2EC \uAE00\uC790\uAC00 \uC5C6\uC5B4 \uADF8 \uAE00\uC790\uB97C \uB04C\uC5B4\uC624\uB824\uB294 \uB300\uAE30 \uC0C1\uD0DC" }
+      ];
       var STEM_COMBOS = DYNAMICS.heavenlyStemCombos.map((c) => ({
         pairing: c.pairing,
         stems: c.stems.slice(),
@@ -5809,7 +5874,7 @@
         return null;
       }
       globalThis.SajuRoot = {
-        version: "0.2.0",
+        version: "0.3.0",
         computeChart,
         getLuckPillars,
         STEMS,
@@ -5835,6 +5900,8 @@
           NO_HOUR_NOTE,
           ANSIM_PATTERNS,
           ROLE_VOCAB,
+          ROLE_DISPLAY,
+          GLOSSARY,
           DAY_VS_STEMS,
           ELEMENT_VS_DAY
         }
