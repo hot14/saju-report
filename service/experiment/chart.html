@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SajuRoot · 생년월일을 입력해주세요</title>
+<meta name="description" content="생년월일을 넣으면 절기와 진태양시 계산 과정을 거쳐 여덟 글자를 정해줍니다. 무료, 가입 없음.">
+<meta property="og:title" content="SajuRoot · 무료 패턴 계산">
+<meta property="og:description" content="생년월일에서 여덟 글자를 계산하고, 그 계산 과정을 그대로 보여줍니다.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  /* 실험 설정: {{FORM_ENDPOINT}}를 채우기 전에는 폼 제출 시 아래 주소로 메일을
+     보내는 폴백 안내가 표시된다. 실제 수신 주소로 바꿔주세요 (README 참고). */
+  window.SAJU_CONFIG = { mailto: "sajuroot@example.com" };
+</script>
+</head>
+<body>
+<main class="page">
+
+<header class="topbar">
+  <span class="fig">도판 02 - 입력</span>
+  <span class="wordmark">SajuRoot</span>
+</header>
+
+<section id="entry">
+  <h1 class="hero-line" style="font-size: 1.7rem;">생년월일을 입력해주세요<span class="accent">.</span></h1>
+
+  <div class="slotstrip" aria-hidden="true">
+    <div class="slotgroup"><span class="slotlabel">年</span><div class="slots"><span class="slot"></span><span class="slot"></span></div></div>
+    <div class="slotgroup"><span class="slotlabel">月</span><div class="slots"><span class="slot"></span><span class="slot"></span></div></div>
+    <div class="slotgroup"><span class="slotlabel">日</span><div class="slots"><span class="slot"></span><span class="slot"></span></div></div>
+    <div class="slotgroup"><span class="slotlabel">時</span><div class="slots"><span class="slot"></span><span class="slot"></span></div></div>
+  </div>
+  <p class="slotcap">여덟 글자가 이 자리에 채워집니다.</p>
+
+  <form id="chart-form" class="form" novalidate>
+    <div class="field-block">
+      <span class="field-label" id="dob-label">생년월일</span>
+      <p class="helper">양력 기준입니다.</p>
+      <div class="date-row" role="group" aria-labelledby="dob-label">
+        <div class="date-cell">
+          <label for="f-year">연도</label>
+          <input id="f-year" name="year" type="text" inputmode="numeric" maxlength="4" placeholder="1985">
+        </div>
+        <div class="date-cell">
+          <label for="f-month">월</label>
+          <input id="f-month" name="month" type="text" inputmode="numeric" maxlength="2" placeholder="03">
+        </div>
+        <div class="date-cell">
+          <label for="f-day">일</label>
+          <input id="f-day" name="day" type="text" inputmode="numeric" maxlength="2" placeholder="21">
+        </div>
+      </div>
+      <p class="error" id="err-date" hidden></p>
+    </div>
+
+    <div class="field-block">
+      <span class="field-label" id="time-label">출생 시각</span>
+      <p class="helper">가까울수록 정확해집니다.</p>
+      <input id="f-time" name="time" type="time" aria-labelledby="time-label">
+      <label class="check"><input type="checkbox" id="f-unknown"> 시각을 모르겠어요</label>
+      <p class="helper small">몰라도 결과를 받을 수 있습니다. 다루는 주제가 줄어듭니다.</p>
+      <p class="error" id="err-time" hidden></p>
+    </div>
+
+    <p class="privacy">입력값은 판정에만 쓰입니다. 별도 동의 없이 저장하지 않습니다.</p>
+    <button type="submit" class="cta">내 패턴 읽기<span class="accent">.</span></button>
+  </form>
+</section>
+
+<section id="result" class="result" hidden></section>
+
+<footer class="footer">
+  <p class="disclaimer">SajuRoot는 자기이해를 위한 읽기 도구입니다. 의료, 법률, 금융 조언이 아닙니다.</p>
+  <p class="attribution">본 서비스의 해석 원리는 남촌현대물상론 학파의 공개 강의와 출판물에서 공부한 물상 체계를 독자적으로 재구성한 것입니다. 남촌물상역학연구회와 제휴 관계가 없습니다.</p>
+  <nav class="foot-links"><a href="index.html">처음으로</a></nav>
+</footer>
+
+</main>
+
+<script src="js/bundle.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

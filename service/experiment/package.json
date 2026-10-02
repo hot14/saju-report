@@ -1,0 +1,20 @@
+{
+  "name": "sajuroot-experiment",
+  "version": "0.1.0",
+  "description": "SajuRoot 첫 유입 실험 세트 (wayfinder #14). 정적 랜딩 + 무료 차트 + 이메일 수집. GitHub Pages 배포 대상.",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "esbuild entry.cjs --bundle --format=iife --outfile=js/bundle.js",
+    "smoke": "node smoke.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "manseryeok": "^2.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}
