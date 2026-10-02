@@ -1,5 +1,7 @@
 # 물상 배지 영어명 재명명 제안 (U14 · O4 해소)
 
+> 정정(2026-10-02): 수역(壬·癸)의 천간 배정을 원전 기준으로 바로잡았다. 코퍼스 T05-026 "壬水는 큰물", T05-027 "癸水는 작은 물"에 따라 壬=Mirror Lake(가둔 큰 호수), 癸=Mountain Stream(시냇물)이 정확한 대응이다. 기존 문서는 요약표가 회피 규칙 위반 구버전(The Flowing River·The Morning Dew)으로 남아 있었고, 상세 섹션은 영어명은 유효하되 천간 배정이 서로 뒤바뀌어 있었다.
+
 > **Design Read**: 물상 배지 10종의 영어명 명명 과제. 밝은 모던 K-컬처 물성(v0.2) + 박물관 라벨 정밀함 톤을 따르는, astrobazi.com 비충돌 명명 체계. (tasteskill 게이트: em-dash 미사용 · 오컬트 어휘 미사용 · fortune/destiny/fate 미사용)
 
 - **과제**: O4(astrobazi.com 10 오브제 영어명 선점) 해소 · U14
@@ -20,8 +22,8 @@
 | 己 | The Fertile Garden |
 | 庚 | The Tempered Blade |
 | 辛 | The Polished Jewel |
-| 壬 | The Flowing River |
-| 癸 | The Morning Dew |
+| 壬 | Mirror Lake |
+| 癸 | Mountain Stream |
 
 **회피 규칙(본 제안의 하드 제약)**
 
@@ -101,18 +103,18 @@
 - **한 줄 정의**: Hammered thin, still keeps its light. · 종잇장처럼 펴도 빛을 잃지 않는다.
 - **상표 검색 가능성**: 준일반명사(은박). 등록 가능성은 낮으나 유의 브랜드 충돌도 확인 안 됨(지식 기반). 트레이딩 카드 "foil" 용법과 오인 가능성은 낮음.
 
-### 3.9 壬 양수 · 시냇물 → **Mountain Stream**
+### 3.9 壬 양수 · 큰물(호수) → **Mirror Lake**
 
-- **후보**: ① Mountain Stream(계곡물) ② Streambed(계류 바닥) / 탈락: Riverbed, The Flowing Stream
-- **선정 이유**: 시냇물(壬)의 물성은 멈추지 않는 흐름과 길을 파는 힘. "Mountain Stream"은 물상 원천을 즉시 전달하는 지리 화합어로, astrobazi "The Flowing River"와 ① 공식 ② 어휘(river · flowing) ③ 관사 전부 다르다. "Riverbed"는 "River" 어휘 자체가 astrobazi와 겹쳐 탈락, "The Flowing Stream"은 공식 그대로라 탈락. "Streambed"는 변별력 최강이나 "바닥"이 되어 물 자체의 정체성이 약해 후보로 유지.
-- **한 줄 정의**: Always moving, carving as it goes. · 멈추지 않고 지나가며 길을 판다.
+- **후보**: ① Mirror Lake(거울 호수) ② Lake Bed(호수 바닥) / 탈락: The Flowing River(astrobazi 공식·어휘 충돌), The Still Lake(공식 위반)
+- **선정 이유**: 큰물(壬)의 물성은 다목적댐처럼 가둔 넓은 호수다(코퍼스 T05-026 "壬水는 큰물"). concept-guardrail §3이 물의 스틸컷으로 명시한 "표면 장력의 커브"를 "Mirror"가 정확히 지시한다. "River" 계열 어휘는 astrobazi 충돌이라 전부 탈락.
+- **한 줄 정의**: Still on the surface, deep underneath. · 표면은 잔잔하고 밑은 깊다.
 - **상표 검색 가능성**: 지리적 서술 명칭, 단독 등록 약함 · 충돌 낮음(지식 기반). 배지 라벨 용도 적합.
 
-### 3.10 癸 음수 · 호수 → **Mirror Lake**
+### 3.10 癸 음수 · 작은 물(시냇물) → **Mountain Stream**
 
-- **후보**: ① Mirror Lake(거울 호수) ② Lake Bed(호수 바닥) ③ Still Water(고인 물)
-- **선정 이유**: 호수(癸)의 물성은 고임과 표면 장력. concept-guardrail §3이 물의 스틸컷으로 명시한 "표면 장력의 커브"를 "Mirror"가 정확히 지시한다(거울은 물성·광학 어휘, 신비 어휘 아님). "Lake Bed"는 흡수·고임 서사가 강하나 바닥 지시로 정체성이 약하고, "Still Water"는 형용사 화합이라 공식 위반.
-- **한 줄 정의**: Still on the surface, deep underneath. · 표면은 잔잔하고 밑은 깊다.
+- **후보**: ① Mountain Stream(계곡물) ② Streambed(계류 바닥) / 탈락: The Flowing Stream(공식 그대로), Riverbed(River 어휘 충돌)
+- **선정 이유**: 작은 물(癸)의 물성은 멈추지 않는 흐름과 길을 파는 힘(코퍼스 T05-027 "癸水는 작은 물"). "Mountain Stream"은 물상 원천을 즉시 전달하는 지리 화합어로 astrobazi 공식·어휘·관사가 모두 다르다. "Streambed"는 변별력이 강하나 "바닥"이 되어 물의 정체성이 약해 후보로 유지.
+- **한 줄 정의**: Always moving, carving as it goes. · 멈추지 않고 지나가며 길을 판다.
 - **상표 검색 가능성**: 지명(요세미티 Mirror Lake 등 전세계 다수) · 서술 명칭이라 단독 등록 불가 전제, 브랜드 충돌 리스크는 낮음. 배지 라벨 용도 적합.
 
 ## 4. 최종 대응표
@@ -127,16 +129,16 @@
 | 己 음토 | 정원 | The Fertile Garden | **Garden Soil** | Takes everything in, turns it into growth. |
 | 庚 양금 | 큰금 | The Tempered Blade | **Cast Iron** | Heavy, plain, holds the heat. |
 | 辛 음금 | 작은금 | The Polished Jewel | **Silver Foil** | Hammered thin, still keeps its light. |
-| 壬 양수 | 시냇물 | The Flowing River | **Mountain Stream** | Always moving, carving as it goes. |
-| 癸 음수 | 호수 | The Morning Dew | **Mirror Lake** | Still on the surface, deep underneath. |
+| 壬 양수 | 큰물(호수) | The Flowing River | **Mirror Lake** | Still on the surface, deep underneath. |
+| 癸 음수 | 작은 물(시냇물) | The Morning Dew | **Mountain Stream** | Always moving, carving as it goes. |
 
 **시스템 자체 검증**
 
 - 명사+명사 화합어 10/10, 정성 형용사 0, 관사 "The" 0, 시간수식어 0.
 - astrobazi 10어휘(towering · climbing · vine · radiant · sun · candle · enduring · mountain · fertile · garden · tempered · blade · polished · jewel · flowing · river · morning · dew)와의 겹침: **"Garden" 1개**(과제가 정원 원천 유지를 지시 + 공식·수식어가 다름). 나머지 9종 어휘 겹침 0. 참고로 戊는 "Mountain"을 쓰지 않아 내부 중복도 없음.
 - 내부 단어 중복 0. 유일한 근접쌍은 "Noon Mark · Moon Phase"(丙丁 하늘짝 대구): 태양은 정오 표, 달은 위상. 짝 설계라 오인 리스크보다 시스템 응집이 큼.
-- 배지 라인 예시: `임수 · 壬 · Mountain Stream` · `계수 · 癸 · Mirror Lake`(영어명 no-break 토큰).
-- 구(舊) 예시(product-analysis R1의 계수 카드 문구 "넓은 물, 둑 없음" + 영어 라벨 "The open lake")은 em-dash 결합 + "The + 형용사 + 자연물" 공식이라 본 제안으로 대체: `계수 · 癸 · Mirror Lake · Still on the surface, deep underneath.`
+- 배지 라인 예시: `임수 · 壬 · Mirror Lake` · `계수 · 癸 · Mountain Stream`(영어명 no-break 토큰).
+- 구(舊) 예시(product-analysis R1의 계수 카드 문구 "넓은 물, 둑 없음" + 영어 라벨 "The open lake")은 em-dash 결합 + "The + 형용사 + 자연물" 공식이라 본 제안으로 대체: `계수 · 癸 · Mountain Stream · Always moving, carving as it goes.`
 
 ## 5. 상표 검색 가능성 총괄
 
