@@ -76,6 +76,33 @@ const ANSIM_PATTERNS = RELATIONS.ansimPatterns.map((p) => ({
 }));
 /** 오행 역할 어휘(비동·식상·재성·관성·인성) 범례용. */
 const ROLE_VOCAB = RELATIONS.meta.roleVocabulary;
+/** 일반인용 역할 라벨. 화면 표기는 "재물·배우자의 기운(전통 용어: 재성)" 형식으로 조립한다. */
+const ROLE_DISPLAY = {
+  "비동": "나와 같은 성질의 기운",
+  "식상": "표현과 결실의 기운",
+  "재성": "재물·배우자의 기운",
+  "관성": "직장과 질서·명예의 기운",
+  "인성": "공부와 기억·어머니의 기운",
+};
+/** 화면 용어집(S12-②). 뜻은 오너 지정 문구 + roleVocabulary 전문 문장. */
+const GLOSSARY = [
+  { term: "일간", meaning: "나를 나타내는 위 글자" },
+  { term: "천간", meaning: "위 글자(시간·목표)" },
+  { term: "지지", meaning: "아래 글자(공간·무대)" },
+  { term: "원국", meaning: "태어난 순간의 여덟 글자" },
+  { term: "합", meaning: "두 글자가 묶여 성질이 바뀌는 변화" },
+  { term: "충", meaning: "방향이 정면으로 부딪히는 변화" },
+  { term: "대운", meaning: "10년 단위 흐름" },
+  { term: "진태양시", meaning: "햇양 위치 기준 실제 시각" },
+  { term: "공망", meaning: "비어 있는 글자 자리" },
+  { term: "비동", meaning: ROLE_VOCAB["비동"] },
+  { term: "식상", meaning: ROLE_VOCAB["식상"] },
+  { term: "재성", meaning: ROLE_VOCAB["재성"] },
+  { term: "관성", meaning: ROLE_VOCAB["관성"] },
+  { term: "인성", meaning: ROLE_VOCAB["인성"] },
+  { term: "삼합·반합", meaning: "세 글자가 모여(두 글자면 반) 한 오행으로 힘이 모이는 변화" },
+  { term: "공협", meaning: "중심 글자가 없어 그 글자를 끌어오려는 대기 상태" },
+];
 
 // ---------------------------------------------------------------------------
 // dynamics.json 슬림
@@ -471,7 +498,7 @@ function dayMasterCombo(myHanja, partnerHanja) {
 }
 
 globalThis.SajuRoot = {
-  version: "0.2.0",
+  version: "0.3.0",
   computeChart: computeChart,
   getLuckPillars: getLuckPillars,
   STEMS: STEMS,
@@ -497,6 +524,8 @@ globalThis.SajuRoot = {
     NO_HOUR_NOTE: NO_HOUR_NOTE,
     ANSIM_PATTERNS: ANSIM_PATTERNS,
     ROLE_VOCAB: ROLE_VOCAB,
+    ROLE_DISPLAY: ROLE_DISPLAY,
+    GLOSSARY: GLOSSARY,
     DAY_VS_STEMS: DAY_VS_STEMS,
     ELEMENT_VS_DAY: ELEMENT_VS_DAY,
   },
