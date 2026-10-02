@@ -1,0 +1,15 @@
+{
+  "name": "saju-engine",
+  "version": "0.1.0",
+  "description": "SAJU deterministic saju calculation engine (manseryeok based)",
+  "main": "src/engine.cjs",
+  "scripts": {
+    "test": "node test/golden.cjs",
+    "check": "node --check src/engine.cjs && node --check test/golden.cjs"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "manseryeok": "^2.0.0"
+  }
+}
