@@ -572,8 +572,8 @@
       html += "</div>" + aggregateSrc(dynSrc);
     }
 
-    /* 변화 규칙 자세히(기본 닫힘): 천간합 원리·비율 규칙 CR01~07·충 발동 기준 */
-    html += '<details class="fold"><summary>변화 규칙 자세히</summary><div class="fold-body">';
+    /* 변화 규칙(열림): 천간합 원리·비율 규칙 CR01~07·충 발동 기준 — 이전 형식 상세를 하이브리드 노출 */
+    html += '<details class="fold" open><summary>변화 규칙 자세히</summary><div class="fold-body">';
     html += "<p>" + esc(g.stemChungNote) + "</p>";
     html += '<p class="gov">충 발동 기준: ' + esc(g.triggerRule) + "</p>";
     html += '<p class="gov">육합 실사용 쌍 안내: ' + esc(VIEW.BRANCH_DYN.yukhabs.rule) + "</p>";
@@ -775,12 +775,12 @@
       '<p class="helper">이메일은 안내 발송에만 쓰입니다.</p></section>';
   }
 
-  /* S12 details 2종: 계산 과정(기존 근거 표 전부) + 용어집. 기본 닫힘. */
+  /* 상세 리딩 파트: 이전 형식(전문 상세)을 열림 상태로 하이브리드 노출. */
   function referenceSection(chart) {
-    return '<section class="sec refs">' +
-      '<details class="fold"><summary>계산 과정 자세히 보기</summary><div class="fold-body">' +
+    return '<section class="sec refs"><div class="part-divider"><span class="part-k">상세 리딩</span><span class="part-v">위 리딩과 같은 계산에서 나온 전문 상세판입니다.</span></div>' +
+      '<details class="fold" open><summary>계산 과정 · 근거 표 전체</summary><div class="fold-body">' +
       evidenceTable(chart) + "</div></details>" +
-      '<details class="fold"><summary>용어 자세히 보기</summary><div class="fold-body">' +
+      '<details class="fold" open><summary>용어 자세히 보기 · 용어집</summary><div class="fold-body">' +
       glossaryTable() + "</div></details>" +
       "</section>";
   }

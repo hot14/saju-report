@@ -372,6 +372,10 @@ const GLUE_SUFFIX = ["", "입니다."];
 
 /* 상태 문장 조합형: (b)요약 집계 문장 · 계산 표 수치 행 · 대운 행 등 */
 const TEMPLATES = [
+  /^용어 자세히 보기 · 용어집$/,
+  /^계산 과정 · 근거 표 전체$/,
+  /^위 리딩과 같은 계산에서 나온 전문 상세판입니다\.$/,
+  /^위 리딩과 같은 계산에서 나온 전문 상세판입니다\\.$/,
   /^서울 기본값 · 북위 [\d.]+, 동경 [\d.]+$/,
   /^서머타임 60분 되돌림 · .+$/,
   /^공망 지지 [가-힣]+, [가-힣]+ \(역법 라이브러리 계산\)$/,
@@ -520,14 +524,16 @@ function checkSectionOrder(label, html, chart) {
   eq(JSON.stringify(actual), JSON.stringify(expected), `섹션 구조 스냅샷(${label})`);
   /* details: 변화 규칙(S8 안) + 계산 과정·용어집(S12, 순서 고정) */
   const s8fold = html.indexOf("변화 규칙 자세히");
-  const calc = html.indexOf("계산 과정 자세히 보기");
-  const gloss = html.indexOf("용어 자세히 보기");
+  const calc = html.indexOf("계산 과정 · 근거 표 전체");
+  const gloss = html.indexOf("용어 자세히 보기 · 용어집");
   if (s8fold === -1) fail(`변화 규칙 details 누락(${label})`);
   if (calc === -1 || gloss === -1) fail(`S12 details 2종 누락(${label})`);
   if (!(calc < gloss)) fail(`S12 details 순서 이상(${label}): 계산 과정 → 용어집`);
   if (!(s8fold < calc)) fail(`S8 변화 규칙 details가 S12보다 앞에 와야 함(${label})`);
   if ((html.match(/<details/g) || []).length !== 3) fail(`details 개수 3 아님(${label}): ` + (html.match(/<details/g) || []).length);
-  if (!/<details class="fold"><summary>계산 과정/.test(html)) fail(`계산 과정 details 기본 닫힘 아님(${label})`);
+  if (!/<details class="fold" open><summary>계산 과정/.test(html)) fail(`계산 과정 details 열림(하이브리드) 아님(${label})`);
+  if (!/<details class="fold" open><summary>용어 자세히/.test(html)) fail(`용어집 details 열림 아님(${label})`);
+  if (!/<details class="fold" open><summary>변화 규칙/.test(html)) fail(`변화 규칙 details 열림 아님(${label})`);
 }
 
 checkSectionOrder("1985 남자", html1, fromBundle);
@@ -617,4 +623,4 @@ console.log(`  공망=${fromBundle.voidBranches.join("·")} / 관계(기토×임
 console.log(`  DST(1987-08-28 09:50)=${dstCase.fourPillarsHanja} · 되돌림 60분 · 고지+표 행 확인`);
 console.log(`  [일관성 검증] 콘텐츠 대응=3케이스 PASS(${ALLOWED.length}개 콘텐츠 문장 대조) / 섹션 스냅샷=3케이스 PASS / 용어집 커버리지=${REQUIRED_TERMS.length}용어 PASS`);
 console.log(`  [검증 모드] {{FORM_ENDPOINT}} 유지 · mailto 폴백 · src 추적 · 금지어 0 · em-dash 0 · details 밖 CR/AP 0`);
-console.log(`  bundle.js=${bundleKb}kb · 용어집 ${VIEW.GLOSSARY.length}항목 · details 3종(S8 1 + S12 2, 기본 닫힘)`);
+console.log(`  bundle.js=${bundleKb}kb · 용어집 ${VIEW.GLOSSARY.length}항목 · details 3종(S8 1 + S12 2, 열림 기본 · 하이브리드)`);
