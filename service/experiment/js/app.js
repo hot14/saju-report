@@ -917,12 +917,24 @@
     html += ansimSection(chart);                /* S9 마음은 어떤가요?(조건부) */
     html += faqSection();                       /* FAQ 자주 묻는 질문(닫힘 details 1개) */
     html += relationSection();                  /* S10 다른 사람과 보기 */
+    /* 공유: 링크 복사(Web Share API 있으면 네이티브 공유). 이전 형식에 없던 바이럴 장치. */
+    html += '<section class="sec share"><div class="part-divider"><span class="part-k">공유</span><span class="part-v">이 페이지 링크로 같은 리딩을 다시 볼 수 있습니다.</span></div>' +
+      '<button type="button" class="cta share-btn" id="share-link-btn">링크 복사</button>' +
+      '<p class="helper" id="share-msg" hidden>링크가 복사되었습니다.</p></section>';
     html += policyNotice();
     html += emailBlock();                       /* S11 결과 받아두기 */
     html += referenceSection(chart);            /* S12 details 2종 */
     html += '<nav class="foot-links" style="margin-top: 1.25rem;"><a href="chart.html">다시 입력하기</a><a href="index.html">처음으로</a></nav>';
 
     resultSec.innerHTML = html;
+    var shareBtn = resultSec.querySelector('#share-link-btn');
+    if (shareBtn) shareBtn.addEventListener('click', function() {
+      var url = location.href;
+      var done = function() { var m = resultSec.querySelector('#share-msg'); if (m) m.hidden = false; };
+      if (navigator.share) { navigator.share({ title: document.title, url: url }).catch(function(){}); }
+      else if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(done).catch(function(){}); }
+      else { var ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done(); }
+    });
     entrySec.hidden = true;
     resultSec.hidden = false;
     resultSec.scrollIntoView({ behavior: "smooth", block: "start" });
