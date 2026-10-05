@@ -11,10 +11,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261002c">
+<link rel="stylesheet" href="css/style.css?v=20261002d">
 <script>
-  /* 실험 설정: 를 채우기 전에는 폼 제출 시 아래 주소로 메일을
-     보내는 폴백 안내가 표시된다. 실제 수신 주소로 바꿔주세요 (README 참고). */
+  /* 이메일 폼은 Google Form formResponse로 숨은 iframe POST 한다 (app.js 참고).
+     HTML의 action {{FORM_ENDPOINT}} 토큰은 검증 모드 유지용이고, JS가 실제 주소로 제출한다. */
   window.SAJU_CONFIG = { mailto: "sajuroot@example.com" };
 </script>
 </head>
@@ -92,7 +92,7 @@
 
 </main>
 
-<script src="js/bundle.js?v=20261002c"></script>
-<script src="js/app.js?v=20261002c"></script>
+<script src="js/bundle.js?v=20261002d"></script>
+<script src="js/app.js?v=20261002d"></script>
 </body>
 </html>
