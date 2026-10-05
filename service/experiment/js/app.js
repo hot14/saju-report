@@ -5,11 +5,12 @@
  * 모르겠다. 이해하기 쉽고 직관적이며 가독성이 좋게. 누락·오역·오류 없이
  * 프로세스상 일관되게 구조화돼야 한다."
  *
- * 섹션 구조(S1~S12, 순서 고정 · smoke.cjs가 스냅샷 검증):
- *   S1 헤더 카드(패턴 ID·일간 배지·한 줄 소개)   S2 한눈 요약(자동 조합)
+ * 섹션 구조(S1~S12 + FAQ, 순서 고정 · smoke.cjs가 스냅샷 검증):
+ *   S1 헤더 카드(패턴 ID·일간 배지·캐치프레이즈·한 줄 소개)  S2 한눈 요약(자동 조합)
  *   S3 어떤 사람인가요?    S4 무엇이 많고, 무엇이 부족한가요?
- *   S5 어떤 일이 어울리나요?   S6 조심할 신호는?   S7 시간의 흐름은?
+ *   S5 어떤 일이 어울리나요?   S6 조심할 신호는?   S7 시간의 흐름은?(대운 서사 포함)
  *   S8 내 글자들은 서로 어떻게 작동하나요?   S9 마음은 어떤가요?(조건부)
+ *   FAQ 자주 묻는 질문(닫힘 details 1개, S9 뒤)
  *   S10 다른 사람과 보기   S11 결과 받아두기   S12 details 2종(계산 과정·용어집)
  *
  * 절대 규칙: 해석 문장은 콘텐츠 JSON(stems/relations/dynamics/regions/policy)
@@ -22,7 +23,8 @@
  * 2) 생년월일 폼 처리: 카피덱 v2-KR 문구로 검증 (성별은 선택, 대운 표시용)
  * 3) computeChart + CORE.view(원국 판정 순수 함수)로 전체 섹션 렌더
  * 4) 관계 읽기: 상대 생년월일 입력, 화면 안에서만 계산하고 저장하지 않음
- * 5) 결과 하단 이메일 수집: {{FORM_ENDPOINT}} 미설정 시 mailto 폴백 안내
+ * 5) 결과 하단 이메일 수집: Google Form formResponse로 숨은 iframe POST(엔드포인트
+ *    미설정 시 기존 mailto 폴백 안내 유지)
  *
  * 콘텐츠 출처: service/content/{stems,relations,dynamics,regions}.json(재구성 물상,
  * 검증 통과분), policy.json(고지문), docs/copy-deck-v2-kr.md(문구 톤).
@@ -38,6 +40,13 @@
   var EMAIL_KEY = "sajuroot_email_ok";
   var VALID_SRC = ["seo", "community", "social", "direct"];
   var MAILTO = (window.SAJU_CONFIG && window.SAJU_CONFIG.mailto) || "sajuroot@example.com";
+  /* Google Form formResponse 엔드포인트 (wayfinder #14 · P0-1 폼 연동).
+     HTML의 action은 {{FORM_ENDPOINT}} 토큰을 유지하고(검증 모드), 실제 제출은
+     이 주소로 숨은 iframe POST로 보낸다. 빈 값이면 mailto 폴백으로 전환한다. */
+  var FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSfGMuBH_ZPZ9jjJAUaVjBMusRdJJ8n4kEtkLZrpXut1LWf7xA/formResponse";
+  var FORM_IFRAME = "sajuroot-post";
+  /* Google Form 엔트리 매핑: 이메일 · src · page */
+  var ENTRY = { email: "entry.1579324013", src: "entry.1312707957", page: "entry.221952772" };
 
   /* 배지명·영어명·한 줄: 카피덱 v2-KR §9 + docs/badge-naming-en.md (prototype과 동일) */
   var BADGE = {
@@ -111,6 +120,10 @@
     try { return localStorage.getItem(EMAIL_KEY) === "1"; } catch (e) { return false; }
   }
 
+  function emailDoneHTML() {
+    return '<section class="cut"><p class="email-done">알림 신청이 접수되어 있습니다.</p>' +
+      '<p class="helper">더 깊은 읽기는 준비 중입니다. 준비되면 신청한 주소로 안내합니다.</p></section>';
+  }
   /* 근거 코드 집계: 섹션 안의 모든 근거를 한 줄로 모은다. unverified가 하나라도
      있으면 고지를 함께 표기한다(비검증 근거 포함 고지 유지). */
   function aggregateSrc(items) {
@@ -452,7 +465,36 @@
     return html + "</section>";
   }
 
-  /* S7 시간의 흐름은? 기둥 시간축(간결 블록) + 대운 10구간(현재 강조) */
+  /* S7 시간의 흐름은? 기둥 시간축(간결 블록) + 대운 10구간(현재 강조 + 구간 서사 요약) */
+
+  /* 대운 구간 서사 판정 (honbit UX 분석 5번 패턴).
+     대운 천간·지지의 오행을 dayStemVsElements 역할 라벨로 판정해 2종 템플릿으로 문장을 만든다.
+     - 일간을 살리는 오행(비동·인성): "이 10년은 [역할 문구]로 흐름이 밀어주는 편이에요."
+     - 일간을 누르는 오행(재성·관성·식상): "이 10년은 [역할 문구]로 저절로 되기보다 품이 드는 시기예요."
+     천간·지지 중 살림 오행이 하나라도 있으면 살림 문장을 쓴다(역할 문구는 살림 역할 우선). */
+  var PUSH_ROLES = ["비동", "인성"];
+  function luckNarrativeLine(dayMasterHanja, row) {
+    var table = VIEW.ELEMENT_VS_DAY[dayMasterHanja];
+    if (!table || !row.stemElement || !row.branchElement) return "";
+    var stemHanja = CORE.ELEMENT_HANJA[row.stemElement];
+    var branchHanja = CORE.ELEMENT_HANJA[row.branchElement];
+    var roles = [table[stemHanja] && table[stemHanja].role,
+      table[branchHanja] && table[branchHanja].role];
+    var pushRole = null;
+    var pressRole = null;
+    for (var i = 0; i < roles.length; i++) {
+      var role = roles[i];
+      if (!role) continue;
+      if (!pushRole && PUSH_ROLES.indexOf(role) > -1) pushRole = role;
+      if (!pressRole && PUSH_ROLES.indexOf(role) === -1) pressRole = role;
+    }
+    var chosen = pushRole || pressRole;
+    if (!chosen) return "";
+    var phrase = pushRole ? "흐름이 밀어주는 편이에요." : "저절로 되기보다 품이 드는 시기예요.";
+    /* ROLE_DISPLAY 문구가 "~의 기운"으로 끝나므로 조사는 "으로" 고정 */
+    return "이 10년은 " + VIEW.ROLE_DISPLAY[chosen] + "으로 " + phrase;
+  }
+
   function timeSection(chart, gender) {
     var noHour = chart.mode === "noHour";
     var html = sectionOpen(SEC.time);
@@ -496,6 +538,15 @@
     } else {
       html += '<p class="lead-line">십 년 단위로 흐름의 무대가 바뀝니다. 첫 구간은 ' + luck.startAge + "세에 열립니다.</p>";
     }
+    /* 구간별 한 줄 서사 (2종 템플릿 · 현재 구간은 지금 칩 표기) */
+    html += '<div class="luck-narrs">';
+    for (var n = 0; n < luck.rows.length; n++) {
+      var narr = luckNarrativeLine(chart.dayMaster.hanja, luck.rows[n]);
+      if (!narr) continue;
+      html += '<p class="luck-narr"><span class="luck-narr-age">' + esc(luck.rows[n].korean) + "</span> " + esc(narr) +
+        (n === luck.currentIndex ? '<span class="now-chip">지금</span>' : "") + "</p>";
+    }
+    html += "</div>";
     html += '<table class="registry luck-table"><caption>대운 10구간 · 나이는 만 나이 기준</caption><thead><tr>' +
       '<th class="k">구간</th><th class="k">나이</th><th class="k">간지</th></tr></thead><tbody>';
     for (var r = 0; r < luck.rows.length; r++) {
@@ -622,8 +673,7 @@
   }
 
   /* S9 마음은 어떤가요? 안심법(해당 패턴만). 매칭이 없으면 섹션 자체를 생략. */
-  function ansimSection(chart) {
-    var matched = VIEW.matchAnsim(chart);
+  function ansimSection(chart) {    var matched = VIEW.matchAnsim(chart);
     if (!matched.length) return "";
     var html = sectionOpen(SEC.mind);
     html += '<p class="lead-line">글자 배치만으로 확정되는 조건에만 근거한 마음 읽기입니다.</p>';
@@ -637,6 +687,26 @@
     }
     html += aggregateSrc(srcItems);
     return html + "</section>";
+  }
+
+  /* FAQ 섹션 (S9 뒤 · honbit UX 분석 6번 패턴 · SEO·AEO 겸용).
+     닫힘 details 1개, 5문항. 답변은 policy.json 고지문과 기존 화면 문장만 재사용하고
+     새 해석 주장은 없다(smoke.cjs TEMPLATES에 질문·답변 선언 등록). */
+  function faqSection() {
+    var html = '<section class="sec faq-sec"><p class="sec-label">FAQ</p>';
+    html += '<details class="fold faq"><summary>자주 묻는 질문</summary><div class="fold-body">';
+    html += '<p class="faq-q">일간이 뭐예요?</p>' +
+      '<p class="faq-a">결과 카드 맨 위 굵은 글자가 일간입니다.<br>나를 나타내는 위 글자입니다.</p>';
+    html += '<p class="faq-q">왜 계산 과정을 보여주나요?</p>' +
+      '<p class="faq-a">결과를 만든 계산의 근거를 함께 보여드리기 위해서입니다.<br>위 리딩과 같은 계산에서 나온 전문 상세판입니다.<br>화면에 나오는 말 중 어려운 말만 골라 풀어 적었습니다.</p>';
+    html += '<p class="faq-q">출생시각을 모르면?</p>' +
+      '<p class="faq-a">' + esc(POLICY.noHourDisclaimer) + "<br>연, 월, 일 여섯 글자로 읽으며, 시주가 필요한 주제는 제외됩니다.</p>";
+    html += '<p class="faq-q">서머타임은 어떻게 적용되나요?</p>' +
+      '<p class="faq-a">태어난 기록 시각이 한국 서머타임 적용 구간이면 표준시로 60분 되돌려 계산합니다.<br>적용되면 결과 화면 상단에 서머타임 보정 고지가 함께 표시됩니다.</p>';
+    html += '<p class="faq-q">이 결과는 운세인가요?</p>' +
+      '<p class="faq-a">' + esc(POLICY.boundary) + "</p>";
+    html += "</div></details></section>";
+    return html;
   }
 
   // ---------------------------------------------------------------------------
@@ -755,20 +825,20 @@
 
   function emailBlock() {
     if (emailDone()) {
-      return '<section class="cut"><p class="email-done">알림 신청이 접수되어 있습니다.</p>' +
-        '<p class="helper">더 깊은 읽기는 준비 중입니다. 준비되면 신청한 주소로 안내합니다.</p></section>';
+      return emailDoneHTML();
     }
     return '<section class="cut">' +
       '<p class="sec-label">결과 받아두기</p>' +
       '<h2>전체 리딩이 준비되면 가장 먼저 알려드립니다<span class="accent">.</span></h2>' +
       '<p class="lead">지금 화면을 닫아도, 이 이메일 하나로 다시 찾아올 수 있습니다.</p>' +
       '<p class="more-note">더 깊은 읽기는 준비 중입니다.</p>' +
-      '<form data-email-form action="{{FORM_ENDPOINT}}" method="post">' +
-      '<input type="hidden" name="src" value="' + esc(src) + '">' +
-      '<input type="hidden" name="page" value="chart">' +
+      '<form data-email-form action="{{FORM_ENDPOINT}}" method="post" target="' + FORM_IFRAME + '">' +
+      '<input type="hidden" name="' + ENTRY.src + '" value="' + esc(src) + '">' +
+      '<input type="hidden" name="' + ENTRY.page + '" value="chart">' +
       '<div class="email-field"><label for="email-chart">이메일</label>' +
-      '<input id="email-chart" name="email" type="email" autocomplete="email" required></div>' +
+      '<input id="email-chart" name="' + ENTRY.email + '" type="email" autocomplete="email" required></div>' +
       '<button type="submit" class="cta">알림 받기</button></form>' +
+      '<iframe id="' + FORM_IFRAME + '" name="' + FORM_IFRAME + '" title="제출 처리" class="post-frame" hidden></iframe>' +
       '<div class="form-fallback" id="chart-fallback" hidden>' +
       "<p>폼 연결 전입니다. 아래 주소로 알림 메일을 보내주시면 명단에 추가합니다.</p>" +
       '<p><a id="chart-mailto" href="mailto:' + esc(MAILTO) + '">메일 보내기</a></p></div>' +
@@ -832,6 +902,7 @@
       html += '<span class="edot' + (on ? " on" : "") + '" title="' + elHanja + '" aria-hidden="true"></span>';
     }
     html += "</div></div>" +
+      '<p class="catchphrase">' + esc(stem.catchphrase) + "</p>" +
       '<h2 class="declaration">당신은 ' + esc(badge.name) + '입니다<span class="accent">.</span></h2>' +
       '<p class="one-liner">' + esc(badge.one) + "</p></article>";
 
@@ -844,6 +915,7 @@
     html += timeSection(chart, gender);         /* S7 시간의 흐름은? */
     html += dynamicsSection(chart);             /* S8 내 글자들은 서로 어떻게 작동하나요? */
     html += ansimSection(chart);                /* S9 마음은 어떤가요?(조건부) */
+    html += faqSection();                       /* FAQ 자주 묻는 질문(닫힘 details 1개) */
     html += relationSection();                  /* S10 다른 사람과 보기 */
     html += policyNotice();
     html += emailBlock();                       /* S11 결과 받아두기 */
@@ -859,15 +931,26 @@
   }
 
   // ---------------------------------------------------------------------------
-  // 8) 이메일 폼: {{FORM_ENDPOINT}} 미설정 시 mailto 폴백
-  // ---------------------------------------------------------------------------
+  // 8) 이메일 폼: Google Form formResponse로 숨은 iframe POST (미설정 시 mailto 폴백)
+  // ----------------------------------------------------------------------------
+
+  function emailSubmitSuccess(form2) {
+    try { localStorage.setItem(EMAIL_KEY, "1"); } catch (e) {}
+    var section = form2.closest ? form2.closest("section") : null;
+    if (section && typeof section.outerHTML === "string") {
+      section.outerHTML = emailDoneHTML();
+    }
+  }
 
   function wireEmailForm(form2) {
     if (!form2 || typeof form2.addEventListener !== "function") return;
     form2.addEventListener("submit", function (ev) {
+      ev.preventDefault();
       var action = form2.getAttribute("action") || "";
-      if (action.indexOf("{{") !== -1) {
-        ev.preventDefault();
+      /* action 토큰({{FORM_ENDPOINT}})이면 Google Form formResponse로 보낸다. 이미 치환돼 있으면 그 주소를 쓴다. */
+      var realAction = action.indexOf("{{") !== -1 ? FORM_ACTION : action;
+      if (!realAction) {
+        /* 엔드포인트 미설정: 기존 mailto 폴백 유지 */
         var mail = resultSec.querySelector("#chart-mailto");
         if (mail) {
           mail.href = "mailto:" + MAILTO +
@@ -879,7 +962,20 @@
         form2.hidden = true;
         return;
       }
-      try { localStorage.setItem(EMAIL_KEY, "1"); } catch (e) {}
+      /* 숨은 iframe POST: 페이지 이동 없이 제출하고, iframe 로드(응답 도착) 시 완료 문구 표시 */
+      var frame = document.getElementById(FORM_IFRAME);
+      if (!frame || typeof form2.setAttribute !== "function" || typeof form2.submit !== "function") return;
+      if (form2.getAttribute("data-posting") === "1") return;
+      form2.setAttribute("data-posting", "1");
+      var finished = false;
+      frame.addEventListener("load", function () {
+        if (finished) return;
+        finished = true;
+        emailSubmitSuccess(form2);
+      });
+      form2.setAttribute("target", FORM_IFRAME);
+      form2.setAttribute("action", realAction);
+      form2.submit();
     });
   }
 })();

@@ -4443,7 +4443,8 @@
           built: "2026-10-02",
           corpus: "source-namchon/namchon-corpus.json (531\uC5D4\uD2B8\uB9AC, \uC774\uB860\uC9D1 367 + \uC0AC\uB840\uC9D1 164)",
           method: "\uC6D0\uB9AC \uC7AC\uAD6C\uC131. \uCF54\uD37C\uC2A4 \uBCF8\uBB38\uC744 \uBB38\uC7A5 \uB2E8\uC704\uB85C \uC62E\uAE30\uC9C0 \uC54A\uACE0 \uADDC\uCE59\uC744 \uC774\uD574\uD574 \uC0C8\uB85C \uC11C\uC220\uD588\uB2E4. legal-boundary-namchon.md\uC758 \uD45C\uD604 \uBCF5\uC81C \uAE08\uC9C0 \uADDC\uCE59\uACFC \uC6A9\uC5B4 \uAC00\uB4DC\uB97C \uB530\uB978\uB2E4. \uBC30\uC81C \uAC1C\uB150 \uBAA9\uB85D\uC740 docs/wayfinder/legal-boundary-namchon.md \uCC38\uC870.",
-          unverifiedRule: "\uCF54\uD37C\uC2A4 source_status=\uBBF8\uD655\uC778 \uC5D4\uD2B8\uB9AC\uB97C \uADFC\uAC70\uB85C \uC4F4 \uAC1C\uCCB4\uB294 unverified=true\uC640 unverifiedSourceIds\uB97C \uD568\uAED8 \uD45C\uAE30\uD55C\uB2E4."
+          unverifiedRule: "\uCF54\uD37C\uC2A4 source_status=\uBBF8\uD655\uC778 \uC5D4\uD2B8\uB9AC\uB97C \uADFC\uAC70\uB85C \uC4F4 \uAC1C\uCCB4\uB294 unverified=true\uC640 unverifiedSourceIds\uB97C \uD568\uAED8 \uD45C\uAE30\uD55C\uB2E4.",
+          catchphraseNote: "\uBB34\uAE30 \uCE90\uCE58\uD504\uB808\uC774\uC988\uB294 \uAC01 \uCC9C\uAC04 \uBB3C\uC0C1(nature\xB7metaphor)\uC758 \uC6D0\uB9AC\uB97C 2\uC778\uCE6D \uD55C \uC904\uB85C \uC7AC\uAD6C\uC131\uD55C \uAC83\uC785\uB2C8\uB2E4. \uCD9C\uCC98\uB294 \uAC01 \uD56D\uBAA9 sources\uC640 \uB3D9\uC77C."
         },
         stems: [
           {
@@ -4486,8 +4487,26 @@
               ]
             },
             unverified: true,
-            unverifiedSourceIds: ["T07-007", "T07-024"],
-            sources: ["T03-001", "T03-016", "T07-002", "T07-003", "T07-004", "T07-005", "T07-006", "T07-007", "T07-024", "T07-009", "T07-010", "T07-011", "T07-012"]
+            unverifiedSourceIds: [
+              "T07-007",
+              "T07-024"
+            ],
+            sources: [
+              "T03-001",
+              "T03-016",
+              "T07-002",
+              "T07-003",
+              "T07-004",
+              "T07-005",
+              "T07-006",
+              "T07-007",
+              "T07-024",
+              "T07-009",
+              "T07-010",
+              "T07-011",
+              "T07-012"
+            ],
+            catchphrase: "\uB2F9\uC2E0\uC758 \uBB34\uAE30\uB294 \uD070 \uADF8\uB9BC\uC744 \uD55C \uBC88\uC5D0 \uC138\uC6B0\uB294 \uC904\uAE30\uC608\uC694."
           },
           {
             stemHanja: "\u4E59",
@@ -4529,8 +4548,23 @@
               ]
             },
             unverified: true,
-            unverifiedSourceIds: ["T07-047"],
-            sources: ["T03-001", "T03-018", "T07-025", "T07-026", "T07-027", "T07-028", "T07-029", "T07-047", "T07-031", "T07-035", "T07-036"]
+            unverifiedSourceIds: [
+              "T07-047"
+            ],
+            sources: [
+              "T03-001",
+              "T03-018",
+              "T07-025",
+              "T07-026",
+              "T07-027",
+              "T07-028",
+              "T07-029",
+              "T07-047",
+              "T07-031",
+              "T07-035",
+              "T07-036"
+            ],
+            catchphrase: "\uB2F9\uC2E0\uC758 \uBB34\uAE30\uB294 \uC5B4\uB514\uC5D0\uB4E0 \uBFCC\uB9AC\uB0B4\uB9AC\uB294 \uC720\uC5F0\uD568\uC774\uC5D0\uC694."
           },
           {
             stemHanja: "\u4E19",
@@ -4572,8 +4606,28 @@
               ]
             },
             unverified: true,
-            unverifiedSourceIds: ["T07-052", "T07-068"],
-            sources: ["T03-019", "T03-020", "T07-048", "T07-049", "T07-050", "T07-051", "T07-052", "T07-054", "T07-057", "T07-059", "T07-061", "T07-062", "T07-066", "T07-067", "T07-068"]
+            unverifiedSourceIds: [
+              "T07-052",
+              "T07-068"
+            ],
+            sources: [
+              "T03-019",
+              "T03-020",
+              "T07-048",
+              "T07-049",
+              "T07-050",
+              "T07-051",
+              "T07-052",
+              "T07-054",
+              "T07-057",
+              "T07-059",
+              "T07-061",
+              "T07-062",
+              "T07-066",
+              "T07-067",
+              "T07-068"
+            ],
+            catchphrase: "\uB2F9\uC2E0\uC758 \uBB34\uAE30\uB294 \uC5B4\uB460\uC744 \uACE8\uB77C \uC7A1\uB294 \uCCAB \uBE5B\uC774\uC5D0\uC694."
           },
           {
             stemHanja: "\u4E01",
@@ -4616,8 +4670,27 @@
               ]
             },
             unverified: true,
-            unverifiedSourceIds: ["T07-091"],
-            sources: ["T03-019", "T03-021", "T07-069", "T07-070", "T07-071", "T07-072", "T07-073", "T07-075", "T07-076", "T07-079", "T07-081", "T07-084", "T07-085", "T07-086", "T07-091"]
+            unverifiedSourceIds: [
+              "T07-091"
+            ],
+            sources: [
+              "T03-019",
+              "T03-021",
+              "T07-069",
+              "T07-070",
+              "T07-071",
+              "T07-072",
+              "T07-073",
+              "T07-075",
+              "T07-076",
+              "T07-079",
+              "T07-081",
+              "T07-084",
+              "T07-085",
+              "T07-086",
+              "T07-091"
+            ],
+            catchphrase: "\uB2F9\uC2E0\uC758 \uBB34\uAE30\uB294 \uC5B4\uB450\uC6B4 \uBC29\uC5D0\uC11C\uB3C4 \uAEBC\uC9C0\uC9C0 \uC54A\uB294 \uC628\uAE30\uC608\uC694."
           },
           {
             stemHanja: "\u620A",
@@ -4660,8 +4733,27 @@
               ]
             },
             unverified: true,
-            unverifiedSourceIds: ["T07-114"],
-            sources: ["T03-005", "T03-010", "T03-022", "T03-023", "T07-092", "T07-093", "T07-094", "T07-095", "T07-096", "T07-098", "T07-099", "T07-102", "T07-104", "T07-108", "T07-114"]
+            unverifiedSourceIds: [
+              "T07-114"
+            ],
+            sources: [
+              "T03-005",
+              "T03-010",
+              "T03-022",
+              "T03-023",
+              "T07-092",
+              "T07-093",
+              "T07-094",
+              "T07-095",
+              "T07-096",
+              "T07-098",
+              "T07-099",
+              "T07-102",
+              "T07-104",
+              "T07-108",
+              "T07-114"
+            ],
+            catchphrase: "\uB2F9\uC2E0\uC758 \uBB34\uAE30\uB294 \uD754\uB4E4\uB9AC\uC9C0 \uC54A\uB294 \uBB34\uAC8C\uAC10\uC774\uC5D0\uC694."
           },
           {
             stemHanja: "\u5DF1",
@@ -4703,8 +4795,28 @@
               ]
             },
             unverified: true,
-            unverifiedSourceIds: ["T07-118", "T07-137"],
-            sources: ["T03-011", "T03-022", "T03-024", "T07-115", "T07-116", "T07-117", "T07-118", "T07-119", "T07-121", "T07-122", "T07-125", "T07-127", "T07-128", "T07-132", "T07-137"]
+            unverifiedSourceIds: [
+              "T07-118",
+              "T07-137"
+            ],
+            sources: [
+              "T03-011",
+              "T03-022",
+              "T03-024",
+              "T07-115",
+              "T07-116",
+              "T07-117",
+              "T07-118",
+              "T07-119",
+              "T07-121",
+              "T07-122",
+              "T07-125",
+              "T07-127",
+              "T07-128",
+              "T07-132",
+              "T07-137"
+            ],
+            catchphrase: "\uB2F9\uC2E0\uC758 \uBB34\uAE30\uB294 \uC2EC\uC73C\uBA74 \uC0B4\uB9AC\uB294 \uB2E4\uC815\uD568\uC774\uC5D0\uC694."
           },
           {
             stemHanja: "\u5E9A",
@@ -4747,7 +4859,26 @@
               ]
             },
             unverified: false,
-            sources: ["T03-013", "T03-014", "T03-026", "T07-138", "T07-139", "T07-140", "T07-141", "T07-142", "T07-144", "T07-145", "T07-146", "T07-148", "T07-150", "T07-152", "T07-156", "T07-158", "T07-160"]
+            sources: [
+              "T03-013",
+              "T03-014",
+              "T03-026",
+              "T07-138",
+              "T07-139",
+              "T07-140",
+              "T07-141",
+              "T07-142",
+              "T07-144",
+              "T07-145",
+              "T07-146",
+              "T07-148",
+              "T07-150",
+              "T07-152",
+              "T07-156",
+              "T07-158",
+              "T07-160"
+            ],
+            catchphrase: "\uB2F9\uC2E0\uC758 \uBB34\uAE30\uB294 \uAC70\uCE5C \uC6D0\uB8CC\uB97C \uB2E4\uB4EC\uB294 \uACB0\uB2E8\uC774\uC5D0\uC694."
           },
           {
             stemHanja: "\u8F9B",
@@ -4789,7 +4920,24 @@
               ]
             },
             unverified: false,
-            sources: ["T03-014", "T07-161", "T07-162", "T07-163", "T07-164", "T07-165", "T07-167", "T07-168", "T07-170", "T07-171", "T07-173", "T07-174", "T07-176", "T07-180", "T07-183"]
+            sources: [
+              "T03-014",
+              "T07-161",
+              "T07-162",
+              "T07-163",
+              "T07-164",
+              "T07-165",
+              "T07-167",
+              "T07-168",
+              "T07-170",
+              "T07-171",
+              "T07-173",
+              "T07-174",
+              "T07-176",
+              "T07-180",
+              "T07-183"
+            ],
+            catchphrase: "\uB2F9\uC2E0\uC758 \uBB34\uAE30\uB294 \uC624\uB798\uB3C4\uB85D \uBE5B\uC744 \uC783\uC9C0 \uC54A\uB294 \uC815\uC81C\uC608\uC694."
           },
           {
             stemHanja: "\u58EC",
@@ -4831,7 +4979,24 @@
               ]
             },
             unverified: false,
-            sources: ["T03-007", "T03-028", "T07-184", "T07-185", "T07-186", "T07-187", "T07-188", "T07-190", "T07-191", "T07-193", "T07-194", "T07-196", "T07-200", "T07-204", "T07-206"]
+            sources: [
+              "T03-007",
+              "T03-028",
+              "T07-184",
+              "T07-185",
+              "T07-186",
+              "T07-187",
+              "T07-188",
+              "T07-190",
+              "T07-191",
+              "T07-193",
+              "T07-194",
+              "T07-196",
+              "T07-200",
+              "T07-204",
+              "T07-206"
+            ],
+            catchphrase: "\uB2F9\uC2E0\uC758 \uBB34\uAE30\uB294 \uB113\uAC8C \uB2F4\uC544 \uCC9C\uCC9C\uD788 \uB0B4\uBCF4\uB0B4\uB294 \uAE4A\uC774\uC608\uC694."
           },
           {
             stemHanja: "\u7678",
@@ -4873,7 +5038,25 @@
               ]
             },
             unverified: false,
-            sources: ["T03-007", "T03-028", "T07-207", "T07-208", "T07-209", "T07-210", "T07-211", "T07-213", "T07-214", "T07-216", "T07-220", "T07-224", "T07-228", "T07-229", "T07-230", "T07-232"]
+            sources: [
+              "T03-007",
+              "T03-028",
+              "T07-207",
+              "T07-208",
+              "T07-209",
+              "T07-210",
+              "T07-211",
+              "T07-213",
+              "T07-214",
+              "T07-216",
+              "T07-220",
+              "T07-224",
+              "T07-228",
+              "T07-229",
+              "T07-230",
+              "T07-232"
+            ],
+            catchphrase: "\uB2F9\uC2E0\uC758 \uBB34\uAE30\uB294 \uC2A4\uBA70\uB4E4\uC5B4 \uAE38\uC744 \uB0B4\uB294 \uB048\uC9C8\uAE40\uC774\uC5D0\uC694."
           }
         ]
       };
@@ -5484,6 +5667,7 @@
         "stemHangul",
         "element",
         "yinyang",
+        "catchphrase",
         "nature",
         "metaphor",
         "coreTraits",
@@ -5502,6 +5686,8 @@
       var ELEMENT_HANJA = { \uBAA9: "\u6728", \uD654: "\u706B", \uD1A0: "\u571F", \uAE08: "\u91D1", \uC218: "\u6C34" };
       var ELEMENT_KOR = { "\u6728": "\uBAA9", "\u706B": "\uD654", "\u571F": "\uD1A0", "\u91D1": "\uAE08", "\u6C34": "\uC218" };
       var ELEMENT_ORDER = ["\u6728", "\u706B", "\u571F", "\u91D1", "\u6C34"];
+      var STEM_KOR_ELEMENT = { \uAC11: "\uBAA9", \uC744: "\uBAA9", \uBCD1: "\uD654", \uC815: "\uD654", \uBB34: "\uD1A0", \uAE30: "\uD1A0", \uACBD: "\uAE08", \uC2E0: "\uAE08", \uC784: "\uC218", \uACC4: "\uC218" };
+      var BRANCH_KOR_ELEMENT = { \uC790: "\uC218", \uCD95: "\uD1A0", \uC778: "\uBAA9", \uBB18: "\uBAA9", \uC9C4: "\uD1A0", \uC0AC: "\uD654", \uC624: "\uD654", \uBBF8: "\uD1A0", \uC2E0: "\uAE08", \uC720: "\uAE08", \uC220: "\uD1A0", \uD574: "\uC218" };
       var ELEMENT_VS_DAY = RELATIONS.dayStemVsElements;
       var DAY_VS_STEMS = RELATIONS.dayStemVsStems;
       var ANSIM_PATTERNS = RELATIONS.ansimPatterns.map((p) => ({
@@ -5832,7 +6018,13 @@
           gender,
           count: 10
         });
-        const rows = res.pillars.map((p) => ({ fromAge: p.age, toAge: p.age + 9, korean: p.korean }));
+        const rows = res.pillars.map((p) => ({
+          fromAge: p.age,
+          toAge: p.age + 9,
+          korean: p.korean,
+          stemElement: STEM_KOR_ELEMENT[p.pillar.heavenlyStem] || null,
+          branchElement: BRANCH_KOR_ELEMENT[p.pillar.earthlyBranch] || null
+        }));
         const birthMs = Date.parse(chart.input.dateISO + "T00:00:00Z");
         const currentAge = Math.floor((Date.now() - birthMs) / 31556952e3);
         let currentIndex = -1;
@@ -5874,13 +6066,15 @@
         return null;
       }
       globalThis.SajuRoot = {
-        version: "0.3.0",
+        version: "0.3.1",
         computeChart,
         getLuckPillars,
         STEMS,
         ELEMENT_HANJA,
         ELEMENT_KOR,
         ELEMENT_ORDER,
+        STEM_KOR_ELEMENT,
+        BRANCH_KOR_ELEMENT,
         view: {
           EXCESS_MIN,
           elementStatus,

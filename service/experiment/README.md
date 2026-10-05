@@ -33,11 +33,11 @@ node -e "require('http').createServer((q,s)=>{const u=q.url==='/'?'/index.html':
 - 브라우저에서 `http://localhost:8080` (랜딩), `http://localhost:8080/chart.html?src=community` (차트, src 추적 확인).
 - 이 머신(aside sandbox)에서 `npm install`이 esbuild postinstall에서 실패하면: `npm install --ignore-scripts` 후 다운로드된 바이너리의 quarantine 속성을 제거한다. `xattr -d com.apple.quarantine node_modules/@esbuild/darwin-arm64/bin/esbuild`. 일반 터미널에서는 이 문제가 없다.
 
-## {{FORM_ENDPOINT}} 설정법 (3줄)
+## 이메일 폼 연동 (완료 · Google Form formResponse)
 
-1. Formspree 무료 플랜 등으로 폼 엔드포인트 주소를 발급받는다 (외부 유료 서비스 금지 규칙 준수).
-2. `index.html`과 `js/app.js`의 `action="{{FORM_ENDPOINT}}"` 자리에 발급받은 주소를 넣는다 (app.js는 `emailBlock()` 안의 form action).
-3. 폴백용 수신 주소도 바꾼다: `index.html`·`chart.html` 상단 `window.SAJU_CONFIG.mailto`와 `js/app.js`의 `MAILTO` 기본값. 토큰을 채우지 않으면 폼 제출 시 mailto 폴백 안내가 표시된다(자동 집계 불가).
+1. 이메일 폼은 Google Form formResponse로 숨은 iframe POST 한다. 엔드포인트와 엔트리 매핑은 `js/app.js` 상단의 `FORM_ACTION`·`ENTRY` 상수에 있고(랜딩은 `index.html` 인라인 스크립트의 동일 상수), 필드는 `entry.1579324013`(이메일) · `entry.1312707957`(src) · `entry.221952772`(page)로 매핑돼 있다.
+2. HTML의 `action="{{FORM_ENDPOINT}}"` 토큰은 검증 모드(smoke.cjs) 유지용이고, 실제 제출은 JS가 formResponse 주소로 보낸다. 제출이 끝나면 iframe load 시점에 기존 완료 문구로 전환된다.
+3. 엔드포인트가 비어 있으면 기존 mailto 폴백이 동작한다(폴백 수신 주소: `index.html`·`chart.html` 상단 `window.SAJU_CONFIG.mailto`와 `js/app.js`의 `MAILTO` 기본값).
 
 ## 배포
 

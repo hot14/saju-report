@@ -434,3 +434,28 @@ section.refs { margin-top: 2rem; }
   font-size: 0.82rem;
   color: var(--mute, #666);
 }
+
+/* S1 일간 캐치프레이즈 (stems.json catchphrase · honbit 무기 1줄 패턴) */
+.catchphrase {
+  font-weight: 500; font-size: 0.95rem; color: var(--color-ink);
+  padding: 0.4rem 0.9rem 0; border-left: 3px solid var(--color-accent);
+  margin: 0.4rem 0 0;
+}
+
+/* S7 대운 구간별 한 줄 서사 (2종 템플릿 · 지금 칩) */
+.luck-narrs { margin: 0.4rem 0 0.6rem; border-top: 1px solid var(--color-hairline); padding-top: 0.4rem; }
+.luck-narr { font-size: 0.88rem; color: var(--color-ink-soft); padding: 0.15rem 0; }
+.luck-narr .luck-narr-age { font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-ink); margin-right: 0.35rem; }
+.luck-narr .now-chip { vertical-align: 1px; }
+
+/* FAQ 섹션 (S9 뒤 · 닫힘 details 1개 · 5문항) */
+.faq-sec { margin-top: 1.5rem; }
+details.fold.faq { border: 1px solid var(--color-hairline); padding: 0.8rem 0.9rem; margin-top: 0.4rem; }
+details.fold.faq > summary { font-weight: 700; cursor: pointer; }
+details.fold.faq .fold-body { margin-top: 0.6rem; }
+.faq-q { font-weight: 700; margin: 0.9rem 0 0.2rem; }
+.faq-q:first-child { margin-top: 0; }
+.faq-a { font-size: 0.9rem; color: var(--color-ink-soft); line-height: 1.6; }
+
+/* 이메일 폼 숨은 iframe POST 대상 */
+.post-frame { display: none; }

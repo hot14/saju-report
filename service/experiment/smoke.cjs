@@ -68,6 +68,7 @@ if (!CORE || typeof CORE.computeChart !== "function") fail("globalThis.SajuRoot.
 if (!VIEW || typeof VIEW.elementStates !== "function") fail("globalThis.SajuRoot.view 없음");
 if (!Array.isArray(CORE.STEMS) || CORE.STEMS.length !== 10) fail("STEMS 10개 아님: " + (CORE.STEMS || []).length);
 if (!CORE.STEMS[0].careerDirections || !CORE.STEMS[0].dangers) fail("STEMS careerDirections·dangers 누락");
+if (!CORE.STEMS[0].catchphrase) fail("STEMS catchphrase 누락 (작업1 캐치프레이즈 번들 포함)");
 if (!Array.isArray(VIEW.GLOSSARY) || VIEW.GLOSSARY.length < 14) fail("GLOSSARY(용어집) 미노출: " + (VIEW.GLOSSARY || []).length);
 if (!VIEW.ROLE_DISPLAY || !VIEW.ROLE_DISPLAY["재성"]) fail("ROLE_DISPLAY 미노출");
 
@@ -420,6 +421,20 @@ const TEMPLATES = [
   /^(나와 같은 성질|표현과 결실|재물·배우자|직장과 질서·명예|공부와 기억·어머니)의 기운\(전통 용어: (비동|식상|재성|관성|인성)\)$/
 ,
   // 관계 읽기 동적 조합 문장 (구조화 데이터 조합 — 선언 템플릿)
+  // 대운 구간 서사 2종 템플릿 (entry.cjs luckNarrativeLine · ROLE_DISPLAY 문구 조합 · 작업2 선언 등록)
+  /^이 10년은 (나와 같은 성질|표현과 결실|재물·배우자|직장과 질서·명예|공부와 기억·어머니)의 기운으로 (흐름이 밀어주는 편이에요|저절로 되기보다 품이 드는 시기예요)\.$/,
+  // FAQ 질문·답변 (faqSection · 답변은 policy.json 고지문·기존 화면 문장 재사용 + 중립 안내 · 작업3 선언 등록)
+  /^자주 묻는 질문$/,
+  /^일간이 뭐예요\?$/,
+  /^결과 카드 맨 위 굵은 글자가 일간입니다\.$/,
+  /^나를 나타내는 위 글자입니다\.$/,
+  /^왜 계산 과정을 보여주나요\?$/,
+  /^결과를 만든 계산의 근거를 함께 보여드리기 위해서입니다\.$/,
+  /^출생시각을 모르면\?$/,
+  /^서머타임은 어떻게 적용되나요\?$/,
+  /^태어난 기록 시각이 한국 서머타임 적용 구간이면 표준시로 60분 되돌려 계산합니다\.$/,
+  /^적용되면 결과 화면 상단에 서머타임 보정 고지가 함께 표시됩니다\.$/,
+  /^이 결과는 운세인가요\?$/,
 /* 번들 뷰 함수가 JSON 조각+고정 연결어로 조립하는 문장형 (접두 제거 후 JSON 대조) */
 ];
 
@@ -530,10 +545,19 @@ function checkSectionOrder(label, html, chart) {
   if (calc === -1 || gloss === -1) fail(`S12 details 2종 누락(${label})`);
   if (!(calc < gloss)) fail(`S12 details 순서 이상(${label}): 계산 과정 → 용어집`);
   if (!(s8fold < calc)) fail(`S8 변화 규칙 details가 S12보다 앞에 와야 함(${label})`);
-  if ((html.match(/<details/g) || []).length !== 3) fail(`details 개수 3 아님(${label}): ` + (html.match(/<details/g) || []).length);
+  if ((html.match(/<details/g) || []).length !== 4) fail(`details 개수 4 아님(${label}): ` + (html.match(/<details/g) || []).length);
   if (!/<details class="fold" open><summary>계산 과정/.test(html)) fail(`계산 과정 details 열림(하이브리드) 아님(${label})`);
   if (!/<details class="fold" open><summary>용어 자세히/.test(html)) fail(`용어집 details 열림 아님(${label})`);
   if (!/<details class="fold" open><summary>변화 규칙/.test(html)) fail(`변화 규칙 details 열림 아님(${label})`);
+  /* FAQ details: S9(마음 읽기) 뒤, S10(다른 사람과 보기) 앞 · 닫힘 기본 · 5문항 */
+  const faqStart = html.indexOf('<details class="fold faq"><summary>자주 묻는 질문</summary>');
+  const relStart = html.indexOf('<p class="sec-label">Q09</p>');
+  if (faqStart === -1) fail(`FAQ details 누락 또는 닫힘 아님(${label})`);
+  if (/<details class="fold faq" open>/.test(html)) fail(`FAQ details가 기본 열림(${label})`);
+  if (relStart !== -1 && !(faqStart < relStart)) fail(`FAQ가 S10 다른 사람과 보기 뒤에 있음(${label})`);
+  for (const q of ["일간이 뭐예요?", "왜 계산 과정을 보여주나요?", "출생시각을 모르면?", "서머타임은 어떻게 적용되나요?", "이 결과는 운세인가요?"]) {
+    if (html.indexOf(q) === -1) fail(`FAQ 문항 누락(${label}): ${q}`);
+  }
 }
 
 checkSectionOrder("1985 남자", html1, fromBundle);
@@ -571,20 +595,38 @@ if (/CR\d\d|AP\d\d/.test(visible1)) fail("CR/AP 전문 코드가 접힘 밖에 �
 // ---------------------------------------------------------------------------
 
 if (html1.indexOf("{{FORM_ENDPOINT}}") === -1) fail("{{FORM_ENDPOINT}} 토큰 유지 실패");
-if (html1.indexOf('name="src" value="direct"') === -1) fail("이메일 폼 src 추적 필드 누락");
+if (html1.indexOf('name="entry.1312707957" value="direct"') === -1) fail("이메일 폼 src 추적(entry.NNN 매핑) 누락");
+if (html1.indexOf('name="entry.221952772" value="chart"') === -1) fail("이메일 폼 page 필드(entry.NNN 매핑) 누락");
+if (html1.indexOf('name="entry.1579324013"') === -1) fail("이메일 폼 이메일 필드(entry.NNN 매핑) 누락");
+if (html1.indexOf('target="sajuroot-post"') === -1 || html1.indexOf('id="sajuroot-post"') === -1) fail("숨은 iframe POST 대상 누락");
 if (html1.indexOf("mailto:sajuroot@example.com") === -1) fail("mailto 폴백 링크 누락");
-if (html1.indexOf("page") === -1 || html1.indexOf('value="chart"') === -1) fail("이메일 폼 page 필드 누락");
 
 /* DST 케이스: 서머타임 고지(최상단 notice) + 근거 표 행 */
 if (html2.indexOf("서머타임 보정") === -1) fail("1987 DST 케이스: 서머타임 최상단 고지 누락");
 if (html2.indexOf(dstCase.correctionBreakdown.dstNote) === -1) fail("1987 DST: dstNote 문장 미표시");
 if (html2.indexOf("60분 되돌림 · 1987-05-10 02:00 ~ 1987-10-11 03:00") === -1) fail("1987 DST: 근거 표 서머타임 행 누락");
 if (html2.indexOf("辰") === -1) fail("1987 DST: 시주 辰(정확값 戊辰) 미표시");
-if (html1.indexOf("서머타임 보정") !== -1) fail("1985 비DST 케이스에 서머타임 고지 노출됨");
+if (html1.indexOf('class="sec-label">서머타임 보정') !== -1) fail("1985 비DST 케이스에 서머타임 고지 노출됨");
 
 /* 대운 현재 구간 강조 */
 if (html1.indexOf('class="luck-now"') === -1) fail("1985 남자: 대운 현재 구간 강조 누락");
 if (html1.indexOf("지금은 ") === -1 || !/지금은 \d+구간입니다\./.test(html1)) fail("1985 남자: '지금은 N구간입니다' 리드 문구 누락");
+
+/* 작업1: 캐치프레이즈 노출 (기토 기토 己 catchphrase · 일간 배지 아래) */
+if (html1.indexOf("당신의 무기는 심으면 살리는 다정함이에요.") === -1) fail("1985 남자: 결과 카드 헤더 캐치프레이즈 누락");
+if (!html2.includes(CORE.STEMS.find((s) => s.stemHanja === dstCase.dayMaster.hanja).catchphrase)) fail("1987 여자: 캐치프레이즈 누락");
+
+/* 작업2: 대운 구간 서사 (2종 템플릿 · 천간·지지 역할 판정 · 현재 구간 지금 칩) */
+const narrRe = /<p class="luck-narr">[\s\S]*?<\/p>/g;
+const narr1 = html1.match(narrRe) || [];
+if (narr1.length !== 10) fail(`1985 남자: 대운 서사 10구간 아님: ${narr1.length}`);
+if (html1.indexOf("이 10년은 나와 같은 성질의 기운으로 흐름이 밀어주는 편이에요.") === -1) fail("1985 남자: 첫 구간(무인) 서사 문장 누락 (살림 템플릿)");
+const narrPs = html1.match(/<p class="luck-narr">[\s\S]*?<\/p>/g) || [];
+const nowInNarr = narrPs.filter((p) => p.indexOf("now-chip") !== -1).length;
+if (nowInNarr !== 1) fail("1985 남자: 서사 현재 구간 지금 칩 1개 아님");
+const narr2 = html2.match(/이 10년은 (나와 같은 성질|표현과 결실|재물·배우자|직장과 질서·명예|공부와 기억·어머니)의 기운으로 (흐름이 밀어주는 편이에요|저절로 되기보다 품이 드는 시기예요)/g) || [];
+if (narr2.length !== 10) fail(`1987 여자: 대운 서사 10구간 아님: ${narr2.length}`);
+if (narr2.indexOf("이 10년은 직장과 질서·명예의 기운으로 저절로 되기보다 품이 드는 시기예요") === -1) fail("1987 여자: 누름 템플릿(관성 구간) 서사 미노출");
 if (html3.indexOf("성별을 알려주면") === -1) fail("시각 미상: 성별 미선택 안내 누락");
 if (html1.indexOf('class="dm-chip">일간</span>') === -1) fail("오행 지형도 일간 칩 누락");
 /* 기토는 반합 1건이 감지되므로 안정 문구가 아니라 감지 결과가 나와야 한다 */
@@ -621,6 +663,7 @@ console.log(`  대운 남=역행 ${luckM.rows[0].fromAge}세 ${luckM.rows[0].kor
 console.log(`  안심법(기토)=${ansimMe.map((p) => p.id).join("+")} / (갑목)=${ansimGap.map((p) => p.id).join("+")} / (庚辛 noHour)=0건`);
 console.log(`  공망=${fromBundle.voidBranches.join("·")} / 관계(기토×임수)=합없음·제방과큰물·보완${fill.filled.join("/")}`);
 console.log(`  DST(1987-08-28 09:50)=${dstCase.fourPillarsHanja} · 되돌림 60분 · 고지+표 행 확인`);
-console.log(`  [일관성 검증] 콘텐츠 대응=3케이스 PASS(${ALLOWED.length}개 콘텐츠 문장 대조) / 섹션 스냅샷=3케이스 PASS / 용어집 커버리지=${REQUIRED_TERMS.length}용어 PASS`);
-console.log(`  [검증 모드] {{FORM_ENDPOINT}} 유지 · mailto 폴백 · src 추적 · 금지어 0 · em-dash 0 · details 밖 CR/AP 0`);
-console.log(`  bundle.js=${bundleKb}kb · 용어집 ${VIEW.GLOSSARY.length}항목 · details 3종(S8 1 + S12 2, 열림 기본 · 하이브리드)`);
+console.log(`  [일관성 검증] 콘텐츠 대응=3케이스 PASS(${ALLOWED.length}개 콘텐츠 문장 대조) / 섹션 스냅샷=3케이스 PASS / 용어집 커버리지=${REQUIRED_TERMS.length}용어 PASS / FAQ 5문항+닫힘 PASS`);
+console.log(`  [보완 작업] 캐치프레이즈 노출 PASS / 대운 서사 10구간×2케이스(살림·누름 템플릿) PASS / iframe POST(entry.NNN) PASS`);
+console.log(`  [검증 모드] {{FORM_ENDPOINT}} 토큰 유지 · mailto 폴백 · src 추적(entry.NNN) · 금지어 0 · em-dash 0 · details 밖 CR/AP 0`);
+console.log(`  bundle.js=${bundleKb}kb · 용어집 ${VIEW.GLOSSARY.length}항목 · details 4종(S8 1 + FAQ 1 + S12 2)`);

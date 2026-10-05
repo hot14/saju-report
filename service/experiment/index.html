@@ -13,8 +13,8 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=20261002b">
 <script>
-  /* 실험 설정: {{FORM_ENDPOINT}}를 채우기 전에는 폼 제출 시 아래 주소로 메일을
-     보내는 폴백 안내가 표시된다. 실제 수신 주소로 바꿔주세요 (README 참고). */
+  /* 이메일 폼은 Google Form formResponse로 숨은 iframe POST 한다 (entry.cjs/app.js 참고).
+     HTML의 action {{FORM_ENDPOINT}} 토큰은 검증 모드 유지용이고, JS가 실제 주소로 제출한다. */
   window.SAJU_CONFIG = { mailto: "sajuroot@example.com" };
 </script>
 </head>
@@ -57,15 +57,16 @@
   <p class="lead">전체 리딩이 준비되면 이메일로 가장 먼저 알려드립니다. 지금은 무료 계산으로 여덟 글자를 먼저 볼 수 있습니다.</p>
   <p class="priceline">전체 리딩 · {{PRICE}}, 1회 결제, 구독 없음</p>
 
-  <form data-email-form action="{{FORM_ENDPOINT}}" method="post">
-    <input type="hidden" name="src" value="" data-src-slot>
-    <input type="hidden" name="page" value="landing">
+  <form data-email-form action="{{FORM_ENDPOINT}}" method="post" target="sajuroot-post">
+    <input type="hidden" name="entry.1312707957" value="" data-src-slot>
+    <input type="hidden" name="entry.221952772" value="landing">
     <div class="email-field">
       <label for="email-landing">이메일</label>
-      <input id="email-landing" name="email" type="email" autocomplete="email" required>
+      <input id="email-landing" name="entry.1579324013" type="email" autocomplete="email" required>
     </div>
     <button type="submit" class="cta">알림 받기</button>
   </form>
+  <iframe id="sajuroot-post" name="sajuroot-post" title="제출 처리" class="post-frame" hidden></iframe>
 
   <div class="form-fallback" id="landing-fallback" hidden>
     <p>폼 연결 전입니다. 아래 주소로 알림 메일을 보내주시면 명단에 추가합니다.</p>
@@ -109,6 +110,11 @@
     else el.value = src;
   }
 
+  /* Google Form formResponse 엔드포인트 (chart.html app.js와 동일 계약).
+     엔드포인트가 없으면 mailto 폴백으로 전환한다. */
+  var FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSfGMuBH_ZPZ9jjJAUaVjBMusRdJJ8n4kEtkLZrpXut1LWf7xA/formResponse";
+  var FORM_IFRAME = "sajuroot-post";
+
   /* 이미 신청한 브라우저면 폼 대신 완료 문장 */
   function emailDone() {
     try { return localStorage.getItem(EMAIL_KEY) === "1"; } catch (e) { return false; }
@@ -121,12 +127,13 @@
     doneLine.hidden = false;
   }
 
-  /* {{FORM_ENDPOINT}} 미설정 폴백: 제출을 막고 mailto 안내로 전환 */
+  /* 이메일 폼: Google Form formResponse로 숨은 iframe POST. 미설정이면 mailto 폴백 유지 */
   if (form) {
     form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
       var action = form.getAttribute("action") || "";
-      if (action.indexOf("{{") !== -1) {
-        ev.preventDefault();
+      var realAction = action.indexOf("{{") !== -1 ? FORM_ACTION : action;
+      if (!realAction) {
         var mail = document.getElementById("fallback-mailto");
         if (mail && window.SAJU_CONFIG) {
           mail.href = "mailto:" + window.SAJU_CONFIG.mailto +
@@ -137,7 +144,21 @@
         form.hidden = true;
         return;
       }
-      try { localStorage.setItem(EMAIL_KEY, "1"); } catch (e) {}
+      if (form.getAttribute("data-posting") === "1") return;
+      form.setAttribute("data-posting", "1");
+      var finished = false;
+      var frame = document.getElementById(FORM_IFRAME);
+      if (!frame) return;
+      frame.addEventListener("load", function () {
+        if (finished) return;
+        finished = true;
+        try { localStorage.setItem(EMAIL_KEY, "1"); } catch (e) {}
+        form.hidden = true;
+        if (doneLine) doneLine.hidden = false;
+      });
+      form.setAttribute("target", FORM_IFRAME);
+      form.setAttribute("action", realAction);
+      form.submit();
     });
   }
 })();

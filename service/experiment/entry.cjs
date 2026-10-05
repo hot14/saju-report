@@ -34,6 +34,7 @@ const KEEP_FIELDS = [
   "stemHangul",
   "element",
   "yinyang",
+  "catchphrase",
   "nature",
   "metaphor",
   "coreTraits",
@@ -55,6 +56,10 @@ const STEMS = STEMS_SOURCE.map((stem) => {
 const ELEMENT_HANJA = { 목: "木", 화: "火", 토: "土", 금: "金", 수: "水" };
 const ELEMENT_KOR = { "木": "목", "火": "화", "土": "토", "金": "금", "水": "수" };
 const ELEMENT_ORDER = ["木", "火", "土", "金", "水"];
+
+/** 한글 천간·지지 → 오행(한국어). 대운 구간의 천간·지지 오행 판정에 쓴다(manseryeok 반환값은 한글 간지). */
+const STEM_KOR_ELEMENT = { 갑: "목", 을: "목", 병: "화", 정: "화", 무: "토", 기: "토", 경: "금", 신: "금", 임: "수", 계: "수" };
+const BRANCH_KOR_ELEMENT = { 자: "수", 축: "토", 인: "목", 묘: "목", 진: "토", 사: "화", 오: "화", 미: "토", 신: "금", 유: "금", 술: "토", 해: "수" };
 
 // ---------------------------------------------------------------------------
 // relations.json 슬림
@@ -451,7 +456,13 @@ function luckPillars(chart, gender) {
     gender: gender,
     count: 10,
   });
-  const rows = res.pillars.map((p) => ({ fromAge: p.age, toAge: p.age + 9, korean: p.korean }));
+  const rows = res.pillars.map((p) => ({
+    fromAge: p.age,
+    toAge: p.age + 9,
+    korean: p.korean,
+    stemElement: STEM_KOR_ELEMENT[p.pillar.heavenlyStem] || null,
+    branchElement: BRANCH_KOR_ELEMENT[p.pillar.earthlyBranch] || null,
+  }));
   const birthMs = Date.parse(chart.input.dateISO + "T00:00:00Z");
   const currentAge = Math.floor((Date.now() - birthMs) / 31556952000);
   let currentIndex = -1;
@@ -498,13 +509,15 @@ function dayMasterCombo(myHanja, partnerHanja) {
 }
 
 globalThis.SajuRoot = {
-  version: "0.3.0",
+  version: "0.3.1",
   computeChart: computeChart,
   getLuckPillars: getLuckPillars,
   STEMS: STEMS,
   ELEMENT_HANJA: ELEMENT_HANJA,
   ELEMENT_KOR: ELEMENT_KOR,
   ELEMENT_ORDER: ELEMENT_ORDER,
+  STEM_KOR_ELEMENT: STEM_KOR_ELEMENT,
+  BRANCH_KOR_ELEMENT: BRANCH_KOR_ELEMENT,
   view: {
     EXCESS_MIN: EXCESS_MIN,
     elementStatus: elementStatus,
