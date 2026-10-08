@@ -5,60 +5,725 @@
       "sourcePage": "PDF page 34-38 (8. 신금)",
       "_note": "PDF 8장(pp.34~38) 전사. A 키는 '슬롯코드 라벨' 병기(검증기 V6 호환). B各行 source는 검증기 V5 요구 필드로 evidence와 동일 값. 처방 칸이 원문에 비는 가지는 — 표기. 6단계(특성)는 문장 칸 하나라 처방 칸이 원문에 없음(—).",
       "A": {
-        "사1 형상": { "text": "당신은 세공된 보석입니다. {1순위 가지 한 줄}", "evidence": ["R2.SIN.001"] },
-        "사2 성향": { "text": "섬세하고 정확한 사람입니다. 작은 차이를 놓치지 않고, 기준에 맞게 다듬어 완성합니다.", "evidence": ["R2.SIN.002"] },
-        "사3 남들이보는나": { "text": "예리하고 깔끔한 사람으로 보입니다. 속은 쉽게 드러내지 않고, 인정받을 때 가장 빛납니다.", "evidence": ["R2.SIN.002", "R2.SIN.082"] },
-        "사4 칭찬": { "text": "손끝이 정밀하고, 한번 익힌 기술을 자격으로 만들어 내는 힘이 있습니다.", "evidence": ["R2.SIN.001", "R2.SIN.003"] },
-        "일1 무기": { "text": "정밀하게 다듬고 정확하게 잘라 내는 힘, 손끝과 말끝의 재주입니다.", "evidence": ["R2.SIN.001"] },
-        "재6 돈의순서": { "text": "보석은 크기보다 빛으로 값이 매겨집니다. 알맞은 재물을 정확하게 쥐고, 큰 재물은 같은 길을 가는 사람들과 힘을 합쳐 만드는 것이 이 일간의 순서입니다.", "evidence": ["R2.SIN.083"] },
-        "연1 관계선언": { "text": "작은 칼은 꼭 맞는 손잡이를 만날 때 비로소 쓰입니다. 당신도 마음을 준 사람을 섬세하게 살피고 다듬어 주는 사람입니다. 그러면서 속으로는 당신을 알아보고 꼭 맞게 쥐어 줄 사람을 바랍니다.", "evidence": ["R2.SIN.010", "R2.SIN.020"] },
-        "marriageCondition": { "label": "결혼 조건", "text": "푸른 덩굴이 손잡이로 끼워질 때.", "evidence": ["R2.SIN.020"] },
-        "endingTheme": { "label": "끝 소재", "text": "정밀함 / 결과로 인정받는 힘", "evidence": ["R2.SIN.001", "R2.SIN.082"] },
-        "careerNote": { "label": "직업 결(참고용, 나열 금지)", "text": "법·금융·경영, 의학·간호·생명공학, 미용·재단·금속·작은 기계·음향·주방·방송. 국가 자격으로 일하는 경우가 많다.", "evidence": ["R2.SIN.003"] }
+        "사1 형상": {
+          "text": "당신은 세공된 보석입니다. {1순위 가지 한 줄}",
+          "evidence": [
+            "R2.SIN.001"
+          ]
+        },
+        "사2 성향": {
+          "text": "섬세하고 정확한 사람입니다. 작은 차이를 놓치지 않고, 기준에 맞게 다듬어 완성합니다.",
+          "evidence": [
+            "R2.SIN.002"
+          ]
+        },
+        "사3 남들이보는나": {
+          "text": "예리하고 깔끔한 사람으로 보입니다. 속은 쉽게 드러내지 않고, 인정받을 때 가장 빛납니다.",
+          "evidence": [
+            "R2.SIN.002",
+            "R2.SIN.082"
+          ]
+        },
+        "사4 칭찬": {
+          "text": "손끝이 정밀하고, 한번 익힌 기술을 자격으로 만들어 내는 힘이 있습니다.",
+          "evidence": [
+            "R2.SIN.001",
+            "R2.SIN.003"
+          ]
+        },
+        "일1 무기": {
+          "text": "정밀하게 다듬고 정확하게 잘라 내는 힘, 손끝과 말끝의 재주입니다.",
+          "evidence": [
+            "R2.SIN.001"
+          ]
+        },
+        "재6 돈의순서": {
+          "text": "보석은 크기보다 빛으로 값이 매겨집니다. 알맞은 재물을 정확하게 쥐고, 큰 재물은 같은 길을 가는 사람들과 힘을 합쳐 만드는 것이 이 일간의 순서입니다.",
+          "evidence": [
+            "R2.SIN.083"
+          ]
+        },
+        "연1 관계선언": {
+          "text": "작은 칼은 꼭 맞는 손잡이를 만날 때 비로소 쓰입니다. 당신도 마음을 준 사람을 섬세하게 살피고 다듬어 주는 사람입니다. 그러면서 속으로는 당신을 알아보고 꼭 맞게 쥐어 줄 사람을 바랍니다.",
+          "evidence": [
+            "R2.SIN.010",
+            "R2.SIN.020"
+          ]
+        },
+        "marriageCondition": {
+          "label": "결혼 조건",
+          "text": "푸른 덩굴이 손잡이로 끼워질 때.",
+          "evidence": [
+            "R2.SIN.020"
+          ]
+        },
+        "endingTheme": {
+          "label": "끝 소재",
+          "text": "정밀함 / 결과로 인정받는 힘",
+          "evidence": [
+            "R2.SIN.001",
+            "R2.SIN.082"
+          ]
+        },
+        "careerNote": {
+          "label": "직업 결(참고용, 나열 금지)",
+          "text": "법·금융·경영, 의학·간호·생명공학, 미용·재단·금속·작은 기계·음향·주방·방송. 국가 자격으로 일하는 경우가 많다.",
+          "evidence": [
+            "R2.SIN.003"
+          ]
+        }
       },
       "B": [
-        { "stage": 1, "stageName": "손잡이", "stageNote": "작은 칼을 쥘 나무", "code": "신1-가", "condition": "푸른 덩굴 있음 (아래에 나무 뿌리)", "slots": ["사4", "일2"], "diagnosis": "작은 칼에 꼭 맞는 손잡이를 쥐었습니다. 정밀한 일을 자격으로 만들어 냅니다.", "prescription": "국가 자격이 필요한 정밀한 일에서 이름이 섭니다.", "evidence": ["R2.SIN.010", "R2.SIN.003"], "source": ["R2.SIN.010", "R2.SIN.003"] },
-        { "stage": 1, "stageName": "손잡이", "stageNote": "작은 칼을 쥘 나무", "code": "신1-가′", "condition": "덩굴 + 작은 땅 + 시냇물", "slots": ["일3", "재7"], "diagnosis": "손잡이와 놀 물과 둑이 다 갖춰졌습니다.", "prescription": "의료, 옷과 패션처럼 정밀하게 다루는 일에서 능력을 발휘하고 작은 터가 생깁니다.", "evidence": ["R2.SIN.023"], "source": ["R2.SIN.023"] },
-        { "stage": 1, "stageName": "손잡이", "stageNote": "작은 칼을 쥘 나무", "code": "신1-나", "condition": "큰 나무만 있음", "slots": ["사5", "사6", "일2"], "diagnosis": "작은 칼에 긴 손잡이라 창이 됩니다. 멀리 있는 남의 일은 잘 해내는데, 정작 내 일에는 손이 덜 갑니다.", "prescription": "조직 안에서 남의 일을 해결해 주는 자리가 맞습니다. 작은 땅이 들어와 손잡이가 알맞게 줄어드는 때를 짚어 두세요.", "evidence": ["R2.SIN.021"], "source": ["R2.SIN.021"] },
-        { "stage": 1, "stageName": "손잡이", "stageNote": "작은 칼을 쥘 나무", "code": "신1-다", "condition": "나무 없음", "slots": ["사5", "사6", "일4"], "diagnosis": "손잡이 없는 작은 칼이라 쥐는 손이 먼저 다치기 쉽고, 날카로움이 쓰일 곳을 찾지 못합니다.", "prescription": "손잡이가 들어오는 때를 짚어 두고, 그전에는 나무를 다루는 일(옷·종이·섬유)로 손잡이를 대신하세요.", "evidence": ["R2.SIN.010", "R2.SIN.041", "1층 §7"], "source": ["R2.SIN.010", "R2.SIN.041", "1층 §7"] },
-        { "stage": 1, "stageName": "손잡이", "stageNote": "작은 칼을 쥘 나무", "code": "신1-라", "condition": "나무 많음", "slots": ["사7", "사8", "재2"], "diagnosis": "다듬어야 할 나무가 너무 많아 칼날이 무뎌집니다. 판을 크게 벌일수록 버거워집니다.", "prescription": "감당할 수 있는 규모를 지키세요.", "evidence": ["R2.SIN.022"], "source": ["R2.SIN.022"] },
-        { "stage": 2, "stageName": "물", "stageNote": "칼이 노는 곳", "code": "신2-가", "condition": "맑고 청아한 시냇물 있음", "slots": ["사4", "재2"], "diagnosis": "놀기 알맞은 맑은 물을 가진 칼입니다. 다만 그 비가 해를 가려, 국가와 관련된 일은 돌아가야 합니다.", "prescription": "산맥이 들어와 비를 거두는 때에 손재주(나무·금속 공예)로 재물이 열립니다.", "evidence": ["R2.SIN.011", "R2.SIN.072"], "source": ["R2.SIN.011", "R2.SIN.072"] },
-        { "stage": 2, "stageName": "물", "stageNote": "칼이 노는 곳", "code": "신2-나", "condition": "넓고 고요한 호수 있음", "slots": ["사5", "사6", "계4"], "diagnosis": "작은 칼이 큰 물살에 날이 무뎌집니다.", "prescription": "등불이 들어와 손잡이를 만들어 주는 때에 능력이 드러나고 재물을 쥡니다.", "evidence": ["R2.SIN.071"], "source": ["R2.SIN.071"] },
-        { "stage": 2, "stageName": "물", "stageNote": "칼이 노는 곳", "code": "신2-다", "condition": "물 없음", "slots": ["사5", "사6", "일4"], "diagnosis": "놀 물이 없어 역량을 다 펼치기 어렵습니다.", "prescription": "바다 건너에서 배우고 일하세요. 그곳의 물이 손잡이를 키워 재물이 됩니다. 법을 다루는 일과 특히 인연이 있습니다.", "evidence": ["R2.SIN.031"], "source": ["R2.SIN.031"] },
-        { "stage": 2, "stageName": "물", "stageNote": "칼이 노는 곳", "code": "신2-라", "condition": "물 많음, 또는 물이 흐려짐", "slots": ["재2"], "diagnosis": "물살이 세거나 흐려 칼날이 녹슬기 쉽습니다.", "prescription": "칼날이 녹 흐려지는 원인을 따라 처방한다(1층 탁수 해법).", "evidence": ["R2.SIN.030", "1층 탁수"], "source": ["R2.SIN.030", "1층 탁수"], "note": "1층 탁수" },
-        { "stage": 3, "stageName": "둑", "stageNote": "물을 가두는 땅", "code": "신3-가", "condition": "작은 땅 + 시냇물", "slots": ["사4", "일4"], "diagnosis": "알맞은 둑이 알맞은 물을 가둡니다. 둑과 물의 크기가 어긋나면 쉽게 흐려집니다.", "prescription": "둑에 알맞은 나무가 서 있으면 능력을 다 발휘합니다. 나무가 없으면 기르는 일을 곁에 두세요.", "evidence": ["R2.SIN.040"], "source": ["R2.SIN.040"] },
-        { "stage": 3, "stageName": "둑", "stageNote": "물을 가두는 땅", "code": "신3-나", "condition": "거대한 산맥 + 푸른 덩굴", "slots": ["재2", "계4"], "diagnosis": "손잡이가 척박한 큰 땅에 심어져 잘 자라지 못합니다.", "prescription": "시냇물이 들어와 큰 땅이 정원으로 바뀌는 때에 재물을 쥡니다.", "evidence": ["R2.SIN.041"], "source": ["R2.SIN.041"] },
-        { "stage": 3, "stageName": "둑", "stageNote": "물을 가두는 땅", "code": "신3-다", "condition": "작은 땅이 큰 나무를 끌어옴", "slots": ["재2", "재7"], "diagnosis": "큰 건물 같은 큰 재물이 다가오는데, 작은 칼 혼자 감당하기는 버겁습니다.", "prescription": "혼자 지기보다 함께할 금의 힘, 같은 길을 가는 사람의 힘을 빌리세요.", "evidence": ["R2.SIN.070"], "source": ["R2.SIN.070"] },
-        { "stage": 4, "stageName": "해", "stageNote": "이름과 권한", "code": "신4-가", "condition": "태양과 묶임", "slots": ["사5", "사6", "일2", "계2"], "diagnosis": "빛을 끌어오려다 그 빛에 묶인 보석입니다. 이름을 원하지만 정작 하고 싶은 일을 마음대로 하기 어렵습니다.", "prescription": "국가와 관련된 일, 드러나지 않게 권한을 쓰는 자리에서 묶임이 일이 됩니다. 묶임이 풀리는 때를 짚어 두세요.", "evidence": ["R2.SIN.050"], "source": ["R2.SIN.050"] },
-        { "stage": 4, "stageName": "해", "stageNote": "이름과 권한", "code": "신4-가′", "condition": "위 가지 + 원국에 물 없음", "slots": ["일3"], "diagnosis": "그 묶임이 없던 물을 만들어 줍니다.", "prescription": "—", "evidence": ["R2.SIN.050"], "source": ["R2.SIN.050"], "note": "처방 칸 원문 —" },
-        { "stage": 4, "stageName": "해", "stageNote": "이름과 권한", "code": "신4-나", "condition": "물 없음 + 아래 글자가 한낮", "slots": ["사7", "사8", "계4"], "diagnosis": "불이 세서 칼날이 무뎌집니다.", "prescription": "태양과 합해 물이 생기는 때에 다시 날이 섭니다.", "evidence": ["R2.SIN.051"], "source": ["R2.SIN.051"] },
-        { "stage": 4, "stageName": "해", "stageNote": "이름과 권한", "code": "신4-다", "condition": "등불 있음", "slots": ["재6", "일6"], "diagnosis": "이미 다듬어진 칼에 불이 닿아 날이 무뎌질 수 있습니다. 대신 등불이 손잡이와 재물을 함께 만들어 줍니다.", "prescription": "이름보다 실리를 고르세요.", "evidence": ["R2.SIN.052"], "source": ["R2.SIN.052"] },
-        { "stage": 4, "stageName": "해", "stageNote": "이름과 권한", "code": "신4-라", "condition": "등불 + 태양을 끌어옴", "slots": ["사7", "사8", "계4"], "diagnosis": "해와 달 사이에서 마음이 갈립니다.", "prescription": "넓은 호수가 들어와 등불을 손잡이로 바꾸는 때에 갈등이 풀립니다.", "evidence": ["R2.SIN.053"], "source": ["R2.SIN.053"] },
-        { "stage": 5, "stageName": "같은 쇠", "stageNote": null, "code": "신5-가", "condition": "커다란 금맥 있음", "slots": ["사7", "사8", "계4"], "diagnosis": "곁에 큰 칼이 있어 견주면 불리합니다.", "prescription": "아래 글자에 내 뿌리가 단단하면 걱정하지 않아도 됩니다. 푸른 덩굴이 들어와 큰 칼을 작게 다듬는 때에 함께 이름을 높입니다.", "evidence": ["R2.SIN.060"], "source": ["R2.SIN.060"] },
-        { "stage": 5, "stageName": "같은 쇠", "stageNote": null, "code": "신5-나", "condition": "세공된 보석 둘 이상", "slots": ["일3", "계4"], "diagnosis": "날이 둘이라 가위가 되고, 멀리 소식을 잡는 안테나도 됩니다.", "prescription": "자르고 다듬는 일(미용·디자인), 드러나지 않게 정보를 다루는 일이 맞습니다. 태양이 와서 곁의 보석을 정리하는 때에 능력이 드러납니다.", "evidence": ["R2.SIN.061"], "source": ["R2.SIN.061"] },
-        { "stage": 6, "stageName": "특성 (끝 슬롯 후보)", "stageNote": null, "code": "신6-가", "condition": "항상", "slots": ["끝2", "끝3"], "diagnosis": "직접 이름을 좇기보다 일을 정확히 해내 인정받을 때 이름이 자연스럽게 올라갑니다.", "prescription": "—", "evidence": ["R2.SIN.082"], "source": ["R2.SIN.082"], "note": "특성 단계 — 문장 칸 하나, 처방 칸 원문에 없음" },
-        { "stage": 6, "stageName": "특성 (끝 슬롯 후보)", "stageNote": null, "code": "신6-나", "condition": "큰 나무 + 태양을 끌어옴", "slots": ["일3"], "diagnosis": "나무에 꽃을 피우는 손재주라, 공간을 꾸미는 일과 인연이 깊습니다.", "prescription": "—", "evidence": ["R2.SIN.081"], "source": ["R2.SIN.081"], "note": "특성 단계 — 문장 칸 하나, 처방 칸 원문에 없음" },
-        { "stage": 6, "stageName": "특성 (끝 슬롯 후보)", "stageNote": null, "code": "신6-다", "condition": "항상", "slots": ["재7"], "diagnosis": "큰 재물은 같은 길을 가는 사람들과 힘을 합칠 때 모입니다.", "prescription": "—", "evidence": ["R2.SIN.083"], "source": ["R2.SIN.083"], "note": "특성 단계 — 문장 칸 하나, 처방 칸 원문에 없음" }
+        {
+          "stage": 1,
+          "stageName": "손잡이",
+          "stageNote": "작은 칼을 쥘 나무",
+          "code": "신1-가",
+          "condition": "푸른 덩굴 있음 (아래에 나무 뿌리)",
+          "slots": [
+            "사4",
+            "일2"
+          ],
+          "diagnosis": "작은 칼에 꼭 맞는 손잡이를 쥐었습니다. 정밀한 일을 자격으로 만들어 냅니다.",
+          "prescription": "국가 자격이 필요한 정밀한 일에서 이름이 섭니다.",
+          "evidence": [
+            "R2.SIN.010",
+            "R2.SIN.003"
+          ],
+          "source": [
+            "R2.SIN.010",
+            "R2.SIN.003"
+          ]
+        },
+        {
+          "stage": 1,
+          "stageName": "손잡이",
+          "stageNote": "작은 칼을 쥘 나무",
+          "code": "신1-가′",
+          "condition": "덩굴 + 작은 땅 + 시냇물",
+          "slots": [
+            "일3",
+            "재7"
+          ],
+          "diagnosis": "손잡이와 놀 물과 둑이 다 갖춰졌습니다.",
+          "prescription": "의료, 옷과 패션처럼 정밀하게 다루는 일에서 능력을 발휘하고 작은 터가 생깁니다.",
+          "evidence": [
+            "R2.SIN.023"
+          ],
+          "source": [
+            "R2.SIN.023"
+          ]
+        },
+        {
+          "stage": 1,
+          "stageName": "손잡이",
+          "stageNote": "작은 칼을 쥘 나무",
+          "code": "신1-나",
+          "condition": "큰 나무만 있음",
+          "slots": [
+            "사5",
+            "사6",
+            "일2"
+          ],
+          "diagnosis": "작은 칼에 긴 손잡이라 창이 됩니다. 멀리 있는 남의 일은 잘 해내는데, 정작 내 일에는 손이 덜 갑니다.",
+          "prescription": "조직 안에서 남의 일을 해결해 주는 자리가 맞습니다. 작은 땅이 들어와 손잡이가 알맞게 줄어드는 때를 짚어 두세요.",
+          "evidence": [
+            "R2.SIN.021"
+          ],
+          "source": [
+            "R2.SIN.021"
+          ]
+        },
+        {
+          "stage": 1,
+          "stageName": "손잡이",
+          "stageNote": "작은 칼을 쥘 나무",
+          "code": "신1-다",
+          "condition": "나무 없음",
+          "slots": [
+            "사5",
+            "사6",
+            "일4"
+          ],
+          "diagnosis": "손잡이 없는 작은 칼이라 쥐는 손이 먼저 다치기 쉽고, 날카로움이 쓰일 곳을 찾지 못합니다.",
+          "prescription": "손잡이가 들어오는 때를 짚어 두고, 그전에는 나무를 다루는 일(옷·종이·섬유)로 손잡이를 대신하세요.",
+          "evidence": [
+            "R2.SIN.010",
+            "R2.SIN.041",
+            "1층 §7"
+          ],
+          "source": [
+            "R2.SIN.010",
+            "R2.SIN.041",
+            "1층 §7"
+          ]
+        },
+        {
+          "stage": 1,
+          "stageName": "손잡이",
+          "stageNote": "작은 칼을 쥘 나무",
+          "code": "신1-라",
+          "condition": "나무 많음",
+          "slots": [
+            "사7",
+            "사8",
+            "재2"
+          ],
+          "diagnosis": "다듬어야 할 나무가 너무 많아 칼날이 무뎌집니다. 판을 크게 벌일수록 버거워집니다.",
+          "prescription": "감당할 수 있는 규모를 지키세요.",
+          "evidence": [
+            "R2.SIN.022"
+          ],
+          "source": [
+            "R2.SIN.022"
+          ]
+        },
+        {
+          "stage": 2,
+          "stageName": "물",
+          "stageNote": "칼이 노는 곳",
+          "code": "신2-가",
+          "condition": "맑고 청아한 시냇물 있음",
+          "slots": [
+            "사4",
+            "재2"
+          ],
+          "diagnosis": "놀기 알맞은 맑은 물을 가진 칼입니다. 다만 그 비가 해를 가려, 국가와 관련된 일은 돌아가야 합니다.",
+          "prescription": "산맥이 들어와 비를 거두는 때에 손재주(나무·금속 공예)로 재물이 열립니다.",
+          "evidence": [
+            "R2.SIN.011",
+            "R2.SIN.072"
+          ],
+          "source": [
+            "R2.SIN.011",
+            "R2.SIN.072"
+          ]
+        },
+        {
+          "stage": 2,
+          "stageName": "물",
+          "stageNote": "칼이 노는 곳",
+          "code": "신2-나",
+          "condition": "넓고 고요한 호수 있음",
+          "slots": [
+            "사5",
+            "사6",
+            "계4"
+          ],
+          "diagnosis": "작은 칼이 큰 물살에 날이 무뎌집니다.",
+          "prescription": "등불이 들어와 손잡이를 만들어 주는 때에 능력이 드러나고 재물을 쥡니다.",
+          "evidence": [
+            "R2.SIN.071"
+          ],
+          "source": [
+            "R2.SIN.071"
+          ]
+        },
+        {
+          "stage": 2,
+          "stageName": "물",
+          "stageNote": "칼이 노는 곳",
+          "code": "신2-다",
+          "condition": "물 없음",
+          "slots": [
+            "사5",
+            "사6",
+            "일4"
+          ],
+          "diagnosis": "놀 물이 없어 역량을 다 펼치기 어렵습니다.",
+          "prescription": "바다 건너에서 배우고 일하세요. 그곳의 물이 손잡이를 키워 재물이 됩니다. 법을 다루는 일과 특히 인연이 있습니다.",
+          "evidence": [
+            "R2.SIN.031"
+          ],
+          "source": [
+            "R2.SIN.031"
+          ]
+        },
+        {
+          "stage": 2,
+          "stageName": "물",
+          "stageNote": "칼이 노는 곳",
+          "code": "신2-라",
+          "condition": "물 많음, 또는 물이 흐려짐",
+          "slots": [
+            "재2"
+          ],
+          "diagnosis": "물살이 세거나 흐려 칼날이 녹슬기 쉽습니다.",
+          "prescription": "흐려지는 원인을 따라 처방한다(1층 탁수 해법).",
+          "evidence": [
+            "R2.SIN.030",
+            "1층 탁수"
+          ],
+          "source": [
+            "R2.SIN.030",
+            "1층 탁수"
+          ],
+          "note": "1층 탁수"
+        },
+        {
+          "stage": 3,
+          "stageName": "둑",
+          "stageNote": "물을 가두는 땅",
+          "code": "신3-가",
+          "condition": "작은 땅 + 시냇물",
+          "slots": [
+            "사4",
+            "일4"
+          ],
+          "diagnosis": "알맞은 둑이 알맞은 물을 가둡니다. 둑과 물의 크기가 어긋나면 쉽게 흐려집니다.",
+          "prescription": "둑에 알맞은 나무가 서 있으면 능력을 다 발휘합니다. 나무가 없으면 기르는 일을 곁에 두세요.",
+          "evidence": [
+            "R2.SIN.040"
+          ],
+          "source": [
+            "R2.SIN.040"
+          ]
+        },
+        {
+          "stage": 3,
+          "stageName": "둑",
+          "stageNote": "물을 가두는 땅",
+          "code": "신3-나",
+          "condition": "거대한 산맥 + 푸른 덩굴",
+          "slots": [
+            "재2",
+            "계4"
+          ],
+          "diagnosis": "손잡이가 척박한 큰 땅에 심어져 잘 자라지 못합니다.",
+          "prescription": "시냇물이 들어와 큰 땅이 정원으로 바뀌는 때에 재물을 쥡니다.",
+          "evidence": [
+            "R2.SIN.041"
+          ],
+          "source": [
+            "R2.SIN.041"
+          ]
+        },
+        {
+          "stage": 3,
+          "stageName": "둑",
+          "stageNote": "물을 가두는 땅",
+          "code": "신3-다",
+          "condition": "작은 땅이 큰 나무를 끌어옴",
+          "slots": [
+            "재2",
+            "재7"
+          ],
+          "diagnosis": "큰 건물 같은 큰 재물이 다가오는데, 작은 칼 혼자 감당하기는 버겁습니다.",
+          "prescription": "혼자 지기보다 함께할 금의 힘, 같은 길을 가는 사람의 힘을 빌리세요.",
+          "evidence": [
+            "R2.SIN.070"
+          ],
+          "source": [
+            "R2.SIN.070"
+          ]
+        },
+        {
+          "stage": 4,
+          "stageName": "해",
+          "stageNote": "이름과 권한",
+          "code": "신4-가",
+          "condition": "태양과 묶임",
+          "slots": [
+            "사5",
+            "사6",
+            "일2",
+            "계2"
+          ],
+          "diagnosis": "빛을 끌어오려다 그 빛에 묶인 보석입니다. 이름을 원하지만 정작 하고 싶은 일을 마음대로 하기 어렵습니다.",
+          "prescription": "국가와 관련된 일, 드러나지 않게 권한을 쓰는 자리에서 묶임이 일이 됩니다. 묶임이 풀리는 때를 짚어 두세요.",
+          "evidence": [
+            "R2.SIN.050"
+          ],
+          "source": [
+            "R2.SIN.050"
+          ]
+        },
+        {
+          "stage": 4,
+          "stageName": "해",
+          "stageNote": "이름과 권한",
+          "code": "신4-가′",
+          "condition": "위 가지 + 원국에 물 없음",
+          "slots": [
+            "일3"
+          ],
+          "diagnosis": "그 묶임이 없던 물을 만들어 줍니다.",
+          "prescription": "—",
+          "evidence": [
+            "R2.SIN.050"
+          ],
+          "source": [
+            "R2.SIN.050"
+          ],
+          "note": "처방 칸 원문 —"
+        },
+        {
+          "stage": 4,
+          "stageName": "해",
+          "stageNote": "이름과 권한",
+          "code": "신4-나",
+          "condition": "물 없음 + 아래 글자가 한낮",
+          "slots": [
+            "사7",
+            "사8",
+            "계4"
+          ],
+          "diagnosis": "불이 세서 칼날이 무뎌집니다.",
+          "prescription": "태양과 합해 물이 생기는 때에 다시 날이 섭니다.",
+          "evidence": [
+            "R2.SIN.051"
+          ],
+          "source": [
+            "R2.SIN.051"
+          ]
+        },
+        {
+          "stage": 4,
+          "stageName": "해",
+          "stageNote": "이름과 권한",
+          "code": "신4-다",
+          "condition": "등불 있음",
+          "slots": [
+            "재6",
+            "일6"
+          ],
+          "diagnosis": "이미 다듬어진 칼에 불이 닿아 날이 무뎌질 수 있습니다. 대신 등불이 손잡이와 재물을 함께 만들어 줍니다.",
+          "prescription": "이름보다 실리를 고르세요.",
+          "evidence": [
+            "R2.SIN.052"
+          ],
+          "source": [
+            "R2.SIN.052"
+          ]
+        },
+        {
+          "stage": 4,
+          "stageName": "해",
+          "stageNote": "이름과 권한",
+          "code": "신4-라",
+          "condition": "등불 + 태양을 끌어옴",
+          "slots": [
+            "사7",
+            "사8",
+            "계4"
+          ],
+          "diagnosis": "해와 달 사이에서 마음이 갈립니다.",
+          "prescription": "넓은 호수가 들어와 등불을 손잡이로 바꾸는 때에 갈등이 풀립니다.",
+          "evidence": [
+            "R2.SIN.053"
+          ],
+          "source": [
+            "R2.SIN.053"
+          ]
+        },
+        {
+          "stage": 5,
+          "stageName": "같은 쇠",
+          "stageNote": null,
+          "code": "신5-가",
+          "condition": "커다란 금맥 있음",
+          "slots": [
+            "사7",
+            "사8",
+            "계4"
+          ],
+          "diagnosis": "곁에 큰 칼이 있어 견주면 불리합니다.",
+          "prescription": "아래 글자에 내 뿌리가 단단하면 걱정하지 않아도 됩니다. 푸른 덩굴이 들어와 큰 칼을 작게 다듬는 때에 함께 이름을 높입니다.",
+          "evidence": [
+            "R2.SIN.060"
+          ],
+          "source": [
+            "R2.SIN.060"
+          ]
+        },
+        {
+          "stage": 5,
+          "stageName": "같은 쇠",
+          "stageNote": null,
+          "code": "신5-나",
+          "condition": "세공된 보석 둘 이상",
+          "slots": [
+            "일3",
+            "계4"
+          ],
+          "diagnosis": "날이 둘이라 가위가 되고, 멀리 소식을 잡는 안테나도 됩니다.",
+          "prescription": "자르고 다듬는 일(미용·디자인), 드러나지 않게 정보를 다루는 일이 맞습니다. 태양이 와서 곁의 보석을 정리하는 때에 능력이 드러납니다.",
+          "evidence": [
+            "R2.SIN.061"
+          ],
+          "source": [
+            "R2.SIN.061"
+          ]
+        },
+        {
+          "stage": 6,
+          "stageName": "특성 (끝 슬롯 후보)",
+          "stageNote": null,
+          "code": "신6-가",
+          "condition": "항상",
+          "slots": [
+            "끝2",
+            "끝3"
+          ],
+          "diagnosis": "직접 이름을 좇기보다 일을 정확히 해내 인정받을 때 이름이 자연스럽게 올라갑니다.",
+          "prescription": "—",
+          "evidence": [
+            "R2.SIN.082"
+          ],
+          "source": [
+            "R2.SIN.082"
+          ],
+          "note": "특성 단계 — 문장 칸 하나, 처방 칸 원문에 없음"
+        },
+        {
+          "stage": 6,
+          "stageName": "특성 (끝 슬롯 후보)",
+          "stageNote": null,
+          "code": "신6-나",
+          "condition": "큰 나무 + 태양을 끌어옴",
+          "slots": [
+            "일3"
+          ],
+          "diagnosis": "나무에 꽃을 피우는 손재주라, 공간을 꾸미는 일과 인연이 깊습니다.",
+          "prescription": "—",
+          "evidence": [
+            "R2.SIN.081"
+          ],
+          "source": [
+            "R2.SIN.081"
+          ],
+          "note": "특성 단계 — 문장 칸 하나, 처방 칸 원문에 없음"
+        },
+        {
+          "stage": 6,
+          "stageName": "특성 (끝 슬롯 후보)",
+          "stageNote": null,
+          "code": "신6-다",
+          "condition": "항상",
+          "slots": [
+            "재7"
+          ],
+          "diagnosis": "큰 재물은 같은 길을 가는 사람들과 힘을 합칠 때 모입니다.",
+          "prescription": "—",
+          "evidence": [
+            "R2.SIN.083"
+          ],
+          "source": [
+            "R2.SIN.083"
+          ],
+          "note": "특성 단계 — 문장 칸 하나, 처방 칸 원문에 없음"
+        }
       ],
       "C": [
-        { "code": "신운-가", "incoming": "푸른 덩굴", "slots": ["연4", "연5", "계3"], "sentence": "꼭 맞는 손잡이가 끼워지는 {연도}입니다. 곁의 자리가 정해지고 손끝의 일이 자리를 잡습니다.", "evidence": ["R2.SIN.020"], "source": ["R2.SIN.020"] },
-        { "code": "신운-나", "incoming": "작은 땅 (큰 나무만 있을 때)", "slots": ["계4"], "sentence": "긴 손잡이가 알맞게 줄어 내 일에 손이 가기 시작하는 {연도}입니다.", "evidence": ["R2.SIN.021"], "source": ["R2.SIN.021"] },
-        { "code": "신운-다", "incoming": "맑고 청아한 시냇물 (산맥 + 덩굴일 때)", "slots": ["재3", "계4"], "sentence": "척박한 땅이 정원으로 바뀌어 재물을 쥐는 {연도}입니다.", "evidence": ["R2.SIN.041"], "source": ["R2.SIN.041"] },
-        { "code": "신운-라", "incoming": "거대한 산맥 (시냇물 있을 때)", "slots": ["재3", "계4"], "sentence": "해를 가리던 비가 걷혀 손재주가 재물로 바뀌는 {연도}입니다.", "evidence": ["R2.SIN.072"], "source": ["R2.SIN.072"] },
-        { "code": "신운-마", "incoming": "등불 (큰 호수 있을 때)", "slots": ["계4"], "sentence": "큰 물살 속에 손잡이가 생겨 날이 서는 {연도}입니다.", "evidence": ["R2.SIN.071"], "source": ["R2.SIN.071"] },
-        { "code": "신운-바", "incoming": "넓고 고요한 호수 (등불과 해가 함께일 때)", "slots": ["계4"], "sentence": "마음을 가르던 갈등이 풀리는 {연도}입니다.", "evidence": ["R2.SIN.053"], "source": ["R2.SIN.053"] },
-        { "code": "신운-사", "incoming": "태양 (해에 묶여 있지 않을 때)", "slots": ["계2"], "slotNote": "필수", "sentence": "빛에 묶이는 {연도}입니다. 공적인 일, 드러나지 않는 자리에서 힘을 쓰세요.", "evidence": ["R2.SIN.050"], "source": ["R2.SIN.050"] },
-        { "code": "신운-아", "incoming": "태양이나 보석이 다시 옴 (해에 묶여 있을 때)", "slots": ["계2"], "slotNote": "필수", "sentence": "묶였던 빛이 풀리는 {연도}입니다.", "evidence": ["R2.SIN.050", "1층 §7"], "source": ["R2.SIN.050", "1층 §7"] },
-        { "code": "신운-자", "incoming": "태양 (보석이 둘일 때)", "slots": ["계4"], "sentence": "곁의 보석이 정리되어 능력이 드러나는 {연도}입니다.", "evidence": ["R2.SIN.061"], "source": ["R2.SIN.061"] },
-        { "code": "신운-차", "incoming": "푸른 덩굴 (큰 칼이 곁에 있을 때)", "slots": ["계4"], "sentence": "큰 칼이 다듬어져 함께 이름이 높아지는 {연도}입니다.", "evidence": ["R2.SIN.060"], "source": ["R2.SIN.060"] }
+        {
+          "code": "신운-가",
+          "incoming": "푸른 덩굴",
+          "slots": [
+            "연4",
+            "연5",
+            "계3"
+          ],
+          "sentence": "꼭 맞는 손잡이가 끼워지는 {연도}입니다. 곁의 자리가 정해지고 손끝의 일이 자리를 잡습니다.",
+          "evidence": [
+            "R2.SIN.020"
+          ],
+          "source": [
+            "R2.SIN.020"
+          ]
+        },
+        {
+          "code": "신운-나",
+          "incoming": "작은 땅 (큰 나무만 있을 때)",
+          "slots": [
+            "계4"
+          ],
+          "sentence": "긴 손잡이가 알맞게 줄어 내 일에 손이 가기 시작하는 {연도}입니다.",
+          "evidence": [
+            "R2.SIN.021"
+          ],
+          "source": [
+            "R2.SIN.021"
+          ]
+        },
+        {
+          "code": "신운-다",
+          "incoming": "맑고 청아한 시냇물 (산맥 + 덩굴일 때)",
+          "slots": [
+            "재3",
+            "계4"
+          ],
+          "sentence": "척박한 땅이 정원으로 바뀌어 재물을 쥐는 {연도}입니다.",
+          "evidence": [
+            "R2.SIN.041"
+          ],
+          "source": [
+            "R2.SIN.041"
+          ]
+        },
+        {
+          "code": "신운-라",
+          "incoming": "거대한 산맥 (시냇물 있을 때)",
+          "slots": [
+            "재3",
+            "계4"
+          ],
+          "sentence": "해를 가리던 비가 걷혀 손재주가 재물로 바뀌는 {연도}입니다.",
+          "evidence": [
+            "R2.SIN.072"
+          ],
+          "source": [
+            "R2.SIN.072"
+          ]
+        },
+        {
+          "code": "신운-마",
+          "incoming": "등불 (큰 호수 있을 때)",
+          "slots": [
+            "계4"
+          ],
+          "sentence": "큰 물살 속에 손잡이가 생겨 날이 서는 {연도}입니다.",
+          "evidence": [
+            "R2.SIN.071"
+          ],
+          "source": [
+            "R2.SIN.071"
+          ]
+        },
+        {
+          "code": "신운-바",
+          "incoming": "넓고 고요한 호수 (등불과 해가 함께일 때)",
+          "slots": [
+            "계4"
+          ],
+          "sentence": "마음을 가르던 갈등이 풀리는 {연도}입니다.",
+          "evidence": [
+            "R2.SIN.053"
+          ],
+          "source": [
+            "R2.SIN.053"
+          ]
+        },
+        {
+          "code": "신운-사",
+          "incoming": "태양 (해에 묶여 있지 않을 때)",
+          "slots": [
+            "계2"
+          ],
+          "slotNote": "필수",
+          "sentence": "빛에 묶이는 {연도}입니다. 공적인 일, 드러나지 않는 자리에서 힘을 쓰세요.",
+          "evidence": [
+            "R2.SIN.050"
+          ],
+          "source": [
+            "R2.SIN.050"
+          ]
+        },
+        {
+          "code": "신운-아",
+          "incoming": "태양이나 보석이 다시 옴 (해에 묶여 있을 때)",
+          "slots": [
+            "계2"
+          ],
+          "slotNote": "필수",
+          "sentence": "묶였던 빛이 풀리는 {연도}입니다.",
+          "evidence": [
+            "R2.SIN.050",
+            "1층 §7"
+          ],
+          "source": [
+            "R2.SIN.050",
+            "1층 §7"
+          ]
+        },
+        {
+          "code": "신운-자",
+          "incoming": "태양 (보석이 둘일 때)",
+          "slots": [
+            "계4"
+          ],
+          "sentence": "곁의 보석이 정리되어 능력이 드러나는 {연도}입니다.",
+          "evidence": [
+            "R2.SIN.061"
+          ],
+          "source": [
+            "R2.SIN.061"
+          ]
+        },
+        {
+          "code": "신운-차",
+          "incoming": "푸른 덩굴 (큰 칼이 곁에 있을 때)",
+          "slots": [
+            "계4"
+          ],
+          "sentence": "큰 칼이 다듬어져 함께 이름이 높아지는 {연도}입니다.",
+          "evidence": [
+            "R2.SIN.060"
+          ],
+          "source": [
+            "R2.SIN.060"
+          ]
+        }
       ],
       "D": [
-        { "item": "칼자루 없는 신금과 폭력", "evidence": ["R2.SIN.080"], "source": ["R2.SIN.080"], "note": "확인 필요" },
-        { "item": "여성의 까칠함·공주 행세", "evidence": ["R2.SIN.084"], "source": ["R2.SIN.084"], "note": "확인 필요" },
-        { "item": "회사 도산", "evidence": ["R2.SIN.022"], "source": ["R2.SIN.022"] },
-        { "item": "금융권 차입", "evidence": ["R2.SIN.070"], "source": ["R2.SIN.070"], "note": "재무 지시" },
-        { "item": "냉소적이라는 원문 서술", "evidence": ["R2.SIN.002"], "source": ["R2.SIN.002"], "note": "사3은 긍정 번역만" },
-        { "item": "\"사업보다 조직생활\"", "evidence": ["R2.SIN.021"], "source": ["R2.SIN.021"], "note": "자리의 성격으로만 표현" }
+        {
+          "item": "칼자루 없는 신금과 폭력",
+          "evidence": [
+            "R2.SIN.080"
+          ],
+          "source": [
+            "R2.SIN.080"
+          ],
+          "note": "확인 필요"
+        },
+        {
+          "item": "여성의 까칠함·공주 행세",
+          "evidence": [
+            "R2.SIN.084"
+          ],
+          "source": [
+            "R2.SIN.084"
+          ],
+          "note": "확인 필요"
+        },
+        {
+          "item": "회사 도산",
+          "evidence": [
+            "R2.SIN.022"
+          ],
+          "source": [
+            "R2.SIN.022"
+          ]
+        },
+        {
+          "item": "금융권 차입",
+          "evidence": [
+            "R2.SIN.070"
+          ],
+          "source": [
+            "R2.SIN.070"
+          ],
+          "note": "재무 지시"
+        },
+        {
+          "item": "냉소적이라는 원문 서술",
+          "evidence": [
+            "R2.SIN.002"
+          ],
+          "source": [
+            "R2.SIN.002"
+          ],
+          "note": "사3은 긍정 번역만"
+        },
+        {
+          "item": "\"사업보다 조직생활\"",
+          "evidence": [
+            "R2.SIN.021"
+          ],
+          "source": [
+            "R2.SIN.021"
+          ],
+          "note": "자리의 성격으로만 표현"
+        }
       ]
     },
     "壬": {
@@ -66,65 +731,836 @@
       "sourcePage": "PDF page 38-43 (9. 임수)",
       "_note": "PDF 9장(pp.38~43) 전사. A 키는 '슬롯코드 라벨' 병기(검증기 V6 호환). B各行 source는 검증기 V5 요구 필드로 evidence와 동일 값. 처방 칸이 원문에 비는 가지는 — 표기. (일) 표기 가지는 일 섹션 흐름 가지. 7단계(특성)는 문장 칸 하나라 처방 칸이 원문에 없음(—).",
       "A": {
-        "사1 형상": { "text": "당신은 넓고 고요한 호수입니다. {1순위 가지 한 줄}", "evidence": ["R2.IM.001"] },
-        "사2 성향": { "text": "모든 걸 품되 속을 잘 드러내지 않는 사람입니다. 들은 것을 오래 기억하고, 막히면 부딪히기보다 돌아서 흐릅니다.", "evidence": ["R2.IM.002"] },
-        "사3 남들이보는나": { "text": "사람들은 당신 앞에서 자기 얘기를 쉽게 꺼냅니다. 정작 그 속내를 아는 사람은 드뭅니다.", "evidence": ["R2.IM.002"] },
-        "사4 칭찬": { "text": "처음 가는 길도 금세 익히고, 떨어져 있던 것들을 이어 하나로 만드는 힘이 있습니다.", "evidence": ["R2.IM.002"] },
-        "일1 무기": { "text": "흡수력과 연결력입니다. 배운 걸 빨리 제 것으로 만들고, 사람과 사람, 정보와 정보를 잇습니다.", "evidence": ["R2.IM.002", "R2.IM.003"] },
-        "재6 돈의순서": { "text": "돈을 좇으면 물이 흐려지고, 이름을 세우면 돈이 따라옵니다. 호수 위에 해가 떠야 물결이 반짝이듯, 사람이 모여드는 호수라 나눌 때 더 크게 돌아옵니다.", "evidence": ["R2.IM.074", "R2.IM.041"] },
-        "연1 관계선언": { "text": "물은 어떤 그릇에 담기든 그 모양대로 자신을 바꿉니다. 당신도 상대에 따라 모양을 바꿔 가며 상대를 다 받아 주고 품는 사람입니다. 그러면서도 속으로는, 흘러가려는 나를 말없이 붙잡아 주는 사람을 간절히 바랍니다.", "evidence": ["R2.IM.002", "R2.IM.010"] },
-        "marriageCondition": { "label": "결혼 조건", "text": "거대한 산맥이 둑으로 들어올 때.", "evidence": ["R2.IM.011"] },
-        "endingTheme": { "label": "끝 소재", "text": "많은 것을 품어 온 넓이 / 흩어졌던 시간만큼 넓어진 호수", "evidence": ["R2.IM.002"] },
-        "careerNote": { "label": "직업 결(참고용, 나열 금지)", "text": "해외, 유통, 음식, 정보, 교육.", "evidence": ["R2.IM.003"] }
+        "사1 형상": {
+          "text": "당신은 넓고 고요한 호수입니다. {1순위 가지 한 줄}",
+          "evidence": [
+            "R2.IM.001"
+          ]
+        },
+        "사2 성향": {
+          "text": "모든 걸 품되 속을 잘 드러내지 않는 사람입니다. 들은 것을 오래 기억하고, 막히면 부딪히기보다 돌아서 흐릅니다.",
+          "evidence": [
+            "R2.IM.002"
+          ]
+        },
+        "사3 남들이보는나": {
+          "text": "사람들은 당신 앞에서 자기 얘기를 쉽게 꺼냅니다. 정작 그 속내를 아는 사람은 드뭅니다.",
+          "evidence": [
+            "R2.IM.002"
+          ]
+        },
+        "사4 칭찬": {
+          "text": "처음 가는 길도 금세 익히고, 떨어져 있던 것들을 이어 하나로 만드는 힘이 있습니다.",
+          "evidence": [
+            "R2.IM.002"
+          ]
+        },
+        "일1 무기": {
+          "text": "흡수력과 연결력입니다. 배운 걸 빨리 제 것으로 만들고, 사람과 사람, 정보와 정보를 잇습니다.",
+          "evidence": [
+            "R2.IM.002",
+            "R2.IM.003"
+          ]
+        },
+        "재6 돈의순서": {
+          "text": "돈을 좇으면 물이 흐려지고, 이름을 세우면 돈이 따라옵니다. 호수 위에 해가 떠야 물결이 반짝이듯, 사람이 모여드는 호수라 나눌 때 더 크게 돌아옵니다.",
+          "evidence": [
+            "R2.IM.074",
+            "R2.IM.041"
+          ]
+        },
+        "연1 관계선언": {
+          "text": "물은 어떤 그릇에 담기든 그 모양대로 자신을 바꿉니다. 당신도 상대에 따라 모양을 바꿔 가며 상대를 다 받아 주고 품는 사람입니다. 그러면서도 속으로는, 흘러가려는 나를 말없이 붙잡아 주는 사람을 간절히 바랍니다.",
+          "evidence": [
+            "R2.IM.002",
+            "R2.IM.010"
+          ]
+        },
+        "marriageCondition": {
+          "label": "결혼 조건",
+          "text": "거대한 산맥이 둑으로 들어올 때.",
+          "evidence": [
+            "R2.IM.011"
+          ]
+        },
+        "endingTheme": {
+          "label": "끝 소재",
+          "text": "많은 것을 품어 온 넓이 / 흩어졌던 시간만큼 넓어진 호수",
+          "evidence": [
+            "R2.IM.002"
+          ]
+        },
+        "careerNote": {
+          "label": "직업 결(참고용, 나열 금지)",
+          "text": "해외, 유통, 음식, 정보, 교육.",
+          "evidence": [
+            "R2.IM.003"
+          ]
+        }
       },
       "B": [
-        { "stage": 1, "stageName": "둑", "stageNote": "물을 가두는 땅 (자리와 곁)", "code": "임1-가", "condition": "거대한 산맥 있음", "slots": ["사4", "재1"], "diagnosis": "큰 둑이 큰물을 가둬 쓰임 있는 호수가 되었습니다. 힘이 흩어지지 않고 한곳으로 모입니다.", "prescription": "이름을 거는 일을 먼저 좇으세요. 둑 안에 고인 물이 재물이 됩니다.", "evidence": ["R2.IM.020", "R2.IM.074"], "source": ["R2.IM.020", "R2.IM.074"] },
-        { "stage": 1, "stageName": "둑", "stageNote": "물을 가두는 땅 (자리와 곁)", "code": "임1-나", "condition": "작은 땅만 있음", "slots": ["사5", "사6", "재2"], "diagnosis": "큰물을 작은 둑으로 막고 있어 둑이 자주 버거워집니다. 애써 모은 것이 넘쳐 흘러가기 쉽습니다.", "prescription": "넘치는 물을 흘려보낼 길을 함께 내 두세요. 바다 건너의 일, 사람과 물건이 오가는 일이 둑의 짐을 덜어 줍니다.", "evidence": ["R2.IM.021", "R1.TAK.032"], "source": ["R2.IM.021", "R1.TAK.032"] },
-        { "stage": 1, "stageName": "둑", "stageNote": "물을 가두는 땅 (자리와 곁)", "code": "임1-다", "condition": "둑 없음", "slots": ["사5", "사6"], "diagnosis": "둑이 없는 큰물은 한곳에 머물기 어렵습니다. 그래서 여러 일을 한꺼번에 벌이고, 끝을 보기 전에 다음으로 넘어가는 일이 잦았을 겁니다.", "prescription": "둑이 없어 고일 수 없는 물은, 바다 건너 다른 땅에 닿을 때 비로소 흩어짐이 멈춥니다. 머물 곳을 찾기보다 흘러갈 곳을 먼저 정하세요.", "evidence": ["R2.IM.010", "R2.IM.023", "R2.IM.080"], "source": ["R2.IM.010", "R2.IM.023", "R2.IM.080"] },
-        { "stage": 1, "stageName": "둑", "stageNote": "물을 가두는 땅 (자리와 곁)", "code": "임1-다(일)", "condition": "둑 없음 (일 섹션 흐름)", "slots": ["일3", "일4"], "diagnosis": "넘치는 물은 제방을 만들어 모아야 쓰일 수 있습니다.", "prescription": "물을 가둘 땅이 부족하니, 국경을 넘어 제방을 만나거나 오히려 물길을 터 주어 사람과 물건과 정보가 오가는 유통의 일이 잘 맞습니다.", "evidence": ["R2.IM.020", "R2.IM.023"], "source": ["R2.IM.020", "R2.IM.023"], "note": "원문 (일) 섹션 흐름 가지" },
-        { "stage": 2, "stageName": "둑의 나무", "stageNote": "둑을 붙잡는 뿌리", "code": "임2-가", "condition": "산맥 + 큰 나무", "slots": ["사4"], "diagnosis": "둑에 큰 나무가 뿌리내려 물이 맑습니다. 자리와 곁이 단단합니다.", "prescription": "—", "evidence": ["R2.IM.012", "R2.IM.070"], "source": ["R2.IM.012", "R2.IM.070"], "note": "처방 칸 원문 —" },
-        { "stage": 2, "stageName": "둑의 나무", "stageNote": "둑을 붙잡는 뿌리", "code": "임2-나", "condition": "산맥 + 나무 없음 (운에서 둑이 들어올 때도 같다)", "slots": ["일5", "사7", "사8"], "diagnosis": "흙으로만 쌓은 둑은 혼자 버티지 못하고 쓸려 갑니다.", "prescription": "그래서 그 흙에 나무를 심는 일, 곧 무언가를 키우고 만드는 일이 필요합니다. 이야기를 짓든, 공간을 짓든, 사람을 기르든 자라는 것을 곁에 두는 일입니다.", "evidence": ["R2.IM.012", "R2.IM.030", "R2.IM.083", "R2.IM.084"], "source": ["R2.IM.012", "R2.IM.030", "R2.IM.083", "R2.IM.084"] },
-        { "stage": 2, "stageName": "둑의 나무", "stageNote": "둑을 붙잡는 뿌리", "code": "임2-나′", "condition": "위 가지 + 작은 땅 있음", "slots": ["일5"], "diagnosis": "곁의 작은 땅이 큰 나무를 불러와 둑에 심어 줍니다.", "prescription": "—", "evidence": ["R2.IM.075"], "source": ["R2.IM.075"], "note": "처방 칸 원문 —" },
-        { "stage": 2, "stageName": "둑의 나무", "stageNote": "둑을 붙잡는 뿌리", "code": "임2-다", "condition": "산맥 + 푸른 덩굴만", "slots": ["사7", "사8", "일5"], "diagnosis": "큰 둑에 작은 덩굴이 심어져, 큰물이 들면 버티기 어렵습니다. 맡은 자리나 곁의 일이 자리가 흔들리기 쉽습니다.", "prescription": "덩굴이 아니라 큰 나무를 키우세요. 오래 깊게 기르는 일이 둑을 지킵니다.", "evidence": ["R2.IM.031", "R2.IM.083"], "source": ["R2.IM.031", "R2.IM.083"] },
-        { "stage": 2, "stageName": "둑의 나무", "stageNote": "둑을 붙잡는 뿌리", "code": "임2-라", "condition": "작은 땅 + 큰 나무", "slots": ["사7"], "diagnosis": "작은 둑에 큰 나무가 자라 둑이 무너지기 쉽습니다.", "prescription": "자료 없음 — 진단만 쓴다.", "evidence": ["R2.IM.032"], "source": ["R2.IM.032"], "note": "자료 없음 표시 가지 (문서 끝 자료 없음 목록)" },
-        { "stage": 2, "stageName": "둑의 나무", "stageNote": "둑을 붙잡는 뿌리", "code": "임2-마", "condition": "큰 나무 + 땅 없음", "slots": ["계4"], "diagnosis": "땅 없이 물 위에 뜬 나무라 제대로 자라지 못합니다.", "prescription": "그 나무를 심을 땅이 들어오는 때를 짚어 두세요.", "evidence": ["R2.IM.070"], "source": ["R2.IM.070"] },
-        { "stage": 2, "stageName": "둑의 나무", "stageNote": "둑을 붙잡는 뿌리", "code": "임2-바", "condition": "작은 땅과 큰 나무가 묶여 있음", "slots": ["사7", "사8", "계2"], "diagnosis": "작은 둑에 묶인 큰 나무가 자랄수록 둑이 버거워집니다.", "prescription": "묶임이 풀리는 때를 짚어 두고, 그때 자리가 흔들리지 않게 미리 기반을 다지세요.", "evidence": ["R2.IM.081"], "source": ["R2.IM.081"] },
-        { "stage": 2, "stageName": "둑의 나무", "stageNote": "둑을 붙잡는 뿌리", "code": "임2-사", "condition": "푸른 덩굴 + 금 없음", "slots": ["일4"], "diagnosis": "물 위의 부초 같은 덩굴이지만, 금맥을 불러와 물을 마르지 않게 해 줍니다.", "prescription": "그 덩굴이 불러오는 손길, 곧 기준과 기술의 일을 곁에 두세요.", "evidence": ["R2.IM.071"], "source": ["R2.IM.071"] },
-        { "stage": 3, "stageName": "해", "stageNote": "호수 위의 빛 (재물과 이름)", "code": "임3-가", "condition": "태양 + 물이 맑음", "slots": ["사4", "재1"], "diagnosis": "맑은 호수 위에 해가 뜬 사람입니다. 이름과 재물이 함께 반짝입니다.", "prescription": "이름을 먼저 세우세요. 사람을 불러 모으고 베풀수록 더 크게 돌아옵니다.", "evidence": ["R2.IM.013", "R2.IM.041"], "source": ["R2.IM.013", "R2.IM.041"] },
-        { "stage": 3, "stageName": "해", "stageNote": "호수 위의 빛 (재물과 이름)", "code": "임3-나", "condition": "태양 + 물이 흐려짐", "slots": ["재2"], "diagnosis": "물이 흐려 해가 비쳐도 반짝이지 않습니다. 잘해도 손에 남는 것이 적습니다.", "prescription": "흐려지는 원인을 따라 처방한다(1층 탁수 해법).", "evidence": ["R2.IM.040", "1층 탁수"], "source": ["R2.IM.040", "1층 탁수"], "note": "1층 탁수" },
-        { "stage": 3, "stageName": "해", "stageNote": "호수 위의 빛 (재물과 이름)", "code": "임3-다", "condition": "태양 + 맑고 청아한 시냇물 (가림)", "slots": ["사7", "사8", "재2", "재7"], "diagnosis": "이미 당신을 비추는 해가 떠 있습니다. 그런데 바로 옆에서 비가 내리고 있어서, 가장 잘했던 순간에도 이름이 잘 남지 않았을 겁니다.", "prescription": "큰 둑이 들어와 비를 거두는 때에 해가 처음으로 드러납니다. 그때 돈은 땅에서 열립니다. 공간과 터, 짓는 일에 닿아 있는 일이 돈의 문을 엽니다.", "evidence": ["R2.IM.061"], "source": ["R2.IM.061"] },
-        { "stage": 3, "stageName": "해", "stageNote": "호수 위의 빛 (재물과 이름)", "code": "임3-라", "condition": "태양 + 둑 없음", "slots": ["재1"], "diagnosis": "둑이 없어 물이 흘러갈 때, 해가 보석을 불러와 물을 다시 만들어 줍니다. 다만 비가 들면 그 해가 가려집니다.", "prescription": "—", "evidence": ["R2.IM.072"], "source": ["R2.IM.072"], "note": "처방 칸 원문 —" },
-        { "stage": 3, "stageName": "해", "stageNote": "호수 위의 빛 (재물과 이름)", "code": "임3-마", "condition": "태양이 태어난 해에 있음 (재물의 판)", "slots": ["일2", "재1"], "diagnosis": "재물은 국가와 관련된 기관이나, 국가시험으로 따라오는 자격과 연결되어 있습니다. 이름이 걸리고 기록이 남는 일일수록 힘이 붙습니다.", "prescription": "—", "evidence": ["국가자리 판정", "R2.IM.041"], "source": ["국가자리 판정", "R2.IM.041"], "note": "처방 칸 원문 —, 국가자리 판정 가지" },
-        { "stage": 4, "stageName": "수원", "stageNote": "물을 채우는 금맥", "code": "임4-가", "condition": "금 있음", "slots": ["사4"], "diagnosis": "안에 마르지 않는 수원이 있어 지쳐도 다시 차오릅니다.", "prescription": "—", "evidence": ["R2.IM.014"], "source": ["R2.IM.014"], "note": "처방 칸 원문 —" },
-        { "stage": 4, "stageName": "수원", "stageNote": "물을 채우는 금맥", "code": "임4-나", "condition": "커다란 금맥 있음", "slots": ["사4", "일2"], "diagnosis": "금맥이 물에서 놀며 수량을 지켜 줍니다. 둑과 큰 나무가 갖춰지면 그 나무를 손잡이 삼아 권한을 씁니다.", "prescription": "이름에서 이름으로 이어지는 구조라 명예를 좇으세요.", "evidence": ["R2.IM.076"], "source": ["R2.IM.076"] },
-        { "stage": 4, "stageName": "수원", "stageNote": "물을 채우는 금맥", "code": "임4-나(일)", "condition": "커다란 금맥 + 운에서 둑이 들어오고 나무 없음", "slots": ["일6"], "diagnosis": "손끝에는 커다란 금맥이 있어 기술과 도구를 다루는 감각이 좋습니다.", "prescription": "다만 둑이 들어오는 시기에는 도구가 중심이 되면 물이 흐려지니, 무엇을 키울지 먼저 정하고 도구는 그 뒤에 쥐세요.", "evidence": ["R2.IM.023 vs 051"], "source": ["R2.IM.023 vs 051"], "note": "원문 (일) 표기, 근거 R2.IM.023 vs 051" },
-        { "stage": 4, "stageName": "수원", "stageNote": "물을 채우는 금맥", "code": "임4-다", "condition": "세공된 보석 있음", "slots": ["일2"], "diagnosis": "보석이 해를 불러와 호수 위에 띄웁니다.", "prescription": "국가와 관련된 일에서 힘을 씁니다. 다만 큰 물살에 작은 날이 무뎌지기 쉬우니, 물이 잔잔해지는 때를 짚어 두세요.", "evidence": ["R2.IM.077"], "source": ["R2.IM.077"] },
-        { "stage": 4, "stageName": "수원", "stageNote": "물을 채우는 금맥", "code": "임4-라", "condition": "금 없음", "slots": ["사5", "사6", "일4", "일6"], "diagnosis": "물을 채워 줄 수원이 없어 쉽게 마릅니다.", "prescription": "물을 만드는 금맥의 일(법·금융·의약), 바다 건너와 닿은 일, 외국과 닿은 일터가 수원이 됩니다. 단 둑만 있고 나무가 없어 흐려질 때는 나무의 일이 먼저입니다.", "evidence": ["R2.IM.050", "R2.IM.051"], "source": ["R2.IM.050", "R2.IM.051"] },
-        { "stage": 5, "stageName": "물의 양", "stageNote": null, "code": "임5-가", "condition": "넓고 고요한 호수 둘 이상", "slots": ["사5", "사6", "일4"], "diagnosis": "물이 겹쳐 넘칩니다. 둑도 나무도 버티기 어려울 만큼 힘이 큽니다.", "prescription": "수량을 줄이는 쪽이 답입니다. 등불처럼 마음과 정신을 밝히는 일이 물을 잔잔하게 합니다.", "evidence": ["R2.IM.060"], "source": ["R2.IM.060"] },
-        { "stage": 5, "stageName": "물의 양", "stageNote": null, "code": "임5-나", "condition": "호수 둘 이상 + 둑 없음", "slots": ["사5", "사6", "일4"], "diagnosis": "넘치는 물이 머물 곳 없이 흐릅니다.", "prescription": "바다 건너 새 땅에 자리를 잡는 것이 맞습니다. 그게 어렵다면 마음과 정신을 밝히는 일로 물을 잔잔하게 하세요.", "evidence": ["R2.IM.078"], "source": ["R2.IM.078"] },
-        { "stage": 5, "stageName": "물의 양", "stageNote": null, "code": "임5-다", "condition": "맑고 청아한 시냇물 있음", "slots": ["사4"], "diagnosis": "작은 물이 결국 큰물로 합쳐져 힘이 됩니다.", "prescription": "—", "evidence": ["R2.IM.062"], "source": ["R2.IM.062"], "note": "처방 칸 원문 —" },
-        { "stage": 6, "stageName": "등불", "stageNote": null, "code": "임6-가", "condition": "등불과 묶임", "slots": ["사5", "사6", "계2"], "diagnosis": "등불과 하나로 묶인 호수입니다. 물이 잔잔해지는 대신 넓게 펼치기 어렵습니다.", "prescription": "마음과 정신의 세계를 다루는 일에서 깊어집니다. 나무가 없어 물이 흐려질 때는 이 묶임이 오히려 나무를 만들어 줍니다.", "evidence": ["R2.IM.073", "R2.IM.042"], "source": ["R2.IM.073", "R2.IM.042"] },
-        { "stage": 7, "stageName": "특성 (끝 슬롯 후보)", "stageNote": null, "code": "임7-가", "condition": "항상", "slots": ["끝2"], "diagnosis": "어디에도 고이지 않았기에 많은 곳을 지나왔고, 그만큼 많은 것을 품었습니다. 흩어졌던 시간만큼 당신의 호수는 넓어졌습니다.", "prescription": "—", "evidence": ["R2.IM.002"], "source": ["R2.IM.002"], "note": "특성 단계 — 문장 칸 하나, 처방 칸 원문에 없음" }
+        {
+          "stage": 1,
+          "stageName": "둑",
+          "stageNote": "물을 가두는 땅 (자리와 곁)",
+          "code": "임1-가",
+          "condition": "거대한 산맥 있음",
+          "slots": [
+            "사4",
+            "재1"
+          ],
+          "diagnosis": "큰 둑이 큰물을 가둬 쓰임 있는 호수가 되었습니다. 힘이 흩어지지 않고 한곳으로 모입니다.",
+          "prescription": "이름을 거는 일을 먼저 좇으세요. 둑 안에 고인 물이 재물이 됩니다.",
+          "evidence": [
+            "R2.IM.020",
+            "R2.IM.074"
+          ],
+          "source": [
+            "R2.IM.020",
+            "R2.IM.074"
+          ]
+        },
+        {
+          "stage": 1,
+          "stageName": "둑",
+          "stageNote": "물을 가두는 땅 (자리와 곁)",
+          "code": "임1-나",
+          "condition": "작은 땅만 있음",
+          "slots": [
+            "사5",
+            "사6",
+            "재2"
+          ],
+          "diagnosis": "큰물을 작은 둑으로 막고 있어 둑이 자주 버거워집니다. 애써 모은 것이 넘쳐 흘러가기 쉽습니다.",
+          "prescription": "넘치는 물을 흘려보낼 길을 함께 내 두세요. 바다 건너의 일, 사람과 물건이 오가는 일이 둑의 짐을 덜어 줍니다.",
+          "evidence": [
+            "R2.IM.021",
+            "R1.TAK.032"
+          ],
+          "source": [
+            "R2.IM.021",
+            "R1.TAK.032"
+          ]
+        },
+        {
+          "stage": 1,
+          "stageName": "둑",
+          "stageNote": "물을 가두는 땅 (자리와 곁)",
+          "code": "임1-다",
+          "condition": "둑 없음",
+          "slots": [
+            "사5",
+            "사6"
+          ],
+          "diagnosis": "둑이 없는 큰물은 한곳에 머물기 어렵습니다. 그래서 여러 일을 한꺼번에 벌이고, 끝을 보기 전에 다음으로 넘어가는 일이 잦았을 겁니다.",
+          "prescription": "둑이 없어 고일 수 없는 물은, 바다 건너 다른 땅에 닿을 때 비로소 흩어짐이 멈춥니다. 머물 곳을 찾기보다 흘러갈 곳을 먼저 정하세요.",
+          "evidence": [
+            "R2.IM.010",
+            "R2.IM.023",
+            "R2.IM.080"
+          ],
+          "source": [
+            "R2.IM.010",
+            "R2.IM.023",
+            "R2.IM.080"
+          ]
+        },
+        {
+          "stage": 1,
+          "stageName": "둑",
+          "stageNote": "물을 가두는 땅 (자리와 곁)",
+          "code": "임1-다(일)",
+          "condition": "둑 없음 (일 섹션 흐름)",
+          "slots": [
+            "일3",
+            "일4"
+          ],
+          "diagnosis": "넘치는 물은 제방을 만들어 모아 두어야 쓰일 수 있습니다.",
+          "prescription": "물을 가둘 땅이 부족하니, 국경을 넘어 제방을 만나거나 오히려 물길을 터 주어 사람과 물건과 정보가 오가는 유통의 일이 잘 맞습니다.",
+          "evidence": [
+            "R2.IM.020",
+            "R2.IM.023"
+          ],
+          "source": [
+            "R2.IM.020",
+            "R2.IM.023"
+          ],
+          "note": "원문 (일) 섹션 흐름 가지"
+        },
+        {
+          "stage": 2,
+          "stageName": "둑의 나무",
+          "stageNote": "둑을 붙잡는 뿌리",
+          "code": "임2-가",
+          "condition": "산맥 + 큰 나무",
+          "slots": [
+            "사4"
+          ],
+          "diagnosis": "둑에 큰 나무가 뿌리내려 물이 맑습니다. 자리와 곁이 단단합니다.",
+          "prescription": "—",
+          "evidence": [
+            "R2.IM.012",
+            "R2.IM.070"
+          ],
+          "source": [
+            "R2.IM.012",
+            "R2.IM.070"
+          ],
+          "note": "처방 칸 원문 —"
+        },
+        {
+          "stage": 2,
+          "stageName": "둑의 나무",
+          "stageNote": "둑을 붙잡는 뿌리",
+          "code": "임2-나",
+          "condition": "산맥 + 나무 없음 (운에서 둑이 들어올 때도 같다)",
+          "slots": [
+            "일5",
+            "사7",
+            "사8"
+          ],
+          "diagnosis": "흙으로만 쌓은 둑은 혼자 버티지 못하고 쓸려 갑니다.",
+          "prescription": "그래서 그 흙에 나무를 심는 일, 곧 무언가를 키우고 만드는 일이 필요합니다. 이야기를 짓든, 공간을 짓든, 사람을 기르든 자라는 것을 곁에 두는 일입니다.",
+          "evidence": [
+            "R2.IM.012",
+            "R2.IM.030",
+            "R2.IM.083",
+            "R2.IM.084"
+          ],
+          "source": [
+            "R2.IM.012",
+            "R2.IM.030",
+            "R2.IM.083",
+            "R2.IM.084"
+          ]
+        },
+        {
+          "stage": 2,
+          "stageName": "둑의 나무",
+          "stageNote": "둑을 붙잡는 뿌리",
+          "code": "임2-나′",
+          "condition": "위 가지 + 작은 땅 있음",
+          "slots": [
+            "일5"
+          ],
+          "diagnosis": "곁의 작은 땅이 큰 나무를 불러와 둑에 심어 줍니다.",
+          "prescription": "—",
+          "evidence": [
+            "R2.IM.075"
+          ],
+          "source": [
+            "R2.IM.075"
+          ],
+          "note": "처방 칸 원문 —"
+        },
+        {
+          "stage": 2,
+          "stageName": "둑의 나무",
+          "stageNote": "둑을 붙잡는 뿌리",
+          "code": "임2-다",
+          "condition": "산맥 + 푸른 덩굴만",
+          "slots": [
+            "사7",
+            "사8",
+            "일5"
+          ],
+          "diagnosis": "큰 둑에 작은 덩굴이 심어져, 큰물이 들면 버티기 어렵습니다. 맡은 자리나 곁의 자리가 흔들리기 쉽습니다.",
+          "prescription": "덩굴이 아니라 큰 나무를 키우세요. 오래 깊게 기르는 일이 둑을 지킵니다.",
+          "evidence": [
+            "R2.IM.031",
+            "R2.IM.083"
+          ],
+          "source": [
+            "R2.IM.031",
+            "R2.IM.083"
+          ]
+        },
+        {
+          "stage": 2,
+          "stageName": "둑의 나무",
+          "stageNote": "둑을 붙잡는 뿌리",
+          "code": "임2-라",
+          "condition": "작은 땅 + 큰 나무",
+          "slots": [
+            "사7"
+          ],
+          "diagnosis": "작은 둑에 큰 나무가 자라 둑이 무너지기 쉽습니다.",
+          "prescription": "자료 없음 — 진단만 쓴다.",
+          "evidence": [
+            "R2.IM.032"
+          ],
+          "source": [
+            "R2.IM.032"
+          ],
+          "note": "자료 없음 표시 가지 (문서 끝 자료 없음 목록)"
+        },
+        {
+          "stage": 2,
+          "stageName": "둑의 나무",
+          "stageNote": "둑을 붙잡는 뿌리",
+          "code": "임2-마",
+          "condition": "큰 나무 + 땅 없음",
+          "slots": [
+            "계4"
+          ],
+          "diagnosis": "땅 없이 물 위에 뜬 나무라 제대로 자라지 못합니다.",
+          "prescription": "그 나무를 심을 땅이 들어오는 때를 짚어 두세요.",
+          "evidence": [
+            "R2.IM.070"
+          ],
+          "source": [
+            "R2.IM.070"
+          ]
+        },
+        {
+          "stage": 2,
+          "stageName": "둑의 나무",
+          "stageNote": "둑을 붙잡는 뿌리",
+          "code": "임2-바",
+          "condition": "작은 땅과 큰 나무가 묶여 있음",
+          "slots": [
+            "사7",
+            "사8",
+            "계2"
+          ],
+          "diagnosis": "작은 둑에 묶인 큰 나무가 자랄수록 둑이 버거워집니다.",
+          "prescription": "묶임이 풀리는 때를 짚어 두고, 그때 자리가 흔들리지 않게 미리 기반을 다지세요.",
+          "evidence": [
+            "R2.IM.081"
+          ],
+          "source": [
+            "R2.IM.081"
+          ]
+        },
+        {
+          "stage": 2,
+          "stageName": "둑의 나무",
+          "stageNote": "둑을 붙잡는 뿌리",
+          "code": "임2-사",
+          "condition": "푸른 덩굴 + 금 없음",
+          "slots": [
+            "일4"
+          ],
+          "diagnosis": "물 위의 부초 같은 덩굴이지만, 금맥을 불러와 물을 마르지 않게 해 줍니다.",
+          "prescription": "그 덩굴이 불러오는 손길, 곧 기준과 기술의 일을 곁에 두세요.",
+          "evidence": [
+            "R2.IM.071"
+          ],
+          "source": [
+            "R2.IM.071"
+          ]
+        },
+        {
+          "stage": 3,
+          "stageName": "해",
+          "stageNote": "호수 위의 빛 (재물과 이름)",
+          "code": "임3-가",
+          "condition": "태양 + 물이 맑음",
+          "slots": [
+            "사4",
+            "재1"
+          ],
+          "diagnosis": "맑은 호수 위에 해가 뜬 사람입니다. 이름과 재물이 함께 반짝입니다.",
+          "prescription": "이름을 먼저 세우세요. 사람을 불러 모으고 베풀수록 더 크게 돌아옵니다.",
+          "evidence": [
+            "R2.IM.013",
+            "R2.IM.041"
+          ],
+          "source": [
+            "R2.IM.013",
+            "R2.IM.041"
+          ]
+        },
+        {
+          "stage": 3,
+          "stageName": "해",
+          "stageNote": "호수 위의 빛 (재물과 이름)",
+          "code": "임3-나",
+          "condition": "태양 + 물이 흐려짐",
+          "slots": [
+            "재2"
+          ],
+          "diagnosis": "물이 흐려 해가 비쳐도 반짝이지 않습니다. 잘해도 손에 남는 것이 적습니다.",
+          "prescription": "흐려지는 원인을 따라 처방한다(1층 탁수 해법).",
+          "evidence": [
+            "R2.IM.040",
+            "1층 탁수"
+          ],
+          "source": [
+            "R2.IM.040",
+            "1층 탁수"
+          ],
+          "note": "1층 탁수"
+        },
+        {
+          "stage": 3,
+          "stageName": "해",
+          "stageNote": "호수 위의 빛 (재물과 이름)",
+          "code": "임3-다",
+          "condition": "태양 + 맑고 청아한 시냇물 (가림)",
+          "slots": [
+            "사7",
+            "사8",
+            "재2",
+            "재7"
+          ],
+          "diagnosis": "이미 당신을 비추는 해가 떠 있습니다. 그런데 바로 옆에서 비가 내리고 있어서, 가장 잘했던 순간에도 이름이 잘 남지 않았을 겁니다.",
+          "prescription": "큰 둑이 들어와 비를 거두는 때에 해가 처음으로 드러납니다. 그때 돈은 땅에서 열립니다. 공간과 터, 짓는 일에 닿아 있는 일이 돈의 문을 엽니다.",
+          "evidence": [
+            "R2.IM.061"
+          ],
+          "source": [
+            "R2.IM.061"
+          ]
+        },
+        {
+          "stage": 3,
+          "stageName": "해",
+          "stageNote": "호수 위의 빛 (재물과 이름)",
+          "code": "임3-라",
+          "condition": "태양 + 둑 없음",
+          "slots": [
+            "재1"
+          ],
+          "diagnosis": "둑이 없어 물이 흘러갈 때, 해가 보석을 불러와 물을 다시 만들어 줍니다. 다만 비가 들면 그 해가 가려집니다.",
+          "prescription": "—",
+          "evidence": [
+            "R2.IM.072"
+          ],
+          "source": [
+            "R2.IM.072"
+          ],
+          "note": "처방 칸 원문 —"
+        },
+        {
+          "stage": 3,
+          "stageName": "해",
+          "stageNote": "호수 위의 빛 (재물과 이름)",
+          "code": "임3-마",
+          "condition": "태양이 태어난 해에 있음 (재물의 판)",
+          "slots": [
+            "일2",
+            "재1"
+          ],
+          "diagnosis": "재물은 국가와 관련된 기관이나, 국가시험으로 따라오는 자격과 연결되어 있습니다. 이름이 걸리고 기록이 남는 일일수록 힘이 붙습니다.",
+          "prescription": "—",
+          "evidence": [
+            "국가자리 판정",
+            "R2.IM.041"
+          ],
+          "source": [
+            "국가자리 판정",
+            "R2.IM.041"
+          ],
+          "note": "처방 칸 원문 —, 국가자리 판정 가지"
+        },
+        {
+          "stage": 4,
+          "stageName": "수원",
+          "stageNote": "물을 채우는 금맥",
+          "code": "임4-가",
+          "condition": "금 있음",
+          "slots": [
+            "사4"
+          ],
+          "diagnosis": "안에 마르지 않는 수원이 있어 지쳐도 다시 차오릅니다.",
+          "prescription": "—",
+          "evidence": [
+            "R2.IM.014"
+          ],
+          "source": [
+            "R2.IM.014"
+          ],
+          "note": "처방 칸 원문 —"
+        },
+        {
+          "stage": 4,
+          "stageName": "수원",
+          "stageNote": "물을 채우는 금맥",
+          "code": "임4-나",
+          "condition": "커다란 금맥 있음",
+          "slots": [
+            "사4",
+            "일2"
+          ],
+          "diagnosis": "금맥이 물에서 놀며 수량을 지켜 줍니다. 둑과 큰 나무가 갖춰지면 그 나무를 손잡이 삼아 권한을 씁니다.",
+          "prescription": "이름에서 이름으로 이어지는 구조라 명예를 좇으세요.",
+          "evidence": [
+            "R2.IM.076"
+          ],
+          "source": [
+            "R2.IM.076"
+          ]
+        },
+        {
+          "stage": 4,
+          "stageName": "수원",
+          "stageNote": "물을 채우는 금맥",
+          "code": "임4-나(일)",
+          "condition": "커다란 금맥 + 운에서 둑이 들어오고 나무 없음",
+          "slots": [
+            "일6"
+          ],
+          "diagnosis": "손끝에는 커다란 금맥이 있어 기술과 도구를 다루는 감각이 좋습니다.",
+          "prescription": "다만 둑이 들어오는 시기에는 도구가 중심이 되면 물이 흐려지니, 무엇을 키울지 먼저 정하고 도구는 그 뒤에 쥐세요.",
+          "evidence": [
+            "R2.IM.023 vs 051"
+          ],
+          "source": [
+            "R2.IM.023 vs 051"
+          ],
+          "note": "원문 (일) 표기, 근거 R2.IM.023 vs 051"
+        },
+        {
+          "stage": 4,
+          "stageName": "수원",
+          "stageNote": "물을 채우는 금맥",
+          "code": "임4-다",
+          "condition": "세공된 보석 있음",
+          "slots": [
+            "일2"
+          ],
+          "diagnosis": "보석이 해를 불러와 호수 위에 띄웁니다.",
+          "prescription": "국가와 관련된 일에서 힘을 씁니다. 다만 큰 물살에 작은 날이 무뎌지기 쉬우니, 물이 잔잔해지는 때를 짚어 두세요.",
+          "evidence": [
+            "R2.IM.077"
+          ],
+          "source": [
+            "R2.IM.077"
+          ]
+        },
+        {
+          "stage": 4,
+          "stageName": "수원",
+          "stageNote": "물을 채우는 금맥",
+          "code": "임4-라",
+          "condition": "금 없음",
+          "slots": [
+            "사5",
+            "사6",
+            "일4",
+            "일6"
+          ],
+          "diagnosis": "물을 채워 줄 수원이 없어 쉽게 마릅니다.",
+          "prescription": "물을 만드는 금맥의 일(법·금융·의약), 바다 건너와 닿은 일, 외국과 닿은 일터가 수원이 됩니다. 단 둑만 있고 나무가 없어 흐려질 때는 나무의 일이 먼저입니다.",
+          "evidence": [
+            "R2.IM.050",
+            "R2.IM.051"
+          ],
+          "source": [
+            "R2.IM.050",
+            "R2.IM.051"
+          ]
+        },
+        {
+          "stage": 5,
+          "stageName": "물의 양",
+          "stageNote": null,
+          "code": "임5-가",
+          "condition": "넓고 고요한 호수 둘 이상",
+          "slots": [
+            "사5",
+            "사6",
+            "일4"
+          ],
+          "diagnosis": "물이 겹쳐 넘칩니다. 둑도 나무도 버티기 어려울 만큼 힘이 큽니다.",
+          "prescription": "수량을 줄이는 쪽이 답입니다. 등불처럼 마음과 정신을 밝히는 일이 물을 잔잔하게 합니다.",
+          "evidence": [
+            "R2.IM.060"
+          ],
+          "source": [
+            "R2.IM.060"
+          ]
+        },
+        {
+          "stage": 5,
+          "stageName": "물의 양",
+          "stageNote": null,
+          "code": "임5-나",
+          "condition": "호수 둘 이상 + 둑 없음",
+          "slots": [
+            "사5",
+            "사6",
+            "일4"
+          ],
+          "diagnosis": "넘치는 물이 머물 곳 없이 흐릅니다.",
+          "prescription": "바다 건너 새 땅에 자리를 잡는 것이 맞습니다. 그게 어렵다면 마음과 정신을 밝히는 일로 물을 잔잔하게 하세요.",
+          "evidence": [
+            "R2.IM.078"
+          ],
+          "source": [
+            "R2.IM.078"
+          ]
+        },
+        {
+          "stage": 5,
+          "stageName": "물의 양",
+          "stageNote": null,
+          "code": "임5-다",
+          "condition": "맑고 청아한 시냇물 있음",
+          "slots": [
+            "사4"
+          ],
+          "diagnosis": "작은 물이 결국 큰물로 합쳐져 힘이 됩니다.",
+          "prescription": "—",
+          "evidence": [
+            "R2.IM.062"
+          ],
+          "source": [
+            "R2.IM.062"
+          ],
+          "note": "처방 칸 원문 —"
+        },
+        {
+          "stage": 6,
+          "stageName": "등불",
+          "stageNote": null,
+          "code": "임6-가",
+          "condition": "등불과 묶임",
+          "slots": [
+            "사5",
+            "사6",
+            "계2"
+          ],
+          "diagnosis": "등불과 하나로 묶인 호수입니다. 물이 잔잔해지는 대신 넓게 펼치기 어렵습니다.",
+          "prescription": "마음과 정신의 세계를 다루는 일에서 깊어집니다. 나무가 없어 물이 흐려질 때는 이 묶임이 오히려 나무를 만들어 줍니다.",
+          "evidence": [
+            "R2.IM.073",
+            "R2.IM.042"
+          ],
+          "source": [
+            "R2.IM.073",
+            "R2.IM.042"
+          ]
+        },
+        {
+          "stage": 7,
+          "stageName": "특성 (끝 슬롯 후보)",
+          "stageNote": null,
+          "code": "임7-가",
+          "condition": "항상",
+          "slots": [
+            "끝2"
+          ],
+          "diagnosis": "어디에도 고이지 않았기에 많은 곳을 지나왔고, 그만큼 많은 것을 품었습니다. 흩어졌던 시간만큼 당신의 호수는 넓어졌습니다.",
+          "prescription": "—",
+          "evidence": [
+            "R2.IM.002"
+          ],
+          "source": [
+            "R2.IM.002"
+          ],
+          "note": "특성 단계 — 문장 칸 하나, 처방 칸 원문에 없음"
+        }
       ],
       "C": [
-        { "code": "임운-가", "incoming": "거대한 산맥", "slots": ["연4", "연5", "계3"], "sentence": "평생 처음으로, 혹은 다시 큰 둑이 들어오는 {연도}입니다. 흩어지던 힘을 붙잡아 줄 자리와 곁이 생깁니다.", "evidence": ["R2.IM.011", "R2.IM.020"], "source": ["R2.IM.011", "R2.IM.020"] },
-        { "code": "임운-나", "incoming": "거대한 산맥 (시냇물이 해를 가릴 때)", "slots": ["재3", "계3"], "sentence": "둑이 비를 거둬 가려졌던 해가 드러나는 {연도}입니다.", "evidence": ["R2.IM.061"], "source": ["R2.IM.061"] },
-        { "code": "임운-다", "incoming": "큰 나무 (둑이 있을 때)", "slots": ["재5", "계4"], "sentence": "둑에 큰 나무가 뿌리내려 쌓은 것이 단단한 결실로 굳는 {연도}입니다.", "evidence": ["R2.IM.012", "R2.IM.070"], "source": ["R2.IM.012", "R2.IM.070"] },
-        { "code": "임운-라", "incoming": "작은 땅 (둑이 없을 때)", "slots": ["계1"], "sentence": "처음으로 작은 울타리가 세워지는 {연도}입니다. 넘치는 힘을 담기엔 조금 좁게 느껴질 수 있습니다.", "evidence": ["R2.IM.021"], "source": ["R2.IM.021"] },
-        { "code": "임운-마", "incoming": "등불", "slots": ["계2"], "slotNote": "필수", "sentence": "은은한 등불과 하나로 묶이는 {연도}입니다. 넓히기보다 안으로 정리하기 좋습니다.", "evidence": ["R2.IM.073"], "source": ["R2.IM.073"] },
-        { "code": "임운-바", "incoming": "등불이나 호수가 다시 옴 (묶여 있을 때)", "slots": ["계2"], "slotNote": "필수", "sentence": "묶였던 자리가 풀리는 {연도}입니다.", "evidence": ["1층 §7"], "source": ["1층 §7"], "note": "근거 원문 1층 §7" },
-        { "code": "임운-사", "incoming": "태양이 하나 더 옴", "slots": ["재4", "계4"], "sentence": "하늘에 해가 하나 더 떠 오히려 빛이 흐려지는 {연도}입니다. 여러 갈래로 벌이기보다 하나를 골라 깊게 가세요.", "evidence": ["R2.IM.090"], "source": ["R2.IM.090"] },
-        { "code": "임운-아", "incoming": "큰 나무나 세공된 보석 (해가 둘일 때)", "slots": ["계4"], "sentence": "겹친 해 하나가 가려지거나 정리되어 흐름이 다시 잡히는 {연도}입니다.", "evidence": ["R2.IM.090"], "source": ["R2.IM.090"] },
-        { "code": "임운-자", "incoming": "금 (원국에 금 없을 때)", "slots": ["계4"], "sentence": "마르던 물이 다시 차오르는 {연도}입니다.", "evidence": ["R2.IM.050"], "source": ["R2.IM.050"] },
-        { "code": "임운-차", "incoming": "작은 땅이나 큰 나무가 다시 옴 (둘이 묶여 있을 때)", "slots": ["계2"], "slotNote": "필수", "sentence": "묶였던 둑과 나무가 풀려 자리가 움직이는 {연도}입니다. 미리 기반을 다져 두세요.", "evidence": ["R2.IM.081"], "source": ["R2.IM.081"] }
+        {
+          "code": "임운-가",
+          "incoming": "거대한 산맥",
+          "slots": [
+            "연4",
+            "연5",
+            "계3"
+          ],
+          "sentence": "평생 처음으로, 혹은 다시 큰 둑이 들어오는 {연도}입니다. 흩어지던 힘을 붙잡아 줄 자리와 곁이 생깁니다.",
+          "evidence": [
+            "R2.IM.011",
+            "R2.IM.020"
+          ],
+          "source": [
+            "R2.IM.011",
+            "R2.IM.020"
+          ]
+        },
+        {
+          "code": "임운-나",
+          "incoming": "거대한 산맥 (시냇물이 해를 가릴 때)",
+          "slots": [
+            "재3",
+            "계3"
+          ],
+          "sentence": "둑이 비를 거둬 가려졌던 해가 드러나는 {연도}입니다.",
+          "evidence": [
+            "R2.IM.061"
+          ],
+          "source": [
+            "R2.IM.061"
+          ]
+        },
+        {
+          "code": "임운-다",
+          "incoming": "큰 나무 (둑이 있을 때)",
+          "slots": [
+            "재5",
+            "계4"
+          ],
+          "sentence": "둑에 큰 나무가 뿌리내려 쌓은 것이 단단한 결실로 굳는 {연도}입니다.",
+          "evidence": [
+            "R2.IM.012",
+            "R2.IM.070"
+          ],
+          "source": [
+            "R2.IM.012",
+            "R2.IM.070"
+          ]
+        },
+        {
+          "code": "임운-라",
+          "incoming": "작은 땅 (둑이 없을 때)",
+          "slots": [
+            "계1"
+          ],
+          "sentence": "처음으로 작은 울타리가 세워지는 {연도}입니다. 넘치는 힘을 담기엔 조금 좁게 느껴질 수 있습니다.",
+          "evidence": [
+            "R2.IM.021"
+          ],
+          "source": [
+            "R2.IM.021"
+          ]
+        },
+        {
+          "code": "임운-마",
+          "incoming": "등불",
+          "slots": [
+            "계2"
+          ],
+          "slotNote": "필수",
+          "sentence": "은은한 등불과 하나로 묶이는 {연도}입니다. 넓히기보다 안으로 정리하기 좋습니다.",
+          "evidence": [
+            "R2.IM.073"
+          ],
+          "source": [
+            "R2.IM.073"
+          ]
+        },
+        {
+          "code": "임운-바",
+          "incoming": "등불이나 호수가 다시 옴 (묶여 있을 때)",
+          "slots": [
+            "계2"
+          ],
+          "slotNote": "필수",
+          "sentence": "묶였던 자리가 풀리는 {연도}입니다.",
+          "evidence": [
+            "1층 §7"
+          ],
+          "source": [
+            "1층 §7"
+          ],
+          "note": "근거 원문 1층 §7"
+        },
+        {
+          "code": "임운-사",
+          "incoming": "태양이 하나 더 옴",
+          "slots": [
+            "재4",
+            "계4"
+          ],
+          "sentence": "하늘에 해가 하나 더 떠 오히려 빛이 흐려지는 {연도}입니다. 여러 갈래로 벌이기보다 하나를 골라 깊게 가세요.",
+          "evidence": [
+            "R2.IM.090"
+          ],
+          "source": [
+            "R2.IM.090"
+          ]
+        },
+        {
+          "code": "임운-아",
+          "incoming": "큰 나무나 세공된 보석 (해가 둘일 때)",
+          "slots": [
+            "계4"
+          ],
+          "sentence": "겹친 해 하나가 가려지거나 정리되어 흐름이 다시 잡히는 {연도}입니다.",
+          "evidence": [
+            "R2.IM.090"
+          ],
+          "source": [
+            "R2.IM.090"
+          ]
+        },
+        {
+          "code": "임운-자",
+          "incoming": "금 (원국에 금 없을 때)",
+          "slots": [
+            "계4"
+          ],
+          "sentence": "마르던 물이 다시 차오르는 {연도}입니다.",
+          "evidence": [
+            "R2.IM.050"
+          ],
+          "source": [
+            "R2.IM.050"
+          ]
+        },
+        {
+          "code": "임운-차",
+          "incoming": "작은 땅이나 큰 나무가 다시 옴 (둘이 묶여 있을 때)",
+          "slots": [
+            "계2"
+          ],
+          "slotNote": "필수",
+          "sentence": "묶였던 둑과 나무가 풀려 자리가 움직이는 {연도}입니다. 미리 기반을 다져 두세요.",
+          "evidence": [
+            "R2.IM.081"
+          ],
+          "source": [
+            "R2.IM.081"
+          ]
+        }
       ],
       "D": [
-        { "item": "배우자 문제·위장계통", "evidence": ["R2.IM.022"], "source": ["R2.IM.022"] },
-        { "item": "배우자·직장 문제", "evidence": ["R2.IM.031", "R2.IM.081"], "source": ["R2.IM.031", "R2.IM.081"], "note": "\"자리가 흔들림\"까지만" },
-        { "item": "남자 때문에 명예 실추", "evidence": ["R2.IM.082"], "source": ["R2.IM.082"] },
-        { "item": "법적 문제", "evidence": ["R2.IM.085"], "source": ["R2.IM.085"] },
-        { "item": "삶이 원만하지 못하다는 원문", "evidence": ["R2.IM.080"], "source": ["R2.IM.080"] },
-        { "item": "가림을 \"비슷한 사람들\"로 읽는 해석", "note": "[보류]" }
+        {
+          "item": "배우자 문제·위장계통",
+          "evidence": [
+            "R2.IM.022"
+          ],
+          "source": [
+            "R2.IM.022"
+          ]
+        },
+        {
+          "item": "배우자·직장 문제",
+          "evidence": [
+            "R2.IM.031",
+            "R2.IM.081"
+          ],
+          "source": [
+            "R2.IM.031",
+            "R2.IM.081"
+          ],
+          "note": "\"자리가 흔들림\"까지만"
+        },
+        {
+          "item": "남자 때문에 명예 실추",
+          "evidence": [
+            "R2.IM.082"
+          ],
+          "source": [
+            "R2.IM.082"
+          ]
+        },
+        {
+          "item": "법적 문제",
+          "evidence": [
+            "R2.IM.085"
+          ],
+          "source": [
+            "R2.IM.085"
+          ]
+        },
+        {
+          "item": "삶이 원만하지 못하다는 원문",
+          "evidence": [
+            "R2.IM.080"
+          ],
+          "source": [
+            "R2.IM.080"
+          ]
+        },
+        {
+          "item": "가림을 \"비슷한 사람들\"로 읽는 해석",
+          "note": "[보류]"
+        }
       ]
     },
     "癸": {
@@ -132,50 +1568,563 @@
       "sourcePage": "PDF page 43-46 (10. 계수)",
       "_note": "PDF 10장(pp.43~46) 전사. A 키는 '슬롯코드 라벨' 병기(검증기 V6 호환). B各行 source는 검증기 V5 요구 필드로 evidence와 동일 값. 처방 칸이 원문에 비는 가지는 — 표기. (일) 표기 가지는 일 섹션 흐름 가지. 6단계(특성)는 문장 칸 하나라 처방 칸이 원문에 없음(—).",
       "A": {
-        "사1 형상": { "text": "당신은 맑고 청아한 시냇물입니다. {1순위 가지 한 줄}", "evidence": ["R2.GYE.001"] },
-        "사2 성향": { "text": "어디든 스며들어 적시는 사람입니다. 말없이 많은 것을 품고, 막히면 유연하게 길을 찾아 돌아갑니다.", "evidence": ["R2.GYE.002"] },
-        "사3 남들이보는나": { "text": "친근하고 겸손해 보입니다. 누구와도 금세 어울리는데, 속은 쉽게 내보이지 않습니다.", "evidence": ["R2.GYE.002"] },
-        "사4 칭찬": { "text": "상황을 읽고 순간에 맞게 움직이는 지혜가 있습니다. 작은 비가 땅을 살리듯, 당신이 닿은 자리는 살아납니다.", "evidence": ["R2.GYE.002", "R2.GYE.010"] },
-        "일1 무기": { "text": "스며들고 적시는 힘입니다. 사람과 사람 사이로 흘러 관계를 잇고, 말로 마음을 움직입니다.", "evidence": ["R2.GYE.002", "R2.GYE.003"] },
-        "재6 돈의순서": { "text": "작은 물은 알맞은 그릇에 담길 때 맑게 고입니다. 감당할 만한 크기의 일과 재물을 꾸준히 채울 때 가장 오래 남습니다.", "evidence": ["R2.GYE.010", "R2.GYE.071"] },
-        "연1 관계선언": { "text": "시냇물은 흐르며 닿는 곳마다 적셔 줍니다. 당신도 곁의 사람에게 조용히 스며들어 살피고 돌보는 사람입니다. 그러면서 속으로는 흩어지지 않게 담아 줄 알맞은 둑 같은 사람을 바랍니다.", "evidence": ["R2.GYE.010", "R2.GYE.020"] },
-        "marriageCondition": { "label": "결혼 조건", "text": "작은 땅(알맞은 둑)이 들어올 때.", "evidence": ["R2.GYE.020"] },
-        "endingTheme": { "label": "끝 소재", "text": "스며드는 힘 / 작지만 맑은 물", "evidence": ["R2.GYE.002", "R2.GYE.071"] },
-        "careerNote": { "label": "직업 결(참고용, 나열 금지)", "text": "해외, 유통, 음식, 영업, 교육.", "evidence": ["R2.GYE.003"] }
+        "사1 형상": {
+          "text": "당신은 맑고 청아한 시냇물입니다. {1순위 가지 한 줄}",
+          "evidence": [
+            "R2.GYE.001"
+          ]
+        },
+        "사2 성향": {
+          "text": "어디든 스며들어 적시는 사람입니다. 말없이 많은 것을 품고, 막히면 유연하게 길을 찾아 돌아갑니다.",
+          "evidence": [
+            "R2.GYE.002"
+          ]
+        },
+        "사3 남들이보는나": {
+          "text": "친근하고 겸손해 보입니다. 누구와도 금세 어울리는데, 속은 쉽게 내보이지 않습니다.",
+          "evidence": [
+            "R2.GYE.002"
+          ]
+        },
+        "사4 칭찬": {
+          "text": "상황을 읽고 순간에 맞게 움직이는 지혜가 있습니다. 작은 비가 땅을 살리듯, 당신이 닿은 자리는 살아납니다.",
+          "evidence": [
+            "R2.GYE.002",
+            "R2.GYE.010"
+          ]
+        },
+        "일1 무기": {
+          "text": "스며들고 적시는 힘입니다. 사람과 사람 사이로 흘러 관계를 잇고, 말로 마음을 움직입니다.",
+          "evidence": [
+            "R2.GYE.002",
+            "R2.GYE.003"
+          ]
+        },
+        "재6 돈의순서": {
+          "text": "작은 물은 알맞은 그릇에 담길 때 맑게 고입니다. 감당할 만한 크기의 일과 재물을 꾸준히 채울 때 가장 오래 남습니다.",
+          "evidence": [
+            "R2.GYE.010",
+            "R2.GYE.071"
+          ]
+        },
+        "연1 관계선언": {
+          "text": "시냇물은 흐르며 닿는 곳마다 적셔 줍니다. 당신도 곁의 사람에게 조용히 스며들어 살피고 돌보는 사람입니다. 그러면서 속으로는 흩어지지 않게 담아 줄 알맞은 둑 같은 사람을 바랍니다.",
+          "evidence": [
+            "R2.GYE.010",
+            "R2.GYE.020"
+          ]
+        },
+        "marriageCondition": {
+          "label": "결혼 조건",
+          "text": "작은 땅(알맞은 둑)이 들어올 때.",
+          "evidence": [
+            "R2.GYE.020"
+          ]
+        },
+        "endingTheme": {
+          "label": "끝 소재",
+          "text": "스며드는 힘 / 작지만 맑은 물",
+          "evidence": [
+            "R2.GYE.002",
+            "R2.GYE.071"
+          ]
+        },
+        "careerNote": {
+          "label": "직업 결(참고용, 나열 금지)",
+          "text": "해외, 유통, 음식, 영업, 교육.",
+          "evidence": [
+            "R2.GYE.003"
+          ]
+        }
       },
       "B": [
-        { "stage": 1, "stageName": "둑", "stageNote": "물을 담는 그릇 (자리와 곁)", "code": "계1-가", "condition": "작은 땅 있음", "slots": ["사4", "연3"], "diagnosis": "알맞은 둑에 담긴 맑은 물입니다.", "prescription": "그 둑에 덩굴이 심어지면 일과 곁이 평화롭게 피어납니다.", "evidence": ["R2.GYE.010"], "source": ["R2.GYE.010"] },
-        { "stage": 1, "stageName": "둑", "stageNote": "물을 담는 그릇 (자리와 곁)", "code": "계1-나", "condition": "거대한 산맥과 묶임", "slots": ["사5", "사6", "계2"], "diagnosis": "큰 땅에 묶인 작은 물이라 손발이 묶이고, 물이 넓게 퍼져 흐려지기 쉽습니다.", "prescription": "물을 계속 만들어 주는 금맥의 일, 곧 기준과 기술의 일이 수량을 늘려 줍니다.", "evidence": ["R2.GYE.021"], "source": ["R2.GYE.021"] },
-        { "stage": 1, "stageName": "둑", "stageNote": "물을 담는 그릇 (자리와 곁)", "code": "계1-다", "condition": "둑 없음", "slots": ["사5", "사6", "일4"], "diagnosis": "담아 줄 둑이 없어, 작은 물이 흩어져 흔적이 남지 않기 쉽습니다.", "prescription": "물을 보탤 길을 찾으세요. 바다 건너와 닿은 일, 외국과 닿은 일터, 기준과 기술의 일이 물을 계속 만들어 줍니다.", "evidence": ["R2.GYE.022"], "source": ["R2.GYE.022"] },
-        { "stage": 2, "stageName": "나무", "stageNote": "적셔서 기르는 것", "code": "계2-가", "condition": "푸른 덩굴 있음", "slots": ["사4", "일3"], "diagnosis": "작은 나무에 알맞은 비가 내려 잘 자랍니다. 그 덩굴이 수원을 불러와 물도 마르지 않습니다.", "prescription": "작은 배움터, 가까운 사람을 키우는 일이 맞습니다.", "evidence": ["R2.GYE.032", "R2.GYE.030"], "source": ["R2.GYE.032", "R2.GYE.030"] },
-        { "stage": 2, "stageName": "나무", "stageNote": "적셔서 기르는 것", "code": "계2-나", "condition": "큰 나무 있음", "slots": ["사5", "사6", "일6"], "diagnosis": "큰 나무가 물을 많이 빨아들여 쉽게 마릅니다. 크게 키우려 할수록 내가 먼저 지칩니다.", "prescription": "금맥의 일로 물을 보태세요. 배움을 길게 가져가려면 바다 건너에서 배우는 쪽이 물을 함께 얻습니다.", "evidence": ["R2.GYE.031"], "source": ["R2.GYE.031"] },
-        { "stage": 2, "stageName": "나무", "stageNote": "적셔서 기르는 것", "code": "계2-다", "condition": "작은 땅 + 나무 없음", "slots": ["사7", "사8", "일4"], "diagnosis": "물과 둑만 있어 흐려집니다.", "prescription": "작은 나무를 심듯, 가까운 사람을 가르치고 기르는 일을 곁에 두세요.", "evidence": ["R2.GYE.030"], "source": ["R2.GYE.030"] },
-        { "stage": 2, "stageName": "나무", "stageNote": "적셔서 기르는 것", "code": "계2-라(일)", "condition": "나무 있음 (일 섹션)", "slots": ["일3"], "diagnosis": "큰 건물을 짓거나 아주 길게 공부하는 일보다, 알맞은 크기의 배움과 짓는 일에서 능력이 납니다.", "prescription": "—", "evidence": ["R2.GYE.071"], "source": ["R2.GYE.071"], "note": "원문 (일 섹션) 표기, 처방 칸 원문 —" },
-        { "stage": 3, "stageName": "수원", "stageNote": "물을 채우는 금", "code": "계3-가", "condition": "금 없음", "slots": ["사5", "사6", "일4"], "diagnosis": "작은 물이라 쉽게 마르고 흐려집니다.", "prescription": "물을 채워 주는 금맥의 일(법·금융·기술)이 맞습니다. 돌로 둘러싼 샘물이 맑듯, 단단한 기준 안에서 맑아집니다.", "evidence": ["R2.GYE.011"], "source": ["R2.GYE.011"] },
-        { "stage": 3, "stageName": "수원", "stageNote": "물을 채우는 금", "code": "계3-나", "condition": "세공된 보석 있음", "slots": ["사4", "일2"], "diagnosis": "보석이 수원이 되어 물을 채우고, 해를 불러와 재물도 만들어 줍니다.", "prescription": "둑과 덩굴이 갖춰지면 정밀한 일에서 권한을 씁니다.", "evidence": ["R2.GYE.050"], "source": ["R2.GYE.050"] },
-        { "stage": 3, "stageName": "수원", "stageNote": "물을 채우는 금", "code": "계3-다", "condition": "커다란 금맥 있음", "slots": ["사4"], "diagnosis": "큰 금맥이 놀기엔 물이 얕지만, 마를 때마다 물을 채워 주고 흐려질 때 덩굴을 불러옵니다.", "prescription": "—", "evidence": ["R2.GYE.051"], "source": ["R2.GYE.051"], "note": "처방 칸 원문 —" },
-        { "stage": 4, "stageName": "해와 등불", "stageNote": "재물", "code": "계4-가", "condition": "태양 있음 (아래에 비 뿌리 약함)", "slots": ["재1", "일3"], "diagnosis": "해를 가리지만, 그 해를 재물로 쥘 수 있습니다. 사람을 키워 꽃을 피우게 하는 사람입니다.", "prescription": "사람을 길러 성과를 내는 일, 판을 꾸리는 일이 맞습니다.", "evidence": ["R2.GYE.041"], "source": ["R2.GYE.041"] },
-        { "stage": 4, "stageName": "해와 등불", "stageNote": "재물", "code": "계4-나", "condition": "태양 + 아래 글자가 한낮", "slots": ["사5", "사6", "계4"], "diagnosis": "볕이 세서 작은 물이 마릅니다.", "prescription": "물을 만들어 주는 보석의 일, 곧 정밀하고 기준이 분명한 일이 물을 보탭니다.", "evidence": ["R2.GYE.012"], "source": ["R2.GYE.012"] },
-        { "stage": 4, "stageName": "해와 등불", "stageNote": "재물", "code": "계4-다", "condition": "등불 있음", "slots": ["재1", "일3"], "diagnosis": "등불을 재물로 쥐는 물입니다. 마음과 정신의 세계와 인연이 깊습니다.", "prescription": "마음을 다루는 일이 맞습니다. 물이 마를 때 그 등불이 큰물을 불러와 채워 줍니다.", "evidence": ["R2.GYE.040"], "source": ["R2.GYE.040"] },
-        { "stage": 5, "stageName": "같은 물", "stageNote": null, "code": "계5-가", "condition": "넓고 고요한 호수 있음", "slots": ["사4"], "diagnosis": "작은 물이 결국 큰물에 합쳐져 힘이 됩니다.", "prescription": "—", "evidence": ["R2.GYE.060"], "source": ["R2.GYE.060"], "note": "처방 칸 원문 —" },
-        { "stage": 5, "stageName": "같은 물", "stageNote": null, "code": "계5-나", "condition": "시냇물 둘", "slots": ["사4", "계4"], "diagnosis": "물이 둘이라 사람과 잘 어울리고 생각이 빠릅니다.", "prescription": "큰 땅이 들어와 하나를 데려가는 때에 알맞은 둑과 터가 생깁니다.", "evidence": ["R2.GYE.061"], "source": ["R2.GYE.061"] },
-        { "stage": 6, "stageName": "특성 (끝 슬롯 후보)", "stageNote": null, "code": "계6-가", "condition": "항상", "slots": ["끝2", "끝3"], "diagnosis": "작은 물은 크게 벌일 때보다 알맞은 크기로 꾸준히 흐를 때 맑습니다. 그 맑음이 당신을 오래 쓰이게 합니다.", "prescription": "—", "evidence": ["R2.GYE.071"], "source": ["R2.GYE.071"], "note": "특성 단계 — 문장 칸 하나, 처방 칸 원문에 없음" }
+        {
+          "stage": 1,
+          "stageName": "둑",
+          "stageNote": "물을 담는 그릇 (자리와 곁)",
+          "code": "계1-가",
+          "condition": "작은 땅 있음",
+          "slots": [
+            "사4",
+            "연3"
+          ],
+          "diagnosis": "알맞은 둑에 담긴 맑은 물입니다.",
+          "prescription": "그 둑에 덩굴이 심어지면 일과 곁이 평화롭게 피어납니다.",
+          "evidence": [
+            "R2.GYE.010"
+          ],
+          "source": [
+            "R2.GYE.010"
+          ]
+        },
+        {
+          "stage": 1,
+          "stageName": "둑",
+          "stageNote": "물을 담는 그릇 (자리와 곁)",
+          "code": "계1-나",
+          "condition": "거대한 산맥과 묶임",
+          "slots": [
+            "사5",
+            "사6",
+            "계2"
+          ],
+          "diagnosis": "큰 땅에 묶인 작은 물이라 손발이 묶이고, 물이 넓게 퍼져 흐려지기 쉽습니다.",
+          "prescription": "물을 계속 만들어 주는 금맥의 일, 곧 기준과 기술의 일이 수량을 늘려 줍니다.",
+          "evidence": [
+            "R2.GYE.021"
+          ],
+          "source": [
+            "R2.GYE.021"
+          ]
+        },
+        {
+          "stage": 1,
+          "stageName": "둑",
+          "stageNote": "물을 담는 그릇 (자리와 곁)",
+          "code": "계1-다",
+          "condition": "둑 없음",
+          "slots": [
+            "사5",
+            "사6",
+            "일4"
+          ],
+          "diagnosis": "담아 줄 둑이 없어, 작은 물이 흩어져 흔적이 남지 않기 쉽습니다.",
+          "prescription": "물을 보탤 길을 찾으세요. 바다 건너와 닿은 일, 외국과 닿은 일터, 기준과 기술의 일이 물을 계속 만들어 줍니다.",
+          "evidence": [
+            "R2.GYE.022"
+          ],
+          "source": [
+            "R2.GYE.022"
+          ]
+        },
+        {
+          "stage": 2,
+          "stageName": "나무",
+          "stageNote": "적셔서 기르는 것",
+          "code": "계2-가",
+          "condition": "푸른 덩굴 있음",
+          "slots": [
+            "사4",
+            "일3"
+          ],
+          "diagnosis": "작은 나무에 알맞은 비가 내려 잘 자랍니다. 그 덩굴이 수원을 불러와 물도 마르지 않습니다.",
+          "prescription": "작은 배움터, 가까운 사람을 키우는 일이 맞습니다.",
+          "evidence": [
+            "R2.GYE.032",
+            "R2.GYE.030"
+          ],
+          "source": [
+            "R2.GYE.032",
+            "R2.GYE.030"
+          ]
+        },
+        {
+          "stage": 2,
+          "stageName": "나무",
+          "stageNote": "적셔서 기르는 것",
+          "code": "계2-나",
+          "condition": "큰 나무 있음",
+          "slots": [
+            "사5",
+            "사6",
+            "일6"
+          ],
+          "diagnosis": "큰 나무가 물을 많이 빨아들여 쉽게 마릅니다. 크게 키우려 할수록 내가 먼저 지칩니다.",
+          "prescription": "금맥의 일로 물을 보태세요. 배움을 길게 가져가려면 바다 건너에서 배우는 쪽이 물을 함께 얻습니다.",
+          "evidence": [
+            "R2.GYE.031"
+          ],
+          "source": [
+            "R2.GYE.031"
+          ]
+        },
+        {
+          "stage": 2,
+          "stageName": "나무",
+          "stageNote": "적셔서 기르는 것",
+          "code": "계2-다",
+          "condition": "작은 땅 + 나무 없음",
+          "slots": [
+            "사7",
+            "사8",
+            "일4"
+          ],
+          "diagnosis": "물과 둑만 있어 흐려집니다.",
+          "prescription": "작은 나무를 심듯, 가까운 사람을 가르치고 기르는 일을 곁에 두세요.",
+          "evidence": [
+            "R2.GYE.030"
+          ],
+          "source": [
+            "R2.GYE.030"
+          ]
+        },
+        {
+          "stage": 2,
+          "stageName": "나무",
+          "stageNote": "적셔서 기르는 것",
+          "code": "계2-라(일)",
+          "condition": "나무 있음 (일 섹션)",
+          "slots": [
+            "일3"
+          ],
+          "diagnosis": "큰 건물을 짓거나 아주 길게 공부하는 일보다, 알맞은 크기의 배움과 짓는 일에서 능력이 납니다.",
+          "prescription": "—",
+          "evidence": [
+            "R2.GYE.071"
+          ],
+          "source": [
+            "R2.GYE.071"
+          ],
+          "note": "원문 (일 섹션) 표기, 처방 칸 원문 —"
+        },
+        {
+          "stage": 3,
+          "stageName": "수원",
+          "stageNote": "물을 채우는 금",
+          "code": "계3-가",
+          "condition": "금 없음",
+          "slots": [
+            "사5",
+            "사6",
+            "일4"
+          ],
+          "diagnosis": "작은 물이라 쉽게 마르고 흐려집니다.",
+          "prescription": "물을 채워 주는 금맥의 일(법·금융·기술)이 맞습니다. 돌로 둘러싼 샘물이 맑듯, 단단한 기준 안에서 맑아집니다.",
+          "evidence": [
+            "R2.GYE.011"
+          ],
+          "source": [
+            "R2.GYE.011"
+          ]
+        },
+        {
+          "stage": 3,
+          "stageName": "수원",
+          "stageNote": "물을 채우는 금",
+          "code": "계3-나",
+          "condition": "세공된 보석 있음",
+          "slots": [
+            "사4",
+            "일2"
+          ],
+          "diagnosis": "보석이 수원이 되어 물을 채우고, 해를 불러와 재물도 만들어 줍니다.",
+          "prescription": "둑과 덩굴이 갖춰지면 정밀한 일에서 권한을 씁니다.",
+          "evidence": [
+            "R2.GYE.050"
+          ],
+          "source": [
+            "R2.GYE.050"
+          ]
+        },
+        {
+          "stage": 3,
+          "stageName": "수원",
+          "stageNote": "물을 채우는 금",
+          "code": "계3-다",
+          "condition": "커다란 금맥 있음",
+          "slots": [
+            "사4"
+          ],
+          "diagnosis": "큰 금맥이 놀기엔 물이 얕지만, 마를 때마다 물을 채워 주고 흐려질 때 덩굴을 불러옵니다.",
+          "prescription": "—",
+          "evidence": [
+            "R2.GYE.051"
+          ],
+          "source": [
+            "R2.GYE.051"
+          ],
+          "note": "처방 칸 원문 —"
+        },
+        {
+          "stage": 4,
+          "stageName": "해와 등불",
+          "stageNote": "재물",
+          "code": "계4-가",
+          "condition": "태양 있음 (아래에 불 뿌리 약함)",
+          "slots": [
+            "재1",
+            "일3"
+          ],
+          "diagnosis": "비가 해를 가리지만, 그 해를 재물로 쥘 수 있습니다. 사람을 키워 꽃을 피우게 하는 사람입니다.",
+          "prescription": "사람을 길러 성과를 내는 일, 판을 꾸리는 일이 맞습니다.",
+          "evidence": [
+            "R2.GYE.041"
+          ],
+          "source": [
+            "R2.GYE.041"
+          ]
+        },
+        {
+          "stage": 4,
+          "stageName": "해와 등불",
+          "stageNote": "재물",
+          "code": "계4-나",
+          "condition": "태양 + 아래 글자가 한낮",
+          "slots": [
+            "사5",
+            "사6",
+            "계4"
+          ],
+          "diagnosis": "볕이 세서 작은 물이 마릅니다.",
+          "prescription": "물을 만들어 주는 보석의 일, 곧 정밀하고 기준이 분명한 일이 물을 보탭니다.",
+          "evidence": [
+            "R2.GYE.012"
+          ],
+          "source": [
+            "R2.GYE.012"
+          ]
+        },
+        {
+          "stage": 4,
+          "stageName": "해와 등불",
+          "stageNote": "재물",
+          "code": "계4-다",
+          "condition": "등불 있음",
+          "slots": [
+            "재1",
+            "일3"
+          ],
+          "diagnosis": "등불을 재물로 쥐는 물입니다. 마음과 정신의 세계와 인연이 깊습니다.",
+          "prescription": "마음을 다루는 일이 맞습니다. 물이 마를 때 그 등불이 큰물을 불러와 채워 줍니다.",
+          "evidence": [
+            "R2.GYE.040"
+          ],
+          "source": [
+            "R2.GYE.040"
+          ]
+        },
+        {
+          "stage": 5,
+          "stageName": "같은 물",
+          "stageNote": null,
+          "code": "계5-가",
+          "condition": "넓고 고요한 호수 있음",
+          "slots": [
+            "사4"
+          ],
+          "diagnosis": "작은 물이 결국 큰물에 합쳐져 힘이 됩니다.",
+          "prescription": "—",
+          "evidence": [
+            "R2.GYE.060"
+          ],
+          "source": [
+            "R2.GYE.060"
+          ],
+          "note": "처방 칸 원문 —"
+        },
+        {
+          "stage": 5,
+          "stageName": "같은 물",
+          "stageNote": null,
+          "code": "계5-나",
+          "condition": "시냇물 둘",
+          "slots": [
+            "사4",
+            "계4"
+          ],
+          "diagnosis": "물이 둘이라 사람과 잘 어울리고 생각이 빠릅니다.",
+          "prescription": "큰 땅이 들어와 하나를 데려가는 때에 알맞은 둑과 터가 생깁니다.",
+          "evidence": [
+            "R2.GYE.061"
+          ],
+          "source": [
+            "R2.GYE.061"
+          ]
+        },
+        {
+          "stage": 6,
+          "stageName": "특성 (끝 슬롯 후보)",
+          "stageNote": null,
+          "code": "계6-가",
+          "condition": "항상",
+          "slots": [
+            "끝2",
+            "끝3"
+          ],
+          "diagnosis": "작은 물은 크게 벌일 때보다 알맞은 크기로 꾸준히 흐를 때 맑습니다. 그 맑음이 당신을 오래 쓰이게 합니다.",
+          "prescription": "—",
+          "evidence": [
+            "R2.GYE.071"
+          ],
+          "source": [
+            "R2.GYE.071"
+          ],
+          "note": "특성 단계 — 문장 칸 하나, 처방 칸 원문에 없음"
+        }
       ],
       "C": [
-        { "code": "계운-가", "incoming": "작은 땅", "slots": ["연4", "연5", "계3"], "sentence": "알맞은 둑이 들어와 곁의 자리가 정해지는 {연도}입니다.", "evidence": ["R2.GYE.020"], "source": ["R2.GYE.020"] },
-        { "code": "계운-나", "incoming": "거대한 산맥", "slots": ["계2", "재3"], "slotNote": "계2 필수", "sentence": "큰 땅에 묶이는 {연도}입니다. 대신 그 묶임에서 빛이 생겨 재물과 터가 들어오기 좋습니다.", "evidence": ["R2.GYE.021", "R2.GYE.023"], "source": ["R2.GYE.021", "R2.GYE.023"] },
-        { "code": "계운-다", "incoming": "거대한 산맥 (시냇물이 둘일 때)", "slots": ["계4", "재5"], "sentence": "곁의 물이 정리되며 알맞은 둑과 터가 생기는 {연도}입니다.", "evidence": ["R2.GYE.061"], "source": ["R2.GYE.061"] },
-        { "code": "계운-라", "incoming": "산맥이나 시냇물이 다시 옴 (산맥에 묶여 있을 때)", "slots": ["계2"], "slotNote": "필수", "sentence": "예외: 다른 일간과 달리, 계수는 이 묶임이 풀릴 때 물이 더 흐려진다. 문장: 자리와 곁이 흔들리기 쉬운 {연도}입니다. 넓히기 보다 지키는 쪽이 이롭습니다.", "evidence": ["R2.GYE.070"], "source": ["R2.GYE.070"], "note": "[선생님 확인 중]" },
-        { "code": "계운-마", "incoming": "세공된 보석 (볕이 셀 때)", "slots": ["계4"], "sentence": "마르던 물에 다시 물이 차는 {연도}입니다.", "evidence": ["R2.GYE.012"], "source": ["R2.GYE.012"] },
-        { "code": "계운-바", "incoming": "금 (원국에 금 없을 때)", "slots": ["계4"], "sentence": "수원이 생겨 물이 마르지 않는 {연도}입니다.", "evidence": ["R2.GYE.011"], "source": ["R2.GYE.011"] },
-        { "code": "계운-사", "incoming": "등불 (물이 마를 때)", "slots": ["계4"], "sentence": "등불이 큰물을 불러와 물이 다시 차는 {연도}입니다.", "evidence": ["R2.GYE.040"], "source": ["R2.GYE.040"] }
+        {
+          "code": "계운-가",
+          "incoming": "작은 땅",
+          "slots": [
+            "연4",
+            "연5",
+            "계3"
+          ],
+          "sentence": "알맞은 둑이 들어와 곁의 자리가 정해지는 {연도}입니다.",
+          "evidence": [
+            "R2.GYE.020"
+          ],
+          "source": [
+            "R2.GYE.020"
+          ]
+        },
+        {
+          "code": "계운-나",
+          "incoming": "거대한 산맥",
+          "slots": [
+            "계2",
+            "재3"
+          ],
+          "slotNote": "계2 필수",
+          "sentence": "큰 땅에 묶이는 {연도}입니다. 대신 그 묶임에서 빛이 생겨 재물과 터가 들어오기 좋습니다.",
+          "evidence": [
+            "R2.GYE.021",
+            "R2.GYE.023"
+          ],
+          "source": [
+            "R2.GYE.021",
+            "R2.GYE.023"
+          ]
+        },
+        {
+          "code": "계운-다",
+          "incoming": "거대한 산맥 (시냇물이 둘일 때)",
+          "slots": [
+            "계4",
+            "재5"
+          ],
+          "sentence": "곁의 물이 정리되며 알맞은 둑과 터가 생기는 {연도}입니다.",
+          "evidence": [
+            "R2.GYE.061"
+          ],
+          "source": [
+            "R2.GYE.061"
+          ]
+        },
+        {
+          "code": "계운-라",
+          "incoming": "산맥이나 시냇물이 다시 옴 (산맥에 묶여 있을 때)",
+          "slots": [
+            "계2"
+          ],
+          "slotNote": "필수",
+          "sentence": "예외: 다른 일간과 달리, 계수는 이 묶임이 풀릴 때 물이 더 흐려진다. 문장: 자리와 곁이 흔들리기 쉬운 {연도}입니다. 넓히기 보다 지키는 쪽이 이롭습니다.",
+          "evidence": [
+            "R2.GYE.070"
+          ],
+          "source": [
+            "R2.GYE.070"
+          ],
+          "note": "[선생님 확인 중]"
+        },
+        {
+          "code": "계운-마",
+          "incoming": "세공된 보석 (볕이 셀 때)",
+          "slots": [
+            "계4"
+          ],
+          "sentence": "마르던 물에 다시 물이 차는 {연도}입니다.",
+          "evidence": [
+            "R2.GYE.012"
+          ],
+          "source": [
+            "R2.GYE.012"
+          ]
+        },
+        {
+          "code": "계운-바",
+          "incoming": "금 (원국에 금 없을 때)",
+          "slots": [
+            "계4"
+          ],
+          "sentence": "수원이 생겨 물이 마르지 않는 {연도}입니다.",
+          "evidence": [
+            "R2.GYE.011"
+          ],
+          "source": [
+            "R2.GYE.011"
+          ]
+        },
+        {
+          "code": "계운-사",
+          "incoming": "등불 (물이 마를 때)",
+          "slots": [
+            "계4"
+          ],
+          "sentence": "등불이 큰물을 불러와 물이 다시 차는 {연도}입니다.",
+          "evidence": [
+            "R2.GYE.040"
+          ],
+          "source": [
+            "R2.GYE.040"
+          ]
+        }
       ],
       "D": [
-        { "item": "권모술수", "evidence": ["R2.GYE.002"], "source": ["R2.GYE.002"], "note": "원문" },
-        { "item": "아파트 추첨 당첨 사례", "evidence": ["R2.GYE.023"], "source": ["R2.GYE.023"], "note": "특정 결과 단정" },
-        { "item": "묶임이 풀릴 때의 이성 문제", "evidence": ["R2.GYE.070"], "source": ["R2.GYE.070"] },
-        { "item": "\"오래 공부하지 않는 것이 좋다\"", "evidence": ["R2.GYE.031"], "source": ["R2.GYE.031"], "note": "원문 — 결정 영향" }
+        {
+          "item": "권모술수",
+          "evidence": [
+            "R2.GYE.002"
+          ],
+          "source": [
+            "R2.GYE.002"
+          ],
+          "note": "원문"
+        },
+        {
+          "item": "아파트 추첨 당첨 사례",
+          "evidence": [
+            "R2.GYE.023"
+          ],
+          "source": [
+            "R2.GYE.023"
+          ],
+          "note": "특정 결과 단정"
+        },
+        {
+          "item": "묶임이 풀릴 때의 이성 문제",
+          "evidence": [
+            "R2.GYE.070"
+          ],
+          "source": [
+            "R2.GYE.070"
+          ]
+        },
+        {
+          "item": "\"오래 공부하지 않는 것이 좋다\"",
+          "evidence": [
+            "R2.GYE.031"
+          ],
+          "source": [
+            "R2.GYE.031"
+          ],
+          "note": "원문 — 결정 영향"
+        }
       ]
     }
+  },
+  "_documentEnd": {
+    "sourcePage": "PDF page 47-48 (11. 판정 필요 목록 ~ 문서 끝)",
+    "note": "8~10장 뒤에 이어지는 문서 말미 섹션 전사. 일간별 파일이 아니라 문서 공통 항목이라 문서 끝에 둔다.",
+    "판정 필요 목록": {
+      "intro": "단답으로 끝낼 수 있게 묶었다.",
+      "공통": [
+        "나라는 사람 가지 우선순위 (0-5): 지금 10년에 바뀌는 가지 > 성립조건 결핍 > 묶임 > 가림 > 흐려짐 > 같은 글자 겹침 > 과다 > 지지의 움직임. 이대로 확정할까요?",
+        "\"많음\"의 기준: 남촌은 개수로 강약을 재지 않습니다. 원문이 \"많다\"고 쓴 경우를 어떤 조건으로 판정할지(천간 기준인지, 천간·지지 합산인지, 삼합·방합이 서면 많음으로 볼지).",
+        "해가 둘이면 어두워진다: 병화 장의 판정을 다른 일간 명식에도 적용하고 있습니다(임수는 R2.IM.090로 반영). 갑목·을목·정화·무토·경금처럼 다른 일간 명식에서도 같은 판정을 쓸지."
+      ],
+      "일간별": [
+        "정화 형태 판정 (정0): 달·가로등·별·촛불 조건이 둘 이상 겹칠 때 어느 형태를 먼저 쓸지.",
+        "병화 결혼 조건: 본책 이론 장에는 명시가 없고 실전 사례(p.142, 145)에서 가져왔습니다. \"산맥이 큰 물을 막고 배우자 자리가 물로 모일 때 / 묶여 있으면 풀릴 때\"로 확정할지.",
+        "병화 대안의 \"해의 나라\"(병3-가): 원문이 일본을 병화에 대응시켜 둔 처방입니다. 사용자 문장에 나라 이름을 쓸지, \"바다 건너\"로만 쓸지.",
+        "계수의 예외 (계운-라): 무토와 묶였다 풀릴 때 오히려 흐려진다는 판정 — 선생님 확인 중인 질문과 같은 항목입니다."
+      ]
+    },
+    "자료 없음 표시 가지 (진단만 나가고 처방 칸이 비는 곳)": "을3-라(해와 등불), 병3-나(태양 셋), 병5-라(호수 둘), 정3-라(나무 많은 가로등), 정5-라(아래가 금으로 모임), 경1-라(나무 많음), 임2-라(작은 땅 + 큰 나무). 처방을 채울지, 진단만 둘지.",
+    "보류": [
+      "임수 가림을 \"비슷한 사람들 사이에 섞일 때\"로 읽는 해석 — 원문 확인 전까지 출력하지 않음.",
+      "사례집 3층 데이터는 갑·을·병·정 네 장만 들어가 있음. 나머지 여섯 장이 들어오면 이 문서의 가지가 사례 판정을 모두 재현하는지 검증한다."
+    ]
   }
 }
