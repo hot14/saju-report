@@ -13,7 +13,9 @@
  *     (stems/relations/dynamics/regions/policy/slots)에 존재하는 부분문자열.
  *     새 해석 문장이 섞이면 FAIL. (중립 연결어·라벨은 선언 목록으로만 허용)
  *  5) 섹션 구조 스냅샷: 3케이스(1985-03-21 14:30 male / 1987-08-28 09:50 female /
- *     시각 미상)의 기대 섹션 제목 목록과 순서 일치 + details 2종(기본 닫힘)
+ *     시각 미상)의 기대 섹션 제목 목록과 순서 일치 + fold details 4종(계산 과정·용어집·
+ *     변화 규칙 열림, FAQ 닫힘) + 아코디언 6종(Q03~Q05·Q07~Q09 · 기본 닫힘,
+ *     Q01·Q02·Q06은 plain section 유지)
  *  6) 용어집 커버리지: 노출 전문 용어가 S12 용어집에 있는지 검사
  *  7) 검증 모드: {{FORM_ENDPOINT}} 유지 · mailto 폴백 · em-dash 0 ·
  *     금지어 0 · 가운뎃점 줄당 1개 · CR/AP 코드는 details 안에만
@@ -645,7 +647,16 @@ function checkSectionOrder(label, html, chart) {
   if (calc === -1 || gloss === -1) fail(`S12 details 2종 누락(${label})`);
   if (!(calc < gloss)) fail(`S12 details 순서 이상(${label}): 계산 과정 → 용어집`);
   if (!(s8fold < calc)) fail(`S8 변화 규칙 details가 S12보다 앞에 와야 함(${label})`);
-  if ((html.match(/<details/g) || []).length !== 4) fail(`details 개수 4 아님(${label}): ` + (html.match(/<details/g) || []).length);
+  /* 아코디언 전환(Q03·Q04·Q05·Q07·Q08 + 조건부 Q09 · 축5 채택): fold details 4종 + 섹션 아코디언 수.
+     아코디언은 기본 닫힘( open 없음). 한눈 요약(Q01)·슬롯 리딩(Q02)·조심할 신호(Q06)는 plain section(열림 유지). */
+  const accCount = 5 + (VIEW.matchAnsim(chart).length ? 1 : 0);
+  const gotDetails = (html.match(/<details/g) || []).length;
+  if (gotDetails !== 4 + accCount) fail(`details 개수 ${4 + accCount} 아님(${label}): ` + gotDetails);
+  if (/<details class="sec acc" open>/.test(html)) fail(`아코디언 섹션이 기본 열림(${label})`);
+  if (html.indexOf('<details class="sec acc"><summary class="acc-head"><span class="sec-label">Q03</span><h2 class="sec-q">어떤 사람인가요?</h2></summary>') === -1) fail(`Q03 아코디언 전환 누락 또는 기본 열림(${label})`);
+  for (const plainNum of ["Q01", "Q02", "Q06"]) {
+    if (html.indexOf('<section class="sec"><p class="sec-label">' + plainNum + "</p>") === -1) fail(plainNum + ` 섹션이 plain section(열림 유지) 아님(${label})`);
+  }
   if (!/<details class="fold" open><summary>계산 과정/.test(html)) fail(`계산 과정 details 열림(하이브리드) 아님(${label})`);
   if (!/<details class="fold" open><summary>용어 자세히/.test(html)) fail(`용어집 details 열림 아님(${label})`);
   if (!/<details class="fold" open><summary>변화 규칙/.test(html)) fail(`변화 규칙 details 열림 아님(${label})`);
@@ -682,8 +693,9 @@ for (const term of REQUIRED_TERMS) {
     fail(`용어집 커버리지: 용어집에 없는 노출 용어 → ${term}`);
   }
 }
-/* 실제 노출 확인: 전문 용어가 화면에 실제로 쓰이는지(용어집만 있고 미노출이면 의미 없음) */
-const visible1 = html1.replace(/<details[\s\S]*?<\/details>/g, "");
+/* 실제 노출 확인: 전문 용어가 화면에 실제로 쓰이는지(용어집만 있고 미노출이면 의미 없음).
+   아코디언 섹션은 화면 노출분이므로 fold details만 스트립한다. */
+const visible1 = html1.replace(/<details class="fold[\s\S]*?<\/details>/g, "");
 for (const term of ["일간", "천간", "지지", "대운"]) {
   if (visible1.indexOf(term) === -1) fail(`용어집 커버리지: 용어집에 있는데 화면 미노출 → ${term}`);
 }
@@ -740,7 +752,7 @@ const FORBIDDEN = [
   "십신", "격국", "용신", "fortune", "destiny", "fate", "the stars say"
 ];
 for (const html of [html1WithRel, html2, html3]) {
-  const vis = html.replace(/<details[\s\S]*?<\/details>/g, "").split(POLICY_BOUNDARY).join("").toLowerCase();
+  const vis = html.replace(/<details class="fold[\s\S]*?<\/details>/g, "").split(POLICY_BOUNDARY).join("").toLowerCase();
   if (html.indexOf("\u2014") !== -1 || html.indexOf("\u2013") !== -1) fail("em-dash(en/em dash) 노출");
   for (const word of FORBIDDEN) {
     if (vis.indexOf(word.toLowerCase()) !== -1) fail(`금지어 노출: ${word}`);
@@ -767,4 +779,4 @@ console.log(`  [일관성 검증] 콘텐츠 대응=3케이스 PASS(${ALLOWED.len
 console.log(`  [보완 작업] 캐치프레이즈 노출 PASS / 대운 서사 10구간×2케이스(살림·누름 템플릿) PASS / iframe POST(entry.NNN) PASS`);
 console.log(`  [슬롯 리딩] Q02 섹션 PASS / 기토=${slotMe1.map((r) => r.code).join("+")} / 갑목=${slotGap.map((r) => r.code).join("+")}+戊=${slotMu.map((r) => r.code).join("+")} / 재현성·조건매핑 3건·미적용 4건·0갈래 경로 PASS`);
 console.log(`  [검증 모드] {{FORM_ENDPOINT}} 토큰 유지 · mailto 폴백 · src 추적(entry.NNN) · 금지어 0 · em-dash 0 · details 밖 CR/AP 0`);
-console.log(`  bundle.js=${bundleKb}kb · 용어집 ${VIEW.GLOSSARY.length}항목 · details 4종(S8 1 + FAQ 1 + S12 2)`);
+console.log(`  bundle.js=${bundleKb}kb · 용어집 ${VIEW.GLOSSARY.length}항목 · fold details 4종(S8 1 + FAQ 1 + S12 2) + 섹션 아코디언 6종(Q03~Q05·Q07~Q09 · 기본 닫힘)`);

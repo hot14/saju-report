@@ -14,6 +14,13 @@
  *   FAQ 자주 묻는 질문(닫힘 details 1개, S9 뒤)
  *   S10 다른 사람과 보기   S11 결과 받아두기   S12 details 2종(계산 과정·용어집)
  *
+ * 사용자 경계 개선 2종(축3 concern 프리텍스트 · 축5 아코디언 리딩 뷰):
+ *   - 고민 한 줄(선택 300자) 입력 시 결과 카드 상단에 "이 리딩은 '고민'을 기준으로
+ *     읽었습니다" 배너로 상기 표시(세션 내 전달만 · 저장 없음 · 섹션 강조 없음)
+ *   - Q02 이후 긴 섹션(Q03·Q04·Q05·Q07·Q08·조건부 Q09)은 details 아코디언(기본 닫힘).
+ *     한눈 요약(Q01)·조심할 신호(Q06)는 열린 채 유지, 기존 details 3종(변화 규칙·
+ *     계산 과정·용어집)은 fold 하이브리드 그대로. smoke.cjs 섹션 스냅샷이 검증.
+ *
  * 절대 규칙: 해석 문장은 콘텐츠 JSON(stems/relations/dynamics/regions/policy)
  * 에 있는 문장만 사용한다. 새 해석 문장 창작 금지. 접두·접미 연결어는 중립
  * 문장만 허용(smoke.cjs 콘텐츠 대응 검사가 기계 검증).
@@ -109,6 +116,12 @@
       .replace(/'/g, "&#39;");
   }
 
+  /* 목적어 조사 고정: 받침 있으면 을, 없으면 를. 한글 밖 문자는 를 기본. */
+  function objParticle(word) {
+    var ch = String(word).slice(-1).charCodeAt(0);
+    return (ch >= 0xac00 && ch <= 0xd7a3 && (ch - 0xac00) % 28 !== 0) ? "을" : "를";
+  }
+
   function humanDur(minutes) {
     if (minutes < 60) return minutes + "분";
     if (minutes < 1440) return Math.floor(minutes / 60) + "시간 " + (minutes % 60) + "분";
@@ -160,6 +173,13 @@
     return '<section class="sec"><p class="sec-label">' + esc(sec.num) + '</p><h2 class="sec-q">' + esc(sec.title) + "</h2>";
   }
 
+  /* 아코디언 섹션 헤더(축5 채택 · 아코디언 리딩 뷰): Q02 이후 긴 섹션을 details로
+     접어 스크롤 폭포를 막는다. 기본 닫힘. Q01·Q06·Q02와 기존 fold details 3종은 그대로. */
+  function sectionAcc(sec) {
+    return '<details class="sec acc"><summary class="acc-head"><span class="sec-label">' + esc(sec.num) +
+      '</span><h2 class="sec-q">' + esc(sec.title) + "</h2></summary>";
+  }
+
   function listItems(arr) {
     var out = "";
     for (var i = 0; i < arr.length; i++) out += "<li>" + esc(arr[i]) + "</li>";
@@ -205,6 +225,7 @@
   var timeEl = document.getElementById("f-time");
   var unknownEl = document.getElementById("f-unknown");
   var genderEl = document.getElementById("f-gender");
+  var concernEl = document.getElementById("f-concern");
   var errDate = document.getElementById("err-date");
   var errTime = document.getElementById("err-time");
   var entrySec = document.getElementById("entry");
@@ -270,7 +291,7 @@
       showError(errDate, "확인해주세요.", err && err.message ? err.message : "계산에 실패했습니다.");
       return;
     }
-    render(chart, genderEl.value);
+    render(chart, genderEl.value, (concernEl.value || "").trim().slice(0, 300));
   });
 
   // ---------------------------------------------------------------------------
@@ -797,12 +818,12 @@
 
   /* S3 어떤 사람인가요? 물상 성향(nature+metaphor+성향) + 성장 조건 */
   function personaSection(stem) {
-    var html = sectionOpen(SEC.persona);
+    var html = sectionAcc(SEC.persona);
     html += '<div class="prose"><p>성질은 ' + esc(stem.nature) + "입니다.</p><p>" + esc(stem.metaphor) + "</p></div>";
     html += '<p class="sub-label">성향</p><ul class="traits">' + listItems(stem.coreTraits) + "</ul>";
     html += '<p class="sub-label">성장 조건</p><ul class="traits">' + listItems(stem.growthNeeds) + "</ul>";
     html += aggregateSrc([stem]);
-    return html + "</section>";
+    return html + "</details>";
   }
 
   /* S4 무엇이 많고, 무엇이 부족한가요? 오행 지형도.
@@ -810,7 +831,7 @@
   function balanceSection(chart) {
     var states = VIEW.elementStates(chart);
     var n = chart.mode === "noHour" ? "여섯 글자" : "여덟 글자";
-    var html = sectionOpen(SEC.balance);
+    var html = sectionAcc(SEC.balance);
     html += '<p class="lead-line">' + n + "에 다섯 가지 기운이 몇 개씩 들었는지 세어본 지형도입니다. 짙을수록 그 기운이 강하게 작동합니다.</p>";
     html += '<div class="estate">';
     var srcItems = [];
@@ -833,15 +854,15 @@
     }
     html += "</div>";
     html += aggregateSrc(srcItems);
-    return html + "</section>";
+    return html + "</details>";
   }
 
   /* S5 어떤 일이 어울리나요? careerDirections */
   function careerSection(stem) {
-    var html = sectionOpen(SEC.career);
+    var html = sectionAcc(SEC.career);
     html += '<p class="lead-line">일간 성질이 자연스럽게 끌리는 일 방향입니다.</p>';
     html += '<ul class="traits">' + listItems(stem.careerDirections) + "</ul>";
-    return html + "</section>";
+    return html + "</details>";
   }
 
   /* S6 조심할 신호는? dangers(과할 때·모자랄 때) */
@@ -889,7 +910,7 @@
 
   function timeSection(chart, gender) {
     var noHour = chart.mode === "noHour";
-    var html = sectionOpen(SEC.time);
+    var html = sectionAcc(SEC.time);
     html += '<p class="lead-line">네 기둥은 인생의 시간표입니다. 앞 기둥일수록 이른 시기를 뜻합니다.</p>';
     html += pillarTable(chart);
 
@@ -923,7 +944,7 @@
     if (!luck) {
       html += '<p class="lead-line">십 년 단위로 흐름의 무대가 바뀝니다. 성별을 알려주면 지금 몇 번째 무대인지 표시합니다.</p>';
       html += '<p class="neutral-note">성별을 알려주면 10년 흐름도 함께 볼 수 있어요. 입력 화면의 성별은 이 계산에만 쓰입니다.</p>';
-      return html + "</section>";
+      return html + "</details>";
     }
     if (luck.currentIndex > -1) {
       html += '<p class="lead-line">십 년 단위로 흐름의 무대가 바뀝니다. 지금은 ' + (luck.currentIndex + 1) + "구간입니다.</p>";
@@ -956,7 +977,7 @@
     if (noHour) {
       html += '<p class="gov">시각 미상은 정오 가정으로 계산되어 대운 시작 나이에 오차가 있을 수 있습니다.</p>';
     }
-    return html + "</section>";
+    return html + "</details>";
   }
 
   /* S8 내 글자들은 서로 어떻게 작동하나요? 천간 관계 3건 + 합·충 감지.
@@ -967,7 +988,7 @@
     var combos = VIEW.stemCombos(chart);
     var branches = VIEW.branchDynamics(chart);
 
-    var html = sectionOpen(SEC.dynamics);
+    var html = sectionAcc(SEC.dynamics);
     html += '<p class="lead-line">일간을 기준으로 다른 위 글자들이 나에게 어떻게 작동하는지 읽습니다.</p>';
     html += '<div class="rel-list">';
     var relSrc = [];
@@ -1061,13 +1082,13 @@
         esc(cr.detail) + "</span></li>";
     }
     html += "</ul></div></details>";
-    return html + "</section>";
+    return html + "</details>";
   }
 
   /* S9 마음은 어떤가요? 안심법(해당 패턴만). 매칭이 없으면 섹션 자체를 생략. */
   function ansimSection(chart) {    var matched = VIEW.matchAnsim(chart);
     if (!matched.length) return "";
-    var html = sectionOpen(SEC.mind);
+    var html = sectionAcc(SEC.mind);
     html += '<p class="lead-line">글자 배치만으로 확정되는 조건에만 근거한 마음 읽기입니다.</p>';
     var srcItems = [];
     for (var i = 0; i < matched.length; i++) {
@@ -1078,7 +1099,7 @@
       srcItems.push(p);
     }
     html += aggregateSrc(srcItems);
-    return html + "</section>";
+    return html + "</details>";
   }
 
   /* FAQ 섹션 (S9 뒤 · honbit UX 분석 6번 패턴 · SEO·AEO 겸용).
@@ -1251,7 +1272,7 @@
   // 7) 렌더 (S1~S12 고정 순서)
   // ---------------------------------------------------------------------------
 
-  function render(chart, gender) {
+  function render(chart, gender, concern) {
     var noHour = chart.mode === "noHour";
     var dm = chart.dayMaster;
     var badge = BADGE[dm.hanja];
@@ -1279,6 +1300,12 @@
         "<p>" + esc(POLICY.noHourDisclaimer) + "</p>" +
         "<p>연, 월, 일 여섯 글자로 읽으며, 시주가 필요한 주제는 제외됩니다.</p>" +
         '<p class="gov">' + esc(POLICY.noHourExcluded) + "</p></div>";
+    }
+    if (concern) {
+      /* 고민 프리텍스트 배너(축3 변형 채택): 입력폼 고민 한 줄을 리딩 기준으로 상기.
+         표시 로직만 적용(섹션 강조 없음). 세션 내 전달만이고 저장하지 않는다. */
+      html += '<div class="notice concern-note"><p class="sec-label">고민 기준</p><p>이 리딩은 ‘' + esc(concern) + '’' +
+        objParticle(concern) + " 기준으로 읽었습니다.</p></div>";
     }
 
     /* S1 헤더 카드(유지): 패턴 ID · 일간 배지 · 한 줄 소개 */

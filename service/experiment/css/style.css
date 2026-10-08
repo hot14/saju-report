@@ -114,6 +114,13 @@ input[type="text"], input[type="time"], input[type="email"] {
   background: transparent; border-radius: 0; color: var(--color-ink);
 }
 input[type="time"] { max-width: 10rem; }
+textarea {
+  width: 100%; border: 1px solid var(--color-ink); border-radius: 0;
+  font-family: var(--font-body); font-size: 0.95rem; line-height: 1.6;
+  padding: 0.6rem 0.7rem; background: transparent; color: var(--color-ink);
+  resize: vertical; min-height: 4.5rem;
+}
+textarea:focus { outline: none; border-color: var(--color-accent); }
 input:focus { outline: none; border-bottom-color: var(--color-accent); }
 input:disabled { color: var(--color-ink-mute); border-bottom-color: var(--color-hairline); }
 .check { display: flex; gap: 0.55rem; align-items: flex-start; margin-top: 0.9rem; font-weight: 500; cursor: pointer; }
@@ -196,6 +203,9 @@ input:disabled { color: var(--color-ink-mute); border-bottom-color: var(--color-
 .notice { border: 1px solid var(--color-hairline); padding: 0.9rem; margin-bottom: var(--space-block); }
 .notice p { margin-bottom: 0.3rem; }
 .notice .gov { margin-top: 0.5rem; }
+/* 고민 프리텍스트 배너: 입력폼의 고민 한 줄을 결과 카드 상단에 상기 표시(축3 변형 채택) */
+.notice.concern-note { border-left: var(--border-strong) solid var(--color-accent); }
+.notice.concern-note p:last-child { font-weight: 500; }
 
 /* 이메일 수집 (마무리 컷 블록) */
 .cut { margin-top: var(--space-section); border-top: var(--border-strong) solid var(--color-ink); padding-top: var(--space-block); }
@@ -346,6 +356,24 @@ select:focus { outline: none; border-bottom-color: var(--color-accent); }
   line-height: 1.35; letter-spacing: -0.01em; margin-bottom: 0.7rem;
 }
 .sec .sec-label { margin-bottom: 0.35rem; }
+
+/* 아코디언 리딩 섹션(Q02 이후 긴 섹션 · 축5 채택): details 기본 닫힘.
+   한눈 요약(Q01)·조심할 신호(Q06)는 열린 채 유지하고, 변화 규칙·계산 과정·
+   용어집 details 3종은 기존 fold 하이브리드 그대로 둔다. */
+details.sec.acc { border-top: var(--border-strong) solid var(--color-ink); margin-top: var(--space-section); }
+details.sec.acc > summary.acc-head { cursor: pointer; list-style: none; }
+details.sec.acc > summary.acc-head::-webkit-details-marker { display: none; }
+summary.acc-head .sec-label { display: block; margin-bottom: 0.35rem; }
+summary.acc-head .sec-q {
+  margin-bottom: 0; display: flex; justify-content: space-between;
+  align-items: baseline; gap: 0.6rem;
+}
+summary.acc-head .sec-q::after {
+  content: "+"; font-family: var(--font-mono); font-size: 1.1rem;
+  color: var(--color-accent); flex: none;
+}
+details.sec.acc[open] summary.acc-head .sec-q::after { content: "\2212"; }
+details.sec.acc[open] summary.acc-head { padding-bottom: 0.7rem; }
 
 /* S2 한눈 요약 */
 .sum-list { border-top: var(--border-strong) solid var(--color-ink); }
