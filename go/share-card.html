@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SajuRoot · 공유 카드</title>
+<meta name="description" content="SajuRoot 결과 공유 카드(1080×1350). 인쇄 대화상자에서 PDF로 저장합니다.">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   SajuRoot 공유 카드 (master-strategy P1-9)
+   카드 규격 1080×1350 (4:5) · 저장용 (og.png 1200×630은 링크 미리보기용으로 유지)
+   토큰: design-ssot/05-handoff/tokens.css v1.0 "Swiss Ledger" 값 그대로
+   법: 순백 배경 · 잉크 · 레드 마침표 전용 · 라운드 0 · 그림자 0 · em-dash 0
+   ============================================================ */
+:root {
+  --color-bg: #FFFFFF;
+  --color-ink: #111111;
+  --color-ink-soft: #444748;
+  --color-ink-mute: #6F6A63;
+  --color-accent: #E0311D;
+  --color-hairline: #D0CDC6;
+  --font-display: "Noto Serif KR", serif;
+  --font-body: "Noto Sans KR", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #F5F4F1;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+[hidden] { display: none !important; }
+.accent { color: var(--color-accent); }
+
+/* 화면용 무대(카드 밖 도구 영역은 인쇄에서 제외) */
+.stage { min-height: 100vh; padding: 2rem 1rem 3rem; display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
+.toolbar {
+  width: 100%; max-width: 1080px; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; color: var(--color-ink-mute);
+  border-bottom: 1px solid var(--color-hairline); padding-bottom: 0.8rem;
+}
+.tb-actions { display: flex; gap: 0.6rem; align-items: center; }
+.tb-btn {
+  font-family: var(--font-body); font-weight: 700; font-size: 0.88rem; letter-spacing: 0.02em;
+  background: var(--color-ink); color: #FFFFFF; border: 0; border-radius: 0;
+  padding: 0.7rem 1.1rem; cursor: pointer; text-decoration: none; display: inline-block;
+}
+.tb-btn:hover { opacity: 0.88; }
+.tb-btn.ghost { background: transparent; color: var(--color-ink); border: 1.5px solid var(--color-ink); }
+
+.card-wrap { flex: none; }
+.card {
+  width: 1080px; height: 1350px; background: var(--color-bg); color: var(--color-ink);
+  border: 3px solid var(--color-ink); border-radius: 0;
+  display: flex; flex-direction: column; transform-origin: top center;
+}
+.card-wrap { transform-origin: top center; }
+
+/* PATTERN_CARD 헤더: 패턴 ID · 바코드 · 워드마크 */
+.pc-head {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: 1.6rem 3rem; border-bottom: 1.5px solid var(--color-hairline);
+  font-family: var(--font-mono); font-size: 1.05rem; letter-spacing: 0.14em; color: var(--color-ink-mute);
+}
+.pc-brand { font-family: var(--font-display); font-weight: 900; font-size: 1.5rem; letter-spacing: 0.04em; color: var(--color-ink); }
+.barcode {
+  width: 132px; height: 28px; flex: none;
+  background: repeating-linear-gradient(90deg,
+    var(--color-ink) 0 4px, transparent 4px 6px,
+    var(--color-ink) 6px 12px, transparent 12px 14px,
+    var(--color-ink) 14px 16px, transparent 16px 22px);
+}
+
+/* 본문 */
+.c-body { flex: 1; padding: 3.5rem 4.5rem 2.5rem; display: flex; flex-direction: column; gap: 2.4rem; min-height: 0; }
+.c-label { font-family: var(--font-mono); font-size: 1.05rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-mute); }
+
+.c-badge { display: flex; align-items: flex-start; gap: 3rem; }
+.c-hanja-box {
+  flex: none; width: 400px; height: 400px; border: 3px solid var(--color-ink);
+  display: flex; align-items: center; justify-content: center; position: relative;
+}
+.c-hanja { font-family: var(--font-display); font-weight: 900; font-size: 250px; line-height: 1; }
+.c-badge-meta { display: flex; flex-direction: column; gap: 0.9rem; padding-top: 0.8rem; min-width: 0; }
+.c-name { font-weight: 700; font-size: 4rem; line-height: 1.2; }
+.c-en { font-family: var(--font-mono); font-size: 1.35rem; letter-spacing: 0.14em; color: var(--color-ink-mute); }
+.edots { display: flex; gap: 0.6rem; align-items: center; margin-top: 0.6rem; }
+.edot { width: 1.1rem; height: 1.1rem; border: 2px solid var(--color-ink); border-radius: 50%; flex: none; }
+.edot.on { background: var(--color-accent); border-color: var(--color-accent); }
+
+/* 8글자 레지스트리 표: 年月日時 헤더 + 한자 데이터 */
+.c-pillars { border-top: 3px solid var(--color-ink); border-bottom: 1.5px solid var(--color-hairline); display: grid; grid-template-columns: repeat(4, 1fr); }
+.c-pill { padding: 1.6rem 1.5rem 1.8rem; border-left: 1.5px solid var(--color-hairline); display: flex; flex-direction: column; gap: 0.8rem; }
+.c-pill:first-child { border-left: 0; }
+.c-pill .c-label { font-size: 0.95rem; }
+.c-pill-val { font-family: var(--font-display); font-weight: 900; font-size: 4.4rem; line-height: 1; letter-spacing: 0.06em; }
+.c-pill-val.none { font-family: var(--font-mono); font-weight: 400; font-size: 1.6rem; color: var(--color-ink-mute); letter-spacing: 0.14em; padding-top: 1.6rem; }
+
+/* 계산 메타(생년월일 · 시각 · 절기) */
+.c-meta { font-family: var(--font-mono); font-size: 1.25rem; letter-spacing: 0.06em; color: var(--color-ink-mute); }
+
+.c-declaration { font-family: var(--font-display); font-weight: 900; font-size: 4.6rem; line-height: 1.25; letter-spacing: -0.01em; margin-top: auto; }
+.c-oneliner { font-size: 1.9rem; color: var(--color-ink-soft); line-height: 1.5; }
+
+/* 푸터: 서비스 URL + 근거 공개 문구 (master-strategy §3-3 규칙) */
+.c-foot { border-top: 1.5px solid var(--color-hairline); padding: 1.4rem 3rem 1.8rem; display: flex; flex-direction: column; gap: 0.45rem; }
+.c-url { font-family: var(--font-mono); font-size: 1.15rem; letter-spacing: 0.08em; color: var(--color-ink); }
+.c-note { font-size: 0.95rem; line-height: 1.55; color: var(--color-ink-mute); }
+
+/* 데이터 없음 상태 */
+.empty { max-width: 1080px; font-size: 0.95rem; color: var(--color-ink-soft); }
+.empty a { color: var(--color-ink); }
+
+/* 인쇄: 카드 한 장이 그대로 1080×1350 페이지가 된다 */
+@page { size: 1080px 1350px; margin: 0; }
+@media print {
+  body { background: var(--color-bg); }
+  .stage { padding: 0; gap: 0; }
+  .toolbar, .empty { display: none !important; }
+  .card-wrap { transform: none !important; }
+  .card { border-width: 3px; }
+  .c-declaration { margin-top: auto; }
+}
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="toolbar">
+    <span>도판 05 - 공유 카드 · 1080 × 1350</span>
+    <div class="tb-actions">
+      <button type="button" class="tb-btn" id="btn-print">이 카드를 PDF로 저장</button>
+      <a class="tb-btn ghost" id="btn-back" href="chart.html">결과로 돌아가기</a>
+    </div>
+  </div>
+
+  <div class="card-wrap" id="card-wrap">
+    <article class="card" id="card" hidden aria-label="SajuRoot 공유 카드">
+      <header class="pc-head">
+        <span id="c-pattern">P-</span>
+        <span class="barcode" aria-hidden="true"></span>
+        <span class="pc-brand">SajuRoot</span>
+      </header>
+
+      <div class="c-body">
+        <div class="c-badge">
+          <div class="c-hanja-box"><span class="c-hanja" id="c-hanja"></span></div>
+          <div class="c-badge-meta">
+            <p class="c-label">일간 · DAY MASTER</p>
+            <p class="c-name" id="c-name"></p>
+            <p class="c-en" id="c-en"></p>
+            <div class="edots" id="c-edots" role="img" aria-label="오행"></div>
+          </div>
+        </div>
+
+        <div class="c-pillars" id="c-pillars"></div>
+        <p class="c-meta" id="c-meta"></p>
+
+        <h1 class="c-declaration"><span id="c-declaration-text"></span><span class="accent">.</span></h1>
+        <p class="c-oneliner" id="c-oneliner"></p>
+      </div>
+
+      <footer class="c-foot">
+        <span class="c-url" id="c-url">SajuRoot</span>
+        <p class="c-note">SajuRoot는 자기이해를 위한 읽기 도구입니다. 의료, 법률, 금융 조언이 아닙니다.</p>
+        <p class="c-note">본 서비스의 해석 원리는 남촌현대물상론 학파의 공개 강의와 출판물에서 공부한 물상 체계를 독자적으로 재구성한 것입니다. 남촌물상역학연구회와 제휴 관계가 없습니다.</p>
+      </footer>
+    </article>
+  </div>
+
+  <p class="empty" id="empty" hidden>카드 데이터가 없습니다. 결과 카드의 저장 버튼으로 다시 열어주세요. <a href="chart.html">직접 계산하기</a></p>
+
+</div>
+
+<script>
+/* 공유 카드 데이터 주입 (정적 템플릿 · JS 1개)
+   URL 파라미터: app.js 결과 카드의 "카드 저장" 버튼이 만든다.
+     d = 생년월일(YYYY-MM-DD)  t = 출생 시각(HH:MM, 시각 미상이면 빈 값)
+     s = 일간 천간 한자(예: 己)  p = 네 기둥 한자(예: 乙丑 己卯 己未 辛未)
+     j = 절기 이름(선택)  src = 유입 경로(선택)
+   인쇄는 화면의 "이 카드를 PDF로 저장" 버튼(사용자 제스처)으로만 연다.
+   페이지 열리마자 window.print()를 자동 호출하지 않는다. 신규 탭을 인쇄
+   대화상자가 하이재킹하면 브라우저 세션 전체가 멈출 수 있는 실측(Aside
+   브라우저 2026-10-09)이 있고, 모바일에서도 스크립트 인쇄가 막히기 때문.
+   배지명·영어명·한 줄은 app.js BADGE 표(카피덱 v2-KR §9 출처)와 같은 문자열이고,
+   새 해석 문장을 만들지 않으므로 카드는 파라미터 조합만 바꾼다. */
+(function () {
+  "use strict";
+
+  var BADGE = {
+    "甲": { name: "큰 나무", en: "HEARTWOOD", one: "위로 뻗는 줄기, 아래로 내린 뿌리." },
+    "乙": { name: "작은 나무", en: "IVY THREAD", one: "휘어져도 끊기지 않는 성질." },
+    "丙": { name: "태양", en: "NOON MARK", one: "넓게 비추는 열." },
+    "丁": { name: "달", en: "MOON PHASE", one: "가까이 오래 머무는 빛." },
+    "戊": { name: "큰 산", en: "GRANITE RIDGE", one: "무겁고 움직이지 않는 바탕." },
+    "己": { name: "정원 흙", en: "GARDEN SOIL", one: "심으면 살리는 흙." },
+    "庚": { name: "큰 쇠", en: "CAST IRON", one: "벼려진 면의 단단함." },
+    "辛": { name: "작은 쇠", en: "SILVER FOIL", one: "세공되어 빛나는 광택." },
+    "壬": { name: "넓은 호수", en: "MIRROR LAKE", one: "넓게 고이고, 깊게 흐르는 물." },
+    "癸": { name: "시냇물", en: "MOUNTAIN STREAM", one: "길을 내면서 스며드는 물." }
+  };
+  var STEM_ELEMENT = { "甲": "목", "乙": "목", "丙": "화", "丁": "화", "戊": "토", "己": "토", "庚": "금", "辛": "금", "壬": "수", "癸": "수" };
+  var ELEMENT_ORDER = ["목", "화", "토", "금", "수"];
+  var PILLAR_LABELS = ["년", "월", "일", "시"];
+  var STEMS_SET = "甲乙丙丁戊己庚辛壬癸";
+  var BRANCHES_SET = "子丑寅卯辰巳午未申酉戌亥";
+  var VALID_SRC = ["seo", "community", "social", "direct"];
+
+  function setText(id, value) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = value;
+  }
+
+  /* 값은 textContent로만 넣는다(주입 안전). 형식 검증을 통과한 문자열만 사용. */
+  function parseParams() {
+    var q = new URLSearchParams(location.search);
+    var d = q.get("d") || "";
+    var t = q.get("t") || "";
+    var s = q.get("s") || "";
+    var p = q.get("p") || "";
+    var j = q.get("j") || "";
+    var src = q.get("src") || "";
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return null;
+    if (t && !/^\d{2}:\d{2}$/.test(t)) return null;
+    if (!BADGE[s]) return null;
+    var pillars = p.split(" ");
+    if (pillars.length !== 3 && pillars.length !== 4) return null;
+    for (var i = 0; i < pillars.length; i++) {
+      var pl = pillars[i];
+      if (pl.length !== 2 || STEMS_SET.indexOf(pl[0]) === -1 || BRANCHES_SET.indexOf(pl[1]) === -1) return null;
+    }
+    if (src && VALID_SRC.indexOf(src) === -1) src = "";
+    if (j.length > 12) j = "";
+    return { d: d, t: t, s: s, p: p, j: j, src: src };
+  }
+
+  function renderCard(data) {
+    var badge = BADGE[data.s];
+    var patternId = "P-" + data.d.replace(/-/g, "") + (data.t ? "-" + data.t.replace(":", "") : "");
+
+    setText("c-pattern", patternId);
+    setText("c-hanja", data.s);
+    setText("c-name", badge.name + " · " + STEM_ELEMENT[data.s]);
+    setText("c-en", badge.en);
+    setText("c-declaration-text", "당신은 " + badge.name + "입니다");
+    setText("c-oneliner", badge.one);
+
+    /* 오행 점 5개: 일간 오행만 레드 */
+    var dots = document.getElementById("c-edots");
+    if (dots) {
+      dots.setAttribute("aria-label", "오행 " + STEM_ELEMENT[data.s]);
+      for (var e = 0; e < ELEMENT_ORDER.length; e++) {
+        var dot = document.createElement("span");
+        dot.className = "edot" + (ELEMENT_ORDER[e] === STEM_ELEMENT[data.s] ? " on" : "");
+        dot.setAttribute("aria-hidden", "true");
+        dots.appendChild(dot);
+      }
+    }
+
+    /* 8글자 표: 3기둥(시각 미상)이면 시 칸은 미상 표기 */
+    var pillarsBox = document.getElementById("c-pillars");
+    if (pillarsBox) {
+      var pillars = data.p.split(" ");
+      for (var i = 0; i < 4; i++) {
+        var cell = document.createElement("div");
+        cell.className = "c-pill";
+        var label = document.createElement("span");
+        label.className = "c-label";
+        label.textContent = PILLAR_LABELS[i];
+        var val = document.createElement("span");
+        if (pillars[i]) {
+          val.className = "c-pill-val";
+          val.textContent = pillars[i];
+        } else {
+          val.className = "c-pill-val none";
+          val.textContent = "시각 미상";
+        }
+        cell.appendChild(label);
+        cell.appendChild(val);
+        pillarsBox.appendChild(cell);
+      }
+    }
+
+    var metaParts = [data.d];
+    metaParts.push(data.t ? data.t : "시각 미상");
+    if (data.j) metaParts.push("절기 " + data.j);
+    setText("c-meta", metaParts.join(" · "));
+
+    /* 서비스 URL(근거 공개 문구와 함께 푸터 고정). src가 있으면 유입 경로를 붙인다. */
+    var baseUrl = location.origin + location.pathname.replace(/share-card\.html.*$/, "");
+    setText("c-url", baseUrl + (data.src ? "?src=" + data.src : ""));
+
+    document.getElementById("card").hidden = false;
+  }
+
+  /* 화면에서 카드가 뷰포트 안에 들어오도록 비율 축소(인쇄에는 영향 없음) */
+  function fitScale() {
+    var wrap = document.getElementById("card-wrap");
+    var card = document.getElementById("card");
+    if (!wrap || !card || card.hidden) return;
+    var available = Math.min(window.innerWidth - 32, 1080);
+    var scale = Math.min(1, available / 1080);
+    card.style.transform = scale < 1 ? "scale(" + scale + ")" : "";
+    wrap.style.height = scale < 1 ? 1350 * scale + "px" : "";
+    wrap.style.overflow = scale < 1 ? "hidden" : "";
+  }
+
+  var data = parseParams();
+  if (data) {
+    renderCard(data);
+    fitScale();
+    window.addEventListener("resize", fitScale);
+  } else {
+    var emptyEl = document.getElementById("empty");
+    if (emptyEl) emptyEl.hidden = false;
+  }
+
+  var printBtn = document.getElementById("btn-print");
+  if (printBtn) printBtn.addEventListener("click", function () { try { window.print(); } catch (e) {} });
+})();
+</script>
+</body>
+</html>

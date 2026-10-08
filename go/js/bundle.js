@@ -5954,6 +5954,53 @@
             content: "\uC704\uB85C"
           }
         ],
+        targetProfiles: {
+          s1: {
+            id: "s1",
+            name: "\uC790\uAE30\uC774\uD574",
+            segment: "S1 \uC790\uAE30\uC774\uD574 \uB3C4\uAD6C \uC218\uC694\uC790",
+            source: "master-strategy.md 2-2 \uB9E4\uD2B8\uB9AD\uC2A4\xB72-4 \uCD5C\uC18C\uC548 (\uAC15\uC870 \uC2AC\uB86F: \uC0AC1 \uD6C5 \u2192 \uB05D1). S1\uC774 \uAE30\uBCF8 \uD504\uB85C\uD30C\uC77C\uC774\uB77C \uC139\uC158 \uC21C\uC11C\uB294 \uAE30\uBCF8\uAC12\uACFC \uAC19\uB2E4.",
+            tone: {
+              politeness: "\uAE30\uBCF8 \uBC34\uB4DC(\uC874\uB313\uB9D0 \uAE30\uBCF8, \uC5B4\uC694\uCCB4 40~45% \uD63C\uC6A9)",
+              pronoun: "\uB2F9\uC2E0",
+              emojiPolicy: "\uBCF8\uBB38 0\uD68C(\uD0C0\uC774\uD2C0 \uB77C\uC778\uB9CC \uD5C8\uC6A9)"
+            },
+            matrixSlots: ["\uC0AC1", "\uB05D1"],
+            emphasis: [],
+            sectionOrder: ["summary", "slot", "persona", "balance", "career", "danger", "time", "dynamics", "mind", "faq", "relation"],
+            entry: "MBTI\uAC00 \uB05D\uB09C \uC790\uB9AC\uC5D0\uC11C, \uADFC\uAC70\uB97C \uBCF4\uC5EC\uC8FC\uB294 \uC0AC\uC8FC"
+          },
+          s3: {
+            id: "s3",
+            name: "\uAE4A\uC774 \uD559\uC2B5",
+            segment: "S3 \uAE4A\uC774 \uD559\uC2B5\uD615 \uC218\uC694\uC790",
+            source: "master-strategy.md 2-2 \uB9E4\uD2B8\uB9AD\uC2A4\xB72-4 \uCD5C\uC18C\uC548 (\uAC15\uC870 \uC2AC\uB86F: \uACC41 \uACC4\uC0B0 \uADFC\uAC70 \u2192 \uC0AC2 \uC624\uD589). \uC0B6\uC758 \uACC4\uC808(Q07)\uACFC \uC5B4\uB5A4 \uC0AC\uB78C\uC778\uAC00\uC694?(Q03)\uB97C \uC55E\uB2F9\uAE30\uACE0 \uC544\uCF54\uB514\uC5B8 \uAE30\uBCF8 \uD3BC\uCE68\uC744 \uB454\uB2E4.",
+            tone: {
+              politeness: "\uC874\uC911\uC5B4 \uBE44\uC911 \uC0C1\uD5A5(\uADFC\uAC70 \uC124\uBA85\uCCB4), \uC5B4\uC694\uCCB4\uB294 \uAE30\uBCF8 \uBC34\uB4DC(40~45%) \uC774\uB0B4 \uC720\uC9C0",
+              pronoun: "\uB2F9\uC2E0",
+              emojiPolicy: "\uBCF8\uBB38 0\uD68C"
+            },
+            matrixSlots: ["\uACC41", "\uC0AC2"],
+            emphasis: ["time", "persona"],
+            sectionOrder: ["summary", "time", "persona", "slot", "balance", "career", "danger", "dynamics", "mind", "faq", "relation"],
+            entry: "\uC65C \uC774 \uD574\uC11D\uC778\uC9C0, \uACC4\uC0B0\uBD80\uD130 \uBCF4\uC5EC\uB4DC\uB9BD\uB2C8\uB2E4"
+          },
+          s4: {
+            id: "s4",
+            name: "\uCEE4\uB9AC\uC5B4 \uC804\uD658",
+            segment: "S4 \uCEE4\uB9AC\uC5B4 \uC804\uD658 \uACE0\uBBFC\uC790",
+            source: "master-strategy.md 2-2 \uB9E4\uD2B8\uB9AD\uC2A4\xB72-4 \uCD5C\uC18C\uC548 (\uAC15\uC870 \uC2AC\uB86F: \uC7AC1~\uC7AC7 \uC7AC\uBB3C\xB7\uC9C1\uC5C5 \u2192 \uACC4 \uC2DC\uAC04). \uC5B4\uB5A4 \uC77C\uC774 \uC5B4\uC6B8\uB9AC\uB098\uC694?(Q05)\uC640 \uC2DC\uAC04\uC758 \uD750\uB984\uC740?(Q07)\uB97C \uC55E\uB2F9\uAE30\uACE0 \uC544\uCF54\uB514\uC5B8 \uAE30\uBCF8 \uD3BC\uCE68\uC744 \uB454\uB2E4.",
+            tone: {
+              politeness: "\uAE30\uBCF8 \uBC34\uB4DC(\uC5B4\uC694\uCCB4 40~45%) + \uCC98\uBC29\uD615 \uBB38\uC7A5(\uC0C1\uD0DC \uB9AC\uB4DC \uC120\uD589)",
+              pronoun: "\uB2F9\uC2E0",
+              emojiPolicy: "\uBCF8\uBB38 0\uD68C"
+            },
+            matrixSlots: ["\uC7AC1~\uC7AC7", "\uACC4"],
+            emphasis: ["career", "time"],
+            sectionOrder: ["summary", "career", "time", "slot", "persona", "balance", "danger", "dynamics", "mind", "faq", "relation"],
+            entry: "\uC774\uC9C1\xB7\uC790\uC601 \uD310\uB2E8\uC5D0 \uC4F0\uB294 \uC0AC\uC8FC \uADFC\uAC70"
+          }
+        },
         stems: {
           \u7532: {
             name: "\uAC11\uBAA9 \u2014 \uD070 \uB098\uBB34",
@@ -12927,6 +12974,9 @@
         version: SLOTS_SOURCE.meta.version,
         source: SLOTS_SOURCE.meta.source,
         selectionOrder: SELECTION_ORDER_SOURCE ? SELECTION_ORDER_SOURCE.order.slice() : [],
+        /* 타겟 프로파일(master-strategy §2-4 최소안): id·이름·문체 밴드·강조 섹션 순서·진입
+         * 시나리오. 슬롯 문장은 프로파일마다 새로 쓰지 않고 표시 순서와 펼침만 바꾼다. */
+        targetProfiles: SLOTS_SOURCE.targetProfiles || {},
         stems: {}
       };
       Object.keys(SLOTS_SOURCE.stems).forEach((hanja) => {

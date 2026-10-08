@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SajuRoot · 나는 무엇으로 이루어져 있는가</title>
+<meta name="description" content="생년월일에서 여덟 글자를 계산하고, 절기와 진태양시까지 계산 과정을 그대로 보여주는 자기이해 도구. 무료로 내 패턴 보기.">
+<meta property="og:title" content="SajuRoot · 나는 무엇으로 이루어져 있는가">
+<meta property="og:description" content="생년월일에서 여덟 글자를 계산하고, 그 계산 과정을 그대로 보여줍니다.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=20261002b">
+<script>
+  /* 이메일 폼은 Google Form formResponse로 숨은 iframe POST 한다 (entry.cjs/app.js 참고).
+     HTML의 action {{FORM_ENDPOINT}} 토큰은 검증 모드 유지용이고, JS가 실제 주소로 제출한다. */
+  window.SAJU_CONFIG = { mailto: "sajuroot@example.com" };
+</script>
+<meta property="og:image" content="https://hot14.github.io/saju-report/go/og.png"><meta property="og:url" content="https://hot14.github.io/saju-report/go/"><meta name="twitter:card" content="summary_large_image"></head>
+<body>
+<main class="page">
+
+<header class="topbar">
+  <span class="fig">도판 01 - 랜딩</span>
+  <span class="wordmark">SajuRoot</span>
+</header>
+
+<section class="hero">
+  <p class="eyebrow">열 개의 물상</p>
+  <h1 class="hero-line">나는 무엇으로<br>이루어져 있는가<span class="accent">.</span></h1>
+  <p class="hero-sub">생년월일에서 여덟 글자를 계산하고, 절기와 진태양시까지 그 계산 과정을 그대로 보여줍니다. SajuRoot는 자기이해를 위한 한국식 사주 읽기 도구입니다.</p>
+  <a class="cta" id="cta-chart" href="chart.html" data-src-slot>무료로 내 패턴 보기</a>
+</section>
+
+<section class="sec">
+  <div class="badge-strip">
+    <span class="badgechip">임수 · 넓은 호수</span>
+    <span class="badgechip">갑목 · 큰 나무</span>
+    <span class="badgechip">병화 · 태양</span>
+  </div>
+  <p class="strip-note">태어난 날에 따라, 서로 다른 물상 하나가 배정됩니다.</p>
+</section>
+
+<section class="sec">
+  <p class="sec-label">계산 과정</p>
+  <ul class="process">
+    <li><span class="p-label">절기 확인</span><span class="p-value">태어난 순간이 속한 절기</span></li>
+    <li><span class="p-label">진태양시 보정</span><span class="p-value">경도 4분 · 균시차</span></li>
+    <li><span class="p-label">여덟 글자 배치</span><span class="p-value">연, 월, 일, 시</span></li>
+  </ul>
+  <p class="fixed-cap">같은 생년월일은 항상 같은 결과를 만듭니다.</p>
+</section>
+
+<section class="cut">
+  <h2>여덟 글자로 당신을 읽어드립니다<span class="accent">.</span></h2>
+  <p class="lead">전체 리딩이 준비되면 이메일로 가장 먼저 알려드립니다. 지금은 무료 계산으로 여덟 글자를 먼저 볼 수 있습니다.</p>
+  <p class="priceline">전체 리딩 · {{PRICE}}, 1회 결제, 구독 없음</p>
+
+  <form data-email-form action="{{FORM_ENDPOINT}}" method="post" target="sajuroot-post">
+    <input type="hidden" name="entry.1312707957" value="" data-src-slot>
+    <input type="hidden" name="entry.221952772" value="landing">
+    <div class="email-field">
+      <label for="email-landing">이메일</label>
+      <input id="email-landing" name="entry.1579324013" type="email" autocomplete="email" required>
+    </div>
+    <button type="submit" class="cta">알림 받기</button>
+  </form>
+  <iframe id="sajuroot-post" name="sajuroot-post" title="제출 처리" class="post-frame" hidden></iframe>
+
+  <div class="form-fallback" id="landing-fallback" hidden>
+    <p>폼 연결 전입니다. 아래 주소로 알림 메일을 보내주시면 명단에 추가합니다.</p>
+    <p><a id="fallback-mailto" href="mailto:sajuroot@example.com">메일 보내기</a></p>
+  </div>
+  <p class="email-done" id="landing-done" hidden>알림 신청이 접수되어 있습니다.</p>
+  <p class="helper">이메일은 안내 발송에만 쓰입니다.</p>
+</section>
+
+<footer class="footer">
+  <p class="disclaimer">SajuRoot는 자기이해를 위한 읽기 도구입니다. 의료, 법률, 금융 조언이 아닙니다.</p>
+  <p class="attribution">본 서비스의 해석 원리는 남촌현대물상론 학파의 공개 강의와 출판물에서 공부한 물상 체계를 독자적으로 재구성한 것입니다. 남촌물상역학연구회와 제휴 관계가 없습니다.</p>
+</footer>
+
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var SRC_KEY = "sajuroot_src";
+  var EMAIL_KEY = "sajuroot_email_ok";
+  var VALID_SRC = ["seo", "community", "social", "direct"];
+
+  function storedSrc() {
+    try {
+      var v = localStorage.getItem(SRC_KEY);
+      return VALID_SRC.indexOf(v) > -1 ? v : null;
+    } catch (e) { return null; }
+  }
+
+  /* 유입 경로 추적: URL src가 있으면 채택하고 저장, 없으면 저장값, 그래도 없으면 direct */
+  var q = new URLSearchParams(location.search).get("src");
+  var src = (q && VALID_SRC.indexOf(q) > -1) ? q : (storedSrc() || "direct");
+  try { localStorage.setItem(SRC_KEY, src); } catch (e) {}
+
+  /* 숨은 필드와 CTA 링크에 src 주입 */
+  var slots = document.querySelectorAll("[data-src-slot]");
+  for (var i = 0; i < slots.length; i++) {
+    var el = slots[i];
+    if (el.tagName === "A") el.href = "chart.html?src=" + encodeURIComponent(src);
+    else el.value = src;
+  }
+
+  /* Google Form formResponse 엔드포인트 (chart.html app.js와 동일 계약).
+     엔드포인트가 없으면 mailto 폴백으로 전환한다. */
+  var FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSfGMuBH_ZPZ9jjJAUaVjBMusRdJJ8n4kEtkLZrpXut1LWf7xA/formResponse";
+  var FORM_IFRAME = "sajuroot-post";
+
+  /* 이미 신청한 브라우저면 폼 대신 완료 문장 */
+  function emailDone() {
+    try { return localStorage.getItem(EMAIL_KEY) === "1"; } catch (e) { return false; }
+  }
+  var form = document.querySelector("form[data-email-form]");
+  var fallback = document.getElementById("landing-fallback");
+  var doneLine = document.getElementById("landing-done");
+  if (emailDone() && form && doneLine) {
+    form.hidden = true;
+    doneLine.hidden = false;
+  }
+
+  /* 이메일 폼: Google Form formResponse로 숨은 iframe POST. 미설정이면 mailto 폴백 유지 */
+  if (form) {
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var action = form.getAttribute("action") || "";
+      var realAction = action.indexOf("{{") !== -1 ? FORM_ACTION : action;
+      if (!realAction) {
+        var mail = document.getElementById("fallback-mailto");
+        if (mail && window.SAJU_CONFIG) {
+          mail.href = "mailto:" + window.SAJU_CONFIG.mailto +
+            "?subject=" + encodeURIComponent("SajuRoot 알림 신청") +
+            "&body=" + encodeURIComponent("src: " + src);
+        }
+        if (fallback) fallback.hidden = false;
+        form.hidden = true;
+        return;
+      }
+      if (form.getAttribute("data-posting") === "1") return;
+      form.setAttribute("data-posting", "1");
+      var finished = false;
+      var frame = document.getElementById(FORM_IFRAME);
+      if (!frame) return;
+      frame.addEventListener("load", function () {
+        if (finished) return;
+        finished = true;
+        try { localStorage.setItem(EMAIL_KEY, "1"); } catch (e) {}
+        form.hidden = true;
+        if (doneLine) doneLine.hidden = false;
+      });
+      form.setAttribute("target", FORM_IFRAME);
+      form.setAttribute("action", realAction);
+      form.submit();
+    });
+  }
+})();
+</script>
+</body>
+</html>
