@@ -33,7 +33,7 @@ curl "http://localhost:4173/result?year=2024&month=2&day=4&time=16%3A00"
 ## 출처 대응
 
 - 디자인 토큰: `design-ssot/05-handoff/tokens.css` v1.0
-- 화면 카피: `docs/copy-deck-v2-kr.md` ({{BRAND}}, {{PRICE}} 토큰 유지)
+- 화면 카피: `docs/copy-deck-v2-kr.md` (SajuRoot, {{PRICE}} 토큰 유지)
 - 영어 배지명: `docs/badge-naming-en.md` 신규 영어명 열
 - 계산: `service/engine/src/engine.cjs` (반환 키 실측 기준)
 - 콘텐츠: `service/content/stems.json` 성향·성장 조건 재서술, `service/content/policy.json` 고지문
