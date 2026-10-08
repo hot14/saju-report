@@ -10,13 +10,16 @@
  * [신규 검증: 오너 요구 "프로세스상 일관되게 구조화"의 기계 검증]
  *  3) 엔진 dst 필드: computeChart.dst · correctionBreakdown.dstApplied/dstNote
  *  4) 콘텐츠 대응 검사: 렌더(output HTML)의 모든 해석 문장이 콘텐츠 JSON
- *     (stems/relations/dynamics/regions/policy)에 존재하는 부분문자열.
+ *     (stems/relations/dynamics/regions/policy/slots)에 존재하는 부분문자열.
  *     새 해석 문장이 섞이면 FAIL. (중립 연결어·라벨은 선언 목록으로만 허용)
  *  5) 섹션 구조 스냅샷: 3케이스(1985-03-21 14:30 male / 1987-08-28 09:50 female /
  *     시각 미상)의 기대 섹션 제목 목록과 순서 일치 + details 2종(기본 닫힘)
  *  6) 용어집 커버리지: 노출 전문 용어가 S12 용어집에 있는지 검사
  *  7) 검증 모드: {{FORM_ENDPOINT}} 유지 · mailto 폴백 · em-dash 0 ·
  *     금지어 0 · 가운뎃점 줄당 1개 · CR/AP 코드는 details 안에만
+ *  8) 슬롯 리딩 엔진(slots.json B 갈래): 갈래 선택 재현성 · 조건 매핑
+ *     유닛(큰 땅=戊 / 물 없음=수 0 / 묶임=천간합) · 미적용 처리(추측 금지) ·
+ *     슬롯 문장 콘텐츠 대응 자동 통과(slots.json 원문 대조)
  *
  *   node smoke.cjs
  */
@@ -71,6 +74,9 @@ if (!CORE.STEMS[0].careerDirections || !CORE.STEMS[0].dangers) fail("STEMS caree
 if (!CORE.STEMS[0].catchphrase) fail("STEMS catchphrase 누락 (작업1 캐치프레이즈 번들 포함)");
 if (!Array.isArray(VIEW.GLOSSARY) || VIEW.GLOSSARY.length < 14) fail("GLOSSARY(용어집) 미노출: " + (VIEW.GLOSSARY || []).length);
 if (!VIEW.ROLE_DISPLAY || !VIEW.ROLE_DISPLAY["재성"]) fail("ROLE_DISPLAY 미노출");
+if (!global.SAJU_SLOTS || !global.SAJU_SLOTS.stems || !global.SAJU_SLOTS.stems["甲"]) fail("globalThis.SAJU_SLOTS(slots.json 슬림) 번들 누락");
+if (global.SAJU_SLOTS.stems["甲"].D !== undefined) fail("D(출력 안 함) 가지가 번들에 포함됨");
+eq(global.SAJU_SLOTS.selectionOrder.length, 8, "선택 규칙 우선순위 8단계");
 
 // ---------------------------------------------------------------------------
 // 기존 케이스: 엔진 정합 + 시각 미상 + 물상 필드
@@ -267,6 +273,81 @@ if (!relHtml) fail("관계 읽기(상대 입력) 출력 없음");
 const html1WithRel = html1.replace('<div id="rel-result"></div>', '<div id="rel-result">' + relHtml + "</div>");
 
 // ---------------------------------------------------------------------------
+// 신규: 슬롯 리딩 엔진 (slots.json B 갈래 · wayfinder slot-system-design §4)
+// ---------------------------------------------------------------------------
+
+if (typeof VIEW.slotEngine !== "function" || typeof VIEW.slotConditionEval !== "function" || typeof VIEW.slotTable !== "function") {
+  fail("슬롯 엔진 뷰 함수 미등록(app.js → CORE.view)");
+}
+
+/* ① 1985-03-21(기토) 갈래 선택 재현성 (2회 동일) + 실측 결과 고정 */
+const slotMe1 = VIEW.slotEngine(fromBundle);
+const slotMe2 = VIEW.slotEngine(fromBundle);
+eq(JSON.stringify(slotMe1), JSON.stringify(slotMe2), "슬롯 갈래 선택 재현성(2회 동일)");
+eq(slotMe1.length, 2, "기토 선택 가지 수(최대 2)");
+eq(slotMe1.map((r) => r.code).join(","), "기5-가,기1-가", "기토 갈래 선택(겹침 우선 → JSON 순)");
+
+/* ② 조건 매핑 유닛 3건: 큰 땅 있음=戊 존재 / 물 없음=수 0개 / 묶임=천간합 */
+const gapSlotChart = CORE.computeChart({ dateISO: "1990-01-09", timeISO: "12:00" });   /* 갑목 · 수 0 · 甲己 합 */
+const muSlotChart = CORE.computeChart({ dateISO: "1990-02-08", timeISO: "12:00" });    /* 갑목 · 戊 포함 */
+const tGapSlot = VIEW.slotTable(gapSlotChart);
+const tMuSlot = VIEW.slotTable(muSlotChart);
+const tMeSlot = VIEW.slotTable(fromBundle);
+const vBigOn = VIEW.slotConditionEval("큰 땅 있음", tMuSlot, muSlotChart);
+eq(JSON.stringify(vBigOn), JSON.stringify({ applied: true, matched: true }), "조건 매핑: 큰 땅 있음=戊 포함 차트 성립");
+eq(VIEW.slotConditionEval("큰 땅 있음", tGapSlot, gapSlotChart).matched, false, "조건 매핑: 큰 땅 있음=戊 없는 차트 불성립");
+eq(VIEW.slotConditionEval("물 없음", tGapSlot, gapSlotChart).matched, true, "조건 매핑: 물 없음=수 0개 차트(갑목)");
+eq(VIEW.slotConditionEval("물 없음", tMeSlot, fromBundle).matched, true, "조건 매핑: 물 없음=수 0개 차트(기토)");
+const vBind = VIEW.slotConditionEval("작은 땅과 묶임", tGapSlot, gapSlotChart);
+eq(vBind.applied && vBind.matched, true, "조건 매핑: 묶임=甲己 합 성립 차트");
+
+/* 엔진 경로: 우선순위 정렬(결핍 → 묶임)과 戊 조합 실측 */
+const slotGap = VIEW.slotEngine(gapSlotChart);
+eq(slotGap.map((r) => r.code).join(","), "갑1-바,갑6-가", "갑목 갈래 선택(1단계 결핍 → 묶임)");
+const slotMu = VIEW.slotEngine(muSlotChart);
+eq(slotMu.map((r) => r.code).join(","), "갑1-나,갑3-라", "갑목+戊 갈래 선택(큰 땅+물 없음 → 지지 불)");
+
+/* 선택된 가지의 조건이 모두 applied+matched인지 (미적용 추측 매칭 차단) */
+for (const [chart, rows] of [[fromBundle, slotMe1], [gapSlotChart, slotGap], [muSlotChart, slotMu]]) {
+  const t = VIEW.slotTable(chart);
+  for (const row of rows) {
+    const v = VIEW.slotConditionEval(row.condition, t, chart);
+    if (!v.applied) fail("미적용 조건이 선택됨: " + row.code + " " + row.condition);
+    if (!v.matched) fail("불성립 조건이 선택됨: " + row.code + " " + row.condition);
+  }
+}
+
+/* ③ 미적용 처리: 매핑 불가 조건은 추측하지 않고 제외한다 */
+eq(VIEW.slotConditionEval("물 약함", tMeSlot, fromBundle).applied, false, "미적용: 물 약함(강도 판정 규칙 없음)");
+eq(VIEW.slotConditionEval("태양 + 아래 글자가 한낮", tMeSlot, fromBundle).applied, false, "미적용: 지지 위치 감각(한낮)");
+eq(VIEW.slotConditionEval("산맥 + 나무 없음 (운에서 둑이 들어올 때도 같다)", tMeSlot, fromBundle).applied, false, "미적용: 운 조건(C 갈래 영역)");
+eq(VIEW.slotConditionEval("큰 나무 + 태양을 끌어옴", tMeSlot, fromBundle).applied, false, "미적용: 끌어옴(운 dynamics 영역)");
+
+/* 선택 0개 경로: 안내 한 줄 */
+const slotEmptyHtml = VIEW.slotReadingSection(fromBundle, []);
+if (slotEmptyHtml.indexOf("이 명조는 설계된 갈래에 해당하지 않는 구성입니다.") === -1) fail("선택 0개 안내 문구 누락");
+
+/* ④ 콘텐츠 대응 검사가 슬롯 문장도 커버(slots.json 원문이므로 자동 통과) */
+
+/* 렌더: 슬롯 리딩 섹션이 한눈 요약(Q01) 뒤에 붙고, 근거·처방이 노출된다 */
+if (html1.indexOf('<p class="sec-label">Q02</p><h2 class="sec-q">슬롯 리딩</h2>') === -1) fail("슬롯 리딩 섹션(Q02) 미노출");
+if (!(html1.indexOf("한눈 요약") < html1.indexOf("슬롯 리딩") && html1.indexOf("슬롯 리딩") < html1.indexOf("어떤 사람인가요?"))) {
+  fail("슬롯 리딩 섹션 위치 이상(한눈 요약 뒤, 어떤 사람인가요? 앞)");
+}
+if (html1.indexOf("5단계 같은 흙 · 작은 땅 둘") === -1) fail("기토 슬롯 가지 라벨 누락");
+if (html1.indexOf("<span class=\"slot-k\">진단</span>") === -1 || html1.indexOf("<span class=\"slot-k\">처방</span>") === -1) fail("슬롯 진단·처방 라벨 누락");
+if (html1.indexOf("근거 R2.GI.060") === -1) fail("기토 슬롯 근거(source) 누락");
+
+/* 처방이 빈 가지("—")는 문째로 내보내지 않는다(em-dash 0 보장) */
+for (const rows of [slotMe1, slotGap, slotMu]) {
+  for (const row of rows) {
+    if (row.prescription && (row.prescription.indexOf("\u2014") !== -1 || row.prescription.indexOf("\u2013") !== -1)) {
+      fail("처방에 em-dash 포함: " + row.code);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
 // 신규: 콘텐츠 대응 검사 (해석 문장 = 콘텐츠 JSON 부분문자열만)
 // ---------------------------------------------------------------------------
 
@@ -276,7 +357,8 @@ const CONTENT_JSONS = [
   require(path.join(contentDir, "relations.json")),
   require(path.join(contentDir, "dynamics.json")),
   require(path.join(contentDir, "regions.json")),
-  require(path.join(contentDir, "policy.json"))
+  require(path.join(contentDir, "policy.json")),
+  require(path.join(contentDir, "slots.json"))    // 슬롯 리딩 B 갈래 원문(진단·처방 문장 대조)
 ];
 const ALLOWED = [];
 function collectStrings(x) {
@@ -324,6 +406,9 @@ const DECLARED = [
   "글자 배치만으로 확정되는 조건에만 근거한 마음 읽기입니다.",
   "상대 생년월일을 넣으면 두 일간의 관계를 읽어줍니다. 상대 생년월일은 화면에서만 쓰이며 저장하지 않습니다.",
   "화면에 나오는 말 중 어려운 말만 골라 풀어 적었습니다.",
+  // 슬롯 리딩 섹션(Q02) 중립 문구 (섹션 제목은 아래 섹션 질문 제목 목록에 포함)
+  "설계된 물상 갈래 중 이 명조에 해당하는 가지를 최대 두 개까지 읽습니다.",
+  "이 명조는 설계된 갈래에 해당하지 않는 구성입니다.",
   // 고지·알림·이메일 카피
   "시각 미상으로 제외",
   "시각 미상은 정오 가정으로 계산되어 대운 시작 나이에 오차가 있을 수 있습니다.",
@@ -355,8 +440,9 @@ const DECLARED = [
   "시각 미입력이라 정오 가정",
   "내 여덟 글자에 비어 있는 오행이 없어, 보완 판정 대상이 아닙니다.",
   "근거 T08-001, T08-002 · 태극성취론을 필요한 오행을 채워가는 과정으로 정의한 판정 문서 기준",
-  // 섹션 질문 제목(Q01~Q09)
+  // 섹션 질문 제목(Q01~Q10)
   "한눈 요약",
+  "슬롯 리딩",
   "어떤 사람인가요?",
   "무엇이 많고, 무엇이 부족한가요?",
   "어떤 일이 어울리나요?",
@@ -415,7 +501,8 @@ const TEMPLATES = [
   /^당일 12:00 정오 가정 · 보정 후 \d{2}:\d{2}$/,
   /^60분 되돌림 · \d{4}-\d{2}-\d{2} \d{2}:\d{2} ~ \d{4}-\d{2}-\d{2} \d{2}:\d{2}$/,
   /^(자|축|인|묘|진|사|오|미|신|유|술|해)(, (자|축|인|묘|진|사|오|미|신|유|술|해))* \(역법 라이브러리 계산\)$/,
-  /^근거 [A-Z][A-Z0-9\-,\s·]+$/,
+  /^근거 [A-Z][A-Z0-9\-,\s·.]+$/,
+  /^\d+단계 .+ · .+$/,
   /^월주 .{2} 기준 (순행|역행) · 대운수 = 출생에서 인접 절까지 일수 ÷ 3 \(역법 라이브러리 manseryeok\)$/,
   /^첫 대운 시작 전입니다\. \d+세부터 첫 구간이 열립니다\.$/,
   /^내가 부족한 오행은 [木火土金水](, [木火土金水])*이지만, 상대 여섯 글자에는 이 오행이 없습니다\.$/,
@@ -507,12 +594,22 @@ checkContentCorrespondence("1985 남자", html1WithRel);
 checkContentCorrespondence("1987 여자(DST)", html2);
 checkContentCorrespondence("시각 미상", html3);
 
+/* ④ 슬롯 문장 대응: slots.json 원문이 대조 대상에 포함됐는지 확인 */
+if (!ALLOWED.some((s) => s.indexOf("넓은 땅에 제대로 뿌리를 내린 나무입니다") !== -1)) {
+  fail("콘텐츠 대응 검사 대상에 slots.json 미포함");
+}
+const slotSentence = slotMe1[1] ? slotMe1[1].diagnosis : null;
+if (!slotSentence || !ALLOWED.some((s) => s.indexOf(slotSentence) !== -1)) {
+  fail("선택된 슬롯 진단 문장이 콘텐츠 대조에 없음: " + slotSentence);
+}
+
 // ---------------------------------------------------------------------------
 // 신규: 섹션 구조 스냅샷 (3케이스 · 순서 고정)
 // ---------------------------------------------------------------------------
 
 const SEC_TITLES = {
   s2: "한눈 요약",
+  s2slot: "슬롯 리딩",
   s3: "어떤 사람인가요?",
   s4: "무엇이 많고, 무엇이 부족한가요?",
   s5: "어떤 일이 어울리나요?",
@@ -533,7 +630,7 @@ function secQuestions(html) {
 
 function checkSectionOrder(label, html, chart) {
   const expected = [
-    SEC_TITLES.s2, SEC_TITLES.s3, SEC_TITLES.s4, SEC_TITLES.s5,
+    SEC_TITLES.s2, SEC_TITLES.s2slot, SEC_TITLES.s3, SEC_TITLES.s4, SEC_TITLES.s5,
     SEC_TITLES.s6, SEC_TITLES.s7, SEC_TITLES.s8
   ];
   if (VIEW.matchAnsim(chart).length) expected.push(SEC_TITLES.s9);
@@ -554,7 +651,7 @@ function checkSectionOrder(label, html, chart) {
   if (!/<details class="fold" open><summary>변화 규칙/.test(html)) fail(`변화 규칙 details 열림 아님(${label})`);
   /* FAQ details: S9(마음 읽기) 뒤, S10(다른 사람과 보기) 앞 · 닫힘 기본 · 5문항 */
   const faqStart = html.indexOf('<details class="fold faq"><summary>자주 묻는 질문</summary>');
-  const relStart = html.indexOf('<p class="sec-label">Q09</p>');
+  const relStart = html.indexOf('<p class="sec-label">Q10</p>');
   if (faqStart === -1) fail(`FAQ details 누락 또는 닫힘 아님(${label})`);
   if (/<details class="fold faq" open>/.test(html)) fail(`FAQ details가 기본 열림(${label})`);
   if (relStart !== -1 && !(faqStart < relStart)) fail(`FAQ가 S10 다른 사람과 보기 뒤에 있음(${label})`);
@@ -668,5 +765,6 @@ console.log(`  공망=${fromBundle.voidBranches.join("·")} / 관계(기토×임
 console.log(`  DST(1987-08-28 09:50)=${dstCase.fourPillarsHanja} · 되돌림 60분 · 고지+표 행 확인`);
 console.log(`  [일관성 검증] 콘텐츠 대응=3케이스 PASS(${ALLOWED.length}개 콘텐츠 문장 대조) / 섹션 스냅샷=3케이스 PASS / 용어집 커버리지=${REQUIRED_TERMS.length}용어 PASS / FAQ 5문항+닫힘 PASS`);
 console.log(`  [보완 작업] 캐치프레이즈 노출 PASS / 대운 서사 10구간×2케이스(살림·누름 템플릿) PASS / iframe POST(entry.NNN) PASS`);
+console.log(`  [슬롯 리딩] Q02 섹션 PASS / 기토=${slotMe1.map((r) => r.code).join("+")} / 갑목=${slotGap.map((r) => r.code).join("+")}+戊=${slotMu.map((r) => r.code).join("+")} / 재현성·조건매핑 3건·미적용 4건·0갈래 경로 PASS`);
 console.log(`  [검증 모드] {{FORM_ENDPOINT}} 토큰 유지 · mailto 폴백 · src 추적(entry.NNN) · 금지어 0 · em-dash 0 · details 밖 CR/AP 0`);
 console.log(`  bundle.js=${bundleKb}kb · 용어집 ${VIEW.GLOSSARY.length}항목 · details 4종(S8 1 + FAQ 1 + S12 2)`);

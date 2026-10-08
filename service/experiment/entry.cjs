@@ -13,7 +13,8 @@
  *   4. relations.json      (dayStemVsElements / dayStemVsStems / ansimPatterns / roleVocabulary)
  *   5. dynamics.json       (heavenlyStemCombos / comboRatioRules / branchDynamics)
  *   6. regions.json        (pillarRoles / noHourNote)
- *   7. view.*              (원국 판정 순수 함수 · smoke.cjs가 직접 검증)
+ *   7. slots.json          (B 갈래 트리 슬림 · globalThis.SAJU_SLOTS · wayfinder slot-system-design §4)
+ *   8. view.*              (원국 판정 순수 함수 · smoke.cjs가 직접 검증)
  *
  * 메타(method·panjeong 등 연구 서술)는 화면에 쓰지 않아 뺀다. sources와 unverified
  * 깃발은 섹션별 근거 표기와 "비검증 근거 포함" 고지에 필요해 남긴다.
@@ -28,6 +29,7 @@ const STEMS_SOURCE = require("../content/stems.json").stems;
 const RELATIONS = require("../content/relations.json");
 const DYNAMICS = require("../content/dynamics.json");
 const REGIONS_SOURCE = require("../content/regions.json");
+const SLOTS_SOURCE = require("../content/slots.json");
 
 const KEEP_FIELDS = [
   "stemHanja",
@@ -201,6 +203,40 @@ const NO_HOUR_NOTE = {
   rule: REGIONS_SOURCE.noHourNote.rule,
   sources: REGIONS_SOURCE.noHourNote.sources.slice(),
 };
+
+// ---------------------------------------------------------------------------
+// slots.json 슬림 (슬롯 리딩 엔진 · B 갈래 트리만)
+// ---------------------------------------------------------------------------
+
+/** 엔진이 쓰는 것만 번들에 올린다: 선택 규칙 우선순위 + 일간별 B 갈래(단계·조건·
+ *  슬롯·진단·처방·근거). C(운 갈래)는 이번 단계 미구현, D(출력 안 함)는 문장으로
+ *  내보내지 않는다(0-6 안전)는 설계라 번들 자체에서 뺀다. */
+const SELECTION_ORDER_SOURCE = SLOTS_SOURCE.rules.selection.items.find(
+  (item) => item && item.rule === "우선순위(기본값)"
+);
+const SAJU_SLOTS = {
+  version: SLOTS_SOURCE.meta.version,
+  source: SLOTS_SOURCE.meta.source,
+  selectionOrder: SELECTION_ORDER_SOURCE ? SELECTION_ORDER_SOURCE.order.slice() : [],
+  stems: {},
+};
+Object.keys(SLOTS_SOURCE.stems).forEach((hanja) => {
+  const data = SLOTS_SOURCE.stems[hanja];
+  SAJU_SLOTS.stems[hanja] = {
+    name: data.name,
+    B: (data.B || []).map((b) => ({
+      stage: b.stage,
+      stageName: b.stageName,
+      code: b.code,
+      condition: b.condition,
+      slots: b.slots.slice(),
+      diagnosis: b.diagnosis,
+      prescription: b.prescription,
+      source: b.source.slice(),
+    })),
+  };
+});
+globalThis.SAJU_SLOTS = SAJU_SLOTS;
 
 // ---------------------------------------------------------------------------
 // 뷰 계산 순수 함수 (app.js 렌더 입력 · smoke.cjs 검증 대상)

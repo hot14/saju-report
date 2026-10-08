@@ -7,6 +7,7 @@
  *
  * 섹션 구조(S1~S12 + FAQ, 순서 고정 · smoke.cjs가 스냅샷 검증):
  *   S1 헤더 카드(패턴 ID·일간 배지·캐치프레이즈·한 줄 소개)  S2 한눈 요약(자동 조합)
+ *   S2+ 슬롯 리딩(Q02 · slots.json B 갈래 트리 · 최대 2가지, wayfinder slot-system-design §4)
  *   S3 어떤 사람인가요?    S4 무엇이 많고, 무엇이 부족한가요?
  *   S5 어떤 일이 어울리나요?   S6 조심할 신호는?   S7 시간의 흐름은?(대운 서사 포함)
  *   S8 내 글자들은 서로 어떻게 작동하나요?   S9 마음은 어떤가요?(조건부)
@@ -76,17 +77,19 @@
   /* 오행 상태 칩: 전문 용어(과다·조화·과소) 대신 일반 문구 */
   var STATUS_CHIP = { tooMuch: "많음", balance: "적당함", tooLittle: "없음" };
 
-  /* 섹션 번호(Q01~Q09)와 질문 제목. smoke.cjs 섹션 구조 스냅샷이 이 순서를 검증한다. */
+  /* 섹션 번호(Q01~Q10)와 질문 제목. smoke.cjs 섹션 구조 스냅샷이 이 순서를 검증한다.
+     Q02 슬롯 리딩은 slots.json B 갈래 트리(wayfinder slot-system-design §4)의 출력이다. */
   var SEC = {
     summary: { num: "Q01", title: "한눈 요약" },
-    persona: { num: "Q02", title: "어떤 사람인가요?" },
-    balance: { num: "Q03", title: "무엇이 많고, 무엇이 부족한가요?" },
-    career: { num: "Q04", title: "어떤 일이 어울리나요?" },
-    danger: { num: "Q05", title: "조심할 신호는?" },
-    time: { num: "Q06", title: "시간의 흐름은?" },
-    dynamics: { num: "Q07", title: "내 글자들은 서로 어떻게 작동하나요?" },
-    mind: { num: "Q08", title: "마음은 어떤가요?" },
-    relation: { num: "Q09", title: "다른 사람과 보기" }
+    slot: { num: "Q02", title: "슬롯 리딩" },
+    persona: { num: "Q03", title: "어떤 사람인가요?" },
+    balance: { num: "Q04", title: "무엇이 많고, 무엇이 부족한가요?" },
+    career: { num: "Q05", title: "어떤 일이 어울리나요?" },
+    danger: { num: "Q06", title: "조심할 신호는?" },
+    time: { num: "Q07", title: "시간의 흐름은?" },
+    dynamics: { num: "Q08", title: "내 글자들은 서로 어떻게 작동하나요?" },
+    mind: { num: "Q09", title: "마음은 어떤가요?" },
+    relation: { num: "Q10", title: "다른 사람과 보기" }
   };
 
   var KIND_LABEL = {
@@ -402,6 +405,395 @@
     html += "</div></section>";
     return html;
   }
+
+  /* ------------------------------------------------------------------
+   * Q02 슬롯 리딩 엔진 (slots.json B 갈래 · wayfinder slot-system-design §4)
+   * 해석표(오행 집계 · 천간 · 지지 · 성립 천간합)로 각 B 가지의 자연어 조건을
+   * 판정하고, 선택 규칙 우선순위로 정렬해 최대 2가지만 돌려준다.
+   * 하드 룰: 매핑 불가 조건은 추측하지 않고 미적용으로 제외한다.
+   * ------------------------------------------------------------------ */
+  var SLOTS = window.SAJU_SLOTS || null;
+
+  /* 조건 문구의 물상 이름 → 천간 판정 단위. 전체 이름은 slots.json
+     rules.translation.chars의 원문 전사와 같고, 축약형은 원문 조건에 쓰인 형태만 등록했다. */
+  var SLOT_STEM_WORD = {
+    "큰 나무": "甲", "푸른 덩굴": "乙", "덩굴": "乙",
+    "태양": "丙",
+    "세상을 밝히는 등불": "丁", "등불": "丁",
+    "거대한 산맥": "戊", "산맥": "戊", "큰 땅": "戊",
+    "작은 땅": "己", "정원": "己",
+    "커다란 금맥": "庚", "금맥": "庚", "큰 칼": "庚",
+    "세공된 보석": "辛", "보석": "辛", "작은 칼": "辛",
+    "넓고 고요한 호수": "壬", "호수": "壬", "큰물": "壬", "넓은 호수": "壬",
+    "맑고 청아한 시냇물": "癸", "시냇물": "癸", "작은 물": "癸"
+  };
+  /* 오행 통칭(물·땅·불·금·나무·둑) → 한국어 오행. 8글자 오행 집계로 판정한다.
+     물 있음/없음 = 수 1개 이상/0개, 과다(많음·셈·지나침) = 3개 이상. */
+  var SLOT_ELEMENT_WORD = { "나무": "목", "땅": "토", "흙": "토", "물": "수", "불": "화", "금": "금", "둑": "토" };
+  /* 같은 오행의 다른 천간("작은 땅만 있음" = 己 있고 戊 없음 판정용) */
+  var SLOT_SIBLING = { "甲": "乙", "乙": "甲", "丙": "丁", "丁": "丙", "戊": "己", "己": "戊", "庚": "辛", "辛": "庚", "壬": "癸", "癸": "壬" };
+  /* 천간 → 오행("태양이 셈"처럼 물상이 세다는 조건의 오행 환산용) */
+  var SLOT_STEM_ELEMENT = { "甲": "목", "乙": "목", "丙": "화", "丁": "화", "戊": "토", "己": "토", "庚": "금", "辛": "금", "壬": "수", "癸": "수" };
+  /* 괄호 안 설명 중 순수 동의어·부연만 벗긴다. 판정을 바꾸는 괄호는 통째로 미적용 처리한다. */
+  var SLOT_PAREN_OK = ["커다란 금맥", "세공된 보석", "시냇물", "큰물", "숲", "메마른 땅", "알맞음", "가림", "재물의 판", "공통", "+금맥"];
+  /* 이 문구가 있으면 원국 단독으로 확정할 수 없어 미적용으로 본다(추측 금지).
+     운 조건(C 갈래 영역) · 형태 판정 체인 · 끌어옴 · 성별 · 지지 위치 감각(한낮·밤 등). */
+  var SLOT_UNMAPPABLE_MARKERS = ["운에서", "10년 운", "형태가", "끌어옴", "여성", "앞 기둥", "약함", "흐려", "맑음"];
+
+  /** 해석표: 8글자(시각 미상 6글자) 오행 집계 · 천간·지지 목록 · 성립 천간합. §4-1. */
+  function slotTable(chart) {
+    var stems = [];
+    var branches = [];
+    var stemEl = {};
+    var branchEl = {};
+    var keys = ["year", "month", "day", "hour"];
+    for (var i = 0; i < keys.length; i++) {
+      var p = chart.pillars[keys[i]];
+      if (!p) continue;
+      stems.push(p.stem.hanja);
+      branches.push(p.branch.hanja);
+      stemEl[p.stem.element] = (stemEl[p.stem.element] || 0) + 1;
+      branchEl[p.branch.element] = (branchEl[p.branch.element] || 0) + 1;
+    }
+    var counts = VIEW.elementCounts(chart);
+    var formed = VIEW.stemCombos(chart).filter(function (c) { return c.status === "formed"; });
+    var countIn = function (list, hanja) {
+      var n = 0;
+      for (var j = 0; j < list.length; j++) if (list[j] === hanja) n++;
+      return n;
+    };
+    return {
+      counts: counts,
+      stems: stems,
+      branches: branches,
+      stemCount: function (hanja) { return countIn(stems, hanja); },
+      branchCount: function (hanja) { return countIn(branches, hanja); },
+      hasAnyBranch: function (hanjas) {
+        for (var j = 0; j < hanjas.length; j++) if (branches.indexOf(hanjas[j]) !== -1) return true;
+        return false;
+      },
+      element: function (kor) { return counts[kor] || 0; },
+      elementIn: function (kor, where) {
+        if (where === "stem") return stemEl[kor] || 0;
+        if (where === "branch") return branchEl[kor] || 0;
+        return counts[kor] || 0;
+      },
+      combos: formed,
+      hasCombo: function (a, b) {
+        for (var j = 0; j < formed.length; j++) {
+          var s = formed[j].combo.stems;
+          if ((s[0] === a && s[1] === b) || (s[0] === b && s[1] === a)) return true;
+        }
+        return false;
+      },
+      hasDayCombo: function (hanja) {
+        for (var j = 0; j < formed.length; j++) {
+          if (formed[j].involvesDayMaster && formed[j].combo.stems.indexOf(hanja) !== -1) return true;
+        }
+        return false;
+      }
+    };
+  }
+
+  /** 물상 이름을 판정 단위로 푼다. 등록되지 않은 이름은 null(미적용). */
+  function slotResolveWord(word) {
+    if (SLOT_STEM_WORD[word]) return { type: "stem", hanja: SLOT_STEM_WORD[word] };
+    if (SLOT_ELEMENT_WORD[word]) return { type: "element", kor: SLOT_ELEMENT_WORD[word] };
+    if (word === "신·진") return { type: "branchAny", hanjas: ["申", "辰"] };
+    return null;
+  }
+
+  /** 판정 단위의 개수. position: null(8글자) | "stem" | "branch". 위치가 어긋나면 null. */
+  function slotUnitCount(table, unit, position) {
+    if (unit.type === "stem") {
+      if (position === "branch") return null;   /* 천간 글자는 지지에 나오지 않는다 */
+      return table.stemCount(unit.hanja);
+    }
+    if (unit.type === "element") return table.elementIn(unit.kor, position);
+    if (position !== "branch") return null;     /* 신·진 같은 지지 이름은 지지에서만 본다 */
+    return table.hasAnyBranch(unit.hanjas) ? 1 : 0;
+  }
+
+  /** 원자 조건 하나("물 없음", "작은 물만 있음", "큰 나무와 묶임" 등) 판정.
+   *  반환: true/false(판정 성립 여부) | null(매핑 불가) | { ref: true }(앞 가지 참조). */
+  function slotEvalAtom(table, chart, atom) {
+    var a = atom.trim();
+    var m;
+    if (a === "위 가지") return { ref: true };
+    if (a === "항상") return true;
+    /* "A가 B와 묶임" / "A와 B가 묶여 있음": 두 물상 사이의 성립 천간합.
+       단일형("X와 묶임")보다 먼저 검사한다. 단일형이 "A가 B와 묶임"을 선점해 버리기 때문. */
+    m = a.match(/^(.+?)(가|와|과|이) (.+?)(가|와|과|이) (묶임|묶여 있음)$/);
+    if (m) {
+      var w1 = slotResolveWord(m[1]);
+      var w2 = slotResolveWord(m[3]);
+      if (!w1 || !w2 || w1.type !== "stem" || w2.type !== "stem") return null;
+      return table.hasCombo(w1.hanja, w2.hanja);
+    }
+    /* "X와 묶임" / "X과 묶임" / "X와 합": 일간이 끼인 성립 천간합 */
+    m = a.match(/^(.+?)(와|과) (묶임|합)$/);
+    if (m) {
+      var w = slotResolveWord(m[1]);
+      if (!w || w.type !== "stem") return null;
+      return table.hasDayCombo(w.hanja);
+    }
+    /* "X(이|가) 태어난 해에 (있음)": 년간 위치 조건 */
+    m = a.match(/^(.+?)(이|가) 태어난 해에( 있음)?$/);
+    if (m) {
+      var wy = slotResolveWord(m[1]);
+      if (!wy || wy.type !== "stem" || !chart.pillars.year) return null;
+      return chart.pillars.year.stem.hanja === wy.hanja;
+    }
+    /* "X(이|가) 아래 글자에만 있음": 천간에는 없고 지지에만 있는 오행 */
+    m = a.match(/^(.+?)(이|가) 아래 글자에만 있음$/);
+    if (m) {
+      var wb = slotResolveWord(m[1]);
+      if (!wb || wb.type !== "element") return null;
+      return table.elementIn(wb.kor, "stem") === 0 && table.elementIn(wb.kor, "branch") >= 1;
+    }
+    /* "태양이 셈" / "불이 너무 셈": 오행 과다(3개 이상) */
+    m = a.match(/^(.+?)(이|가) (너무 )?셈$/);
+    if (m) {
+      var ws = slotResolveWord(m[1]);
+      var wsKor = ws && ws.type === "element" ? ws.kor : (ws && ws.type === "stem" ? SLOT_STEM_ELEMENT[ws.hanja] : null);
+      if (!wsKor) return null;
+      return table.element(wsKor) >= 3;
+    }
+    /* "불과 흙이 지나침": 두 오행 모두 과다 */
+    m = a.match(/^(.+?)과 (.+?)(이|가) 지나침$/);
+    if (m) {
+      var wj1 = slotResolveWord(m[1]);
+      var wj2 = slotResolveWord(m[2]);
+      if (!wj1 || !wj2 || wj1.type !== "element" || wj2.type !== "element") return null;
+      return table.element(wj1.kor) >= 3 && table.element(wj2.kor) >= 3;
+    }
+    /* "A와 B(이) 함께( 있음)": 두 물상 공존 */
+    m = a.match(/^(.+?)(가|와|과|이) (.+?)(가|와|과|이)? 함께( 있음)?$/);
+    if (m) {
+      var wa = slotResolveWord(m[1]);
+      var wb2 = slotResolveWord(m[3]);
+      if (!wa || !wb2) return null;
+      var na = slotUnitCount(table, wa, null);
+      var nb2 = slotUnitCount(table, wb2, null);
+      if (na === null || nb2 === null) return null;
+      return na >= 1 && nb2 >= 1;
+    }
+    /* "X 함께( 있음)": 물상 하나 + 함께 (나머지 원자가 앞 물상을 이미 검사한다) */
+    m = a.match(/^(.+?)(이|가)? 함께( 있음)?$/);
+    if (m) {
+      var wf = slotResolveWord(m[1]);
+      if (!wf) return null;
+      var nf = slotUnitCount(table, wf, null);
+      return nf === null ? null : nf >= 1;
+    }
+    /* 위치 접두: "아래 글자에|아래에" → 지지, "위에|천간에" → 천간, "원국에" → 전체 */
+    var position = null;
+    var rest = a;
+    m = rest.match(/^(아래 글자에|아래에) (.+)$/);
+    if (m) { position = "branch"; rest = m[2]; }
+    else {
+      m = rest.match(/^(위에|천간에) (.+)$/);
+      if (m) { position = "stem"; rest = m[2]; }
+      else {
+        m = rest.match(/^원국에 (.+)$/);
+        if (m) { position = "all"; rest = m[1]; }
+      }
+    }
+    /* "나무 뿌리" 같은 지지 뿌리 표현은 같은 오행의 지지 개수로 본다 */
+    rest = rest.replace(/ 뿌리/g, "");
+    /* "X만 있음" / "X만": 같은 오행 짝 천간은 없어야 한다 */
+    m = rest.match(/^(.+?)만( 있음)?$/);
+    if (m) {
+      var uo = slotResolveWord(m[1]);
+      if (!uo || uo.type !== "stem") return null;
+      return table.stemCount(uo.hanja) >= 1 && table.stemCount(SLOT_SIBLING[uo.hanja]) === 0;
+    }
+    /* "X 하나": 존재(1개 이상) */
+    m = rest.match(/^(.+?) 하나$/);
+    if (m) {
+      var uh = slotResolveWord(m[1]);
+      if (!uh) return null;
+      var nh = slotUnitCount(table, uh, position === "all" ? null : position);
+      return nh === null ? null : nh >= 1;
+    }
+    /* "X 둘|둘 이상|셋 이상": 같은 천간 반복(겹침) */
+    m = rest.match(/^(.+?) (둘 이상|둘|셋 이상)$/);
+    if (m) {
+      var ur = slotResolveWord(m[1]);
+      if (!ur || ur.type !== "stem") return null;
+      return table.stemCount(ur.hanja) >= (m[2] === "셋 이상" ? 3 : 2);
+    }
+    /* "X 많음": 오행 과다(3개 이상) */
+    m = rest.match(/^(.+?) 많음$/);
+    if (m) {
+      var um = slotResolveWord(m[1]);
+      if (!um || um.type !== "element") return null;
+      return table.element(um.kor) >= 3;
+    }
+    /* "X 있음|없음" */
+    m = rest.match(/^(.+?) (있음|없음)$/);
+    if (m) {
+      var up = slotResolveWord(m[1]);
+      if (!up) return null;
+      var np = slotUnitCount(table, up, position === "all" ? null : position);
+      if (np === null) return null;
+      return m[2] === "있음" ? np >= 1 : np === 0;
+    }
+    /* 물상 이름만 단독으로 쓰인 원자("큰 나무", "덩골 + 작은 땅 + 시냇물" 등) */
+    var bare = slotResolveWord(rest);
+    if (bare) {
+      var nb = slotUnitCount(table, bare, position === "all" ? null : position);
+      return nb === null ? null : nb >= 1;
+    }
+    return null;
+  }
+
+  /** 조건 문구 전체 판정. 반환 { applied, matched }.
+   *  applied=false는 매핑 불가(미적용)다. AND(+·많고)와 OR(또는·/)를 나눠 판정하고,
+   *  하나의 OR 갈래라도 못 풀면 추측을 피하려고 조건 전체를 미적용 처리한다. */
+  function slotConditionEval(condition, table, chart) {
+    var raw = String(condition || "");
+    for (var i = 0; i < SLOT_UNMAPPABLE_MARKERS.length; i++) {
+      if (raw.indexOf(SLOT_UNMAPPABLE_MARKERS[i]) !== -1) return { applied: false, matched: false };
+    }
+    var cond = raw.replace(/^가려 줄 /, "").replace(/^위 가지인데 /, "위 가지 + ");
+    /* 괄호는 순수 동의어·부연만 허용한다. 나머지 괄호가 있으면 미적용. */
+    var parens = cond.match(/\(([^)]*)\)/g) || [];
+    for (var j = 0; j < parens.length; j++) {
+      var inner = parens[j].slice(1, -1).trim();
+      if (SLOT_PAREN_OK.indexOf(inner) === -1) return { applied: false, matched: false };
+    }
+    cond = cond.replace(/\([^)]*\)/g, "");
+    if (cond === "항상") return { applied: true, matched: true };
+    var groups = cond.split(/ \/ |, 또는 | 또는 /);
+    var anyApplied = false;
+    for (var g = 0; g < groups.length; g++) {
+      var atoms = groups[g].trim().split(/ \+ | 많고 /);
+      var groupOk = true;
+      var groupVal = true;
+      for (var t = 0; t < atoms.length; t++) {
+        if (!atoms[t].trim()) continue;
+        var v = slotEvalAtom(table, chart, atoms[t]);
+        if (v && v.ref) {
+          /* "위 가지": 바로 앞 가지 판정을 이어받는다. 앞이 미적용이면 이것도 미적용. */
+          var prev = table.prevResult;
+          if (!prev || !prev.applied) { groupOk = false; break; }
+          v = prev.matched;
+        }
+        if (v === null) { groupOk = false; break; }
+        if (!v) groupVal = false;
+      }
+      if (!groupOk) continue;
+      anyApplied = true;
+      if (groupVal) return { applied: true, matched: true };
+    }
+    if (!anyApplied) return { applied: false, matched: false };
+    return { applied: true, matched: false };
+  }
+
+  /** 선택 규칙(0-5) 우선순위. 슬롯스 설계서 order의 1~8번째 항목에 대응시킨 키워드 판정이며,
+   *  어느 항목에도 해당하지 않으면 99(최후순위)로 밀어낸다. */
+  function slotPriority(branch) {
+    var text = String(branch.condition || "") + " " + String(branch.stageName || "");
+    if (branch.stage === 1 && text.indexOf("없음") !== -1) return 1;   /* 성립조건 1단계의 결핍 */
+    if (text.indexOf("묶임") !== -1 || text.indexOf("묶여") !== -1 || text.indexOf("와 합") !== -1 || text.indexOf("과 합") !== -1) return 2;  /* 묶임 */
+    if (text.indexOf("가림") !== -1) return 3;
+    if (text.indexOf("흐려") !== -1 || text.indexOf("탁수") !== -1) return 4;
+    if (text.indexOf("둘") !== -1 || text.indexOf("셋") !== -1) return 5;  /* 같은 글자 겹침 */
+    if (text.indexOf("많음") !== -1 || text.indexOf("많고") !== -1 || text.indexOf("셈") !== -1 || text.indexOf("지나침") !== -1) return 6;  /* 과다 */
+    if (text.indexOf("아래 글자") !== -1) return 7;   /* 지지의 움직임 */
+    return 99;
+  }
+
+  /** { } 자리 치환: 엔진 값만 채운다. B 문장에는 현재 자리가 없어 사실상 no-op이며,
+   *  모르는 자리 토큰은 화면에 중괄호가 노출되지 않도록 제거한다. */
+  function slotFill(text, chart) {
+    return String(text || "")
+      .replace(/\{일간\}/g, chart.dayMaster.hangul)
+      .replace(/\{[^}]*\}/g, "");
+  }
+
+  /** 처방 문장 검사: 원문 전사에서 빈 처방("—", "자료 없음 — …")은 화면에 내보내지 않는다. */
+  function slotPrescriptionText(text, chart) {
+    if (!text) return null;
+    if (text.indexOf("\u2014") !== -1 || text.indexOf("\u2013") !== -1) return null;
+    return slotFill(text, chart);
+  }
+
+  /** 슬롯 리딩 엔진 본체. 선택된 가지(최대 2)의 표시 행을 돌려준다. */
+  function slotEngine(chart) {
+    if (!SLOTS || !SLOTS.stems || !SLOTS.stems[chart.dayMaster.hanja]) return [];
+    var list = SLOTS.stems[chart.dayMaster.hanja].B || [];
+    var table = slotTable(chart);
+    var evald = [];
+    for (var i = 0; i < list.length; i++) {
+      table.prevResult = evald[i - 1] || null;   /* "위 가지" 참조용 */
+      var verdict = slotConditionEval(list[i].condition, table, chart);
+      evald.push(verdict);
+    }
+    /* 판정 전용 가지(slots 비어 있음)는 표시 후보가 아니다. 단, 코드가 ′로 끝나는
+       조정 규칙(갑1-바′ 등)이 성립하면 원본 가지(′를 뗀 코드)를 후보에서 뺀다. */
+    var suppressed = {};
+    for (var s = 0; s < list.length; s++) {
+      if (list[s].slots.length === 0 && evald[s].applied && evald[s].matched && /′$/.test(list[s].code)) {
+        suppressed[list[s].code.slice(0, -1)] = true;
+      }
+    }
+    var candidates = [];
+    for (var c = 0; c < list.length; c++) {
+      var b = list[c];
+      if (!evald[c].applied || !evald[c].matched) continue;
+      if (b.slots.length === 0) continue;                       /* 판정 전용 · 조정 규칙 */
+      if (String(b.stageName || "").indexOf("특성") !== -1) continue;  /* 끝 슬롯 후보: 이 섹션 미출력 */
+      if (suppressed[b.code]) continue;
+      candidates.push({ branch: b, rank: slotPriority(b), yiji: String(b.condition).indexOf("아래 글자") !== -1 ? 1 : 0, index: c });
+    }
+    candidates.sort(function (x, y) {
+      if (x.rank !== y.rank) return x.rank - y.rank;
+      if (x.yiji !== y.yiji) return x.yiji - y.yiji;   /* 같은 순위면 천간 가지가 지지 가지보다 앞선다 */
+      return x.index - y.index;
+    });
+    var rows = [];
+    for (var r = 0; r < candidates.length && rows.length < 2; r++) {
+      var b2 = candidates[r].branch;
+      rows.push({
+        code: b2.code,
+        stage: b2.stage,
+        stageName: b2.stageName,
+        condition: b2.condition,
+        slots: b2.slots.slice(),
+        diagnosis: slotFill(b2.diagnosis, chart),
+        prescription: slotPrescriptionText(b2.prescription, chart),
+        sources: b2.source.slice()
+      });
+    }
+    return rows;
+  }
+
+  /* 슬롯 리딩 섹션(Q02): 선택 가지 라벨 + 진단 + 처방 + 근거. 선택 0개면 안내 한 줄. */
+  function slotReadingSection(chart, preset) {
+    var rows = preset || slotEngine(chart);
+    var html = sectionOpen(SEC.slot);
+    if (!rows.length) {
+      html += '<p class="lead-line">이 명조는 설계된 갈래에 해당하지 않는 구성입니다.</p></section>';
+      return html;
+    }
+    html += '<p class="lead-line">설계된 물상 갈래 중 이 명조에 해당하는 가지를 최대 두 개까지 읽습니다.</p>';
+    for (var i = 0; i < rows.length; i++) {
+      var r = rows[i];
+      html += '<div class="slot-branch"><p class="sub-label">' + esc(r.stage + "단계 " + r.stageName + " · " + r.condition) + "</p>";
+      html += '<p><span class="slot-k">진단</span> ' + esc(r.diagnosis) + "</p>";
+      if (r.prescription) html += '<p><span class="slot-k">처방</span> ' + esc(r.prescription) + "</p>";
+      html += '<p class="gov">근거 ' + esc(r.sources.join(", ")) + "</p></div>";
+    }
+    return html + "</section>";
+  }
+
+  /* smoke.cjs 직접 검증용: 원국 판정 순수 함수를 뷰 레지스트리에 등록 */
+  CORE.view.slotTable = slotTable;
+  CORE.view.slotConditionEval = slotConditionEval;
+  CORE.view.slotEngine = slotEngine;
+  CORE.view.slotReadingSection = slotReadingSection;
 
   /* S3 어떤 사람인가요? 물상 성향(nature+metaphor+성향) + 성장 조건 */
   function personaSection(stem) {
@@ -907,7 +1299,8 @@
       '<p class="one-liner">' + esc(badge.one) + "</p></article>";
 
     /* S2~S12 고정 순서 */
-    html += summarySection(chart, stem);        /* S2 한눈 요약 */
+    html += summarySection(chart, stem);        /* Q01 한눈 요약 */
+    html += slotReadingSection(chart);          /* Q02 슬롯 리딩(slots.json B 갈래 · 최대 2) */
     html += personaSection(stem);               /* S3 어떤 사람인가요? */
     html += balanceSection(chart);              /* S4 무엇이 많고, 무엇이 부족한가요? */
     html += careerSection(stem);                /* S5 어떤 일이 어울리나요? */

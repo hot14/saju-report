@@ -5653,6 +5653,7119 @@
     }
   });
 
+  // ../content/slots.json
+  var require_slots = __commonJS({
+    "../content/slots.json"(exports, module) {
+      module.exports = {
+        meta: {
+          version: "0.1.0",
+          source: "docs/pdf \uC77C\uAC04\uBCC4 \uD1B5\uBCD1 \uAC08\uB798\xB7\uC2AC\uB86F \uC124\uACC4 (\uAC11~\uACC4), Oct 4 2026, @Bonin OKEH (\uC624\uB108 \uC791\uC131 \uC124\uACC4\uC11C \uC804\uC0AC)",
+          scope: "\u7532 \uC644\uC131 + rules \uC804\uCCB4",
+          built: "2026-10-05",
+          note: "\uBB38\uC7A5\uACFC \uADFC\uAC70 \uBC88\uD638(R2.GA.NNN)\uB294 PDF \uC6D0\uBB38 \uADF8\uB300\uB85C \uC804\uC0AC\uD588\uB2E4. { }\uB294 \uBA85\uC2DD\uB9C8\uB2E4 \uCC44\uC6B0\uB294 \uC790\uB9AC\uB2E4. \uAC00\uC9C0 \uCF54\uB4DC\xB7\uC2AC\uB86F \uBC88\uD638\xB7\uADFC\uAC70 \uBC88\uD638\uB294 \uB0B4\uBD80\uC6A9\uC774\uBA70 \uC0AC\uC6A9\uC790 \uD654\uBA74\uC5D0\uB294 \uBB38\uC7A5\uB9CC \uB098\uAC04\uB2E4 (PDF 0-1)."
+        },
+        rules: {
+          selection: {
+            source: "PDF 0-5 \uC120\uD0DD \uADDC\uCE59",
+            items: [
+              "\uB098\uB77C\uB294 \uC0AC\uB78C\uC5D0\uB294 \uAC00\uC9C0\uB97C \uCD5C\uB300 \uB450 \uAC1C\uB9CC \uC4F4\uB2E4.",
+              {
+                rule: "\uC6B0\uC120\uC21C\uC704(\uAE30\uBCF8\uAC12)",
+                order: [
+                  "\uC9C0\uAE08 10\uB144\uC5D0 \uBC14\uB00C\uB294 \uAC00\uC9C0",
+                  "\uC131\uB9BD\uC870\uAC74 1\uB2E8\uACC4\uC758 \uACB0\uD54D",
+                  "\uBB36\uC784",
+                  "\uAC00\uB9BC",
+                  "\uD750\uB824\uC9D0",
+                  "\uAC19\uC740 \uAE00\uC790 \uACB9\uCE68",
+                  "\uACFC\uB2E4",
+                  "\uC9C0\uC9C0\uC758 \uC6C0\uC9C1\uC784"
+                ],
+                note: "[\uD310\uC815 \uD544\uC694]"
+              },
+              "\uAC19\uC740 \uC6B0\uC120\uC21C\uC704\uBA74 \uCC9C\uAC04 \uAC00\uC9C0\uAC00 \uC9C0\uC9C0 \uAC00\uC9C0\uBCF4\uB2E4 \uC55E\uC120\uB2E4.",
+              "\uD55C \uAC00\uC9C0\uB97C \uC5EC\uB7EC \uC139\uC158\uC5D0\uC11C \uC4F8 \uB54C\uB294 \uAC01\uB3C4\uB97C \uBC14\uAFBC\uB2E4. \uB098\uB77C\uB294 \uC0AC\uB78C\uC740 \uC131\uD5A5, \uC77C\uC740 \uC4F0\uB294 \uBC95, \uC7AC\uBB3C\uC740 \uB3C8\uC758 \uD750\uB984.",
+              "\uC0B6\uC758 \uACC4\uC808\uC758 \uBB36\uC784\xB7\uD480\uB9BC \uC2DC\uAE30\uB294 \uC6B0\uC120\uC21C\uC704\uC640 \uAD00\uACC4\uC5C6\uC774 \uC804\uBD80 \uC4F4\uB2E4."
+            ]
+          },
+          sentence: {
+            source: "PDF 0-3 \uBB38\uC7A5 \uADDC\uCE59",
+            items: [
+              '\uAF2C\uC9C0 \uC54A\uB294\uB2E4. "~\uC600\uB358 \uAC74 \uD55C \uBC88\uB3C4 ~\uAC00 \uC544\uB2C8\uC5C8\uB2E4" \uAC19\uC740 \uB4A4\uC9D1\uAE30, \uC774\uC911 \uBD80\uC815, \uBC18\uC804\uC73C\uB85C \uBB34\uAC8C\uB97C \uB9CC\uB4E4\uC9C0 \uC54A\uB294\uB2E4. \uD55C \uBC88\uC5D0 \uC77D\uD600\uC57C \uD55C\uB2E4.',
+              '"\uB2F9\uC2E0\uC740"\uC740 \uC139\uC158 \uCCAB \uBB38\uC7A5\uACFC \uAF2D \uD544\uC694\uD55C \uACF3\uC5D0\uB9CC. \uB9E4 \uBB38\uC7A5 \uC8FC\uC5B4\uB85C \uBC18\uBCF5\uD558\uBA74 \uB4A4\uC758 \uC2AC\uB86F\uC774 \uBCF4\uC778\uB2E4.',
+              "\uBB3C\uC0C1 \uC2A4\uD1A0\uB9AC\uD154\uB9C1\uC73C\uB85C \uC787\uB294\uB2E4. \uD55C \uC139\uC158 \uC548\uC758 \uBB38\uC7A5\uC740 \uC55E \uBB38\uC7A5\uC758 \uBB3C\uC0C1\uC744 \uC774\uC5B4\uBC1B\uC544 \uC778\uACFC\uB85C \uC774\uC5B4 \uAC04\uB2E4. \uBB3C\uC0C1 \uBB18\uC0AC\uB294 \uC139\uC158\uB2F9 2\uBB38\uC7A5 \uC774\uB0B4.",
+              '\uAD6C\uC870\uB294 \uB2E8\uC815, \uACB0\uACFC\uB294 \uC870\uAC74. "\uB451 \uC5C6\uC774 \uD0DC\uC5B4\uB0AC\uC2B5\uB2C8\uB2E4"\uB294 \uB2E8\uC815\uD55C\uB2E4. "\uADF8\uB798\uC11C \uC2E4\uD328\uD569\uB2C8\uB2E4"\uB294 \uC4F0\uC9C0 \uC54A\uB294\uB2E4.',
+              "\uD30C\uC545 \uBB38\uC7A5 \uC2DC\uD5D8: \uC774 \uBA85\uC2DD\uC758 \uAC00\uC9C0\uB97C \uBE7C\uB3C4 \uC4F8 \uC218 \uC788\uB294 \uBB38\uC7A5\uC774\uBA74 \uBC84\uB9B0\uB2E4.",
+              "\uCC98\uBC29 \uC2DC\uD5D8: \uB2E4\uB978 \uC77C\uAC04\uC5D0\uAC8C \uC918\uB3C4 \uB9DE\uB294 \uCC98\uBC29\uC774\uBA74 \uBC84\uB9B0\uB2E4. \uCC98\uBC29\uC740 \uBA85\uB8CC\uD558\uACE0 \uAE0D\uC815\uC801\uC73C\uB85C.",
+              "\uD558\uB098\uB9C8\uB098\uD55C \uB9D0 \uAE08\uC9C0. \uC2E0\uC758, \uC131\uC2E4, \uAE0D\uC815, \uC18C\uD1B5\uCC98\uB7FC \uB204\uAD6C\uC5D0\uAC8C\uB098 \uB9DE\uB294 \uB355\uBAA9\uC744 \uCC98\uBC29\uC73C\uB85C \uC4F0\uC9C0 \uC54A\uB294\uB2E4.",
+              "\uBB38\uC7A5 \uD2C0 \uC548\uC758 { } \uB294 \uBA85\uC2DD\uB9C8\uB2E4 \uCC44\uC6B0\uB294 \uC790\uB9AC\uB2E4."
+            ]
+          },
+          safety: {
+            source: "PDF 0-6 \uC548\uC804",
+            items: [
+              "\uAC74\uAC15\xB7\uC9C8\uBCD1 \uAC00\uC9C0\uB294 \uD310\uC815\uC5D0\uB9CC \uC4F0\uACE0 \uBB38\uC7A5\uC73C\uB85C \uB0B4\uBCF4\uB0B4\uC9C0 \uC54A\uB294\uB2E4.",
+              '\uC774\uD63C, \uC678\uB3C4, \uC0AC\uB9DD, \uBC95\uC801 \uBB38\uC81C, \uC7AC\uC0B0 \uD0D5\uC9C4 \uAC19\uC740 \uACB0\uACFC\uB294 \uC4F0\uC9C0 \uC54A\uB294\uB2E4. \uD544\uC694\uD558\uBA74 "\uAD00\uACC4\uC758 \uC790\uB9AC\uAC00 \uD754\uB4E4\uB9AC\uB294 \uB54C", "\uC9C0\uD0A4\uB294 \uCABD\uC774 \uC774\uB85C\uC6B4 \uB54C" \uC218\uC900\uAE4C\uC9C0\uB9CC \uC4F4\uB2E4.',
+              "\uD1F4\uC0AC, \uCC3D\uC5C5, \uACC4\uC57D, \uC774\uD63C, \uD22C\uC790\uCC98\uB7FC \uB418\uB3CC\uB9AC\uAE30 \uC5B4\uB824\uC6B4 \uACB0\uC815\uC744 \uC9C0\uC2DC\uD558\uC9C0 \uC54A\uB294\uB2E4. \uD750\uB984\uACFC \uC2DC\uAE30\uB9CC \uB9D0\uD55C\uB2E4.",
+              "\uC77D\uB294 \uC0AC\uB78C\uC774 \uC790\uAE30 \uC778\uC0DD\uC744 \uBE44\uAD00\uD558\uAC8C \uB420 \uBB38\uC7A5\uC744 \uC4F0\uC9C0 \uC54A\uB294\uB2E4. \uCE7C\uB05D\uC740 \uC0AC\uB78C\uC774 \uC544\uB2C8\uB77C \uBC18\uBCF5\uB418\uB294 \uD328\uD134\uC744 \uD5A5\uD55C\uB2E4."
+            ]
+          },
+          translation: {
+            source: "PDF 0-4, 0-7 \uBB3C\uC0C1 \uC774\uB984",
+            positionRule: '"\uD0DC\uC5B4\uB09C \uD574\uC758 \uC790\uB9AC", "\uACF5\uACF5\uC758 \uC790\uB9AC", "\uAD6D\uAC00\uC790\uB9AC" \uAC19\uC740 \uD45C\uD604\uC740 \uBB38\uC7A5\uC5D0 \uC4F0\uC9C0 \uC54A\uB294\uB2E4. (0-4)',
+            foreignCharRule: "\uC77C\uAC04\uC774 \uC544\uB2CC \uAE00\uC790\uB3C4 \uBB38\uC7A5\uC5D0\uC11C\uB294 \uAC19\uC740 \uC774\uB984\uC73C\uB85C \uBD80\uB978\uB2E4. \uCC98\uC74C \uB098\uC62C \uB54C \uD55C \uBC88\uC740 \uC0B6\uC758 \uB9D0\uB85C \uBC88\uC5ED\uC744 \uBD99\uC778\uB2E4. \uC608: \uAC70\uB300\uD55C \uC0B0\uB9E5, \uACE7 \uB098\uB97C \uBD99\uC7A1\uC544 \uC8FC\uB294 \uD14C\uB450\uB9AC. (0-7)",
+            positions: [
+              {
+                key: "\uB144\uC8FC",
+                name: "\uD0DC\uC5B4\uB09C \uD574 (\uB144\uC8FC)",
+                words: [
+                  "\uAD6D\uAC00\uC640 \uAD00\uB828\uB41C \uAE30\uAD00",
+                  "\uAD6D\uAC00\uC2DC\uD5D8\uC73C\uB85C \uB530\uB77C\uC624\uB294 \uC790\uACA9",
+                  "\uACF5\uACF5\uC758 \uC77C\uAC10",
+                  "\uC717\uC138\uB300"
+                ]
+              },
+              {
+                key: "\uC6D4\uC8FC",
+                name: "\uD0DC\uC5B4\uB09C \uB2EC (\uC6D4\uC8FC)",
+                words: [
+                  "\uC77C\uD130\uC640 \uC9C1\uC7A5",
+                  "\uBD80\uBAA8\xB7\uD615\uC81C",
+                  "\uC0AC\uD68C\uC0DD\uD65C\uC5D0\uC11C \uB9CC\uB098\uB294 \uC0AC\uB78C"
+                ]
+              },
+              {
+                key: "\uC77C\uC9C0",
+                name: "\uBC30\uC6B0\uC790 \uC790\uB9AC (\uC77C\uC9C0)",
+                words: [
+                  "\uBC30\uC6B0\uC790",
+                  "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uACC1"
+                ]
+              },
+              {
+                key: "\uC2DC\uC8FC",
+                name: "\uD0DC\uC5B4\uB09C \uC2DC (\uC2DC\uC8FC)",
+                words: [
+                  "\uC790\uB140",
+                  "\uD6C4\uBC30",
+                  "\uB9D0\uB144",
+                  "\uC190\uB05D\uC758 \uC7AC\uC8FC"
+                ]
+              }
+            ],
+            chars: {
+              \uAC11: "\uD070 \uB098\uBB34",
+              \uC744: "\uD478\uB978 \uB369\uAD74",
+              \uBCD1: "\uD0DC\uC591",
+              \uC815: "\uC138\uC0C1\uC744 \uBC1D\uD788\uB294 \uB4F1\uBD88",
+              \uBB34: "\uAC70\uB300\uD55C \uC0B0\uB9E5",
+              \uAE30: "\uAD6C\uD68D\uB418\uACE0 \uC0DD\uBA85\uC744 \uC0B4\uAC8C \uD558\uB294 \uB545",
+              \uACBD: "\uCEE4\uB2E4\uB780 \uAE08\uB9E5",
+              \uC2E0: "\uC138\uACF5\uB41C \uBCF4\uC11D",
+              \uC784: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218",
+              \uACC4: "\uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C"
+            }
+          }
+        },
+        sections: [
+          {
+            id: "\uC0AC1",
+            section: "\uB098\uB77C\uB294 \uC0AC\uB78C",
+            content: "\uD615\uC0C1 + 1\uC21C\uC704 \uAC00\uC9C0 \uD55C \uC904 (\uCCAB \uD654\uBA74 \uD6C5)"
+          },
+          {
+            id: "\uC0AC2",
+            section: "\uB098\uB77C\uB294 \uC0AC\uB78C",
+            content: "\uB300\uD45C \uC131\uD5A5 (A \uACE0\uC815\uAC12)"
+          },
+          {
+            id: "\uC0AC3",
+            section: "\uB098\uB77C\uB294 \uC0AC\uB78C",
+            content: "\uB0A8\uB4E4\uC774 \uBCF4\uB294 \uB098 (A \uACE0\uC815\uAC12)"
+          },
+          {
+            id: "\uC0AC4",
+            section: "\uB098\uB77C\uB294 \uC0AC\uB78C",
+            content: "\uC778\uC815\uACFC \uCE6D\uCC2C (A \uACE0\uC815\uAC12 + \uC788\uB294 \uD798)"
+          },
+          {
+            id: "\uC0AC5",
+            section: "\uB098\uB77C\uB294 \uC0AC\uB78C",
+            content: "1\uC21C\uC704 \uAC00\uC9C0\uC758 \uC9C4\uB2E8"
+          },
+          {
+            id: "\uC0AC6",
+            section: "\uB098\uB77C\uB294 \uC0AC\uB78C",
+            content: "1\uC21C\uC704 \uAC00\uC9C0\uC758 \uCC98\uBC29"
+          },
+          {
+            id: "\uC0AC7",
+            section: "\uB098\uB77C\uB294 \uC0AC\uB78C",
+            content: "2\uC21C\uC704 \uAC00\uC9C0\uC758 \uC9C4\uB2E8"
+          },
+          {
+            id: "\uC0AC8",
+            section: "\uB098\uB77C\uB294 \uC0AC\uB78C",
+            content: "2\uC21C\uC704 \uAC00\uC9C0\uC758 \uCC98\uBC29"
+          },
+          {
+            id: "\uC77C1",
+            section: "\uB098\uC5D0\uAC8C \uB9DE\uB294 \uC77C",
+            content: "\uC77C\uC758 \uBB34\uAE30 (A \uACE0\uC815\uAC12)"
+          },
+          {
+            id: "\uC77C2",
+            section: "\uB098\uC5D0\uAC8C \uB9DE\uB294 \uC77C",
+            content: "\uC7AC\uBB3C\xB7\uC77C\uC774 \uB2FF\uB294 \uD604\uC2E4\uC758 \uB300\uC0C1 (\uAD6D\uAC00\uC790\uB9AC \uD310\uC815)"
+          },
+          {
+            id: "\uC77C3",
+            section: "\uB098\uC5D0\uAC8C \uB9DE\uB294 \uC77C",
+            content: "\uD750\uB984 \u2460 \uAC00\uC9C4 \uAC83 \u2192 \uADF8\uAC83\uC774 \uC4F0\uC774\uB824\uBA74 \uD544\uC694\uD55C \uAC83"
+          },
+          {
+            id: "\uC77C4",
+            section: "\uB098\uC5D0\uAC8C \uB9DE\uB294 \uC77C",
+            content: "\uD750\uB984 \u2461 \uD544\uC694\uD55C \uAC83\uC774 \uC5C6\uC744 \uB54C\uC758 \uB300\uC548"
+          },
+          {
+            id: "\uC77C5",
+            section: "\uB098\uC5D0\uAC8C \uB9DE\uB294 \uC77C",
+            content: "\uD750\uB984 \u2462 \uC6B4\uC5D0\uC11C \uB4E4\uC5B4\uC624\uB294 \uAC83 \u2192 \uC9C0\uD0A4\uB294 \uBC95"
+          },
+          {
+            id: "\uC77C6",
+            section: "\uB098\uC5D0\uAC8C \uB9DE\uB294 \uC77C",
+            content: "\uCC98\uBC29 \uCDA9\uB3CC \uC815\uB9AC"
+          },
+          {
+            id: "\uC77C7",
+            section: "\uB098\uC5D0\uAC8C \uB9DE\uB294 \uC77C",
+            content: "\uC9C0\uAE08 \uCC29\uC218\uD560 \uD589\uB3D9 \uD558\uB098"
+          },
+          {
+            id: "\uC7AC1",
+            section: "\uC7AC\uBB3C",
+            content: "\uC7AC\uBB3C\uC758 \uBAA8\uC591"
+          },
+          {
+            id: "\uC7AC2",
+            section: "\uC7AC\uBB3C",
+            content: "\uC7AC\uBB3C\uC774 \uC950\uC5B4\uC9C0\uC9C0 \uC54A\uB294 \uAD6C\uC870"
+          },
+          {
+            id: "\uC7AC3",
+            section: "\uC7AC\uBB3C",
+            content: "\uD480\uB9AC\uB294 10\uB144"
+          },
+          {
+            id: "\uC7AC4",
+            section: "\uC7AC\uBB3C",
+            content: "\uC8FC\uC758 \uD574"
+          },
+          {
+            id: "\uC7AC5",
+            section: "\uC7AC\uBB3C",
+            content: "\uACB0\uC2E4 \uD574"
+          },
+          {
+            id: "\uC7AC6",
+            section: "\uC7AC\uBB3C",
+            content: "\uC774 \uC77C\uAC04\uC758 \uB3C8\uC774 \uB4E4\uC5B4\uC624\uB294 \uC21C\uC11C (A \uACE0\uC815\uAC12)"
+          },
+          {
+            id: "\uC7AC7",
+            section: "\uC7AC\uBB3C",
+            content: "\uB3C8\uC774 \uC5F4\uB9AC\uB294 \uC601\uC5ED"
+          },
+          {
+            id: "\uC5F01",
+            section: "\uC5F0\uC560\uC640 \uACB0\uD63C",
+            content: "\uBB3C\uC0C1 \uC131\uC9C8\uB85C \uAD00\uACC4 \uC18D \uB098\uB97C \uC120\uC5B8 \u2192 \uC18D\uB9C8\uC74C (A \uACE0\uC815\uAC12)"
+          },
+          {
+            id: "\uC5F02",
+            section: "\uC5F0\uC560\uC640 \uACB0\uD63C",
+            content: "\uBC30\uC6B0\uC790 \uC790\uB9AC\uC758 \uBAA8\uC591"
+          },
+          {
+            id: "\uC5F03",
+            section: "\uC5F0\uC560\uC640 \uACB0\uD63C",
+            content: "\uC778\uC5F0\uC758 \uACB0"
+          },
+          {
+            id: "\uC5F04",
+            section: "\uC5F0\uC560\uC640 \uACB0\uD63C",
+            content: "\uC9C0\uB09C \uC778\uC5F0\uC758 \uD574"
+          },
+          {
+            id: "\uC5F05",
+            section: "\uC5F0\uC560\uC640 \uACB0\uD63C",
+            content: "\uC55E\uC73C\uB85C\uC758 \uC778\uC5F0 \uD574"
+          },
+          {
+            id: "\uC5F06",
+            section: "\uC5F0\uC560\uC640 \uACB0\uD63C",
+            content: "\uAD00\uACC4\uC5D0\uC11C \uC4F0\uB294 \uBC95"
+          },
+          {
+            id: "\uACC41",
+            section: "\uC0B6\uC758 \uACC4\uC808",
+            content: "10\uB144 \uD750\uB984(\uC2DC\uC791 \uC5F0\uB3C4 \uD45C\uAE30)"
+          },
+          {
+            id: "\uACC42",
+            section: "\uC0B6\uC758 \uACC4\uC808",
+            content: "\uBB36\uC784\xB7\uD480\uB9BC \uD544\uC218"
+          },
+          {
+            id: "\uACC43",
+            section: "\uC0B6\uC758 \uACC4\uC808",
+            content: "\uC9C0\uAE08 10\uB144"
+          },
+          {
+            id: "\uACC44",
+            section: "\uC0B6\uC758 \uACC4\uC808",
+            content: "\uB208 \uC5EC\uACA8\uBCFC \uD574"
+          },
+          {
+            id: "\uACC45",
+            section: "\uC0B6\uC758 \uACC4\uC808",
+            content: "\uD560 \uC77C 3\uAC00\uC9C0"
+          },
+          {
+            id: "\uB05D1",
+            section: "\uB9C8\uC9C0\uB9C9 \uD55C\uB9C8\uB514",
+            content: "\uD55C\uACC4\uB97C \uD2B9\uC131\uC73C\uB85C"
+          },
+          {
+            id: "\uB05D2",
+            section: "\uB9C8\uC9C0\uB9C9 \uD55C\uB9C8\uB514",
+            content: "\uBC14\uB77C\uBCF4\uB294 \uB208"
+          },
+          {
+            id: "\uB05D3",
+            section: "\uB9C8\uC9C0\uB9C9 \uD55C\uB9C8\uB514",
+            content: "\uB04C\uC5B4 \uC4F8 \uBA74"
+          },
+          {
+            id: "\uB05D4",
+            section: "\uB9C8\uC9C0\uB9C9 \uD55C\uB9C8\uB514",
+            content: "\uC704\uB85C"
+          }
+        ],
+        stems: {
+          \u7532: {
+            name: "\uAC11\uBAA9 \u2014 \uD070 \uB098\uBB34",
+            A: {
+              \uC0AC1: {
+                text: "\uB2F9\uC2E0\uC740 \uD070 \uB098\uBB34\uC785\uB2C8\uB2E4. {1\uC21C\uC704 \uAC00\uC9C0 \uD55C \uC904}",
+                evidence: [
+                  "R2.GA.001"
+                ]
+              },
+              \uC0AC2: {
+                text: "\uC0C8\uB85C\uC6B4 \uAC83\uC744 \uD5A5\uD574 \uACC4\uC18D \uC790\uB77C\uACE0, \uC544\uBB34\uB3C4 \uAC00\uC9C0 \uC54A\uC740 \uAE38\uC744 \uBA3C\uC800 \uB0B4\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uC55E\uC744 \uB0B4\uB2E4\uBCF4\uACE0 \uD310\uC744 \uC9DC\uB294 \uB370 \uB2A5\uD569\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.002"
+                ]
+              },
+              \uC0AC3: {
+                text: "\uACC1\uC5D0 \uC788\uC73C\uBA74 \uAE30\uB308 \uC218 \uC788\uB294 \uC0AC\uB78C\uC73C\uB85C \uBCF4\uC785\uB2C8\uB2E4. \uC21C\uD558\uACE0 \uC545\uC758\uAC00 \uC5C6\uB294\uB370, \uD55C\uBC88 \uC815\uD55C \uAC83\uC740 \uC27D\uAC8C \uAD7D\uD788\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.002"
+                ]
+              },
+              \uC0AC4: {
+                text: "\uC0AC\uB78C\uC744 \uD488\uACE0 \uD568\uAED8 \uD0A4\uC6CC \uB0B4\uB294 \uD798\uC774 \uC788\uC2B5\uB2C8\uB2E4. \uD63C\uC790 \uD06C\uB294 \uB098\uBB34\uAC00 \uC544\uB2C8\uB77C \uADF8\uB298\uC744 \uB9CC\uB4E4\uC5B4 \uC8FC\uB294 \uB098\uBB34\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.002"
+                ]
+              },
+              \uC77C1: {
+                text: "\uAE38\uC744 \uCC98\uC74C \uB0B4\uACE0, \uC0AC\uB78C\uC744 \uC774\uB04C\uACE0 \uD0A4\uC6B0\uB294 \uD798\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.001",
+                  "R2.GA.003"
+                ]
+              },
+              \uC7AC6: {
+                text: "\uBFCC\uB9AC\uB97C \uB0B4\uB824\uC57C \uC5F4\uB9E4\uAC00 \uB9FA\uD788\uB4EF, \uD55C \uC790\uB9AC\uB97C \uAE4A\uAC8C \uC9C0\uD0AC \uB54C \uB3C8\uC774 \uC313\uC785\uB2C8\uB2E4. \uC62E\uACA8 \uB2E4\uB2D0\uC218\uB85D \uD769\uC5B4\uC9D1\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.020",
+                  "R2.GA.080"
+                ]
+              },
+              \uC5F01: {
+                text: "\uD070 \uB098\uBB34\uB294 \uD55C\uBC88 \uBFCC\uB9AC\uB0B4\uB9B0 \uB545\uC744 \uB5A0\uB098\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4. \uB2F9\uC2E0\uB3C4 \uD55C\uBC88 \uB9C8\uC74C\uC744 \uC900 \uC0AC\uB78C\uC744 \uB05D\uAE4C\uC9C0 \uCC45\uC784\uC9C0\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uADF8\uB7EC\uBA74\uC11C \uC18D\uC73C\uB85C\uB294 \uC624\uB798 \uBFCC\uB9AC\uB0B4\uB9B4 \uC218 \uC788\uB294 \uB113\uACE0 \uB2E8\uB2E8\uD55C \uACC1\uC744 \uBC14\uB78D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.080",
+                  "R2.GA.021"
+                ]
+              },
+              marriageCondition: {
+                label: "\uACB0\uD63C \uC870\uAC74",
+                text: "\uD070 \uB545(\uAC70\uB300\uD55C \uC0B0\uB9E5)\uC774 \uB4E4\uC5B4\uC62C \uB54C. \uD070 \uB098\uBB34\uAC00 \uB458\uC774\uBA74 \uC791\uC740 \uB545\uC774 \uC640\uC11C \uD558\uB098\uB97C \uC815\uB9AC\uD560 \uB54C.",
+                evidence: [
+                  "R2.GA.021",
+                  "R2.GA.060"
+                ]
+              },
+              endingTheme: {
+                label: "\uB05D \uC18C\uC7AC",
+                text: "\uACE0\uC9D1 \u2192 \uD55C\uBC88 \uBFCC\uB9AC\uB0B4\uB9AC\uBA74 \uD754\uB4E4\uB9AC\uC9C0 \uC54A\uB294 \uD798 / \uC774\uC5B4 \uC628 \uAC83\uC744 \uD0A4\uC6B0\uB294 \uD798",
+                evidence: [
+                  "R2.GA.002",
+                  "R2.GA.083"
+                ]
+              },
+              careerNote: {
+                label: "\uC9C1\uC5C5 \uACB0(\uCC38\uACE0\uC6A9, \uB098\uC5F4 \uAE08\uC9C0)",
+                text: "\uAD50\uC721, \uAC74\uCD95, \uC0AC\uB78C\uC744 \uC0C1\uB300\uD558\uB294 \uC77C, \uCD9C\uD310, \uC5B8\uB860, \uBB38\uD559, \uC12C\uC720, \uC885\uC774.",
+                evidence: [
+                  "R2.GA.003"
+                ]
+              }
+            },
+            B: [
+              {
+                stage: 1,
+                stageName: "\uB545",
+                stageNote: "\uBFCC\uB9AC\uB0B4\uB9B4 \uC790\uB9AC\uC774\uC790 \uC7AC\uBB3C",
+                code: "\uAC111-\uAC00",
+                condition: "\uD070 \uB545 \uC788\uC74C",
+                slots: [
+                  "\uC7AC1",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uB113\uC740 \uB545\uC5D0 \uC81C\uB300\uB85C \uBFCC\uB9AC\uB97C \uB0B4\uB9B0 \uB098\uBB34\uC785\uB2C8\uB2E4. \uD55C \uC790\uB9AC\uB97C \uC815\uD558\uBA74 \uADF8\uACF3\uC744 \uD06C\uAC8C \uD0A4\uC6CC \uB0C5\uB2C8\uB2E4.",
+                prescription: "\uC815\uD55C \uC790\uB9AC\uB97C \uB113\uD788\uB294 \uCABD\uC73C\uB85C \uD798\uC744 \uC4F0\uC138\uC694.",
+                evidence: [
+                  "R2.GA.072"
+                ],
+                source: [
+                  "R2.GA.072"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB545",
+                stageNote: "\uBFCC\uB9AC\uB0B4\uB9B4 \uC790\uB9AC\uC774\uC790 \uC7AC\uBB3C",
+                code: "\uAC111-\uB098",
+                condition: "\uD070 \uB545 \uC788\uC74C + \uBB3C \uC5C6\uC74C",
+                slots: [
+                  "\uC7AC2",
+                  "\uC7AC3"
+                ],
+                diagnosis: "\uB545\uC740 \uB113\uC740\uB370 \uC801\uC154 \uC904 \uBB3C\uC774 \uC595\uC544, \uC77C\uAD70 \uAC83\uC774 \uC0DD\uAC01\uB9CC\uD07C \uBD88\uC5B4\uB098\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC9C0\uAE08\uC740 \uAE30\uBC18\uC744 \uB2E4\uC838 \uB450\uB294 \uB54C\uC785\uB2C8\uB2E4. \uBB3C\uC774 \uB4E4\uC5B4\uC624\uB294 \uB54C \uC774 \uB545\uC740 \uD06C\uAC8C \uC5F4\uB9BD\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.072"
+                ],
+                source: [
+                  "R2.GA.072"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB545",
+                stageNote: "\uBFCC\uB9AC\uB0B4\uB9B4 \uC790\uB9AC\uC774\uC790 \uC7AC\uBB3C",
+                code: "\uAC111-\uB2E4",
+                condition: "\uC791\uC740 \uB545\uB9CC \uC788\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC5F06"
+                ],
+                diagnosis: "\uC791\uC740 \uB545\uC5D0 \uD070 \uB098\uBB34\uAC00 \uC11C \uC788\uC2B5\uB2C8\uB2E4. \uC790\uB784\uC218\uB85D \uBC1C\uBC11\uC774 \uC881\uC544\uC9C0\uACE0, \uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC790\uB9AC\uBD80\uD130 \uBC84\uAC70\uC6CC\uC9D1\uB2C8\uB2E4.",
+                prescription: "\uC790\uB77C\uB294 \uB9CC\uD07C \uB545\uC744 \uB113\uD788\uC138\uC694. \uC9C0\uAE08 \uC790\uB9AC \uC606\uC5D0 \uB354 \uD070 \uD130\uB97C \uB9C8\uB828\uD574 \uB450\uB294 \uAC83\uC774 \uB9DE\uB294 \uC21C\uC11C\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.023"
+                ],
+                source: [
+                  "R2.GA.023"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB545",
+                stageNote: "\uBFCC\uB9AC\uB0B4\uB9B4 \uC790\uB9AC\uC774\uC790 \uC7AC\uBB3C",
+                code: "\uAC111-\uB77C",
+                condition: "\uB545 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC7AC1",
+                  "\uC7AC7"
+                ],
+                diagnosis: "\uBFCC\uB9AC\uB0B4\uB9B4 \uB545 \uC5C6\uC774 \uD0DC\uC5B4\uB09C \uD070 \uB098\uBB34\uC785\uB2C8\uB2E4. \uB298 \uB354 \uB098\uC740 \uC790\uB9AC\uB97C \uCC3E\uC544 \uB9C8\uC74C\uC774 \uC6C0\uC9C1\uC774\uACE0, \uAC00\uC9C4 \uAC83\uBCF4\uB2E4 \uAC00\uC9C8 \uAC83\uC744 \uBA3C\uC800 \uBD05\uB2C8\uB2E4.",
+                prescription: "\uC0C8 \uC790\uB9AC\uB97C \uCC3E\uAE30\uBCF4\uB2E4 \uCC98\uC74C \uBFCC\uB9AC\uB0B4\uB9B0 \uC790\uB9AC\uB97C \uB05D\uAE4C\uC9C0 \uD0A4\uC6B0\uC138\uC694. \uB545\uACFC \uD130, \uC9D3\uB294 \uC77C\uC774 \uC7AC\uBB3C\uC774 \uB429\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.024",
+                  "R2.GA.080"
+                ],
+                source: [
+                  "R2.GA.024",
+                  "R2.GA.080"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB545",
+                stageNote: "\uBFCC\uB9AC\uB0B4\uB9B4 \uC790\uB9AC\uC774\uC790 \uC7AC\uBB3C",
+                code: "\uAC111-\uB9C8",
+                condition: "\uB545 \uB9CE\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uBFCC\uB9AC\uB0B4\uB9B4 \uACF3\uC774 \uB9CE\uC544 \uD55C\uACF3\uC5D0 \uC624\uB798 \uBA38\uBB3C\uAE30 \uC5B4\uB835\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uB545\uC774 \uB9CE\uC73C\uBA74 \uB098\uBB34\uB97C \uB354 \uC2EC\uC73C\uBA74 \uB429\uB2C8\uB2E4. \uC0AC\uB78C\uC744 \uAE30\uB974\uACE0, \uD55C\uACF3\uC744 \uAC70\uC810\uC73C\uB85C \uC0BC\uC544 \uAC74\uBB3C\uC744 \uC62C\uB9AC\uC138\uC694.",
+                evidence: [
+                  "R2.GA.022"
+                ],
+                source: [
+                  "R2.GA.022"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB545",
+                stageNote: "\uBFCC\uB9AC\uB0B4\uB9B4 \uC790\uB9AC\uC774\uC790 \uC7AC\uBB3C",
+                code: "\uAC111-\uBC14",
+                condition: "\uB545 \uC788\uC74C + \uBB3C \uC5C6\uC74C (\uBA54\uB9C8\uB978 \uB545)",
+                slots: [
+                  "\uC7AC2",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uB545\uC740 \uC788\uB294\uB370 \uBA54\uB9D0\uB77C \uC788\uC2B5\uB2C8\uB2E4. \uC560\uC368 \uC77C\uAD88\uB3C4 \uAC70\uB450\uB294 \uAC8C \uC801\uC5B4 \uC790\uAFB8 \uB2E4\uB978 \uC790\uB9AC\uB97C \uCC3E\uAC8C \uB429\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC740 \uBC14\uAE65\uC5D0 \uC788\uC2B5\uB2C8\uB2E4. \uAD6D\uACBD \uBC16\uC758 \uC77C, \uC678\uAD6D\uACFC \uB2FF\uC740 \uC77C\uD130\uAC00 \uC774 \uB545\uC744 \uC801\uC2ED\uB2C8\uB2E4. \uC717\uC0AC\uB78C\uC758 \uB3C4\uC6C0\uB3C4 \uBB3C\uC774 \uB429\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.026"
+                ],
+                source: [
+                  "R2.GA.026"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB545",
+                stageNote: "\uBFCC\uB9AC\uB0B4\uB9B4 \uC790\uB9AC\uC774\uC790 \uC7AC\uBB3C",
+                code: "\uAC111-\uBC14\u2032",
+                condition: "\uC704 \uAC00\uC9C0\uC778\uB370 \uC544\uB798 \uAE00\uC790\uC5D0 \uC2E0\xB7\uC9C4 \uC788\uC74C",
+                slots: [],
+                diagnosis: "\uBA54\uB9C8\uB978 \uB545\uC73C\uB85C \uBCF4\uC9C0 \uC54A\uB294\uB2E4. \uB545\uC18D\uC5D0\uC11C \uBB3C\uC744 \uB04C\uC5B4\uC62C\uB9B0\uB2E4.",
+                prescription: "\uAC111-\uB098\uB85C \uCC98\uB9AC.",
+                evidence: [
+                  "R2.GA.027"
+                ],
+                note: "\uC2AC\uB86F \uC5C6\uC74C(\uC6D0\uBB38 \u2014). \uD310\uC815 \uBD84\uAE30\uB2E4.",
+                source: [
+                  "R2.GA.027"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uC790\uB77C\uAC8C \uD558\uB294 \uD798, \uBC30\uC6C0\uACFC \uB3C4\uC6C0",
+                code: "\uAC112-\uAC00",
+                condition: "\uBB3C \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uC790\uB77C\uB294 \uB370 \uD544\uC694\uD55C \uBB3C\uC774 \uC595\uC544, \uAC00\uC9C4 \uC7AC\uB2A5\uB9CC\uD07C \uCEE4 \uB098\uAC00\uAE30\uAC00 \uC27D\uC9C0 \uC54A\uC558\uC2B5\uB2C8\uB2E4. \uC0C8 \uBB3C\uC744 \uCC3E\uC544 \uC77C\uD130\uB97C \uC62E\uACBC\uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC740 \uBC14\uAE65\uC5D0 \uC788\uC2B5\uB2C8\uB2E4. \uD574\uC678\uC640 \uC774\uC5B4\uC9C4 \uC77C, \uC678\uAD6D\uACFC \uB2FF\uC740 \uC77C\uD130\uAC00 \uB2F9\uC2E0\uC744 \uD0A4\uC6C1\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.030"
+                ],
+                source: [
+                  "R2.GA.030"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uC790\uB77C\uAC8C \uD558\uB294 \uD798, \uBC30\uC6C0\uACFC \uB3C4\uC6C0",
+                code: "\uAC112-\uB098",
+                condition: "\uC791\uC740 \uBB3C(\uC2DC\uB0C7\uBB3C)\uB9CC \uC788\uC74C",
+                slots: [
+                  "\uC77C4"
+                ],
+                diagnosis: "\uC791\uC740 \uBB3C\uC5D0 \uAE30\uB300\uC5B4 \uC790\uB77C\uB2E4 \uBCF4\uB2C8 \uAE08\uC138 \uBAA9\uC774 \uB9C8\uB985\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC744 \uACC4\uC18D \uB9CC\uB4E4\uC5B4 \uC8FC\uB294 \uAE08\uB9E5\uC758 \uC77C, \uACE7 \uBC95\xB7\uAE08\uC735\xB7\uAE30\uC220\uCC98\uB7FC \uAE30\uC900\uC774 \uBD84\uBA85\uD55C \uC77C\uC744 \uACC1\uC5D0 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.GA.031"
+                ],
+                source: [
+                  "R2.GA.031"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uC790\uB77C\uAC8C \uD558\uB294 \uD798, \uBC30\uC6C0\uACFC \uB3C4\uC6C0",
+                code: "\uAC112-\uB2E4",
+                condition: "\uBB3C \uB9CE\uACE0 \uB545 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C3",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uBB3C\uC740 \uB118\uCE58\uB294\uB370 \uB514\uB51C \uB545\uC774 \uC5C6\uC5B4 \uB5A0\uB2E4\uB2C8\uB294 \uB098\uBB34\uC785\uB2C8\uB2E4. \uC77C\uB3C4 \uC790\uB9AC\uB3C4 \uC624\uB798 \uBA38\uBB3C\uAE30 \uC5B4\uB835\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC744 \uB9C9\uC744 \uB545\uC744 \uCC3E\uC73C\uC138\uC694. \uB545\uACFC \uD130\uC5D0 \uB2FF\uC740 \uC77C, \uD55C\uACF3\uC5D0 \uBA38\uBB34\uB294 \uC120\uD0DD\uC774 \uB2F9\uC2E0\uC744 \uC138\uC6C1\uB2C8\uB2E4. \uADF8\uAC8C \uC5B4\uB835\uB2E4\uBA74 \uBC14\uB2E4 \uAC74\uB108 \uC0C8 \uB545\uC774 \uB2F5\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.032",
+                  "R2.GA.076"
+                ],
+                source: [
+                  "R2.GA.032",
+                  "R2.GA.076"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uC790\uB77C\uAC8C \uD558\uB294 \uD798, \uBC30\uC6C0\uACFC \uB3C4\uC6C0",
+                code: "\uAC112-\uB77C",
+                condition: "\uBB3C\uC774 \uD750\uB824\uC9D0",
+                slots: [
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uBB3C\uC774 \uD750\uB824\uC838 \uBFCC\uB9AC\uAC00 \uC228 \uC26C\uAE30 \uC5B4\uB835\uC2B5\uB2C8\uB2E4. \uC560\uC4F4 \uB9CC\uD07C \uC790\uB77C\uC9C0 \uC54A\uB294 \uB2F5\uB2F5\uD568\uC774 \uC788\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uD750\uB824\uC9C0\uB294 \uC6D0\uC778\uC744 \uB530\uB77C \uCC98\uBC29\uD55C\uB2E4: \uBB3C\uC774 \uB9CE\uC544\uC11C\uBA74 \uBC14\uAE65\uC73C\uB85C \uD758\uB824\uBCF4\uB0B4\uB294 \uC77C, \uBB3C\uC774 \uC801\uC5B4\uC11C\uBA74 \uAE08\uB9E5\uC758 \uC77C.",
+                evidence: [
+                  "R2.GA.033"
+                ],
+                note: "1\uCE35 \uD0C1\uC218",
+                source: [
+                  "R2.GA.033"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uACFC \uACB0\uC2E4",
+                code: "\uAC113-\uAC00",
+                condition: "\uD0DC\uC591 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uD574\uB97C \uBC1B\uC544 \uAF43\uC744 \uD53C\uC6B0\uB294 \uB098\uBB34\uC785\uB2C8\uB2E4. \uBC30\uC6B4 \uAC83\uC774 \uACB0\uACFC\uBB3C\uC774 \uB418\uC5B4 \uC0AC\uB78C\uB4E4\uC5D0\uAC8C \uC778\uC815\uBC1B\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBC30\uC6B0\uACE0 \uC313\uC740 \uAC83\uC744 \uAE00\uACFC \uB9D0\uB85C \uB0B4\uB193\uC73C\uC138\uC694. \uD559\uBB38, \uCD9C\uD310, \uAC15\uC5F0\uCC98\uB7FC \uB4DC\uB7EC\uB0B4\uB294 \uC77C\uC5D0\uC11C \uAF43\uC774 \uD54D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.012",
+                  "R2.GA.070"
+                ],
+                source: [
+                  "R2.GA.012",
+                  "R2.GA.070"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uACFC \uACB0\uC2E4",
+                code: "\uAC113-\uB098",
+                condition: "\uB4F1\uBD88\uB9CC \uC788\uC74C",
+                slots: [
+                  "\uC77C3"
+                ],
+                diagnosis: "\uAF43\uC740 \uD53C\uB294\uB370 \uC791\uAC8C \uD54D\uB2C8\uB2E4.",
+                prescription: "\uD070 \uBB34\uB300 \uD55C \uBC88\uBCF4\uB2E4 \uC791\uC740 \uACB0\uACFC\uBB3C\uC744 \uC790\uC8FC \uB0B4\uB193\uC73C\uC138\uC694.",
+                evidence: [
+                  "R2.GA.043",
+                  "R2.GA.071"
+                ],
+                source: [
+                  "R2.GA.043",
+                  "R2.GA.071"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uACFC \uACB0\uC2E4",
+                code: "\uAC113-\uB2E4",
+                condition: "\uBD88 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uAF43\uC744 \uD53C\uC6B8 \uBE5B\uC774 \uC5C6\uC5B4 \uACB0\uC2E4\uC774 \uB2A6\uAC8C \uC635\uB2C8\uB2E4. \uAC89\uC73C\uB85C \uBCF4\uC774\uB294 \uAC83\uBCF4\uB2E4 \uC18D\uC774 \uBE44\uC5B4 \uBCF4\uC77C\uAE4C \uB9C8\uC74C\uC774 \uC4F0\uC785\uB2C8\uB2E4.",
+                prescription: "\uACB0\uACFC\uB97C \uC11C\uB450\uB974\uC9C0 \uB9D0\uACE0 \uC548\uC744 \uCC44\uC6B0\uC138\uC694. \uBE5B\uC774 \uB4E4\uC5B4\uC624\uB294 \uB54C \uD55C \uBC88\uC5D0 \uAF43\uC774 \uD54D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.041",
+                  "R2.GA.081"
+                ],
+                source: [
+                  "R2.GA.041",
+                  "R2.GA.081"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uACFC \uACB0\uC2E4",
+                code: "\uAC113-\uB77C",
+                condition: "\uBD88\uC774 \uC544\uB798 \uAE00\uC790\uC5D0\uB9CC \uC788\uC74C",
+                slots: [
+                  "\uC77C2",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uBE5B\uC774 \uB545\uC18D\uC5D0\uB9CC \uC788\uC5B4, \uD070 \uBB34\uB300\uBCF4\uB2E4 \uBC14\uAE65\uC5D0\uC11C \uC790\uAE30 \uAE38\uC744 \uB0B4\uB294 \uCABD\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC815\uD574\uC9C4 \uD2C0 \uBC16, \uC2A4\uC2A4\uB85C \uB9CC\uB4E0 \uD310\uC5D0\uC11C \uC2E4\uB825\uC774 \uB4DC\uB7EC\uB0A9\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.042"
+                ],
+                source: [
+                  "R2.GA.042"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uACFC \uACB0\uC2E4",
+                code: "\uAC113-\uB9C8",
+                condition: "\uBD88 \uB9CE\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6"
+                ],
+                diagnosis: "\uBD88\uC774 \uC138\uC11C \uBB3C\uC774 \uB9C8\uB974\uACE0 \uB9C8\uC74C\uC774 \uAE09\uD574\uC9D1\uB2C8\uB2E4. \uC77C\uC744 \uC55E\uB2F9\uAE30\uB2E4 \uADF8\uB974\uCE58\uB294 \uC77C\uC774 \uC0DD\uAE41\uB2C8\uB2E4.",
+                prescription: "\uBB3C \uAC00\uAE4C\uC774\uC5D0 \uBA38\uBB34\uC138\uC694. \uBB3C\uC774 \uB9CE\uC740 \uACF3, \uBC14\uB2E4 \uAC74\uB108\uC758 \uC77C, \uCC28\uBD84\uD55C \uACC1\uC774 \uB2F9\uC2E0\uC744 \uC2DD\uD799\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.040"
+                ],
+                source: [
+                  "R2.GA.040"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uAE08",
+                stageNote: "\uB2E4\uB4EC\uB294 \uC190\uAE38, \uBA85\uC608",
+                code: "\uAC114-\uAC00",
+                condition: "\uD070 \uCE7C(\uCEE4\uB2E4\uB780 \uAE08\uB9E5) \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C2"
+                ],
+                diagnosis: "\uD070 \uCE7C\uC744 \uC958 \uC218 \uC788\uB294 \uD070 \uC190\uC7A1\uC774\uC785\uB2C8\uB2E4. \uD310\uC744 \uC815\uB9AC\uD558\uACE0 \uC0AC\uB78C\uC744 \uC774\uB044\uB294 \uC790\uB9AC\uAC00 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC774\uB044\uB294 \uC790\uB9AC, \uC9D3\uACE0 \uC138\uC6B0\uB294 \uC77C\uC5D0\uC11C \uC774\uB984\uC774 \uC12D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.074"
+                ],
+                source: [
+                  "R2.GA.074"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uAE08",
+                stageNote: "\uB2E4\uB4EC\uB294 \uC190\uAE38, \uBA85\uC608",
+                code: "\uAC114-\uB098",
+                condition: "\uC791\uC740 \uCE7C(\uC138\uACF5\uB41C \uBCF4\uC11D) \uC788\uC74C",
+                slots: [
+                  "\uC77C2",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uD070 \uC190\uC7A1\uC774\uC5D0 \uC791\uC740 \uCE7C\uC774 \uB2EC\uB824 \uCC3D\uC774 \uB429\uB2C8\uB2E4. \uBA40\uB9AC \uC788\uB294 \uC77C\uC740 \uC798 \uD574\uB0B4\uB294\uB370 \uAC00\uAE4C\uC6B4 \uC77C\uC5D4 \uC190\uC774 \uB35C \uAC11\uB2C8\uB2E4.",
+                prescription: "\uD63C\uC790\uBCF4\uB2E4 \uC870\uC9C1 \uC548\uC5D0\uC11C, \uBA40\uB9AC \uBCF4\uB294 \uC5ED\uD560\uC744 \uB9E1\uC744 \uB54C \uD798\uC774 \uB0A9\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.075"
+                ],
+                source: [
+                  "R2.GA.075"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uAE08",
+                stageNote: "\uB2E4\uB4EC\uB294 \uC190\uAE38, \uBA85\uC608",
+                code: "\uAC114-\uB2E4",
+                condition: "\uAE08 \uB9CE\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6"
+                ],
+                diagnosis: "\uB2E4\uB4EC\uB294 \uCE7C\uC774 \uB9CE\uC544 \uC608\uBBFC\uD574\uC9C0\uACE0, \uACB0\uC815\uC744 \uC55E\uB450\uACE0 \uC624\uB798 \uB9DD\uC124\uC785\uB2C8\uB2E4.",
+                prescription: "\uB0A0\uC744 \uC138\uC6B0\uAE30\uBCF4\uB2E4 \uBB3C\uCC98\uB7FC \uAE30\uB2E4\uB9AC\uACE0 \uD488\uB294 \uCABD\uC774 \uB2F9\uC2E0\uC744 \uC9C0\uD0B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.051"
+                ],
+                source: [
+                  "R2.GA.051"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uAE08",
+                stageNote: "\uB2E4\uB4EC\uB294 \uC190\uAE38, \uBA85\uC608",
+                code: "\uAC114-\uB77C",
+                condition: "\uAE08 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uB2E4\uB4EC\uC5B4 \uC904 \uC190\uAE38 \uC5C6\uC774 \uC790\uB77C \uC790\uC720\uB86D\uACE0, \uC815\uD574\uC9C4 \uC21C\uC11C\uC5D0 \uC5BD\uB9E4\uC774\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC2A4\uC2A4\uB85C \uAE30\uC900\uC744 \uC138\uC6B0\uC138\uC694. \uAE30\uC900\uC774 \uBD84\uBA85\uD55C \uC77C(\uBC95\xB7\uAE08\uC735\xB7\uAE30\uC220)\uC744 \uACC1\uC5D0 \uB450\uBA74 \uD070 \uB098\uBB34\uAC00 \uC7AC\uBAA9\uC774 \uB429\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.053"
+                ],
+                source: [
+                  "R2.GA.053"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uB098\uBB34",
+                stageNote: "\uACC1\uC758 \uACBD\uC7C1\uACFC \uB3C4\uC6C0",
+                code: "\uAC115-\uAC00",
+                condition: "\uD070 \uB098\uBB34 \uB458",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uACC44"
+                ],
+                diagnosis: "\uACC1\uC5D0 \uAC19\uC740 \uD0A4\uC758 \uB098\uBB34\uAC00 \uC11C \uC788\uC5B4 \uB298 \uACAC\uC8FC\uAC8C \uB418\uACE0 \uB2F5\uB2F5\uD569\uB2C8\uB2E4.",
+                prescription: "\uADF8 \uB098\uBB34\uAC00 \uC815\uB9AC\uB418\uB294 \uB54C\uC5D0 \uC790\uB9AC\uAC00 \uC5F4\uB9BD\uB2C8\uB2E4. \uC791\uC740 \uB545\uC774 \uB4E4\uC5B4\uC624\uB294 \uD574\uB97C \uC900\uBE44\uD558\uC138\uC694.",
+                evidence: [
+                  "R2.GA.060"
+                ],
+                source: [
+                  "R2.GA.060"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uB098\uBB34",
+                stageNote: "\uACC1\uC758 \uACBD\uC7C1\uACFC \uB3C4\uC6C0",
+                code: "\uAC115-\uB098",
+                condition: "\uD070 \uB098\uBB34 \uB458 + \uD070 \uCE7C \uD558\uB098",
+                slots: [
+                  "\uC77C6"
+                ],
+                diagnosis: "\uCE7C \uD558\uB098\uC5D0 \uC190\uC7A1\uC774\uAC00 \uB458\uC774\uB77C, \uB9E1\uC740 \uC77C\uC5D0\uC11C \uB9D0\uC774 \uB9CE\uC544\uC9C0\uAE30 \uC27D\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC5ED\uD560\uACFC \uAD8C\uD55C\uC744 \uCC98\uC74C\uBD80\uD130 \uBB38\uC11C\uB85C \uB098\uB204\uC138\uC694.",
+                evidence: [
+                  "R2.GA.061"
+                ],
+                source: [
+                  "R2.GA.061"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uB098\uBB34",
+                stageNote: "\uACC1\uC758 \uACBD\uC7C1\uACFC \uB3C4\uC6C0",
+                code: "\uAC115-\uB2E4",
+                condition: "\uD070 \uB098\uBB34 \uC14B \uC774\uC0C1 (\uC232)",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6"
+                ],
+                diagnosis: "\uBA40\uB9AC\uC11C \uBCF4\uBA74 \uC6B0\uAC70\uC9C4 \uC232\uC778\uB370, \uC18D\uC740 \uBCD5\uC774 \uB4E4\uC9C0 \uC54A\uC544 \uC0DD\uAC01\uC774 \uB9CE\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uB113\uC740 \uB545\uC774 \uD544\uC694\uD55C \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uB545\uACFC \uD130\uB97C \uB113\uD788\uB294 \uC77C\uC5D0 \uD798\uC744 \uC4F0\uC138\uC694.",
+                evidence: [
+                  "R2.GA.062"
+                ],
+                source: [
+                  "R2.GA.062"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uB098\uBB34",
+                stageNote: "\uACC1\uC758 \uACBD\uC7C1\uACFC \uB3C4\uC6C0",
+                code: "\uAC115-\uB77C",
+                condition: "\uD478\uB978 \uB369\uAD74 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C2"
+                ],
+                diagnosis: "\uB369\uAD74\uC774 \uB098\uBB34\uB97C \uD0C0\uACE0 \uC624\uB974\uBA70 \uAD8C\uD55C\uC744 \uB04C\uC5B4\uC635\uB2C8\uB2E4. \uACC1\uC758 \uC0AC\uB78C\uC774 \uC790\uB9AC\uC640 \uAE30\uD68C\uB97C \uBB3C\uC5B4\uB2E4 \uC90D\uB2C8\uB2E4.",
+                prescription: "\uACC1\uC758 \uC0AC\uB78C\uACFC \uACAC\uC8FC\uC9C0 \uB9D0\uACE0 \uD568\uAED8 \uC624\uB974\uC138\uC694.",
+                evidence: [
+                  "R2.GA.063"
+                ],
+                source: [
+                  "R2.GA.063"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uB098\uBB34",
+                stageNote: "\uACC1\uC758 \uACBD\uC7C1\uACFC \uB3C4\uC6C0",
+                code: "\uAC115-\uB9C8",
+                condition: "\uD478\uB978 \uB369\uAD74\uC774 \uD0DC\uC5B4\uB09C \uD574\uC5D0 \uC788\uC74C",
+                slots: [
+                  "\uC77C2",
+                  "\uC77C7"
+                ],
+                diagnosis: "\uAD6D\uAC00\uC2DC\uD5D8\uC73C\uB85C \uB530\uB77C\uC624\uB294 \uC790\uACA9\uC774 \uB2F9\uC2E0\uC758 \uD798\uC774 \uB429\uB2C8\uB2E4.",
+                prescription: "\uAD6D\uAC00 \uC790\uACA9\uC744 \uD558\uB098 \uC950\uC138\uC694.",
+                evidence: [
+                  "R2.GA.064"
+                ],
+                source: [
+                  "R2.GA.064"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uB098\uBB34",
+                stageNote: "\uACC1\uC758 \uACBD\uC7C1\uACFC \uB3C4\uC6C0",
+                code: "\uAC115-\uBC14",
+                condition: "\uB098\uBB34 \uB9CE\uC74C",
+                slots: [
+                  "\uC77C6",
+                  "\uC7AC7"
+                ],
+                diagnosis: "\uB098\uBB34\uAC00 \uC5BD\uD600 \uC7A1\uBAA9\uCC98\uB7FC \uC790\uB77C\uAE30 \uC27D\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uAE08\uB9E5\uC758 \uC77C\uB85C \uC18E\uC544 \uB0B4\uACE0, \uBC88 \uAC83\uC740 \uB545\uACFC \uD130\uB85C \uBB36\uC5B4 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.GA.065"
+                ],
+                source: [
+                  "R2.GA.065"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uB098\uBB34",
+                stageNote: "\uACC1\uC758 \uACBD\uC7C1\uACFC \uB3C4\uC6C0",
+                code: "\uAC115-\uC0AC",
+                condition: "\uC544\uB798 \uAE00\uC790\uC5D0 \uB098\uBB34 \uBFCC\uB9AC \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uC704\uB85C\uB294 \uD06C\uAC8C \uC790\uB790\uB294\uB370 \uBC1C\uBC11\uC758 \uBFCC\uB9AC\uAC00 \uC595\uC2B5\uB2C8\uB2E4. \uD070 \uC790\uB9AC\uC640 \uD070\uB3C8\uC774 \uC640\uB3C4 \uAC10\uB2F9\uC774 \uBC84\uAC81\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBFCC\uB9AC\uAC00 \uAE4A\uC5B4\uC9C0\uB294 \uB54C\uB97C \uAE30\uB2E4\uB824 \uD070 \uAC83\uC744 \uBC1B\uC73C\uC138\uC694. \uADF8\uC804\uC5D0\uB294 \uC791\uAC8C \uD655\uC2E4\uD788 \uC313\uC73C\uC138\uC694.",
+                evidence: [
+                  "R2.GA.066"
+                ],
+                source: [
+                  "R2.GA.066"
+                ]
+              },
+              {
+                stage: 6,
+                stageName: "\uBB36\uC784",
+                code: "\uAC116-\uAC00",
+                condition: "\uC791\uC740 \uB545\uACFC \uBB36\uC784",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uACC42"
+                ],
+                diagnosis: "\uC791\uC740 \uB545\uC5D0 \uBB36\uC778 \uD070 \uB098\uBB34\uC785\uB2C8\uB2E4. \uC5ED\uD560\uACFC \uC790\uB9AC\uAC00 \uB2F9\uC2E0\uC744 \uBD99\uC7A1\uC544 \uAC00\uC9C4 \uD798\uC744 \uB2E4 \uC4F0\uC9C0 \uBABB\uD569\uB2C8\uB2E4.",
+                prescription: "\uBB36\uC784\uC774 \uD480\uB9AC\uB294 \uB54C\uAC00 \uC815\uD574\uC838 \uC788\uC2B5\uB2C8\uB2E4. \uADF8\uC804\uAE4C\uC9C0\uB294 \uBB36\uC778 \uADF8 \uC77C\uC744 \uB2F9\uC2E0\uC758 \uC77C\uB85C \uC0BC\uC73C\uC138\uC694.",
+                evidence: [
+                  "R2.GA.073"
+                ],
+                note: "1\uCE35 \xA77",
+                source: [
+                  "R2.GA.073"
+                ]
+              },
+              {
+                stage: 7,
+                stageName: "\uD2B9\uC131 (\uB05D \uC2AC\uB86F \uD6C4\uBCF4)",
+                code: "\uAC117-\uAC00",
+                condition: "\uD56D\uC0C1",
+                slots: [
+                  "\uB05D3"
+                ],
+                diagnosis: "\uD070 \uB098\uBB34\uB294 \uC624\uB798 \uC790\uB77C\uC57C \uC544\uB984\uB4DC\uB9AC\uAC00 \uB429\uB2C8\uB2E4. \uC717\uC138\uB300\uAC00 \uC77C\uAD70 \uC77C\uACFC \uD130\uB97C \uC774\uC5B4 \uD0A4\uC6B8 \uB54C \uD798\uC774 \uB0A9\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.GA.083"
+                ],
+                source: [
+                  "R2.GA.083"
+                ]
+              }
+            ],
+            C: [
+              {
+                code: "\uAC11\uC6B4-\uAC00",
+                incoming: "\uAC70\uB300\uD55C \uC0B0\uB9E5",
+                slots: [
+                  "\uC5F04",
+                  "\uC5F05",
+                  "\uACC43",
+                  "\uC7AC3"
+                ],
+                sentence: "\uD070 \uB545\uC774 \uB4E4\uC5B4\uC640 \uBFCC\uB9AC\uB97C \uB0B4\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uC77C\uACFC \uACC1\uC758 \uC790\uB9AC\uAC00 \uD568\uAED8 \uC815\uD574\uC9D1\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.021",
+                  "R2.GA.076"
+                ]
+              },
+              {
+                code: "\uAC11\uC6B4-\uB098",
+                incoming: "\uC791\uC740 \uB545 (\uD070 \uB098\uBB34 \uB458\uC77C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uACC1\uC758 \uB098\uBB34\uAC00 \uC815\uB9AC\uB418\uBA70 \uB2F9\uC2E0\uC758 \uC790\uB9AC\uAC00 \uC5F4\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.060"
+                ]
+              },
+              {
+                code: "\uAC11\uC6B4-\uB2E4",
+                incoming: "\uBB3C (\uC6D0\uAD6D\uC5D0 \uBB3C \uC5C6\uC744 \uB54C)",
+                slots: [
+                  "\uC7AC3",
+                  "\uACC43"
+                ],
+                sentence: "\uBA54\uB9D0\uB790\uB358 \uB545\uC774 \uC816\uC5B4 \uC77C\uAD70 \uAC83\uC774 \uBD88\uC5B4\uB098\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.072",
+                  "R2.GA.026"
+                ]
+              },
+              {
+                code: "\uAC11\uC6B4-\uB77C",
+                incoming: "\uD0DC\uC591 (\uC6D0\uAD6D\uC5D0 \uBD88 \uC5C6\uC744 \uB54C)",
+                slots: [
+                  "\uC7AC5",
+                  "\uACC44"
+                ],
+                sentence: "\uC624\uB798 \uC900\uBE44\uD55C \uAC83\uC774 \uAF43\uC744 \uD53C\uC6B0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.041"
+                ]
+              },
+              {
+                code: "\uAC11\uC6B4-\uB9C8",
+                incoming: "\uC544\uB798 \uAE00\uC790\uAC00 \uB098\uBB34 \uBFCC\uB9AC\uB85C \uBAA8\uC784",
+                slots: [
+                  "\uACC43"
+                ],
+                sentence: "\uBC1C\uBC11\uC774 \uB2E8\uB2E8\uD574\uC838 \uD070 \uC790\uB9AC\uB97C \uAC10\uB2F9\uD558\uAC8C \uB418\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.066"
+                ]
+              },
+              {
+                code: "\uAC11\uC6B4-\uBC14",
+                incoming: "\uD070 \uB098\uBB34\uB098 \uC791\uC740 \uB545\uC774 \uB2E4\uC2DC \uC634 (\uBB36\uC5EC \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC42"
+                ],
+                slotNote: "\uD544\uC218",
+                sentence: "\uBB36\uC5EC \uC788\uB358 \uC790\uB9AC\uAC00 \uD480\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GA.073"
+                ],
+                note: "1\uCE35 \xA77"
+              },
+              {
+                code: "\uAC11\uC6B4-\uC0AC",
+                incoming: "\uD0DC\uC591\uC774 \uD558\uB098 \uB354 \uC634 (\uC6D0\uAD6D\uC5D0 \uD0DC\uC591 \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                slotNote: "1\uCE35 \uD6C4\uBCF4(\uD574\uAC00 \uB458)",
+                sentence: "\uBE5B\uC774 \uACB9\uCCD0 \uC624\uD788\uB824 \uD750\uB824\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uD558\uB098\uC5D0 \uC9D1\uC911\uD558\uC138\uC694.",
+                evidence: [],
+                note: "[\uD310\uC815 \uD544\uC694]"
+              }
+            ],
+            D: [
+              {
+                item: "\uC774\uD63C\xB7\uBCC4\uAC70\xB7\uC8FC\uB9D0\uBD80\uBD80",
+                evidence: [
+                  "R2.GA.023"
+                ]
+              },
+              {
+                item: "\uB2E4\uB978 \uC774\uC131\uC744 \uCC3E\uC74C",
+                evidence: [
+                  "R2.GA.025"
+                ]
+              },
+              {
+                item: "\uC9C8\uBCD1\xB7\uD608\uC555\xB7\uC6B0\uC6B8",
+                evidence: [
+                  "R2.GA.040",
+                  "R2.GA.051"
+                ]
+              },
+              {
+                item: "\uAD50\uD1B5\uC0AC\uACE0\xB7\uC218\uC220",
+                evidence: [
+                  "R2.GA.052"
+                ]
+              },
+              {
+                item: "\uAC74\uAC15 \uD68C\uC0DD",
+                evidence: [
+                  "R2.GA.067"
+                ]
+              },
+              {
+                item: "\uC5EC\uC131 \uBB34\uAD00\uC758 \uB2E4\uC218 \uC778\uC5F0\xB7\uC131\uC9C1",
+                evidence: [
+                  "R2.GA.082"
+                ]
+              },
+              {
+                item: "\uC131\uC528 \uCC98\uBC29",
+                evidence: [
+                  "R2.GA.024"
+                ]
+              },
+              {
+                item: "\uC7AC\uC0B0 \uBA85\uC758 \uC870\uC815",
+                evidence: [
+                  "R2.GA.081"
+                ]
+              },
+              {
+                item: "\uB178\uB144 \uACE0\uB3C5",
+                evidence: [
+                  "R2.GA.004"
+                ]
+              }
+            ]
+          },
+          \u5DF1: {
+            name: "\uAE30\uD1A0 \u2014 \uAD6C\uD68D\uB418\uACE0 \uC0DD\uBA85\uC744 \uC0B4\uAC8C \uD558\uB294 \uB545",
+            sourcePage: "PDF page 26-30 (6. \uAE30\uD1A0)",
+            A: {
+              \uC0AC1\uD615\uC0C1: {
+                text: "\uB2F9\uC2E0\uC740 \uAD6C\uD68D\uB418\uACE0 \uC0DD\uBA85\uC744 \uC0B4\uAC8C \uD558\uB294 \uB545\uC785\uB2C8\uB2E4. {1\uC21C\uC704 \uAC00\uC9C0 \uD55C \uC904}",
+                source: [
+                  "R2.GI.001"
+                ]
+              },
+              \uC0AC2\uC131\uD5A5: {
+                text: "\uACC1\uC758 \uBAA8\uB4E0 \uAC83\uC744 \uBC1B\uC544\uB4E4\uC774\uACE0 \uAE38\uB7EC \uB0B4\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uC2E0\uC911\uD558\uACE0 \uC548\uC815\uC801\uC774\uBA70, \uD55C\uBC88 \uB9FA\uC740 \uBBFF\uC74C\uC744 \uC624\uB798 \uC9C0\uD0B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.002"
+                ]
+              },
+              \uC0AC3\uB0A8\uB4E4\uC774\uBCF4\uB294\uB098: {
+                text: "\uB108\uADF8\uB7FD\uACE0 \uAC00\uC815\uC801\uC778 \uC0AC\uB78C\uC73C\uB85C \uBCF4\uC785\uB2C8\uB2E4. \uACC1\uC5D0 \uC788\uC73C\uBA74 \uB9C8\uC74C\uC774 \uB193\uC774\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.002"
+                ]
+              },
+              \uC0AC4\uCE6D\uCC2C: {
+                text: "\uAC00\uAE4C\uC6B4 \uAC83\uC744 \uC815\uC131\uAECF \uAC00\uAFD4 \uAF43\uD53C\uC6B0\uB294 \uD798\uC774 \uC788\uC2B5\uB2C8\uB2E4. \uB2F9\uC2E0 \uC190\uC744 \uAC70\uCE5C \uC790\uB9AC\uB294 \uC0B4\uC544\uB0A9\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.001",
+                  "R2.GI.010"
+                ]
+              },
+              \uC77C1\uBB34\uAE30: {
+                text: "\uC0AC\uB78C\uACFC \uC77C\uC744 \uAE38\uB7EC \uB0B4\uB294 \uD798, \uAC00\uAE4C\uC6B4 \uC790\uB9AC\uB97C \uAF43\uD53C\uC6B0\uB294 \uD798\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.003",
+                  "R2.GI.010"
+                ]
+              },
+              \uC7AC6\uB3C8\uC758\uC21C\uC11C: {
+                text: "\uC815\uC6D0\uC740 \uC54C\uB9DE\uC740 \uD06C\uAE30\uC77C \uB54C \uAC00\uC7A5 \uD48D\uC131\uD569\uB2C8\uB2E4. \uAC10\uB2F9\uD560 \uC218 \uC788\uB294 \uB9CC\uD07C\uC744 \uB2E8\uB2E8\uD788 \uAC00\uAFC0 \uB54C \uC7AC\uBB3C\uC774 \uBA38\uBB45\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.004",
+                  "R2.GI.082"
+                ]
+              },
+              \uC5F01\uAD00\uACC4\uC120\uC5B8: {
+                text: "\uC815\uC6D0\uC740 \uAF43\uB098\uBB34\uB97C \uD488\uC5B4 \uC0B4\uAC8C \uD558\uB294 \uB545\uC785\uB2C8\uB2E4. \uB2F9\uC2E0\uB3C4 \uACC1\uC758 \uC0AC\uB78C\uC744 \uC0B4\uB730\uD788 \uD488\uACE0 \uAC00\uAFB8\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uADF8\uB7EC\uBA74\uC11C \uC18D\uC73C\uB85C\uB294 \uB2F9\uC2E0\uC758 \uC815\uC6D0\uC5D0 \uC624\uB798 \uBFCC\uB9AC\uB0B4\uB9B4 \uC54C\uB9DE\uC740 \uAF43\uB098\uBB34 \uAC19\uC740 \uC0AC\uB78C\uC744 \uBC14\uB78D\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.001",
+                  "R2.GI.020"
+                ]
+              },
+              \uACB0\uD63C\uC870\uAC74: {
+                label: "\uACB0\uD63C \uC870\uAC74",
+                text: "\uD478\uB978 \uB369\uAD74\uC774 \uC2EC\uC5B4\uC9C8 \uB54C. \uD070 \uB098\uBB34\uC640 \uBB36\uC5EC \uC788\uC73C\uBA74 \uADF8 \uBB36\uC784\uC774 \uD480\uB9B4 \uB54C.",
+                source: [
+                  "R2.GI.020",
+                  "1\uCE35 \xA77"
+                ]
+              },
+              \uB05D\uC18C\uC7AC: {
+                label: "\uB05D \uC18C\uC7AC",
+                text: "\uAE38\uB7EC \uB0B4\uB294 \uD798 / \uC54C\uB9DE\uC740 \uD06C\uAE30\uB97C \uC544\uB294 \uC9C0\uD61C",
+                source: [
+                  "R2.GI.002",
+                  "R2.GI.004"
+                ]
+              },
+              \uC9C1\uC5C5\uACB0: {
+                label: "\uC9C1\uC5C5 \uACB0(\uCC38\uACE0\uC6A9, \uB098\uC5F4 \uAE08\uC9C0)",
+                text: "\uC791\uC740 \uAD50\uC721(\uC720\uCE58\uC6D0~\uACE0\uAD50), \uC870\uACBD, \uB545\uC774 \uBA54\uB9C8\uB974\uBA74 \uC131\uC9C1.",
+                source: [
+                  "R2.GI.003"
+                ]
+              }
+            },
+            B: [
+              {
+                stage: 1,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uC815\uC6D0\uC5D0 \uBB34\uC5C7\uC774 \uC2EC\uC5B4\uC84C\uB098 (\uC790\uB9AC\uC640 \uACC1)",
+                code: "\uAE301-\uAC00",
+                condition: "\uD478\uB978 \uB369\uAD74 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uC815\uC6D0\uC5D0 \uAF43\uB098\uBB34\uAC00 \uC2EC\uC5B4\uC9C4 \uB545\uC785\uB2C8\uB2E4. \uAC00\uAE4C\uC6B4 \uC0AC\uB78C\uACFC \uC790\uB9AC\uB97C \uD589\uBCF5\uD558\uAC8C \uAC00\uAFC9\uB2C8\uB2E4.",
+                prescription: "\uC544\uC774\uB4E4\uC744 \uAC00\uB974\uCE58\uB294 \uC77C, \uD559\uAD50\uC640 \uB2FF\uC740 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4. \uB369\uAD74\uC774 \uAE08\uB9E5\uC744 \uBD88\uB7EC\uC640 \uACF5\uC801\uC778 \uC790\uB9AC\uB85C\uB3C4 \uC774\uC5B4\uC9D1\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.021"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uC815\uC6D0\uC5D0 \uBB34\uC5C7\uC774 \uC2EC\uC5B4\uC84C\uB098 (\uC790\uB9AC\uC640 \uACC1)",
+                code: "\uAE301-\uB098",
+                condition: "\uD070 \uB098\uBB34\uC640 \uBB36\uC784",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uACC42"
+                ],
+                diagnosis: "\uC791\uC740 \uB545\uC5D0 \uD070 \uB098\uBB34\uAC00 \uBB36\uC5EC \uC788\uC2B5\uB2C8\uB2E4. \uB9E1\uC740 \uC790\uB9AC\uC640 \uC5ED\uD560\uC774 \uB2F9\uC2E0\uC744 \uBD99\uC7A1\uACE0, \uB098\uBB34\uAC00 \uC790\uB784\uC218\uB85D \uBC1C\uBC11\uC774 \uBC84\uAC70\uC6CC\uC9D1\uB2C8\uB2E4.",
+                prescription: "\uD070 \uC774\uB984\uC744 \uC887\uAE30\uBCF4\uB2E4 \uC54C\uB9DE\uC740 \uD06C\uAE30\uC758 \uC77C\uB85C \uBC14\uAFD4 \uC2EC\uC73C\uC138\uC694. \uBB36\uC784\uC774 \uD480\uB9AC\uB294 \uB54C\uAC00 \uC815\uD574\uC838 \uC788\uC73C\uB2C8 \uADF8\uB54C\uB97C \uC9DA\uC5B4 \uB450\uC138\uC694.",
+                source: [
+                  "R2.GI.022",
+                  "R2.GI.004"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uC815\uC6D0\uC5D0 \uBB34\uC5C7\uC774 \uC2EC\uC5B4\uC84C\uB098 (\uC790\uB9AC\uC640 \uACC1)",
+                code: "\uAE301-\uB2E4",
+                condition: "\uB098\uBB34 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uC544\uC9C1 \uC544\uBB34\uAC83\uB3C4 \uC2EC\uC5B4\uC9C0\uC9C0 \uC54A\uC740 \uC815\uC6D0\uC774\uB77C, \uD488\uC740 \uD798\uC744 \uC3DF\uC744 \uACF3\uC774 \uC815\uD574\uC9C0\uC9C0 \uC54A\uC558\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uAC00\uAFC0 \uAC83\uC744 \uC815\uD558\uC138\uC694. \uC791\uC740 \uBC30\uC6C0\uD130, \uC815\uC6D0\uACFC \uACF5\uAC04\uC744 \uAC00\uAFB8\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.010",
+                  "R2.GI.020"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uC815\uC6D0\uC5D0 \uBB34\uC5C7\uC774 \uC2EC\uC5B4\uC84C\uB098 (\uC790\uB9AC\uC640 \uACC1)",
+                code: "\uAE301-\uB77C",
+                condition: "\uB098\uBB34 \uB9CE\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C6"
+                ],
+                diagnosis: "\uC2EC\uC5B4\uC9C4 \uB098\uBB34\uAC00 \uB108\uBB34 \uB9CE\uC544 \uB545\uC774 \uBC84\uAC70\uC6CC\uC9D1\uB2C8\uB2E4. \uCC59\uAE38 \uAC83\uC774 \uB9CE\uC544 \uC815\uC791 \uB0B4 \uC790\uB9AC\uAC00 \uD754\uB4E4\uB9AC\uAE30 \uC27D\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uAE08\uB9E5\uC758 \uC77C\uB85C \uAC00\uC9C0\uB97C \uC815\uB9AC\uD558\uC138\uC694. \uC815\uB9AC\uD55C \uB9CC\uD07C \uB545\uC774 \uC0B4\uC544\uB0A9\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.085"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uC815\uC6D0\uC744 \uC801\uC2DC\uB294 \uC7AC\uBB3C",
+                code: "\uAE302-\uAC00",
+                condition: "\uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C + \uB098\uBB34 \uC788\uC74C",
+                slots: [
+                  "\uC7AC1"
+                ],
+                diagnosis: "\uC54C\uB9DE\uC740 \uBE44\uAC00 \uC815\uC6D0\uC744 \uC801\uC2ED\uB2C8\uB2E4. \uAC00\uAFB8\uB294 \uB9CC\uD07C \uAC70\uB450\uB294 \uAD6C\uC870\uC785\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                source: [
+                  "R2.GI.010",
+                  "R2.GI.032"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uC815\uC6D0\uC744 \uC801\uC2DC\uB294 \uC7AC\uBB3C",
+                code: "\uAE302-\uB098",
+                condition: "\uBB3C \uC788\uC74C + \uB098\uBB34 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uBB3C\uACFC \uD759\uB9CC \uC788\uC5B4 \uB545\uC774 \uD759\uD0D5\uC774 \uB429\uB2C8\uB2E4. \uB4E4\uC5B4\uC628 \uAC83\uC774 \uBA38\uBB3C\uC9C0 \uC54A\uACE0 \uD769\uC5B4\uC9D1\uB2C8\uB2E4.",
+                prescription: "\uAF43\uB098\uBB34\uB97C \uC2EC\uB4EF \uBB34\uC5B8\uAC00\uB97C \uAE30\uB974\uB294 \uC77C\uC744 \uC2DC\uC791\uD558\uC138\uC694. \uACC1\uC758 \uC790\uB9AC\uAC00 \uC815\uD574\uC9C8 \uB54C \uC7AC\uBB3C\uB3C4 \uB9D1\uC544\uC9D1\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.030",
+                  "R2.GI.032"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uC815\uC6D0\uC744 \uC801\uC2DC\uB294 \uC7AC\uBB3C",
+                code: "\uAE302-\uB2E4",
+                condition: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218, \uB610\uB294 \uBB3C \uB9CE\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC7AC2",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uC791\uC740 \uB451\uC5D0 \uD070\uBB3C\uC774 \uBC00\uB824\uC640 \uB451\uC774 \uBC84\uD2F0\uAE30 \uC5B4\uB835\uC2B5\uB2C8\uB2E4. \uB4E4\uC5B4\uC628 \uB9CC\uD07C \uC27D\uAC8C \uD769\uC5B4\uC9D1\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC744 \uC904\uC5EC \uC904 \uB4F1\uBD88\uC774 \uB4E4\uC5B4\uC624\uB294 \uB54C\uC5D0 \uC7AC\uBB3C\uC744 \uC950\uACE0 \uC791\uC740 \uD130\uAC00 \uC0DD\uAE41\uB2C8\uB2E4. \uADF8\uC804\uC5D0\uB294 \uBC14\uB2E4 \uAC74\uB108\uC758 \uC77C, \uAE08\uB9E5\uACFC \uBB3C\uC758 \uC77C, \uB9C8\uC74C\uC744 \uBC1D\uD788\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.011",
+                  "R2.GI.031"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uC815\uC6D0\uC744 \uC801\uC2DC\uB294 \uC7AC\uBB3C",
+                code: "\uAE302-\uB77C",
+                condition: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218 + \uD070 \uB098\uBB34",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8"
+                ],
+                diagnosis: "\uD070\uBB3C\uC774 \uD070 \uB098\uBB34\uB97C \uD0A4\uC6B0\uBA74 \uC791\uC740 \uB545\uC774 \uB05D\uB0B4 \uBC84\uD2F0\uC9C0 \uBABB\uD569\uB2C8\uB2E4.",
+                prescription: "\uD070 \uB098\uBB34 \uB300\uC2E0 \uC54C\uB9DE\uC740 \uD06C\uAE30\uC758 \uB098\uBB34\uB85C \uBC14\uAFD4 \uC2EC\uC73C\uC138\uC694.",
+                source: [
+                  "R2.GI.070"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uC815\uC6D0\uC744 \uC801\uC2DC\uB294 \uC7AC\uBB3C",
+                code: "\uAE302-\uB9C8",
+                condition: "\uBB3C \uC57D\uD568",
+                slots: [
+                  "\uC77C4"
+                ],
+                diagnosis: "\uBB3C\uC774 \uC595\uC544 \uC815\uC6D0\uC774 \uC27D\uAC8C \uB9C8\uB985\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC744 \uB9CC\uB4E4\uC5B4 \uC8FC\uB294 \uAE08\uB9E5\uC758 \uC77C, \uACE7 \uAE30\uC900\uACFC \uAE30\uC220\uC758 \uC77C\uC774 \uC815\uC6D0\uC744 \uC801\uC2ED\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.050"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uC815\uC6D0\uC744 \uC801\uC2DC\uB294 \uC7AC\uBB3C",
+                code: "\uAE302-\uBC14",
+                condition: "\uC544\uB798 \uAE00\uC790\uC758 \uC816\uC740 \uD759\uC774 \uBB3C\uC744 \uB9CC\uB098 \uD750\uB824\uC9D0",
+                slots: [
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uB545 \uBC11\uC5D0\uC11C \uBB3C\uC774 \uD750\uB824\uC838 \uC560\uC4F4 \uB9CC\uD07C \uB0A8\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uD750\uB824\uC9C0\uB294 \uC6D0\uC778\uC744 \uB530\uB77C \uCC98\uBC29\uD55C\uB2E4(1\uCE35 \uD0C1\uC218 \uD574\uBC95).",
+                source: [
+                  "R2.GI.081",
+                  "1\uCE35 \uD0C1\uC218"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uC744 \uD53C\uC6B0\uB294 \uBCD5",
+                code: "\uAE303-\uAC00",
+                condition: "\uD0DC\uC591\uC774 \uC148",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uBCD5\uC774 \uB108\uBB34 \uC138\uC11C \uC815\uC6D0\uC758 \uAF43\uC774 \uB9C8\uB974\uACE0 \uAC70\uB458 \uAC83\uC774 \uC904\uC5B4\uB4ED\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC744 \uB9CC\uB4E4\uC5B4 \uC8FC\uB294 \uBCF4\uC11D\uC774 \uB4E4\uC5B4\uC624\uB294 \uB54C\uB97C \uC9DA\uC5B4 \uB450\uACE0, \uADF8\uC804\uC5D0\uB294 \uAE08\uB9E5\uC758 \uC77C\uB85C \uBB3C\uC744 \uB300\uC138\uC694.",
+                source: [
+                  "R2.GI.040",
+                  "R2.GI.012"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uC744 \uD53C\uC6B0\uB294 \uBCD5",
+                code: "\uAE303-\uB098",
+                condition: "\uB4F1\uBD88 \uC788\uC74C",
+                slots: [
+                  "\uC5F03",
+                  "\uACC44"
+                ],
+                diagnosis: "\uC815\uC6D0\uC744 \uBE44\uCD94\uB294 \uB2EC\uBE5B\uC774 \uC788\uC2B5\uB2C8\uB2E4. \uAF43\uB098\uBB34\uAC00 \uC5C6\uC5B4\uB3C4 \uB4F1\uBD88\uC774 \uD070\uBB3C\uC744 \uB04C\uC5B4\uC640 \uB098\uBB34\uB97C \uC2EC\uC5B4 \uC90D\uB2C8\uB2E4.",
+                prescription: "\uB113\uC740 \uD638\uC218\uAC00 \uB4E4\uC5B4\uC624\uB294 \uB54C\uC5D0 \uC7AC\uBB3C\uACFC \uACC1\uC758 \uC790\uB9AC\uAC00 \uD568\uAED8 \uC790\uB9AC\uB97C \uC7A1\uC2B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.041"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uAE08",
+                stageNote: "\uC815\uC6D0\uC744 \uB2E4\uB4EC\uB294 \uC190",
+                code: "\uAE304-\uAC00",
+                condition: "\uCEE4\uB2E4\uB780 \uAE08\uB9E5 + \uB098\uBB34 \uC5C6\uC74C",
+                slots: [
+                  "\uC77C2",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uB545\uC18D \uAE08\uB9E5\uC774 \uAF43\uB098\uBB34\uB97C \uBD88\uB7EC\uC640 \uC815\uC6D0\uC5D0 \uC2EC\uC5B4 \uC90D\uB2C8\uB2E4.",
+                prescription: "\uAD6D\uAC00\uC640 \uAD00\uB828\uB41C \uC77C\uB85C \uC774\uC5B4\uC9C0\uB294 \uAE38\uC774 \uC788\uC9C0\uB9CC \uB3CC\uC544\uAC00\uB294 \uAE38\uC785\uB2C8\uB2E4. \uB2E8\uACC4\uB97C \uD558\uB098\uC529 \uBC1F\uC544 \uAC00\uB294 \uBC29\uC2DD\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.051"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uAE08",
+                stageNote: "\uC815\uC6D0\uC744 \uB2E4\uB4EC\uB294 \uC190",
+                code: "\uAE304-\uB098",
+                condition: "\uC138\uACF5\uB41C \uBCF4\uC11D + \uD478\uB978 \uB369\uAD74",
+                slots: [
+                  "\uC77C2",
+                  "\uC7AC1"
+                ],
+                diagnosis: "\uAF43\uB098\uBB34\uC5D0 \uB9DE\uB294 \uC804\uC9C0\uAC00\uC704\uB97C \uC954 \uC815\uC6D0\uC0AC\uC785\uB2C8\uB2E4.",
+                prescription: "\uAD6D\uAC00\uC640 \uAD00\uB828\uB41C \uAE30\uAD00, \uACF5\uC801\uC778 \uC77C\uC5D0\uC11C \uC7AC\uBB3C\uC744 \uB9CC\uB4ED\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.052"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uD759",
+                stageNote: null,
+                code: "\uAE305-\uAC00",
+                condition: "\uC791\uC740 \uB545 \uB458",
+                slots: [
+                  "\uC77C3",
+                  "\uC7AC7"
+                ],
+                diagnosis: "\uC815\uC6D0\uC774 \uB458\uC774\uB77C \uB450 \uAC00\uC9C0 \uC77C, \uB450 \uAC1C\uC758 \uD130\uB97C \uD568\uAED8 \uAFB8\uB9BD\uB2C8\uB2E4.",
+                prescription: "\uB450 \uC790\uB9AC\uB97C \uAC01\uAC01 \uAC00\uAFB8\uC138\uC694. \uC77C\uB3C4 \uD130\uB3C4 \uB458\uB85C \uB098\uB220 \uC9C0\uD0A4\uB294 \uAC83\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.060"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uD759",
+                stageNote: null,
+                code: "\uAE305-\uB098",
+                condition: "\uAC70\uB300\uD55C \uC0B0\uB9E5 \uC788\uC74C",
+                slots: [
+                  "\uC77C3",
+                  "\uC7AC1"
+                ],
+                diagnosis: "\uC791\uC740 \uC815\uC6D0 \uACC1\uC5D0 \uD070 \uB545\uC774 \uBD99\uC5B4 \uC788\uC5B4, \uC791\uC740 \uC77C\uC744 \uD06C\uAC8C \uD0A4\uC6CC \uAC08 \uC218 \uC788\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC815\uC6D0\uC5D0\uC11C \uC790\uB780 \uB098\uBB34\uB294 \uD070 \uB545\uC73C\uB85C \uC62E\uACA8 \uD0A4\uC6B0\uC138\uC694. \uC791\uC740 \uC77C\uC744 \uD070 \uD310\uC73C\uB85C \uC62E\uAE30\uB294 \uAC10\uAC01\uC774 \uB2F9\uC2E0\uC758 \uAE38\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.062"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uD759",
+                stageNote: null,
+                code: "\uAE305-\uB098\u2032",
+                condition: "\uC0B0\uB9E5\uC774 \uC55E \uAE30\uB465(\uD574\xB7\uB2EC)\uC5D0 \uC788\uC74C / \uC815\uC6D0\uC774 \uC55E",
+                slots: [
+                  "\uC0AC3"
+                ],
+                diagnosis: "\uC0B0\uB9E5\uC774 \uC55E\uC774\uBA74: \uC791\uAC8C \uC2DC\uC791\uD574 \uC2A4\uC2A4\uB85C \uD06C\uAC8C \uC77C\uAD6C\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uC815\uC6D0\uC774 \uC55E\uC774\uBA74: \uC9D1\uC548\uACFC \uC717\uC138\uB300\uC758 \uC190\uAE38\uB85C \uC790\uB9AC\uB97C \uB113\uD600 \uC628 \uC0AC\uB78C\uC785\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                source: [
+                  "R2.GI.062"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uD759",
+                stageNote: null,
+                code: "\uAE305-\uB2E4",
+                condition: "\uC0B0\uB9E5\uC774 \uC2DC\uB0C7\uBB3C\uC744 \uB04C\uC5B4\uC634 (\uC544\uB798 \uAE00\uC790\uC5D0 \uBB3C\uC758 \uBFCC\uB9AC \uC788\uC74C)",
+                slots: [
+                  "\uC77C2",
+                  "\uC7AC1"
+                ],
+                diagnosis: "\uACC1\uC758 \uC0B0\uB9E5\uC774 \uB9D1\uC740 \uBB3C\uC744 \uBD88\uB7EC\uC640 \uB2F9\uC2E0\uC758 \uB545\uC744 \uC801\uC2ED\uB2C8\uB2E4. \uC0B0\uB9E5\uC774 \uD0DC\uC5B4\uB09C \uD574\uC5D0 \uC788\uC73C\uBA74, \uC7AC\uBB3C\uC740 \uAD6D\uAC00\uC640 \uAD00\uB828\uB41C \uAE30\uAD00\uC774\uB098 \uAD6D\uAC00\uC2DC\uD5D8\uC73C\uB85C \uB530\uB77C\uC624\uB294 \uC790\uACA9, \uACF5\uACF5\uC758 \uC77C\uAC10\uACFC \uC774\uC5B4\uC838 \uC788\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC774\uB984\uC774 \uAC78\uB9AC\uB294 \uACF5\uC801\uC778 \uBB34\uB300\uC5D0\uC11C \uAC00\uB974\uCE58\uACE0 \uBC1C\uD45C\uD558\uC138\uC694.",
+                source: [
+                  "1\uCE35 \xA75",
+                  "R2.GI.061",
+                  "\uAD6D\uAC00\uC790\uB9AC \uD310\uC815"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uD759",
+                stageNote: null,
+                code: "\uAE305-\uB77C",
+                condition: "\uC704 \uAC00\uC9C0 + \uC6D0\uAD6D\uC5D0 \uBD88 \uC5C6\uC74C",
+                slots: [
+                  "\uC77C3"
+                ],
+                diagnosis: "\uADF8 \uB04C\uC5B4\uC634\uC5D0\uC11C \uC5C6\uB358 \uBE5B\uAE4C\uC9C0 \uC0DD\uAE41\uB2C8\uB2E4.",
+                prescription: "\uBC29\uC1A1\xB7\uC608\uC220\xB7\uAD50\uC721\xB7\uB9C8\uC74C\uC744 \uB2E4\uB8E8\uB294 \uC77C\uACFC \uB2FF\uC744 \uB54C \uC0B6\uC774 \uD3B8\uC548\uD574\uC9D1\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.061"
+                ]
+              },
+              {
+                stage: 6,
+                stageName: "\uD2B9\uC131 (\uB05D \uC2AC\uB86F \uD6C4\uBCF4)",
+                stageNote: null,
+                code: "\uAE306-\uAC00",
+                condition: "\uD56D\uC0C1",
+                slots: [
+                  "\uB05D3"
+                ],
+                diagnosis: "\uC815\uC6D0\uC5D0 \uB098\uBB34\uAC00 \uC2EC\uC5B4\uC9C0\uBA74 \uBB3C\uC774 \uB9D1\uC544\uC9C0\uACE0 \uC7AC\uBB3C\uC774 \uBA38\uBB45\uB2C8\uB2E4. \uACC1\uC758 \uC790\uB9AC\uB97C \uC815\uD558\uB294 \uC77C\uC774 \uC815\uC6D0\uC744 \uC644\uC131\uD569\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                note: "\uCC98\uBC29 \uC5C6\uC74C(\uC6D0\uBB38 \u2014)",
+                source: [
+                  "R2.GI.080"
+                ]
+              },
+              {
+                stage: 6,
+                stageName: "\uD2B9\uC131 (\uB05D \uC2AC\uB86F \uD6C4\uBCF4)",
+                stageNote: null,
+                code: "\uAE306-\uB098",
+                condition: "\uD56D\uC0C1",
+                slots: [
+                  "\uB05D1",
+                  "\uB05D2"
+                ],
+                diagnosis: "\uD070 \uC774\uB984\uC744 \uBC14\uB77C\uB294 \uB9C8\uC74C\uC774 \uD06C\uC9C0\uB9CC, \uB2F9\uC2E0\uC758 \uD798\uC740 \uC54C\uB9DE\uC740 \uD06C\uAE30\uC758 \uC77C\uC5D0\uC11C \uAC00\uC7A5 \uC624\uB798\uAC11\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                note: "\uCC98\uBC29 \uC5C6\uC74C(\uC6D0\uBB38 \u2014)",
+                source: [
+                  "R2.GI.004"
+                ]
+              }
+            ],
+            C: [
+              {
+                code: "\uAE30\uC6B4-\uAC00",
+                incoming: "\uD478\uB978 \uB369\uAD74",
+                slots: [
+                  "\uC5F04",
+                  "\uC5F05",
+                  "\uACC43"
+                ],
+                sentence: "\uC815\uC6D0\uC5D0 \uAF43\uB098\uBB34\uAC00 \uC2EC\uC5B4\uC838 \uACC1\uC758 \uC790\uB9AC\uAC00 \uC815\uD574\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.020"
+                ]
+              },
+              {
+                code: "\uAE30\uC6B4-\uB098",
+                incoming: "\uD070 \uB098\uBB34",
+                slots: [
+                  "\uACC42"
+                ],
+                slotNote: "\uD544\uC218",
+                sentence: "\uD070 \uB098\uBB34\uC5D0 \uBB36\uC774\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uB9E1\uB294 \uC790\uB9AC\uAC00 \uCEE4\uC9C0\uB294 \uB9CC\uD07C \uBC1C\uBC11\uC744 \uC0B4\uD53C\uC138\uC694.",
+                source: [
+                  "R2.GI.022"
+                ]
+              },
+              {
+                code: "\uAE30\uC6B4-\uB2E4",
+                incoming: "\uD070 \uB098\uBB34\uB098 \uC791\uC740 \uB545\uC774 \uB2E4\uC2DC \uC634 (\uBB36\uC5EC \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC42"
+                ],
+                slotNote: "\uD544\uC218",
+                sentence: "\uBB36\uC600\uB358 \uC790\uB9AC\uAC00 \uD480\uB824 \uB2F9\uC2E0 \uC77C\uB85C \uD798\uC774 \uB3CC\uC544\uC624\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                source: [
+                  "1\uCE35 \xA77"
+                ]
+              },
+              {
+                code: "\uAE30\uC6B4-\uB77C",
+                incoming: "\uB4F1\uBD88 (\uBB3C \uB9CE\uC744 \uB54C)",
+                slots: [
+                  "\uC7AC3",
+                  "\uACC44"
+                ],
+                sentence: "\uB118\uCE58\uB358 \uBB3C\uC774 \uC904\uC5B4 \uC7AC\uBB3C\uC744 \uC950\uACE0 \uC791\uC740 \uD130\uAC00 \uC0DD\uAE30\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.031"
+                ]
+              },
+              {
+                code: "\uAE30\uC6B4-\uB9C8",
+                incoming: "\uC138\uACF5\uB41C \uBCF4\uC11D (\uBD88\uC774 \uC140 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uB9C8\uB978 \uC815\uC6D0\uC5D0 \uBB3C\uC774 \uC0DD\uAE30\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.040"
+                ]
+              },
+              {
+                code: "\uAE30\uC6B4-\uBC14",
+                incoming: "\uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C (\uC0B0\uB9E5 \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uACC1\uC758 \uD070 \uB545\uC774 \uC815\uC6D0\uC73C\uB85C \uBC14\uB00C\uBA70 \uD070 \uC774\uB984\uC744 \uBD88\uB7EC\uC624\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.061"
+                ]
+              },
+              {
+                code: "\uAE30\uC6B4-\uC0AC",
+                incoming: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uC791\uC740 \uB451\uC5D0 \uD070\uBB3C\uC774 \uB4DC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uB113\uD788\uAE30\uBCF4\uB2E4 \uC9C0\uD0A4\uB294 \uCABD\uC774 \uC774\uB86D\uC2B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.011"
+                ]
+              },
+              {
+                code: "\uAE30\uC6B4-\uC544",
+                incoming: "\uBB3C\uC774 \uC57D\uD574\uC9C0\uB294 10\uB144",
+                slots: [
+                  "\uC7AC3",
+                  "\uACC43"
+                ],
+                sentence: "\uC7AC\uBB3C\uC758 \uBB3C\uAE38\uC774 \uC595\uC544\uC9C0\uB294 \uB54C\uC785\uB2C8\uB2E4. \uD310\uC744 \uB113\uD788\uAE30\uBCF4\uB2E4 \uAC00\uC9C4 \uAC83\uC744 \uAC00\uAFB8\uB294 \uD750\uB984\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.082"
+                ]
+              },
+              {
+                code: "\uAE30\uC6B4-\uC790",
+                incoming: "\uB098\uBB34 10\uB144 + \uBB3C\uC774 \uB9C8\uB984",
+                slots: [
+                  "\uACC43"
+                ],
+                sentence: "\uC9D3\uACE0 \uB298\uB9AC\uB294 \uC77C\uBCF4\uB2E4 \uC9C0\uD0A4\uB294 \uCABD\uC774 \uC774\uB85C\uC6B4 \uB54C\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.082"
+                ]
+              },
+              {
+                code: "\uAE30\uC6B4-\uCC28",
+                incoming: "\uC544\uB798 \uAE00\uC790\uAC00 \uB098\uBB34\uB85C \uBAA8\uC5EC \uBB3C\uC774 \uC0AC\uB77C\uC9D0 (\uB0A8\uC131, \uC6D0\uAD6D\uC5D0 \uD574\uC218)",
+                slots: [
+                  "\uC5F05"
+                ],
+                sentence: "\uACC1\uC758 \uC778\uC5F0\uC774 \uBC14\uB2E4 \uAC74\uB108, \uB610\uB294 \uC678\uAD6D\uACFC \uB2FF\uC740 \uC77C\uD130\uC5D0\uC11C \uC774\uC5B4\uC9C0\uB294 \uB54C\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GI.084"
+                ]
+              }
+            ],
+            D: [
+              {
+                item: "\uD070 \uB098\uBB34\uAC00 \uC788\uC73C\uBA74 \uAC00\uC815\uC0DD\uD65C\uC774 \uC6D0\uB9CC\uD558\uC9C0 \uBABB\uD558\uB2E4\uB294 \uC2E4\uAD00 \uC11C\uC220",
+                source: [
+                  "R2.GI.022"
+                ],
+                note: '\uC6D0\uBB38 \u2014 \uC9C4\uB2E8\uC740 "\uBC1C\uBC11\uC774 \uBC84\uAC70\uC6CC\uC9D0"\uAE4C\uC9C0\uB9CC'
+              },
+              {
+                item: "\uB450 \uC9D1 \uC0B4\uB9BC",
+                source: [
+                  "R2.GI.060"
+                ],
+                note: "\uC6D0\uBB38"
+              },
+              {
+                item: "\uBD80\uBD80\xB7\uC0AC\uC5C5 \uC778\uC5F0 \uC5C6\uC74C",
+                source: [
+                  "R2.GI.081"
+                ]
+              },
+              {
+                item: "\uC554\uAE30\uB825 \uC800\uD558",
+                source: [
+                  "R2.GI.083"
+                ]
+              },
+              {
+                item: "\uC5EC\uC131\uC758 \uC5EC\uB7EC \uC774\uC131 \uAD00\uACC4",
+                source: [
+                  "R2.GI.085"
+                ]
+              },
+              {
+                item: "\uC7AC\uC640 \uBA85\uC608\uAC00 \uCD94\uB77D\uD55C\uB2E4\uB294 \uC11C\uC220",
+                source: [
+                  "R2.GI.070"
+                ]
+              },
+              {
+                item: '"\uACB0\uD63C\uC744 \uD558\uBA74 \uD574\uACB0\uB41C\uB2E4"\uB294 \uCC98\uBC29',
+                source: [
+                  "R2.GI.032"
+                ],
+                note: "\uACB0\uC815 \uC601\uD5A5"
+              }
+            ]
+          },
+          \u5E9A: {
+            name: "\uACBD\uAE08 \u2014 \uCEE4\uB2E4\uB780 \uAE08\uB9E5",
+            sourcePage: "PDF page 31-34 (7. \uACBD\uAE08)",
+            A: {
+              \uC0AC1\uD615\uC0C1: {
+                text: "\uB2F9\uC2E0\uC740 \uCEE4\uB2E4\uB780 \uAE08\uB9E5\uC785\uB2C8\uB2E4. {1\uC21C\uC704 \uAC00\uC9C0 \uD55C \uC904}",
+                source: [
+                  "R2.GYEONG.001"
+                ]
+              },
+              \uC0AC2\uC131\uD5A5: {
+                text: "\uACB0\uB2E8\uC774 \uBE60\uB974\uACE0, \uC5B4\uC9C0\uB7EC\uC6B4 \uAC83\uC744 \uAE30\uC900\uB300\uB85C \uBC18\uB4EF\uD558\uAC8C \uC815\uB9AC\uD558\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uCC45\uC784\uC744 \uBB34\uAC81\uAC8C \uC5EC\uAE30\uACE0 \uC758\uB9AC\uB97C \uC9C0\uD0B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.002"
+                ]
+              },
+              \uC0AC3\uB0A8\uB4E4\uC774\uBCF4\uB294\uB098: {
+                text: "\uB2E8\uB2E8\uD558\uACE0 \uBBFF\uC74C\uC9C1\uD574 \uBCF4\uC785\uB2C8\uB2E4. \uC18D\uB9C8\uC74C\uC740 \uC27D\uAC8C \uAEBC\uB0B4\uC9C0 \uC54A\uACE0, \uC633\uACE0 \uADF8\uB984 \uC55E\uC5D0\uC11C\uB294 \uBB3C\uB7EC\uC11C\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.002"
+                ]
+              },
+              \uC0AC4\uCE6D\uCC2C: {
+                text: "\uD310\uB2E8\uC774 \uD750\uD2B8\uB7EC\uC9C0\uC9C0 \uC54A\uC544, \uD754\uB4E4\uB9AC\uB294 \uC0C1\uD669\uC77C\uC218\uB85D \uC0AC\uB78C\uB4E4\uC774 \uB2F9\uC2E0\uC758 \uACB0\uC815\uC744 \uAE30\uB2E4\uB9BD\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.002"
+                ]
+              },
+              \uC77C1\uBB34\uAE30: {
+                text: "\uAE30\uC900\uC744 \uC138\uC6B0\uACE0 \uC9C0\uD0A4\uB294 \uD798, \uC5C9\uD0A8 \uAC83\uC744 \uC798\uB77C \uB0B4\uACE0 \uC815\uB9AC\uD558\uB294 \uD798\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.002",
+                  "R2.GYEONG.003"
+                ]
+              },
+              \uC7AC6\uB3C8\uC758\uC21C\uC11C: {
+                text: "\uCE7C\uC740 \uB9DE\uB294 \uC190\uC7A1\uC774\uB97C \uC950\uC5C8\uC744 \uB54C \uC81C \uAC12\uC744 \uD569\uB2C8\uB2E4. \uC7AC\uBB3C\uC774 \uC774\uC5B4\uC9C0\uB294 \uAE38\uC744 \uB530\uB77C\uAC00\uBA70 \uC774\uB984\uC744 \uC138\uC6B0\uB294 \uAC83\uC774 \uC774 \uC77C\uAC04\uC758 \uC21C\uC11C\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.010",
+                  "R2.GYEONG.081"
+                ]
+              },
+              \uC5F01\uAD00\uACC4\uC120\uC5B8: {
+                text: "\uAE08\uB9E5\uC740 \uB2E8\uB2E8\uD558\uACE0 \uACE7\uC544\uC11C \uC27D\uAC8C \uD718\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4. \uB2F9\uC2E0\uB3C4 \uB9C8\uC74C\uC744 \uC815\uD558\uBA74 \uB05D\uAE4C\uC9C0 \uC9C0\uD0A4\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uADF8\uB7EC\uBA74\uC11C \uC18D\uC73C\uB85C\uB294 \uB2F9\uC2E0\uC758 \uD798\uC744 \uC54C\uB9DE\uAC8C \uC950\uC5B4 \uC904 \uC190\uC7A1\uC774 \uAC19\uC740 \uC0AC\uB78C\uC744 \uBC14\uB78D\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.002",
+                  "R2.GYEONG.020"
+                ]
+              },
+              \uACB0\uD63C\uC870\uAC74: {
+                label: "\uACB0\uD63C \uC870\uAC74",
+                text: "\uD070 \uB098\uBB34\uAC00 \uC190\uC7A1\uC774\uB85C \uB07C\uC6CC\uC9C8 \uB54C.",
+                source: [
+                  "R2.GYEONG.020"
+                ]
+              },
+              \uB05D\uC18C\uC7AC: {
+                label: "\uB05D \uC18C\uC7AC",
+                text: "\uACE7\uC74C / \uC815\uB9AC\uD558\uB294 \uD798 / \uB9E1\uC740 \uB9CC\uD07C\uB9CC \uC950\uB294 \uC808\uC81C",
+                source: [
+                  "R2.GYEONG.002",
+                  "R2.GYEONG.082"
+                ]
+              },
+              \uC9C1\uC5C5\uACB0: {
+                label: "\uC9C1\uC5C5 \uACB0(\uCC38\uACE0\uC6A9, \uB098\uC5F4 \uAE08\uC9C0)",
+                text: "\uBC95\xB7\uAD70\xB7\uACBD\xB7\uAE08\uC735\xB7\uACBD\uC601, \uC758\uD559\xB7\uC758\uC57D\xB7\uC0DD\uBA85\uACF5\uD559, \uC804\uAE30\xB7\uC804\uC790\xB7\uC790\uB3D9\uCC28\xB7\uC74C\uD5A5\xB7\uAE08\uC18D\xB7\uAE30\uACC4. \uAD6D\uAC00\uC758 \uAD8C\uD55C\uC744 \uBC1B\uB294 \uC77C\uC774 \uB9CE\uB2E4.",
+                source: [
+                  "R2.GYEONG.003"
+                ]
+              }
+            },
+            B: [
+              {
+                stage: 1,
+                stageName: "\uC190\uC7A1\uC774",
+                stageNote: "\uCE7C\uC744 \uC958 \uB098\uBB34",
+                code: "\uACBD1-\uAC00",
+                condition: "\uD070 \uB098\uBB34 \uC788\uC74C (\uC544\uB798\uC5D0 \uB098\uBB34 \uBFCC\uB9AC)",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C2"
+                ],
+                diagnosis: "\uD070 \uCE7C\uC5D0 \uB9DE\uB294 \uD070 \uC190\uC7A1\uC774\uB97C \uC950\uC5C8\uC2B5\uB2C8\uB2E4. \uD798\uC744 \uC81C\uB300\uB85C \uC4F8 \uC790\uB9AC\uB97C \uC544\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4.",
+                prescription: "\uD310\uC744 \uC815\uB9AC\uD558\uACE0 \uC774\uB044\uB294 \uC790\uB9AC, \uAE30\uC900\uC744 \uC9D1\uD589\uD558\uB294 \uC77C\uC5D0\uC11C \uC774\uB984\uACFC \uC7AC\uBB3C\uC774 \uD568\uAED8 \uC12D\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.010"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uC190\uC7A1\uC774",
+                stageNote: "\uCE7C\uC744 \uC958 \uB098\uBB34",
+                code: "\uACBD1-\uB098",
+                condition: "\uD478\uB978 \uB369\uAD74\uB9CC \uC788\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C2"
+                ],
+                diagnosis: "\uD070 \uCE7C\uC5D0 \uC791\uC740 \uC190\uC7A1\uC774\uB77C, \uD798\uC744 \uB2E4 \uC4F0\uBA74 \uC624\uD788\uB824 \uC190\uC774 \uB2E4\uCE69\uB2C8\uB2E4. \uC7AC\uBB3C\uC5D0 \uBB36\uC5EC \uB2F5\uB2F5\uD560 \uB54C\uAC00 \uC788\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC81C\uBCF5\uC744 \uC785\uB294 \uC77C, \uADDC\uC728\uC774 \uBD84\uBA85\uD55C \uC870\uC9C1\uC5D0\uC11C \uAD8C\uD55C\uC744 \uC4F0\uC138\uC694. \uAD8C\uD55C\uC740 \uC815\uD574\uC9C4 \uB9CC\uD07C\uB9CC \uC4F8 \uB54C \uB2F9\uC2E0\uC744 \uC9C0\uD0B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.022"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uC190\uC7A1\uC774",
+                stageNote: "\uCE7C\uC744 \uC958 \uB098\uBB34",
+                code: "\uACBD1-\uB2E4",
+                condition: "\uB098\uBB34 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC7AC2",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uC190\uC7A1\uC774 \uC5C6\uB294 \uD070 \uCE7C\uC785\uB2C8\uB2E4. \uD798\uC740 \uD070\uB370 \uC958 \uACF3\uC774 \uC5C6\uC5B4 \uC560\uC4F4 \uB9CC\uD07C \uB0A8\uC9C0 \uC54A\uACE0, \uD718\uB450\uB974\uB294 \uC0AC\uB78C\uC774 \uBA3C\uC800 \uB2E4\uCE58\uAE30 \uC27D\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC190\uC7A1\uC774\uB294 \uBC30\uC6C0\uC73C\uB85C \uB9CC\uB4ED\uB2C8\uB2E4. \uC624\uB798 \uC775\uD78C \uAE30\uC220\uACFC \uC790\uACA9\uC774 \uC190\uC7A1\uC774\uAC00 \uB429\uB2C8\uB2E4. \uD310\uC744 \uBC8C\uC774\uB294 \uC77C\uC740 \uC190\uC7A1\uC774\uAC00 \uB4E4\uC5B4\uC624\uB294 \uB54C\uC5D0 \uB9DE\uCD94\uC138\uC694.",
+                source: [
+                  "R2.GYEONG.023"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uC190\uC7A1\uC774",
+                stageNote: "\uCE7C\uC744 \uC958 \uB098\uBB34",
+                code: "\uACBD1-\uB77C",
+                condition: "\uB098\uBB34 \uB9CE\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uC190\uC7A1\uC774\uAC00 \uB108\uBB34 \uB9CE\uC544 \uCE7C\uB0A0\uC774 \uC27D\uAC8C \uC0C1\uD569\uB2C8\uB2E4. \uBC8C\uC5EC \uB193\uC740 \uAC83\uC774 \uB9CE\uC544 \uAC70\uB450\uB294 \uAC83\uC774 \uC801\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC790\uB8CC \uC5C6\uC74C \u2014 \uC9C4\uB2E8\uB9CC \uC4F4\uB2E4.",
+                source: [
+                  "R2.GYEONG.021"
+                ],
+                note: "\uCC98\uBC29 \uCE78 \uC6D0\uBB38 \uD45C\uAE30: \uC790\uB8CC \uC5C6\uC74C \u2014 \uC9C4\uB2E8\uB9CC \uC4F4\uB2E4."
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uCE7C\uC774 \uB178\uB294 \uACF3",
+                code: "\uACBD2-\uAC00",
+                condition: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218 (\uB9D1\uC74C)",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uD070\uBB3C\uC5D0\uC11C \uB178\uB294 \uCE7C\uC785\uB2C8\uB2E4. \uBB3C\uC774 \uB9D1\uC744\uC218\uB85D \uCE7C\uB0A0\uC774 \uBE5B\uB0A9\uB2C8\uB2E4.",
+                prescription: "\uB9D1\uC74C\uC744 \uC9C0\uD0A4\uB294 \uAC83, \uACE7 \uAE68\uB057\uD558\uACE0 \uC815\uB2F9\uD55C \uBC29\uC2DD\uC774 \uCE7C\uB0A0\uC744 \uC9C0\uD0B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.011",
+                  "R2.GYEONG.081"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uCE7C\uC774 \uB178\uB294 \uACF3",
+                code: "\uACBD2-\uB098",
+                condition: "\uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C\uB9CC \uC788\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uB180 \uBB3C\uC774 \uC595\uC544 \uAC00\uC9C4 \uD798\uC744 \uB2E4 \uD3BC\uCE58\uAE30 \uC5B4\uB835\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uB354 \uB113\uC740 \uBB3C\uC744 \uCC3E\uC544 \uB098\uAC00\uC138\uC694. \uAD6D\uACBD\uC744 \uB118\uB098\uB4DC\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.030",
+                  "R2.GYEONG.032"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uCE7C\uC774 \uB178\uB294 \uACF3",
+                code: "\uACBD2-\uB2E4",
+                condition: "\uBB3C \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uB180 \uBB3C\uC774 \uC5C6\uC5B4 \uCE7C\uC774 \uC4F0\uC77C \uACF3\uC744 \uCC3E\uC9C0 \uBABB\uD569\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC904\uAE30\uB97C \uB530\uB77C \uBC14\uB2E4\uB97C \uB118\uB098\uB4DC\uC138\uC694. \uD574\uC678\uC640 \uB2FF\uC740 \uC77C\uC5D0\uC11C \uB2A5\uB825\uC774 \uB4DC\uB7EC\uB0A9\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.032"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uCE7C\uC774 \uB178\uB294 \uACF3",
+                code: "\uACBD2-\uB77C",
+                condition: "\uBB3C \uB9CE\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uACC44"
+                ],
+                diagnosis: "\uBB3C\uC0B4\uC774 \uC138\uC11C \uCE7C\uB0A0\uC774 \uBB34\uB38C\uC9C0\uACE0, \uD0A4\uC6B4 \uAC83\uC774 \uB108\uBB34 \uCEE4\uC838 \uB2E4\uB8E8\uAE30 \uBC84\uAC81\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uD070\uBB3C\uC744 \uAC00\uB458 \uB451\uC774 \uB4E4\uC5B4\uC624\uB294 \uB54C\uB97C \uC9DA\uC5B4 \uB450\uC138\uC694.",
+                source: [
+                  "R2.GYEONG.031",
+                  "R2.GYEONG.012"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uCE7C\uC774 \uB178\uB294 \uACF3",
+                code: "\uACBD2-\uB9C8",
+                condition: "\uBB3C\uC774 \uD750\uB824\uC9D0",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uD750\uB9B0 \uBB3C\uC5D0\uC11C \uB180\uC544 \uCE7C\uB0A0\uC774 \uB179\uC2AC\uAE30 \uC27D\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uB9D1\uAC8C \uC9C0\uD0A4\uB294 \uAC83\uC774 \uCE7C\uC744 \uC9C0\uD0A4\uB294 \uC77C\uC785\uB2C8\uB2E4. \uC815\uB2F9\uD558\uACE0 \uAE68\uB057\uD55C \uBC29\uC2DD\uC744 \uACE0\uB974\uC138\uC694.",
+                source: [
+                  "R2.GYEONG.011",
+                  "R2.GYEONG.081"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uB451",
+                stageNote: "\uBB3C\uC744 \uAC00\uB450\uACE0 \uC190\uC7A1\uC774\uB97C \uC138\uC6B0\uB294 \uB545",
+                code: "\uACBD3-\uAC00",
+                condition: "\uAC70\uB300\uD55C \uC0B0\uB9E5 + \uD070 \uB098\uBB34 + \uB113\uC740 \uD638\uC218",
+                slots: [
+                  "\uC0AC4",
+                  "\uC7AC1"
+                ],
+                diagnosis: "\uB451\uC774 \uD070\uBB3C\uC744 \uAC00\uB450\uACE0, \uADF8 \uB451\uC5D0 \uC190\uC7A1\uC774 \uB098\uBB34\uAC00 \uC130\uC2B5\uB2C8\uB2E4. \uCE7C\uC744 \uC81C\uB300\uB85C \uC4F8 \uD310\uC774 \uB2E4 \uAC16\uCDB0\uC84C\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uADF8 \uD638\uC218 \uC704\uC5D0 \uD574\uAC00 \uB728\uBA74 \uC774\uB984\uACFC \uC7AC\uBB3C\uC774 \uD568\uAED8 \uC635\uB2C8\uB2E4. \uAD8C\uD55C\uC744 \uB9E1\uB294 \uC790\uB9AC\uB97C \uD53C\uD558\uC9C0 \uB9C8\uC138\uC694.",
+                source: [
+                  "R2.GYEONG.012"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uB451",
+                stageNote: "\uBB3C\uC744 \uAC00\uB450\uACE0 \uC190\uC7A1\uC774\uB97C \uC138\uC6B0\uB294 \uB545",
+                code: "\uACBD3-\uB098",
+                condition: "\uC791\uC740 \uB545 + \uB113\uC740 \uD638\uC218",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uC77C2"
+                ],
+                diagnosis: "\uC791\uC740 \uB451\uC774 \uD070\uBB3C\uC744 \uB9C9\uB290\uB77C \uD750\uB824\uC9C0\uAE30 \uC27D\uC2B5\uB2C8\uB2E4. \uB300\uC2E0 \uADF8 \uB545\uC774 \uC190\uC7A1\uC774 \uB098\uBB34\uB97C \uBD88\uB7EC\uC635\uB2C8\uB2E4.",
+                prescription: "\uC81C\uBCF5\uC744 \uC785\uB294 \uACF5\uC801\uC778 \uC77C\uB85C \uC190\uC7A1\uC774\uB97C \uC5BB\uC2B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.040"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uB451",
+                stageNote: "\uBB3C\uC744 \uAC00\uB450\uACE0 \uC190\uC7A1\uC774\uB97C \uC138\uC6B0\uB294 \uB545",
+                code: "\uACBD3-\uB2E4",
+                condition: "\uAC70\uB300\uD55C \uC0B0\uB9E5 + \uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C",
+                slots: [
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uD070 \uB545\uC5D0 \uC791\uC740 \uBB3C\uC774\uB77C \uC27D\uAC8C \uD750\uB824\uC9C0\uACE0 \uB180 \uBB3C\uB3C4 \uC595\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uD750\uB824\uC9C0\uB294 \uC6D0\uC778\uC744 \uB530\uB77C \uCC98\uBC29\uD55C\uB2E4(1\uCE35 \uD0C1\uC218 \uD574\uBC95).",
+                source: [
+                  "R2.GYEONG.041",
+                  "1\uCE35 \uD0C1\uC218"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uB451",
+                stageNote: "\uBB3C\uC744 \uAC00\uB450\uACE0 \uC190\uC7A1\uC774\uB97C \uC138\uC6B0\uB294 \uB545",
+                code: "\uACBD3-\uB77C",
+                condition: "\uC791\uC740 \uB545 \uC788\uC74C",
+                slots: [
+                  "\uC7AC7"
+                ],
+                diagnosis: "\uAE08\uB9E5\uC774 \uB369\uAD74\uC744 \uBD88\uB7EC\uC640 \uC791\uC740 \uB545\uC5D0 \uC2EC\uC5B4 \uC90D\uB2C8\uB2E4.",
+                prescription: "\uC791\uC740 \uD130\uB97C \uB9C8\uB828\uD558\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.071"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uD574",
+                stageNote: "\uC774\uB984\uACFC \uAD8C\uD55C",
+                code: "\uACBD4-\uAC00",
+                condition: "\uD0DC\uC591 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C2"
+                ],
+                diagnosis: "\uD587\uBE5B\uC744 \uBC1B\uC544 \uBE5B\uB098\uB294 \uAE08\uB9E5\uC785\uB2C8\uB2E4. \uC774\uB984\uC774 \uB192\uC544\uC9C0\uB294 \uC790\uB9AC\uC5D0 \uC11C\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4.",
+                prescription: "\uC774\uB984\uC740 \uC54C\uB9DE\uC740 \uB9CC\uD07C\uB9CC \uC887\uC73C\uC138\uC694. \uBE5B\uC774 \uB108\uBB34 \uC138\uBA74 \uCE7C\uC774 \uB179\uC2B5\uB2C8\uB2E4. \uBE5B\uC744 \uBAA8\uC544 \uC4F0\uB294 \uC77C\uACFC\uB3C4 \uC778\uC5F0\uC774 \uC788\uC2B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.051"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uD574",
+                stageNote: "\uC774\uB984\uACFC \uAD8C\uD55C",
+                code: "\uACBD4-\uB098",
+                condition: "\uD0DC\uC591 + \uC544\uB798 \uAE00\uC790\uAC00 \uD55C\uB0AE",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uACC44"
+                ],
+                diagnosis: "\uBD88\uC774 \uB108\uBB34 \uC138\uC11C \uC190\uC7A1\uC774\uAC00 \uD0C0\uACE0 \uCE7C\uB0A0\uC774 \uBB34\uB38C\uC9D1\uB2C8\uB2E4. \uC560\uC4F4 \uC77C\uC774 \uC81C\uB300\uB85C \uC778\uC815\uBC1B\uC9C0 \uBABB\uD558\uB294 \uB54C\uAC00 \uC0DD\uAE41\uB2C8\uB2E4.",
+                prescription: "\uBD88\uC744 \uC2DD\uD600 \uC8FC\uB294 \uBCF4\uC11D\uC774\uB098 \uBE44\uAC00 \uB4E4\uC5B4\uC624\uB294 \uB54C\uB97C \uC9DA\uC5B4 \uB450\uC138\uC694. \uBC14\uB2E4 \uAC74\uB108\uC758 \uC77C\uB3C4 \uAE38\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.050"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uD574",
+                stageNote: "\uC774\uB984\uACFC \uAD8C\uD55C",
+                code: "\uACBD4-\uB2E4",
+                condition: "\uB4F1\uBD88 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4"
+                ],
+                diagnosis: "\uB4F1\uBD88\uC774 \uD070\uBB3C\uC744 \uB04C\uC5B4\uC640 \uB180 \uBB3C\uACFC \uC190\uC7A1\uC774\uB97C \uD568\uAED8 \uB9CC\uB4E4\uC5B4 \uC90D\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                source: [
+                  "R2.GYEONG.052"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uC1E0",
+                stageNote: null,
+                code: "\uACBD5-\uAC00",
+                condition: "\uAE08\uB9E5 \uB458 \uC774\uC0C1",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC7AC2",
+                  "\uACC44"
+                ],
+                diagnosis: "\uAC19\uC740 \uCE7C\uC774 \uACC1\uC5D0 \uC788\uC5B4 \uC190\uC7A1\uC774\uB97C \uB450\uACE0 \uB298 \uACAC\uC90D\uB2C8\uB2E4. \uC560\uC4F4 \uBAAB\uC774 \uB098\uB258\uAE30 \uC27D\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uACC1\uC758 \uCE7C\uC774 \uC815\uB9AC\uB418\uB294 \uB54C, \uACE7 \uD478\uB978 \uB369\uAD74\uC774 \uB4E4\uC5B4\uC624\uB294 \uB54C\uC5D0 \uB2F9\uC2E0 \uBAAB\uC774 \uBD84\uBA85\uD574\uC9D1\uB2C8\uB2E4. \uADF8\uC804\uC5D0\uB294 \uBC1C\uBC11\uC758 \uAE30\uBC18\uC744 \uB2E4\uC9C0\uC138\uC694.",
+                source: [
+                  "R2.GYEONG.060"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uC1E0",
+                stageNote: null,
+                code: "\uACBD5-\uB098",
+                condition: "\uC138\uACF5\uB41C \uBCF4\uC11D \uC788\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8"
+                ],
+                diagnosis: "\uD070 \uCE7C\uACFC \uC791\uC740 \uCE7C\uC774 \uD568\uAED8 \uC788\uC5B4 \uC694\uB780\uD558\uC9C0\uB9CC, \uC791\uC740 \uCE7C\uC774 \uBE5B\uACFC \uBB3C\uC744 \uBD88\uB7EC\uC640 \uB2F9\uC2E0\uC744 \uB3D5\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uACC1\uC758 \uB0A0\uCE74\uB85C\uC6B4 \uC0AC\uB78C\uC758 \uD798\uC744 \uBE4C\uB824 \uC4F0\uC138\uC694.",
+                source: [
+                  "R2.GYEONG.061"
+                ]
+              },
+              {
+                stage: 6,
+                stageName: "\uD2B9\uC131 (\uB05D \uC2AC\uB86F \uD6C4\uBCF4)",
+                stageNote: null,
+                code: "\uACBD6-\uAC00",
+                condition: "\uD56D\uC0C1",
+                slots: [
+                  "\uB05D2",
+                  "\uB05D3"
+                ],
+                diagnosis: "\uCE7C\uC740 \uC815\uB2F9\uD558\uAC8C \uC4F8 \uB54C \uAC00\uC7A5 \uC624\uB798 \uBE5B\uB0A9\uB2C8\uB2E4. \uB9E1\uC740 \uAD8C\uD55C\uB9CC\uD07C\uB9CC \uC950\uB294 \uC808\uC81C\uAC00 \uB2F9\uC2E0\uC758 \uB0A0\uC744 \uC9C0\uD0B5\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                note: "\uCC98\uBC29 \uC5C6\uC74C(\uC6D0\uBB38 \u2014)",
+                source: [
+                  "R2.GYEONG.081",
+                  "R2.GYEONG.082"
+                ]
+              }
+            ],
+            C: [
+              {
+                code: "\uACBD\uC6B4-\uAC00",
+                incoming: "\uD070 \uB098\uBB34",
+                slots: [
+                  "\uC5F04",
+                  "\uC5F05",
+                  "\uACC43"
+                ],
+                sentence: "\uC190\uC7A1\uC774\uAC00 \uB07C\uC6CC\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uACC1\uC758 \uC790\uB9AC\uAC00 \uC815\uD574\uC9C0\uACE0 \uD798\uC774 \uC4F0\uC77C \uACF3\uC774 \uC0DD\uAE41\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.020",
+                  "R2.GYEONG.023"
+                ]
+              },
+              {
+                code: "\uACBD\uC6B4-\uB098",
+                incoming: "\uD070 \uB098\uBB34 (\uC0B0\uB9E5 \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uC7AC5",
+                  "\uACC44"
+                ],
+                sentence: "\uC190\uC5D0 \uC954 \uB3C4\uAD6C\uB85C \uC9C1\uC811 \uC9D3\uACE0 \uC138\uC6CC \uB545\uACFC \uD130\uAC00 \uC0DD\uAE30\uAE30 \uC88B\uC740 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.070"
+                ]
+              },
+              {
+                code: "\uACBD\uC6B4-\uB2E4",
+                incoming: "\uD478\uB978 \uB369\uAD74 (\uAE08\uB9E5\uC774 \uB458\uC77C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uACC1\uC758 \uCE7C\uC774 \uC815\uB9AC\uB418\uC5B4 \uB2F9\uC2E0 \uBAAB\uC774 \uBD84\uBA85\uD574\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.060"
+                ]
+              },
+              {
+                code: "\uACBD\uC6B4-\uB77C",
+                incoming: "\uC138\uACF5\uB41C \uBCF4\uC11D\uC774\uB098 \uC2DC\uB0C7\uBB3C (\uBD88\uC774 \uC140 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uB2EC\uAD88\uC9C4 \uCE7C\uC774 \uC2DD\uC5B4 \uB2E4\uC2DC \uB0A0\uC774 \uC11C\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.050"
+                ]
+              },
+              {
+                code: "\uACBD\uC6B4-\uB9C8",
+                incoming: "\uC544\uB798 \uAE00\uC790\uAC00 \uD55C\uB0AE\uC744 \uB9C9\uB294 \uCABD\uC73C\uB85C \uBC14\uB01C",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uB728\uAC70\uC6C0\uC774 \uAC00\uB77C\uC549\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.050"
+                ]
+              },
+              {
+                code: "\uACBD\uC6B4-\uBC14",
+                incoming: "\uAC70\uB300\uD55C \uC0B0\uB9E5 (\uC2DC\uB0C7\uBB3C \uC788\uACE0 \uB098\uBB34 \uC5C6\uC744 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uBB3C\uC774 \uD750\uB824\uC9C0\uAE30 \uC26C\uC6B4 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uC9C0\uD0A4\uB294 \uCABD\uC774 \uC774\uB86D\uC2B5\uB2C8\uB2E4.",
+                source: [
+                  "R2.GYEONG.072"
+                ]
+              },
+              {
+                code: "\uACBD\uC6B4-\uC0AC",
+                incoming: "\uD0DC\uC591 (\uC544\uB798 \uAE00\uC790\uAC00 \uD55C\uB0AE\uC77C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uBD88\uC774 \uACB9\uCCD0 \uB0A0\uC774 \uBB34\uB38C\uC9C0\uAE30 \uC26C\uC6B4 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uD070 \uAD8C\uD55C\uC744 \uC7A1\uAE30\uBCF4\uB2E4 \uB9E1\uC740 \uC77C\uC744 \uC9C0\uD0A4\uC138\uC694.",
+                source: [
+                  "R2.GYEONG.050",
+                  "R2.GYEONG.082"
+                ]
+              },
+              {
+                code: "\uACBD\uC6B4-\uC544",
+                incoming: "\uAE08\uB9E5\uC774\uB098 \uB369\uAD74\uC774 \uB2E4\uC2DC \uC634 (\uBB36\uC5EC \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC42"
+                ],
+                slotNote: "\uD544\uC218",
+                sentence: "\uBB36\uC600\uB358 \uC790\uB9AC\uAC00 \uD480\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                source: [
+                  "1\uCE35 \xA77"
+                ]
+              }
+            ],
+            D: [
+              {
+                item: "\uCE58\uC544",
+                source: [
+                  "R2.GYEONG.021"
+                ]
+              },
+              {
+                item: "\uB0A8\uC131\uC758 \uC5EC\uB7EC \uC774\uC131 \uAD00\uACC4\xB7\uAC74\uAC15\xB7\uC0AC\uC5C5 \uC2E4\uD328",
+                source: [
+                  "R2.GYEONG.080"
+                ]
+              },
+              {
+                item: '"\uC790\uD574"\xB7"\uB098\uC05C \uC6A9\uB3C4" \uD45C\uD604\uACFC "\uC0AC\uC5C5\uC744 \uD558\uC9C0 \uC54A\uB294 \uAC83\uC774 \uC88B\uB2E4"',
+                source: [
+                  "R2.GYEONG.023"
+                ],
+                note: "\uC6D0\uBB38 \u2014 \uCC98\uBC29\uC740 \uC2DC\uAE30\uB85C\uB9CC \uD45C\uD604"
+              },
+              {
+                item: "\uACF5\uACA9\uC801\xB7\uB0C9\uC18C\uC801\uC774\uB77C\uB294 \uC6D0\uBB38 \uC11C\uC220",
+                source: [
+                  "R2.GYEONG.002"
+                ],
+                note: "\uC0AC3\uC740 \uAE0D\uC815 \uBC88\uC5ED\uB9CC"
+              }
+            ]
+          },
+          \u8F9B: {
+            name: "\uC2E0\uAE08 \u2014 \uC138\uACF5\uB41C \uBCF4\uC11D",
+            sourcePage: "PDF page 34-38 (8. \uC2E0\uAE08)",
+            _note: "PDF 8\uC7A5(pp.34~38) \uC804\uC0AC. A \uD0A4\uB294 '\uC2AC\uB86F\uCF54\uB4DC \uB77C\uBCA8' \uBCD1\uAE30(\uAC80\uC99D\uAE30 V6 \uD638\uD658). B\u5404\u884C source\uB294 \uAC80\uC99D\uAE30 V5 \uC694\uAD6C \uD544\uB4DC\uB85C evidence\uC640 \uB3D9\uC77C \uAC12. \uCC98\uBC29 \uCE78\uC774 \uC6D0\uBB38\uC5D0 \uBE44\uB294 \uAC00\uC9C0\uB294 \u2014 \uD45C\uAE30. 6\uB2E8\uACC4(\uD2B9\uC131)\uB294 \uBB38\uC7A5 \uCE78 \uD558\uB098\uB77C \uCC98\uBC29 \uCE78\uC774 \uC6D0\uBB38\uC5D0 \uC5C6\uC74C(\u2014).",
+            A: {
+              "\uC0AC1 \uD615\uC0C1": {
+                text: "\uB2F9\uC2E0\uC740 \uC138\uACF5\uB41C \uBCF4\uC11D\uC785\uB2C8\uB2E4. {1\uC21C\uC704 \uAC00\uC9C0 \uD55C \uC904}",
+                evidence: [
+                  "R2.SIN.001"
+                ]
+              },
+              "\uC0AC2 \uC131\uD5A5": {
+                text: "\uC12C\uC138\uD558\uACE0 \uC815\uD655\uD55C \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uC791\uC740 \uCC28\uC774\uB97C \uB193\uCE58\uC9C0 \uC54A\uACE0, \uAE30\uC900\uC5D0 \uB9DE\uAC8C \uB2E4\uB4EC\uC5B4 \uC644\uC131\uD569\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.002"
+                ]
+              },
+              "\uC0AC3 \uB0A8\uB4E4\uC774\uBCF4\uB294\uB098": {
+                text: "\uC608\uB9AC\uD558\uACE0 \uAE54\uB054\uD55C \uC0AC\uB78C\uC73C\uB85C \uBCF4\uC785\uB2C8\uB2E4. \uC18D\uC740 \uC27D\uAC8C \uB4DC\uB7EC\uB0B4\uC9C0 \uC54A\uACE0, \uC778\uC815\uBC1B\uC744 \uB54C \uAC00\uC7A5 \uBE5B\uB0A9\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.002",
+                  "R2.SIN.082"
+                ]
+              },
+              "\uC0AC4 \uCE6D\uCC2C": {
+                text: "\uC190\uB05D\uC774 \uC815\uBC00\uD558\uACE0, \uD55C\uBC88 \uC775\uD78C \uAE30\uC220\uC744 \uC790\uACA9\uC73C\uB85C \uB9CC\uB4E4\uC5B4 \uB0B4\uB294 \uD798\uC774 \uC788\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.001",
+                  "R2.SIN.003"
+                ]
+              },
+              "\uC77C1 \uBB34\uAE30": {
+                text: "\uC815\uBC00\uD558\uAC8C \uB2E4\uB4EC\uACE0 \uC815\uD655\uD558\uAC8C \uC798\uB77C \uB0B4\uB294 \uD798, \uC190\uB05D\uACFC \uB9D0\uB05D\uC758 \uC7AC\uC8FC\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.001"
+                ]
+              },
+              "\uC7AC6 \uB3C8\uC758\uC21C\uC11C": {
+                text: "\uBCF4\uC11D\uC740 \uD06C\uAE30\uBCF4\uB2E4 \uBE5B\uC73C\uB85C \uAC12\uC774 \uB9E4\uACA8\uC9D1\uB2C8\uB2E4. \uC54C\uB9DE\uC740 \uC7AC\uBB3C\uC744 \uC815\uD655\uD558\uAC8C \uC950\uACE0, \uD070 \uC7AC\uBB3C\uC740 \uAC19\uC740 \uAE38\uC744 \uAC00\uB294 \uC0AC\uB78C\uB4E4\uACFC \uD798\uC744 \uD569\uCCD0 \uB9CC\uB4DC\uB294 \uAC83\uC774 \uC774 \uC77C\uAC04\uC758 \uC21C\uC11C\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.083"
+                ]
+              },
+              "\uC5F01 \uAD00\uACC4\uC120\uC5B8": {
+                text: "\uC791\uC740 \uCE7C\uC740 \uAF2D \uB9DE\uB294 \uC190\uC7A1\uC774\uB97C \uB9CC\uB0A0 \uB54C \uBE44\uB85C\uC18C \uC4F0\uC785\uB2C8\uB2E4. \uB2F9\uC2E0\uB3C4 \uB9C8\uC74C\uC744 \uC900 \uC0AC\uB78C\uC744 \uC12C\uC138\uD558\uAC8C \uC0B4\uD53C\uACE0 \uB2E4\uB4EC\uC5B4 \uC8FC\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uADF8\uB7EC\uBA74\uC11C \uC18D\uC73C\uB85C\uB294 \uB2F9\uC2E0\uC744 \uC54C\uC544\uBCF4\uACE0 \uAF2D \uB9DE\uAC8C \uC950\uC5B4 \uC904 \uC0AC\uB78C\uC744 \uBC14\uB78D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.010",
+                  "R2.SIN.020"
+                ]
+              },
+              marriageCondition: {
+                label: "\uACB0\uD63C \uC870\uAC74",
+                text: "\uD478\uB978 \uB369\uAD74\uC774 \uC190\uC7A1\uC774\uB85C \uB07C\uC6CC\uC9C8 \uB54C.",
+                evidence: [
+                  "R2.SIN.020"
+                ]
+              },
+              endingTheme: {
+                label: "\uB05D \uC18C\uC7AC",
+                text: "\uC815\uBC00\uD568 / \uACB0\uACFC\uB85C \uC778\uC815\uBC1B\uB294 \uD798",
+                evidence: [
+                  "R2.SIN.001",
+                  "R2.SIN.082"
+                ]
+              },
+              careerNote: {
+                label: "\uC9C1\uC5C5 \uACB0(\uCC38\uACE0\uC6A9, \uB098\uC5F4 \uAE08\uC9C0)",
+                text: "\uBC95\xB7\uAE08\uC735\xB7\uACBD\uC601, \uC758\uD559\xB7\uAC04\uD638\xB7\uC0DD\uBA85\uACF5\uD559, \uBBF8\uC6A9\xB7\uC7AC\uB2E8\xB7\uAE08\uC18D\xB7\uC791\uC740 \uAE30\uACC4\xB7\uC74C\uD5A5\xB7\uC8FC\uBC29\xB7\uBC29\uC1A1. \uAD6D\uAC00 \uC790\uACA9\uC73C\uB85C \uC77C\uD558\uB294 \uACBD\uC6B0\uAC00 \uB9CE\uB2E4.",
+                evidence: [
+                  "R2.SIN.003"
+                ]
+              }
+            },
+            B: [
+              {
+                stage: 1,
+                stageName: "\uC190\uC7A1\uC774",
+                stageNote: "\uC791\uC740 \uCE7C\uC744 \uC958 \uB098\uBB34",
+                code: "\uC2E01-\uAC00",
+                condition: "\uD478\uB978 \uB369\uAD74 \uC788\uC74C (\uC544\uB798\uC5D0 \uB098\uBB34 \uBFCC\uB9AC)",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C2"
+                ],
+                diagnosis: "\uC791\uC740 \uCE7C\uC5D0 \uAF2D \uB9DE\uB294 \uC190\uC7A1\uC774\uB97C \uC950\uC5C8\uC2B5\uB2C8\uB2E4. \uC815\uBC00\uD55C \uC77C\uC744 \uC790\uACA9\uC73C\uB85C \uB9CC\uB4E4\uC5B4 \uB0C5\uB2C8\uB2E4.",
+                prescription: "\uAD6D\uAC00 \uC790\uACA9\uC774 \uD544\uC694\uD55C \uC815\uBC00\uD55C \uC77C\uC5D0\uC11C \uC774\uB984\uC774 \uC12D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.010",
+                  "R2.SIN.003"
+                ],
+                source: [
+                  "R2.SIN.010",
+                  "R2.SIN.003"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uC190\uC7A1\uC774",
+                stageNote: "\uC791\uC740 \uCE7C\uC744 \uC958 \uB098\uBB34",
+                code: "\uC2E01-\uAC00\u2032",
+                condition: "\uB369\uAD74 + \uC791\uC740 \uB545 + \uC2DC\uB0C7\uBB3C",
+                slots: [
+                  "\uC77C3",
+                  "\uC7AC7"
+                ],
+                diagnosis: "\uC190\uC7A1\uC774\uC640 \uB180 \uBB3C\uACFC \uB451\uC774 \uB2E4 \uAC16\uCDB0\uC84C\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC758\uB8CC, \uC637\uACFC \uD328\uC158\uCC98\uB7FC \uC815\uBC00\uD558\uAC8C \uB2E4\uB8E8\uB294 \uC77C\uC5D0\uC11C \uB2A5\uB825\uC744 \uBC1C\uD718\uD558\uACE0 \uC791\uC740 \uD130\uAC00 \uC0DD\uAE41\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.023"
+                ],
+                source: [
+                  "R2.SIN.023"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uC190\uC7A1\uC774",
+                stageNote: "\uC791\uC740 \uCE7C\uC744 \uC958 \uB098\uBB34",
+                code: "\uC2E01-\uB098",
+                condition: "\uD070 \uB098\uBB34\uB9CC \uC788\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C2"
+                ],
+                diagnosis: "\uC791\uC740 \uCE7C\uC5D0 \uAE34 \uC190\uC7A1\uC774\uB77C \uCC3D\uC774 \uB429\uB2C8\uB2E4. \uBA40\uB9AC \uC788\uB294 \uB0A8\uC758 \uC77C\uC740 \uC798 \uD574\uB0B4\uB294\uB370, \uC815\uC791 \uB0B4 \uC77C\uC5D0\uB294 \uC190\uC774 \uB35C \uAC11\uB2C8\uB2E4.",
+                prescription: "\uC870\uC9C1 \uC548\uC5D0\uC11C \uB0A8\uC758 \uC77C\uC744 \uD574\uACB0\uD574 \uC8FC\uB294 \uC790\uB9AC\uAC00 \uB9DE\uC2B5\uB2C8\uB2E4. \uC791\uC740 \uB545\uC774 \uB4E4\uC5B4\uC640 \uC190\uC7A1\uC774\uAC00 \uC54C\uB9DE\uAC8C \uC904\uC5B4\uB4DC\uB294 \uB54C\uB97C \uC9DA\uC5B4 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.SIN.021"
+                ],
+                source: [
+                  "R2.SIN.021"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uC190\uC7A1\uC774",
+                stageNote: "\uC791\uC740 \uCE7C\uC744 \uC958 \uB098\uBB34",
+                code: "\uC2E01-\uB2E4",
+                condition: "\uB098\uBB34 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uC190\uC7A1\uC774 \uC5C6\uB294 \uC791\uC740 \uCE7C\uC774\uB77C \uC950\uB294 \uC190\uC774 \uBA3C\uC800 \uB2E4\uCE58\uAE30 \uC27D\uACE0, \uB0A0\uCE74\uB85C\uC6C0\uC774 \uC4F0\uC77C \uACF3\uC744 \uCC3E\uC9C0 \uBABB\uD569\uB2C8\uB2E4.",
+                prescription: "\uC190\uC7A1\uC774\uAC00 \uB4E4\uC5B4\uC624\uB294 \uB54C\uB97C \uC9DA\uC5B4 \uB450\uACE0, \uADF8\uC804\uC5D0\uB294 \uB098\uBB34\uB97C \uB2E4\uB8E8\uB294 \uC77C(\uC637\xB7\uC885\uC774\xB7\uC12C\uC720)\uB85C \uC190\uC7A1\uC774\uB97C \uB300\uC2E0\uD558\uC138\uC694.",
+                evidence: [
+                  "R2.SIN.010",
+                  "R2.SIN.041",
+                  "1\uCE35 \xA77"
+                ],
+                source: [
+                  "R2.SIN.010",
+                  "R2.SIN.041",
+                  "1\uCE35 \xA77"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uC190\uC7A1\uC774",
+                stageNote: "\uC791\uC740 \uCE7C\uC744 \uC958 \uB098\uBB34",
+                code: "\uC2E01-\uB77C",
+                condition: "\uB098\uBB34 \uB9CE\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uB2E4\uB4EC\uC5B4\uC57C \uD560 \uB098\uBB34\uAC00 \uB108\uBB34 \uB9CE\uC544 \uCE7C\uB0A0\uC774 \uBB34\uB38C\uC9D1\uB2C8\uB2E4. \uD310\uC744 \uD06C\uAC8C \uBC8C\uC77C\uC218\uB85D \uBC84\uAC70\uC6CC\uC9D1\uB2C8\uB2E4.",
+                prescription: "\uAC10\uB2F9\uD560 \uC218 \uC788\uB294 \uADDC\uBAA8\uB97C \uC9C0\uD0A4\uC138\uC694.",
+                evidence: [
+                  "R2.SIN.022"
+                ],
+                source: [
+                  "R2.SIN.022"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uCE7C\uC774 \uB178\uB294 \uACF3",
+                code: "\uC2E02-\uAC00",
+                condition: "\uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uB180\uAE30 \uC54C\uB9DE\uC740 \uB9D1\uC740 \uBB3C\uC744 \uAC00\uC9C4 \uCE7C\uC785\uB2C8\uB2E4. \uB2E4\uB9CC \uADF8 \uBE44\uAC00 \uD574\uB97C \uAC00\uB824, \uAD6D\uAC00\uC640 \uAD00\uB828\uB41C \uC77C\uC740 \uB3CC\uC544\uAC00\uC57C \uD569\uB2C8\uB2E4.",
+                prescription: "\uC0B0\uB9E5\uC774 \uB4E4\uC5B4\uC640 \uBE44\uB97C \uAC70\uB450\uB294 \uB54C\uC5D0 \uC190\uC7AC\uC8FC(\uB098\uBB34\xB7\uAE08\uC18D \uACF5\uC608)\uB85C \uC7AC\uBB3C\uC774 \uC5F4\uB9BD\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.011",
+                  "R2.SIN.072"
+                ],
+                source: [
+                  "R2.SIN.011",
+                  "R2.SIN.072"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uCE7C\uC774 \uB178\uB294 \uACF3",
+                code: "\uC2E02-\uB098",
+                condition: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218 \uC788\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uACC44"
+                ],
+                diagnosis: "\uC791\uC740 \uCE7C\uC774 \uD070 \uBB3C\uC0B4\uC5D0 \uB0A0\uC774 \uBB34\uB38C\uC9D1\uB2C8\uB2E4.",
+                prescription: "\uB4F1\uBD88\uC774 \uB4E4\uC5B4\uC640 \uC190\uC7A1\uC774\uB97C \uB9CC\uB4E4\uC5B4 \uC8FC\uB294 \uB54C\uC5D0 \uB2A5\uB825\uC774 \uB4DC\uB7EC\uB098\uACE0 \uC7AC\uBB3C\uC744 \uC961\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.071"
+                ],
+                source: [
+                  "R2.SIN.071"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uCE7C\uC774 \uB178\uB294 \uACF3",
+                code: "\uC2E02-\uB2E4",
+                condition: "\uBB3C \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uB180 \uBB3C\uC774 \uC5C6\uC5B4 \uC5ED\uB7C9\uC744 \uB2E4 \uD3BC\uCE58\uAE30 \uC5B4\uB835\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBC14\uB2E4 \uAC74\uB108\uC5D0\uC11C \uBC30\uC6B0\uACE0 \uC77C\uD558\uC138\uC694. \uADF8\uACF3\uC758 \uBB3C\uC774 \uC190\uC7A1\uC774\uB97C \uD0A4\uC6CC \uC7AC\uBB3C\uC774 \uB429\uB2C8\uB2E4. \uBC95\uC744 \uB2E4\uB8E8\uB294 \uC77C\uACFC \uD2B9\uD788 \uC778\uC5F0\uC774 \uC788\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.031"
+                ],
+                source: [
+                  "R2.SIN.031"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uCE7C\uC774 \uB178\uB294 \uACF3",
+                code: "\uC2E02-\uB77C",
+                condition: "\uBB3C \uB9CE\uC74C, \uB610\uB294 \uBB3C\uC774 \uD750\uB824\uC9D0",
+                slots: [
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uBB3C\uC0B4\uC774 \uC138\uAC70\uB098 \uD750\uB824 \uCE7C\uB0A0\uC774 \uB179\uC2AC\uAE30 \uC27D\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uCE7C\uB0A0\uC774 \uB179 \uD750\uB824\uC9C0\uB294 \uC6D0\uC778\uC744 \uB530\uB77C \uCC98\uBC29\uD55C\uB2E4(1\uCE35 \uD0C1\uC218 \uD574\uBC95).",
+                evidence: [
+                  "R2.SIN.030",
+                  "1\uCE35 \uD0C1\uC218"
+                ],
+                source: [
+                  "R2.SIN.030",
+                  "1\uCE35 \uD0C1\uC218"
+                ],
+                note: "1\uCE35 \uD0C1\uC218"
+              },
+              {
+                stage: 3,
+                stageName: "\uB451",
+                stageNote: "\uBB3C\uC744 \uAC00\uB450\uB294 \uB545",
+                code: "\uC2E03-\uAC00",
+                condition: "\uC791\uC740 \uB545 + \uC2DC\uB0C7\uBB3C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uC54C\uB9DE\uC740 \uB451\uC774 \uC54C\uB9DE\uC740 \uBB3C\uC744 \uAC00\uB461\uB2C8\uB2E4. \uB451\uACFC \uBB3C\uC758 \uD06C\uAE30\uAC00 \uC5B4\uAE0B\uB098\uBA74 \uC27D\uAC8C \uD750\uB824\uC9D1\uB2C8\uB2E4.",
+                prescription: "\uB451\uC5D0 \uC54C\uB9DE\uC740 \uB098\uBB34\uAC00 \uC11C \uC788\uC73C\uBA74 \uB2A5\uB825\uC744 \uB2E4 \uBC1C\uD718\uD569\uB2C8\uB2E4. \uB098\uBB34\uAC00 \uC5C6\uC73C\uBA74 \uAE30\uB974\uB294 \uC77C\uC744 \uACC1\uC5D0 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.SIN.040"
+                ],
+                source: [
+                  "R2.SIN.040"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uB451",
+                stageNote: "\uBB3C\uC744 \uAC00\uB450\uB294 \uB545",
+                code: "\uC2E03-\uB098",
+                condition: "\uAC70\uB300\uD55C \uC0B0\uB9E5 + \uD478\uB978 \uB369\uAD74",
+                slots: [
+                  "\uC7AC2",
+                  "\uACC44"
+                ],
+                diagnosis: "\uC190\uC7A1\uC774\uAC00 \uCC99\uBC15\uD55C \uD070 \uB545\uC5D0 \uC2EC\uC5B4\uC838 \uC798 \uC790\uB77C\uC9C0 \uBABB\uD569\uB2C8\uB2E4.",
+                prescription: "\uC2DC\uB0C7\uBB3C\uC774 \uB4E4\uC5B4\uC640 \uD070 \uB545\uC774 \uC815\uC6D0\uC73C\uB85C \uBC14\uB00C\uB294 \uB54C\uC5D0 \uC7AC\uBB3C\uC744 \uC961\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.041"
+                ],
+                source: [
+                  "R2.SIN.041"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uB451",
+                stageNote: "\uBB3C\uC744 \uAC00\uB450\uB294 \uB545",
+                code: "\uC2E03-\uB2E4",
+                condition: "\uC791\uC740 \uB545\uC774 \uD070 \uB098\uBB34\uB97C \uB04C\uC5B4\uC634",
+                slots: [
+                  "\uC7AC2",
+                  "\uC7AC7"
+                ],
+                diagnosis: "\uD070 \uAC74\uBB3C \uAC19\uC740 \uD070 \uC7AC\uBB3C\uC774 \uB2E4\uAC00\uC624\uB294\uB370, \uC791\uC740 \uCE7C \uD63C\uC790 \uAC10\uB2F9\uD558\uAE30\uB294 \uBC84\uAC81\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uD63C\uC790 \uC9C0\uAE30\uBCF4\uB2E4 \uD568\uAED8\uD560 \uAE08\uC758 \uD798, \uAC19\uC740 \uAE38\uC744 \uAC00\uB294 \uC0AC\uB78C\uC758 \uD798\uC744 \uBE4C\uB9AC\uC138\uC694.",
+                evidence: [
+                  "R2.SIN.070"
+                ],
+                source: [
+                  "R2.SIN.070"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uD574",
+                stageNote: "\uC774\uB984\uACFC \uAD8C\uD55C",
+                code: "\uC2E04-\uAC00",
+                condition: "\uD0DC\uC591\uACFC \uBB36\uC784",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C2",
+                  "\uACC42"
+                ],
+                diagnosis: "\uBE5B\uC744 \uB04C\uC5B4\uC624\uB824\uB2E4 \uADF8 \uBE5B\uC5D0 \uBB36\uC778 \uBCF4\uC11D\uC785\uB2C8\uB2E4. \uC774\uB984\uC744 \uC6D0\uD558\uC9C0\uB9CC \uC815\uC791 \uD558\uACE0 \uC2F6\uC740 \uC77C\uC744 \uB9C8\uC74C\uB300\uB85C \uD558\uAE30 \uC5B4\uB835\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uAD6D\uAC00\uC640 \uAD00\uB828\uB41C \uC77C, \uB4DC\uB7EC\uB098\uC9C0 \uC54A\uAC8C \uAD8C\uD55C\uC744 \uC4F0\uB294 \uC790\uB9AC\uC5D0\uC11C \uBB36\uC784\uC774 \uC77C\uC774 \uB429\uB2C8\uB2E4. \uBB36\uC784\uC774 \uD480\uB9AC\uB294 \uB54C\uB97C \uC9DA\uC5B4 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.SIN.050"
+                ],
+                source: [
+                  "R2.SIN.050"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uD574",
+                stageNote: "\uC774\uB984\uACFC \uAD8C\uD55C",
+                code: "\uC2E04-\uAC00\u2032",
+                condition: "\uC704 \uAC00\uC9C0 + \uC6D0\uAD6D\uC5D0 \uBB3C \uC5C6\uC74C",
+                slots: [
+                  "\uC77C3"
+                ],
+                diagnosis: "\uADF8 \uBB36\uC784\uC774 \uC5C6\uB358 \uBB3C\uC744 \uB9CC\uB4E4\uC5B4 \uC90D\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.SIN.050"
+                ],
+                source: [
+                  "R2.SIN.050"
+                ],
+                note: "\uCC98\uBC29 \uCE78 \uC6D0\uBB38 \u2014"
+              },
+              {
+                stage: 4,
+                stageName: "\uD574",
+                stageNote: "\uC774\uB984\uACFC \uAD8C\uD55C",
+                code: "\uC2E04-\uB098",
+                condition: "\uBB3C \uC5C6\uC74C + \uC544\uB798 \uAE00\uC790\uAC00 \uD55C\uB0AE",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uACC44"
+                ],
+                diagnosis: "\uBD88\uC774 \uC138\uC11C \uCE7C\uB0A0\uC774 \uBB34\uB38C\uC9D1\uB2C8\uB2E4.",
+                prescription: "\uD0DC\uC591\uACFC \uD569\uD574 \uBB3C\uC774 \uC0DD\uAE30\uB294 \uB54C\uC5D0 \uB2E4\uC2DC \uB0A0\uC774 \uC12D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.051"
+                ],
+                source: [
+                  "R2.SIN.051"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uD574",
+                stageNote: "\uC774\uB984\uACFC \uAD8C\uD55C",
+                code: "\uC2E04-\uB2E4",
+                condition: "\uB4F1\uBD88 \uC788\uC74C",
+                slots: [
+                  "\uC7AC6",
+                  "\uC77C6"
+                ],
+                diagnosis: "\uC774\uBBF8 \uB2E4\uB4EC\uC5B4\uC9C4 \uCE7C\uC5D0 \uBD88\uC774 \uB2FF\uC544 \uB0A0\uC774 \uBB34\uB38C\uC9C8 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uB300\uC2E0 \uB4F1\uBD88\uC774 \uC190\uC7A1\uC774\uC640 \uC7AC\uBB3C\uC744 \uD568\uAED8 \uB9CC\uB4E4\uC5B4 \uC90D\uB2C8\uB2E4.",
+                prescription: "\uC774\uB984\uBCF4\uB2E4 \uC2E4\uB9AC\uB97C \uACE0\uB974\uC138\uC694.",
+                evidence: [
+                  "R2.SIN.052"
+                ],
+                source: [
+                  "R2.SIN.052"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uD574",
+                stageNote: "\uC774\uB984\uACFC \uAD8C\uD55C",
+                code: "\uC2E04-\uB77C",
+                condition: "\uB4F1\uBD88 + \uD0DC\uC591\uC744 \uB04C\uC5B4\uC634",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uACC44"
+                ],
+                diagnosis: "\uD574\uC640 \uB2EC \uC0AC\uC774\uC5D0\uC11C \uB9C8\uC74C\uC774 \uAC08\uB9BD\uB2C8\uB2E4.",
+                prescription: "\uB113\uC740 \uD638\uC218\uAC00 \uB4E4\uC5B4\uC640 \uB4F1\uBD88\uC744 \uC190\uC7A1\uC774\uB85C \uBC14\uAFB8\uB294 \uB54C\uC5D0 \uAC08\uB4F1\uC774 \uD480\uB9BD\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.053"
+                ],
+                source: [
+                  "R2.SIN.053"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uC1E0",
+                stageNote: null,
+                code: "\uC2E05-\uAC00",
+                condition: "\uCEE4\uB2E4\uB780 \uAE08\uB9E5 \uC788\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uACC44"
+                ],
+                diagnosis: "\uACC1\uC5D0 \uD070 \uCE7C\uC774 \uC788\uC5B4 \uACAC\uC8FC\uBA74 \uBD88\uB9AC\uD569\uB2C8\uB2E4.",
+                prescription: "\uC544\uB798 \uAE00\uC790\uC5D0 \uB0B4 \uBFCC\uB9AC\uAC00 \uB2E8\uB2E8\uD558\uBA74 \uAC71\uC815\uD558\uC9C0 \uC54A\uC544\uB3C4 \uB429\uB2C8\uB2E4. \uD478\uB978 \uB369\uAD74\uC774 \uB4E4\uC5B4\uC640 \uD070 \uCE7C\uC744 \uC791\uAC8C \uB2E4\uB4EC\uB294 \uB54C\uC5D0 \uD568\uAED8 \uC774\uB984\uC744 \uB192\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.060"
+                ],
+                source: [
+                  "R2.SIN.060"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uC1E0",
+                stageNote: null,
+                code: "\uC2E05-\uB098",
+                condition: "\uC138\uACF5\uB41C \uBCF4\uC11D \uB458 \uC774\uC0C1",
+                slots: [
+                  "\uC77C3",
+                  "\uACC44"
+                ],
+                diagnosis: "\uB0A0\uC774 \uB458\uC774\uB77C \uAC00\uC704\uAC00 \uB418\uACE0, \uBA40\uB9AC \uC18C\uC2DD\uC744 \uC7A1\uB294 \uC548\uD14C\uB098\uB3C4 \uB429\uB2C8\uB2E4.",
+                prescription: "\uC790\uB974\uACE0 \uB2E4\uB4EC\uB294 \uC77C(\uBBF8\uC6A9\xB7\uB514\uC790\uC778), \uB4DC\uB7EC\uB098\uC9C0 \uC54A\uAC8C \uC815\uBCF4\uB97C \uB2E4\uB8E8\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4. \uD0DC\uC591\uC774 \uC640\uC11C \uACC1\uC758 \uBCF4\uC11D\uC744 \uC815\uB9AC\uD558\uB294 \uB54C\uC5D0 \uB2A5\uB825\uC774 \uB4DC\uB7EC\uB0A9\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.061"
+                ],
+                source: [
+                  "R2.SIN.061"
+                ]
+              },
+              {
+                stage: 6,
+                stageName: "\uD2B9\uC131 (\uB05D \uC2AC\uB86F \uD6C4\uBCF4)",
+                stageNote: null,
+                code: "\uC2E06-\uAC00",
+                condition: "\uD56D\uC0C1",
+                slots: [
+                  "\uB05D2",
+                  "\uB05D3"
+                ],
+                diagnosis: "\uC9C1\uC811 \uC774\uB984\uC744 \uC887\uAE30\uBCF4\uB2E4 \uC77C\uC744 \uC815\uD655\uD788 \uD574\uB0B4 \uC778\uC815\uBC1B\uC744 \uB54C \uC774\uB984\uC774 \uC790\uC5F0\uC2A4\uB7FD\uAC8C \uC62C\uB77C\uAC11\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.SIN.082"
+                ],
+                source: [
+                  "R2.SIN.082"
+                ],
+                note: "\uD2B9\uC131 \uB2E8\uACC4 \u2014 \uBB38\uC7A5 \uCE78 \uD558\uB098, \uCC98\uBC29 \uCE78 \uC6D0\uBB38\uC5D0 \uC5C6\uC74C"
+              },
+              {
+                stage: 6,
+                stageName: "\uD2B9\uC131 (\uB05D \uC2AC\uB86F \uD6C4\uBCF4)",
+                stageNote: null,
+                code: "\uC2E06-\uB098",
+                condition: "\uD070 \uB098\uBB34 + \uD0DC\uC591\uC744 \uB04C\uC5B4\uC634",
+                slots: [
+                  "\uC77C3"
+                ],
+                diagnosis: "\uB098\uBB34\uC5D0 \uAF43\uC744 \uD53C\uC6B0\uB294 \uC190\uC7AC\uC8FC\uB77C, \uACF5\uAC04\uC744 \uAFB8\uBBF8\uB294 \uC77C\uACFC \uC778\uC5F0\uC774 \uAE4A\uC2B5\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.SIN.081"
+                ],
+                source: [
+                  "R2.SIN.081"
+                ],
+                note: "\uD2B9\uC131 \uB2E8\uACC4 \u2014 \uBB38\uC7A5 \uCE78 \uD558\uB098, \uCC98\uBC29 \uCE78 \uC6D0\uBB38\uC5D0 \uC5C6\uC74C"
+              },
+              {
+                stage: 6,
+                stageName: "\uD2B9\uC131 (\uB05D \uC2AC\uB86F \uD6C4\uBCF4)",
+                stageNote: null,
+                code: "\uC2E06-\uB2E4",
+                condition: "\uD56D\uC0C1",
+                slots: [
+                  "\uC7AC7"
+                ],
+                diagnosis: "\uD070 \uC7AC\uBB3C\uC740 \uAC19\uC740 \uAE38\uC744 \uAC00\uB294 \uC0AC\uB78C\uB4E4\uACFC \uD798\uC744 \uD569\uCE60 \uB54C \uBAA8\uC785\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.SIN.083"
+                ],
+                source: [
+                  "R2.SIN.083"
+                ],
+                note: "\uD2B9\uC131 \uB2E8\uACC4 \u2014 \uBB38\uC7A5 \uCE78 \uD558\uB098, \uCC98\uBC29 \uCE78 \uC6D0\uBB38\uC5D0 \uC5C6\uC74C"
+              }
+            ],
+            C: [
+              {
+                code: "\uC2E0\uC6B4-\uAC00",
+                incoming: "\uD478\uB978 \uB369\uAD74",
+                slots: [
+                  "\uC5F04",
+                  "\uC5F05",
+                  "\uACC43"
+                ],
+                sentence: "\uAF2D \uB9DE\uB294 \uC190\uC7A1\uC774\uAC00 \uB07C\uC6CC\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uACC1\uC758 \uC790\uB9AC\uAC00 \uC815\uD574\uC9C0\uACE0 \uC190\uB05D\uC758 \uC77C\uC774 \uC790\uB9AC\uB97C \uC7A1\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.020"
+                ],
+                source: [
+                  "R2.SIN.020"
+                ]
+              },
+              {
+                code: "\uC2E0\uC6B4-\uB098",
+                incoming: "\uC791\uC740 \uB545 (\uD070 \uB098\uBB34\uB9CC \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uAE34 \uC190\uC7A1\uC774\uAC00 \uC54C\uB9DE\uAC8C \uC904\uC5B4 \uB0B4 \uC77C\uC5D0 \uC190\uC774 \uAC00\uAE30 \uC2DC\uC791\uD558\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.021"
+                ],
+                source: [
+                  "R2.SIN.021"
+                ]
+              },
+              {
+                code: "\uC2E0\uC6B4-\uB2E4",
+                incoming: "\uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C (\uC0B0\uB9E5 + \uB369\uAD74\uC77C \uB54C)",
+                slots: [
+                  "\uC7AC3",
+                  "\uACC44"
+                ],
+                sentence: "\uCC99\uBC15\uD55C \uB545\uC774 \uC815\uC6D0\uC73C\uB85C \uBC14\uB00C\uC5B4 \uC7AC\uBB3C\uC744 \uC950\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.041"
+                ],
+                source: [
+                  "R2.SIN.041"
+                ]
+              },
+              {
+                code: "\uC2E0\uC6B4-\uB77C",
+                incoming: "\uAC70\uB300\uD55C \uC0B0\uB9E5 (\uC2DC\uB0C7\uBB3C \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uC7AC3",
+                  "\uACC44"
+                ],
+                sentence: "\uD574\uB97C \uAC00\uB9AC\uB358 \uBE44\uAC00 \uAC77\uD600 \uC190\uC7AC\uC8FC\uAC00 \uC7AC\uBB3C\uB85C \uBC14\uB00C\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.072"
+                ],
+                source: [
+                  "R2.SIN.072"
+                ]
+              },
+              {
+                code: "\uC2E0\uC6B4-\uB9C8",
+                incoming: "\uB4F1\uBD88 (\uD070 \uD638\uC218 \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uD070 \uBB3C\uC0B4 \uC18D\uC5D0 \uC190\uC7A1\uC774\uAC00 \uC0DD\uACA8 \uB0A0\uC774 \uC11C\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.071"
+                ],
+                source: [
+                  "R2.SIN.071"
+                ]
+              },
+              {
+                code: "\uC2E0\uC6B4-\uBC14",
+                incoming: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218 (\uB4F1\uBD88\uACFC \uD574\uAC00 \uD568\uAED8\uC77C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uB9C8\uC74C\uC744 \uAC00\uB974\uB358 \uAC08\uB4F1\uC774 \uD480\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.053"
+                ],
+                source: [
+                  "R2.SIN.053"
+                ]
+              },
+              {
+                code: "\uC2E0\uC6B4-\uC0AC",
+                incoming: "\uD0DC\uC591 (\uD574\uC5D0 \uBB36\uC5EC \uC788\uC9C0 \uC54A\uC744 \uB54C)",
+                slots: [
+                  "\uACC42"
+                ],
+                slotNote: "\uD544\uC218",
+                sentence: "\uBE5B\uC5D0 \uBB36\uC774\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uACF5\uC801\uC778 \uC77C, \uB4DC\uB7EC\uB098\uC9C0 \uC54A\uB294 \uC790\uB9AC\uC5D0\uC11C \uD798\uC744 \uC4F0\uC138\uC694.",
+                evidence: [
+                  "R2.SIN.050"
+                ],
+                source: [
+                  "R2.SIN.050"
+                ]
+              },
+              {
+                code: "\uC2E0\uC6B4-\uC544",
+                incoming: "\uD0DC\uC591\uC774\uB098 \uBCF4\uC11D\uC774 \uB2E4\uC2DC \uC634 (\uD574\uC5D0 \uBB36\uC5EC \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC42"
+                ],
+                slotNote: "\uD544\uC218",
+                sentence: "\uBB36\uC600\uB358 \uBE5B\uC774 \uD480\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.050",
+                  "1\uCE35 \xA77"
+                ],
+                source: [
+                  "R2.SIN.050",
+                  "1\uCE35 \xA77"
+                ]
+              },
+              {
+                code: "\uC2E0\uC6B4-\uC790",
+                incoming: "\uD0DC\uC591 (\uBCF4\uC11D\uC774 \uB458\uC77C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uACC1\uC758 \uBCF4\uC11D\uC774 \uC815\uB9AC\uB418\uC5B4 \uB2A5\uB825\uC774 \uB4DC\uB7EC\uB098\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.061"
+                ],
+                source: [
+                  "R2.SIN.061"
+                ]
+              },
+              {
+                code: "\uC2E0\uC6B4-\uCC28",
+                incoming: "\uD478\uB978 \uB369\uAD74 (\uD070 \uCE7C\uC774 \uACC1\uC5D0 \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uD070 \uCE7C\uC774 \uB2E4\uB4EC\uC5B4\uC838 \uD568\uAED8 \uC774\uB984\uC774 \uB192\uC544\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.SIN.060"
+                ],
+                source: [
+                  "R2.SIN.060"
+                ]
+              }
+            ],
+            D: [
+              {
+                item: "\uCE7C\uC790\uB8E8 \uC5C6\uB294 \uC2E0\uAE08\uACFC \uD3ED\uB825",
+                evidence: [
+                  "R2.SIN.080"
+                ],
+                source: [
+                  "R2.SIN.080"
+                ],
+                note: "\uD655\uC778 \uD544\uC694"
+              },
+              {
+                item: "\uC5EC\uC131\uC758 \uAE4C\uCE60\uD568\xB7\uACF5\uC8FC \uD589\uC138",
+                evidence: [
+                  "R2.SIN.084"
+                ],
+                source: [
+                  "R2.SIN.084"
+                ],
+                note: "\uD655\uC778 \uD544\uC694"
+              },
+              {
+                item: "\uD68C\uC0AC \uB3C4\uC0B0",
+                evidence: [
+                  "R2.SIN.022"
+                ],
+                source: [
+                  "R2.SIN.022"
+                ]
+              },
+              {
+                item: "\uAE08\uC735\uAD8C \uCC28\uC785",
+                evidence: [
+                  "R2.SIN.070"
+                ],
+                source: [
+                  "R2.SIN.070"
+                ],
+                note: "\uC7AC\uBB34 \uC9C0\uC2DC"
+              },
+              {
+                item: "\uB0C9\uC18C\uC801\uC774\uB77C\uB294 \uC6D0\uBB38 \uC11C\uC220",
+                evidence: [
+                  "R2.SIN.002"
+                ],
+                source: [
+                  "R2.SIN.002"
+                ],
+                note: "\uC0AC3\uC740 \uAE0D\uC815 \uBC88\uC5ED\uB9CC"
+              },
+              {
+                item: '"\uC0AC\uC5C5\uBCF4\uB2E4 \uC870\uC9C1\uC0DD\uD65C"',
+                evidence: [
+                  "R2.SIN.021"
+                ],
+                source: [
+                  "R2.SIN.021"
+                ],
+                note: "\uC790\uB9AC\uC758 \uC131\uACA9\uC73C\uB85C\uB9CC \uD45C\uD604"
+              }
+            ]
+          },
+          \u58EC: {
+            name: "\uC784\uC218 \u2014 \uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218",
+            sourcePage: "PDF page 38-43 (9. \uC784\uC218)",
+            _note: "PDF 9\uC7A5(pp.38~43) \uC804\uC0AC. A \uD0A4\uB294 '\uC2AC\uB86F\uCF54\uB4DC \uB77C\uBCA8' \uBCD1\uAE30(\uAC80\uC99D\uAE30 V6 \uD638\uD658). B\u5404\u884C source\uB294 \uAC80\uC99D\uAE30 V5 \uC694\uAD6C \uD544\uB4DC\uB85C evidence\uC640 \uB3D9\uC77C \uAC12. \uCC98\uBC29 \uCE78\uC774 \uC6D0\uBB38\uC5D0 \uBE44\uB294 \uAC00\uC9C0\uB294 \u2014 \uD45C\uAE30. (\uC77C) \uD45C\uAE30 \uAC00\uC9C0\uB294 \uC77C \uC139\uC158 \uD750\uB984 \uAC00\uC9C0. 7\uB2E8\uACC4(\uD2B9\uC131)\uB294 \uBB38\uC7A5 \uCE78 \uD558\uB098\uB77C \uCC98\uBC29 \uCE78\uC774 \uC6D0\uBB38\uC5D0 \uC5C6\uC74C(\u2014).",
+            A: {
+              "\uC0AC1 \uD615\uC0C1": {
+                text: "\uB2F9\uC2E0\uC740 \uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218\uC785\uB2C8\uB2E4. {1\uC21C\uC704 \uAC00\uC9C0 \uD55C \uC904}",
+                evidence: [
+                  "R2.IM.001"
+                ]
+              },
+              "\uC0AC2 \uC131\uD5A5": {
+                text: "\uBAA8\uB4E0 \uAC78 \uD488\uB418 \uC18D\uC744 \uC798 \uB4DC\uB7EC\uB0B4\uC9C0 \uC54A\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uB4E4\uC740 \uAC83\uC744 \uC624\uB798 \uAE30\uC5B5\uD558\uACE0, \uB9C9\uD788\uBA74 \uBD80\uB52A\uD788\uAE30\uBCF4\uB2E4 \uB3CC\uC544\uC11C \uD750\uB985\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.002"
+                ]
+              },
+              "\uC0AC3 \uB0A8\uB4E4\uC774\uBCF4\uB294\uB098": {
+                text: "\uC0AC\uB78C\uB4E4\uC740 \uB2F9\uC2E0 \uC55E\uC5D0\uC11C \uC790\uAE30 \uC598\uAE30\uB97C \uC27D\uAC8C \uAEBC\uB0C5\uB2C8\uB2E4. \uC815\uC791 \uADF8 \uC18D\uB0B4\uB97C \uC544\uB294 \uC0AC\uB78C\uC740 \uB4DC\uBB45\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.002"
+                ]
+              },
+              "\uC0AC4 \uCE6D\uCC2C": {
+                text: "\uCC98\uC74C \uAC00\uB294 \uAE38\uB3C4 \uAE08\uC138 \uC775\uD788\uACE0, \uB5A8\uC5B4\uC838 \uC788\uB358 \uAC83\uB4E4\uC744 \uC774\uC5B4 \uD558\uB098\uB85C \uB9CC\uB4DC\uB294 \uD798\uC774 \uC788\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.002"
+                ]
+              },
+              "\uC77C1 \uBB34\uAE30": {
+                text: "\uD761\uC218\uB825\uACFC \uC5F0\uACB0\uB825\uC785\uB2C8\uB2E4. \uBC30\uC6B4 \uAC78 \uBE68\uB9AC \uC81C \uAC83\uC73C\uB85C \uB9CC\uB4E4\uACE0, \uC0AC\uB78C\uACFC \uC0AC\uB78C, \uC815\uBCF4\uC640 \uC815\uBCF4\uB97C \uC787\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.002",
+                  "R2.IM.003"
+                ]
+              },
+              "\uC7AC6 \uB3C8\uC758\uC21C\uC11C": {
+                text: "\uB3C8\uC744 \uC887\uC73C\uBA74 \uBB3C\uC774 \uD750\uB824\uC9C0\uACE0, \uC774\uB984\uC744 \uC138\uC6B0\uBA74 \uB3C8\uC774 \uB530\uB77C\uC635\uB2C8\uB2E4. \uD638\uC218 \uC704\uC5D0 \uD574\uAC00 \uB5A0\uC57C \uBB3C\uACB0\uC774 \uBC18\uC9DD\uC774\uB4EF, \uC0AC\uB78C\uC774 \uBAA8\uC5EC\uB4DC\uB294 \uD638\uC218\uB77C \uB098\uB20C \uB54C \uB354 \uD06C\uAC8C \uB3CC\uC544\uC635\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.074",
+                  "R2.IM.041"
+                ]
+              },
+              "\uC5F01 \uAD00\uACC4\uC120\uC5B8": {
+                text: "\uBB3C\uC740 \uC5B4\uB5A4 \uADF8\uB987\uC5D0 \uB2F4\uAE30\uB4E0 \uADF8 \uBAA8\uC591\uB300\uB85C \uC790\uC2E0\uC744 \uBC14\uAFC9\uB2C8\uB2E4. \uB2F9\uC2E0\uB3C4 \uC0C1\uB300\uC5D0 \uB530\uB77C \uBAA8\uC591\uC744 \uBC14\uAFD4 \uAC00\uBA70 \uC0C1\uB300\uB97C \uB2E4 \uBC1B\uC544 \uC8FC\uACE0 \uD488\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uADF8\uB7EC\uBA74\uC11C\uB3C4 \uC18D\uC73C\uB85C\uB294, \uD758\uB7EC\uAC00\uB824\uB294 \uB098\uB97C \uB9D0\uC5C6\uC774 \uBD99\uC7A1\uC544 \uC8FC\uB294 \uC0AC\uB78C\uC744 \uAC04\uC808\uD788 \uBC14\uB78D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.002",
+                  "R2.IM.010"
+                ]
+              },
+              marriageCondition: {
+                label: "\uACB0\uD63C \uC870\uAC74",
+                text: "\uAC70\uB300\uD55C \uC0B0\uB9E5\uC774 \uB451\uC73C\uB85C \uB4E4\uC5B4\uC62C \uB54C.",
+                evidence: [
+                  "R2.IM.011"
+                ]
+              },
+              endingTheme: {
+                label: "\uB05D \uC18C\uC7AC",
+                text: "\uB9CE\uC740 \uAC83\uC744 \uD488\uC5B4 \uC628 \uB113\uC774 / \uD769\uC5B4\uC84C\uB358 \uC2DC\uAC04\uB9CC\uD07C \uB113\uC5B4\uC9C4 \uD638\uC218",
+                evidence: [
+                  "R2.IM.002"
+                ]
+              },
+              careerNote: {
+                label: "\uC9C1\uC5C5 \uACB0(\uCC38\uACE0\uC6A9, \uB098\uC5F4 \uAE08\uC9C0)",
+                text: "\uD574\uC678, \uC720\uD1B5, \uC74C\uC2DD, \uC815\uBCF4, \uAD50\uC721.",
+                evidence: [
+                  "R2.IM.003"
+                ]
+              }
+            },
+            B: [
+              {
+                stage: 1,
+                stageName: "\uB451",
+                stageNote: "\uBB3C\uC744 \uAC00\uB450\uB294 \uB545 (\uC790\uB9AC\uC640 \uACC1)",
+                code: "\uC7841-\uAC00",
+                condition: "\uAC70\uB300\uD55C \uC0B0\uB9E5 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC7AC1"
+                ],
+                diagnosis: "\uD070 \uB451\uC774 \uD070\uBB3C\uC744 \uAC00\uB46C \uC4F0\uC784 \uC788\uB294 \uD638\uC218\uAC00 \uB418\uC5C8\uC2B5\uB2C8\uB2E4. \uD798\uC774 \uD769\uC5B4\uC9C0\uC9C0 \uC54A\uACE0 \uD55C\uACF3\uC73C\uB85C \uBAA8\uC785\uB2C8\uB2E4.",
+                prescription: "\uC774\uB984\uC744 \uAC70\uB294 \uC77C\uC744 \uBA3C\uC800 \uC887\uC73C\uC138\uC694. \uB451 \uC548\uC5D0 \uACE0\uC778 \uBB3C\uC774 \uC7AC\uBB3C\uC774 \uB429\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.020",
+                  "R2.IM.074"
+                ],
+                source: [
+                  "R2.IM.020",
+                  "R2.IM.074"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB451",
+                stageNote: "\uBB3C\uC744 \uAC00\uB450\uB294 \uB545 (\uC790\uB9AC\uC640 \uACC1)",
+                code: "\uC7841-\uB098",
+                condition: "\uC791\uC740 \uB545\uB9CC \uC788\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uD070\uBB3C\uC744 \uC791\uC740 \uB451\uC73C\uB85C \uB9C9\uACE0 \uC788\uC5B4 \uB451\uC774 \uC790\uC8FC \uBC84\uAC70\uC6CC\uC9D1\uB2C8\uB2E4. \uC560\uC368 \uBAA8\uC740 \uAC83\uC774 \uB118\uCCD0 \uD758\uB7EC\uAC00\uAE30 \uC27D\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uB118\uCE58\uB294 \uBB3C\uC744 \uD758\uB824\uBCF4\uB0BC \uAE38\uC744 \uD568\uAED8 \uB0B4 \uB450\uC138\uC694. \uBC14\uB2E4 \uAC74\uB108\uC758 \uC77C, \uC0AC\uB78C\uACFC \uBB3C\uAC74\uC774 \uC624\uAC00\uB294 \uC77C\uC774 \uB451\uC758 \uC9D0\uC744 \uB35C\uC5B4 \uC90D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.021",
+                  "R1.TAK.032"
+                ],
+                source: [
+                  "R2.IM.021",
+                  "R1.TAK.032"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB451",
+                stageNote: "\uBB3C\uC744 \uAC00\uB450\uB294 \uB545 (\uC790\uB9AC\uC640 \uACC1)",
+                code: "\uC7841-\uB2E4",
+                condition: "\uB451 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6"
+                ],
+                diagnosis: "\uB451\uC774 \uC5C6\uB294 \uD070\uBB3C\uC740 \uD55C\uACF3\uC5D0 \uBA38\uBB3C\uAE30 \uC5B4\uB835\uC2B5\uB2C8\uB2E4. \uADF8\uB798\uC11C \uC5EC\uB7EC \uC77C\uC744 \uD55C\uAEBC\uBC88\uC5D0 \uBC8C\uC774\uACE0, \uB05D\uC744 \uBCF4\uAE30 \uC804\uC5D0 \uB2E4\uC74C\uC73C\uB85C \uB118\uC5B4\uAC00\uB294 \uC77C\uC774 \uC7A6\uC558\uC744 \uAC81\uB2C8\uB2E4.",
+                prescription: "\uB451\uC774 \uC5C6\uC5B4 \uACE0\uC77C \uC218 \uC5C6\uB294 \uBB3C\uC740, \uBC14\uB2E4 \uAC74\uB108 \uB2E4\uB978 \uB545\uC5D0 \uB2FF\uC744 \uB54C \uBE44\uB85C\uC18C \uD769\uC5B4\uC9D0\uC774 \uBA48\uCDA5\uB2C8\uB2E4. \uBA38\uBB3C \uACF3\uC744 \uCC3E\uAE30\uBCF4\uB2E4 \uD758\uB7EC\uAC08 \uACF3\uC744 \uBA3C\uC800 \uC815\uD558\uC138\uC694.",
+                evidence: [
+                  "R2.IM.010",
+                  "R2.IM.023",
+                  "R2.IM.080"
+                ],
+                source: [
+                  "R2.IM.010",
+                  "R2.IM.023",
+                  "R2.IM.080"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB451",
+                stageNote: "\uBB3C\uC744 \uAC00\uB450\uB294 \uB545 (\uC790\uB9AC\uC640 \uACC1)",
+                code: "\uC7841-\uB2E4(\uC77C)",
+                condition: "\uB451 \uC5C6\uC74C (\uC77C \uC139\uC158 \uD750\uB984)",
+                slots: [
+                  "\uC77C3",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uB118\uCE58\uB294 \uBB3C\uC740 \uC81C\uBC29\uC744 \uB9CC\uB4E4\uC5B4 \uBAA8\uC544\uC57C \uC4F0\uC77C \uC218 \uC788\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC744 \uAC00\uB458 \uB545\uC774 \uBD80\uC871\uD558\uB2C8, \uAD6D\uACBD\uC744 \uB118\uC5B4 \uC81C\uBC29\uC744 \uB9CC\uB098\uAC70\uB098 \uC624\uD788\uB824 \uBB3C\uAE38\uC744 \uD130 \uC8FC\uC5B4 \uC0AC\uB78C\uACFC \uBB3C\uAC74\uACFC \uC815\uBCF4\uAC00 \uC624\uAC00\uB294 \uC720\uD1B5\uC758 \uC77C\uC774 \uC798 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.020",
+                  "R2.IM.023"
+                ],
+                source: [
+                  "R2.IM.020",
+                  "R2.IM.023"
+                ],
+                note: "\uC6D0\uBB38 (\uC77C) \uC139\uC158 \uD750\uB984 \uAC00\uC9C0"
+              },
+              {
+                stage: 2,
+                stageName: "\uB451\uC758 \uB098\uBB34",
+                stageNote: "\uB451\uC744 \uBD99\uC7A1\uB294 \uBFCC\uB9AC",
+                code: "\uC7842-\uAC00",
+                condition: "\uC0B0\uB9E5 + \uD070 \uB098\uBB34",
+                slots: [
+                  "\uC0AC4"
+                ],
+                diagnosis: "\uB451\uC5D0 \uD070 \uB098\uBB34\uAC00 \uBFCC\uB9AC\uB0B4\uB824 \uBB3C\uC774 \uB9D1\uC2B5\uB2C8\uB2E4. \uC790\uB9AC\uC640 \uACC1\uC774 \uB2E8\uB2E8\uD569\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.IM.012",
+                  "R2.IM.070"
+                ],
+                source: [
+                  "R2.IM.012",
+                  "R2.IM.070"
+                ],
+                note: "\uCC98\uBC29 \uCE78 \uC6D0\uBB38 \u2014"
+              },
+              {
+                stage: 2,
+                stageName: "\uB451\uC758 \uB098\uBB34",
+                stageNote: "\uB451\uC744 \uBD99\uC7A1\uB294 \uBFCC\uB9AC",
+                code: "\uC7842-\uB098",
+                condition: "\uC0B0\uB9E5 + \uB098\uBB34 \uC5C6\uC74C (\uC6B4\uC5D0\uC11C \uB451\uC774 \uB4E4\uC5B4\uC62C \uB54C\uB3C4 \uAC19\uB2E4)",
+                slots: [
+                  "\uC77C5",
+                  "\uC0AC7",
+                  "\uC0AC8"
+                ],
+                diagnosis: "\uD759\uC73C\uB85C\uB9CC \uC313\uC740 \uB451\uC740 \uD63C\uC790 \uBC84\uD2F0\uC9C0 \uBABB\uD558\uACE0 \uC4F8\uB824 \uAC11\uB2C8\uB2E4.",
+                prescription: "\uADF8\uB798\uC11C \uADF8 \uD759\uC5D0 \uB098\uBB34\uB97C \uC2EC\uB294 \uC77C, \uACE7 \uBB34\uC5B8\uAC00\uB97C \uD0A4\uC6B0\uACE0 \uB9CC\uB4DC\uB294 \uC77C\uC774 \uD544\uC694\uD569\uB2C8\uB2E4. \uC774\uC57C\uAE30\uB97C \uC9D3\uB4E0, \uACF5\uAC04\uC744 \uC9D3\uB4E0, \uC0AC\uB78C\uC744 \uAE30\uB974\uB4E0 \uC790\uB77C\uB294 \uAC83\uC744 \uACC1\uC5D0 \uB450\uB294 \uC77C\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.012",
+                  "R2.IM.030",
+                  "R2.IM.083",
+                  "R2.IM.084"
+                ],
+                source: [
+                  "R2.IM.012",
+                  "R2.IM.030",
+                  "R2.IM.083",
+                  "R2.IM.084"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uB451\uC758 \uB098\uBB34",
+                stageNote: "\uB451\uC744 \uBD99\uC7A1\uB294 \uBFCC\uB9AC",
+                code: "\uC7842-\uB098\u2032",
+                condition: "\uC704 \uAC00\uC9C0 + \uC791\uC740 \uB545 \uC788\uC74C",
+                slots: [
+                  "\uC77C5"
+                ],
+                diagnosis: "\uACC1\uC758 \uC791\uC740 \uB545\uC774 \uD070 \uB098\uBB34\uB97C \uBD88\uB7EC\uC640 \uB451\uC5D0 \uC2EC\uC5B4 \uC90D\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.IM.075"
+                ],
+                source: [
+                  "R2.IM.075"
+                ],
+                note: "\uCC98\uBC29 \uCE78 \uC6D0\uBB38 \u2014"
+              },
+              {
+                stage: 2,
+                stageName: "\uB451\uC758 \uB098\uBB34",
+                stageNote: "\uB451\uC744 \uBD99\uC7A1\uB294 \uBFCC\uB9AC",
+                code: "\uC7842-\uB2E4",
+                condition: "\uC0B0\uB9E5 + \uD478\uB978 \uB369\uAD74\uB9CC",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uC77C5"
+                ],
+                diagnosis: "\uD070 \uB451\uC5D0 \uC791\uC740 \uB369\uAD74\uC774 \uC2EC\uC5B4\uC838, \uD070\uBB3C\uC774 \uB4E4\uBA74 \uBC84\uD2F0\uAE30 \uC5B4\uB835\uC2B5\uB2C8\uB2E4. \uB9E1\uC740 \uC790\uB9AC\uB098 \uACC1\uC758 \uC77C\uC774 \uC790\uB9AC\uAC00 \uD754\uB4E4\uB9AC\uAE30 \uC27D\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uB369\uAD74\uC774 \uC544\uB2C8\uB77C \uD070 \uB098\uBB34\uB97C \uD0A4\uC6B0\uC138\uC694. \uC624\uB798 \uAE4A\uAC8C \uAE30\uB974\uB294 \uC77C\uC774 \uB451\uC744 \uC9C0\uD0B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.031",
+                  "R2.IM.083"
+                ],
+                source: [
+                  "R2.IM.031",
+                  "R2.IM.083"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uB451\uC758 \uB098\uBB34",
+                stageNote: "\uB451\uC744 \uBD99\uC7A1\uB294 \uBFCC\uB9AC",
+                code: "\uC7842-\uB77C",
+                condition: "\uC791\uC740 \uB545 + \uD070 \uB098\uBB34",
+                slots: [
+                  "\uC0AC7"
+                ],
+                diagnosis: "\uC791\uC740 \uB451\uC5D0 \uD070 \uB098\uBB34\uAC00 \uC790\uB77C \uB451\uC774 \uBB34\uB108\uC9C0\uAE30 \uC27D\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC790\uB8CC \uC5C6\uC74C \u2014 \uC9C4\uB2E8\uB9CC \uC4F4\uB2E4.",
+                evidence: [
+                  "R2.IM.032"
+                ],
+                source: [
+                  "R2.IM.032"
+                ],
+                note: "\uC790\uB8CC \uC5C6\uC74C \uD45C\uC2DC \uAC00\uC9C0 (\uBB38\uC11C \uB05D \uC790\uB8CC \uC5C6\uC74C \uBAA9\uB85D)"
+              },
+              {
+                stage: 2,
+                stageName: "\uB451\uC758 \uB098\uBB34",
+                stageNote: "\uB451\uC744 \uBD99\uC7A1\uB294 \uBFCC\uB9AC",
+                code: "\uC7842-\uB9C8",
+                condition: "\uD070 \uB098\uBB34 + \uB545 \uC5C6\uC74C",
+                slots: [
+                  "\uACC44"
+                ],
+                diagnosis: "\uB545 \uC5C6\uC774 \uBB3C \uC704\uC5D0 \uB72C \uB098\uBB34\uB77C \uC81C\uB300\uB85C \uC790\uB77C\uC9C0 \uBABB\uD569\uB2C8\uB2E4.",
+                prescription: "\uADF8 \uB098\uBB34\uB97C \uC2EC\uC744 \uB545\uC774 \uB4E4\uC5B4\uC624\uB294 \uB54C\uB97C \uC9DA\uC5B4 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.IM.070"
+                ],
+                source: [
+                  "R2.IM.070"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uB451\uC758 \uB098\uBB34",
+                stageNote: "\uB451\uC744 \uBD99\uC7A1\uB294 \uBFCC\uB9AC",
+                code: "\uC7842-\uBC14",
+                condition: "\uC791\uC740 \uB545\uACFC \uD070 \uB098\uBB34\uAC00 \uBB36\uC5EC \uC788\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uACC42"
+                ],
+                diagnosis: "\uC791\uC740 \uB451\uC5D0 \uBB36\uC778 \uD070 \uB098\uBB34\uAC00 \uC790\uB784\uC218\uB85D \uB451\uC774 \uBC84\uAC70\uC6CC\uC9D1\uB2C8\uB2E4.",
+                prescription: "\uBB36\uC784\uC774 \uD480\uB9AC\uB294 \uB54C\uB97C \uC9DA\uC5B4 \uB450\uACE0, \uADF8\uB54C \uC790\uB9AC\uAC00 \uD754\uB4E4\uB9AC\uC9C0 \uC54A\uAC8C \uBBF8\uB9AC \uAE30\uBC18\uC744 \uB2E4\uC9C0\uC138\uC694.",
+                evidence: [
+                  "R2.IM.081"
+                ],
+                source: [
+                  "R2.IM.081"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uB451\uC758 \uB098\uBB34",
+                stageNote: "\uB451\uC744 \uBD99\uC7A1\uB294 \uBFCC\uB9AC",
+                code: "\uC7842-\uC0AC",
+                condition: "\uD478\uB978 \uB369\uAD74 + \uAE08 \uC5C6\uC74C",
+                slots: [
+                  "\uC77C4"
+                ],
+                diagnosis: "\uBB3C \uC704\uC758 \uBD80\uCD08 \uAC19\uC740 \uB369\uAD74\uC774\uC9C0\uB9CC, \uAE08\uB9E5\uC744 \uBD88\uB7EC\uC640 \uBB3C\uC744 \uB9C8\uB974\uC9C0 \uC54A\uAC8C \uD574 \uC90D\uB2C8\uB2E4.",
+                prescription: "\uADF8 \uB369\uAD74\uC774 \uBD88\uB7EC\uC624\uB294 \uC190\uAE38, \uACE7 \uAE30\uC900\uACFC \uAE30\uC220\uC758 \uC77C\uC744 \uACC1\uC5D0 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.IM.071"
+                ],
+                source: [
+                  "R2.IM.071"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uD638\uC218 \uC704\uC758 \uBE5B (\uC7AC\uBB3C\uACFC \uC774\uB984)",
+                code: "\uC7843-\uAC00",
+                condition: "\uD0DC\uC591 + \uBB3C\uC774 \uB9D1\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC7AC1"
+                ],
+                diagnosis: "\uB9D1\uC740 \uD638\uC218 \uC704\uC5D0 \uD574\uAC00 \uB72C \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uC774\uB984\uACFC \uC7AC\uBB3C\uC774 \uD568\uAED8 \uBC18\uC9DD\uC785\uB2C8\uB2E4.",
+                prescription: "\uC774\uB984\uC744 \uBA3C\uC800 \uC138\uC6B0\uC138\uC694. \uC0AC\uB78C\uC744 \uBD88\uB7EC \uBAA8\uC73C\uACE0 \uBCA0\uD480\uC218\uB85D \uB354 \uD06C\uAC8C \uB3CC\uC544\uC635\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.013",
+                  "R2.IM.041"
+                ],
+                source: [
+                  "R2.IM.013",
+                  "R2.IM.041"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uD638\uC218 \uC704\uC758 \uBE5B (\uC7AC\uBB3C\uACFC \uC774\uB984)",
+                code: "\uC7843-\uB098",
+                condition: "\uD0DC\uC591 + \uBB3C\uC774 \uD750\uB824\uC9D0",
+                slots: [
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uBB3C\uC774 \uD750\uB824 \uD574\uAC00 \uBE44\uCCD0\uB3C4 \uBC18\uC9DD\uC774\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4. \uC798\uD574\uB3C4 \uC190\uC5D0 \uB0A8\uB294 \uAC83\uC774 \uC801\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uD750\uB824\uC9C0\uB294 \uC6D0\uC778\uC744 \uB530\uB77C \uCC98\uBC29\uD55C\uB2E4(1\uCE35 \uD0C1\uC218 \uD574\uBC95).",
+                evidence: [
+                  "R2.IM.040",
+                  "1\uCE35 \uD0C1\uC218"
+                ],
+                source: [
+                  "R2.IM.040",
+                  "1\uCE35 \uD0C1\uC218"
+                ],
+                note: "1\uCE35 \uD0C1\uC218"
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uD638\uC218 \uC704\uC758 \uBE5B (\uC7AC\uBB3C\uACFC \uC774\uB984)",
+                code: "\uC7843-\uB2E4",
+                condition: "\uD0DC\uC591 + \uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C (\uAC00\uB9BC)",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uC7AC2",
+                  "\uC7AC7"
+                ],
+                diagnosis: "\uC774\uBBF8 \uB2F9\uC2E0\uC744 \uBE44\uCD94\uB294 \uD574\uAC00 \uB5A0 \uC788\uC2B5\uB2C8\uB2E4. \uADF8\uB7F0\uB370 \uBC14\uB85C \uC606\uC5D0\uC11C \uBE44\uAC00 \uB0B4\uB9AC\uACE0 \uC788\uC5B4\uC11C, \uAC00\uC7A5 \uC798\uD588\uB358 \uC21C\uAC04\uC5D0\uB3C4 \uC774\uB984\uC774 \uC798 \uB0A8\uC9C0 \uC54A\uC558\uC744 \uAC81\uB2C8\uB2E4.",
+                prescription: "\uD070 \uB451\uC774 \uB4E4\uC5B4\uC640 \uBE44\uB97C \uAC70\uB450\uB294 \uB54C\uC5D0 \uD574\uAC00 \uCC98\uC74C\uC73C\uB85C \uB4DC\uB7EC\uB0A9\uB2C8\uB2E4. \uADF8\uB54C \uB3C8\uC740 \uB545\uC5D0\uC11C \uC5F4\uB9BD\uB2C8\uB2E4. \uACF5\uAC04\uACFC \uD130, \uC9D3\uB294 \uC77C\uC5D0 \uB2FF\uC544 \uC788\uB294 \uC77C\uC774 \uB3C8\uC758 \uBB38\uC744 \uC5FD\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.061"
+                ],
+                source: [
+                  "R2.IM.061"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uD638\uC218 \uC704\uC758 \uBE5B (\uC7AC\uBB3C\uACFC \uC774\uB984)",
+                code: "\uC7843-\uB77C",
+                condition: "\uD0DC\uC591 + \uB451 \uC5C6\uC74C",
+                slots: [
+                  "\uC7AC1"
+                ],
+                diagnosis: "\uB451\uC774 \uC5C6\uC5B4 \uBB3C\uC774 \uD758\uB7EC\uAC08 \uB54C, \uD574\uAC00 \uBCF4\uC11D\uC744 \uBD88\uB7EC\uC640 \uBB3C\uC744 \uB2E4\uC2DC \uB9CC\uB4E4\uC5B4 \uC90D\uB2C8\uB2E4. \uB2E4\uB9CC \uBE44\uAC00 \uB4E4\uBA74 \uADF8 \uD574\uAC00 \uAC00\uB824\uC9D1\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.IM.072"
+                ],
+                source: [
+                  "R2.IM.072"
+                ],
+                note: "\uCC98\uBC29 \uCE78 \uC6D0\uBB38 \u2014"
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uD638\uC218 \uC704\uC758 \uBE5B (\uC7AC\uBB3C\uACFC \uC774\uB984)",
+                code: "\uC7843-\uB9C8",
+                condition: "\uD0DC\uC591\uC774 \uD0DC\uC5B4\uB09C \uD574\uC5D0 \uC788\uC74C (\uC7AC\uBB3C\uC758 \uD310)",
+                slots: [
+                  "\uC77C2",
+                  "\uC7AC1"
+                ],
+                diagnosis: "\uC7AC\uBB3C\uC740 \uAD6D\uAC00\uC640 \uAD00\uB828\uB41C \uAE30\uAD00\uC774\uB098, \uAD6D\uAC00\uC2DC\uD5D8\uC73C\uB85C \uB530\uB77C\uC624\uB294 \uC790\uACA9\uACFC \uC5F0\uACB0\uB418\uC5B4 \uC788\uC2B5\uB2C8\uB2E4. \uC774\uB984\uC774 \uAC78\uB9AC\uACE0 \uAE30\uB85D\uC774 \uB0A8\uB294 \uC77C\uC77C\uC218\uB85D \uD798\uC774 \uBD99\uC2B5\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "\uAD6D\uAC00\uC790\uB9AC \uD310\uC815",
+                  "R2.IM.041"
+                ],
+                source: [
+                  "\uAD6D\uAC00\uC790\uB9AC \uD310\uC815",
+                  "R2.IM.041"
+                ],
+                note: "\uCC98\uBC29 \uCE78 \uC6D0\uBB38 \u2014, \uAD6D\uAC00\uC790\uB9AC \uD310\uC815 \uAC00\uC9C0"
+              },
+              {
+                stage: 4,
+                stageName: "\uC218\uC6D0",
+                stageNote: "\uBB3C\uC744 \uCC44\uC6B0\uB294 \uAE08\uB9E5",
+                code: "\uC7844-\uAC00",
+                condition: "\uAE08 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4"
+                ],
+                diagnosis: "\uC548\uC5D0 \uB9C8\uB974\uC9C0 \uC54A\uB294 \uC218\uC6D0\uC774 \uC788\uC5B4 \uC9C0\uCCD0\uB3C4 \uB2E4\uC2DC \uCC28\uC624\uB985\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.IM.014"
+                ],
+                source: [
+                  "R2.IM.014"
+                ],
+                note: "\uCC98\uBC29 \uCE78 \uC6D0\uBB38 \u2014"
+              },
+              {
+                stage: 4,
+                stageName: "\uC218\uC6D0",
+                stageNote: "\uBB3C\uC744 \uCC44\uC6B0\uB294 \uAE08\uB9E5",
+                code: "\uC7844-\uB098",
+                condition: "\uCEE4\uB2E4\uB780 \uAE08\uB9E5 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C2"
+                ],
+                diagnosis: "\uAE08\uB9E5\uC774 \uBB3C\uC5D0\uC11C \uB180\uBA70 \uC218\uB7C9\uC744 \uC9C0\uCF1C \uC90D\uB2C8\uB2E4. \uB451\uACFC \uD070 \uB098\uBB34\uAC00 \uAC16\uCDB0\uC9C0\uBA74 \uADF8 \uB098\uBB34\uB97C \uC190\uC7A1\uC774 \uC0BC\uC544 \uAD8C\uD55C\uC744 \uC501\uB2C8\uB2E4.",
+                prescription: "\uC774\uB984\uC5D0\uC11C \uC774\uB984\uC73C\uB85C \uC774\uC5B4\uC9C0\uB294 \uAD6C\uC870\uB77C \uBA85\uC608\uB97C \uC887\uC73C\uC138\uC694.",
+                evidence: [
+                  "R2.IM.076"
+                ],
+                source: [
+                  "R2.IM.076"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uC218\uC6D0",
+                stageNote: "\uBB3C\uC744 \uCC44\uC6B0\uB294 \uAE08\uB9E5",
+                code: "\uC7844-\uB098(\uC77C)",
+                condition: "\uCEE4\uB2E4\uB780 \uAE08\uB9E5 + \uC6B4\uC5D0\uC11C \uB451\uC774 \uB4E4\uC5B4\uC624\uACE0 \uB098\uBB34 \uC5C6\uC74C",
+                slots: [
+                  "\uC77C6"
+                ],
+                diagnosis: "\uC190\uB05D\uC5D0\uB294 \uCEE4\uB2E4\uB780 \uAE08\uB9E5\uC774 \uC788\uC5B4 \uAE30\uC220\uACFC \uB3C4\uAD6C\uB97C \uB2E4\uB8E8\uB294 \uAC10\uAC01\uC774 \uC88B\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uB2E4\uB9CC \uB451\uC774 \uB4E4\uC5B4\uC624\uB294 \uC2DC\uAE30\uC5D0\uB294 \uB3C4\uAD6C\uAC00 \uC911\uC2EC\uC774 \uB418\uBA74 \uBB3C\uC774 \uD750\uB824\uC9C0\uB2C8, \uBB34\uC5C7\uC744 \uD0A4\uC6B8\uC9C0 \uBA3C\uC800 \uC815\uD558\uACE0 \uB3C4\uAD6C\uB294 \uADF8 \uB4A4\uC5D0 \uC950\uC138\uC694.",
+                evidence: [
+                  "R2.IM.023 vs 051"
+                ],
+                source: [
+                  "R2.IM.023 vs 051"
+                ],
+                note: "\uC6D0\uBB38 (\uC77C) \uD45C\uAE30, \uADFC\uAC70 R2.IM.023 vs 051"
+              },
+              {
+                stage: 4,
+                stageName: "\uC218\uC6D0",
+                stageNote: "\uBB3C\uC744 \uCC44\uC6B0\uB294 \uAE08\uB9E5",
+                code: "\uC7844-\uB2E4",
+                condition: "\uC138\uACF5\uB41C \uBCF4\uC11D \uC788\uC74C",
+                slots: [
+                  "\uC77C2"
+                ],
+                diagnosis: "\uBCF4\uC11D\uC774 \uD574\uB97C \uBD88\uB7EC\uC640 \uD638\uC218 \uC704\uC5D0 \uB744\uC6C1\uB2C8\uB2E4.",
+                prescription: "\uAD6D\uAC00\uC640 \uAD00\uB828\uB41C \uC77C\uC5D0\uC11C \uD798\uC744 \uC501\uB2C8\uB2E4. \uB2E4\uB9CC \uD070 \uBB3C\uC0B4\uC5D0 \uC791\uC740 \uB0A0\uC774 \uBB34\uB38C\uC9C0\uAE30 \uC26C\uC6B0\uB2C8, \uBB3C\uC774 \uC794\uC794\uD574\uC9C0\uB294 \uB54C\uB97C \uC9DA\uC5B4 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.IM.077"
+                ],
+                source: [
+                  "R2.IM.077"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uC218\uC6D0",
+                stageNote: "\uBB3C\uC744 \uCC44\uC6B0\uB294 \uAE08\uB9E5",
+                code: "\uC7844-\uB77C",
+                condition: "\uAE08 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4",
+                  "\uC77C6"
+                ],
+                diagnosis: "\uBB3C\uC744 \uCC44\uC6CC \uC904 \uC218\uC6D0\uC774 \uC5C6\uC5B4 \uC27D\uAC8C \uB9C8\uB985\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC744 \uB9CC\uB4DC\uB294 \uAE08\uB9E5\uC758 \uC77C(\uBC95\xB7\uAE08\uC735\xB7\uC758\uC57D), \uBC14\uB2E4 \uAC74\uB108\uC640 \uB2FF\uC740 \uC77C, \uC678\uAD6D\uACFC \uB2FF\uC740 \uC77C\uD130\uAC00 \uC218\uC6D0\uC774 \uB429\uB2C8\uB2E4. \uB2E8 \uB451\uB9CC \uC788\uACE0 \uB098\uBB34\uAC00 \uC5C6\uC5B4 \uD750\uB824\uC9C8 \uB54C\uB294 \uB098\uBB34\uC758 \uC77C\uC774 \uBA3C\uC800\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.050",
+                  "R2.IM.051"
+                ],
+                source: [
+                  "R2.IM.050",
+                  "R2.IM.051"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uBB3C\uC758 \uC591",
+                stageNote: null,
+                code: "\uC7845-\uAC00",
+                condition: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218 \uB458 \uC774\uC0C1",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uBB3C\uC774 \uACB9\uCCD0 \uB118\uCE69\uB2C8\uB2E4. \uB451\uB3C4 \uB098\uBB34\uB3C4 \uBC84\uD2F0\uAE30 \uC5B4\uB824\uC6B8 \uB9CC\uD07C \uD798\uC774 \uD07D\uB2C8\uB2E4.",
+                prescription: "\uC218\uB7C9\uC744 \uC904\uC774\uB294 \uCABD\uC774 \uB2F5\uC785\uB2C8\uB2E4. \uB4F1\uBD88\uCC98\uB7FC \uB9C8\uC74C\uACFC \uC815\uC2E0\uC744 \uBC1D\uD788\uB294 \uC77C\uC774 \uBB3C\uC744 \uC794\uC794\uD558\uAC8C \uD569\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.060"
+                ],
+                source: [
+                  "R2.IM.060"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uBB3C\uC758 \uC591",
+                stageNote: null,
+                code: "\uC7845-\uB098",
+                condition: "\uD638\uC218 \uB458 \uC774\uC0C1 + \uB451 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uB118\uCE58\uB294 \uBB3C\uC774 \uBA38\uBB3C \uACF3 \uC5C6\uC774 \uD750\uB985\uB2C8\uB2E4.",
+                prescription: "\uBC14\uB2E4 \uAC74\uB108 \uC0C8 \uB545\uC5D0 \uC790\uB9AC\uB97C \uC7A1\uB294 \uAC83\uC774 \uB9DE\uC2B5\uB2C8\uB2E4. \uADF8\uAC8C \uC5B4\uB835\uB2E4\uBA74 \uB9C8\uC74C\uACFC \uC815\uC2E0\uC744 \uBC1D\uD788\uB294 \uC77C\uB85C \uBB3C\uC744 \uC794\uC794\uD558\uAC8C \uD558\uC138\uC694.",
+                evidence: [
+                  "R2.IM.078"
+                ],
+                source: [
+                  "R2.IM.078"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uBB3C\uC758 \uC591",
+                stageNote: null,
+                code: "\uC7845-\uB2E4",
+                condition: "\uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C \uC788\uC74C",
+                slots: [
+                  "\uC0AC4"
+                ],
+                diagnosis: "\uC791\uC740 \uBB3C\uC774 \uACB0\uAD6D \uD070\uBB3C\uB85C \uD569\uCCD0\uC838 \uD798\uC774 \uB429\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.IM.062"
+                ],
+                source: [
+                  "R2.IM.062"
+                ],
+                note: "\uCC98\uBC29 \uCE78 \uC6D0\uBB38 \u2014"
+              },
+              {
+                stage: 6,
+                stageName: "\uB4F1\uBD88",
+                stageNote: null,
+                code: "\uC7846-\uAC00",
+                condition: "\uB4F1\uBD88\uACFC \uBB36\uC784",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uACC42"
+                ],
+                diagnosis: "\uB4F1\uBD88\uACFC \uD558\uB098\uB85C \uBB36\uC778 \uD638\uC218\uC785\uB2C8\uB2E4. \uBB3C\uC774 \uC794\uC794\uD574\uC9C0\uB294 \uB300\uC2E0 \uB113\uAC8C \uD3BC\uCE58\uAE30 \uC5B4\uB835\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uB9C8\uC74C\uACFC \uC815\uC2E0\uC758 \uC138\uACC4\uB97C \uB2E4\uB8E8\uB294 \uC77C\uC5D0\uC11C \uAE4A\uC5B4\uC9D1\uB2C8\uB2E4. \uB098\uBB34\uAC00 \uC5C6\uC5B4 \uBB3C\uC774 \uD750\uB824\uC9C8 \uB54C\uB294 \uC774 \uBB36\uC784\uC774 \uC624\uD788\uB824 \uB098\uBB34\uB97C \uB9CC\uB4E4\uC5B4 \uC90D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.073",
+                  "R2.IM.042"
+                ],
+                source: [
+                  "R2.IM.073",
+                  "R2.IM.042"
+                ]
+              },
+              {
+                stage: 7,
+                stageName: "\uD2B9\uC131 (\uB05D \uC2AC\uB86F \uD6C4\uBCF4)",
+                stageNote: null,
+                code: "\uC7847-\uAC00",
+                condition: "\uD56D\uC0C1",
+                slots: [
+                  "\uB05D2"
+                ],
+                diagnosis: "\uC5B4\uB514\uC5D0\uB3C4 \uACE0\uC774\uC9C0 \uC54A\uC558\uAE30\uC5D0 \uB9CE\uC740 \uACF3\uC744 \uC9C0\uB098\uC654\uACE0, \uADF8\uB9CC\uD07C \uB9CE\uC740 \uAC83\uC744 \uD488\uC5C8\uC2B5\uB2C8\uB2E4. \uD769\uC5B4\uC84C\uB358 \uC2DC\uAC04\uB9CC\uD07C \uB2F9\uC2E0\uC758 \uD638\uC218\uB294 \uB113\uC5B4\uC84C\uC2B5\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.IM.002"
+                ],
+                source: [
+                  "R2.IM.002"
+                ],
+                note: "\uD2B9\uC131 \uB2E8\uACC4 \u2014 \uBB38\uC7A5 \uCE78 \uD558\uB098, \uCC98\uBC29 \uCE78 \uC6D0\uBB38\uC5D0 \uC5C6\uC74C"
+              }
+            ],
+            C: [
+              {
+                code: "\uC784\uC6B4-\uAC00",
+                incoming: "\uAC70\uB300\uD55C \uC0B0\uB9E5",
+                slots: [
+                  "\uC5F04",
+                  "\uC5F05",
+                  "\uACC43"
+                ],
+                sentence: "\uD3C9\uC0DD \uCC98\uC74C\uC73C\uB85C, \uD639\uC740 \uB2E4\uC2DC \uD070 \uB451\uC774 \uB4E4\uC5B4\uC624\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uD769\uC5B4\uC9C0\uB358 \uD798\uC744 \uBD99\uC7A1\uC544 \uC904 \uC790\uB9AC\uC640 \uACC1\uC774 \uC0DD\uAE41\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.011",
+                  "R2.IM.020"
+                ],
+                source: [
+                  "R2.IM.011",
+                  "R2.IM.020"
+                ]
+              },
+              {
+                code: "\uC784\uC6B4-\uB098",
+                incoming: "\uAC70\uB300\uD55C \uC0B0\uB9E5 (\uC2DC\uB0C7\uBB3C\uC774 \uD574\uB97C \uAC00\uB9B4 \uB54C)",
+                slots: [
+                  "\uC7AC3",
+                  "\uACC43"
+                ],
+                sentence: "\uB451\uC774 \uBE44\uB97C \uAC70\uB46C \uAC00\uB824\uC84C\uB358 \uD574\uAC00 \uB4DC\uB7EC\uB098\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.061"
+                ],
+                source: [
+                  "R2.IM.061"
+                ]
+              },
+              {
+                code: "\uC784\uC6B4-\uB2E4",
+                incoming: "\uD070 \uB098\uBB34 (\uB451\uC774 \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uC7AC5",
+                  "\uACC44"
+                ],
+                sentence: "\uB451\uC5D0 \uD070 \uB098\uBB34\uAC00 \uBFCC\uB9AC\uB0B4\uB824 \uC313\uC740 \uAC83\uC774 \uB2E8\uB2E8\uD55C \uACB0\uC2E4\uB85C \uAD73\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.012",
+                  "R2.IM.070"
+                ],
+                source: [
+                  "R2.IM.012",
+                  "R2.IM.070"
+                ]
+              },
+              {
+                code: "\uC784\uC6B4-\uB77C",
+                incoming: "\uC791\uC740 \uB545 (\uB451\uC774 \uC5C6\uC744 \uB54C)",
+                slots: [
+                  "\uACC41"
+                ],
+                sentence: "\uCC98\uC74C\uC73C\uB85C \uC791\uC740 \uC6B8\uD0C0\uB9AC\uAC00 \uC138\uC6CC\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uB118\uCE58\uB294 \uD798\uC744 \uB2F4\uAE30\uC5D4 \uC870\uAE08 \uC881\uAC8C \uB290\uAEF4\uC9C8 \uC218 \uC788\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.021"
+                ],
+                source: [
+                  "R2.IM.021"
+                ]
+              },
+              {
+                code: "\uC784\uC6B4-\uB9C8",
+                incoming: "\uB4F1\uBD88",
+                slots: [
+                  "\uACC42"
+                ],
+                slotNote: "\uD544\uC218",
+                sentence: "\uC740\uC740\uD55C \uB4F1\uBD88\uACFC \uD558\uB098\uB85C \uBB36\uC774\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uB113\uD788\uAE30\uBCF4\uB2E4 \uC548\uC73C\uB85C \uC815\uB9AC\uD558\uAE30 \uC88B\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.073"
+                ],
+                source: [
+                  "R2.IM.073"
+                ]
+              },
+              {
+                code: "\uC784\uC6B4-\uBC14",
+                incoming: "\uB4F1\uBD88\uC774\uB098 \uD638\uC218\uAC00 \uB2E4\uC2DC \uC634 (\uBB36\uC5EC \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC42"
+                ],
+                slotNote: "\uD544\uC218",
+                sentence: "\uBB36\uC600\uB358 \uC790\uB9AC\uAC00 \uD480\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "1\uCE35 \xA77"
+                ],
+                source: [
+                  "1\uCE35 \xA77"
+                ],
+                note: "\uADFC\uAC70 \uC6D0\uBB38 1\uCE35 \xA77"
+              },
+              {
+                code: "\uC784\uC6B4-\uC0AC",
+                incoming: "\uD0DC\uC591\uC774 \uD558\uB098 \uB354 \uC634",
+                slots: [
+                  "\uC7AC4",
+                  "\uACC44"
+                ],
+                sentence: "\uD558\uB298\uC5D0 \uD574\uAC00 \uD558\uB098 \uB354 \uB5A0 \uC624\uD788\uB824 \uBE5B\uC774 \uD750\uB824\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uC5EC\uB7EC \uAC08\uB798\uB85C \uBC8C\uC774\uAE30\uBCF4\uB2E4 \uD558\uB098\uB97C \uACE8\uB77C \uAE4A\uAC8C \uAC00\uC138\uC694.",
+                evidence: [
+                  "R2.IM.090"
+                ],
+                source: [
+                  "R2.IM.090"
+                ]
+              },
+              {
+                code: "\uC784\uC6B4-\uC544",
+                incoming: "\uD070 \uB098\uBB34\uB098 \uC138\uACF5\uB41C \uBCF4\uC11D (\uD574\uAC00 \uB458\uC77C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uACB9\uCE5C \uD574 \uD558\uB098\uAC00 \uAC00\uB824\uC9C0\uAC70\uB098 \uC815\uB9AC\uB418\uC5B4 \uD750\uB984\uC774 \uB2E4\uC2DC \uC7A1\uD788\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.090"
+                ],
+                source: [
+                  "R2.IM.090"
+                ]
+              },
+              {
+                code: "\uC784\uC6B4-\uC790",
+                incoming: "\uAE08 (\uC6D0\uAD6D\uC5D0 \uAE08 \uC5C6\uC744 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uB9C8\uB974\uB358 \uBB3C\uC774 \uB2E4\uC2DC \uCC28\uC624\uB974\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.IM.050"
+                ],
+                source: [
+                  "R2.IM.050"
+                ]
+              },
+              {
+                code: "\uC784\uC6B4-\uCC28",
+                incoming: "\uC791\uC740 \uB545\uC774\uB098 \uD070 \uB098\uBB34\uAC00 \uB2E4\uC2DC \uC634 (\uB458\uC774 \uBB36\uC5EC \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC42"
+                ],
+                slotNote: "\uD544\uC218",
+                sentence: "\uBB36\uC600\uB358 \uB451\uACFC \uB098\uBB34\uAC00 \uD480\uB824 \uC790\uB9AC\uAC00 \uC6C0\uC9C1\uC774\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uBBF8\uB9AC \uAE30\uBC18\uC744 \uB2E4\uC838 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.IM.081"
+                ],
+                source: [
+                  "R2.IM.081"
+                ]
+              }
+            ],
+            D: [
+              {
+                item: "\uBC30\uC6B0\uC790 \uBB38\uC81C\xB7\uC704\uC7A5\uACC4\uD1B5",
+                evidence: [
+                  "R2.IM.022"
+                ],
+                source: [
+                  "R2.IM.022"
+                ]
+              },
+              {
+                item: "\uBC30\uC6B0\uC790\xB7\uC9C1\uC7A5 \uBB38\uC81C",
+                evidence: [
+                  "R2.IM.031",
+                  "R2.IM.081"
+                ],
+                source: [
+                  "R2.IM.031",
+                  "R2.IM.081"
+                ],
+                note: '"\uC790\uB9AC\uAC00 \uD754\uB4E4\uB9BC"\uAE4C\uC9C0\uB9CC'
+              },
+              {
+                item: "\uB0A8\uC790 \uB54C\uBB38\uC5D0 \uBA85\uC608 \uC2E4\uCD94",
+                evidence: [
+                  "R2.IM.082"
+                ],
+                source: [
+                  "R2.IM.082"
+                ]
+              },
+              {
+                item: "\uBC95\uC801 \uBB38\uC81C",
+                evidence: [
+                  "R2.IM.085"
+                ],
+                source: [
+                  "R2.IM.085"
+                ]
+              },
+              {
+                item: "\uC0B6\uC774 \uC6D0\uB9CC\uD558\uC9C0 \uBABB\uD558\uB2E4\uB294 \uC6D0\uBB38",
+                evidence: [
+                  "R2.IM.080"
+                ],
+                source: [
+                  "R2.IM.080"
+                ]
+              },
+              {
+                item: '\uAC00\uB9BC\uC744 "\uBE44\uC2B7\uD55C \uC0AC\uB78C\uB4E4"\uB85C \uC77D\uB294 \uD574\uC11D',
+                note: "[\uBCF4\uB958]"
+              }
+            ]
+          },
+          \u7678: {
+            name: "\uACC4\uC218 \u2014 \uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C",
+            sourcePage: "PDF page 43-46 (10. \uACC4\uC218)",
+            _note: "PDF 10\uC7A5(pp.43~46) \uC804\uC0AC. A \uD0A4\uB294 '\uC2AC\uB86F\uCF54\uB4DC \uB77C\uBCA8' \uBCD1\uAE30(\uAC80\uC99D\uAE30 V6 \uD638\uD658). B\u5404\u884C source\uB294 \uAC80\uC99D\uAE30 V5 \uC694\uAD6C \uD544\uB4DC\uB85C evidence\uC640 \uB3D9\uC77C \uAC12. \uCC98\uBC29 \uCE78\uC774 \uC6D0\uBB38\uC5D0 \uBE44\uB294 \uAC00\uC9C0\uB294 \u2014 \uD45C\uAE30. (\uC77C) \uD45C\uAE30 \uAC00\uC9C0\uB294 \uC77C \uC139\uC158 \uD750\uB984 \uAC00\uC9C0. 6\uB2E8\uACC4(\uD2B9\uC131)\uB294 \uBB38\uC7A5 \uCE78 \uD558\uB098\uB77C \uCC98\uBC29 \uCE78\uC774 \uC6D0\uBB38\uC5D0 \uC5C6\uC74C(\u2014).",
+            A: {
+              "\uC0AC1 \uD615\uC0C1": {
+                text: "\uB2F9\uC2E0\uC740 \uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C\uC785\uB2C8\uB2E4. {1\uC21C\uC704 \uAC00\uC9C0 \uD55C \uC904}",
+                evidence: [
+                  "R2.GYE.001"
+                ]
+              },
+              "\uC0AC2 \uC131\uD5A5": {
+                text: "\uC5B4\uB514\uB4E0 \uC2A4\uBA70\uB4E4\uC5B4 \uC801\uC2DC\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uB9D0\uC5C6\uC774 \uB9CE\uC740 \uAC83\uC744 \uD488\uACE0, \uB9C9\uD788\uBA74 \uC720\uC5F0\uD558\uAC8C \uAE38\uC744 \uCC3E\uC544 \uB3CC\uC544\uAC11\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.002"
+                ]
+              },
+              "\uC0AC3 \uB0A8\uB4E4\uC774\uBCF4\uB294\uB098": {
+                text: "\uCE5C\uADFC\uD558\uACE0 \uACB8\uC190\uD574 \uBCF4\uC785\uB2C8\uB2E4. \uB204\uAD6C\uC640\uB3C4 \uAE08\uC138 \uC5B4\uC6B8\uB9AC\uB294\uB370, \uC18D\uC740 \uC27D\uAC8C \uB0B4\uBCF4\uC774\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.002"
+                ]
+              },
+              "\uC0AC4 \uCE6D\uCC2C": {
+                text: "\uC0C1\uD669\uC744 \uC77D\uACE0 \uC21C\uAC04\uC5D0 \uB9DE\uAC8C \uC6C0\uC9C1\uC774\uB294 \uC9C0\uD61C\uAC00 \uC788\uC2B5\uB2C8\uB2E4. \uC791\uC740 \uBE44\uAC00 \uB545\uC744 \uC0B4\uB9AC\uB4EF, \uB2F9\uC2E0\uC774 \uB2FF\uC740 \uC790\uB9AC\uB294 \uC0B4\uC544\uB0A9\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.002",
+                  "R2.GYE.010"
+                ]
+              },
+              "\uC77C1 \uBB34\uAE30": {
+                text: "\uC2A4\uBA70\uB4E4\uACE0 \uC801\uC2DC\uB294 \uD798\uC785\uB2C8\uB2E4. \uC0AC\uB78C\uACFC \uC0AC\uB78C \uC0AC\uC774\uB85C \uD758\uB7EC \uAD00\uACC4\uB97C \uC787\uACE0, \uB9D0\uB85C \uB9C8\uC74C\uC744 \uC6C0\uC9C1\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.002",
+                  "R2.GYE.003"
+                ]
+              },
+              "\uC7AC6 \uB3C8\uC758\uC21C\uC11C": {
+                text: "\uC791\uC740 \uBB3C\uC740 \uC54C\uB9DE\uC740 \uADF8\uB987\uC5D0 \uB2F4\uAE38 \uB54C \uB9D1\uAC8C \uACE0\uC785\uB2C8\uB2E4. \uAC10\uB2F9\uD560 \uB9CC\uD55C \uD06C\uAE30\uC758 \uC77C\uACFC \uC7AC\uBB3C\uC744 \uAFB8\uC900\uD788 \uCC44\uC6B8 \uB54C \uAC00\uC7A5 \uC624\uB798 \uB0A8\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.010",
+                  "R2.GYE.071"
+                ]
+              },
+              "\uC5F01 \uAD00\uACC4\uC120\uC5B8": {
+                text: "\uC2DC\uB0C7\uBB3C\uC740 \uD750\uB974\uBA70 \uB2FF\uB294 \uACF3\uB9C8\uB2E4 \uC801\uC154 \uC90D\uB2C8\uB2E4. \uB2F9\uC2E0\uB3C4 \uACC1\uC758 \uC0AC\uB78C\uC5D0\uAC8C \uC870\uC6A9\uD788 \uC2A4\uBA70\uB4E4\uC5B4 \uC0B4\uD53C\uACE0 \uB3CC\uBCF4\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uADF8\uB7EC\uBA74\uC11C \uC18D\uC73C\uB85C\uB294 \uD769\uC5B4\uC9C0\uC9C0 \uC54A\uAC8C \uB2F4\uC544 \uC904 \uC54C\uB9DE\uC740 \uB451 \uAC19\uC740 \uC0AC\uB78C\uC744 \uBC14\uB78D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.010",
+                  "R2.GYE.020"
+                ]
+              },
+              marriageCondition: {
+                label: "\uACB0\uD63C \uC870\uAC74",
+                text: "\uC791\uC740 \uB545(\uC54C\uB9DE\uC740 \uB451)\uC774 \uB4E4\uC5B4\uC62C \uB54C.",
+                evidence: [
+                  "R2.GYE.020"
+                ]
+              },
+              endingTheme: {
+                label: "\uB05D \uC18C\uC7AC",
+                text: "\uC2A4\uBA70\uB4DC\uB294 \uD798 / \uC791\uC9C0\uB9CC \uB9D1\uC740 \uBB3C",
+                evidence: [
+                  "R2.GYE.002",
+                  "R2.GYE.071"
+                ]
+              },
+              careerNote: {
+                label: "\uC9C1\uC5C5 \uACB0(\uCC38\uACE0\uC6A9, \uB098\uC5F4 \uAE08\uC9C0)",
+                text: "\uD574\uC678, \uC720\uD1B5, \uC74C\uC2DD, \uC601\uC5C5, \uAD50\uC721.",
+                evidence: [
+                  "R2.GYE.003"
+                ]
+              }
+            },
+            B: [
+              {
+                stage: 1,
+                stageName: "\uB451",
+                stageNote: "\uBB3C\uC744 \uB2F4\uB294 \uADF8\uB987 (\uC790\uB9AC\uC640 \uACC1)",
+                code: "\uACC41-\uAC00",
+                condition: "\uC791\uC740 \uB545 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC5F03"
+                ],
+                diagnosis: "\uC54C\uB9DE\uC740 \uB451\uC5D0 \uB2F4\uAE34 \uB9D1\uC740 \uBB3C\uC785\uB2C8\uB2E4.",
+                prescription: "\uADF8 \uB451\uC5D0 \uB369\uAD74\uC774 \uC2EC\uC5B4\uC9C0\uBA74 \uC77C\uACFC \uACC1\uC774 \uD3C9\uD654\uB86D\uAC8C \uD53C\uC5B4\uB0A9\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.010"
+                ],
+                source: [
+                  "R2.GYE.010"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB451",
+                stageNote: "\uBB3C\uC744 \uB2F4\uB294 \uADF8\uB987 (\uC790\uB9AC\uC640 \uACC1)",
+                code: "\uACC41-\uB098",
+                condition: "\uAC70\uB300\uD55C \uC0B0\uB9E5\uACFC \uBB36\uC784",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uACC42"
+                ],
+                diagnosis: "\uD070 \uB545\uC5D0 \uBB36\uC778 \uC791\uC740 \uBB3C\uC774\uB77C \uC190\uBC1C\uC774 \uBB36\uC774\uACE0, \uBB3C\uC774 \uB113\uAC8C \uD37C\uC838 \uD750\uB824\uC9C0\uAE30 \uC27D\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC744 \uACC4\uC18D \uB9CC\uB4E4\uC5B4 \uC8FC\uB294 \uAE08\uB9E5\uC758 \uC77C, \uACE7 \uAE30\uC900\uACFC \uAE30\uC220\uC758 \uC77C\uC774 \uC218\uB7C9\uC744 \uB298\uB824 \uC90D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.021"
+                ],
+                source: [
+                  "R2.GYE.021"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB451",
+                stageNote: "\uBB3C\uC744 \uB2F4\uB294 \uADF8\uB987 (\uC790\uB9AC\uC640 \uACC1)",
+                code: "\uACC41-\uB2E4",
+                condition: "\uB451 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uB2F4\uC544 \uC904 \uB451\uC774 \uC5C6\uC5B4, \uC791\uC740 \uBB3C\uC774 \uD769\uC5B4\uC838 \uD754\uC801\uC774 \uB0A8\uC9C0 \uC54A\uAE30 \uC27D\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC744 \uBCF4\uD0E4 \uAE38\uC744 \uCC3E\uC73C\uC138\uC694. \uBC14\uB2E4 \uAC74\uB108\uC640 \uB2FF\uC740 \uC77C, \uC678\uAD6D\uACFC \uB2FF\uC740 \uC77C\uD130, \uAE30\uC900\uACFC \uAE30\uC220\uC758 \uC77C\uC774 \uBB3C\uC744 \uACC4\uC18D \uB9CC\uB4E4\uC5B4 \uC90D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.022"
+                ],
+                source: [
+                  "R2.GYE.022"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uC801\uC154\uC11C \uAE30\uB974\uB294 \uAC83",
+                code: "\uACC42-\uAC00",
+                condition: "\uD478\uB978 \uB369\uAD74 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uC791\uC740 \uB098\uBB34\uC5D0 \uC54C\uB9DE\uC740 \uBE44\uAC00 \uB0B4\uB824 \uC798 \uC790\uB78D\uB2C8\uB2E4. \uADF8 \uB369\uAD74\uC774 \uC218\uC6D0\uC744 \uBD88\uB7EC\uC640 \uBB3C\uB3C4 \uB9C8\uB974\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC791\uC740 \uBC30\uC6C0\uD130, \uAC00\uAE4C\uC6B4 \uC0AC\uB78C\uC744 \uD0A4\uC6B0\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.032",
+                  "R2.GYE.030"
+                ],
+                source: [
+                  "R2.GYE.032",
+                  "R2.GYE.030"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uC801\uC154\uC11C \uAE30\uB974\uB294 \uAC83",
+                code: "\uACC42-\uB098",
+                condition: "\uD070 \uB098\uBB34 \uC788\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C6"
+                ],
+                diagnosis: "\uD070 \uB098\uBB34\uAC00 \uBB3C\uC744 \uB9CE\uC774 \uBE68\uC544\uB4E4\uC5EC \uC27D\uAC8C \uB9C8\uB985\uB2C8\uB2E4. \uD06C\uAC8C \uD0A4\uC6B0\uB824 \uD560\uC218\uB85D \uB0B4\uAC00 \uBA3C\uC800 \uC9C0\uCE69\uB2C8\uB2E4.",
+                prescription: "\uAE08\uB9E5\uC758 \uC77C\uB85C \uBB3C\uC744 \uBCF4\uD0DC\uC138\uC694. \uBC30\uC6C0\uC744 \uAE38\uAC8C \uAC00\uC838\uAC00\uB824\uBA74 \uBC14\uB2E4 \uAC74\uB108\uC5D0\uC11C \uBC30\uC6B0\uB294 \uCABD\uC774 \uBB3C\uC744 \uD568\uAED8 \uC5BB\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.031"
+                ],
+                source: [
+                  "R2.GYE.031"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uC801\uC154\uC11C \uAE30\uB974\uB294 \uAC83",
+                code: "\uACC42-\uB2E4",
+                condition: "\uC791\uC740 \uB545 + \uB098\uBB34 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uBB3C\uACFC \uB451\uB9CC \uC788\uC5B4 \uD750\uB824\uC9D1\uB2C8\uB2E4.",
+                prescription: "\uC791\uC740 \uB098\uBB34\uB97C \uC2EC\uB4EF, \uAC00\uAE4C\uC6B4 \uC0AC\uB78C\uC744 \uAC00\uB974\uCE58\uACE0 \uAE30\uB974\uB294 \uC77C\uC744 \uACC1\uC5D0 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.GYE.030"
+                ],
+                source: [
+                  "R2.GYE.030"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uC801\uC154\uC11C \uAE30\uB974\uB294 \uAC83",
+                code: "\uACC42-\uB77C(\uC77C)",
+                condition: "\uB098\uBB34 \uC788\uC74C (\uC77C \uC139\uC158)",
+                slots: [
+                  "\uC77C3"
+                ],
+                diagnosis: "\uD070 \uAC74\uBB3C\uC744 \uC9D3\uAC70\uB098 \uC544\uC8FC \uAE38\uAC8C \uACF5\uBD80\uD558\uB294 \uC77C\uBCF4\uB2E4, \uC54C\uB9DE\uC740 \uD06C\uAE30\uC758 \uBC30\uC6C0\uACFC \uC9D3\uB294 \uC77C\uC5D0\uC11C \uB2A5\uB825\uC774 \uB0A9\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.GYE.071"
+                ],
+                source: [
+                  "R2.GYE.071"
+                ],
+                note: "\uC6D0\uBB38 (\uC77C \uC139\uC158) \uD45C\uAE30, \uCC98\uBC29 \uCE78 \uC6D0\uBB38 \u2014"
+              },
+              {
+                stage: 3,
+                stageName: "\uC218\uC6D0",
+                stageNote: "\uBB3C\uC744 \uCC44\uC6B0\uB294 \uAE08",
+                code: "\uACC43-\uAC00",
+                condition: "\uAE08 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uC791\uC740 \uBB3C\uC774\uB77C \uC27D\uAC8C \uB9C8\uB974\uACE0 \uD750\uB824\uC9D1\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC744 \uCC44\uC6CC \uC8FC\uB294 \uAE08\uB9E5\uC758 \uC77C(\uBC95\xB7\uAE08\uC735\xB7\uAE30\uC220)\uC774 \uB9DE\uC2B5\uB2C8\uB2E4. \uB3CC\uB85C \uB458\uB7EC\uC2FC \uC0D8\uBB3C\uC774 \uB9D1\uB4EF, \uB2E8\uB2E8\uD55C \uAE30\uC900 \uC548\uC5D0\uC11C \uB9D1\uC544\uC9D1\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.011"
+                ],
+                source: [
+                  "R2.GYE.011"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uC218\uC6D0",
+                stageNote: "\uBB3C\uC744 \uCC44\uC6B0\uB294 \uAE08",
+                code: "\uACC43-\uB098",
+                condition: "\uC138\uACF5\uB41C \uBCF4\uC11D \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C2"
+                ],
+                diagnosis: "\uBCF4\uC11D\uC774 \uC218\uC6D0\uC774 \uB418\uC5B4 \uBB3C\uC744 \uCC44\uC6B0\uACE0, \uD574\uB97C \uBD88\uB7EC\uC640 \uC7AC\uBB3C\uB3C4 \uB9CC\uB4E4\uC5B4 \uC90D\uB2C8\uB2E4.",
+                prescription: "\uB451\uACFC \uB369\uAD74\uC774 \uAC16\uCDB0\uC9C0\uBA74 \uC815\uBC00\uD55C \uC77C\uC5D0\uC11C \uAD8C\uD55C\uC744 \uC501\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.050"
+                ],
+                source: [
+                  "R2.GYE.050"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uC218\uC6D0",
+                stageNote: "\uBB3C\uC744 \uCC44\uC6B0\uB294 \uAE08",
+                code: "\uACC43-\uB2E4",
+                condition: "\uCEE4\uB2E4\uB780 \uAE08\uB9E5 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4"
+                ],
+                diagnosis: "\uD070 \uAE08\uB9E5\uC774 \uB180\uAE30\uC5D4 \uBB3C\uC774 \uC595\uC9C0\uB9CC, \uB9C8\uB97C \uB54C\uB9C8\uB2E4 \uBB3C\uC744 \uCC44\uC6CC \uC8FC\uACE0 \uD750\uB824\uC9C8 \uB54C \uB369\uAD74\uC744 \uBD88\uB7EC\uC635\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.GYE.051"
+                ],
+                source: [
+                  "R2.GYE.051"
+                ],
+                note: "\uCC98\uBC29 \uCE78 \uC6D0\uBB38 \u2014"
+              },
+              {
+                stage: 4,
+                stageName: "\uD574\uC640 \uB4F1\uBD88",
+                stageNote: "\uC7AC\uBB3C",
+                code: "\uACC44-\uAC00",
+                condition: "\uD0DC\uC591 \uC788\uC74C (\uC544\uB798\uC5D0 \uBE44 \uBFCC\uB9AC \uC57D\uD568)",
+                slots: [
+                  "\uC7AC1",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uD574\uB97C \uAC00\uB9AC\uC9C0\uB9CC, \uADF8 \uD574\uB97C \uC7AC\uBB3C\uB85C \uC958 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uC0AC\uB78C\uC744 \uD0A4\uC6CC \uAF43\uC744 \uD53C\uC6B0\uAC8C \uD558\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4.",
+                prescription: "\uC0AC\uB78C\uC744 \uAE38\uB7EC \uC131\uACFC\uB97C \uB0B4\uB294 \uC77C, \uD310\uC744 \uAFB8\uB9AC\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.041"
+                ],
+                source: [
+                  "R2.GYE.041"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uD574\uC640 \uB4F1\uBD88",
+                stageNote: "\uC7AC\uBB3C",
+                code: "\uACC44-\uB098",
+                condition: "\uD0DC\uC591 + \uC544\uB798 \uAE00\uC790\uAC00 \uD55C\uB0AE",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uACC44"
+                ],
+                diagnosis: "\uBCD5\uC774 \uC138\uC11C \uC791\uC740 \uBB3C\uC774 \uB9C8\uB985\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC744 \uB9CC\uB4E4\uC5B4 \uC8FC\uB294 \uBCF4\uC11D\uC758 \uC77C, \uACE7 \uC815\uBC00\uD558\uACE0 \uAE30\uC900\uC774 \uBD84\uBA85\uD55C \uC77C\uC774 \uBB3C\uC744 \uBCF4\uD0ED\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.012"
+                ],
+                source: [
+                  "R2.GYE.012"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uD574\uC640 \uB4F1\uBD88",
+                stageNote: "\uC7AC\uBB3C",
+                code: "\uACC44-\uB2E4",
+                condition: "\uB4F1\uBD88 \uC788\uC74C",
+                slots: [
+                  "\uC7AC1",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uB4F1\uBD88\uC744 \uC7AC\uBB3C\uB85C \uC950\uB294 \uBB3C\uC785\uB2C8\uB2E4. \uB9C8\uC74C\uACFC \uC815\uC2E0\uC758 \uC138\uACC4\uC640 \uC778\uC5F0\uC774 \uAE4A\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uB9C8\uC74C\uC744 \uB2E4\uB8E8\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4. \uBB3C\uC774 \uB9C8\uB97C \uB54C \uADF8 \uB4F1\uBD88\uC774 \uD070\uBB3C\uC744 \uBD88\uB7EC\uC640 \uCC44\uC6CC \uC90D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.040"
+                ],
+                source: [
+                  "R2.GYE.040"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uBB3C",
+                stageNote: null,
+                code: "\uACC45-\uAC00",
+                condition: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4"
+                ],
+                diagnosis: "\uC791\uC740 \uBB3C\uC774 \uACB0\uAD6D \uD070\uBB3C\uC5D0 \uD569\uCCD0\uC838 \uD798\uC774 \uB429\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.GYE.060"
+                ],
+                source: [
+                  "R2.GYE.060"
+                ],
+                note: "\uCC98\uBC29 \uCE78 \uC6D0\uBB38 \u2014"
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uBB3C",
+                stageNote: null,
+                code: "\uACC45-\uB098",
+                condition: "\uC2DC\uB0C7\uBB3C \uB458",
+                slots: [
+                  "\uC0AC4",
+                  "\uACC44"
+                ],
+                diagnosis: "\uBB3C\uC774 \uB458\uC774\uB77C \uC0AC\uB78C\uACFC \uC798 \uC5B4\uC6B8\uB9AC\uACE0 \uC0DD\uAC01\uC774 \uBE60\uB985\uB2C8\uB2E4.",
+                prescription: "\uD070 \uB545\uC774 \uB4E4\uC5B4\uC640 \uD558\uB098\uB97C \uB370\uB824\uAC00\uB294 \uB54C\uC5D0 \uC54C\uB9DE\uC740 \uB451\uACFC \uD130\uAC00 \uC0DD\uAE41\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.061"
+                ],
+                source: [
+                  "R2.GYE.061"
+                ]
+              },
+              {
+                stage: 6,
+                stageName: "\uD2B9\uC131 (\uB05D \uC2AC\uB86F \uD6C4\uBCF4)",
+                stageNote: null,
+                code: "\uACC46-\uAC00",
+                condition: "\uD56D\uC0C1",
+                slots: [
+                  "\uB05D2",
+                  "\uB05D3"
+                ],
+                diagnosis: "\uC791\uC740 \uBB3C\uC740 \uD06C\uAC8C \uBC8C\uC77C \uB54C\uBCF4\uB2E4 \uC54C\uB9DE\uC740 \uD06C\uAE30\uB85C \uAFB8\uC900\uD788 \uD750\uB97C \uB54C \uB9D1\uC2B5\uB2C8\uB2E4. \uADF8 \uB9D1\uC74C\uC774 \uB2F9\uC2E0\uC744 \uC624\uB798 \uC4F0\uC774\uAC8C \uD569\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.GYE.071"
+                ],
+                source: [
+                  "R2.GYE.071"
+                ],
+                note: "\uD2B9\uC131 \uB2E8\uACC4 \u2014 \uBB38\uC7A5 \uCE78 \uD558\uB098, \uCC98\uBC29 \uCE78 \uC6D0\uBB38\uC5D0 \uC5C6\uC74C"
+              }
+            ],
+            C: [
+              {
+                code: "\uACC4\uC6B4-\uAC00",
+                incoming: "\uC791\uC740 \uB545",
+                slots: [
+                  "\uC5F04",
+                  "\uC5F05",
+                  "\uACC43"
+                ],
+                sentence: "\uC54C\uB9DE\uC740 \uB451\uC774 \uB4E4\uC5B4\uC640 \uACC1\uC758 \uC790\uB9AC\uAC00 \uC815\uD574\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.020"
+                ],
+                source: [
+                  "R2.GYE.020"
+                ]
+              },
+              {
+                code: "\uACC4\uC6B4-\uB098",
+                incoming: "\uAC70\uB300\uD55C \uC0B0\uB9E5",
+                slots: [
+                  "\uACC42",
+                  "\uC7AC3"
+                ],
+                slotNote: "\uACC42 \uD544\uC218",
+                sentence: "\uD070 \uB545\uC5D0 \uBB36\uC774\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uB300\uC2E0 \uADF8 \uBB36\uC784\uC5D0\uC11C \uBE5B\uC774 \uC0DD\uACA8 \uC7AC\uBB3C\uACFC \uD130\uAC00 \uB4E4\uC5B4\uC624\uAE30 \uC88B\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.021",
+                  "R2.GYE.023"
+                ],
+                source: [
+                  "R2.GYE.021",
+                  "R2.GYE.023"
+                ]
+              },
+              {
+                code: "\uACC4\uC6B4-\uB2E4",
+                incoming: "\uAC70\uB300\uD55C \uC0B0\uB9E5 (\uC2DC\uB0C7\uBB3C\uC774 \uB458\uC77C \uB54C)",
+                slots: [
+                  "\uACC44",
+                  "\uC7AC5"
+                ],
+                sentence: "\uACC1\uC758 \uBB3C\uC774 \uC815\uB9AC\uB418\uBA70 \uC54C\uB9DE\uC740 \uB451\uACFC \uD130\uAC00 \uC0DD\uAE30\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.061"
+                ],
+                source: [
+                  "R2.GYE.061"
+                ]
+              },
+              {
+                code: "\uACC4\uC6B4-\uB77C",
+                incoming: "\uC0B0\uB9E5\uC774\uB098 \uC2DC\uB0C7\uBB3C\uC774 \uB2E4\uC2DC \uC634 (\uC0B0\uB9E5\uC5D0 \uBB36\uC5EC \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC42"
+                ],
+                slotNote: "\uD544\uC218",
+                sentence: "\uC608\uC678: \uB2E4\uB978 \uC77C\uAC04\uACFC \uB2EC\uB9AC, \uACC4\uC218\uB294 \uC774 \uBB36\uC784\uC774 \uD480\uB9B4 \uB54C \uBB3C\uC774 \uB354 \uD750\uB824\uC9C4\uB2E4. \uBB38\uC7A5: \uC790\uB9AC\uC640 \uACC1\uC774 \uD754\uB4E4\uB9AC\uAE30 \uC26C\uC6B4 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uB113\uD788\uAE30 \uBCF4\uB2E4 \uC9C0\uD0A4\uB294 \uCABD\uC774 \uC774\uB86D\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.070"
+                ],
+                source: [
+                  "R2.GYE.070"
+                ],
+                note: "[\uC120\uC0DD\uB2D8 \uD655\uC778 \uC911]"
+              },
+              {
+                code: "\uACC4\uC6B4-\uB9C8",
+                incoming: "\uC138\uACF5\uB41C \uBCF4\uC11D (\uBCD5\uC774 \uC140 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uB9C8\uB974\uB358 \uBB3C\uC5D0 \uB2E4\uC2DC \uBB3C\uC774 \uCC28\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.012"
+                ],
+                source: [
+                  "R2.GYE.012"
+                ]
+              },
+              {
+                code: "\uACC4\uC6B4-\uBC14",
+                incoming: "\uAE08 (\uC6D0\uAD6D\uC5D0 \uAE08 \uC5C6\uC744 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uC218\uC6D0\uC774 \uC0DD\uACA8 \uBB3C\uC774 \uB9C8\uB974\uC9C0 \uC54A\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.011"
+                ],
+                source: [
+                  "R2.GYE.011"
+                ]
+              },
+              {
+                code: "\uACC4\uC6B4-\uC0AC",
+                incoming: "\uB4F1\uBD88 (\uBB3C\uC774 \uB9C8\uB97C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uB4F1\uBD88\uC774 \uD070\uBB3C\uC744 \uBD88\uB7EC\uC640 \uBB3C\uC774 \uB2E4\uC2DC \uCC28\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.GYE.040"
+                ],
+                source: [
+                  "R2.GYE.040"
+                ]
+              }
+            ],
+            D: [
+              {
+                item: "\uAD8C\uBAA8\uC220\uC218",
+                evidence: [
+                  "R2.GYE.002"
+                ],
+                source: [
+                  "R2.GYE.002"
+                ],
+                note: "\uC6D0\uBB38"
+              },
+              {
+                item: "\uC544\uD30C\uD2B8 \uCD94\uCCA8 \uB2F9\uCCA8 \uC0AC\uB840",
+                evidence: [
+                  "R2.GYE.023"
+                ],
+                source: [
+                  "R2.GYE.023"
+                ],
+                note: "\uD2B9\uC815 \uACB0\uACFC \uB2E8\uC815"
+              },
+              {
+                item: "\uBB36\uC784\uC774 \uD480\uB9B4 \uB54C\uC758 \uC774\uC131 \uBB38\uC81C",
+                evidence: [
+                  "R2.GYE.070"
+                ],
+                source: [
+                  "R2.GYE.070"
+                ]
+              },
+              {
+                item: '"\uC624\uB798 \uACF5\uBD80\uD558\uC9C0 \uC54A\uB294 \uAC83\uC774 \uC88B\uB2E4"',
+                evidence: [
+                  "R2.GYE.031"
+                ],
+                source: [
+                  "R2.GYE.031"
+                ],
+                note: "\uC6D0\uBB38 \u2014 \uACB0\uC815 \uC601\uD5A5"
+              }
+            ]
+          },
+          \u4E59: {
+            name: "\uC744\uBAA9 \u2014 \uD478\uB978 \uB369\uAD74",
+            A: {
+              \uC0AC1: {
+                text: "\uB2F9\uC2E0\uC740 \uD478\uB978 \uB369\uAD74\uC785\uB2C8\uB2E4. {1\uC21C\uC704 \uAC00\uC9C0 \uD55C \uC904}",
+                evidence: [
+                  "R2.EUL.001"
+                ]
+              },
+              "\uC0AC2 \uC131\uD5A5": {
+                text: "\uC5B4\uB514\uC5D0 \uC2EC\uC5B4\uC9C0\uB4E0 \uBFCC\uB9AC\uB97C \uB0B4\uB9AC\uACE0, \uBC1F\uD600\uB3C4 \uB2E4\uC2DC \uC77C\uC5B4\uB098\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uAE30\uB308 \uACF3\uC774 \uC788\uC73C\uBA74 \uADF8\uAC83\uC744 \uD0C0\uACE0 \uB204\uAD6C\uBCF4\uB2E4 \uB192\uC774 \uC624\uB985\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.002"
+                ]
+              },
+              "\uC0AC3 \uB0A8\uB4E4\uC774\uBCF4\uB294\uB098": {
+                text: "\uBD80\uB4DC\uB7FD\uACE0 \uC720\uC5F0\uD574 \uBCF4\uC774\uC9C0\uB9CC, \uD55C\uBC88 \uBED7\uAE30 \uC2DC\uC791\uD558\uBA74 \uB05D\uAE4C\uC9C0 \uAC11\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.002",
+                  "R2.EUL.003"
+                ]
+              },
+              "\uC0AC4 \uCE6D\uCC2C": {
+                text: "\uC740\uADFC\uD55C \uB048\uAE30\uC640 \uB3C4\uC804 \uC815\uC2E0\uC774 \uC788\uC2B5\uB2C8\uB2E4. \uC9C0\uAE08 \uC790\uB9AC\uBCF4\uB2E4 \uB354 \uD070 \uC774\uB984\uC744 \uBC14\uB77C\uBCF4\uBA70 \uAFB8\uC900\uD788 \uB098\uC544\uAC11\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.003"
+                ]
+              },
+              "\uC77C1 \uBB34\uAE30": {
+                text: "\uAE30\uB308 \uC904 \uC54C\uACE0 \uC774\uB04C \uC904 \uC544\uB294 \uD798\uC785\uB2C8\uB2E4. \uD070 \uC0AC\uB78C \uACC1\uC5D0\uC11C \uADF8 \uD798\uC744 \uBE4C\uB824 \uC790\uAE30 \uAE38\uC744 \uB113\uD799\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.003",
+                  "R2.EUL.060"
+                ]
+              },
+              "\uC7AC6 \uB3C8\uC758\uC21C\uC11C": {
+                text: "\uC6B8\uD0C0\uB9AC \uC788\uB294 \uC815\uC6D0\uC5D0\uC11C \uAC00\uC7A5 \uC544\uB984\uB2F5\uAC8C \uD53C\uB294 \uAF43\uC785\uB2C8\uB2E4. \uAC10\uB2F9\uD560 \uB9CC\uD55C \uD06C\uAE30\uC758 \uC7AC\uBB3C\uC744 \uB2E8\uB2E8\uD788 \uC958 \uB54C \uC0B6\uC774 \uD3B8\uD574\uC9D1\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.080"
+                ]
+              },
+              "\uC5F01 \uAD00\uACC4\uC120\uC5B8": {
+                text: "\uB369\uAD74\uC740 \uAE30\uB308 \uACF3\uC744 \uCC3E\uC544 \uAC10\uC544 \uC624\uB985\uB2C8\uB2E4. \uB2F9\uC2E0\uB3C4 \uB9C8\uC74C\uC744 \uC900 \uC0AC\uB78C\uC5D0\uAC8C \uC628\uC804\uD788 \uAE30\uB300\uACE0, \uADF8 \uC0AC\uB78C\uACFC \uD568\uAED8 \uC790\uB78D\uB2C8\uB2E4. \uADF8\uB7EC\uBA74\uC11C \uC18D\uC73C\uB85C\uB294 \uBC14\uB78C\uC744 \uB9C9\uC544 \uC904 \uC6B8\uD0C0\uB9AC \uAC19\uC740 \uACC1\uC744 \uBC14\uB78D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.002",
+                  "R2.EUL.074"
+                ]
+              },
+              marriageCondition: {
+                label: "\uACB0\uD63C \uC870\uAC74",
+                text: "\uC791\uC740 \uB545(\uAD6C\uD68D\uB418\uACE0 \uC0DD\uBA85\uC744 \uC0B4\uAC8C \uD558\uB294 \uB545)\uC774 \uB4E4\uC5B4\uC62C \uB54C. \uB369\uAD74\uC774 \uB458\uC774\uBA74 \uCEE4\uB2E4\uB780 \uAE08\uB9E5\uC774 \uC640\uC11C \uD558\uB098\uB97C \uC815\uB9AC\uD560 \uB54C.",
+                evidence: [
+                  "R2.EUL.020",
+                  "R2.EUL.062"
+                ]
+              },
+              endingTheme: {
+                label: "\uB05D \uC18C\uC7AC",
+                text: "\uBC1F\uD600\uB3C4 \uB2E4\uC2DC \uC77C\uC5B4\uB098\uB294 \uC0DD\uBA85\uB825 / \uAE30\uB308 \uC904 \uC544\uB294 \uD798",
+                evidence: [
+                  "R2.EUL.002"
+                ]
+              },
+              careerNote: {
+                label: "\uC9C1\uC5C5 \uACB0(\uCC38\uACE0\uC6A9, \uB098\uC5F4 \uAE08\uC9C0)",
+                text: "\uAD50\uC721, \uCD9C\uD310, \uC5B8\uB860, \uBB38\uD559, \uC608\uC220, \uC815\uCE58.",
+                evidence: [
+                  "R2.EUL.004"
+                ]
+              }
+            },
+            B: [
+              {
+                stage: 1,
+                stageName: "\uB545",
+                stageNote: "\uBFCC\uB9AC\uB0B4\uB9B4 \uC790\uB9AC\uC774\uC790 \uC7AC\uBB3C",
+                code: "\uC7441-\uAC00",
+                condition: "\uC791\uC740 \uB545 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC7AC1"
+                ],
+                diagnosis: "\uC6B8\uD0C0\uB9AC \uC788\uB294 \uC815\uC6D0\uC5D0 \uC2EC\uC5B4\uC9C4 \uAF43\uC785\uB2C8\uB2E4. \uC9C0\uCF1C \uC8FC\uB294 \uD14C\uB450\uB9AC \uC548\uC5D0\uC11C \uAC00\uC7A5 \uC544\uB984\uB2F5\uAC8C \uD54D\uB2C8\uB2E4.",
+                prescription: "\uC6B8\uD0C0\uB9AC \uC548\uC758 \uC77C, \uAC00\uC815\uACFC \uAC00\uAE4C\uC6B4 \uC790\uB9AC\uB97C \uB2E8\uB2E8\uD788 \uAC00\uAFB8\uC138\uC694. \uADF8\uACF3\uC774 \uC7AC\uBB3C\uC758 \uC2DC\uC791\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.010",
+                  "R2.EUL.074"
+                ],
+                source: [
+                  "R2.EUL.010",
+                  "R2.EUL.074"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB545",
+                stageNote: "\uBFCC\uB9AC\uB0B4\uB9B4 \uC790\uB9AC\uC774\uC790 \uC7AC\uBB3C",
+                code: "\uC7441-\uB098",
+                condition: "\uD070 \uB545\uB9CC \uC788\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uBC14\uB78C\uB9C9\uC774 \uC5C6\uB294 \uB113\uC740 \uBC8C\uD310\uC5D0 \uC2EC\uC5B4\uC9C4 \uB369\uAD74\uC785\uB2C8\uB2E4. \uAD7D\uC774\uAC00 \uB9CE\uC740 \uAE38\uC744 \uAC78\uC5B4\uC654\uC744 \uAC81\uB2C8\uB2E4.",
+                prescription: "\uD070 \uB545\uC744 \uD63C\uC790 \uB2E4 \uAC00\uC9C0\uB824 \uD558\uAE30\uBCF4\uB2E4, \uADF8 \uB545\uC5D0 \uC120 \uD070 \uB098\uBB34, \uACE7 \uBBFF\uC744 \uB9CC\uD55C \uC0AC\uB78C\uC774\uB098 \uC870\uC9C1\uC744 \uD0C0\uACE0 \uC624\uB974\uC138\uC694.",
+                evidence: [
+                  "R2.EUL.022",
+                  "R2.EUL.073"
+                ],
+                source: [
+                  "R2.EUL.022",
+                  "R2.EUL.073"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB545",
+                stageNote: "\uBFCC\uB9AC\uB0B4\uB9B4 \uC790\uB9AC\uC774\uC790 \uC7AC\uBB3C",
+                code: "\uC7441-\uB2E4",
+                condition: "\uB545 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC7AC1"
+                ],
+                diagnosis: "\uBFCC\uB9AC\uB0B4\uB9B4 \uB545 \uC5C6\uC774 \uD0DC\uC5B4\uB098, \uC790\uB9AC\uB97C \uCC3E\uC544 \uC5EC\uB7EC \uACF3\uC744 \uC62E\uACA8 \uC654\uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uD55C \uAC00\uC9C0 \uC77C, \uD55C \uC77C\uD130\uB97C \uC815\uD574 \uAC70\uAE30\uC5D0 \uBFCC\uB9AC\uB97C \uB0B4\uB9AC\uC138\uC694. \uB369\uAD74\uC740 \uD55C \uBC88 \uAC10\uC740 \uACF3\uC5D0\uC11C \uAC00\uC7A5 \uB192\uC774 \uC624\uB985\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.023"
+                ],
+                source: [
+                  "R2.EUL.023"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB545",
+                stageNote: "\uBFCC\uB9AC\uB0B4\uB9B4 \uC790\uB9AC\uC774\uC790 \uC7AC\uBB3C",
+                code: "\uC7441-\uB77C",
+                condition: "\uB545 \uB9CE\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uBFCC\uB9AC\uB0B4\uB9B4 \uACF3\uC774 \uC5EC\uB7EC \uAD70\uB370\uB77C \uB9C8\uC74C\uC774 \uC5EC\uB7EC \uACF3\uC5D0 \uAC78\uB9BD\uB2C8\uB2E4.",
+                prescription: "\uAE30\uC900\uC774 \uBD84\uBA85\uD55C \uC870\uC9C1 \uC548\uC5D0\uC11C \uD55C \uC790\uB9AC\uB97C \uC9C0\uD0A4\uC138\uC694. \uCC98\uC74C \uB9FA\uC740 \uC790\uB9AC\uAC00 \uB2F9\uC2E0\uC758 \uC815\uC6D0\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.021"
+                ],
+                source: [
+                  "R2.EUL.021"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB545",
+                stageNote: "\uBFCC\uB9AC\uB0B4\uB9B4 \uC790\uB9AC\uC774\uC790 \uC7AC\uBB3C",
+                code: "\uC7441-\uB9C8",
+                condition: "\uB545 \uC788\uC74C + \uBB3C \uC5C6\uC74C",
+                slots: [
+                  "\uC7AC2",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uB545\uC774 \uBA54\uB9D0\uB77C \uBFCC\uB9AC\uB97C \uB0B4\uB9AC\uAE30 \uC5B4\uB835\uACE0, \uD558\uB358 \uC77C\uC744 \uBA48\uCD94\uACE0 \uC0C8 \uC790\uB9AC\uB97C \uCC3E\uB294 \uC77C\uC774 \uC7A6\uC558\uC744 \uAC81\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC774 \uC624\uAC00\uB294 \uC77C, \uBC14\uB2E4 \uAC74\uB108\uC640 \uB2FF\uB294 \uC77C\uC5D0\uC11C \uB2E4\uC2DC \uC790\uB78D\uB2C8\uB2E4. \uC544\uB798 \uAE00\uC790\uC5D0 \uC138\uACF5\uB41C \uBCF4\uC11D\uC774 \uC788\uC73C\uBA74 \uB9D0\uACFC \uB9DB\uC744 \uB2E4\uB8E8\uB294 \uC77C\uB3C4 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.024"
+                ],
+                source: [
+                  "R2.EUL.024"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uC790\uB77C\uAC8C \uD558\uB294 \uD798",
+                code: "\uC7442-\uAC00",
+                condition: "\uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C \uC788\uC74C",
+                slots: [
+                  "\uC0AC4"
+                ],
+                diagnosis: "\uC791\uC740 \uBE44\uC5D0\uB3C4 \uC465\uC465 \uC790\uB77C\uB294 \uB369\uAD74\uC785\uB2C8\uB2E4. \uC870\uAE08\uC758 \uB3C4\uC6C0\uB9CC \uC788\uC5B4\uB3C4 \uD06C\uAC8C \uBED7\uC5B4 \uB098\uAC11\uB2C8\uB2E4.",
+                prescription: "\uC190\uAE38\uC744 \uCCAD\uD558\uB294 \uB370 \uB9DD\uC124\uC774\uC9C0 \uB9C8\uC138\uC694. \uC791\uC740 \uB3C4\uC6C0\uC774 \uB2F9\uC2E0\uC5D0\uAC90 \uD070 \uBE44\uAC00 \uB429\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.076"
+                ],
+                source: [
+                  "R2.EUL.076"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uC790\uB77C\uAC8C \uD558\uB294 \uD798",
+                code: "\uC7442-\uB098",
+                condition: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218(\uD070\uBB3C) \uC788\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C3",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uD070\uBB3C \uC704\uC5D0 \uB72C \uB369\uAD74\uC774\uB77C \uD55C\uACF3\uC5D0 \uC815\uCC29\uD558\uAE30 \uC5B4\uB835\uC2B5\uB2C8\uB2E4. \uC77C\uB3C4 \uC790\uB9AC\uB3C4 \uC790\uAFB8 \uD758\uB7EC\uAC11\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC744 \uB9C9\uC544 \uC904 \uD070 \uB545\uACFC \uADF8 \uB545\uC5D0 \uC120 \uD070 \uB098\uBB34\uB97C \uCC3E\uC73C\uC138\uC694. \uADF8\uAC8C \uC5B4\uB835\uB2E4\uBA74 \uBC14\uB2E4 \uAC74\uB108 \uC0C8 \uB545\uC5D0 \uBFCC\uB9AC\uB0B4\uB9AC\uB294 \uAC83\uC774 \uB2F5\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.031"
+                ],
+                source: [
+                  "R2.EUL.031"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uC790\uB77C\uAC8C \uD558\uB294 \uD798",
+                code: "\uC7442-\uB2E4",
+                condition: "\uBB3C \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uBAA9\uC774 \uB9C8\uB978 \uB369\uAD74\uC774\uB77C, \uD55C\uCC3D \uC790\uB77C\uB2E4 \uBA48\uCD94\uB294 \uC77C\uC774 \uC788\uC5C8\uC744 \uAC81\uB2C8\uB2E4.",
+                prescription: "\uBB3C \uAC00\uAE4C\uC774\uB85C \uAC00\uC138\uC694. \uD574\uC678\uC640 \uB2FF\uC740 \uC77C, \uBB3C\uC774 \uB9CE\uC740 \uACE0\uC7A5, \uBB3C\uC774 \uC624\uAC00\uB294 \uC77C\uC774 \uB2E4\uC2DC \uC790\uB77C\uAC8C \uD569\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.032"
+                ],
+                source: [
+                  "R2.EUL.032"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uC790\uB77C\uAC8C \uD558\uB294 \uD798",
+                code: "\uC7442-\uB77C",
+                condition: "\uBB3C\uC774 \uD750\uB824\uC9D0",
+                slots: [
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uD750\uB9B0 \uBB3C\uC744 \uBA39\uACE0 \uC790\uB77C \uC81C \uBE5B\uC744 \uB0B4\uAE30 \uC5B4\uB835\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uD750\uB824\uC9C0\uB294 \uC6D0\uC778\uC744 \uB530\uB77C \uCC98\uBC29\uD55C\uB2E4(1\uCE35 \uD0C1\uC218 \uD574\uBC95).",
+                evidence: [
+                  "R2.EUL.011"
+                ],
+                source: [
+                  "R2.EUL.011"
+                ],
+                note: "1\uCE35 \uD0C1\uC218"
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uACFC \uACB0\uC2E4",
+                code: "\uC7443-\uAC00",
+                condition: "\uD0DC\uC591 \uC788\uC74C (\uC54C\uB9DE\uC74C)",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uBCD5\uC744 \uBC1B\uC544 \uD5A5\uAE30\uB86D\uAC8C \uD53C\uB294 \uAF43\uC785\uB2C8\uB2E4.",
+                prescription: "\uBCF4\uC5EC \uC8FC\uACE0 \uB4DC\uB7EC\uB0B4\uB294 \uC77C\uC5D0\uC11C \uAF43\uC774 \uD54D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.012",
+                  "R2.EUL.070"
+                ],
+                source: [
+                  "R2.EUL.012",
+                  "R2.EUL.070"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uACFC \uACB0\uC2E4",
+                code: "\uC7443-\uB098",
+                condition: "\uB4F1\uBD88\uB9CC \uC788\uC74C",
+                slots: [
+                  "\uC77C3"
+                ],
+                diagnosis: "\uBC24\uC5D0 \uD53C\uB294 \uAF43\uC785\uB2C8\uB2E4. \uB4DC\uB7EC\uB098\uB294 \uC790\uB9AC\uBCF4\uB2E4 \uC740\uC740\uD55C \uC790\uB9AC\uC5D0\uC11C \uC624\uB798 \uBE5B\uB0A9\uB2C8\uB2E4.",
+                prescription: "\uC870\uC6A9\uD788 \uC624\uB798 \uBE44\uCD94\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.071"
+                ],
+                source: [
+                  "R2.EUL.071"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uACFC \uACB0\uC2E4",
+                code: "\uC7443-\uB2E4",
+                condition: "\uBD88 \uB9CE\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6"
+                ],
+                diagnosis: "\uBCD5\uC774 \uB108\uBB34 \uC138\uC11C \uB9C8\uC74C\uC774 \uAE09\uD574\uC9C0\uACE0, \uC790\uB9AC\uB97C \uC790\uC8FC \uC62E\uAE30\uAC8C \uB429\uB2C8\uB2E4.",
+                prescription: "\uBE44\uAC00 \uB0B4\uB9AC\uB294 \uB54C\uB97C \uAE30\uB2E4\uB9AC\uACE0, \uBB3C\uC774 \uC624\uAC00\uB294 \uC77C\uC774\uB098 \uBC14\uB2E4 \uAC74\uB108\uC758 \uC77C\uC5D0\uC11C \uC228\uC744 \uACE0\uB974\uC138\uC694.",
+                evidence: [
+                  "R2.EUL.041"
+                ],
+                source: [
+                  "R2.EUL.041"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uACFC \uACB0\uC2E4",
+                code: "\uC7443-\uB77C",
+                condition: "\uD0DC\uC591\uACFC \uB4F1\uBD88\uC774 \uD568\uAED8 \uC788\uC74C",
+                slots: [
+                  "\uC0AC7"
+                ],
+                diagnosis: "\uD574\uC640 \uB2EC\uC774 \uD568\uAED8 \uB5A0 \uD604\uC2E4\uACFC \uC774\uC0C1 \uC0AC\uC774\uC5D0\uC11C \uC790\uC8FC \uAC08\uB4F1\uD569\uB2C8\uB2E4.",
+                prescription: "\uC790\uB8CC \uC5C6\uC74C \u2014 \uC9C4\uB2E8\uB9CC \uC4F0\uACE0 \uCC98\uBC29 \uC2AC\uB86F\uC740 \uBE44\uC6B4\uB2E4.",
+                evidence: [
+                  "R2.EUL.042"
+                ],
+                source: [
+                  "R2.EUL.042"
+                ],
+                note: "\uCC98\uBC29 \uCE78 \uC6D0\uBB38 \uADF8\uB300\uB85C(\uC9C4\uB2E8\uB9CC \uC0AC\uC6A9)"
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uACFC \uACB0\uC2E4",
+                code: "\uC7443-\uB9C8",
+                condition: "\uBD88 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uAF43 \uD53C\uC6B8 \uBCD5\uC774 \uC5C6\uC5B4 \uACB0\uC2E4\uC774 \uB2A6\uAC8C \uC635\uB2C8\uB2E4.",
+                prescription: "\uB9C8\uC74C\uACFC \uAE00\uC744 \uB2E4\uB8E8\uB294 \uC77C, \uCD9C\uD310\xB7\uC5B8\uB860\uCC98\uB7FC \uC624\uB798 \uC313\uC774\uB294 \uC77C\uC5D0\uC11C \uC5F4\uB9E4\uB97C \uB9FA\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.043"
+                ],
+                source: [
+                  "R2.EUL.043"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uAE08",
+                stageNote: "\uB2E4\uB4EC\uB294 \uC190\uAE38, \uBA85\uC608",
+                code: "\uC7444-\uAC00",
+                condition: "\uC138\uACF5\uB41C \uBCF4\uC11D \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C2"
+                ],
+                diagnosis: "\uC791\uC740 \uC190\uC7A1\uC774\uC5D0 \uAF2D \uB9DE\uB294 \uC791\uC740 \uCE7C\uC744 \uC954 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uC815\uBC00\uD55C \uC190\uB05D\uC73C\uB85C \uC790\uACA9\uC744 \uAC16\uCD98 \uC77C\uC744 \uD574\uB0C5\uB2C8\uB2E4.",
+                prescription: "\uAD6D\uAC00 \uC790\uACA9\uC744 \uC950\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4. \uCE7C\uC744 \uBA54\uC2A4\uB85C \uC4F0\uBA74 \uC758\uB8CC, \uC81C\uB3C4\uC6A9\uC73C\uB85C \uC4F0\uBA74 \uC124\uACC4\uCC98\uB7FC\uC694.",
+                evidence: [
+                  "R2.EUL.050"
+                ],
+                source: [
+                  "R2.EUL.050"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uAE08",
+                stageNote: "\uB2E4\uB4EC\uB294 \uC190\uAE38, \uBA85\uC608",
+                code: "\uC7444-\uB098",
+                condition: "\uC138\uACF5\uB41C \uBCF4\uC11D \uB458",
+                slots: [
+                  "\uC77C3"
+                ],
+                diagnosis: "\uCE7C\uC774 \uB458\uC774\uB77C \uAC00\uC704\uAC00 \uB429\uB2C8\uB2E4.",
+                prescription: "\uC790\uB974\uACE0 \uB2E4\uB4EC\uB294 \uC190\uAE30\uC220(\uBBF8\uC6A9, \uC7AC\uB2E8, \uAE08\uC18D)\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.050"
+                ],
+                source: [
+                  "R2.EUL.050"
+                ],
+                note: "\uC6D0\uBB38 \uD45C\uC5D0\uC11C \uC9C4\uB2E8\xB7\uCC98\uBC29 \uCE78\uC774 \uC5F0\uACB0 \uCD94\uCD9C\uB418\uC5B4 \uBB38\uC7A5 \uACBD\uACC4\uB85C \uB098\uB234\uB2E4."
+              },
+              {
+                stage: 4,
+                stageName: "\uAE08",
+                stageNote: "\uB2E4\uB4EC\uB294 \uC190\uAE38, \uBA85\uC608",
+                code: "\uC7444-\uB2E4",
+                condition: "\uCEE4\uB2E4\uB780 \uAE08\uB9E5 \uC788\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C2"
+                ],
+                diagnosis: "\uD070 \uCE7C\uACFC \uBB36\uC5EC \uC5ED\uD560\uC5D0 \uB9E4\uC774\uAE30 \uC27D\uC2B5\uB2C8\uB2E4. \uB300\uC2E0 \uADF8 \uCE7C\uC744 \uC791\uAC8C \uB2E4\uB4EC\uC5B4 \uC4F8 \uC904 \uC555\uB2C8\uB2E4.",
+                prescription: "\uC81C\uBCF5\uC744 \uC785\uB294 \uACF5\uC801\uC778 \uC790\uB9AC, \uADDC\uC728\uC774 \uBD84\uBA85\uD55C \uC870\uC9C1\uC5D0\uC11C \uD798\uC744 \uC501\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.051"
+                ],
+                source: [
+                  "R2.EUL.051"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uAE08",
+                stageNote: "\uB2E4\uB4EC\uB294 \uC190\uAE38, \uBA85\uC608",
+                code: "\uC7444-\uB77C",
+                condition: "\uAE08 \uB9CE\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6"
+                ],
+                diagnosis: "\uB0A0 \uC120 \uAC83\uB4E4\uC5D0 \uB458\uB7EC\uC2F8\uC5EC \uB9C8\uC74C\uC774 \uC27D\uAC8C \uBCA0\uC774\uACE0 \uC608\uBBFC\uD574\uC9D1\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uCC98\uB7FC \uBD80\uB4DC\uB7FD\uAC8C \uBE44\uCF1C \uAC00\uACE0, \uBCD5\uC744 \uCB10\uB4EF \uB4DC\uB7EC\uB0B4\uB294 \uC77C\uB85C \uB0A0\uC744 \uB204\uADF8\uB7EC\uB728\uB9AC\uC138\uC694.",
+                evidence: [
+                  "R2.EUL.052"
+                ],
+                source: [
+                  "R2.EUL.052"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uAE08",
+                stageNote: "\uB2E4\uB4EC\uB294 \uC190\uAE38, \uBA85\uC608",
+                code: "\uC7444-\uB9C8",
+                condition: "\uAE08 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uB2E4\uB4EC\uB294 \uC190\uAE38 \uC5C6\uC774 \uC790\uB77C \uC790\uC720\uB86D\uACE0, \uC21C\uC11C\uC5D0 \uC5BD\uB9E4\uC774\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uAE30\uC900\uC774 \uBD84\uBA85\uD55C \uC77C(\uBC95\xB7\uAE08\uC735\xB7\uACBD\uC601\xB7\uC758\uD559)\uC744 \uACC1\uC5D0 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.EUL.054"
+                ],
+                source: [
+                  "R2.EUL.054"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uB098\uBB34",
+                stageNote: "\uAE30\uB308 \uACF3\uACFC \uC5BD\uD798",
+                code: "\uC7445-\uAC00",
+                condition: "\uD070 \uB098\uBB34 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C1",
+                  "\uC77C2"
+                ],
+                diagnosis: "\uD070 \uB098\uBB34\uB97C \uD0C0\uACE0 \uC624\uB974\uB294 \uB369\uAD74\uC785\uB2C8\uB2E4. \uBBFF\uC744 \uB9CC\uD55C \uC0AC\uB78C\uC774\uB098 \uC870\uC9C1\uC758 \uD798\uC744 \uBE4C\uB824 \uD63C\uC790\uC11C\uB294 \uB2FF\uC9C0 \uBABB\uD560 \uB192\uC774\uAE4C\uC9C0 \uC624\uB985\uB2C8\uB2E4.",
+                prescription: "\uD070 \uB098\uBB34\uB97C \uCC3E\uC73C\uC138\uC694. \uADF8 \uACC1\uC5D0\uC11C \uB2F9\uC2E0\uC758 \uC5ED\uD560\uC774 \uCEE4\uC9D1\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.060"
+                ],
+                source: [
+                  "R2.EUL.060"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uB098\uBB34",
+                stageNote: "\uAE30\uB308 \uACF3\uACFC \uC5BD\uD798",
+                code: "\uC7445-\uB098",
+                condition: "\uD070 \uB098\uBB34\uAC00 \uD0DC\uC5B4\uB09C \uD574\uC5D0 \uC788\uC74C",
+                slots: [
+                  "\uC77C2"
+                ],
+                diagnosis: "\uAD6D\uAC00 \uAE30\uAD00\uC774 \uB2F9\uC2E0\uC774 \uD0C0\uACE0 \uC624\uB97C \uD070 \uB098\uBB34\uC785\uB2C8\uB2E4.",
+                prescription: "\uAD6D\uAC00\uC640 \uAD00\uB828\uB41C \uAE30\uAD00, \uACF5\uC801\uC778 \uC870\uC9C1\uC758 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.060"
+                ],
+                source: [
+                  "R2.EUL.060"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uB098\uBB34",
+                stageNote: "\uAE30\uB308 \uACF3\uACFC \uC5BD\uD798",
+                code: "\uC7445-\uB2E4",
+                condition: "\uD070 \uB098\uBB34\uAC00 \uC791\uC740 \uB545\uACFC \uBB36\uC784",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uACC42"
+                ],
+                diagnosis: "\uAE30\uB300\uB824\uB358 \uB098\uBB34\uAC00 \uBB36\uC5EC \uC788\uC5B4 \uD568\uAED8 \uC5BD\uD799\uB2C8\uB2E4. \uAE30\uB308 \uACF3\uC774 \uC788\uB294\uB370\uB3C4 \uAE30\uB300\uC9C0 \uBABB\uD558\uB294 \uB2F5\uB2F5\uD568\uC774 \uC788\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uADF8 \uB098\uBB34\uAC00 \uD480\uB9AC\uB294 \uB54C\uB97C \uC9DA\uC5B4 \uB450\uC138\uC694. \uADF8\uB54C \uD568\uAED8 \uC624\uB985\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.061"
+                ],
+                source: [
+                  "R2.EUL.061"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uB098\uBB34",
+                stageNote: "\uAE30\uB308 \uACF3\uACFC \uC5BD\uD798",
+                code: "\uC7445-\uB77C",
+                condition: "\uB369\uAD74 \uB458 \uC774\uC0C1",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uACC44"
+                ],
+                diagnosis: "\uAC19\uC740 \uB369\uAD74\uC774 \uACC1\uC5D0 \uC788\uC5B4 \uC790\uB77C\uBA74\uC11C \uC11C\uB85C \uC5BD\uD799\uB2C8\uB2E4.",
+                prescription: "\uC5BD\uD798\uC744 \uC815\uB9AC\uD574 \uC8FC\uB294 \uCEE4\uB2E4\uB780 \uAE08\uB9E5\uC774 \uB4E4\uC5B4\uC624\uB294 \uB54C\uC5D0 \uC77C\uACFC \uC790\uB9AC\uC640 \uC778\uC5F0\uC774 \uD480\uB9BD\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.062"
+                ],
+                source: [
+                  "R2.EUL.062"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uB098\uBB34",
+                stageNote: "\uAE30\uB308 \uACF3\uACFC \uC5BD\uD798",
+                code: "\uC7445-\uB9C8",
+                condition: "\uC544\uB798 \uAE00\uC790\uC5D0 \uB098\uBB34 \uBFCC\uB9AC \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6"
+                ],
+                diagnosis: "\uBC1C\uBC11\uC774 \uC595\uC544 \uC27D\uAC8C \uBF51\uD788\uACE0 \uC790\uC8FC \uC62E\uACA8 \uB2E4\uB2D9\uB2C8\uB2E4.",
+                prescription: "\uBFCC\uB9AC\uAC00 \uBAA8\uC774\uB294 \uB54C\uB97C \uAE30\uB2E4\uB824 \uD06C\uAC8C \uC62E\uAE30\uC138\uC694.",
+                evidence: [
+                  "R2.EUL.063"
+                ],
+                source: [
+                  "R2.EUL.063"
+                ]
+              },
+              {
+                stage: 6,
+                stageName: "\uBB36\uC784",
+                stageNote: null,
+                code: "\uC7446-\uAC00",
+                condition: "\uCEE4\uB2E4\uB780 \uAE08\uB9E5\uACFC \uBB36\uC784",
+                slots: [
+                  "\uACC42"
+                ],
+                diagnosis: "\uC7444-\uB2E4\uC640 \uAC19\uB2E4.",
+                prescription: "\uC7444-\uB2E4\uC640 \uAC19\uB2E4. \uBB36\uC784\uC774 \uD480\uB9AC\uB294 \uB54C\uB97C \uACC42\uC5D0 \uBC18\uB4DC\uC2DC \uC4F4\uB2E4.",
+                evidence: [
+                  "R2.EUL.051"
+                ],
+                source: [
+                  "R2.EUL.051"
+                ],
+                note: "1\uCE35 \xA77"
+              },
+              {
+                stage: 7,
+                stageName: "\uD2B9\uC131 (\uB05D \uC2AC\uB86F \uD6C4\uBCF4)",
+                stageNote: null,
+                code: "\uC7447-\uAC00",
+                condition: "\uD56D\uC0C1",
+                slots: [
+                  "\uB05D3"
+                ],
+                diagnosis: "\uC6B8\uD0C0\uB9AC \uC548\uC5D0\uC11C \uAC00\uC7A5 \uC544\uB984\uB2F5\uAC8C \uD53C\uB294 \uAF43\uC785\uB2C8\uB2E4. \uD070 \uC774\uB984\uC744 \uBC14\uB77C\uBCF4\uB418, \uACE7\uACE0 \uAE68\uB057\uD55C \uAE38\uB85C \uC624\uB97C \uB54C \uC624\uB798 \uD53C\uC5B4 \uC788\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBB38\uC7A5 \uD558\uB098\uB97C \uB05D3 \uC2AC\uB86F\uC5D0 \uADF8\uB300\uB85C \uC4F4\uB2E4(\uC6D0\uBB38 \uD45C\uC5D0 \uCC98\uBC29 \uCE78 \uC5C6\uC74C).",
+                evidence: [
+                  "R2.EUL.080"
+                ],
+                source: [
+                  "R2.EUL.080"
+                ],
+                note: "7\uB2E8\uACC4 \uD45C\uB294 \uBB38\uC7A5 \uCE78\uC774 \uD558\uB098\uB2E4(\uC6D0\uBB38)."
+              }
+            ],
+            C: [
+              {
+                code: "\uC744\uC6B4-\uAC00",
+                incoming: "\uC791\uC740 \uB545",
+                slots: [
+                  "\uC5F04",
+                  "\uC5F05",
+                  "\uACC43"
+                ],
+                sentence: "\uC815\uC6D0\uC5D0 \uC2EC\uC5B4\uC838 \uBFCC\uB9AC\uB97C \uB0B4\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uACC1\uC758 \uC790\uB9AC\uAC00 \uC815\uD574\uC9D1\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.020",
+                  "R2.EUL.074"
+                ]
+              },
+              {
+                code: "\uC744\uC6B4-\uB098",
+                incoming: "\uCEE4\uB2E4\uB780 \uAE08\uB9E5 (\uB369\uAD74 \uB458\uC77C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uC5BD\uD600 \uC788\uB358 \uB369\uAD74\uC774 \uC815\uB9AC\uB418\uBA70 \uC790\uB9AC\uAC00 \uC5F4\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.062"
+                ]
+              },
+              {
+                code: "\uC744\uC6B4-\uB2E4",
+                incoming: "\uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C (\uD070 \uB545\uB9CC \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uC7AC3",
+                  "\uACC44"
+                ],
+                sentence: "\uBC8C\uD310\uC774 \uC815\uC6D0\uC73C\uB85C \uBC14\uB00C\uC5B4 \uC7AC\uBB3C\uC744 \uC958 \uC218 \uC788\uAC8C \uB418\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.073",
+                  "R2.EUL.076"
+                ]
+              },
+              {
+                code: "\uC744\uC6B4-\uB77C",
+                incoming: "\uD070 \uB098\uBB34 (\uD070 \uB545 \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uC7AC5",
+                  "\uACC44"
+                ],
+                sentence: "\uD070 \uB098\uBB34\uB97C \uD0C0\uACE0 \uC624\uB974\uBA70 \uC790\uB9AC\uAC00 \uC62C\uB77C\uAC00\uACE0, \uB545\uACFC \uD130\uAC00 \uC0DD\uAE30\uAE30 \uC88B\uC740 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.073"
+                ]
+              },
+              {
+                code: "\uC744\uC6B4-\uB9C8",
+                incoming: "\uC2DC\uB0C7\uBB3C (\uBD88 \uB9CE\uC744 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uC13C \uBCD5\uC774 \uAC00\uB824\uC838 \uB2E4\uC2DC \uC790\uB77C\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.041",
+                  "R2.EUL.070"
+                ]
+              },
+              {
+                code: "\uC744\uC6B4-\uBC14",
+                incoming: "\uC544\uB798 \uAE00\uC790\uAC00 \uB098\uBB34 \uBFCC\uB9AC\uB85C \uBAA8\uC784",
+                slots: [
+                  "\uACC43"
+                ],
+                sentence: "\uBC1C\uBC11\uC774 \uB2E8\uB2E8\uD574\uC838 \uD55C\uACF3\uC5D0 \uBFCC\uB9AC\uB0B4\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.EUL.063"
+                ]
+              },
+              {
+                code: "\uC744\uC6B4-\uC0AC",
+                incoming: "\uD478\uB978 \uB369\uAD74\uC774\uB098 \uCEE4\uB2E4\uB780 \uAE08\uB9E5\uC774 \uB2E4\uC2DC \uC634 (\uBB36\uC5EC \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC42"
+                ],
+                slotNote: "\uD544\uC218",
+                sentence: "\uBB36\uC5EC \uC788\uB358 \uC790\uB9AC\uAC00 \uD480\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "1\uCE35 \xA77"
+                ],
+                note: "1\uCE35 \xA77"
+              }
+            ],
+            D: [
+              {
+                label: "\uCD9C\uB825 \uC548 \uD568",
+                rule: "\uD310\uC815\uC5D0\uB294 \uC4F0\uB418 \uBB38\uC7A5\uC73C\uB85C \uB0B4\uBCF4\uB0B4\uC9C0 \uC54A\uB294\uB2E4 (PDF 0-1 6\uBC88).",
+                items: [
+                  {
+                    item: "\uC5EC\uB7EC \uC774\uC131\uACFC\uC758 \uAD00\uACC4\xB7\uBD80\uBD80 \uBB38\uC81C\xB7\uAC74\uAC15",
+                    evidence: [
+                      "R2.EUL.021"
+                    ]
+                  },
+                  {
+                    item: "\uC5EC\uC131\uC758 \uC815\uC2E0\uC801 \uACE0\uD1B5\xB7\uACE8\uB2E4\uACF5\uC99D",
+                    evidence: [
+                      "R2.EUL.053"
+                    ]
+                  },
+                  {
+                    item: "\uC5EC\uC131\uC758 \uBC24\uC77C",
+                    evidence: [
+                      "R2.EUL.071"
+                    ]
+                  },
+                  {
+                    item: "\uC220\uC9D1\xB7\uCEE4\uD53C\uC20D \uC5C5\uC885 \uB2E8\uC815",
+                    evidence: [
+                      "R2.EUL.072"
+                    ],
+                    note: "\uD655\uC778 \uD544\uC694"
+                  },
+                  {
+                    item: "\uCE7C\uC5D0 \uC798\uB9BC",
+                    evidence: [
+                      "R2.EUL.075"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          \u4E19: {
+            name: "\uBCD1\uD654 \u2014 \uD0DC\uC591",
+            A: {
+              \uC0AC1: {
+                text: "\uB2F9\uC2E0\uC740 \uD0DC\uC591\uC785\uB2C8\uB2E4. {1\uC21C\uC704 \uAC00\uC9C0 \uD55C \uC904}",
+                evidence: [
+                  "R2.BYEONG.001"
+                ]
+              },
+              "\uC0AC2 \uC131\uD5A5": {
+                text: "\uD604\uC2E4\uC5D0 \uBC1C\uC744 \uB51B\uACE0 \uBC1D\uAC8C \uC6C0\uC9C1\uC774\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uD310\uB2E8\uC774 \uBE60\uB974\uACE0, \uB9E4\uC77C \uC0C8\uB85C \uB5A0\uC624\uB974\uB4EF \uC0C8\uB85C\uC6B4 \uC2DC\uC791\uC744 \uB450\uB824\uC6CC\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.002"
+                ]
+              },
+              "\uC0AC3 \uB0A8\uB4E4\uC774\uBCF4\uB294\uB098": {
+                text: "\uC5B4\uB514\uC11C\uB4E0 \uB208\uC5D0 \uB744\uACE0 \uC790\uB9AC\uB97C \uD658\uD558\uAC8C \uB9CC\uB4ED\uB2C8\uB2E4. \uAC89\uC740 \uBC1D\uC740 \uB370, \uC18D\uC5D0\uB294 \uCC28\uAC11\uACE0 \uB0C9\uCCA0\uD55C \uACC4\uC0B0\uC774 \uD568\uAED8 \uC788\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.003"
+                ]
+              },
+              "\uC0AC4 \uCE6D\uCC2C": {
+                text: "\uC9C8\uC11C\uC640 \uC608\uC758\uB97C \uC9C0\uD0A4\uBA74\uC11C\uB3C4 \uCD94\uC9C4\uB825\uC774 \uC788\uC5B4, \uB9E1\uC740 \uC77C\uC744 \uC815\uBA74\uC73C\uB85C \uBC00\uACE0 \uB098\uAC11\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.002"
+                ]
+              },
+              "\uC77C1 \uBB34\uAE30": {
+                text: "\uC55E\uC5D0 \uC11C\uC11C \uBE44\uCD94\uACE0 \uC774\uB044\uB294 \uD798\uC785\uB2C8\uB2E4. \uB4DC\uB7EC\uB0B4\uACE0 \uC54C\uB9AC\uB294 \uC77C\uC5D0\uC11C \uB204\uAD6C\uBCF4\uB2E4 \uAC15\uD569\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.001",
+                  "R2.BYEONG.004"
+                ]
+              },
+              "\uC7AC6 \uB3C8\uC758\uC21C\uC11C": {
+                text: "\uD0DC\uC591\uC740 \uC7AC\uBB3C\uBCF4\uB2E4 \uC774\uB984\uC73C\uB85C \uBE5B\uB0A9\uB2C8\uB2E4. \uC774\uB984\uC744 \uBA3C\uC800 \uC138\uC6B0\uBA74 \uC7AC\uBB3C\uC774 \uADF8 \uBE5B\uC744 \uB530\uB77C\uC635\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.050",
+                  "R2.BYEONG.070"
+                ]
+              },
+              "\uC5F01 \uAD00\uACC4\uC120\uC5B8": {
+                text: "\uD0DC\uC591\uC740 \uBAA8\uB450\uB97C \uBE44\uCD94\uC9C0\uB9CC \uD558\uB298\uC5D0\uB294 \uD558\uB098\uB9CC \uB739\uB2C8\uB2E4. \uB2F9\uC2E0\uB3C4 \uACC1\uC758 \uC0AC\uB78C\uC744 \uD658\uD558\uAC8C \uBE44\uCD94\uB294 \uC0AC\uB78C\uC774\uACE0, \uADF8\uB7EC\uBA74\uC11C \uC18D\uC73C\uB85C\uB294 \uADF8 \uC0AC\uB78C\uC5D0\uAC8C \uC720\uC77C\uD55C \uBE5B\uC774\uACE0 \uC2F6\uC5B4 \uD569\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.010"
+                ]
+              },
+              marriageCondition: {
+                label: "\uACB0\uD63C \uC870\uAC74",
+                text: "\uD070\uBB3C(\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218)\uC744 \uAC70\uB300\uD55C \uC0B0\uB9E5\uC774 \uB9C9\uC544 \uC8FC\uACE0, \uBC30\uC6B0\uC790 \uC790\uB9AC\uAC00 \uBB3C\uC758 \uAE30\uC6B4\uC73C\uB85C \uBAA8\uC77C \uB54C. \uC77C\uAC04\uC774 \uBB36\uC5EC \uC788\uC73C\uBA74 \uD480\uB9B4 \uB54C.",
+                evidence: [
+                  "\uBCF8\uCC45 p.142, 145 \uC0AC\uB840"
+                ]
+              },
+              endingTheme: {
+                label: "\uB05D \uC18C\uC7AC",
+                text: "\uB9E4\uC77C \uB2E4\uC2DC \uB5A0\uC624\uB974\uB294 \uD798 / \uB5B3\uB5B3\uD568",
+                evidence: [
+                  "R2.BYEONG.002",
+                  "R2.BYEONG.070"
+                ]
+              },
+              careerNote: {
+                label: "\uC9C1\uC5C5 \uACB0(\uCC38\uACE0\uC6A9, \uB098\uC5F4 \uAE08\uC9C0)",
+                text: "\uBC1D\uC744 \uB54C \uBC29\uC1A1\xB7\uC608\uC220\xB7\uD64D\uBCF4, \uC5B4\uB450\uC6B8 \uB54C \uC815\uC2E0\xB7\uC2EC\uB9AC\xB7\uCCA0\uD559\xB7\uC885\uAD50.",
+                evidence: [
+                  "R2.BYEONG.004"
+                ]
+              }
+            },
+            B: [
+              {
+                stage: 1,
+                stageName: "\uBC1D\uAE30",
+                stageNote: "\uB0AE\uC758 \uD574\uC778\uAC00, \uBC24\uC758 \uD574\uC778\uAC00",
+                code: "\uBCD11-\uAC00",
+                condition: "\uC544\uB798 \uAE00\uC790\uAC00 \uD55C\uB0AE(\uBD88\uC758 \uBFCC\uB9AC)",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C1"
+                ],
+                diagnosis: "\uBFCC\uB9AC\uAC00 \uB2E8\uB2E8\uD55C \uD55C\uB0AE\uC758 \uD574\uC785\uB2C8\uB2E4. \uC5B4\uB514\uC11C\uB4E0 \uC874\uC7AC\uAC10\uC774 \uBD84\uBA85\uD569\uB2C8\uB2E4.",
+                prescription: "\uB4DC\uB7EC\uB0B4\uACE0 \uC54C\uB9AC\uB294 \uC77C, \uC0AC\uB78C\uB4E4 \uC55E\uC5D0 \uC11C\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.010"
+                ],
+                source: [
+                  "R2.BYEONG.010"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uBC1D\uAE30",
+                stageNote: "\uB0AE\uC758 \uD574\uC778\uAC00, \uBC24\uC758 \uD574\uC778\uAC00",
+                code: "\uBCD11-\uB098",
+                condition: "\uC544\uB798 \uAE00\uC790\uAC00 \uBC24(\uBB3C\uC758 \uBB34\uB9AC)",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uBC24\uC5D0 \uB72C \uD574\uB77C \uAC00\uC9C4 \uBE5B\uB9CC\uD07C \uB4DC\uB7EC\uB098\uC9C0 \uBABB\uD569\uB2C8\uB2E4. \uB2A5\uB825\uC774 \uC788\uB294\uB370 \uC54C\uC544\uBCF4\uB294 \uC0AC\uB78C\uC774 \uC801\uB2E4\uACE0 \uB290\uB08D\uB2C8\uB2E4.",
+                prescription: "\uBC14\uAE65\uC744 \uBE44\uCD94\uB294 \uC77C\uBCF4\uB2E4 \uB9C8\uC74C\uC744 \uBE44\uCD94\uB294 \uC77C, \uACE7 \uC0AC\uB78C\uC758 \uB9C8\uC74C\uACFC \uC0DD\uAC01\uC744 \uB2E4\uB8E8\uB294 \uC77C\uC5D0\uC11C \uBE5B\uB0A9\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.011",
+                  "R2.BYEONG.004"
+                ],
+                source: [
+                  "R2.BYEONG.011",
+                  "R2.BYEONG.004"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uAC00\uB9BC\uACFC \uBB36\uC784",
+                stageNote: null,
+                code: "\uBCD12-\uAC00",
+                condition: "\uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C \uC788\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uB0AE\uC5D0 \uB0B4\uB9AC\uB294 \uBE44\uC5D0 \uAC00\uB824\uC9C4 \uD574\uC785\uB2C8\uB2E4. \uAC00\uC7A5 \uBE5B\uB098\uC57C \uD560 \uC21C\uAC04\uC5D0 \uD750\uB824\uC9C0\uB294 \uC77C\uC774 \uBC18\uBCF5\uB410\uC744 \uAC81\uB2C8\uB2E4.",
+                prescription: "\uBE44\uB97C \uAC70\uB46C \uAC08 \uAC70\uB300\uD55C \uC0B0\uB9E5\uC774 \uB4E4\uC5B4\uC624\uB294 \uB54C\uAC00 \uC788\uC2B5\uB2C8\uB2E4. \uADF8\uB54C\uAE4C\uC9C0\uB294 \uB4DC\uB7EC\uB0C4\uBCF4\uB2E4 \uC900\uBE44\uAC00 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.012"
+                ],
+                source: [
+                  "R2.BYEONG.012"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uAC00\uB9BC\uACFC \uBB36\uC784",
+                stageNote: null,
+                code: "\uBCD12-\uB098",
+                condition: "\uC138\uACF5\uB41C \uBCF4\uC11D\uACFC \uBB36\uC784",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uACC42"
+                ],
+                diagnosis: "\uBCF4\uC11D\uC5D0 \uBE5B\uC774 \uBB36\uC5EC \uC5B4\uB450\uC6CC\uC9C4 \uD574\uC785\uB2C8\uB2E4. \uD558\uACE0 \uC2F6\uC740 \uC77C\uC774 \uC788\uC5B4\uB3C4 \uC190\uBC1C\uC774 \uBB36\uC778 \uB4EF \uB2F5\uB2F5\uD569\uB2C8\uB2E4.",
+                prescription: "\uBB36\uC784\uC774 \uD480\uB9AC\uB294 \uB54C\uAC00 \uC815\uD574\uC838 \uC788\uC2B5\uB2C8\uB2E4. \uADF8\uC804\uC5D0\uB294 \uBB36\uC778 \uADF8 \uC77C, \uACE7 \uAE08\uC735\xB7\uBC95\xB7\uC815\uBC00\uD55C \uC190\uC77C\uC744 \uB2F9\uC2E0\uC758 \uC77C\uB85C \uC0BC\uC73C\uC138\uC694.",
+                evidence: [
+                  "R2.BYEONG.013"
+                ],
+                source: [
+                  "R2.BYEONG.013"
+                ],
+                note: "1\uCE35 \xA77"
+              },
+              {
+                stage: 2,
+                stageName: "\uAC00\uB9BC\uACFC \uBB36\uC784",
+                stageNote: null,
+                code: "\uBCD12-\uB098\u2032",
+                condition: "\uC704 \uAC00\uC9C0 + \uC6D0\uAD6D\uC5D0 \uBB3C \uC5C6\uC74C",
+                slots: [
+                  "\uC77C2"
+                ],
+                diagnosis: "\uC774 \uBB36\uC784\uC774 \uC624\uD788\uB824 \uC5C6\uB358 \uBB3C\uC744 \uB9CC\uB4E4\uC5B4 \uC90D\uB2C8\uB2E4. \uBB36\uC778 \uC790\uB9AC\uAC00 \uC774\uB984\uC774 \uAC78\uB9AC\uB294 \uC790\uB9AC\uB85C \uC774\uC5B4\uC9D1\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.BYEONG.013"
+                ],
+                source: [
+                  "R2.BYEONG.013"
+                ],
+                note: "\uCC98\uBC29 \uCE78\uC774 \uC6D0\uBB38\uC5D0\uC11C \uB300\uC2DC(\u2014)\uB85C \uBE44\uC5B4 \uC788\uB2E4."
+              },
+              {
+                stage: 3,
+                stageName: "\uAC19\uC740 \uBD88",
+                stageNote: "\uD574\uAC00 \uACB9\uCE60 \uB54C",
+                code: "\uBCD13-\uAC00",
+                condition: "\uD0DC\uC591 \uB458",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uACC44"
+                ],
+                diagnosis: "\uD558\uB298\uC5D0 \uD574\uAC00 \uB458\uC774\uB77C \uC624\uD788\uB824 \uBE5B\uC774 \uD750\uB824\uC9D1\uB2C8\uB2E4. \uC560\uC4F4 \uB9CC\uD07C \uB4DC\uB7EC\uB098\uC9C0 \uC54A\uACE0 \uB298 \uB204\uAD70\uAC00\uC640 \uACAC\uC8FC\uAC8C \uB429\uB2C8\uB2E4.",
+                prescription: "\uD070 \uB098\uBB34\uAC00 \uD558\uB098\uB97C \uAC00\uB824 \uC8FC\uAC70\uB098 \uBCF4\uC11D\uC774 \uD558\uB098\uB97C \uC815\uB9AC\uD574 \uC8FC\uB294 \uB54C\uC5D0 \uB2E4\uC2DC \uBC1D\uC544\uC9D1\uB2C8\uB2E4. \uADF8\uB54C\uB97C \uAE30\uC900\uC73C\uB85C \uACC4\uD68D\uC744 \uC138\uC6B0\uC138\uC694. \uBC14\uB2E4 \uAC74\uB108 \uD574\uC758 \uB098\uB77C\uC640 \uB2FF\uB294 \uC77C\uB3C4 \uBE5B\uC744 \uB418\uCC3E\uB294 \uAE38\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.014",
+                  "R2.BYEONG.016"
+                ],
+                source: [
+                  "R2.BYEONG.014",
+                  "R2.BYEONG.016"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uAC19\uC740 \uBD88",
+                stageNote: "\uD574\uAC00 \uACB9\uCE60 \uB54C",
+                code: "\uBCD13-\uB098",
+                condition: "\uD0DC\uC591 \uC14B \uC774\uC0C1",
+                slots: [
+                  "\uC0AC4"
+                ],
+                diagnosis: "\uD574\uAC00 \uC5EC\uB7FF \uBAA8\uC5EC \uB2E4\uC2DC \uD558\uB098\uC758 \uD070 \uBE5B\uC774 \uB429\uB2C8\uB2E4.",
+                prescription: "\uC790\uB8CC \uC5C6\uC74C \u2014 \uC9C4\uB2E8\uB9CC \uC4F4\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.015"
+                ],
+                source: [
+                  "R2.BYEONG.015"
+                ],
+                note: "\uCC98\uBC29 \uCE78 \uC6D0\uBB38 \uADF8\uB300\uB85C(\uC9C4\uB2E8\uB9CC \uC0AC\uC6A9)"
+              },
+              {
+                stage: 3,
+                stageName: "\uAC19\uC740 \uBD88",
+                stageNote: "\uD574\uAC00 \uACB9\uCE60 \uB54C",
+                code: "\uBCD13-\uB2E4",
+                condition: "\uC138\uC0C1\uC744 \uBC1D\uD788\uB294 \uB4F1\uBD88 \uC788\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uD574\uC640 \uB2EC\uC774 \uD568\uAED8 \uB5A0 \uD604\uC2E4\uACFC \uC774\uC0C1 \uC0AC\uC774\uC5D0\uC11C \uC790\uC8FC \uB9C8\uC74C\uC774 \uAC08\uB9BD\uB2C8\uB2E4.",
+                prescription: "\uD070 \uB098\uBB34\uAC00 \uC0AC\uC774\uB97C \uAC00\uB824 \uC8FC\uB294 \uB54C, \uB610\uB294 \uD070\uBB3C\uC744 \uAC74\uB108\uB294 \uC120\uD0DD\uC774 \uAC08\uB4F1\uC744 \uD480\uC5B4 \uC90D\uB2C8\uB2E4. \uBC14\uB2E4 \uAC74\uB108\uC758 \uBC30\uC6C0\uC774\uB098 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.017",
+                  "\uBCF8\uCC45 p.140"
+                ],
+                source: [
+                  "R2.BYEONG.017",
+                  "\uBCF8\uCC45 p.140"
+                ],
+                note: "\uBCF8\uCC45 p.140"
+              },
+              {
+                stage: 3,
+                stageName: "\uAC19\uC740 \uBD88",
+                stageNote: "\uD574\uAC00 \uACB9\uCE60 \uB54C",
+                code: "\uBCD13-\uB77C",
+                condition: "\uAC00\uB824 \uC904 \uD070 \uB098\uBB34\uAC00 \uC791\uC740 \uB545\uACFC \uBB36\uC784",
+                slots: [
+                  "\uACC42"
+                ],
+                diagnosis: "\uAC00\uB824 \uC904 \uB098\uBB34\uAC00 \uBB36\uC5EC \uC788\uC5B4 \uAC08\uB4F1\uC774 \uC27D\uAC8C \uD480\uB9AC\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uADF8 \uB098\uBB34\uAC00 \uD480\uB9AC\uB294 \uB54C\uB97C \uC9DA\uC5B4 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.BYEONG.018"
+                ],
+                source: [
+                  "R2.BYEONG.018"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uAF43\uC744 \uD53C\uC6B0\uB294 \uC77C, \uBC30\uC6C0",
+                code: "\uBCD14-\uAC00",
+                condition: "\uD070 \uB098\uBB34 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uD070 \uB098\uBB34\uC5D0 \uAF43\uC744 \uD53C\uC6B0\uB294 \uD574\uC785\uB2C8\uB2E4. \uBC30\uC6B0\uACE0 \uC313\uC740 \uAC83\uC774 \uACB0\uC2E4\uC774 \uB418\uC5B4 \uC778\uC815\uBC1B\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBC30\uC6B4 \uAC83\uC744 \uAC00\uB974\uCE58\uACE0 \uD3BC\uCE58\uB294 \uC77C, \uD559\uBB38\uACFC \uAD50\uC721\uC758 \uC790\uB9AC\uAC00 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.020"
+                ],
+                source: [
+                  "R2.BYEONG.020"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uAF43\uC744 \uD53C\uC6B0\uB294 \uC77C, \uBC30\uC6C0",
+                code: "\uBCD14-\uB098",
+                condition: "\uD478\uB978 \uB369\uAD74 \uC788\uC74C",
+                slots: [
+                  "\uC77C2",
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uC791\uC740 \uAF43\uC744 \uD5A5\uAE30\uB86D\uAC8C \uD53C\uC6B0\uB294 \uD574\uC785\uB2C8\uB2E4.",
+                prescription: "\uC81C\uBCF5\uC744 \uC785\uB294 \uACF5\uC801\uC778 \uC77C, \uADDC\uC728 \uC788\uB294 \uC870\uC9C1\uC5D0\uC11C \uD798\uC744 \uC501\uB2C8\uB2E4. \uC7AC\uBB3C\uC744 \uD06C\uAC8C \uC950\uB824 \uD558\uBA74 \uC190\uBC1C\uC774 \uBB36\uC774\uB2C8 \uC774\uB984\uC744 \uBA3C\uC800 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.BYEONG.021"
+                ],
+                source: [
+                  "R2.BYEONG.021"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uAF43\uC744 \uD53C\uC6B0\uB294 \uC77C, \uBC30\uC6C0",
+                code: "\uBCD14-\uB2E4",
+                condition: "\uBD88\uC774 \uB108\uBB34 \uC148",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6"
+                ],
+                diagnosis: "\uBE5B\uC774 \uB108\uBB34 \uC138\uC11C \uB545\uC774 \uB9C8\uB974\uACE0, \uD0A4\uC6B0\uB358 \uAC83\uC774 \uC790\uB77C\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC774 \uB4E4\uC5B4\uC624\uB294 \uB54C\uC5D0 \uB2E4\uC2DC \uC790\uB78D\uB2C8\uB2E4. \uADF8\uB54C\uAE4C\uC9C0 \uBB34\uB9AC\uD558\uAC8C \uD0A4\uC6B0\uB824 \uD558\uC9C0 \uB9C8\uC138\uC694.",
+                evidence: [
+                  "R2.BYEONG.022"
+                ],
+                source: [
+                  "R2.BYEONG.022"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uBB3C",
+                stageNote: "\uB5A0\uC624\uB97C \uD638\uC218, \uC774\uB984\uACFC \uC790\uB9AC",
+                code: "\uBCD15-\uAC00",
+                condition: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C2"
+                ],
+                diagnosis: "\uB113\uC740 \uD638\uC218 \uC704\uC5D0 \uB72C \uD574\uC785\uB2C8\uB2E4. \uC774\uB984\uACFC \uC790\uB9AC\uAC00 \uD568\uAED8 \uC62C\uB77C\uAC00\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4.",
+                prescription: "\uC9C4\uD559, \uC2B9\uC9C4, \uC120\uCD9C\uCC98\uB7FC \uC774\uB984\uC774 \uAC78\uB9AC\uB294 \uC77C\uC5D0\uC11C \uBE5B\uB0A9\uB2C8\uB2E4. \uBA85\uC608\uB97C \uBA3C\uC800 \uC887\uC73C\uC138\uC694.",
+                evidence: [
+                  "R2.BYEONG.030"
+                ],
+                source: [
+                  "R2.BYEONG.030"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uBB3C",
+                stageNote: "\uB5A0\uC624\uB97C \uD638\uC218, \uC774\uB984\uACFC \uC790\uB9AC",
+                code: "\uBCD15-\uB098",
+                condition: "\uD638\uC218 + \uAC70\uB300\uD55C \uC0B0\uB9E5 + \uD070 \uB098\uBB34 (+\uAE08\uB9E5)",
+                slots: [
+                  "\uC7AC1",
+                  "\uC7AC6"
+                ],
+                diagnosis: "\uB9D1\uC740 \uD638\uC218 \uC704\uC5D0 \uB72C \uD574\uC785\uB2C8\uB2E4. \uC774\uB984\uACFC \uC7AC\uBB3C\uC774 \uD568\uAED8 \uB530\uB77C\uC635\uB2C8\uB2E4.",
+                prescription: "\uC774\uB984\uC744 \uC313\uC744\uC218\uB85D \uC7AC\uBB3C\uC774 \uB530\uB974\uB294 \uAD6C\uC870\uC785\uB2C8\uB2E4. \uBA85\uC608\uB97C \uCD94\uAD6C\uD558\uC138\uC694.",
+                evidence: [
+                  "R2.BYEONG.060",
+                  "R2.BYEONG.062"
+                ],
+                source: [
+                  "R2.BYEONG.060",
+                  "R2.BYEONG.062"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uBB3C",
+                stageNote: "\uB5A0\uC624\uB97C \uD638\uC218, \uC774\uB984\uACFC \uC790\uB9AC",
+                code: "\uBCD15-\uB2E4",
+                condition: "\uD638\uC218\uAC00 \uD750\uB824\uC9D0",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uD750\uB9B0 \uBB3C \uC704\uC5D0 \uB72C \uD574\uB77C \uC774\uB984\uC774 \uD750\uB824\uC9C0\uB294 \uC77C\uC774 \uC0DD\uAE30\uAE30 \uC27D\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uB451\uC5D0 \uB098\uBB34\uB97C \uC2EC\uB4EF, \uBB34\uC5B8\uAC00\uB97C \uD0A4\uC6B0\uB294 \uC77C\uC744 \uACC1\uC5D0 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.BYEONG.031"
+                ],
+                source: [
+                  "R2.BYEONG.031"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uBB3C",
+                stageNote: "\uB5A0\uC624\uB97C \uD638\uC218, \uC774\uB984\uACFC \uC790\uB9AC",
+                code: "\uBCD15-\uB77C",
+                condition: "\uD638\uC218 \uB458",
+                slots: [
+                  "\uC0AC7"
+                ],
+                diagnosis: "\uBB3C\uC774 \uB450 \uACF3\uC774\uB77C \uC5B4\uB514\uC5D0 \uB5A0\uC57C \uD560\uC9C0 \uB9C8\uC74C\uC774 \uAC08\uB9BD\uB2C8\uB2E4.",
+                prescription: "\uC790\uB8CC \uC5C6\uC74C \u2014 \uC9C4\uB2E8\uB9CC \uC4F4\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.032"
+                ],
+                source: [
+                  "R2.BYEONG.032"
+                ],
+                note: "\uCC98\uBC29 \uCE78 \uC6D0\uBB38 \uADF8\uB300\uB85C(\uC9C4\uB2E8\uB9CC \uC0AC\uC6A9)"
+              },
+              {
+                stage: 5,
+                stageName: "\uBB3C",
+                stageNote: "\uB5A0\uC624\uB97C \uD638\uC218, \uC774\uB984\uACFC \uC790\uB9AC",
+                code: "\uBCD15-\uB9C8",
+                condition: "\uBB3C \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uACC44"
+                ],
+                diagnosis: "\uB5A0\uC624\uB97C \uD638\uC218\uAC00 \uC5C6\uC5B4, \uC774\uB984\uC744 \uAC78 \uC790\uB9AC\uB97C \uC2A4\uC2A4\uB85C \uCC3E\uC544\uC57C \uD569\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC774 \uB4E4\uC5B4\uC624\uB294 \uB54C\uAC00 \uC774\uB984\uC774 \uC11C\uB294 \uB54C\uC785\uB2C8\uB2E4. \uADF8\uB54C\uB97C \uC9DA\uC5B4 \uB450\uC138\uC694.",
+                evidence: [
+                  "\uBCF8\uCC45 p.146, 149 \uC0AC\uB840"
+                ],
+                source: [
+                  "\uBCF8\uCC45 p.146, 149 \uC0AC\uB840",
+                  "R2 \uCF54\uB4DC \uC5C6\uC74C(\uC6D0\uBB38 \uADFC\uAC70)"
+                ],
+                note: "\uC6D0\uBB38 \uADFC\uAC70\uAC00 \uBCF8\uCC45 \uC0AC\uB840 \uD398\uC774\uC9C0\uB2E4."
+              },
+              {
+                stage: 6,
+                stageName: "\uB545",
+                stageNote: "\uBE44\uCD94\uC5B4 \uD0A4\uC6B0\uB294 \uAC83",
+                code: "\uBCD16-\uAC00",
+                condition: "\uAC70\uB300\uD55C \uC0B0\uB9E5 \uC788\uC74C",
+                slots: [
+                  "\uC77C3"
+                ],
+                diagnosis: "\uB113\uC740 \uB4E4\uD310\uC744 \uBE44\uCD94\uC5B4 \uB9CC\uBB3C\uC744 \uD0A4\uC6B0\uB294 \uD574\uC785\uB2C8\uB2E4.",
+                prescription: "\uB9CE\uC740 \uAC83\uC744 \uAE38\uB7EC \uB0B4\uB294 \uC77C, \uD130\uB97C \uC77C\uAD6C\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.060"
+                ],
+                source: [
+                  "R2.BYEONG.060"
+                ]
+              },
+              {
+                stage: 6,
+                stageName: "\uB545",
+                stageNote: "\uBE44\uCD94\uC5B4 \uD0A4\uC6B0\uB294 \uAC83",
+                code: "\uBCD16-\uB098",
+                condition: "\uC791\uC740 \uB545 \uC788\uC74C",
+                slots: [
+                  "\uC5F06"
+                ],
+                diagnosis: "\uC815\uC6D0\uC744 \uBE44\uCD94\uB294 \uD574\uC785\uB2C8\uB2E4. \uAC00\uAE4C\uC6B4 \uACF3\uC744 \uD658\uD558\uAC8C \uB9CC\uB4DC\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4.",
+                prescription: "\uAC00\uC815\uACFC \uAC00\uAE4C\uC6B4 \uC6B8\uD0C0\uB9AC\uB97C \uAC00\uAFB8\uB294 \uC77C\uC774 \uBE5B\uC744 \uD0A4\uC6C1\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.061"
+                ],
+                source: [
+                  "R2.BYEONG.061"
+                ]
+              },
+              {
+                stage: 6,
+                stageName: "\uB545",
+                stageNote: "\uBE44\uCD94\uC5B4 \uD0A4\uC6B0\uB294 \uAC83",
+                code: "\uBCD16-\uB2E4",
+                condition: "\uBD88\uACFC \uD759\uC774 \uC9C0\uB098\uCE68",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uBE5B\uACFC \uD759\uC774 \uC9C0\uB098\uCCD0 \uB545\uC774 \uB9C8\uB974\uACE0, \uC2DC\uB044\uB7EC\uC6B4 \uACF3\uC744 \uB5A0\uB098 \uC870\uC6A9\uD55C \uACF3\uC744 \uCC3E\uAC8C \uB429\uB2C8\uB2E4.",
+                prescription: "\uB9C8\uC74C\uACFC \uC815\uC2E0\uC744 \uB2E4\uB8E8\uB294 \uC77C, \uACE0\uC694\uD55C \uC790\uB9AC\uC5D0\uC11C \uBE5B\uB0A9\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.041"
+                ],
+                source: [
+                  "R2.BYEONG.041"
+                ]
+              },
+              {
+                stage: 7,
+                stageName: "\uAE08",
+                stageNote: "\uC7AC\uBB3C",
+                code: "\uBCD17-\uAC00",
+                condition: "\uCEE4\uB2E4\uB780 \uAE08\uB9E5 \uC788\uC74C (\uC544\uB798 \uBFCC\uB9AC \uD2BC\uD2BC)",
+                slots: [
+                  "\uC7AC1",
+                  "\uC7AC6"
+                ],
+                diagnosis: "\uD070 \uC7AC\uBB3C\uC744 \uC958 \uC218 \uC788\uB294 \uD574\uC785\uB2C8\uB2E4.",
+                prescription: "\uC7AC\uBB3C\uBCF4\uB2E4 \uC774\uB984\uC744 \uBA3C\uC800 \uB450\uC138\uC694. \uBE5B\uC774 \uC11C\uBA74 \uC7AC\uBB3C\uC740 \uBCF4\uC11D\uB9CC\uD07C\uC529 \uD655\uC2E4\uD788 \uB530\uB77C\uC635\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.050"
+                ],
+                source: [
+                  "R2.BYEONG.050"
+                ]
+              },
+              {
+                stage: 7,
+                stageName: "\uAE08",
+                stageNote: "\uC7AC\uBB3C",
+                code: "\uBCD17-\uB098",
+                condition: "\uAE08 + \uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218",
+                slots: [
+                  "\uC7AC1",
+                  "\uC7AC7"
+                ],
+                diagnosis: "\uAE08\uB9E5\uC774 \uBB3C\uC744 \uB9CC\uB4E4\uACE0 \uD574\uAC00 \uADF8 \uBB3C \uC704\uC5D0 \uB739\uB2C8\uB2E4. \uC774\uB984\uC774 \uB192\uC544\uC9C0\uACE0 \uC7AC\uBB3C\uB3C4 \uB530\uB985\uB2C8\uB2E4.",
+                prescription: "\uC774\uB984\uC744 \uAC70\uB294 \uC77C\uACFC \uC7AC\uBB3C\uC744 \uB2E4\uB8E8\uB294 \uC77C\uC744 \uD568\uAED8 \uAC00\uC838\uAC00\uC138\uC694.",
+                evidence: [
+                  "R2.BYEONG.051"
+                ],
+                source: [
+                  "R2.BYEONG.051"
+                ]
+              },
+              {
+                stage: 7,
+                stageName: "\uAE08",
+                stageNote: "\uC7AC\uBB3C",
+                code: "\uBCD17-\uB2E4",
+                condition: "\uD0DC\uC591 \uB458\uC774 \uAC01\uAC01 \uBCF4\uC11D\uC744 \uB04C\uC5B4\uC634",
+                slots: [
+                  "\uC77C3"
+                ],
+                diagnosis: "\uB4DC\uB7EC\uB098\uC9C0 \uC54A\uB294 \uACF3\uC5D0\uC11C \uC815\uBCF4\uB97C \uBAA8\uC73C\uB294 \uAC10\uAC01\uC774 \uC788\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC815\uBCF4\uB97C \uB2E4\uB8E8\uB294 \uC77C, \uB4DC\uB7EC\uB098\uC9C0 \uC54A\uAC8C \uD310\uC744 \uC77D\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.073"
+                ],
+                source: [
+                  "R2.BYEONG.073"
+                ]
+              },
+              {
+                stage: 8,
+                stageName: "\uD2B9\uC131 (\uB05D \uC2AC\uB86F \uD6C4\uBCF4)",
+                stageNote: null,
+                code: "\uBCD18-\uAC00",
+                condition: "\uD56D\uC0C1",
+                slots: [
+                  "\uB05D3"
+                ],
+                diagnosis: "\uD0DC\uC591\uC740 \uC815\uB2F9\uD558\uACE0 \uBD84\uBA85\uD574\uC57C \uC624\uB798 \uBE5B\uB0A9\uB2C8\uB2E4. \uB5B3\uB5B3\uD55C \uC774\uB984\uC774 \uB2F9\uC2E0\uC744 \uC9C0\uD0B5\uB2C8\uB2E4.",
+                prescription: "\uBB38\uC7A5 \uD558\uB098\uB97C \uB05D3 \uC2AC\uB86F\uC5D0 \uADF8\uB300\uB85C \uC4F4\uB2E4(\uC6D0\uBB38 \uD45C\uC5D0 \uCC98\uBC29 \uCE78 \uC5C6\uC74C).",
+                evidence: [
+                  "R2.BYEONG.070"
+                ],
+                source: [
+                  "R2.BYEONG.070"
+                ],
+                note: "8\uB2E8\uACC4 \uD45C\uB294 \uBB38\uC7A5 \uCE78\uC774 \uD558\uB098\uB2E4(\uC6D0\uBB38)."
+              },
+              {
+                stage: 8,
+                stageName: "\uD2B9\uC131 (\uB05D \uC2AC\uB86F \uD6C4\uBCF4)",
+                stageNote: null,
+                code: "\uBCD18-\uB098",
+                condition: "\uC5EC\uC131",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C1"
+                ],
+                diagnosis: "\uC9D1 \uC548\uC5D0 \uBA38\uBB3C\uAE30\uBCF4\uB2E4 \uBC14\uAE65\uC5D0\uC11C \uD65C\uB3D9\uD560 \uB54C \uBE5B\uB098\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4.",
+                prescription: "\uBB38\uC7A5 \uD558\uB098\uB97C \uD574\uB2F9 \uC2AC\uB86F\uC5D0 \uADF8\uB300\uB85C \uC4F4\uB2E4(\uC6D0\uBB38 \uD45C\uC5D0 \uCC98\uBC29 \uCE78 \uC5C6\uC74C).",
+                evidence: [
+                  "R2.BYEONG.071"
+                ],
+                source: [
+                  "R2.BYEONG.071"
+                ],
+                note: "8\uB2E8\uACC4 \uD45C\uB294 \uBB38\uC7A5 \uCE78\uC774 \uD558\uB098\uB2E4(\uC6D0\uBB38)."
+              }
+            ],
+            C: [
+              {
+                code: "\uBCD1\uC6B4-\uAC00",
+                incoming: "\uAC70\uB300\uD55C \uC0B0\uB9E5 (\uC2DC\uB0C7\uBB3C\uC774 \uAC00\uB9B4 \uB54C)",
+                slots: [
+                  "\uC7AC3",
+                  "\uACC43"
+                ],
+                sentence: "\uD574\uB97C \uAC00\uB9AC\uB358 \uBE44\uAC00 \uAC77\uD788\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.012"
+                ]
+              },
+              {
+                code: "\uBCD1\uC6B4-\uB098",
+                incoming: "\uD070 \uB098\uBB34 (\uD574 \uB458\xB7\uD574\uC640 \uB2EC\uC774 \uD568\uAED8\uC77C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uC0AC\uC774\uB97C \uAC00\uB824 \uC8FC\uB294 \uB098\uBB34\uAC00 \uB4E4\uC5B4\uC640 \uB2E4\uC2DC \uBC1D\uC544\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.014",
+                  "R2.BYEONG.017"
+                ]
+              },
+              {
+                code: "\uBCD1\uC6B4-\uB2E4",
+                incoming: "\uC138\uACF5\uB41C \uBCF4\uC11D (\uD574\uAC00 \uB458\uC77C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uACC1\uC758 \uD574\uAC00 \uC815\uB9AC\uB418\uC5B4 \uB2F9\uC2E0\uB9CC \uBC1D\uC544\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.014"
+                ]
+              },
+              {
+                code: "\uBCD1\uC6B4-\uB77C",
+                incoming: "\uC138\uACF5\uB41C \uBCF4\uC11D (\uD574\uAC00 \uD558\uB098\uC77C \uB54C)",
+                slots: [
+                  "\uACC42"
+                ],
+                slotNote: "\uD544\uC218",
+                sentence: "\uBE5B\uC774 \uBB36\uC774\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uB113\uD788\uAE30\uBCF4\uB2E4 \uB2E4\uC9C0\uC138\uC694.",
+                evidence: [
+                  "R2.BYEONG.013"
+                ]
+              },
+              {
+                code: "\uBCD1\uC6B4-\uB9C8",
+                incoming: "\uD0DC\uC591\uC774\uB098 \uBCF4\uC11D\uC774 \uB2E4\uC2DC \uC634 (\uBB36\uC5EC \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC42"
+                ],
+                slotNote: "\uD544\uC218",
+                sentence: "\uBB36\uC5EC \uC788\uB358 \uBE5B\uC774 \uD480\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "1\uCE35 \xA77",
+                  "\uBCF8\uCC45 p.142"
+                ],
+                note: "1\uCE35 \xA77, \uBCF8\uCC45 p.142"
+              },
+              {
+                code: "\uBCD1\uC6B4-\uBC14",
+                incoming: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218 (\uB4F1\uBD88\uACFC \uD568\uAED8\uC77C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uB9C8\uC74C\uC744 \uAC00\uB974\uB358 \uB2EC\uC774 \uC815\uB9AC\uB418\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.017"
+                ]
+              },
+              {
+                code: "\uBCD1\uC6B4-\uC0AC",
+                incoming: "\uD070\uBB3C + \uAC70\uB300\uD55C \uC0B0\uB9E5, \uBC30\uC6B0\uC790 \uC790\uB9AC\uAC00 \uBB3C\uB85C \uBAA8\uC784",
+                slots: [
+                  "\uC5F04",
+                  "\uC5F05"
+                ],
+                sentence: "\uACC1\uC758 \uC790\uB9AC\uAC00 \uC815\uD574\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "\uBCF8\uCC45 p.142"
+                ],
+                note: "\uBCF8\uCC45 p.142"
+              },
+              {
+                code: "\uBCD1\uC6B4-\uC544",
+                incoming: "\uBB3C (\uBD88\uC774 \uB108\uBB34 \uC140 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uB9C8\uB978 \uB545\uC774 \uC816\uC5B4 \uD0A4\uC6B0\uB358 \uAC83\uC774 \uB2E4\uC2DC \uC790\uB77C\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.022"
+                ]
+              },
+              {
+                code: "\uBCD1\uC6B4-\uC790",
+                incoming: "\uD0DC\uC591\uC774 \uD558\uB098 \uB354 \uC634",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uBE5B\uC774 \uACB9\uCCD0 \uD750\uB824\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uC14B\uC774 \uB418\uBA74 \uB2E4\uC2DC \uBC1D\uC544\uC9D1\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.014",
+                  "R2.BYEONG.015"
+                ]
+              },
+              {
+                code: "\uBCD1\uC6B4-\uCC28",
+                incoming: "\uC544\uB798 \uAE00\uC790\uAC00 \uBC24\uC73C\uB85C \uBAA8\uC784",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uBE5B\uC774 \uC7A0\uAE30\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uC548\uC744 \uB3CC\uBCF4\uB294 \uCABD\uC774 \uC774\uB86D\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.BYEONG.011"
+                ]
+              }
+            ],
+            D: [
+              {
+                label: "\uCD9C\uB825 \uC548 \uD568",
+                rule: "\uD310\uC815\uC5D0\uB294 \uC4F0\uB418 \uBB38\uC7A5\uC73C\uB85C \uB0B4\uBCF4\uB0B4\uC9C0 \uC54A\uB294\uB2E4 (PDF 0-1 6\uBC88).",
+                items: [
+                  {
+                    item: "\uD0C0\uC778\uC744 \uBB34\uC2DC\uD558\uACE0 \uC0C1\uCC98\uB97C \uC900\uB2E4\uB294 \uC11C\uC220 \uC6D0\uBB38",
+                    evidence: [
+                      "R2.BYEONG.003"
+                    ],
+                    note: "\uC0AC3\uC740 \uAE0D\uC815 \uBC88\uC5ED\uB9CC \uC0AC\uC6A9"
+                  },
+                  {
+                    item: "\uACB0\uD63C \uC2DC \uD1F4\uC9C1 \uACBD\uD5A5",
+                    evidence: [
+                      "R2.BYEONG.072"
+                    ]
+                  },
+                  {
+                    item: "\uBCF8\uCC45 \uC0AC\uB840\uC758 \uC774\uD63C\xB7\uC0AC\uBCC4\xB7\uC5C5\uC885 \uB2E8\uC815",
+                    evidence: []
+                  }
+                ]
+              }
+            ]
+          },
+          \u4E01: {
+            name: "\uC815\uD654 \u2014 \uC138\uC0C1\uC744 \uBC1D\uD788\uB294 \uB4F1\uBD88",
+            sourcePage: "PDF page 17-21 (4. \uC815\uD654)",
+            _note: "PDF 4\uC7A5(pp.17~21) \uC804\uC0AC. A \uD0A4\uB294 '\uC2AC\uB86F\uCF54\uB4DC \uB77C\uBCA8' \uBCD1\uAE30(\uAC80\uC99D\uAE30 V6 \uD638\uD658, \u7532 \uC608\uC81C\uC758 \uC0AC2=\uC131\uD5A5 \uB9E4\uD551 \uC720\uC9C0). B\u5404\u884C source\uB294 \uAC80\uC99D\uAE30 V5 \uC694\uAD6C \uD544\uB4DC\uB85C evidence\uC640 \uB3D9\uC77C \uAC12. 0\uB2E8\uACC4\uB294 \uD615\uD0DC \uD310\uC815 \uD45C(\uC9C4\uB2E8\xB7\uCC98\uBC29 \uCE78 \uC5C6\uC74C \u2192 \u2014). 7\uB2E8\uACC4\uB294 \uBB38\uC7A5 \uCE78 \uD558\uB098(\uB05D \uC2AC\uB86F \uD6C4\uBCF4)\uB77C \uCC98\uBC29 \uCE78\uC774 \uC6D0\uBB38\uC5D0 \uC5C6\uC74C(\u2014).",
+            A: {
+              "\uC0AC1 \uD615\uC0C1": {
+                text: "\uB2F9\uC2E0\uC740 \uC138\uC0C1\uC744 \uBC1D\uD788\uB294 \uB4F1\uBD88, \uADF8\uC911\uC5D0\uC11C\uB3C4 {0\uB2E8\uACC4 \uD615\uD0DC}\uC785\uB2C8\uB2E4. {1\uC21C\uC704 \uAC00\uC9C0 \uD55C \uC904}",
+                evidence: [
+                  "R2.JEONG.001"
+                ]
+              },
+              "\uC0AC2 \uC131\uD5A5": {
+                text: "\uC12C\uC138\uD558\uACE0 \uB530\uB73B\uD55C \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uBCF4\uC774\uC9C0 \uC54A\uB294 \uB9C8\uC74C\uC758 \uC138\uACC4\uC5D0 \uAD00\uC2EC\uC774 \uB9CE\uACE0, \uC0AC\uB78C\uC744 \uC790\uC560\uB86D\uAC8C \uD488\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.005"
+                ]
+              },
+              "\uC0AC3 \uB0A8\uB4E4\uC774\uBCF4\uB294\uB098": {
+                text: "\uBC1D\uACE0 \uCF8C\uD65C\uD558\uAC8C \uC5B4\uC6B8\uB9AC\uBA74\uC11C\uB3C4 \uC608\uC758\uC640 \uC21C\uC11C\uB97C \uC9C0\uD0B5\uB2C8\uB2E4. \uC55E\uC5D0 \uB098\uC11C\uAE30\uBCF4\uB2E4 \uB4A4\uC5D0\uC11C \uD310\uC744 \uBC1D\uD788\uB294 \uCABD\uC744 \uD0DD\uD569\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.005",
+                  "R2.JEONG.060"
+                ]
+              },
+              "\uC0AC4 \uCE6D\uCC2C": {
+                text: "\uD310\uB2E8\uB825\uACFC \uCD94\uC9C4\uB825\uC774 \uC788\uACE0, \uC790\uC2E0\uC744 \uD0DC\uC6CC \uACC1\uC744 \uBC1D\uD788\uB294 \uD5CC\uC2E0\uC774 \uC788\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.005",
+                  "R2.JEONG.062"
+                ]
+              },
+              "\uC77C1 \uBB34\uAE30": {
+                text: "\uB4DC\uB7EC\uB098\uC9C0 \uC54A\uAC8C \uBE44\uCD94\uACE0 \uC5F0\uCD9C\uD558\uB294 \uD798\uC785\uB2C8\uB2E4. \uBB34\uB300 \uC55E\uBCF4\uB2E4 \uBB34\uB300 \uB4A4\uC5D0\uC11C \uD310\uC744 \uC644\uC131\uD569\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.060"
+                ]
+              },
+              "\uC7AC6 \uB3C8\uC758\uC21C\uC11C": {
+                text: "\uB4F1\uBD88\uC740 \uBB3C \uC704\uC5D0\uC11C \uAC00\uC7A5 \uC544\uB984\uB2F5\uAC8C \uBE44\uCE69\uB2C8\uB2E4. \uC774\uB984\uC774 \uAC78\uB9AC\uB294 \uC790\uB9AC\uB97C \uBA3C\uC800 \uC138\uC6B0\uBA74 \uC7AC\uBB3C\uC774 \uB530\uB77C\uC635\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.030",
+                  "R2.JEONG.041"
+                ]
+              },
+              "\uC5F01 \uAD00\uACC4\uC120\uC5B8": {
+                text: "\uB4F1\uBD88\uC740 \uC5B4\uB460 \uC18D\uC5D0\uC11C \uACC1\uC744 \uC870\uC6A9\uD788 \uBC1D\uD799\uB2C8\uB2E4. \uB2F9\uC2E0\uB3C4 \uC18C\uB9AC \uC5C6\uC774 \uC0C1\uB300\uC758 \uAE38\uC744 \uBE44\uCDB0 \uC8FC\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uADF8\uB7EC\uBA74\uC11C \uC18D\uC73C\uB85C\uB294 \uB2F9\uC2E0\uC758 \uBE5B\uC744 \uB2F4\uC544 \uC904 \uB113\uC740 \uD638\uC218 \uAC19\uC740 \uACC1\uC744 \uBC14\uB78D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.003",
+                  "R2.JEONG.032"
+                ]
+              },
+              marriageCondition: {
+                label: "\uACB0\uD63C \uC870\uAC74",
+                text: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218\uC640 \uD569\uD560 \uB54C.",
+                evidence: [
+                  "R2.JEONG.032"
+                ]
+              },
+              endingTheme: {
+                label: "\uB05D \uC18C\uC7AC",
+                text: "\uC5B4\uB450\uC6B8\uC218\uB85D \uBC1D\uC544\uC9C0\uB294 \uD798 / \uC790\uC2E0\uC744 \uD0DC\uC6CC \uACC1\uC744 \uBC1D\uD788\uB294 \uD5CC\uC2E0",
+                evidence: [
+                  "R2.JEONG.010",
+                  "R2.JEONG.062"
+                ]
+              },
+              careerNote: {
+                label: "\uC9C1\uC5C5 \uACB0(\uCC38\uACE0\uC6A9, \uB098\uC5F4 \uAE08\uC9C0)",
+                text: "\uBC29\uC1A1\xB7PD, \uC608\uC220, \uC815\uC2E0\uC138\uACC4\xB7\uC2EC\uB9AC\uC0C1\uB2F4, \uCCA0\uD559, \uC778\uD130\uB137, \uAD11\uACE0.",
+                evidence: [
+                  "R2.JEONG.006"
+                ]
+              }
+            },
+            B: [
+              {
+                stage: 0,
+                stageName: "\uD615\uD0DC \uD310\uC815",
+                stageNote: "\uAC19\uC740 \uB4F1\uBD88\uB3C4 \uBB34\uC5C7\uC73C\uB85C \uBE5B\uB098\uB294\uC9C0 \uBA3C\uC800 \uC815\uD55C\uB2E4",
+                stageRule: "\uB458 \uC774\uC0C1 \uD574\uB2F9\uD558\uBA74 \uC5B4\uB290 \uD615\uD0DC\uB97C \uBA3C\uC800 \uC4F8\uC9C0 [\uD310\uC815 \uD544\uC694]. \uD615\uD0DC\uB294 2\uB2E8\uACC4(\uACB9\uCE60 \uB54C \uBC1D\uC544\uC9C0\uB294\uC9C0 \uD750\uB824\uC9C0\uB294\uC9C0)\uC640 3\uB2E8\uACC4(\uB098\uBB34\uC758 \uC5ED\uD560)\uB97C \uBC14\uAFBC\uB2E4.",
+                code: "\uC8150-\uAC00",
+                condition: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218 \uC788\uC74C",
+                form: "\uB2EC",
+                sa1Phrase: "\uD638\uC218 \uC704\uB97C \uBE44\uCD94\uB294 \uB2EC",
+                slots: [],
+                diagnosis: "\u2014",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.JEONG.003"
+                ],
+                source: [
+                  "R2.JEONG.003"
+                ],
+                note: "0\uB2E8\uACC4\uB294 \uD615\uD0DC \uD310\uC815 \uD45C. \uC9C4\uB2E8\xB7\uCC98\uBC29 \uCE78\uC774 \uC5C6\uC5B4 \u2014\uB85C \uD45C\uAE30\uD588\uACE0 form\xB7sa1Phrase\uAC00 \uC6D0\uBB38 \uCE78\uC774\uB2E4."
+              },
+              {
+                stage: 0,
+                stageName: "\uD615\uD0DC \uD310\uC815",
+                stageNote: "\uAC19\uC740 \uB4F1\uBD88\uB3C4 \uBB34\uC5C7\uC73C\uB85C \uBE5B\uB098\uB294\uC9C0 \uBA3C\uC800 \uC815\uD55C\uB2E4",
+                stageRule: "\uB458 \uC774\uC0C1 \uD574\uB2F9\uD558\uBA74 \uC5B4\uB290 \uD615\uD0DC\uB97C \uBA3C\uC800 \uC4F8\uC9C0 [\uD310\uC815 \uD544\uC694]. \uD615\uD0DC\uB294 2\uB2E8\uACC4(\uACB9\uCE60 \uB54C \uBC1D\uC544\uC9C0\uB294\uC9C0 \uD750\uB824\uC9C0\uB294\uC9C0)\uC640 3\uB2E8\uACC4(\uB098\uBB34\uC758 \uC5ED\uD560)\uB97C \uBC14\uAFBC\uB2E4.",
+                code: "\uC8150-\uB098",
+                condition: "\uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C + \uB098\uBB34 \uC788\uC74C",
+                form: "\uAC00\uB85C\uB4F1",
+                sa1Phrase: "\uBE44\uAC00 \uC640\uB3C4 \uC9C0\uC9C0\uB300 \uC704\uC5D0\uC11C \uBE5B\uB098\uB294 \uAC00\uB85C\uB4F1",
+                slots: [],
+                diagnosis: "\u2014",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.JEONG.004"
+                ],
+                source: [
+                  "R2.JEONG.004"
+                ],
+                note: "0\uB2E8\uACC4\uB294 \uD615\uD0DC \uD310\uC815 \uD45C. \uC9C4\uB2E8\xB7\uCC98\uBC29 \uCE78\uC774 \uC5C6\uC5B4 \u2014\uB85C \uD45C\uAE30\uD588\uACE0 form\xB7sa1Phrase\uAC00 \uC6D0\uBB38 \uCE78\uC774\uB2E4."
+              },
+              {
+                stage: 0,
+                stageName: "\uD615\uD0DC \uD310\uC815",
+                stageNote: "\uAC19\uC740 \uB4F1\uBD88\uB3C4 \uBB34\uC5C7\uC73C\uB85C \uBE5B\uB098\uB294\uC9C0 \uBA3C\uC800 \uC815\uD55C\uB2E4",
+                stageRule: "\uB458 \uC774\uC0C1 \uD574\uB2F9\uD558\uBA74 \uC5B4\uB290 \uD615\uD0DC\uB97C \uBA3C\uC800 \uC4F8\uC9C0 [\uD310\uC815 \uD544\uC694]. \uD615\uD0DC\uB294 2\uB2E8\uACC4(\uACB9\uCE60 \uB54C \uBC1D\uC544\uC9C0\uB294\uC9C0 \uD750\uB824\uC9C0\uB294\uC9C0)\uC640 3\uB2E8\uACC4(\uB098\uBB34\uC758 \uC5ED\uD560)\uB97C \uBC14\uAFBC\uB2E4.",
+                code: "\uC8150-\uB2E4",
+                condition: "\uC544\uB798 \uAE00\uC790\uC5D0 \uBB3C, \uB610\uB294 \uB4F1\uBD88 \uB458 \uC774\uC0C1",
+                form: "\uBCC4",
+                sa1Phrase: "\uBC24\uD558\uB298\uC758 \uBCC4(\uC14B\uC774\uBA74 \uC740\uD558\uC218)",
+                slots: [],
+                diagnosis: "\u2014",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.JEONG.002"
+                ],
+                source: [
+                  "R2.JEONG.002"
+                ],
+                note: "0\uB2E8\uACC4\uB294 \uD615\uD0DC \uD310\uC815 \uD45C. \uC9C4\uB2E8\xB7\uCC98\uBC29 \uCE78\uC774 \uC5C6\uC5B4 \u2014\uB85C \uD45C\uAE30\uD588\uACE0 form\xB7sa1Phrase\uAC00 \uC6D0\uBB38 \uCE78\uC774\uB2E4."
+              },
+              {
+                stage: 0,
+                stageName: "\uD615\uD0DC \uD310\uC815",
+                stageNote: "\uAC19\uC740 \uB4F1\uBD88\uB3C4 \uBB34\uC5C7\uC73C\uB85C \uBE5B\uB098\uB294\uC9C0 \uBA3C\uC800 \uC815\uD55C\uB2E4",
+                stageRule: "\uB458 \uC774\uC0C1 \uD574\uB2F9\uD558\uBA74 \uC5B4\uB290 \uD615\uD0DC\uB97C \uBA3C\uC800 \uC4F8\uC9C0 [\uD310\uC815 \uD544\uC694]. \uD615\uD0DC\uB294 2\uB2E8\uACC4(\uACB9\uCE60 \uB54C \uBC1D\uC544\uC9C0\uB294\uC9C0 \uD750\uB824\uC9C0\uB294\uC9C0)\uC640 3\uB2E8\uACC4(\uB098\uBB34\uC758 \uC5ED\uD560)\uB97C \uBC14\uAFBC\uB2E4.",
+                code: "\uC8150-\uB77C",
+                condition: "\uC704\uC5D0 \uD574\uB2F9 \uC5C6\uC74C",
+                form: "\uCD1B\uBD88",
+                sa1Phrase: "\uC790\uC2E0\uC744 \uD0DC\uC6CC \uACC1\uC744 \uBC1D\uD788\uB294 \uCD1B\uBD88",
+                slots: [],
+                diagnosis: "\u2014",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.JEONG.001",
+                  "R2.JEONG.062"
+                ],
+                source: [
+                  "R2.JEONG.001",
+                  "R2.JEONG.062"
+                ],
+                note: "0\uB2E8\uACC4\uB294 \uD615\uD0DC \uD310\uC815 \uD45C. \uC9C4\uB2E8\xB7\uCC98\uBC29 \uCE78\uC774 \uC5C6\uC5B4 \u2014\uB85C \uD45C\uAE30\uD588\uACE0 form\xB7sa1Phrase\uAC00 \uC6D0\uBB38 \uCE78\uC774\uB2E4."
+              },
+              {
+                stage: 1,
+                stageName: "\uBC24\uACFC \uB0AE",
+                stageNote: null,
+                code: "\uC8151-\uAC00",
+                condition: "\uC544\uB798 \uAE00\uC790\uAC00 \uBC24 (\uBB3C\uC758 \uBB34\uB9AC)",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C2"
+                ],
+                diagnosis: "\uC5B4\uB450\uC6B8\uC218\uB85D \uB354 \uBC1D\uAC8C \uBE5B\uB098\uB294 \uB4F1\uBD88\uC785\uB2C8\uB2E4. \uB0A8\uB4E4\uC774 \uC9C0\uCE58\uB294 \uB54C, \uB9C9\uB9C9\uD55C \uC790\uB9AC\uC5D0\uC11C \uC624\uD788\uB824 \uD798\uC744 \uB0C5\uB2C8\uB2E4.",
+                prescription: "\uBAA8\uB450\uAC00 \uC5B4\uB824\uC6CC\uD558\uB294 \uC790\uB9AC, \uC5B4\uB460\uC744 \uBC1D\uD600\uC57C \uD558\uB294 \uC77C\uC5D0\uC11C \uC774\uB984\uC774 \uC12D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.010"
+                ],
+                source: [
+                  "R2.JEONG.010"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uBC24\uACFC \uB0AE",
+                stageNote: null,
+                code: "\uC8151-\uB098",
+                condition: "\uC544\uB798 \uAE00\uC790\uAC00 \uD55C\uB0AE (\uBD88\uC758 \uBB34\uB9AC)",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uD55C\uB0AE\uC758 \uB4F1\uBD88\uC774\uB77C \uAC00\uC9C4 \uBE5B\uC774 \uC798 \uBCF4\uC774\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBC24\uC758 \uC77C, \uB4DC\uB7EC\uB098\uC9C0 \uC54A\uB294 \uC790\uB9AC, \uC2DC\uCC28\uAC00 \uD070 \uB098\uB77C\uC640 \uB2FF\uC740 \uC77C\uC5D0\uC11C \uBE5B\uC744 \uB418\uCC3E\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.011"
+                ],
+                source: [
+                  "R2.JEONG.011"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uAC19\uC740 \uBD88",
+                stageNote: "\uD574\uC640 \uB4F1\uBD88",
+                code: "\uC8152-\uAC00",
+                condition: "\uD0DC\uC591 \uC788\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uACC44"
+                ],
+                diagnosis: "\uD574\uC640 \uD568\uAED8 \uB5A0 \uC788\uB294 \uB4F1\uBD88\uC774\uB77C, \uD574\uAC00 \uBC1D\uC744\uC218\uB85D \uB0B4 \uBE5B\uC774 \uBB3B\uD799\uB2C8\uB2E4. \uD604\uC2E4\uACFC \uC774\uC0C1 \uC0AC\uC774\uC5D0\uC11C \uC790\uC8FC \uB9C8\uC74C\uC774 \uAC08\uB9BD\uB2C8\uB2E4.",
+                prescription: "\uD574\uB97C \uC815\uB9AC\uD574 \uC8FC\uB294 \uBCF4\uC11D\uC774 \uB4E4\uC5B4\uC624\uB294 \uB54C, \uBE44\uAC00 \uD574\uB97C \uAC00\uB9AC\uB294 \uB54C, \uD070 \uB098\uBB34\uAC00 \uAC00\uB824 \uC8FC\uB294 \uB54C\uC5D0 \uBE5B\uC744 \uCC3E\uC2B5\uB2C8\uB2E4. \uADF8\uC804\uC774\uB77C\uBA74 \uBC14\uB2E4 \uAC74\uB108\uC758 \uC77C\uC774 \uAE38\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.012"
+                ],
+                source: [
+                  "R2.JEONG.012"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uAC19\uC740 \uBD88",
+                stageNote: "\uD574\uC640 \uB4F1\uBD88",
+                code: "\uC8152-\uB098",
+                condition: "\uB4F1\uBD88 \uB458 + \uD615\uD0DC\uAC00 \uB2EC",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uACC44"
+                ],
+                diagnosis: "\uB2EC\uC774 \uB458\uC774\uB77C \uC624\uD788\uB824 \uD750\uB824\uC9D1\uB2C8\uB2E4.",
+                prescription: "\uD070 \uB098\uBB34\uAC00 \uD558\uB098\uB97C \uAC00\uB824 \uC8FC\uB294 \uB54C\uB97C \uAE30\uB2E4\uB9AC\uC138\uC694.",
+                evidence: [
+                  "R2.JEONG.013"
+                ],
+                source: [
+                  "R2.JEONG.013"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uAC19\uC740 \uBD88",
+                stageNote: "\uD574\uC640 \uB4F1\uBD88",
+                code: "\uC8152-\uB2E4",
+                condition: "\uB4F1\uBD88 \uB458 \uC774\uC0C1 + \uD615\uD0DC\uAC00 \uBCC4\xB7\uAC00\uB85C\uB4F1",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uBCC4\uC774 \uBAA8\uC5EC \uBCC4\uBB34\uB9AC\uAC00 \uB429\uB2C8\uB2E4. \uD568\uAED8 \uC788\uC744\uC218\uB85D \uB354 \uBC1D\uC544\uC9C0\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4.",
+                prescription: "\uB9C8\uC74C\uACFC \uC815\uC2E0\uC744 \uB2E4\uB8E8\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4. \uAC00\uB85C\uB4F1\uC774\uB77C\uBA74 \uBE5B\uC744 \uB2E4\uB8E8\uB294 \uC77C\uB3C4 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.014"
+                ],
+                source: [
+                  "R2.JEONG.014"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uAC19\uC740 \uBD88",
+                stageNote: "\uD574\uC640 \uB4F1\uBD88",
+                code: "\uC8152-\uB77C",
+                condition: "\uB4F1\uBD88 \uB458 \uC774\uC0C1 (\uACF5\uD1B5)",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uACC44"
+                ],
+                diagnosis: "\uACC1\uC5D0 \uAC19\uC740 \uBD88\uC774 \uC788\uC5B4, \uBC1C\uBC11\uC5D0 \uC7AC\uBB3C\uC774\uB098 \uC790\uB9AC\uAC00 \uBC1B\uCCD0 \uC904 \uB54C \uD798\uC774 \uB0A9\uB2C8\uB2E4.",
+                prescription: "\uB113\uC740 \uD638\uC218\uAC00 \uB4E4\uC5B4\uC640 \uD558\uB098\uB97C \uB370\uB824\uAC00\uB294 \uB54C\uC5D0 \uC790\uB9AC\uAC00 \uC815\uB9AC\uB429\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.015"
+                ],
+                source: [
+                  "R2.JEONG.015"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uC9C0\uC9C0\uB300\uC640 \uAF43",
+                code: "\uC8153-\uAC00",
+                condition: "\uD070 \uB098\uBB34 + \uD615\uD0DC\uAC00 \uAC00\uB85C\uB4F1",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uB192\uC740 \uC9C0\uC9C0\uB300 \uC704\uC758 \uAC00\uB85C\uB4F1\uC774\uB77C \uBA40\uB9AC\uAE4C\uC9C0 \uBE44\uCDA5\uB2C8\uB2E4.",
+                prescription: "\uB9C8\uC74C\uACFC \uC815\uC2E0\uC744 \uAC00\uB974\uCE58\uB294 \uC77C\uC5D0\uC11C \uD06C\uAC8C \uC4F0\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.020"
+                ],
+                source: [
+                  "R2.JEONG.020"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uC9C0\uC9C0\uB300\uC640 \uAF43",
+                code: "\uC8153-\uB098",
+                condition: "\uD070 \uB098\uBB34 (\uAC00\uB85C\uB4F1 \uC544\uB2D8)",
+                slots: [
+                  "\uC77C3"
+                ],
+                diagnosis: "\uD070 \uB098\uBB34\uC5D0 \uC791\uC740 \uAF43\uC744 \uD53C\uC6C1\uB2C8\uB2E4. \uACB0\uC2E4\uC740 \uC791\uC9C0\uB9CC \uBD84\uBA85\uD569\uB2C8\uB2E4.",
+                prescription: "\uD070 \uD310\uBCF4\uB2E4 \uC791\uACE0 \uD655\uC2E4\uD55C \uACB0\uACFC\uB97C \uC313\uC544 \uAC00\uC138\uC694.",
+                evidence: [
+                  "R2.JEONG.020"
+                ],
+                source: [
+                  "R2.JEONG.020"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uC9C0\uC9C0\uB300\uC640 \uAF43",
+                code: "\uC8153-\uB2E4",
+                condition: "\uD478\uB978 \uB369\uAD74 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC5F06"
+                ],
+                diagnosis: "\uB369\uAD74\uC5D0 \uC54C\uB9DE\uAC8C \uAF43\uC744 \uD53C\uC6B0\uB294 \uB4F1\uBD88\uC785\uB2C8\uB2E4. \uAC00\uAE4C\uC6B4 \uC0AC\uB78C\uC744 \uD589\uBCF5\uD558\uAC8C \uD558\uB294 \uD798\uC774 \uC788\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uAC00\uB85C\uB4F1\uC774\uB77C\uBA74 \uB0AE\uC740 \uACF3\uC5D0\uC11C \uAE38\uC744 \uC778\uB3C4\uD558\uB294 \uC77C, \uACE7 \uC0AC\uB78C\uC758 \uB9C8\uC74C\uC744 \uB3CC\uBCF4\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.021"
+                ],
+                source: [
+                  "R2.JEONG.021"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uC9C0\uC9C0\uB300\uC640 \uAF43",
+                code: "\uC8153-\uB77C",
+                condition: "\uB098\uBB34 \uB9CE\uC74C + \uD615\uD0DC\uAC00 \uAC00\uB85C\uB4F1",
+                slots: [
+                  "\uC0AC7"
+                ],
+                diagnosis: "\uC9C0\uC9C0\uB300\uAC00 \uB108\uBB34 \uB9CE\uC544 \uBE5B\uC774 \uAC00\uB824\uC9D1\uB2C8\uB2E4. \uC8FC\uBCC0 \uC0AC\uB78C\uC758 \uC77C\uC5D0 \uD718\uB9D0\uB824 \uB0B4 \uC77C\uC744 \uBABB \uD560 \uB54C\uAC00 \uB9CE\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC790\uB8CC \uC5C6\uC74C \u2014 \uC9C4\uB2E8\uB9CC \uC4F4\uB2E4.",
+                evidence: [
+                  "R2.JEONG.022"
+                ],
+                source: [
+                  "R2.JEONG.022"
+                ],
+                note: "\uC6D0\uBB38 \uCC98\uBC29 \uCE78: \uC790\uB8CC \uC5C6\uC74C \u2014 \uC9C4\uB2E8\uB9CC \uC4F4\uB2E4. \uCC98\uBC29 \uBBF8\uC81C\uACF5, \uC9C4\uB2E8\uBB38\uB9CC \uC0AC\uC6A9."
+              },
+              {
+                stage: 4,
+                stageName: "\uBB3C",
+                stageNote: "\uC774\uB984\uACFC \uC790\uB9AC",
+                code: "\uC8154-\uAC00",
+                condition: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218\uC640 \uD569",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uD638\uC218 \uC704\uC5D0 \uBE44\uCE5C \uB2EC\uC785\uB2C8\uB2E4. \uBB36\uC778 \uB4EF \uBCF4\uC5EC\uB3C4 \uADF8 \uC790\uB9AC\uC5D0\uC11C \uB098\uBB34\uB97C \uAE38\uB7EC \uB0C5\uB2C8\uB2E4.",
+                prescription: "\uAC00\uB974\uCE58\uACE0, \uC9D3\uACE0, \uC0AC\uB78C\uC744 \uB9C8\uC8FC\uD558\uB294 \uC77C, \uB9C8\uC74C\uC744 \uACF5\uBD80\uD558\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4. \uC774\uB984\uC744 \uAC78\uACE0 \uBCA0\uD480\uC218\uB85D \uC0B6\uC774 \uC548\uC815\uB429\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.030"
+                ],
+                source: [
+                  "R2.JEONG.030"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uBB3C",
+                stageNote: "\uC774\uB984\uACFC \uC790\uB9AC",
+                code: "\uC8154-\uB098",
+                condition: "\uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC7AC7"
+                ],
+                diagnosis: "\uBE44\uAC00 \uC640\uB3C4 \uAEBC\uC9C0\uC9C0 \uC54A\uB294 \uAC00\uB85C\uB4F1\uC785\uB2C8\uB2E4. \uD574\uAC00 \uAC00\uB824\uC9C8 \uB54C \uC624\uD788\uB824 \uB0B4 \uBE5B\uC774 \uB4DC\uB7EC\uB0A9\uB2C8\uB2E4.",
+                prescription: "\uADF8 \uC2DC\uB0C7\uBB3C\uC774 \uB545\uC744 \uB04C\uC5B4\uC640 \uB098\uBB34\uB97C \uC2EC\uAC8C \uD574 \uC8FC\uB2C8, \uC791\uC740 \uD130\uB97C \uB9C8\uB828\uD574 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.JEONG.033"
+                ],
+                source: [
+                  "R2.JEONG.033"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uBB3C",
+                stageNote: "\uC774\uB984\uACFC \uC790\uB9AC",
+                code: "\uC8154-\uB2E4",
+                condition: "\uBB3C \uB9CE\uC74C",
+                slots: [
+                  "\uC77C3",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uBB3C\uC774 \uB9CE\uC544\uB3C4 \uAEBC\uC9C0\uC9C0 \uC54A\uB294 \uB4F1\uBD88\uC785\uB2C8\uB2E4. \uC5B4\uB460 \uC18D\uC5D0\uC11C \uB354 \uBE5B\uB0A9\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC774 \uC624\uAC00\uB294 \uC77C, \uBC14\uB2E4 \uAC74\uB108\uC758 \uC77C, \uC720\uD1B5\uACFC \uC74C\uC2DD\uC5D0\uC11C \uB2A5\uB825\uC774 \uB4DC\uB7EC\uB0A9\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.034"
+                ],
+                source: [
+                  "R2.JEONG.034"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAE08",
+                stageNote: "\uC7AC\uBB3C",
+                code: "\uC8155-\uAC00",
+                condition: "\uCEE4\uB2E4\uB780 \uAE08\uB9E5 \uC788\uC74C",
+                slots: [
+                  "\uC7AC1",
+                  "\uC7AC2"
+                ],
+                diagnosis: "\uD070 \uC1E0\uB97C \uC791\uC740 \uBD88\uB85C \uB179\uC774\uAE30 \uC5B4\uB824\uC6CC, \uD070 \uC7AC\uBB3C\uC744 \uBC14\uB85C \uC950\uAE30\uB294 \uC27D\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uB369\uAD74\uC774 \uAE08\uB9E5\uC744 \uB2E4\uB4EC\uC5B4 \uC8FC\uAC70\uB098 \uD638\uC218\uC640 \uD569\uD574 \uB098\uBB34\uAC00 \uC0DD\uAE30\uB294 \uB54C\uC5D0 \uC7AC\uBB3C\uC774 \uC190\uC5D0 \uB4E4\uC5B4\uC635\uB2C8\uB2E4. \uADF8 \uB54C\uB97C \uC9DA\uC5B4 \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.JEONG.040"
+                ],
+                source: [
+                  "R2.JEONG.040"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAE08",
+                stageNote: "\uC7AC\uBB3C",
+                code: "\uC8155-\uB098",
+                condition: "\uAE08\uB9E5\uC774 \uD0DC\uC5B4\uB09C \uD574\uC5D0 + \uD638\uC218\uC640 \uD569",
+                slots: [
+                  "\uC77C2",
+                  "\uC7AC1"
+                ],
+                diagnosis: "\uAD6D\uAC00\uC640 \uAD00\uB828\uB41C \uAE30\uAD00\uC5D0\uC11C \uC7AC\uBB3C\uC774 \uC5F4\uB9BD\uB2C8\uB2E4.",
+                prescription: "\uACF5\uC801\uC778 \uC77C, \uAD6D\uAC00 \uAE30\uAD00\uC758 \uC790\uB9AC\uAC00 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.063"
+                ],
+                source: [
+                  "R2.JEONG.063"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAE08",
+                stageNote: "\uC7AC\uBB3C",
+                code: "\uC8155-\uB2E4",
+                condition: "\uC138\uACF5\uB41C \uBCF4\uC11D \uC788\uC74C",
+                slots: [
+                  "\uC7AC1",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uC958 \uC218 \uC788\uB294 \uC7AC\uBB3C\uC744 \uAC00\uC9C4 \uB4F1\uBD88\uC785\uB2C8\uB2E4. \uB2E4\uB9CC \uADF8 \uBCF4\uC11D\uC774 \uD574\uB97C \uBD88\uB7EC\uC640 \uB9C8\uC74C\uC774 \uAC08\uB9AC\uAE30 \uC27D\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC774\uB984\uC744 \uBA3C\uC800 \uC138\uC6B0\uC138\uC694. \uBC95\xB7\uAE08\uC735\xB7\uC758\uB8CC\uCC98\uB7FC \uAE30\uC900\uC774 \uBD84\uBA85\uD55C \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.041"
+                ],
+                source: [
+                  "R2.JEONG.041"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAE08",
+                stageNote: "\uC7AC\uBB3C",
+                code: "\uC8155-\uB77C",
+                condition: "\uC544\uB798 \uAE00\uC790\uAC00 \uAE08\uC73C\uB85C \uBAA8\uC784",
+                slots: [
+                  "\uC7AC1"
+                ],
+                diagnosis: "\uBC1C\uBC11\uC73C\uB85C \uC7AC\uBB3C\uC774 \uBAA8\uC5EC\uB4DC\uB294 \uB4F1\uBD88\uC785\uB2C8\uB2E4.",
+                prescription: "\uC790\uB8CC \uC5C6\uC74C \u2014 \uC9C4\uB2E8\uB9CC \uC4F4\uB2E4.",
+                evidence: [
+                  "R2.JEONG.042"
+                ],
+                source: [
+                  "R2.JEONG.042"
+                ],
+                note: "\uC6D0\uBB38 \uCC98\uBC29 \uCE78: \uC790\uB8CC \uC5C6\uC74C \u2014 \uC9C4\uB2E8\uB9CC \uC4F4\uB2E4. \uCC98\uBC29 \uBBF8\uC81C\uACF5, \uC9C4\uB2E8\uBB38\uB9CC \uC0AC\uC6A9."
+              },
+              {
+                stage: 5,
+                stageName: "\uAE08",
+                stageNote: "\uC7AC\uBB3C",
+                code: "\uC8155-\uB9C8",
+                condition: "\uAE08 \uC788\uC74C",
+                slots: [
+                  "\uC77C3"
+                ],
+                diagnosis: "\uB4DC\uB7EC\uB098\uC9C0 \uC54A\uAC8C \uD310\uC744 \uC9C0\uD0A4\uB294 \uC77C\uC5D0 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC815\uBCF4\uB97C \uB2E4\uB8E8\uB294 \uC77C, \uC2E0\uBD84\uC774 \uB4DC\uB7EC\uB098\uC9C0 \uC54A\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.061"
+                ],
+                source: [
+                  "R2.JEONG.061"
+                ]
+              },
+              {
+                stage: 6,
+                stageName: "\uB545",
+                stageNote: "\uBE44\uCD94\uC5B4 \uAE30\uB974\uB294 \uAC83",
+                code: "\uC8156-\uAC00",
+                condition: "\uAC70\uB300\uD55C \uC0B0\uB9E5 \uC788\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uB113\uC740 \uBC8C\uD310\uC5D0 \uD640\uB85C \uB72C \uB2EC\uC774\uB77C \uC678\uB85C\uC6C0\uC774 \uC788\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC81C\uB3C4 \uBC16\uC758 \uAD50\uC721, \uACE7 \uC2A4\uC2A4\uB85C \uCC28\uB9AC\uB294 \uBC30\uC6C0\uD130\uC5D0\uC11C \uC131\uACFC\uB97C \uB0C5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.050"
+                ],
+                source: [
+                  "R2.JEONG.050"
+                ]
+              },
+              {
+                stage: 6,
+                stageName: "\uB545",
+                stageNote: "\uBE44\uCD94\uC5B4 \uAE30\uB974\uB294 \uAC83",
+                code: "\uC8156-\uB098",
+                condition: "\uC791\uC740 \uB545 \uC788\uC74C",
+                slots: [
+                  "\uC5F06"
+                ],
+                diagnosis: "\uC815\uC6D0\uC5D0 \uB72C \uB2EC\uC785\uB2C8\uB2E4. \uAC00\uC815\uC744 \uAFB8\uB9AC\uB294 \uD798\uC774 \uC788\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uAC00\uAE4C\uC6B4 \uC6B8\uD0C0\uB9AC\uB97C \uAC00\uAFB8\uB294 \uC77C\uC774 \uBE5B\uC744 \uD0A4\uC6C1\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.051"
+                ],
+                source: [
+                  "R2.JEONG.051"
+                ]
+              },
+              {
+                stage: 7,
+                stageName: "\uD2B9\uC131 (\uB05D \uC2AC\uB86F \uD6C4\uBCF4)",
+                stageNote: null,
+                code: "\uC8157-\uAC00",
+                condition: "\uD56D\uC0C1",
+                slots: [
+                  "\uB05D3",
+                  "\uC77C1"
+                ],
+                diagnosis: "\uB4F1\uBD88\uC740 \uC790\uC2E0\uC744 \uD0DC\uC6CC \uACC1\uC744 \uBC1D\uD799\uB2C8\uB2E4. \uC55E\uC5D0 \uC11C\uAE30\uBCF4\uB2E4 \uB4A4\uC5D0\uC11C \uBE44\uCD94\uB294 \uC77C, \uC5F0\uCD9C\uD558\uACE0 \uAE30\uD68D\uD558\uB294 \uC77C\uC5D0\uC11C \uAC00\uC7A5 \uBE5B\uB0A9\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.JEONG.060",
+                  "R2.JEONG.062"
+                ],
+                source: [
+                  "R2.JEONG.060",
+                  "R2.JEONG.062"
+                ],
+                note: "\uD2B9\uC131 \uD45C\uB294 \uBB38\uC7A5 \uCE78 \uD558\uB098(\uB05D \uC2AC\uB86F\uC6A9). \uCC98\uBC29 \uCE78\uC774 \uC6D0\uBB38\uC5D0 \uC5C6\uC5B4 \u2014\uB85C \uD45C\uAE30."
+              }
+            ],
+            C: [
+              {
+                code: "\uC815\uC6B4-\uAC00",
+                incoming: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218 (\uD569)",
+                slots: [
+                  "\uC5F04",
+                  "\uC5F05",
+                  "\uACC42"
+                ],
+                sentence: "\uBE5B\uC744 \uB2F4\uC544 \uC904 \uD638\uC218\uB97C \uB9CC\uB098\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uACC1\uC758 \uC790\uB9AC\uAC00 \uC815\uD574\uC9D1\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.032"
+                ]
+              },
+              {
+                code: "\uC815\uC6B4-\uB098",
+                incoming: "\uB4F1\uBD88\uC774\uB098 \uD638\uC218\uAC00 \uB2E4\uC2DC \uC634 (\uBB36\uC5EC \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC42",
+                  "\uC7AC5"
+                ],
+                slotNote: "\uACC42 \uD544\uC218",
+                sentence: "\uBB36\uC600\uB358 \uBE5B\uC774 \uD480\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uC0B0\uB9E5\uC774 \uBB3C\uC744 \uB9C9\uACE0 \uB098\uBB34\uAC00 \uC11C\uBA74 \uC791\uC740 \uD130\uAC00 \uC0DD\uAE41\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.031"
+                ]
+              },
+              {
+                code: "\uC815\uC6B4-\uB2E4",
+                incoming: "\uC544\uB798 \uAE00\uC790\uAC00 \uBC24\uC73C\uB85C \uBAA8\uC784",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uC5B4\uB460\uC774 \uAE4A\uC5B4\uC838 \uC624\uD788\uB824 \uBE5B\uC774 \uCEE4\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.010"
+                ]
+              },
+              {
+                code: "\uC815\uC6B4-\uB77C",
+                incoming: "\uC544\uB798 \uAE00\uC790\uAC00 \uC0C8\uBCBD\xB7\uCD08\uC800\uB141\uC73C\uB85C \uBC14\uB01C",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uB0AE\uC5D0 \uBB3B\uD614\uB358 \uBE5B\uC774 \uB2E4\uC2DC \uBCF4\uC774\uAE30 \uC2DC\uC791\uD558\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.011"
+                ]
+              },
+              {
+                code: "\uC815\uC6B4-\uB9C8",
+                incoming: "\uC138\uACF5\uB41C \uBCF4\uC11D\xB7\uC2DC\uB0C7\uBB3C\xB7\uD070 \uB098\uBB34 (\uD574\uC640 \uD568\uAED8\uC77C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uD574\uAC00 \uC815\uB9AC\uB418\uAC70\uB098 \uAC00\uB824\uC838 \uB0B4 \uBE5B\uC774 \uB4DC\uB7EC\uB098\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.012",
+                  "R2.JEONG.033"
+                ]
+              },
+              {
+                code: "\uC815\uC6B4-\uBC14",
+                incoming: "\uD070 \uB098\uBB34 (\uB2EC\uC774 \uB458\uC77C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uD558\uB098\uB97C \uAC00\uB824 \uC8FC\uB294 \uB098\uBB34\uAC00 \uB4E4\uC5B4\uC640 \uB2E4\uC2DC \uBC1D\uC544\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.013"
+                ]
+              },
+              {
+                code: "\uC815\uC6B4-\uC0AC",
+                incoming: "\uD070 \uB098\uBB34 (\uAC00\uB85C\uB4F1\uC774 \uB458 \uC774\uC0C1\uC77C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uC9C0\uC9C0\uB300\uAC00 \uC0DD\uACA8 \uBE5B\uC744 \uB2E4\uB8E8\uB294 \uC77C\uC774 \uCEE4\uC9C0\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.014"
+                ]
+              },
+              {
+                code: "\uC815\uC6B4-\uC544",
+                incoming: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218 (\uB4F1\uBD88 \uB458\uC77C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uACC1\uC758 \uBD88\uC774 \uC815\uB9AC\uB418\uC5B4 \uC790\uB9AC\uAC00 \uC5F4\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.015"
+                ]
+              },
+              {
+                code: "\uC815\uC6B4-\uC790",
+                incoming: "\uC544\uB798 \uAE00\uC790\uAC00 \uAE08\uC73C\uB85C \uBAA8\uC784",
+                slots: [
+                  "\uC7AC3",
+                  "\uACC44"
+                ],
+                sentence: "\uBC1C\uBC11\uC73C\uB85C \uC7AC\uBB3C\uC774 \uBAA8\uC774\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.JEONG.042"
+                ]
+              }
+            ],
+            D: [
+              {
+                item: "\uBC30\uC6B0\uC790\uC758 \uC9C1\uC5C5 \uB2E8\uC815",
+                evidence: [
+                  "R2.JEONG.051"
+                ],
+                note: "\uD655\uC778 \uD544\uC694"
+              },
+              {
+                item: "\uC5EC\uC131\uC774 \uACB0\uD63C\uD558\uBA74 \uACBD\uC81C\uC801\uC73C\uB85C \uD3B8\uD574\uC9C4\uB2E4\uB294 \uC11C\uC220",
+                evidence: [
+                  "R2.JEONG.032"
+                ],
+                note: "\uD6C4\uBC18\uBD80"
+              }
+            ]
+          },
+          \u620A: {
+            name: "\uBB34\uD1A0 \u2014 \uAC70\uB300\uD55C \uC0B0\uB9E5",
+            sourcePage: "PDF page 22-26 (5. \uBB34\uD1A0, D\uB294 p26 \uC0C1\uB2E8)",
+            _note: "PDF 5\uC7A5(pp.22~25, D\uB294 p.26 \uC0C1\uB2E8) \uC804\uC0AC. A \uD0A4\uB294 '\uC2AC\uB86F\uCF54\uB4DC \uB77C\uBCA8' \uBCD1\uAE30(\uAC80\uC99D\uAE30 V6 \uD638\uD658). B\u5404\u884C source\uB294 \uAC80\uC99D\uAE30 V5 \uC694\uAD6C \uD544\uB4DC\uB85C evidence\uC640 \uB3D9\uC77C \uAC12. \uCC98\uBC29 \uCE78\uC774 \u2014\uC778 \uD589(\uBB341-\uAC00\u2032)\uACFC \uBB38\uC7A5 \uCE78 \uD558\uB098\uC778 7\uB2E8\uACC4(\uBB347-\uAC00)\uB294 \u2014 \uD45C\uAE30 + note.",
+            A: {
+              "\uC0AC1 \uD615\uC0C1": {
+                text: "\uB2F9\uC2E0\uC740 \uAC70\uB300\uD55C \uC0B0\uB9E5\uC785\uB2C8\uB2E4. {1\uC21C\uC704 \uAC00\uC9C0 \uD55C \uC904}",
+                evidence: [
+                  "R2.MU.001"
+                ]
+              },
+              "\uC0AC2 \uC131\uD5A5": {
+                text: "\uBAA8\uB4E0 \uAC83\uC744 \uBC1B\uC544\uB4E4\uC774\uACE0 \uAE38\uB7EC \uB0B4\uB294 \uB113\uC740 \uD488\uC758 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uC27D\uAC8C \uD754\uB4E4\uB9AC\uC9C0 \uC54A\uACE0, \uD55C\uBC88 \uBBFF\uC740 \uAC83\uC740 \uC624\uB798 \uBBFF\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.002"
+                ]
+              },
+              "\uC0AC3 \uB0A8\uB4E4\uC774\uBCF4\uB294\uB098": {
+                text: "\uB108\uADF8\uB7FD\uACE0 \uB4EC\uC9C1\uD574 \uBCF4\uC785\uB2C8\uB2E4. \uBCC0\uD654 \uC55E\uC5D0\uC11C\uB294 \uC2E0\uC911\uD574\uC11C, \uC0C8\uB85C\uC6B4 \uAC83\uC744 \uBC1B\uC544\uB4E4\uC774\uB294 \uB370 \uC2DC\uAC04\uC774 \uAC78\uB9BD\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.002"
+                ]
+              },
+              "\uC0AC4 \uCE6D\uCC2C": {
+                text: "\uC5B4\uB5A4 \uC790\uB9AC\uC5D0 \uAC00\uB3C4 \uAE08\uC138 \uC801\uC751\uD558\uACE0, \uD310 \uC804\uCCB4\uB97C \uAFB8\uB824 \uAC00\uB294 \uAC10\uAC01\uC774 \uC788\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.003"
+                ]
+              },
+              "\uC77C1 \uBB34\uAE30": {
+                text: "\uD310\uC744 \uAFB8\uB9AC\uACE0 \uC0AC\uB78C\uACFC \uC790\uC6D0\uC744 \uC544\uC6B0\uB974\uB294 \uD798\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.003"
+                ]
+              },
+              "\uC7AC6 \uB3C8\uC758\uC21C\uC11C": {
+                text: "\uB113\uC740 \uB545\uC740 \uBB3C\uC774 \uC801\uC154\uC57C \uBE44\uC625\uD574\uC9D1\uB2C8\uB2E4. \uC7AC\uBB3C\uBCF4\uB2E4 \uC774\uB984\uC744 \uBA3C\uC800 \uC138\uC6B8 \uB54C \uC7AC\uBB3C\uC774 \uB9D1\uAC8C \uACE0\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.011",
+                  "R2.MU.031"
+                ]
+              },
+              "\uC5F01 \uAD00\uACC4\uC120\uC5B8": {
+                text: "\uC0B0\uB9E5\uC740 \uBAA8\uB4E0 \uAC83\uC744 \uD488\uACE0 \uADF8 \uC790\uB9AC\uC5D0 \uBA38\uBB45\uB2C8\uB2E4. \uB2F9\uC2E0\uB3C4 \uACC1\uC758 \uC0AC\uB78C\uC744 \uB109\uB109\uD788 \uBC1B\uC544 \uC8FC\uACE0 \uBB35\uBB35\uD788 \uC9C0\uD0A4\uB294 \uC0AC\uB78C\uC785\uB2C8\uB2E4. \uADF8\uB7EC\uBA74\uC11C \uC18D\uC73C\uB85C\uB294 \uB2F9\uC2E0 \uC704\uC5D0 \uBFCC\uB9AC\uB0B4\uB824 \uD568\uAED8 \uC790\uB77C \uC904 \uD070 \uB098\uBB34 \uAC19\uC740 \uC0AC\uB78C\uC744 \uBC14\uB78D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.002",
+                  "R2.MU.010",
+                  "R2.MU.022"
+                ]
+              },
+              marriageCondition: {
+                label: "\uACB0\uD63C \uC870\uAC74",
+                text: "\uD070 \uB098\uBB34\uAC00 \uC2EC\uC5B4\uC9C8 \uB54C.",
+                evidence: [
+                  "R2.MU.022"
+                ]
+              },
+              endingTheme: {
+                label: "\uB05D \uC18C\uC7AC",
+                text: "\uBCC0\uD558\uC9C0 \uC54A\uB294 \uBBFF\uC74C / \uBB34\uC5C7\uC774\uB4E0 \uAE38\uB7EC \uB0B4\uB294 \uD488",
+                evidence: [
+                  "R2.MU.002"
+                ]
+              },
+              careerNote: {
+                label: "\uC9C1\uC5C5 \uACB0(\uCC38\uACE0\uC6A9, \uB098\uC5F4 \uAE08\uC9C0)",
+                text: "\uBD80\uB3D9\uC0B0, \uACBD\uC601, \uAD50\uC721(\uB098\uBB34\uB97C \uB4E4\uC77C \uB54C), \uC885\uAD50(\uB545\uC774 \uBA54\uB9C8\uB97C \uB54C).",
+                evidence: [
+                  "R2.MU.003"
+                ]
+              }
+            },
+            B: [
+              {
+                stage: 1,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uB545 \uC704\uC5D0 \uBB34\uC5C7\uC774 \uC2EC\uC5B4\uC84C\uB098 (\uC774\uB984\uACFC \uC790\uB9AC)",
+                code: "\uBB341-\uAC00",
+                condition: "\uD070 \uB098\uBB34 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C3"
+                ],
+                diagnosis: "\uD070 \uB545\uC5D0 \uD070 \uB098\uBB34\uAC00 \uC120 \uC0B0\uB9E5\uC785\uB2C8\uB2E4. \uBFCC\uB9AC\uB0B4\uB9B0 \uAC83\uC744 \uD06C\uAC8C \uD0A4\uC6CC \uC774\uB984\uC744 \uC5BB\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBC30\uC6C0\uC774 \uAE4A\uC5B4\uC9C8\uC218\uB85D \uC774\uB984\uACFC \uC7AC\uBB3C\uC774 \uD568\uAED8 \uC12D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.010",
+                  "R2.MU.022"
+                ],
+                source: [
+                  "R2.MU.010",
+                  "R2.MU.022"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uB545 \uC704\uC5D0 \uBB34\uC5C7\uC774 \uC2EC\uC5B4\uC84C\uB098 (\uC774\uB984\uACFC \uC790\uB9AC)",
+                code: "\uBB341-\uAC00\u2032",
+                condition: "\uD070 \uB098\uBB34 + \uC704\uC5D0 \uBB3C \uC5C6\uC74C + \uC544\uB798 \uAE00\uC790\uC5D0 \uBB3C",
+                slots: [
+                  "\uC7AC1"
+                ],
+                diagnosis: "\uB098\uBB34\uAC00 \uAE4A\uC774 \uBFCC\uB9AC\uB0B4\uB824 \uB545\uC18D \uBB3C\uC744 \uB04C\uC5B4\uC62C\uB9BD\uB2C8\uB2E4. \uB4DC\uB7EC\uB098\uC9C0 \uC54A\uB294 \uACF3\uC5D0\uC11C \uC7AC\uBB3C\uC774 \uC548\uC815\uB429\uB2C8\uB2E4.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.MU.021"
+                ],
+                source: [
+                  "R2.MU.021"
+                ],
+                note: "\uC6D0\uBB38 \uCC98\uBC29 \uCE78 \u2014. \uC9C4\uB2E8\uB9CC \uC0AC\uC6A9."
+              },
+              {
+                stage: 1,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uB545 \uC704\uC5D0 \uBB34\uC5C7\uC774 \uC2EC\uC5B4\uC84C\uB098 (\uC774\uB984\uACFC \uC790\uB9AC)",
+                code: "\uBB341-\uB098",
+                condition: "\uD478\uB978 \uB369\uAD74\uB9CC \uC788\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uB113\uC740 \uBC8C\uD310\uC5D0 \uB369\uAD74\uC774 \uBB34\uC131\uD574 \uC815\uC791 \uD070 \uAC83\uC774 \uC790\uB77C\uAE30 \uC5B4\uB835\uC2B5\uB2C8\uB2E4. \uD558\uB294 \uC77C\uC740 \uB9CE\uC740\uB370 \uD06C\uAC8C \uB0A8\uB294 \uAC83\uC774 \uC801\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uB369\uAD74\uB3C4 \uC624\uB798 \uD0A4\uC6B0\uBA74 \uD070 \uB098\uBB34\uAC00 \uB429\uB2C8\uB2E4. \uD55C \uBD84\uC57C\uB97C \uC624\uB798 \uAE4A\uAC8C \uBC30\uC6B0\uC138\uC694.",
+                evidence: [
+                  "R2.MU.023"
+                ],
+                source: [
+                  "R2.MU.023"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uB545 \uC704\uC5D0 \uBB34\uC5C7\uC774 \uC2EC\uC5B4\uC84C\uB098 (\uC774\uB984\uACFC \uC790\uB9AC)",
+                code: "\uBB341-\uB2E4",
+                condition: "\uB098\uBB34 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uC544\uBB34\uAC83\uB3C4 \uC2EC\uC5B4\uC9C0\uC9C0 \uC54A\uC740 \uB113\uC740 \uB545\uC785\uB2C8\uB2E4. \uD488\uC740 \uD06C\uC9C0\uB9CC \uBB34\uC5C7\uC744 \uAE30\uB97C\uC9C0 \uC815\uD574\uC9C0\uC9C0 \uC54A\uC544 \uD798\uC774 \uD769\uC5B4\uC9D1\uB2C8\uB2E4.",
+                prescription: "\uB098\uBB34\uB97C \uC2EC\uB294 \uC77C, \uACE7 \uAC00\uB974\uCE58\uACE0 \uC9D3\uACE0 \uC785\uD788\uACE0 \uC0AC\uB78C\uC744 \uB9C8\uC8FC\uD558\uB294 \uC77C\uC774 \uB545\uC758 \uAC00\uCE58\uB97C \uB9CC\uB4ED\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.020"
+                ],
+                source: [
+                  "R2.MU.020"
+                ]
+              },
+              {
+                stage: 1,
+                stageName: "\uB098\uBB34",
+                stageNote: "\uB545 \uC704\uC5D0 \uBB34\uC5C7\uC774 \uC2EC\uC5B4\uC84C\uB098 (\uC774\uB984\uACFC \uC790\uB9AC)",
+                code: "\uBB341-\uB77C",
+                condition: "\uD070 \uB098\uBB34 + \uD478\uB978 \uB369\uAD74 \uD568\uAED8",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uC5F06"
+                ],
+                diagnosis: "\uD070 \uB098\uBB34 \uACC1\uC5D0 \uB369\uAD74\uC774 \uC5BD\uD600 \uB098\uBB34\uAC00 \uC798 \uC790\uB77C\uC9C0 \uBABB\uD569\uB2C8\uB2E4.",
+                prescription: "\uD55C \uADF8\uB8E8\uB97C \uC815\uD574 \uB05D\uAE4C\uC9C0 \uD0A4\uC6B0\uC138\uC694.",
+                evidence: [
+                  "R2.MU.082"
+                ],
+                source: [
+                  "R2.MU.082"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uB545\uC744 \uC801\uC2DC\uB294 \uC7AC\uBB3C",
+                code: "\uBB342-\uAC00",
+                condition: "\uBB3C \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uC7AC2",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uBA54\uB9C8\uB978 \uB113\uC740 \uB545\uC774\uB77C \uC560\uC368\uB3C4 \uAE38\uB7EC\uC9C0\uB294 \uAC83\uC774 \uC801\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC744 \uCC3E\uC544 \uBC14\uAE65\uC73C\uB85C \uB098\uAC00\uC138\uC694. \uD574\uC678\uC640 \uB2FF\uC740 \uC77C, \uBB3C\uAC74\uACFC \uC74C\uC2DD\uC774 \uC624\uAC00\uB294 \uC77C\uC774 \uB545\uC744 \uC801\uC2ED\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.011",
+                  "R2.MU.033"
+                ],
+                source: [
+                  "R2.MU.011",
+                  "R2.MU.033"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uB545\uC744 \uC801\uC2DC\uB294 \uC7AC\uBB3C",
+                code: "\uBB342-\uB098",
+                condition: "\uBB3C \uC788\uC74C + \uB098\uBB34 \uC5C6\uC74C",
+                slots: [
+                  "\uC7AC2",
+                  "\uC77C4",
+                  "\uC77C6"
+                ],
+                diagnosis: "\uBB3C\uACFC \uD759\uB9CC \uC788\uC5B4 \uB545\uC774 \uD759\uD0D5\uC774 \uB429\uB2C8\uB2E4. \uB4E4\uC5B4\uC628 \uAC83\uC774 \uBAA8\uC774\uC9C0 \uC54A\uACE0 \uD769\uC5B4\uC9D1\uB2C8\uB2E4.",
+                prescription: "\uB098\uBB34\uB97C \uC2EC\uB294 \uC77C(\uAC00\uB974\uCE58\uACE0 \uC9D3\uB294 \uC77C)\uC774 \uBB3C\uC744 \uB9D1\uAC8C \uD569\uB2C8\uB2E4. \uC774\uB54C \uAE08\uB9E5\uC758 \uC77C\uC740 \uD759\uD0D5\uC744 \uD0A4\uC6B0\uB2C8 \uB4A4\uB85C \uB450\uC138\uC694.",
+                evidence: [
+                  "R2.MU.030",
+                  "R2.MU.052"
+                ],
+                source: [
+                  "R2.MU.030",
+                  "R2.MU.052"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uB545\uC744 \uC801\uC2DC\uB294 \uC7AC\uBB3C",
+                code: "\uBB342-\uB2E4",
+                condition: "\uBB3C \uB9CE\uC74C",
+                slots: [
+                  "\uC7AC2",
+                  "\uC77C6"
+                ],
+                diagnosis: "\uBB3C\uC774 \uB108\uBB34 \uB9CE\uC544 \uC2EC\uC740 \uAC83\uC758 \uBFCC\uB9AC\uAC00 \uBC84\uD2F0\uAE30 \uC5B4\uB835\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uC7AC\uBB3C\uBCF4\uB2E4 \uC774\uB984\uC744 \uBA3C\uC800 \uC887\uC73C\uC138\uC694. \uBC14\uB2E4 \uAC74\uB108\uC758 \uC77C\uC740 \uC624\uD788\uB824 \uD759\uD0D5\uC744 \uD0A4\uC6B0\uB2C8 \uC2E0\uC911\uD558\uAC8C \uACE0\uB974\uC138\uC694.",
+                evidence: [
+                  "R2.MU.031",
+                  "R2.MU.034"
+                ],
+                source: [
+                  "R2.MU.031",
+                  "R2.MU.034"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uB545\uC744 \uC801\uC2DC\uB294 \uC7AC\uBB3C",
+                code: "\uBB342-\uB77C",
+                condition: "\uB9D1\uACE0 \uCCAD\uC544\uD55C \uC2DC\uB0C7\uBB3C\uACFC \uBB36\uC784",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uACC42"
+                ],
+                diagnosis: "\uC791\uC740 \uBB3C\uACFC \uBB36\uC778 \uD070 \uB545\uC774\uB77C \uC190\uBC1C\uC774 \uBB36\uC774\uACE0, \uB4E4\uC5B4\uC628 \uAC83\uB3C4 \uD750\uB824\uC9C0\uAE30 \uC27D\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC744 \uACC4\uC18D \uB9CC\uB4E4\uC5B4 \uC8FC\uB294 \uAE08\uB9E5\uC758 \uC77C, \uACE7 \uBC95\xB7\uAE08\uC735\xB7\uAE30\uC220\uCC98\uB7FC \uAE30\uC900\uC774 \uBD84\uBA85\uD55C \uC77C\uC774 \uC218\uB7C9\uC744 \uB298\uB824 \uC90D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.032"
+                ],
+                source: [
+                  "R2.MU.032"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uB545\uC744 \uC801\uC2DC\uB294 \uC7AC\uBB3C",
+                code: "\uBB342-\uB77C\u2032",
+                condition: "\uC704 \uAC00\uC9C0 + \uC6D0\uAD6D\uC5D0 \uBD88 \uC5C6\uC74C",
+                slots: [
+                  "\uC77C3"
+                ],
+                diagnosis: "\uADF8 \uBB36\uC784\uC774 \uC5C6\uB358 \uBE5B\uC744 \uB9CC\uB4E4\uC5B4 \uC90D\uB2C8\uB2E4.",
+                prescription: "\uBC29\uC1A1\xB7\uC608\uC220\xB7\uAD50\uC721\xB7\uB9C8\uC74C\uC744 \uB2E4\uB8E8\uB294 \uC77C\uC5D0\uC11C \uB2A5\uB825\uC774 \uB4DC\uB7EC\uB0A9\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.043"
+                ],
+                source: [
+                  "R2.MU.043"
+                ]
+              },
+              {
+                stage: 2,
+                stageName: "\uBB3C",
+                stageNote: "\uB545\uC744 \uC801\uC2DC\uB294 \uC7AC\uBB3C",
+                code: "\uBB342-\uB9C8",
+                condition: "\uC6D0\uAD6D\uC5D0 \uBB3C\uC740 \uC788\uB294\uB370 10\uB144 \uC6B4\uC5D0\uC11C \uBB3C\uC774 \uC624\uC9C0 \uC54A\uC74C",
+                slots: [
+                  "\uC7AC2",
+                  "\uACC43"
+                ],
+                diagnosis: "\uACE0\uC5EC \uC788\uB294 \uBB3C\uC774\uB77C \uD06C\uAC8C \uD750\uB974\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uBB3C\uC774 \uD750\uB974\uB294 \uB54C\uAC00 \uC624\uAE30 \uC804\uAE4C\uC9C0\uB294, \uD310\uC744 \uBC8C\uC774\uAE30\uBCF4\uB2E4 \uC870\uC9C1 \uC548\uC5D0\uC11C \uC790\uB9AC\uB97C \uD0A4\uC6B0\uB294 \uD750\uB984\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.035"
+                ],
+                source: [
+                  "R2.MU.035"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uC744 \uD53C\uC6B0\uB294 \uB3C4\uC6C0",
+                code: "\uBB343-\uAC00",
+                condition: "\uD0DC\uC591 \uC788\uC74C",
+                slots: [
+                  "\uC0AC4",
+                  "\uC77C1"
+                ],
+                diagnosis: "\uC0B0\uB9E5\uC744 \uBE44\uCD94\uB294 \uD574\uAC00 \uC788\uC5B4 \uACC1\uC758 \uB3C4\uC6C0\uC73C\uB85C \uAF43\uC744 \uD53C\uC6C1\uB2C8\uB2E4.",
+                prescription: "\uC717\uC0AC\uB78C\uACFC \uACC1\uC758 \uCC38\uBAA8\uC758 \uC190\uAE38\uC744 \uC798 \uC4F0\uC138\uC694. \uD070 \uB098\uBB34\uAC00 \uC788\uB2E4\uBA74 \uBC30\uC6C0\uC73C\uB85C \uC774\uB984\uC774 \uC12D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.040"
+                ],
+                source: [
+                  "R2.MU.040"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uC744 \uD53C\uC6B0\uB294 \uB3C4\uC6C0",
+                code: "\uBB343-\uB098",
+                condition: "\uBD88 \uC5C6\uC74C",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uACC43"
+                ],
+                diagnosis: "\uAF43 \uD53C\uC6B8 \uBE5B\uC774 \uB2A6\uAC8C \uC624\uB294 \uB545\uC785\uB2C8\uB2E4.",
+                prescription: "\uBE5B\uC774 \uC624\uAE30 \uC804\uAE4C\uC9C0\uB294 \uC870\uC9C1 \uC548\uC5D0\uC11C \uC790\uB9AC\uB97C \uD0A4\uC6B0\uC138\uC694. \uBE5B\uC774 \uC77C\uCC0D \uC654\uB2E4\uBA74 \uADF8 \uB4A4\uB85C\uB294 \uC870\uC9C1\uC5D0\uC11C \uC313\uB294 \uCABD\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.041"
+                ],
+                source: [
+                  "R2.MU.041"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uC744 \uD53C\uC6B0\uB294 \uB3C4\uC6C0",
+                code: "\uBB343-\uB2E4",
+                condition: "\uD0DC\uC591\uACFC \uB4F1\uBD88 \uD568\uAED8",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uC77C6"
+                ],
+                diagnosis: "\uD574\uC640 \uB2EC\uC774 \uD568\uAED8 \uB5A0 \uB9C8\uC74C\uC774 \uAC08\uB9AC\uACE0, \uBD88\uC774 \uC138\uC9C0\uBA74 \uBB3C\uC774 \uB9C8\uB985\uB2C8\uB2E4.",
+                prescription: "\uD070 \uB098\uBB34\uAC00 \uC0AC\uC774\uB97C \uAC00\uB824 \uC8FC\uB294 \uB54C\uB97C \uAE30\uB2E4\uB9AC\uACE0, \uBD88\uC744 \uD0A4\uC6B0\uB294 \uC77C\uC740 \uD53C\uD558\uC138\uC694.",
+                evidence: [
+                  "R2.MU.042"
+                ],
+                source: [
+                  "R2.MU.042"
+                ]
+              },
+              {
+                stage: 3,
+                stageName: "\uD574",
+                stageNote: "\uAF43\uC744 \uD53C\uC6B0\uB294 \uB3C4\uC6C0",
+                code: "\uBB343-\uB77C",
+                condition: "\uD0DC\uC591 + \uC544\uB798 \uAE00\uC790\uAC00 \uD55C\uB0AE",
+                slots: [
+                  "\uC0AC5",
+                  "\uC0AC6",
+                  "\uACC44"
+                ],
+                diagnosis: "\uD587\uBE5B\uC774 \uB108\uBB34 \uC138\uC11C \uB545\uC774 \uB9C8\uB985\uB2C8\uB2E4.",
+                prescription: "\uBCF4\uC11D\uC774 \uB4E4\uC5B4\uC640 \uBB3C\uC744 \uB9CC\uB4E4\uC5B4 \uC8FC\uB294 \uB54C\uC5D0 \uB2E4\uC2DC \uC790\uB78D\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.071"
+                ],
+                source: [
+                  "R2.MU.071"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uAE08",
+                stageNote: "\uB545\uC18D\uC758 \uC7AC\uC8FC",
+                code: "\uBB344-\uAC00",
+                condition: "\uCEE4\uB2E4\uB780 \uAE08\uB9E5 \uC788\uC74C",
+                slots: [
+                  "\uC77C3"
+                ],
+                diagnosis: "\uB545\uC18D \uAE08\uB9E5\uC774 \uBB3C\uC744 \uB9CC\uB4E4\uACE0 \uB098\uBB34\uB97C \uB2E4\uB4EC\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uD070 \uB098\uBB34\uAC00 \uC788\uB2E4\uBA74 \uC9D3\uACE0 \uC138\uC6B0\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.050"
+                ],
+                source: [
+                  "R2.MU.050"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uAE08",
+                stageNote: "\uB545\uC18D\uC758 \uC7AC\uC8FC",
+                code: "\uBB344-\uB098",
+                condition: "\uC138\uACF5\uB41C \uBCF4\uC11D \uC788\uC74C",
+                slots: [
+                  "\uC77C3"
+                ],
+                diagnosis: "\uBCF4\uC11D\uC774 \uD574\uB97C \uBD88\uB7EC\uC640 \uB098\uBB34\uC5D0 \uAF43\uC744 \uD53C\uC6C1\uB2C8\uB2E4.",
+                prescription: "\uACF5\uAC04\uACFC \uC0AC\uBB3C\uC744 \uC544\uB984\uB2F5\uAC8C \uAFB8\uBBF8\uB294 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.051"
+                ],
+                source: [
+                  "R2.MU.051"
+                ]
+              },
+              {
+                stage: 4,
+                stageName: "\uAE08",
+                stageNote: "\uB545\uC18D\uC758 \uC7AC\uC8FC",
+                code: "\uBB344-\uB2E4",
+                condition: "\uAE08 + \uB098\uBB34 \uC5C6\uC74C + \uD759\uD0D5",
+                slots: [
+                  "\uC77C6"
+                ],
+                diagnosis: "\uBB342-\uB098\uC640 \uAC19\uB2E4.",
+                prescription: "\uCC98\uBC29\uC740 \uB098\uBB34\uAC00 \uBA3C\uC800\uB2E4.",
+                evidence: [
+                  "R2.MU.052"
+                ],
+                source: [
+                  "R2.MU.052"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uD759",
+                stageNote: null,
+                code: "\uBB345-\uAC00",
+                condition: "\uC0B0\uB9E5 \uB458",
+                slots: [
+                  "\uC0AC7",
+                  "\uC0AC8",
+                  "\uACC44"
+                ],
+                diagnosis: "\uB545\uC774 \uB458\uC774\uB77C \uB113\uC740 \uD3C9\uC57C\uAC00 \uB429\uB2C8\uB2E4. \uB450 \uAC00\uC9C0 \uC77C\uC744 \uD568\uAED8 \uBC8C\uC774\uB294 \uC77C\uC774 \uB9CE\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uB113\uC5B4\uC9C4 \uB545\uB9CC\uD07C \uB098\uBB34\uB97C \uC2EC\uC73C\uC138\uC694. \uACC1\uC758 \uC0B0\uB9E5\uC744 \uC815\uB9AC\uD574 \uC8FC\uB294 \uC2DC\uB0C7\uBB3C\uC774 \uB4E4\uC5B4\uC624\uB294 \uB54C\uC5D0 \uC790\uB9AC\uAC00 \uC5F4\uB9BD\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.060"
+                ],
+                source: [
+                  "R2.MU.060"
+                ]
+              },
+              {
+                stage: 5,
+                stageName: "\uAC19\uC740 \uD759",
+                stageNote: null,
+                code: "\uBB345-\uB098",
+                condition: "\uC791\uC740 \uB545 \uC788\uC74C",
+                slots: [
+                  "\uC77C3"
+                ],
+                diagnosis: "\uD070 \uB545 \uACC1\uC5D0 \uC791\uC740 \uC815\uC6D0\uC774 \uBD99\uC5B4 \uC788\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uADF8 \uC815\uC6D0\uC774 \uD070 \uB098\uBB34\uB97C \uBD88\uB7EC\uC635\uB2C8\uB2E4. \uD559\uAD50\uC640 \uBC30\uC6C0\uC5D0 \uB2FF\uC740 \uC77C\uC774 \uB9DE\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.061"
+                ],
+                source: [
+                  "R2.MU.061"
+                ]
+              },
+              {
+                stage: 6,
+                stageName: "\uB2E4\uB978 \uAE00\uC790\uAC00 \uB9CC\uB4DC\uB294 \uAE38",
+                stageNote: null,
+                code: "\uBB346-\uAC00",
+                condition: "\uB4F1\uBD88 + \uBB3C \uC5C6\uC74C",
+                slots: [
+                  "\uC7AC5",
+                  "\uACC44"
+                ],
+                diagnosis: "\uB4F1\uBD88\uC774 \uD070\uBB3C\uC744 \uB04C\uC5B4\uC640 \uB545\uC5D0 \uB098\uBB34\uB97C \uC2EC\uC5B4 \uC90D\uB2C8\uB2E4.",
+                prescription: "\uB113\uC740 \uD638\uC218\uAC00 \uB4E4\uC5B4\uC624\uB294 \uB54C\uC5D0 \uC9D3\uB294 \uC77C, \uAC74\uBB3C\uC774 \uC0DD\uAE41\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.070"
+                ],
+                source: [
+                  "R2.MU.070"
+                ]
+              },
+              {
+                stage: 6,
+                stageName: "\uB2E4\uB978 \uAE00\uC790\uAC00 \uB9CC\uB4DC\uB294 \uAE38",
+                stageNote: null,
+                code: "\uBB346-\uB098",
+                condition: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218 + \uD070 \uB098\uBB34 \uC5C6\uC74C",
+                slots: [
+                  "\uC7AC2",
+                  "\uC77C4"
+                ],
+                diagnosis: "\uD070\uBB3C\uC744 \uAC00\uB454 \uB451\uC778\uB370 \uB098\uBB34\uAC00 \uC5C6\uC5B4 \uBB3C\uC774 \uB9D1\uC544\uC9C0\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uB098\uBB34\uB97C \uC2EC\uB294 \uC77C\uC744 \uACC1\uC5D0 \uB450\uACE0 \uC774\uB984\uC744 \uBA3C\uC800 \uC887\uC73C\uBA74 \uC7AC\uBB3C\uC774 \uB530\uB985\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.072"
+                ],
+                source: [
+                  "R2.MU.072"
+                ]
+              },
+              {
+                stage: 6,
+                stageName: "\uB2E4\uB978 \uAE00\uC790\uAC00 \uB9CC\uB4DC\uB294 \uAE38",
+                stageNote: null,
+                code: "\uBB346-\uB2E4",
+                condition: "\uC2DC\uB0C7\uBB3C\uACFC \uBB36\uC784 + \uD070 \uB098\uBB34",
+                slots: [
+                  "\uC7AC2",
+                  "\uC77C6"
+                ],
+                diagnosis: "\uB098\uBB34\uAC00 \uC790\uB784\uC218\uB85D \uC791\uC740 \uBB3C\uC774 \uB9C8\uB985\uB2C8\uB2E4. \uBC30\uC6C0\uC774 \uAE4A\uC5B4\uC9C8\uC218\uB85D \uC190\uC5D0 \uB0A8\uB294 \uAC83\uC774 \uC904 \uC218 \uC788\uC2B5\uB2C8\uB2E4.",
+                prescription: "\uAE08\uB9E5\uC758 \uC77C\uB85C \uBB3C\uC744 \uBCF4\uD0DC\uC138\uC694. \uAE08\uB9E5\uC774 \uC5C6\uB2E4\uBA74 \uBC14\uB2E4 \uAC74\uB108\uC5D0\uC11C \uBC30\uC6B0\uBA74 \uBB3C\uC744 \uD568\uAED8 \uC5BB\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.073",
+                  "R2.MU.081"
+                ],
+                source: [
+                  "R2.MU.073",
+                  "R2.MU.081"
+                ]
+              },
+              {
+                stage: 7,
+                stageName: "\uD2B9\uC131 (\uB05D \uC2AC\uB86F \uD6C4\uBCF4)",
+                stageNote: null,
+                code: "\uBB347-\uAC00",
+                condition: "\uD56D\uC0C1",
+                slots: [
+                  "\uB05D1",
+                  "\uB05D2",
+                  "\uB05D3"
+                ],
+                diagnosis: "\uC0B0\uB9E5\uC740 \uD55C\uBC88 \uD488\uC740 \uAC83\uC744 \uC624\uB798 \uC9C0\uD0B5\uB2C8\uB2E4. \uADF8 \uBBFF\uC74C\uC774 \uAC00\uC7A5 \uD070 \uC790\uC0B0\uC785\uB2C8\uB2E4. \uB545\uC774 \uC27D\uAC8C \uBCC0\uD558\uC9C0 \uC54A\uB4EF \uBCC0\uD654 \uC55E\uC5D0\uC11C \uB2A6\uC5B4\uC9C0\uAE30 \uC26C\uC6B0\uB2C8, \uB2E4\uC74C \uACC4\uC808\uC744 \uBBF8\uB9AC \uC900\uBE44\uD574 \uB450\uC138\uC694.",
+                prescription: "\u2014",
+                evidence: [
+                  "R2.MU.002"
+                ],
+                source: [
+                  "R2.MU.002"
+                ],
+                note: "\uD2B9\uC131 \uD45C\uB294 \uBB38\uC7A5 \uCE78 \uD558\uB098(\uB05D \uC2AC\uB86F\uC6A9). \uCC98\uBC29 \uCE78\uC774 \uC6D0\uBB38\uC5D0 \uC5C6\uC5B4 \u2014\uB85C \uD45C\uAE30. \uC6D0\uBB38 \uC2AC\uB86F \uD45C\uAE30: \uB05D1~\uB05D3."
+              }
+            ],
+            C: [
+              {
+                code: "\uBB34\uC6B4-\uAC00",
+                incoming: "\uD070 \uB098\uBB34",
+                slots: [
+                  "\uC5F04",
+                  "\uC5F05",
+                  "\uACC43"
+                ],
+                sentence: "\uD070 \uB098\uBB34\uAC00 \uC2EC\uC5B4\uC838 \uACC1\uC758 \uC790\uB9AC\uC640 \uBC30\uC6C0\uACFC \uC774\uB984\uC774 \uD568\uAED8 \uC11C\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.022"
+                ]
+              },
+              {
+                code: "\uBB34\uC6B4-\uB098",
+                incoming: "\uD070 \uB098\uBB34 (\uB369\uAD74\uB9CC \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uB369\uAD74\uC774 \uD070 \uB098\uBB34\uB97C \uD0C0\uACE0 \uC624\uB974\uBA70 \uC77C\uC774 \uC815\uB9AC\uB418\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.023"
+                ]
+              },
+              {
+                code: "\uBB34\uC6B4-\uB2E4",
+                incoming: "\uBB3C (\uC6D0\uAD6D\uC5D0 \uBB3C \uC5C6\uC744 \uB54C)",
+                slots: [
+                  "\uC7AC3",
+                  "\uACC43"
+                ],
+                sentence: "\uBA54\uB9C8\uB978 \uB545\uC774 \uC816\uC5B4 \uC7AC\uBB3C\uC774 \uD750\uB974\uAE30 \uC2DC\uC791\uD558\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.011",
+                  "R2.MU.035"
+                ]
+              },
+              {
+                code: "\uBB34\uC6B4-\uB77C",
+                incoming: "\uBD88 (\uC6D0\uAD6D\uC5D0 \uBD88 \uC5C6\uC744 \uB54C)",
+                slots: [
+                  "\uC7AC5",
+                  "\uACC44"
+                ],
+                sentence: "\uAE30\uB2E4\uB9AC\uB358 \uAF43\uC774 \uD53C\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.041"
+                ]
+              },
+              {
+                code: "\uBB34\uC6B4-\uB9C8",
+                incoming: "\uC138\uACF5\uB41C \uBCF4\uC11D (\uBD88\uC774 \uC140 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uB9C8\uB978 \uB545\uC5D0 \uBB3C\uC774 \uC0DD\uACA8 \uB2E4\uC2DC \uC790\uB77C\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.071"
+                ]
+              },
+              {
+                code: "\uBB34\uC6B4-\uBC14",
+                incoming: "\uB113\uACE0 \uACE0\uC694\uD55C \uD638\uC218 (\uB4F1\uBD88 \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uC7AC5"
+                ],
+                sentence: "\uC9D3\uB294 \uC77C\uC774 \uC2DC\uC791\uB418\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.070"
+                ]
+              },
+              {
+                code: "\uBB34\uC6B4-\uC0AC",
+                incoming: "\uC2DC\uB0C7\uBB3C (\uC0B0\uB9E5\uC774 \uB458\uC77C \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uACC1\uC758 \uC0B0\uB9E5\uC774 \uC815\uB9AC\uB418\uBA70 \uC790\uB9AC\uAC00 \uC5F4\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.060"
+                ]
+              },
+              {
+                code: "\uBB34\uC6B4-\uC544",
+                incoming: "\uC2DC\uB0C7\uBB3C\uC774\uB098 \uC0B0\uB9E5\uC774 \uB2E4\uC2DC \uC634 (\uBB36\uC5EC \uC788\uC744 \uB54C)",
+                slots: [
+                  "\uACC42"
+                ],
+                slotNote: "\uD544\uC218",
+                sentence: "\uBB36\uC600\uB358 \uC790\uB9AC\uAC00 \uD480\uB9AC\uB294 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4.",
+                evidence: [],
+                note: "1\uCE35 \xA77"
+              },
+              {
+                code: "\uBB34\uC6B4-\uC790",
+                incoming: "\uBB3C (\uBB3C\uC774 \uC774\uBBF8 \uB9CE\uC744 \uB54C)",
+                slots: [
+                  "\uACC44"
+                ],
+                sentence: "\uBB3C\uC774 \uB118\uCCD0 \uB545\uC774 \uD750\uB824\uC9C0\uAE30 \uC26C\uC6B4 {\uC5F0\uB3C4}\uC785\uB2C8\uB2E4. \uC9C0\uD0A4\uB294 \uCABD\uC774 \uC774\uB86D\uC2B5\uB2C8\uB2E4.",
+                evidence: [
+                  "R2.MU.031"
+                ],
+                note: "1\uCE35 \uD0C1\uC218"
+              }
+            ],
+            D: [
+              {
+                item: "\uC2B9\uB3C4\uC9C0\uBA85\xB7\uC778\uC0C9\uD568",
+                evidence: [
+                  "R2.MU.060"
+                ]
+              },
+              {
+                item: "\uACF5\uBD80\uD560\uC218\uB85D \uAC00\uB09C\uD574\uC9C4\uB2E4\uB294 \uC11C\uC220",
+                evidence: [
+                  "R2.MU.073"
+                ],
+                note: "\uC6D0\uBB38"
+              },
+              {
+                item: "\uC5EC\uC131 \uBB34\uAD00\uC758 \uBD80\uBD80 \uC778\uC5F0 \uC57D\uD654",
+                evidence: [
+                  "R2.MU.080"
+                ]
+              },
+              {
+                item: "\uBC30\uC6B0\uC790 \uC678\uC758 \uC774\uC131",
+                evidence: [
+                  "R2.MU.082"
+                ]
+              },
+              {
+                item: "\uC5EC\uC131\uC758 \uACF5\uD5C8\uC640 \uC678\uB85C\uC6C0",
+                evidence: [
+                  "R2.MU.083"
+                ]
+              },
+              {
+                item: "\uC5EC\uC131\uC740 \uACB0\uD63C\uD558\uBA74 \uC548\uC815\uB41C\uB2E4\uB294 \uC11C\uC220",
+                evidence: [
+                  "R2.MU.022"
+                ],
+                note: "\uD6C4\uBC18\uBD80"
+              }
+            ]
+          }
+        },
+        _todo: {
+          next: "\uC744~\u7678 9\uC7A5 \uC804\uC0AC (\uB2E8\uACC4 2). \uC744\uBAA9 \uC7A5\uC740 PDF page 8 \uD5E4\uB529, \uBCF8\uBB38\uC740 page 9\uBD80\uD130.",
+          unresolved: "selection \uC6B0\uC120\uC21C\uC704\uC758 [\uD310\uC815 \uD544\uC694] \uD0DC\uADF8, \uAC11\uC6B4-\uC0AC(1\uCE35 \uD6C4\uBCF4(\uD574\uAC00 \uB458) [\uD310\uC815 \uD544\uC694])\uB294 \uC624\uB108 \uD310\uC815 \uB300\uAE30 \uD56D\uBAA9\uC73C\uB85C \uC6D0\uBB38 \uD45C\uAE30 \uC720\uC9C0\uD588\uB2E4."
+        }
+      };
+    }
+  });
+
   // entry.cjs
   var require_entry = __commonJS({
     "entry.cjs"() {
@@ -5662,6 +12775,7 @@
       var RELATIONS = require_relations();
       var DYNAMICS = require_dynamics();
       var REGIONS_SOURCE = require_regions();
+      var SLOTS_SOURCE = require_slots();
       var KEEP_FIELDS = [
         "stemHanja",
         "stemHangul",
@@ -5806,6 +12920,32 @@
         rule: REGIONS_SOURCE.noHourNote.rule,
         sources: REGIONS_SOURCE.noHourNote.sources.slice()
       };
+      var SELECTION_ORDER_SOURCE = SLOTS_SOURCE.rules.selection.items.find(
+        (item) => item && item.rule === "\uC6B0\uC120\uC21C\uC704(\uAE30\uBCF8\uAC12)"
+      );
+      var SAJU_SLOTS = {
+        version: SLOTS_SOURCE.meta.version,
+        source: SLOTS_SOURCE.meta.source,
+        selectionOrder: SELECTION_ORDER_SOURCE ? SELECTION_ORDER_SOURCE.order.slice() : [],
+        stems: {}
+      };
+      Object.keys(SLOTS_SOURCE.stems).forEach((hanja) => {
+        const data = SLOTS_SOURCE.stems[hanja];
+        SAJU_SLOTS.stems[hanja] = {
+          name: data.name,
+          B: (data.B || []).map((b) => ({
+            stage: b.stage,
+            stageName: b.stageName,
+            code: b.code,
+            condition: b.condition,
+            slots: b.slots.slice(),
+            diagnosis: b.diagnosis,
+            prescription: b.prescription,
+            source: b.source.slice()
+          }))
+        };
+      });
+      globalThis.SAJU_SLOTS = SAJU_SLOTS;
       var EXCESS_MIN = 3;
       function elementStatus(count) {
         if (count >= EXCESS_MIN) return "tooMuch";
