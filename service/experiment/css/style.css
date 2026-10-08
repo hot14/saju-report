@@ -338,6 +338,11 @@ select:focus { outline: none; border-bottom-color: var(--color-accent); }
 .rel-form { margin-top: 0.5rem; }
 .cta-ghost { background: transparent; color: var(--color-ink); border: var(--border-width) solid var(--color-ink); margin-top: 0.9rem; }
 .cta-ghost:hover { opacity: 0.8; }
+
+/* 공유 2버튼(master-strategy P1-9): 카드 저장(공유 카드 4:5 인쇄) · 링크 복사 */
+.share-actions { display: flex; gap: 0.6rem; align-items: stretch; }
+.share-actions .cta { flex: 1; width: auto; }
+.share-actions .cta-ghost { margin-top: 0; }
 #rel-result { margin-top: 1.2rem; }
 
 @media (max-width: 480px) {

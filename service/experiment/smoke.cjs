@@ -329,6 +329,18 @@ eq(VIEW.slotConditionEval("큰 나무 + 태양을 끌어옴", tMeSlot, fromBundl
 const slotEmptyHtml = VIEW.slotReadingSection(fromBundle, []);
 if (slotEmptyHtml.indexOf("이 명조는 설계된 갈래에 해당하지 않는 구성입니다.") === -1) fail("선택 0개 안내 문구 누락");
 
+/* 타겟 프로파일(master-strategy §2-4 최소안 · W6): 3개 id 등록 + 기본 S1 + s3·s4 섹션 재배치.
+   smoke은 location.search가 빈 값이므로 resolveProfile()은 기본 S1로 떨어져야 한다. */
+const TP = global.SAJU_SLOTS.targetProfiles || {};
+eq(Object.keys(TP).sort().join(","), "s1,s3,s4", "타겟 프로파일 3개(s1·s3·s4) 등록");
+if (typeof VIEW.resolveProfile !== "function" || typeof VIEW.orderedSections !== "function") fail("프로파일 룩업·정렬 뷰 함수 미등록");
+eq(VIEW.resolveProfile().id, "s1", "기본 프로파일 = S1(파라미터 없음)");
+const fakePairs = VIEW.DEFAULT_SECTION_ORDER.map((k) => ({ key: k, html: k }));
+eq(JSON.stringify(VIEW.orderedSections(fakePairs, TP.s1).map((p) => p.key)), JSON.stringify(VIEW.DEFAULT_SECTION_ORDER), "S1 프로파일은 기본 섹션 순서(출력 불변)");
+eq(VIEW.orderedSections(fakePairs, TP.s3).map((p) => p.key).slice(0, 3).join(","), "summary,time,persona", "S3 강조 섹션(계1→사2) 선행 배치");
+eq(VIEW.orderedSections(fakePairs, TP.s4).map((p) => p.key).slice(0, 3).join(","), "summary,career,time", "S4 강조 섹션(재1~재7→계) 선행 배치");
+eq(VIEW.orderedSections(fakePairs, TP.s3).map((p) => p.key).join(",").indexOf("mind,faq,relation") !== -1, true, "FAQ 위치 고정(mind 다음 relation 앞)");
+
 /* ④ 콘텐츠 대응 검사가 슬롯 문장도 커버(slots.json 원문이므로 자동 통과) */
 
 /* 렌더: 슬롯 리딩 섹션이 한눈 요약(Q01) 뒤에 붙고, 근거·처방이 노출된다 */
@@ -464,6 +476,9 @@ const TEMPLATES = [
   /^링크 복사$/,
   /^링크가 복사되었습니다\.$/,
   /^이 페이지 링크로 같은 리딩을 다시 볼 수 있습니다\.$/,
+  // 공유 카드 2버튼(master-strategy P1-9) 중립 안내 문구
+  /^카드 저장 화면을 새 창으로 열었습니다\. 화면의 저장 버튼으로 PDF 파일을 만들 수 있습니다\.$/,
+  /^브라우저가 새 창을 막았습니다\. 팝업 허용 후 다시 시도해주세요\.$/,
   /^용어 자세히 보기 · 용어집$/,
   /^계산 과정 · 근거 표 전체$/,
   /^위 리딩과 같은 계산에서 나온 전문 상세판입니다\.$/,

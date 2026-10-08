@@ -87,17 +87,23 @@
   /* 섹션 번호(Q01~Q10)와 질문 제목. smoke.cjs 섹션 구조 스냅샷이 이 순서를 검증한다.
      Q02 슬롯 리딩은 slots.json B 갈래 트리(wayfinder slot-system-design §4)의 출력이다. */
   var SEC = {
-    summary: { num: "Q01", title: "한눈 요약" },
-    slot: { num: "Q02", title: "슬롯 리딩" },
-    persona: { num: "Q03", title: "어떤 사람인가요?" },
-    balance: { num: "Q04", title: "무엇이 많고, 무엇이 부족한가요?" },
-    career: { num: "Q05", title: "어떤 일이 어울리나요?" },
-    danger: { num: "Q06", title: "조심할 신호는?" },
-    time: { num: "Q07", title: "시간의 흐름은?" },
-    dynamics: { num: "Q08", title: "내 글자들은 서로 어떻게 작동하나요?" },
-    mind: { num: "Q09", title: "마음은 어떤가요?" },
-    relation: { num: "Q10", title: "다른 사람과 보기" }
+    summary: { key: "summary", num: "Q01", title: "한눈 요약" },
+    slot: { key: "slot", num: "Q02", title: "슬롯 리딩" },
+    persona: { key: "persona", num: "Q03", title: "어떤 사람인가요?" },
+    balance: { key: "balance", num: "Q04", title: "무엇이 많고, 무엇이 부족한가요?" },
+    career: { key: "career", num: "Q05", title: "어떤 일이 어울리나요?" },
+    danger: { key: "danger", num: "Q06", title: "조심할 신호는?" },
+    time: { key: "time", num: "Q07", title: "시간의 흐름은?" },
+    dynamics: { key: "dynamics", num: "Q08", title: "내 글자들은 서로 어떻게 작동하나요?" },
+    mind: { key: "mind", num: "Q09", title: "마음은 어떤가요?" },
+    relation: { key: "relation", num: "Q10", title: "다른 사람과 보기" }
   };
+
+  /* 타겟 프로파일 상수(master-strategy §2-4 최소안). S1이 기본이고, 강조가 없으면
+     기본 순서와 같다. CORE.view 등록이 이 선언보다 늦게 실행되지 않도록 상단에 둔다. */
+  var DEFAULT_PROFILE_ID = "s1";
+  var ACTIVE_PROFILE = null;   /* sectionAcc의 기본 펼침 판정에 쓰는 현재 프로파일 */
+  var DEFAULT_SECTION_ORDER = ["summary", "slot", "persona", "balance", "career", "danger", "time", "dynamics", "mind", "faq", "relation"];
 
   var KIND_LABEL = {
     chung: "충", sanhap: "삼합", banhap: "반합", gonghyeop: "공협", banghap: "방합", yukhap: "육합"
@@ -176,7 +182,10 @@
   /* 아코디언 섹션 헤더(축5 채택 · 아코디언 리딩 뷰): Q02 이후 긴 섹션을 details로
      접어 스크롤 폭포를 막는다. 기본 닫힘. Q01·Q06·Q02와 기존 fold details 3종은 그대로. */
   function sectionAcc(sec) {
-    return '<details class="sec acc"><summary class="acc-head"><span class="sec-label">' + esc(sec.num) +
+    /* 타겟 프로파일(master-strategy §2-4)의 emphasis 섹션은 아코디언을 기본 펼침으로 둔다.
+       기본 프로파일 S1은 emphasis가 비어 있어 기존 렌더(전부 닫힘)와 같다. */
+    var open = !!(ACTIVE_PROFILE && ACTIVE_PROFILE.emphasis && ACTIVE_PROFILE.emphasis.indexOf(sec.key) !== -1);
+    return '<details class="sec acc"' + (open ? " open" : "") + '><summary class="acc-head"><span class="sec-label">' + esc(sec.num) +
       '</span><h2 class="sec-q">' + esc(sec.title) + "</h2></summary>";
   }
 
@@ -815,6 +824,9 @@
   CORE.view.slotConditionEval = slotConditionEval;
   CORE.view.slotEngine = slotEngine;
   CORE.view.slotReadingSection = slotReadingSection;
+  CORE.view.resolveProfile = resolveProfile;
+  CORE.view.orderedSections = orderedSections;
+  CORE.view.DEFAULT_SECTION_ORDER = DEFAULT_SECTION_ORDER;
 
   /* S3 어떤 사람인가요? 물상 성향(nature+metaphor+성향) + 성장 조건 */
   function personaSection(stem) {
@@ -1269,8 +1281,61 @@
   }
 
   // ---------------------------------------------------------------------------
-  // 7) 렌더 (S1~S12 고정 순서)
+  // 7) 렌더 (프로파일 순서 · 기본 S1 = 기존 고정 순서)
   // ---------------------------------------------------------------------------
+
+  /* 타겟 프로파일(master-strategy §2-4 최소안): 엔진 로직 수정 없이 룩업과 정렬만 추가한다.
+     ?p= 파라미터로 slots.json targetProfiles의 id를 받고, 없거나 모르는 id면 기본 S1.
+     S1은 강조 섹션이 없어(기본 프로파일) 파라미터가 없으면 렌더 출력이 기존과 같다.
+     상수(DEFAULT_PROFILE_ID·ACTIVE_PROFILE·DEFAULT_SECTION_ORDER)는 SEC 옆에 선언했다. */
+
+  function resolveProfileId() {
+    var pid = "";
+    try { pid = new URLSearchParams(location.search).get("p") || ""; } catch (e) {}
+    var profiles = (SLOTS && SLOTS.targetProfiles) || {};
+    return (pid && profiles[pid]) ? pid : DEFAULT_PROFILE_ID;
+  }
+
+  function resolveProfile() {
+    var profiles = (SLOTS && SLOTS.targetProfiles) || {};
+    return profiles[resolveProfileId()] || null;
+  }
+
+  /* 강조 섹션 재배치: profile.sectionOrder 순으로 정렬하고, 목록에 없는 섹션은 기본
+     순서대로 뒤에 붙인다. FAQ와 공유·고지·이메일·상세 리딩은 말미 고정이다. */
+  function orderedSections(pairs, profile) {
+    var order = (profile && profile.sectionOrder) || DEFAULT_SECTION_ORDER;
+    var byKey = {};
+    for (var i = 0; i < pairs.length; i++) byKey[pairs[i].key] = pairs[i];
+    var out = [];
+    for (var j = 0; j < order.length; j++) {
+      if (byKey[order[j]]) { out.push(byKey[order[j]]); byKey[order[j]] = null; }
+    }
+    for (var k = 0; k < DEFAULT_SECTION_ORDER.length; k++) {
+      if (byKey[DEFAULT_SECTION_ORDER[k]]) out.push(byKey[DEFAULT_SECTION_ORDER[k]]);
+    }
+    return out;
+  }
+
+  /* 공유 카드(share-card.html) 주소 조립: 카드가 검증하는 파라미터만 넣는다.
+     d=생년월일 t=시각(미상은 빈 값) s=일간 한자 p=네 기둥 한자 j=절기 src=유입 경로.
+     표시값 자체를 넘기지 않으므로 카드 문구는 BADGE 표(카피덱 v2-KR)로 고정된다.
+     인쇄 발동은 카드 페이지의 저장 버튼(사용자 제스처)이 담당한다. */
+  function buildShareCardUrl(chart, dm, st, srcValue) {
+    var parts = [
+      ['d', chart.input.dateISO],
+      ['t', chart.input.timeISO || ''],
+      ['s', dm.hanja],
+      ['p', chart.fourPillarsHanja || ''],
+      ['j', st && st.current && st.current.name ? st.current.name : ''],
+      ['src', srcValue || '']
+    ];
+    var qs = [];
+    for (var i = 0; i < parts.length; i++) {
+      if (parts[i][1] !== '') qs.push(parts[i][0] + '=' + encodeURIComponent(parts[i][1]));
+    }
+    return 'share-card.html?' + qs.join('&');
+  }
 
   function render(chart, gender, concern) {
     var noHour = chart.mode === "noHour";
@@ -1325,21 +1390,36 @@
       '<h2 class="declaration">당신은 ' + esc(badge.name) + '입니다<span class="accent">.</span></h2>' +
       '<p class="one-liner">' + esc(badge.one) + "</p></article>";
 
-    /* S2~S12 고정 순서 */
-    html += summarySection(chart, stem);        /* Q01 한눈 요약 */
-    html += slotReadingSection(chart);          /* Q02 슬롯 리딩(slots.json B 갈래 · 최대 2) */
-    html += personaSection(stem);               /* S3 어떤 사람인가요? */
-    html += balanceSection(chart);              /* S4 무엇이 많고, 무엇이 부족한가요? */
-    html += careerSection(stem);                /* S5 어떤 일이 어울리나요? */
-    html += dangerSection(stem);                /* S6 조심할 신호는? */
-    html += timeSection(chart, gender);         /* S7 시간의 흐름은? */
-    html += dynamicsSection(chart);             /* S8 내 글자들은 서로 어떻게 작동하나요? */
-    html += ansimSection(chart);                /* S9 마음은 어떤가요?(조건부) */
-    html += faqSection();                       /* FAQ 자주 묻는 질문(닫힘 details 1개) */
-    html += relationSection();                  /* S10 다른 사람과 보기 */
-    /* 공유: 링크 복사(Web Share API 있으면 네이티브 공유). 이전 형식에 없던 바이럴 장치. */
+    /* Q01~Q10 리딩 섹션: 타겟 프로파일의 sectionOrder로 재배치한다(master-strategy §2-4).
+       S1(기본)은 기본 순서와 같아 출력이 변하지 않고, ?p=s3·s4에서 강조 섹션이 앞으로 온다. */
+    ACTIVE_PROFILE = resolveProfile();
+    var secPairs = [
+      { key: "summary", html: summarySection(chart, stem) },   /* Q01 한눈 요약 */
+      { key: "slot", html: slotReadingSection(chart) },        /* Q02 슬롯 리딩(slots.json B 갈래 · 최대 2) */
+      { key: "persona", html: personaSection(stem) },          /* Q03 어떤 사람인가요? */
+      { key: "balance", html: balanceSection(chart) },         /* Q04 무엇이 많고, 무엇이 부족한가요? */
+      { key: "career", html: careerSection(stem) },            /* Q05 어떤 일이 어울리나요? */
+      { key: "danger", html: dangerSection(stem) },            /* Q06 조심할 신호는? */
+      { key: "time", html: timeSection(chart, gender) },       /* Q07 시간의 흐름은? */
+      { key: "dynamics", html: dynamicsSection(chart) },       /* Q08 내 글자들은 서로 어떻게 작동하나요? */
+      { key: "mind", html: ansimSection(chart) },              /* Q09 마음은 어떤가요?(조건부) */
+      { key: "faq", html: faqSection() },                      /* FAQ 자주 묻는 질문(닫힘 details 1개) */
+      { key: "relation", html: relationSection() }             /* Q10 다른 사람과 보기 */
+    ];
+    var ordered = orderedSections(secPairs, ACTIVE_PROFILE);
+    for (var oi = 0; oi < ordered.length; oi++) html += ordered[oi].html;
+    /* 공유 2버튼(master-strategy P1-9): 카드 저장은 공유 카드(share-card.html 4:5)를
+       새 창으로 열어 window.print로 PDF 저장하는 경로(canvas 캡처는 라이브러리
+       의존이 있어 채택하지 않음), 링크 복사는 기존대로(Web Share API 있으면 네이티브 공유).
+       og.png(1200×630)는 링크 미리보기용으로 유지하고 저장용 카드는 별도다. */
+    var shareCardUrl = buildShareCardUrl(chart, dm, st, src);
     html += '<section class="sec share"><div class="part-divider"><span class="part-k">공유</span><span class="part-v">이 페이지 링크로 같은 리딩을 다시 볼 수 있습니다.</span></div>' +
-      '<button type="button" class="cta share-btn" id="share-link-btn">링크 복사</button>' +
+      '<div class="share-actions">' +
+      '<button type="button" class="cta share-btn" id="share-card-btn">카드 저장</button>' +
+      '<button type="button" class="cta cta-ghost share-btn" id="share-link-btn">링크 복사</button>' +
+      '</div>' +
+      '<p class="helper" id="card-msg" hidden>카드 저장 화면을 새 창으로 열었습니다. 화면의 저장 버튼으로 PDF 파일을 만들 수 있습니다.</p>' +
+      '<p class="helper" id="card-msg-blocked" hidden>브라우저가 새 창을 막았습니다. 팝업 허용 후 다시 시도해주세요.</p>' +
       '<p class="helper" id="share-msg" hidden>링크가 복사되었습니다.</p></section>';
     html += policyNotice();
     html += emailBlock();                       /* S11 결과 받아두기 */
@@ -1351,9 +1431,22 @@
     if (shareBtn) shareBtn.addEventListener('click', function() {
       var url = location.href;
       var done = function() { var m = resultSec.querySelector('#share-msg'); if (m) m.hidden = false; };
-      if (navigator.share) { navigator.share({ title: document.title, url: url }).catch(function(){}); }
-      else if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(done).catch(function(){}); }
-      else { var ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done(); }
+      /* Web Share 거절(데스크톱 브라우저 공통)이면 클립보드 복사로 폴백한다.
+         폴백까지 조용히 죽으면 사용자는 복사 성공 여부를 알 수 없다. */
+      var copyFallback = function() {
+        var ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta); done();
+      };
+      if (navigator.share) { navigator.share({ title: document.title, url: url }).catch(copyFallback); }
+      else if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(done).catch(copyFallback); }
+      else { copyFallback(); }
+    });
+    var cardBtn = resultSec.querySelector('#share-card-btn');
+    if (cardBtn) cardBtn.addEventListener('click', function() {
+      var win = window.open(shareCardUrl, '_blank');
+      var msg = resultSec.querySelector(win ? '#card-msg' : '#card-msg-blocked');
+      if (msg) msg.hidden = false;
     });
     entrySec.hidden = true;
     resultSec.hidden = false;

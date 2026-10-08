@@ -13,7 +13,7 @@
  *   4. relations.json      (dayStemVsElements / dayStemVsStems / ansimPatterns / roleVocabulary)
  *   5. dynamics.json       (heavenlyStemCombos / comboRatioRules / branchDynamics)
  *   6. regions.json        (pillarRoles / noHourNote)
- *   7. slots.json          (B 갈래 트리 슬림 · globalThis.SAJU_SLOTS · wayfinder slot-system-design §4)
+ *   7. slots.json          (B 갈래 트리 + targetProfiles 슬림 · globalThis.SAJU_SLOTS · wayfinder slot-system-design §4, master-strategy §2-4)
  *   8. view.*              (원국 판정 순수 함수 · smoke.cjs가 직접 검증)
  *
  * 메타(method·panjeong 등 연구 서술)는 화면에 쓰지 않아 뺀다. sources와 unverified
@@ -218,6 +218,9 @@ const SAJU_SLOTS = {
   version: SLOTS_SOURCE.meta.version,
   source: SLOTS_SOURCE.meta.source,
   selectionOrder: SELECTION_ORDER_SOURCE ? SELECTION_ORDER_SOURCE.order.slice() : [],
+  /* 타겟 프로파일(master-strategy §2-4 최소안): id·이름·문체 밴드·강조 섹션 순서·진입
+   * 시나리오. 슬롯 문장은 프로파일마다 새로 쓰지 않고 표시 순서와 펼침만 바꾼다. */
+  targetProfiles: SLOTS_SOURCE.targetProfiles || {},
   stems: {},
 };
 Object.keys(SLOTS_SOURCE.stems).forEach((hanja) => {
