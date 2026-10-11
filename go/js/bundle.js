@@ -5967,7 +5967,7 @@
             },
             matrixSlots: ["\uC0AC1", "\uB05D1"],
             emphasis: [],
-            sectionOrder: ["summary", "slot", "persona", "balance", "career", "danger", "time", "dynamics", "mind", "faq", "relation"],
+            sectionOrder: ["summary", "slot", "topics", "persona", "balance", "career", "danger", "time", "dynamics", "mind", "faq", "relation"],
             entry: "MBTI\uAC00 \uB05D\uB09C \uC790\uB9AC\uC5D0\uC11C, \uADFC\uAC70\uB97C \uBCF4\uC5EC\uC8FC\uB294 \uC0AC\uC8FC"
           },
           s3: {
@@ -5982,7 +5982,7 @@
             },
             matrixSlots: ["\uACC41", "\uC0AC2"],
             emphasis: ["time", "persona"],
-            sectionOrder: ["summary", "time", "persona", "slot", "balance", "career", "danger", "dynamics", "mind", "faq", "relation"],
+            sectionOrder: ["summary", "time", "persona", "slot", "topics", "balance", "career", "danger", "dynamics", "mind", "faq", "relation"],
             entry: "\uC65C \uC774 \uD574\uC11D\uC778\uC9C0, \uACC4\uC0B0\uBD80\uD130 \uBCF4\uC5EC\uB4DC\uB9BD\uB2C8\uB2E4"
           },
           s4: {
@@ -5997,9 +5997,793 @@
             },
             matrixSlots: ["\uC7AC1~\uC7AC7", "\uACC4"],
             emphasis: ["career", "time"],
-            sectionOrder: ["summary", "career", "time", "slot", "persona", "balance", "danger", "dynamics", "mind", "faq", "relation"],
+            sectionOrder: ["summary", "career", "time", "slot", "topics", "persona", "balance", "danger", "dynamics", "mind", "faq", "relation"],
             entry: "\uC774\uC9C1\xB7\uC790\uC601 \uD310\uB2E8\uC5D0 \uC4F0\uB294 \uC0AC\uC8FC \uADFC\uAC70"
           }
+        },
+        topicSections: {
+          note: "relations.json dayStemVsElements \uBB38\uC7A5\uC758 \uC8FC\uC81C\uBCC4 \uC120\uBCC4\xB7\uC7AC\uBC30\uCE58. \uB3C8=\uC7AC\uC131, \uC9C1\uC5C5=\uC2DD\uC0C1\xB7\uAD00\uC131, \uC774\uC131=\uAD00\uC131\xB7\uC7AC\uC131. \uC0C1\uD0DC \uBB38\uC7A5\uC740 \uC6D0\uBB38 \uADF8\uB300\uB85C\uC774\uBA70 \uC0C8 \uD574\uC11D \uBB38\uC7A5\uC740 \uC5C6\uB2E4. \uC0C1\uD0DC \uD310\uC815(\uACFC\uB2E4/\uACFC\uC18C/\uC870\uD654)\uC740 \uD654\uBA74\uC5D0\uC11C \uB300\uC0C1 \uC624\uD589 \uAC1C\uC218 \uD569\uACC4\uB85C \uD55C\uB2E4(3 \uC774\uC0C1 \uACFC\uB2E4, 0 \uACFC\uC18C, \uB098\uBA38\uC9C0 \uC870\uD654).",
+          items: [
+            {
+              topic: "\uB3C8",
+              dayStem: "\u7532",
+              roles: [
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u571F"
+              ],
+              states: {
+                tooMuch: "\uC2EC\uC744 \uACF3\uC774 \uB108\uBB34 \uB9CE\uC73C\uBA74 \uC62E\uACA8 \uB2E4\uB2C8\uBA70 \uAC00\uC815\xB7\uC9C1\uC7A5\uC774 \uD754\uB4E4\uB9B0\uB2E4. \uD558\uB098\uC758 \uD130\uC804\uC5D0 \uAC74\uBB3C\uC744 \uC9D3\uB4EF \uC815\uCC29\uD558\uB294 \uCC98\uBC29\uC774 \uD544\uC694\uD558\uB2E4.",
+                tooLittle: "\uC7AC\uBB3C\uC758 \uB545\uC774 \uC5C6\uC73C\uBA74 \uB298 \uC0C8 \uD130\uC804\uB9CC \uCC3E\uB294\uB2E4. \uC5C6\uB294 \uAC83\uC744 \uCD94\uAD6C\uD558\uB294 \uB9CC\uD07C \uC695\uC2EC\uC774 \uCEE4\uC9C0\uB2C8 \uD55C \uC77C\uC5D0 \uCD5C\uC120\uC774 \uB2F5\uC774\uB2E4. \uD759\uC6B4\uC5D0 \uBD80\uB3D9\uC0B0\uC774 \uC0DD\uAE38 \uC218 \uC788\uB2E4.",
+                balance: "\uD070 \uB098\uBB34\uB294 \uD070 \uB545\uC5D0 \uC2EC\uC5B4\uC57C \uD55C\uB2E4. \uC791\uC740 \uC815\uC6D0 \uD759\uC5D0 \uC2EC\uC73C\uBA74 \uC2DC\uAC04\uC774 \uAC08\uC218\uB85D \uC11C\uB85C\uB97C \uAC08\uB77C\uB193\uC544 \uAC00\uC815 \uBB38\uC81C\uB85C \uC774\uC5B4\uC9C4\uB2E4."
+              },
+              sources: [
+                "T07-009",
+                "T07-018",
+                "T07-019"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC9C1\uC5C5",
+              dayStem: "\u7532",
+              roles: [
+                "\uC2DD\uC0C1",
+                "\uAD00\uC131"
+              ],
+              stateElements: [
+                "\u706B",
+                "\u91D1"
+              ],
+              states: {
+                tooMuch: "\uC5F4\uAE30 \uACFC\uB2E4\uB294 \uBB3C\uC744 \uB9D0\uB9AC\uACE0 \uB545\uC744 \uAC08\uB77C \uC131\uC9C8\uC744 \uC870\uAE09\uD558\uAC8C \uB9CC\uB4E4\uACE0 \uAC74\uAC15 \uB9AC\uC2A4\uD06C\uAC00 \uCEE4\uC9C4\uB2E4. \uC2DC\uC6D0\uD55C \uBB3C\uCABD \uC9C0\uC5ED\xB7\uBC30\uC6B0\uC790\xB7\uD574\uC678\uAC00 \uCC98\uBC29\uC774\uB2E4. \uCE7C\uC774 \uB9CE\uC73C\uBA74 \uB2E4\uB4EC\uAE30\uBCF4\uB2E4 \uBCA0\uC778\uB2E4. \uC608\uBBFC\xB7\uC2E0\uACBD\uC804\xB7\uAD00\uC7AC\uAD6C\uC124 \uB9AC\uC2A4\uD06C\uAC00 \uCEE4\uC9C0\uACE0, \uC9C0\uC9C0\uAC00 \uD754\uB4E4\uB9AC\uB294 \uC2DC\uAE30\uC5D4 \uC0AC\uACE0\xB7\uC218\uC220 \uC8FC\uC758\uAC00 \uD544\uC694\uD558\uB2E4.",
+                tooLittle: "\uBE5B\uC774 \uC5C6\uC73C\uBA74 \uAF43\uC744 \uBABB \uD53C\uC6CC \uACB0\uACFC\uAE4C\uC9C0 \uC624\uB798 \uAC78\uB9B0\uB2E4. \uC9C0\uC9C0\uB9CC\uC5D0 \uBE5B\uC774 \uC788\uC73C\uBA74 \uC81C\uB3C4\uAD8C\uBCF4\uB2E4 \uC7AC\uC57C\uC5D0\uC11C \uD53C\uC6B4\uB2E4. \uB2E4\uB4EC\uC5B4\uC904 \uD798\uC774 \uC5C6\uC73C\uBA74 \uC7A1\uBAA9\uC774 \uB41C\uB2E4. \uC790\uAE30 \uADDC\uC728\uC774\uB098 \uC1E0 \uACC4\uC5F4 \uC77C\uC744 \uD1B5\uD574 \uC808\uC81C\uB97C \uB9CC\uB4E4\uC5B4\uC57C \uD55C\uB2E4.",
+                balance: "\uD070 \uBE5B\uC744 \uBC1B\uC544 \uD070 \uAF43\uC744 \uD53C\uC6B0\uB294 \uAC83\uC774 \uC778\uC0DD\uC758 \uBAA9\uD45C \uADF8\uB9BC\uC774\uB2E4. \uBC30\uC6B4 \uAC83\uC744 \uC138\uC0C1\uC5D0 \uB4DC\uB7EC\uB0B4 \uC778\uC815\uBC1B\uB294 \uC2DC\uAE30\uAC00 \uACB0\uC2E4\uAE30\uB2E4. \uD070 \uCE7C\uC790\uB8E8\uAC00 \uD070 \uCE7C\uC744 \uC7A1\uC73C\uBA74 \uB9AC\uB354\uC758 \uBA85\uC608\uAC00 \uC0DD\uAE34\uB2E4. \uC791\uC740 \uCE7C\uACFC\uB294 \uCC3D\uCC98\uB7FC \uAE34 \uAD00\uACC4\uB77C \uC870\uC9C1\uC0DD\uD65C\uC774 \uB9DE\uB294\uB2E4."
+              },
+              sources: [
+                "T07-011",
+                "T07-016",
+                "T07-012",
+                "T07-020",
+                "T07-021"
+              ],
+              unverified: true,
+              unverifiedSourceIds: [
+                "T07-012"
+              ]
+            },
+            {
+              topic: "\uC774\uC131",
+              dayStem: "\u7532",
+              roles: [
+                "\uAD00\uC131",
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u91D1",
+                "\u571F"
+              ],
+              states: {
+                tooMuch: "\uCE7C\uC774 \uB9CE\uC73C\uBA74 \uB2E4\uB4EC\uAE30\uBCF4\uB2E4 \uBCA0\uC778\uB2E4. \uC608\uBBFC\xB7\uC2E0\uACBD\uC804\xB7\uAD00\uC7AC\uAD6C\uC124 \uB9AC\uC2A4\uD06C\uAC00 \uCEE4\uC9C0\uACE0, \uC9C0\uC9C0\uAC00 \uD754\uB4E4\uB9AC\uB294 \uC2DC\uAE30\uC5D4 \uC0AC\uACE0\xB7\uC218\uC220 \uC8FC\uC758\uAC00 \uD544\uC694\uD558\uB2E4. \uC2EC\uC744 \uACF3\uC774 \uB108\uBB34 \uB9CE\uC73C\uBA74 \uC62E\uACA8 \uB2E4\uB2C8\uBA70 \uAC00\uC815\xB7\uC9C1\uC7A5\uC774 \uD754\uB4E4\uB9B0\uB2E4. \uD558\uB098\uC758 \uD130\uC804\uC5D0 \uAC74\uBB3C\uC744 \uC9D3\uB4EF \uC815\uCC29\uD558\uB294 \uCC98\uBC29\uC774 \uD544\uC694\uD558\uB2E4.",
+                tooLittle: "\uB2E4\uB4EC\uC5B4\uC904 \uD798\uC774 \uC5C6\uC73C\uBA74 \uC7A1\uBAA9\uC774 \uB41C\uB2E4. \uC790\uAE30 \uADDC\uC728\uC774\uB098 \uC1E0 \uACC4\uC5F4 \uC77C\uC744 \uD1B5\uD574 \uC808\uC81C\uB97C \uB9CC\uB4E4\uC5B4\uC57C \uD55C\uB2E4. \uC7AC\uBB3C\uC758 \uB545\uC774 \uC5C6\uC73C\uBA74 \uB298 \uC0C8 \uD130\uC804\uB9CC \uCC3E\uB294\uB2E4. \uC5C6\uB294 \uAC83\uC744 \uCD94\uAD6C\uD558\uB294 \uB9CC\uD07C \uC695\uC2EC\uC774 \uCEE4\uC9C0\uB2C8 \uD55C \uC77C\uC5D0 \uCD5C\uC120\uC774 \uB2F5\uC774\uB2E4. \uD759\uC6B4\uC5D0 \uBD80\uB3D9\uC0B0\uC774 \uC0DD\uAE38 \uC218 \uC788\uB2E4.",
+                balance: "\uD070 \uCE7C\uC790\uB8E8\uAC00 \uD070 \uCE7C\uC744 \uC7A1\uC73C\uBA74 \uB9AC\uB354\uC758 \uBA85\uC608\uAC00 \uC0DD\uAE34\uB2E4. \uC791\uC740 \uCE7C\uACFC\uB294 \uCC3D\uCC98\uB7FC \uAE34 \uAD00\uACC4\uB77C \uC870\uC9C1\uC0DD\uD65C\uC774 \uB9DE\uB294\uB2E4. \uD070 \uB098\uBB34\uB294 \uD070 \uB545\uC5D0 \uC2EC\uC5B4\uC57C \uD55C\uB2E4. \uC791\uC740 \uC815\uC6D0 \uD759\uC5D0 \uC2EC\uC73C\uBA74 \uC2DC\uAC04\uC774 \uAC08\uC218\uB85D \uC11C\uB85C\uB97C \uAC08\uB77C\uB193\uC544 \uAC00\uC815 \uBB38\uC81C\uB85C \uC774\uC5B4\uC9C4\uB2E4."
+              },
+              sources: [
+                "T07-012",
+                "T07-020",
+                "T07-021",
+                "T07-009",
+                "T07-018",
+                "T07-019"
+              ],
+              unverified: true,
+              unverifiedSourceIds: [
+                "T07-012"
+              ]
+            },
+            {
+              topic: "\uB3C8",
+              dayStem: "\u4E59",
+              roles: [
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u571F"
+              ],
+              states: {
+                tooMuch: "\uACF3\uACF3\uC5D0 \uBFCC\uB9AC\uB0B4\uB9AC\uB824\uB2E4 \uC9D1\xB7\uC9C1\uC7A5\xB7\uAD00\uACC4\uAC00 \uBAA8\uB450 \uD754\uB4E4\uB9B0\uB2E4. \uD070 \uB545\uC740 \uB0B4 \uB545\uC774 \uC544\uB2C8\uB77C \uAE30\uB308 \uD070 \uB098\uBB34\uC758 \uC601\uC5ED\uC73C\uB85C \uBCF4\uB294 \uCC98\uC138\uAC00 \uB9DE\uB2E4.",
+                tooLittle: "\uC7AC\uBB3C\uC758 \uD130\uC804\uC774 \uC5C6\uC5B4 \uC0B6\uC774 \uB5A0\uB3C4\uB294 \uB290\uB08C\uC774 \uB4E0\uB2E4. \uD55C \uC77C, \uD55C \uAD00\uACC4\uC5D0 \uBFCC\uB9AC\uB0B4\uB9AC\uB294 \uB178\uB825\uC774 \uCC98\uBC29\uC774\uB2E4. \uB9D0\uB77C\uC788\uB294 \uB545\uC774\uBA74 \uBB3C(\uD574\uC678\xB7\uC720\uD1B5)\uB85C \uBCF4\uC644\uD55C\uB2E4.",
+                balance: "\uC6B8\uD0C0\uB9AC \uC788\uB294 \uC791\uC740 \uB545\uC774 \uCD5C\uC801 \uD658\uACBD\uC774\uB2E4. \uD070 \uB4E4\uB158\uC740 \uB0B4 \uC601\uC5ED\uC774 \uC544\uB2C8\uBA70, \uAC70\uAE30\uC120 \uAE30\uB300\uC5B4 \uC790\uB77C\uB294 \uC804\uB7B5\uC774 \uB9DE\uB2E4."
+              },
+              sources: [
+                "T07-031",
+                "T07-041",
+                "T07-042"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC9C1\uC5C5",
+              dayStem: "\u4E59",
+              roles: [
+                "\uC2DD\uC0C1",
+                "\uAD00\uC131"
+              ],
+              stateElements: [
+                "\u706B",
+                "\u91D1"
+              ],
+              states: {
+                tooMuch: "\uAC15\uD55C \uBE5B\uC740 \uC78E\uC744 \uD0DC\uC6B4\uB2E4. \uC870\uAE09\uD568\uC774 \uCEE4\uC9C0\uACE0 \uC77C\uC744 \uADF8\uB974\uCE58\uB2C8 \uADF8\uB298(\uBB3C)\uC744 \uCC3E\uC544 \uC774\uB3D9\uD558\uB294 \uD328\uD134\uC774 \uBC18\uBCF5\uB41C\uB2E4. \uD06C\uACE0 \uB9CE\uC740 \uCE7C\uC740 \uC791\uC740 \uBAB8\uC744 \uC0C1\uD558\uAC8C \uD55C\uB2E4. \uC608\uBBFC\uD574\uC9C0\uACE0 \uB0A8\uC790\xB7\uC870\uC9C1 \uBB38\uC81C\uB85C \uB9C8\uC74C\uC758 \uC0C1\uCC98\uC640 \uBF08 \uAC74\uAC15 \uC774\uC288\uAC00 \uC0DD\uAE38 \uC218 \uC788\uB2E4.",
+                tooLittle: "\uAF43\uC774 \uC548 \uD53C\uC6CC \uACB0\uC2E4\uC774 \uB2A6\uB2E4. \uC624\uB798 \uC900\uBE44\uD55C \uB4A4 \uC7AC\uC57C\xB7\uCD9C\uD310\xB7\uC815\uC2E0\uC138\uACC4\uC5D0\uC11C \uD53C\uB294 \uD615\uD0DC\uAC00 \uB9DE\uB2E4. \uB2E4\uB4EC\uC5B4\uC904 \uD798\uC774 \uC5C6\uC73C\uBA74 \uC81C\uBA4B\uB300\uB85C \uC790\uB780\uB2E4. \uBC95\xB7\uAE08\uC735\xB7\uC758\uD559 \uAC19\uC740 \uC1E0 \uACC4\uC5F4 \uC77C\uC744 \uC120\uD0DD\uD574 \uC808\uC81C\uB97C \uC5BB\uB294 \uCC98\uBC29\uC774 \uD544\uC694\uD558\uB2E4.",
+                balance: "\uC815\uC6D0\uC758 \uAF43\uC740 \uC9D1 \uC548\uC758 \uC628\uD654\uD55C \uBE5B\uC73C\uB85C\uB3C4 \uD53C\uC6B4\uB2E4. \uD070 \uBE5B \uD558\uB098\uC640 \uC801\uB2F9\uD55C \uC628\uAE30\uBA74 \uCDA9\uBD84\uD788 \uC544\uB984\uB2F5\uB2E4. \uC791\uC740 \uCE7C\uC774 \uC54C\uB9DE\uC740 \uC790\uB8E8\uC640 \uB9CC\uB098\uBA74 \uC815\uBC00\uD55C \uBA85\uC608(\uC758\uB8CC\xB7\uAE30\uC220)\uAC00 \uC0DD\uAE34\uB2E4. \uD070 \uCE7C\uACFC \uB9CC\uB098\uBA74 \uBB36\uC774\uC9C0\uB9CC, \uADF8 \uBB36\uC74C\uC774 \uAD6D\uAC00 \uC81C\uBCF5\uC758 \uAE38\uC774 \uB418\uAE30\uB3C4 \uD55C\uB2E4."
+              },
+              sources: [
+                "T07-033",
+                "T07-034",
+                "T07-043",
+                "T07-044",
+                "T07-035"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC774\uC131",
+              dayStem: "\u4E59",
+              roles: [
+                "\uAD00\uC131",
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u91D1",
+                "\u571F"
+              ],
+              states: {
+                tooMuch: "\uD06C\uACE0 \uB9CE\uC740 \uCE7C\uC740 \uC791\uC740 \uBAB8\uC744 \uC0C1\uD558\uAC8C \uD55C\uB2E4. \uC608\uBBFC\uD574\uC9C0\uACE0 \uB0A8\uC790\xB7\uC870\uC9C1 \uBB38\uC81C\uB85C \uB9C8\uC74C\uC758 \uC0C1\uCC98\uC640 \uBF08 \uAC74\uAC15 \uC774\uC288\uAC00 \uC0DD\uAE38 \uC218 \uC788\uB2E4. \uACF3\uACF3\uC5D0 \uBFCC\uB9AC\uB0B4\uB9AC\uB824\uB2E4 \uC9D1\xB7\uC9C1\uC7A5\xB7\uAD00\uACC4\uAC00 \uBAA8\uB450 \uD754\uB4E4\uB9B0\uB2E4. \uD070 \uB545\uC740 \uB0B4 \uB545\uC774 \uC544\uB2C8\uB77C \uAE30\uB308 \uD070 \uB098\uBB34\uC758 \uC601\uC5ED\uC73C\uB85C \uBCF4\uB294 \uCC98\uC138\uAC00 \uB9DE\uB2E4.",
+                tooLittle: "\uB2E4\uB4EC\uC5B4\uC904 \uD798\uC774 \uC5C6\uC73C\uBA74 \uC81C\uBA4B\uB300\uB85C \uC790\uB780\uB2E4. \uBC95\xB7\uAE08\uC735\xB7\uC758\uD559 \uAC19\uC740 \uC1E0 \uACC4\uC5F4 \uC77C\uC744 \uC120\uD0DD\uD574 \uC808\uC81C\uB97C \uC5BB\uB294 \uCC98\uBC29\uC774 \uD544\uC694\uD558\uB2E4. \uC7AC\uBB3C\uC758 \uD130\uC804\uC774 \uC5C6\uC5B4 \uC0B6\uC774 \uB5A0\uB3C4\uB294 \uB290\uB08C\uC774 \uB4E0\uB2E4. \uD55C \uC77C, \uD55C \uAD00\uACC4\uC5D0 \uBFCC\uB9AC\uB0B4\uB9AC\uB294 \uB178\uB825\uC774 \uCC98\uBC29\uC774\uB2E4. \uB9D0\uB77C\uC788\uB294 \uB545\uC774\uBA74 \uBB3C(\uD574\uC678\xB7\uC720\uD1B5)\uB85C \uBCF4\uC644\uD55C\uB2E4.",
+                balance: "\uC791\uC740 \uCE7C\uC774 \uC54C\uB9DE\uC740 \uC790\uB8E8\uC640 \uB9CC\uB098\uBA74 \uC815\uBC00\uD55C \uBA85\uC608(\uC758\uB8CC\xB7\uAE30\uC220)\uAC00 \uC0DD\uAE34\uB2E4. \uD070 \uCE7C\uACFC \uB9CC\uB098\uBA74 \uBB36\uC774\uC9C0\uB9CC, \uADF8 \uBB36\uC74C\uC774 \uAD6D\uAC00 \uC81C\uBCF5\uC758 \uAE38\uC774 \uB418\uAE30\uB3C4 \uD55C\uB2E4. \uC6B8\uD0C0\uB9AC \uC788\uB294 \uC791\uC740 \uB545\uC774 \uCD5C\uC801 \uD658\uACBD\uC774\uB2E4. \uD070 \uB4E4\uB158\uC740 \uB0B4 \uC601\uC5ED\uC774 \uC544\uB2C8\uBA70, \uAC70\uAE30\uC120 \uAE30\uB300\uC5B4 \uC790\uB77C\uB294 \uC804\uB7B5\uC774 \uB9DE\uB2E4."
+              },
+              sources: [
+                "T07-034",
+                "T07-043",
+                "T07-044",
+                "T07-035",
+                "T07-031",
+                "T07-041",
+                "T07-042"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uB3C8",
+              dayStem: "\u4E19",
+              roles: [
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u91D1"
+              ],
+              states: {
+                tooMuch: "\uC7AC\uBB3C\uC774 \uB9CE\uC544\uB3C4 \uBE5B\uC744 \uAC00\uB9AC\uB294 \uAD6C\uB984\uC774 \uB418\uBA74 \uC190\uD574\uB2E4. \uC791\uC740 \uCE7C\uCABD \uC7AC\uBB3C\uC740 \uC624\uD788\uB824 \uB098\uB97C \uBB36\uB294\uB2E4.",
+                tooLittle: "\uBC18\uC9DD\uD560 \uC7AC\uBB3C\uC774 \uC5C6\uC5B4\uB3C4 \uBA85\uC608 \uC911\uC2EC\uC73C\uB85C \uC0B4\uBA74 \uBB3C\uC774 \uC0DD\uACA8 \uB9CC\uD68C\uB41C\uB2E4.",
+                balance: "\uD070 \uCE7C\uC740 \uB179\uC5EC \uCDE8\uD560 \uC218 \uC788\uC73C\uB098 \uBFCC\uB9AC\uAC00 \uD2BC\uD2BC\uD574\uC57C \uD55C\uB2E4. \uC7AC\uBB3C\uBCF4\uB2E4 \uBA85\uC608\uB97C \uBA3C\uC800 \uC138\uC6B0\uBA74 \uBB3C\uC774 \uC0DD\uACA8 \uC7AC\uBB3C\uC774 \uB530\uB77C\uC628\uB2E4."
+              },
+              sources: [
+                "T07-056",
+                "T07-065",
+                "T07-066"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC9C1\uC5C5",
+              dayStem: "\u4E19",
+              roles: [
+                "\uC2DD\uC0C1",
+                "\uAD00\uC131"
+              ],
+              stateElements: [
+                "\u571F",
+                "\u6C34"
+              ],
+              states: {
+                tooMuch: "\uC5F4\uAE30\uAC00 \uC9C0\uB098\uCE58\uBA74 \uB545\uC774 \uAC08\uB77C\uC9C0\uACE0 \uC544\uBB34\uAC83\uB3C4 \uBABB \uC790\uB780\uB2E4. \uC885\uAD50\xB7\uC218\uC591\uC73C\uB85C \uC5F4\uC744 \uC870\uC808\uD558\uB294 \uC0B6\uC774 \uB4F1\uC7A5\uD55C\uB2E4. \uD070\uBB3C\uC774 \uB450 \uAC1C\uBA74 \uC5B4\uB514\uC5D0 \uB730\uC9C0 \uD63C\uB780\uC2A4\uB7FD\uACE0, \uC791\uC740 \uBE44\uB294 \uBE5B\uC744 \uAC00\uB824 \uC758\uC695\uC744 \uAEBE\uB294\uB2E4.",
+                tooLittle: "\uC628\uAE30\uB97C \uB193\uC744 \uB545\uC774 \uC5C6\uC73C\uBA74 \uBE5B\uC774 \uB9C9\uD600 \uC131\uACFC\uB85C \uC774\uC5B4\uC9C0\uC9C0 \uC54A\uB294\uB2E4. \uBA85\uC608\uC758 \uBB3C\uC774 \uC5C6\uC5B4 \uBB34\uAD00 \uC0C1\uD0DC\uAC00 \uB41C\uB2E4. \uC2A4\uC2A4\uB85C \uC7AC\uBB3C\uACFC \uD569\uD574 \uBA85\uC608\uB97C \uB9CC\uB4DC\uB294 \uCC98\uBC29\uC774 \uC4F0\uC778\uB2E4.",
+                balance: "\uD0DC\uC591\uC740 \uB545\uC5D0 \uC0DD\uBA85\uC744 \uC2EC\uAC8C \uD55C\uB2E4. \uD759\uC774 \uC81C\uBC29\uC774 \uB418\uC5B4 \uBB3C\uC744 \uB9C9\uACE0, \uADF8 \uC704\uC5D0 \uB098\uBB34\uAC00 \uC11C\uBA74 \uACB0\uC2E4\uB85C \uB3CC\uC544\uC628\uB2E4. \uB9D1\uC740 \uD070\uBB3C \uC704\uC5D0 \uB5A0\uC57C \uCD5C\uC0C1\uC774\uB2E4. \uD759 \uC81C\uBC29\uACFC \uB098\uBB34\uAC00 \uBB3C\uC744 \uC815\uD654\uD574\uC57C \uBA85\uC608\uAC00 \uC2E4\uCD94\uB418\uC9C0 \uC54A\uB294\uB2E4."
+              },
+              sources: [
+                "T07-055",
+                "T07-063",
+                "T07-064",
+                "T07-054",
+                "T07-067",
+                "T07-066"
+              ],
+              unverified: true,
+              unverifiedSourceIds: [
+                "T07-054"
+              ]
+            },
+            {
+              topic: "\uC774\uC131",
+              dayStem: "\u4E19",
+              roles: [
+                "\uAD00\uC131",
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u6C34",
+                "\u91D1"
+              ],
+              states: {
+                tooMuch: "\uD070\uBB3C\uC774 \uB450 \uAC1C\uBA74 \uC5B4\uB514\uC5D0 \uB730\uC9C0 \uD63C\uB780\uC2A4\uB7FD\uACE0, \uC791\uC740 \uBE44\uB294 \uBE5B\uC744 \uAC00\uB824 \uC758\uC695\uC744 \uAEBE\uB294\uB2E4. \uC7AC\uBB3C\uC774 \uB9CE\uC544\uB3C4 \uBE5B\uC744 \uAC00\uB9AC\uB294 \uAD6C\uB984\uC774 \uB418\uBA74 \uC190\uD574\uB2E4. \uC791\uC740 \uCE7C\uCABD \uC7AC\uBB3C\uC740 \uC624\uD788\uB824 \uB098\uB97C \uBB36\uB294\uB2E4.",
+                tooLittle: "\uBA85\uC608\uC758 \uBB3C\uC774 \uC5C6\uC5B4 \uBB34\uAD00 \uC0C1\uD0DC\uAC00 \uB41C\uB2E4. \uC2A4\uC2A4\uB85C \uC7AC\uBB3C\uACFC \uD569\uD574 \uBA85\uC608\uB97C \uB9CC\uB4DC\uB294 \uCC98\uBC29\uC774 \uC4F0\uC778\uB2E4. \uBC18\uC9DD\uD560 \uC7AC\uBB3C\uC774 \uC5C6\uC5B4\uB3C4 \uBA85\uC608 \uC911\uC2EC\uC73C\uB85C \uC0B4\uBA74 \uBB3C\uC774 \uC0DD\uACA8 \uB9CC\uD68C\uB41C\uB2E4.",
+                balance: "\uB9D1\uC740 \uD070\uBB3C \uC704\uC5D0 \uB5A0\uC57C \uCD5C\uC0C1\uC774\uB2E4. \uD759 \uC81C\uBC29\uACFC \uB098\uBB34\uAC00 \uBB3C\uC744 \uC815\uD654\uD574\uC57C \uBA85\uC608\uAC00 \uC2E4\uCD94\uB418\uC9C0 \uC54A\uB294\uB2E4. \uD070 \uCE7C\uC740 \uB179\uC5EC \uCDE8\uD560 \uC218 \uC788\uC73C\uB098 \uBFCC\uB9AC\uAC00 \uD2BC\uD2BC\uD574\uC57C \uD55C\uB2E4. \uC7AC\uBB3C\uBCF4\uB2E4 \uBA85\uC608\uB97C \uBA3C\uC800 \uC138\uC6B0\uBA74 \uBB3C\uC774 \uC0DD\uACA8 \uC7AC\uBB3C\uC774 \uB530\uB77C\uC628\uB2E4."
+              },
+              sources: [
+                "T07-054",
+                "T07-067",
+                "T07-066",
+                "T07-056",
+                "T07-065"
+              ],
+              unverified: true,
+              unverifiedSourceIds: [
+                "T07-054"
+              ]
+            },
+            {
+              topic: "\uB3C8",
+              dayStem: "\u4E01",
+              roles: [
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u91D1"
+              ],
+              states: {
+                tooMuch: "\uD070 \uCE7C \uC7AC\uBB3C\uC740 \uC791\uC740 \uBD88\uB85C \uB2E4\uB8E8\uAE30 \uC5B4\uB835\uB2E4. \uC5B5\uC9C0\uB85C \uCDE8\uD558\uB824\uB2E4 \uAC08\uB4F1\uC774 \uC0DD\uAE34\uB2E4.",
+                tooLittle: "\uC7AC\uBB3C\uC758 \uAE08\uC18D\uC774 \uC5C6\uC5B4 \uBC24\uC774 \uAE38\uB2E4. \uCE7C\uC744 \uC904\uC5EC\uC8FC\uB294 \uB098\uBB34 \uC7A5\uCE58\uAC00 \uC624\uBA74 \uCDE8\uD560 \uC218 \uC788\uB2E4.",
+                balance: "\uC791\uC740 \uCE7C\uC740 \uCDE8\uD560 \uC218 \uC788\uC73C\uB098 \uADF8 \uCE7C\uC774 \uBD80\uB974\uB294 \uD070 \uBE5B \uB54C\uBB38\uC5D0 \uD604\uC2E4\xB7\uC774\uC0C1 \uAC08\uB4F1\uC774 \uB530\uB978\uB2E4. \uBA85\uC608\uB97C \uBA3C\uC800 \uC138\uC6B0\uBA74 \uC7AC\uBB3C\uC774 \uB530\uB978\uB2E4."
+              },
+              sources: [
+                "T07-077",
+                "T07-087",
+                "T07-088"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC9C1\uC5C5",
+              dayStem: "\u4E01",
+              roles: [
+                "\uC2DD\uC0C1",
+                "\uAD00\uC131"
+              ],
+              stateElements: [
+                "\u571F",
+                "\u6C34"
+              ],
+              states: {
+                tooMuch: "\uC774\uC0C1\uB9CC \uC887\uB2E4 \uD604\uC2E4 \uD130\uC804\uC774 \uC57D\uD574\uC9C8 \uC218 \uC788\uB2E4. \uB098\uBB34\uB97C \uC2EC\uC744 \uAD6C\uCCB4\uC801 \uB545(\uC77C\xB7\uC790\uB9AC)\uC774 \uD544\uC694\uD558\uB2E4. \uD070\uBB3C\uC5D0 \uBB36\uC5EC \uB098\uBB34\uB85C \uBCC0\uD55C\uB2E4. \uAD50\uC721\xB7\uAC74\uCD95\xB7\uC0AC\uB78C \uC77C\uB85C \uBC29\uD5A5\uC774 \uC815\uD574\uC9C0\uBA70, \uD480\uB9AC\uB294 \uC2DC\uAE30\uC5D0 \uBD80\uB3D9\uC0B0\uC774 \uC0DD\uAE34\uB2E4.",
+                tooLittle: "\uBE5B\uC744 \uB193\uC744 \uC815\uC6D0\uC774 \uC5C6\uC5B4 \uACB0\uC2E4\uC774 \uB9FA\uD788\uC9C0 \uC54A\uB294\uB2E4. \uBC24\uC758 \uBC30\uACBD\uC774 \uC5C6\uC5B4 \uBE5B\uC774 \uB4DC\uB7EC\uB098\uC9C0 \uC54A\uB294\uB2E4.",
+                balance: "\uBC8C\uD310\uC5D0 \uD640\uB85C \uB72C \uB2EC\uC740 \uB204\uAD70\uAC00\uB97C \uAE30\uB2E4\uB9B0\uB2E4. \uC791\uC740 \uC815\uC6D0\uC5D0 \uB098\uBB34\uB97C \uC2EC\uB294 \uC77C(\uAD50\uC721\xB7\uAC00\uC815 \uAFB8\uB9AC\uAE30)\uC774 \uACB0\uC2E4\uB85C \uC774\uC5B4\uC9C4\uB2E4. \uBC24\uC740 \uB0B4 \uBB34\uB300\uB2E4. \uBE44(\uC791\uC740 \uBB3C)\uC5D0\uB3C4 \uAC00\uB85C\uB4F1\uC740 \uAEBC\uC9C0\uC9C0 \uC54A\uC73C\uB2C8 \uC5B4\uB450\uC6B4 \uC2DC\uAE30\uC77C\uC218\uB85D \uC5ED\uB7C9\uC774 \uB4DC\uB7EC\uB09C\uB2E4."
+              },
+              sources: [
+                "T07-078",
+                "T07-085",
+                "T07-086",
+                "T07-076",
+                "T07-089",
+                "T07-090"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC774\uC131",
+              dayStem: "\u4E01",
+              roles: [
+                "\uAD00\uC131",
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u6C34",
+                "\u91D1"
+              ],
+              states: {
+                tooMuch: "\uD070\uBB3C\uC5D0 \uBB36\uC5EC \uB098\uBB34\uB85C \uBCC0\uD55C\uB2E4. \uAD50\uC721\xB7\uAC74\uCD95\xB7\uC0AC\uB78C \uC77C\uB85C \uBC29\uD5A5\uC774 \uC815\uD574\uC9C0\uBA70, \uD480\uB9AC\uB294 \uC2DC\uAE30\uC5D0 \uBD80\uB3D9\uC0B0\uC774 \uC0DD\uAE34\uB2E4. \uD070 \uCE7C \uC7AC\uBB3C\uC740 \uC791\uC740 \uBD88\uB85C \uB2E4\uB8E8\uAE30 \uC5B4\uB835\uB2E4. \uC5B5\uC9C0\uB85C \uCDE8\uD558\uB824\uB2E4 \uAC08\uB4F1\uC774 \uC0DD\uAE34\uB2E4.",
+                tooLittle: "\uBC24\uC758 \uBC30\uACBD\uC774 \uC5C6\uC5B4 \uBE5B\uC774 \uB4DC\uB7EC\uB098\uC9C0 \uC54A\uB294\uB2E4. \uC7AC\uBB3C\uC758 \uAE08\uC18D\uC774 \uC5C6\uC5B4 \uBC24\uC774 \uAE38\uB2E4. \uCE7C\uC744 \uC904\uC5EC\uC8FC\uB294 \uB098\uBB34 \uC7A5\uCE58\uAC00 \uC624\uBA74 \uCDE8\uD560 \uC218 \uC788\uB2E4.",
+                balance: "\uBC24\uC740 \uB0B4 \uBB34\uB300\uB2E4. \uBE44(\uC791\uC740 \uBB3C)\uC5D0\uB3C4 \uAC00\uB85C\uB4F1\uC740 \uAEBC\uC9C0\uC9C0 \uC54A\uC73C\uB2C8 \uC5B4\uB450\uC6B4 \uC2DC\uAE30\uC77C\uC218\uB85D \uC5ED\uB7C9\uC774 \uB4DC\uB7EC\uB09C\uB2E4. \uC791\uC740 \uCE7C\uC740 \uCDE8\uD560 \uC218 \uC788\uC73C\uB098 \uADF8 \uCE7C\uC774 \uBD80\uB974\uB294 \uD070 \uBE5B \uB54C\uBB38\uC5D0 \uD604\uC2E4\xB7\uC774\uC0C1 \uAC08\uB4F1\uC774 \uB530\uB978\uB2E4. \uBA85\uC608\uB97C \uBA3C\uC800 \uC138\uC6B0\uBA74 \uC7AC\uBB3C\uC774 \uB530\uB978\uB2E4."
+              },
+              sources: [
+                "T07-076",
+                "T07-089",
+                "T07-090",
+                "T07-077",
+                "T07-087",
+                "T07-088"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uB3C8",
+              dayStem: "\u620A",
+              roles: [
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u6C34"
+              ],
+              states: {
+                tooMuch: "\uC81C\uBC29\uC774 \uACAC\uB514\uC9C0 \uBABB\uD558\uBA74 \uD759\uD0D5\uBB3C\uC774 \uB418\uC5B4 \uC7AC\uBB3C\uC774 \uD769\uC5B4\uC9C4\uB2E4. \uBB3C\uC774 \uB108\uBB34 \uB9CE\uC740\uB370 \uD574\uC678\uAE4C\uC9C0 \uAC00\uBA74 \uC545\uD654\uB418\uB2C8 \uC8FC\uC758.",
+                tooLittle: "\uC7AC\uBB3C\uC758 \uBB3C\uC774 \uC5C6\uC73C\uBA74 \uB098\uBB34\uB3C4 \uBABB \uD0A4\uC6B4\uB2E4. \uAD6D\uB0B4 \uC7AC\uC6B4\uC774 \uC5C6\uC73C\uBA74 \uD574\uC678\xB7\uC678\uAD6D\uACC4\uB85C \uBC29\uD5A5\uC744 \uC7A1\uB294\uB2E4. \uC6D0\uAD6D\uC758 \uBB3C\uC740 \uACE0\uC5EC \uC788\uC744 \uBFD0\uC774\uB2C8 \uC6B4\uC774 \uD758\uB7EC\uC57C \uC0AC\uC5C5\uC774 \uB41C\uB2E4.",
+                balance: "\uD070 \uC81C\uBC29\uC5D0 \uB9D1\uC740 \uBB3C\uC774 \uAC00\uB46C\uC838\uC57C \uC790\uC6D0\uC774 \uB41C\uB2E4. \uBA85\uC608(\uB098\uBB34)\uB97C \uBA3C\uC800 \uC138\uC6B0\uBA74 \uC7AC\uBB3C\uB3C4 \uC548\uC815\uB41C\uB2E4."
+              },
+              sources: [
+                "T07-099",
+                "T07-112",
+                "T07-113"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC9C1\uC5C5",
+              dayStem: "\u620A",
+              roles: [
+                "\uC2DD\uC0C1",
+                "\uAD00\uC131"
+              ],
+              stateElements: [
+                "\u91D1",
+                "\u6728"
+              ],
+              states: {
+                tooMuch: "\uBB3C\uC774 \uB298\uC5B4\uB3C4 \uB098\uBB34\uAC00 \uC5C6\uC73C\uBA74 \uD759\uD0D5\uC774 \uC2EC\uD574\uC9C4\uB2E4. \uC1E0 \uAD00\uB828 \uC77C\uC774 \uC624\uD788\uB824 \uD0C1\uC218\uB97C \uD0A4\uC6B8 \uC218 \uC788\uB2E4. \uB113\uC740 \uBC8C\uC5D0 \uC7A1\uCD08\uB9CC \uBB34\uC131\uD574\uC9C0\uBA74 \uB545 \uAC00\uCE58\uAC00 \uB5A8\uC5B4\uC9C4\uB2E4. \uC18E\uC544\uC904 \uC1E0\uC640 \uC815\uC6D0 \uD759\uC758 \uB3C4\uC6C0\uC774 \uD544\uC694\uD558\uB2E4.",
+                tooLittle: "\uC218\uC6D0\uC9C0\uAC00 \uC5C6\uC5B4 \uC7AC\uBB3C\uACFC \uBA85\uC608\uB97C \uB9CC\uB4E4 \uCCB4\uC778\uC774 \uB04A\uAE34\uB2E4. \uC2EC\uC744 \uB098\uBB34\uAC00 \uC5C6\uC73C\uBA74 \uD669\uBB34\uC9C0\uAC00 \uB41C\uB2E4. \uC9C8\uC11C(\uC9C1\uC7A5\xB7\uB0A8\uD3B8)\uAC00 \uC5C6\uB294 \uC0B6\uC774 \uB418\uAE30 \uC27D\uB2E4.",
+                balance: "\uC1E0\uB294 \uBB3C\uC744 \uB9CC\uB4E4\uACE0 \uB098\uBB34\uB97C \uB2E4\uB4EC\uC5B4 \uC7AC\uBB3C\xB7\uBA85\uC608\uB97C \uD568\uAED8 \uC138\uC6B4\uB2E4. \uCE7C\uB85C \uB098\uBB34\uB97C \uAC00\uC9C0\uB7F0\uD788 \uD558\uBA74 \uB545 \uAC00\uCE58\uAC00 \uC62C\uB77C\uAC04\uB2E4. \uD070 \uB545\uC5D0 \uD070 \uB098\uBB34\uAC00 \uC2EC\uAE30\uBA74 \uCD5C\uC0C1\uC774\uB2E4. \uB098\uBB34\uAC00 \uC9C0\uD558\uC218\uB97C \uB04C\uC5B4\uC62C\uB824 \uC7AC\uBB3C\uACFC \uBA85\uC608\uB97C \uB3D9\uC2DC\uC5D0 \uB9CC\uB4E0\uB2E4. \uACB0\uD63C\xB7\uAD50\uC721\uC774 \uB098\uBB34 \uC2EC\uAE30\uC5D0 \uD574\uB2F9\uD55C\uB2E4."
+              },
+              sources: [
+                "T07-101",
+                "T07-110",
+                "T07-111",
+                "T07-098",
+                "T07-104",
+                "T07-105",
+                "T07-114"
+              ],
+              unverified: true,
+              unverifiedSourceIds: [
+                "T07-114"
+              ]
+            },
+            {
+              topic: "\uC774\uC131",
+              dayStem: "\u620A",
+              roles: [
+                "\uAD00\uC131",
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u6728",
+                "\u6C34"
+              ],
+              states: {
+                tooMuch: "\uB113\uC740 \uBC8C\uC5D0 \uC7A1\uCD08\uB9CC \uBB34\uC131\uD574\uC9C0\uBA74 \uB545 \uAC00\uCE58\uAC00 \uB5A8\uC5B4\uC9C4\uB2E4. \uC18E\uC544\uC904 \uC1E0\uC640 \uC815\uC6D0 \uD759\uC758 \uB3C4\uC6C0\uC774 \uD544\uC694\uD558\uB2E4. \uC81C\uBC29\uC774 \uACAC\uB514\uC9C0 \uBABB\uD558\uBA74 \uD759\uD0D5\uBB3C\uC774 \uB418\uC5B4 \uC7AC\uBB3C\uC774 \uD769\uC5B4\uC9C4\uB2E4. \uBB3C\uC774 \uB108\uBB34 \uB9CE\uC740\uB370 \uD574\uC678\uAE4C\uC9C0 \uAC00\uBA74 \uC545\uD654\uB418\uB2C8 \uC8FC\uC758.",
+                tooLittle: "\uC2EC\uC744 \uB098\uBB34\uAC00 \uC5C6\uC73C\uBA74 \uD669\uBB34\uC9C0\uAC00 \uB41C\uB2E4. \uC9C8\uC11C(\uC9C1\uC7A5\xB7\uB0A8\uD3B8)\uAC00 \uC5C6\uB294 \uC0B6\uC774 \uB418\uAE30 \uC27D\uB2E4. \uC7AC\uBB3C\uC758 \uBB3C\uC774 \uC5C6\uC73C\uBA74 \uB098\uBB34\uB3C4 \uBABB \uD0A4\uC6B4\uB2E4. \uAD6D\uB0B4 \uC7AC\uC6B4\uC774 \uC5C6\uC73C\uBA74 \uD574\uC678\xB7\uC678\uAD6D\uACC4\uB85C \uBC29\uD5A5\uC744 \uC7A1\uB294\uB2E4. \uC6D0\uAD6D\uC758 \uBB3C\uC740 \uACE0\uC5EC \uC788\uC744 \uBFD0\uC774\uB2C8 \uC6B4\uC774 \uD758\uB7EC\uC57C \uC0AC\uC5C5\uC774 \uB41C\uB2E4.",
+                balance: "\uD070 \uB545\uC5D0 \uD070 \uB098\uBB34\uAC00 \uC2EC\uAE30\uBA74 \uCD5C\uC0C1\uC774\uB2E4. \uB098\uBB34\uAC00 \uC9C0\uD558\uC218\uB97C \uB04C\uC5B4\uC62C\uB824 \uC7AC\uBB3C\uACFC \uBA85\uC608\uB97C \uB3D9\uC2DC\uC5D0 \uB9CC\uB4E0\uB2E4. \uACB0\uD63C\xB7\uAD50\uC721\uC774 \uB098\uBB34 \uC2EC\uAE30\uC5D0 \uD574\uB2F9\uD55C\uB2E4. \uD070 \uC81C\uBC29\uC5D0 \uB9D1\uC740 \uBB3C\uC774 \uAC00\uB46C\uC838\uC57C \uC790\uC6D0\uC774 \uB41C\uB2E4. \uBA85\uC608(\uB098\uBB34)\uB97C \uBA3C\uC800 \uC138\uC6B0\uBA74 \uC7AC\uBB3C\uB3C4 \uC548\uC815\uB41C\uB2E4."
+              },
+              sources: [
+                "T07-098",
+                "T07-104",
+                "T07-105",
+                "T07-114",
+                "T07-099",
+                "T07-112",
+                "T07-113"
+              ],
+              unverified: true,
+              unverifiedSourceIds: [
+                "T07-114"
+              ]
+            },
+            {
+              topic: "\uB3C8",
+              dayStem: "\u5DF1",
+              roles: [
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u6C34"
+              ],
+              states: {
+                tooMuch: "\uC791\uC740 \uC81C\uBC29\uC740 \uD070\uBB3C\uC744 \uBABB \uB9C9\uB294\uB2E4. \uBB34\uB108\uC9C0\uBA74 \uC7AC\uBB3C\xB7\uAC00\uC815\uC774 \uD568\uAED8 \uD754\uB4E4\uB9AC\uB2C8, \uBB3C\uC744 \uD758\uB824\uBCF4\uB0B4\uB4EF \uD574\uC678\xB7\uC678\uAD6D\uACC4 \uBC29\uD5A5\uC774 \uCC98\uBC29\uC774\uB2E4.",
+                tooLittle: "\uC815\uC6D0\uC774 \uB9D0\uB77C \uBE44\uC625\uD568\uC744 \uC783\uB294\uB2E4. \uC791\uC740 \uBB3C\uC774 \uC624\uB294 \uC2DC\uAE30\uAC00 \uC7AC\uBB3C\uC758 \uACC4\uC808\uC774\uB2E4.",
+                balance: "\uB9D1\uC740 \uC791\uC740 \uBB3C\uC740 \uC815\uC6D0\uC758 \uC0DD\uBA85\uC774\uB2E4. \uB2E4\uB9CC \uB098\uBB34\uAC00 \uC5C6\uC73C\uBA74 \uBB3C\uB9CC \uD759\uD0D5\uC774 \uB418\uB2C8 \uB098\uBB34\uB97C \uBA3C\uC800 \uC2EC\uC5B4\uC57C \uD55C\uB2E4."
+              },
+              sources: [
+                "T07-122",
+                "T07-135"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC9C1\uC5C5",
+              dayStem: "\u5DF1",
+              roles: [
+                "\uC2DD\uC0C1",
+                "\uAD00\uC131"
+              ],
+              stateElements: [
+                "\u91D1",
+                "\u6728"
+              ],
+              states: {
+                tooMuch: "\uBB3C\uC774 \uB108\uBB34 \uB298\uBA74 \uC624\uD788\uB824 \uC81C\uBC29\uC744 \uC9C0\uD0A4\uAE30 \uC5B4\uB835\uB2E4. \uBB3C \uAD00\uB9AC \uAD00\uC810\uC5D0\uC11C \uC811\uADFC\uD574\uC57C \uD55C\uB2E4. \uC791\uC740 \uB545\uC5D0 \uD070 \uB098\uBB34\uB294 \uC7AC\uC559\uC774\uB2E4. \uC2DC\uAC04\uC774 \uAC08\uC218\uB85D \uB545\uC774 \uAC08\uB77C\uC838 \uAC00\uC815\xB7\uAD00\uACC4\uAC00 \uD754\uB4E4\uB9B0\uB2E4. \uD070 \uBA85\uC608 \uCD94\uAD6C\uB97C \uC808\uC81C\uD574\uC57C \uD55C\uB2E4.",
+                tooLittle: "\uBB3C\uC744 \uB9CC\uB4E4\uACE0 \uAC00\uC9C0\uB97C \uCE58\uB294 \uD798\uC774 \uC5C6\uC5B4 \uC815\uC6D0 \uAD00\uB9AC\uAC00 \uC5B4\uB835\uB2E4. \uC2EC\uC744 \uB098\uBB34\uAC00 \uC5C6\uC73C\uBA74 \uAC00\uC815\uC774 \uB2A6\uAC8C \uD615\uC131\uB41C\uB2E4. \uB098\uBB34\uC758 \uBFCC\uB9AC\uB098 \uBB3C\uC774 \uC9C0\uC9C0\uC5D0 \uC788\uC744 \uB54C \uC791\uC740 \uB098\uBB34\uB97C \uC2EC\uB294 \uC2DC\uAE30\uAC00 \uC778\uC0DD\uC758 \uC804\uAE30\uAC00 \uB41C\uB2E4.",
+                balance: "\uC804\uC9C0\uAC00\uC704\uB294 \uC815\uC6D0\uC744 \uC544\uB984\uB2F5\uAC8C \uD558\uACE0 \uBB3C\uC744 \uB9CC\uB4E0\uB2E4. \uD070 \uCE7C\uC740 \uC791\uC740 \uB098\uBB34\uB97C \uB370\uB824\uC640 \uC2EC\uC5B4\uC8FC\uB294 \uC5ED\uD560\uB3C4 \uD55C\uB2E4. \uC815\uC6D0\uC5D0\uB294 \uC791\uC740 \uB098\uBB34\uAC00 \uC5B4\uC6B8\uB9B0\uB2E4. \uD070 \uB098\uBB34\uB294 \uB04C\uC5B4\uC640\uB3C4 \uC904\uC5EC\uC11C \uC2EC\uC5B4\uC57C \uC11C\uB85C\uB97C \uC9C0\uD0A8\uB2E4. \uACB0\uD63C\uC740 \uB098\uBB34 \uC2EC\uAE30\uB85C \uBCF8\uB2E4."
+              },
+              sources: [
+                "T07-124",
+                "T07-133",
+                "T07-134",
+                "T07-119",
+                "T07-121",
+                "T07-127"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC774\uC131",
+              dayStem: "\u5DF1",
+              roles: [
+                "\uAD00\uC131",
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u6728",
+                "\u6C34"
+              ],
+              states: {
+                tooMuch: "\uC791\uC740 \uB545\uC5D0 \uD070 \uB098\uBB34\uB294 \uC7AC\uC559\uC774\uB2E4. \uC2DC\uAC04\uC774 \uAC08\uC218\uB85D \uB545\uC774 \uAC08\uB77C\uC838 \uAC00\uC815\xB7\uAD00\uACC4\uAC00 \uD754\uB4E4\uB9B0\uB2E4. \uD070 \uBA85\uC608 \uCD94\uAD6C\uB97C \uC808\uC81C\uD574\uC57C \uD55C\uB2E4. \uC791\uC740 \uC81C\uBC29\uC740 \uD070\uBB3C\uC744 \uBABB \uB9C9\uB294\uB2E4. \uBB34\uB108\uC9C0\uBA74 \uC7AC\uBB3C\xB7\uAC00\uC815\uC774 \uD568\uAED8 \uD754\uB4E4\uB9AC\uB2C8, \uBB3C\uC744 \uD758\uB824\uBCF4\uB0B4\uB4EF \uD574\uC678\xB7\uC678\uAD6D\uACC4 \uBC29\uD5A5\uC774 \uCC98\uBC29\uC774\uB2E4.",
+                tooLittle: "\uC2EC\uC744 \uB098\uBB34\uAC00 \uC5C6\uC73C\uBA74 \uAC00\uC815\uC774 \uB2A6\uAC8C \uD615\uC131\uB41C\uB2E4. \uB098\uBB34\uC758 \uBFCC\uB9AC\uB098 \uBB3C\uC774 \uC9C0\uC9C0\uC5D0 \uC788\uC744 \uB54C \uC791\uC740 \uB098\uBB34\uB97C \uC2EC\uB294 \uC2DC\uAE30\uAC00 \uC778\uC0DD\uC758 \uC804\uAE30\uAC00 \uB41C\uB2E4. \uC815\uC6D0\uC774 \uB9D0\uB77C \uBE44\uC625\uD568\uC744 \uC783\uB294\uB2E4. \uC791\uC740 \uBB3C\uC774 \uC624\uB294 \uC2DC\uAE30\uAC00 \uC7AC\uBB3C\uC758 \uACC4\uC808\uC774\uB2E4.",
+                balance: "\uC815\uC6D0\uC5D0\uB294 \uC791\uC740 \uB098\uBB34\uAC00 \uC5B4\uC6B8\uB9B0\uB2E4. \uD070 \uB098\uBB34\uB294 \uB04C\uC5B4\uC640\uB3C4 \uC904\uC5EC\uC11C \uC2EC\uC5B4\uC57C \uC11C\uB85C\uB97C \uC9C0\uD0A8\uB2E4. \uACB0\uD63C\uC740 \uB098\uBB34 \uC2EC\uAE30\uB85C \uBCF8\uB2E4. \uB9D1\uC740 \uC791\uC740 \uBB3C\uC740 \uC815\uC6D0\uC758 \uC0DD\uBA85\uC774\uB2E4. \uB2E4\uB9CC \uB098\uBB34\uAC00 \uC5C6\uC73C\uBA74 \uBB3C\uB9CC \uD759\uD0D5\uC774 \uB418\uB2C8 \uB098\uBB34\uB97C \uBA3C\uC800 \uC2EC\uC5B4\uC57C \uD55C\uB2E4."
+              },
+              sources: [
+                "T07-119",
+                "T07-121",
+                "T07-127",
+                "T07-122",
+                "T07-135"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uB3C8",
+              dayStem: "\u5E9A",
+              roles: [
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u6728"
+              ],
+              states: {
+                tooMuch: "\uCE7C\uC790\uB8E8(\uC7AC\uBB3C\xB7\uBC30\uC6B0\uC790)\uAC00 \uB108\uBB34 \uB9CE\uAC70\uB098 \uAC15\uD558\uBA74 \uCE7C\uB0A0\uC774 \uC0C1\uD55C\uB2E4. \uC5EC\uB7EC \uC778\uC5F0\uC744 \uC887\uC73C\uBA74 \uBAB8\uACFC \uC0AC\uC5C5\uC774 \uD568\uAED8 \uB2E4\uCE5C\uB2E4.",
+                tooLittle: "\uCE7C\uC790\uB8E8\uAC00 \uC5C6\uC73C\uBA74 \uBB34\uC7AC \uC0C1\uD0DC\uB85C, \uC0AC\uC5C5\uBCF4\uB2E4 \uC870\uC9C1\uC774 \uB9DE\uACE0 \uC7AC\uBB3C\uC6B4\uC774 \uC62C \uB54C\uB9CC \uC6C0\uC9C1\uC5EC\uC57C \uD55C\uB2E4.",
+                balance: "\uD070 \uCE7C\uC5D0\uB294 \uD070 \uCE7C\uC790\uB8E8\uAC00 \uCD5C\uC801\uC774\uB2E4. \uC790\uB8E8(\uB098\uBB34)\uC758 \uBFCC\uB9AC\uAE4C\uC9C0 \uD2BC\uD2BC\uD574\uC57C \uC7AC\uBB3C\uC774 \uBAA8\uC778\uB2E4. \uACB0\uD63C\uC740 \uC790\uB8E8\uAC00 \uB07C\uC6CC\uC9C0\uB294 \uC2DC\uAE30\uB85C \uBCF8\uB2E4."
+              },
+              sources: [
+                "T07-142",
+                "T07-144",
+                "T07-150",
+                "T07-160"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC9C1\uC5C5",
+              dayStem: "\u5E9A",
+              roles: [
+                "\uC2DD\uC0C1",
+                "\uAD00\uC131"
+              ],
+              stateElements: [
+                "\u6C34",
+                "\u706B"
+              ],
+              states: {
+                tooMuch: "\uAE09\uB958\uB294 \uCE7C\uB0A0\uC744 \uBB34\uB514\uAC8C \uD55C\uB2E4. \uBB3C\uC774 \uB118\uCE58\uACE0 \uB098\uBB34\uAC00 \uD06C\uBA74 \uC624\uD788\uB824 \uBCA0\uAE30 \uC5B4\uB824\uC6CC \uC7AC\uBB3C\uC774 \uC5B4\uB824\uC6CC\uC9C4\uB2E4. \uC774\uBBF8 \uC644\uC131\uB41C \uCE7C\uC774 \uB2E4\uC2DC \uBD88\uC5D0 \uB4E4\uC5B4\uAC00\uBA74 \uCE7C\uB0A0\uC774 \uBB34\uB38C\uC9C4\uB2E4. \uACFC\uC5F4\uAE30\uC5D0\uB294 \uADF8\uB298(\uBB3C\xB7\uC791\uC740 \uCE7C\uC758 \uD569)\uC774 \uD544\uC694\uD558\uB2E4.",
+                tooLittle: "\uB2F4\uAE08\uC9C8\uD560 \uBB3C\uC774 \uC5C6\uC5B4 \uC2E4\uB825\uC774 \uBB34\uC6A9\uC9C0\uBB3C\uC774 \uB41C\uB2E4. \uBB3C\uC744 \uCC3E\uC544 \uD574\uC678\uB97C \uB118\uB098\uB4DC\uB294 \uCC98\uBC29\uC774 \uB9DE\uB2E4. \uAD8C\uD55C\xB7\uBA85\uC608\uC758 \uBD88\uC774 \uC5C6\uC5B4 \uB9AC\uB354 \uC790\uB9AC\uAC00 \uBA40\uB2E4.",
+                balance: "\uC1E0\uB294 \uB9D1\uC740 \uD070\uBB3C\uC5D0\uC11C \uB180\uC544\uC57C \uD55C\uB2E4. \uD759\uD0D5\uBB3C\uC5D0\uC11C\uB294 \uB179\uC2AC\uB2C8, \uBB3C\uC758 \uB9D1\uC74C\uC774 \uACE7 \uC2E4\uB825\uC758 \uC870\uAC74\uC774\uB2E4. \uD0DC\uC591\uC774 \uBB3C \uC704\uC5D0 \uB728\uACE0 \uCE7C\uC774 \uBB3C\uC5D0\uC11C \uC798 \uB180\uBA74 \uBA85\uC608\xB7\uC7AC\uBB3C\uC774 \uD568\uAED8 \uC628\uB2E4. \uAD8C\uB825\uC744 \uB0A8\uC6A9\uD558\uBA74 \uC790\uB8E8\uAC00 \uD0C4\uB2E4."
+              },
+              sources: [
+                "T07-145",
+                "T07-158",
+                "T07-159",
+                "T07-152",
+                "T07-153"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC774\uC131",
+              dayStem: "\u5E9A",
+              roles: [
+                "\uAD00\uC131",
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u706B",
+                "\u6728"
+              ],
+              states: {
+                tooMuch: "\uC774\uBBF8 \uC644\uC131\uB41C \uCE7C\uC774 \uB2E4\uC2DC \uBD88\uC5D0 \uB4E4\uC5B4\uAC00\uBA74 \uCE7C\uB0A0\uC774 \uBB34\uB38C\uC9C4\uB2E4. \uACFC\uC5F4\uAE30\uC5D0\uB294 \uADF8\uB298(\uBB3C\xB7\uC791\uC740 \uCE7C\uC758 \uD569)\uC774 \uD544\uC694\uD558\uB2E4. \uCE7C\uC790\uB8E8(\uC7AC\uBB3C\xB7\uBC30\uC6B0\uC790)\uAC00 \uB108\uBB34 \uB9CE\uAC70\uB098 \uAC15\uD558\uBA74 \uCE7C\uB0A0\uC774 \uC0C1\uD55C\uB2E4. \uC5EC\uB7EC \uC778\uC5F0\uC744 \uC887\uC73C\uBA74 \uBAB8\uACFC \uC0AC\uC5C5\uC774 \uD568\uAED8 \uB2E4\uCE5C\uB2E4.",
+                tooLittle: "\uAD8C\uD55C\xB7\uBA85\uC608\uC758 \uBD88\uC774 \uC5C6\uC5B4 \uB9AC\uB354 \uC790\uB9AC\uAC00 \uBA40\uB2E4. \uCE7C\uC790\uB8E8\uAC00 \uC5C6\uC73C\uBA74 \uBB34\uC7AC \uC0C1\uD0DC\uB85C, \uC0AC\uC5C5\uBCF4\uB2E4 \uC870\uC9C1\uC774 \uB9DE\uACE0 \uC7AC\uBB3C\uC6B4\uC774 \uC62C \uB54C\uB9CC \uC6C0\uC9C1\uC5EC\uC57C \uD55C\uB2E4.",
+                balance: "\uD0DC\uC591\uC774 \uBB3C \uC704\uC5D0 \uB728\uACE0 \uCE7C\uC774 \uBB3C\uC5D0\uC11C \uC798 \uB180\uBA74 \uBA85\uC608\xB7\uC7AC\uBB3C\uC774 \uD568\uAED8 \uC628\uB2E4. \uAD8C\uB825\uC744 \uB0A8\uC6A9\uD558\uBA74 \uC790\uB8E8\uAC00 \uD0C4\uB2E4. \uD070 \uCE7C\uC5D0\uB294 \uD070 \uCE7C\uC790\uB8E8\uAC00 \uCD5C\uC801\uC774\uB2E4. \uC790\uB8E8(\uB098\uBB34)\uC758 \uBFCC\uB9AC\uAE4C\uC9C0 \uD2BC\uD2BC\uD574\uC57C \uC7AC\uBB3C\uC774 \uBAA8\uC778\uB2E4. \uACB0\uD63C\uC740 \uC790\uB8E8\uAC00 \uB07C\uC6CC\uC9C0\uB294 \uC2DC\uAE30\uB85C \uBCF8\uB2E4."
+              },
+              sources: [
+                "T07-152",
+                "T07-153",
+                "T07-142",
+                "T07-144",
+                "T07-150",
+                "T07-160"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uB3C8",
+              dayStem: "\u8F9B",
+              roles: [
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u6728"
+              ],
+              states: {
+                tooMuch: "\uC791\uC740 \uCE7C\uB85C \uD070 \uB098\uBB34\uB97C \uBCA0\uB824\uB2E4 \uCE7C\uB0A0\uC774 \uC0C1\uD55C\uB2E4. \uD070 \uC7AC\uBB3C \uC695\uC2EC\uC774 \uC0AC\uC5C5(\uD68C\uC0AC)\uC744 \uC704\uD0DC\uB86D\uAC8C \uD55C\uB2E4.",
+                tooLittle: "\uCE7C\uC790\uB8E8\uAC00 \uC5C6\uC73C\uBA74 \uC790\uD574\xB7\uD3ED\uB825\uC801 \uC0AC\uC6A9 \uC704\uD5D8\uC774 \uCEE4\uC9C4\uB2E4. \uC790\uB8E8\uB97C \uB9CC\uB4E4\uC5B4\uC904 \uD759\uC758 \uD569\uC774 \uC624\uBA74 \uD574\uC18C\uB41C\uB2E4.",
+                balance: "\uC54C\uB9DE\uC740 \uC791\uC740 \uC790\uB8E8\uAC00 \uC0DD\uBA85\uC774\uB2E4. \uD070 \uC790\uB8E8\uC640\uB294 \uCC3D \uAD00\uACC4\uB77C \uC870\uC9C1\uC774 \uB9DE\uACE0, \uC790\uB8E8\uAC00 \uC54C\uB9DE\uC544\uC9C0\uB294 \uC2DC\uAE30\uC5D0 \uC7AC\uBB3C\uC774 \uC5F4\uB9B0\uB2E4."
+              },
+              sources: [
+                "T07-165",
+                "T07-167",
+                "T07-173",
+                "T07-174"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC9C1\uC5C5",
+              dayStem: "\u8F9B",
+              roles: [
+                "\uC2DD\uC0C1",
+                "\uAD00\uC131"
+              ],
+              stateElements: [
+                "\u6C34",
+                "\u706B"
+              ],
+              states: {
+                tooMuch: "\uAC15\uD55C \uBB3C\uC0B4\uC740 \uCE7C\uB0A0\uC744 \uBB34\uB514\uAC8C \uD55C\uB2E4. \uC790\uB8E8\uB97C \uB9CC\uB4E4\uC5B4\uC8FC\uB294 \uC7A5\uCE58\uAC00 \uC624\uBA74 \uACAC\uB518\uB2E4. \uD070 \uBD88\uC5D0 \uBB36\uC774\uBA74 \uBE5B\uC744 \uC783\uB294\uB2E4. \uAD6D\uAC00 \uBE44\uACF5\uAC1C \uC9C1\uAD70\uCC98\uB7FC \uC5B4\uB460 \uC18D \uC5ED\uD560\uC774\uB098, \uC5F4\uC744 \uAC77\uC5B4\uC904 \uC7A5\uCE58\uAC00 \uD544\uC694\uD558\uB2E4.",
+                tooLittle: "\uB2F4\uAE00 \uBB3C\uC774 \uC5C6\uC5B4 \uC2E4\uB825\uC774 \uBE5B\uB098\uC9C0 \uBABB\uD55C\uB2E4. \uC774\uB54C \uD574\uC678\uAC00 \uCC98\uBC29\uC774\uB2E4. \uBE5B\uC744 \uB0B4\uC904 \uBA85\uC608\uAC00 \uC57D\uD574 \uC874\uC7AC\uAC00 \uB4DC\uB7EC\uB098\uC9C0 \uC54A\uB294\uB2E4.",
+                balance: "\uC801\uB2F9\uB7C9\uC758 \uB9D1\uC740 \uBB3C\uC774 \uCD5C\uC801\uC774\uB2E4. \uBB3C\uC774 \uC788\uC73C\uBA74 \uC0AC\uB78C\uC744 \uC0B4\uB9AC\uB294 \uC815\uBC00 \uAE30\uC220(\uC758\uB8CC \uB4F1)\uB85C \uBA85\uC608\uB97C \uC5BB\uB294\uB2E4. \uD070 \uBE5B\uC744 \uC9C1\uC811 \uB04C\uC5B4\uC640 \uC790\uC2E0\uC744 \uBC1D\uD78C\uB2E4. \uB300\uC2E0 \uD569\uC73C\uB85C \uBB36\uC774\uB2C8, \uBA85\uC608\uB294 \uC2A4\uC2A4\uB85C \uC887\uAE30\uBCF4\uB2E4 \uC77C\uC744 \uC798\uD574 \uC778\uC815\uBC1B\uB294 \uAE38\uC774 \uB0AB\uB2E4. \uC791\uC740 \uBD88\uC740 \uBA85\uC608\uC640 \uC2E4\uB9AC\uB97C \uD568\uAED8 \uC8FC\uB294 \uC0C1\uB300\uB2E4."
+              },
+              sources: [
+                "T07-168",
+                "T07-181",
+                "T07-182",
+                "T07-170",
+                "T07-175",
+                "T07-176"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC774\uC131",
+              dayStem: "\u8F9B",
+              roles: [
+                "\uAD00\uC131",
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u706B",
+                "\u6728"
+              ],
+              states: {
+                tooMuch: "\uD070 \uBD88\uC5D0 \uBB36\uC774\uBA74 \uBE5B\uC744 \uC783\uB294\uB2E4. \uAD6D\uAC00 \uBE44\uACF5\uAC1C \uC9C1\uAD70\uCC98\uB7FC \uC5B4\uB460 \uC18D \uC5ED\uD560\uC774\uB098, \uC5F4\uC744 \uAC77\uC5B4\uC904 \uC7A5\uCE58\uAC00 \uD544\uC694\uD558\uB2E4. \uC791\uC740 \uCE7C\uB85C \uD070 \uB098\uBB34\uB97C \uBCA0\uB824\uB2E4 \uCE7C\uB0A0\uC774 \uC0C1\uD55C\uB2E4. \uD070 \uC7AC\uBB3C \uC695\uC2EC\uC774 \uC0AC\uC5C5(\uD68C\uC0AC)\uC744 \uC704\uD0DC\uB86D\uAC8C \uD55C\uB2E4.",
+                tooLittle: "\uBE5B\uC744 \uB0B4\uC904 \uBA85\uC608\uAC00 \uC57D\uD574 \uC874\uC7AC\uAC00 \uB4DC\uB7EC\uB098\uC9C0 \uC54A\uB294\uB2E4. \uCE7C\uC790\uB8E8\uAC00 \uC5C6\uC73C\uBA74 \uC790\uD574\xB7\uD3ED\uB825\uC801 \uC0AC\uC6A9 \uC704\uD5D8\uC774 \uCEE4\uC9C4\uB2E4. \uC790\uB8E8\uB97C \uB9CC\uB4E4\uC5B4\uC904 \uD759\uC758 \uD569\uC774 \uC624\uBA74 \uD574\uC18C\uB41C\uB2E4.",
+                balance: "\uD070 \uBE5B\uC744 \uC9C1\uC811 \uB04C\uC5B4\uC640 \uC790\uC2E0\uC744 \uBC1D\uD78C\uB2E4. \uB300\uC2E0 \uD569\uC73C\uB85C \uBB36\uC774\uB2C8, \uBA85\uC608\uB294 \uC2A4\uC2A4\uB85C \uC887\uAE30\uBCF4\uB2E4 \uC77C\uC744 \uC798\uD574 \uC778\uC815\uBC1B\uB294 \uAE38\uC774 \uB0AB\uB2E4. \uC791\uC740 \uBD88\uC740 \uBA85\uC608\uC640 \uC2E4\uB9AC\uB97C \uD568\uAED8 \uC8FC\uB294 \uC0C1\uB300\uB2E4. \uC54C\uB9DE\uC740 \uC791\uC740 \uC790\uB8E8\uAC00 \uC0DD\uBA85\uC774\uB2E4. \uD070 \uC790\uB8E8\uC640\uB294 \uCC3D \uAD00\uACC4\uB77C \uC870\uC9C1\uC774 \uB9DE\uACE0, \uC790\uB8E8\uAC00 \uC54C\uB9DE\uC544\uC9C0\uB294 \uC2DC\uAE30\uC5D0 \uC7AC\uBB3C\uC774 \uC5F4\uB9B0\uB2E4."
+              },
+              sources: [
+                "T07-170",
+                "T07-175",
+                "T07-176",
+                "T07-165",
+                "T07-167",
+                "T07-173",
+                "T07-174"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uB3C8",
+              dayStem: "\u58EC",
+              roles: [
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u706B"
+              ],
+              states: {
+                tooMuch: "\uC7AC\uBB3C\uC758 \uBE5B\uC774 \uC5EC\uB7FF\uC774\uBA74 \uC5B4\uB514\uC5D0 \uB730\uC9C0 \uD63C\uB780\uC2A4\uB7FD\uACE0, \uC791\uC740 \uBE44\uB294 \uC218\uBA74\uC744 \uD750\uB9B0\uB2E4.",
+                tooLittle: "\uC7AC\uBB3C\uC758 \uD0DC\uC591\uC774 \uC5C6\uC5B4 \uBB34\uC7AC \uC0C1\uD0DC\uAC00 \uB41C\uB2E4. \uBB3C\uC774 \uC2A4\uC2A4\uB85C \uBD88\uC744 \uB9CC\uB4E4\uC5B4\uC8FC\uB294 \uC5F0\uACB0\uC774 \uC788\uC73C\uBA74 \uADF9\uBCF5\uB41C\uB2E4.",
+                balance: "\uB9D1\uC740 \uD638\uC218 \uC704\uC758 \uD0DC\uC591\uC774 \uCD5C\uC0C1 \uADF8\uB9BC\uC774\uB2E4. \uC7AC\uBB3C\uBCF4\uB2E4 \uBA85\uC608\uB97C \uBA3C\uC800 \uC138\uC6B0\uBA74 \uC7AC\uBB3C\uC774 \uB530\uB77C\uC624\uB294 \uC21C\uC11C\uAC00 \uC6D0\uCE59\uC774\uB2E4."
+              },
+              sources: [
+                "T07-192",
+                "T07-198",
+                "T07-199"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC9C1\uC5C5",
+              dayStem: "\u58EC",
+              roles: [
+                "\uC2DD\uC0C1",
+                "\uAD00\uC131"
+              ],
+              stateElements: [
+                "\u6728",
+                "\u571F"
+              ],
+              states: {
+                tooMuch: "\uB098\uBB34\uAC00 \uBB3C\uC744 \uB108\uBB34 \uB9C8\uC2DC\uBA74 \uC218\uB7C9\uC774 \uC900\uB2E4. \uC131\uC7A5 \uD45C\uD604\uC774 \uACFC\uD558\uBA74 \uC790\uC6D0\uC774 \uACE0\uAC08\uB41C\uB2E4. \uD070\uBB3C\uC5D0 \uC81C\uBC29\uC774 \uB9CE\uC73C\uBA74 \uC624\uD788\uB824 \uAC07\uD78C \uB290\uB08C\uC774\uC9C0\uB9CC, \uC5C6\uB294 \uAC83\uBCF4\uB2E4\uB294 \uB0AB\uB2E4.",
+                tooLittle: "\uD758\uB7EC\uAC08 \uBC29\uD5A5\uACFC \uC2A4\uBA70\uB4E4 \uB300\uC0C1\uC774 \uC5C6\uC5B4 \uACE0\uC778 \uBB3C\uC774 \uB41C\uB2E4. \uC81C\uBC29 \uC5C6\uB294 \uBB3C\uC740 \uC815\uCC29\uC5D0 \uC2E4\uD328\uD574 \uBC29\uD669\uD55C\uB2E4. \uD759 \uAD00\uB828 \uC77C\uC774\uB098 \uC1E0 \uC77C\uB85C \uBCF4\uCDA9\uC774 \uD544\uC694\uD558\uB2E4.",
+                balance: "\uBB3C\uC740 \uB098\uBB34\uB97C \uD0A4\uC6CC \uC874\uC7AC \uAC00\uCE58\uB97C \uC99D\uBA85\uD55C\uB2E4. \uC81C\uBC29 \uC704\uC5D0 \uB098\uBB34\uAC00 \uC2EC\uAE30\uBA74 \uD759\uD0D5\uC774 \uB9C9\uD600 \uAC00\uC815\xB7\uC9C1\uC7A5\uC774 \uAD73\uC5B4\uC9C4\uB2E4. \uB098\uBB34 \uC5C6\uC73C\uBA74 \uAD50\uC721\xB7\uAC74\uCD95 \uC77C\uB85C \uC9C1\uC811 \uC2EC\uB294 \uCC98\uBC29\uC774 \uB9DE\uB2E4. \uD06C\uACE0 \uD2BC\uD2BC\uD55C \uC81C\uBC29\uC774 \uC808\uB300 \uC870\uAC74\uC774\uB2E4. \uC791\uC740 \uC81C\uBC29\uC740 \uAC19\uC774 \uBB34\uB108\uC9C0\uB2C8 \uD06C\uAE30\uAC00 \uB9DE\uC544\uC57C \uD55C\uB2E4. \uC81C\uBC29\uC774 \uC0DD\uAE30\uB294 \uC2DC\uAE30\uAC00 \uACB0\uD63C\xB7\uC815\uCC29\uC758 \uC2DC\uAE30\uB2E4."
+              },
+              sources: [
+                "T07-191",
+                "T07-196",
+                "T07-188",
+                "T07-190",
+                "T07-200",
+                "T07-201",
+                "T07-206"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC774\uC131",
+              dayStem: "\u58EC",
+              roles: [
+                "\uAD00\uC131",
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u571F",
+                "\u706B"
+              ],
+              states: {
+                tooMuch: "\uD070\uBB3C\uC5D0 \uC81C\uBC29\uC774 \uB9CE\uC73C\uBA74 \uC624\uD788\uB824 \uAC07\uD78C \uB290\uB08C\uC774\uC9C0\uB9CC, \uC5C6\uB294 \uAC83\uBCF4\uB2E4\uB294 \uB0AB\uB2E4. \uC7AC\uBB3C\uC758 \uBE5B\uC774 \uC5EC\uB7FF\uC774\uBA74 \uC5B4\uB514\uC5D0 \uB730\uC9C0 \uD63C\uB780\uC2A4\uB7FD\uACE0, \uC791\uC740 \uBE44\uB294 \uC218\uBA74\uC744 \uD750\uB9B0\uB2E4.",
+                tooLittle: "\uC81C\uBC29 \uC5C6\uB294 \uBB3C\uC740 \uC815\uCC29\uC5D0 \uC2E4\uD328\uD574 \uBC29\uD669\uD55C\uB2E4. \uD759 \uAD00\uB828 \uC77C\uC774\uB098 \uC1E0 \uC77C\uB85C \uBCF4\uCDA9\uC774 \uD544\uC694\uD558\uB2E4. \uC7AC\uBB3C\uC758 \uD0DC\uC591\uC774 \uC5C6\uC5B4 \uBB34\uC7AC \uC0C1\uD0DC\uAC00 \uB41C\uB2E4. \uBB3C\uC774 \uC2A4\uC2A4\uB85C \uBD88\uC744 \uB9CC\uB4E4\uC5B4\uC8FC\uB294 \uC5F0\uACB0\uC774 \uC788\uC73C\uBA74 \uADF9\uBCF5\uB41C\uB2E4.",
+                balance: "\uD06C\uACE0 \uD2BC\uD2BC\uD55C \uC81C\uBC29\uC774 \uC808\uB300 \uC870\uAC74\uC774\uB2E4. \uC791\uC740 \uC81C\uBC29\uC740 \uAC19\uC774 \uBB34\uB108\uC9C0\uB2C8 \uD06C\uAE30\uAC00 \uB9DE\uC544\uC57C \uD55C\uB2E4. \uC81C\uBC29\uC774 \uC0DD\uAE30\uB294 \uC2DC\uAE30\uAC00 \uACB0\uD63C\xB7\uC815\uCC29\uC758 \uC2DC\uAE30\uB2E4. \uB9D1\uC740 \uD638\uC218 \uC704\uC758 \uD0DC\uC591\uC774 \uCD5C\uC0C1 \uADF8\uB9BC\uC774\uB2E4. \uC7AC\uBB3C\uBCF4\uB2E4 \uBA85\uC608\uB97C \uBA3C\uC800 \uC138\uC6B0\uBA74 \uC7AC\uBB3C\uC774 \uB530\uB77C\uC624\uB294 \uC21C\uC11C\uAC00 \uC6D0\uCE59\uC774\uB2E4."
+              },
+              sources: [
+                "T07-188",
+                "T07-190",
+                "T07-200",
+                "T07-201",
+                "T07-206",
+                "T07-192",
+                "T07-198",
+                "T07-199"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uB3C8",
+              dayStem: "\u7678",
+              roles: [
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u706B"
+              ],
+              states: {
+                tooMuch: "\uAC15\uD55C \uC5F4\uAE30\uB294 \uB098\uB97C \uB9D0\uB9B0\uB2E4. \uADF8\uB298(\uBB3C\uC744 \uB9CC\uB4DC\uB294 \uC1E0\uC758 \uD569)\uC774 \uC5C6\uC73C\uBA74 \uC7AC\uBB3C \uC55E\uC5D0\uC11C \uBB34\uB98E \uAFC7\uB294\uB2E4.",
+                tooLittle: "\uC628\uAE30\uAC00 \uC5C6\uC5B4 \uC0DD\uBA85\uC744 \uAE30\uB974\uC9C0 \uBABB\uD55C\uB2E4.",
+                balance: "\uC791\uC740 \uBE5B\uC740 \uC7AC\uBB3C\uC774\uC790 \uC815\uC2E0\uC138\uACC4\uC758 \uB3D9\uBC18\uC790\uB2E4. \uC778\uC7AC\uB97C \uD0A4\uC6CC \uAF43 \uD53C\uC6B0\uB294 \uACBD\uC601\uD615 \uAD6C\uC870\uC640 \uC798 \uB9DE\uB294\uB2E4."
+              },
+              sources: [
+                "T07-215",
+                "T07-221",
+                "T07-222"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC9C1\uC5C5",
+              dayStem: "\u7678",
+              roles: [
+                "\uC2DD\uC0C1",
+                "\uAD00\uC131"
+              ],
+              stateElements: [
+                "\u6728",
+                "\u571F"
+              ],
+              states: {
+                tooMuch: "\uC791\uC740 \uBB3C\uB85C \uD070 \uB098\uBB34\uB97C \uD0A4\uC6B0\uB2E4 \uC2A4\uC2A4\uB85C \uB9C8\uB978\uB2E4. \uAE34 \uACF5\uBD80\xB7\uD070 \uAC74\uCD95\uC774 \uC624\uD788\uB824 \uC7AC\uC559\uC774 \uB41C\uB2E4. \uD070 \uC81C\uBC29\uACFC \uB9CC\uB098\uBA74 \uBB36\uC774\uACE0 \uD759\uD0D5\uC774 \uB41C\uB2E4. \uC218\uB7C9 \uBCF4\uCDA9(\uC1E0 \uC77C)\uC774 \uC808\uB300 \uD544\uC694\uD558\uB2E4. \uBD80\uB3D9\uC0B0 \uD589\uC6B4\uB3C4 \uC774 \uD569\uC5D0\uC11C \uC628\uB2E4.",
+                tooLittle: "\uC2A4\uBA70\uB4E4 \uB300\uC0C1\uC774 \uC5C6\uC5B4 \uC874\uC7AC \uAC00\uCE58\uAC00 \uC0AC\uB77C\uC9C4\uB2E4. \uC81C\uBC29 \uC5C6\uC774 \uD758\uB7EC \uD754\uC801 \uC5C6\uC774 \uC0AC\uB77C\uC9C8 \uC218 \uC788\uB2E4. \uD574\uC678\xB7\uC678\uAD6D\uACC4\xB7\uC1E0 \uC77C\uB85C \uBB3C\uC744 \uCC44\uC6B0\uB294 \uCC98\uBC29\uC774 \uB9DE\uB2E4.",
+                balance: "\uC791\uC740 \uB098\uBB34\uC5D0 \uB0B4\uB9AC\uB294 \uB2E8\uBE44\uAC00 \uCD5C\uC801 \uADF8\uB9BC\uC774\uB2E4. \uD070 \uB098\uBB34\uB294 \uBB3C\uC744 \uBCF4\uCDA9\uD560 \uC218\uC6D0\uC9C0\uC640 \uD574\uC678\uAC00 \uD568\uAED8 \uC788\uC744 \uB54C\uB9CC \uCF1C\uB3C4 \uB41C\uB2E4. \uC54C\uB9DE\uC740 \uC791\uC740 \uC81C\uBC29\uC774 \uC0DD\uBA85\uC774\uB2E4. \uC81C\uBC29\uC774 \uC624\uB294 \uC2DC\uAE30\uAC00 \uACB0\uD63C\xB7\uC548\uC815\uC758 \uC2DC\uAE30\uB2E4. \uD070 \uC81C\uBC29\uC740 \uD759\uD0D5 \uB9AC\uC2A4\uD06C\uB85C \uAD00\uB9AC \uB300\uC0C1\uC774\uB2E4."
+              },
+              sources: [
+                "T07-214",
+                "T07-219",
+                "T07-220",
+                "T07-211",
+                "T07-213",
+                "T07-223",
+                "T07-224",
+                "T07-229"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            },
+            {
+              topic: "\uC774\uC131",
+              dayStem: "\u7678",
+              roles: [
+                "\uAD00\uC131",
+                "\uC7AC\uC131"
+              ],
+              stateElements: [
+                "\u571F",
+                "\u706B"
+              ],
+              states: {
+                tooMuch: "\uD070 \uC81C\uBC29\uACFC \uB9CC\uB098\uBA74 \uBB36\uC774\uACE0 \uD759\uD0D5\uC774 \uB41C\uB2E4. \uC218\uB7C9 \uBCF4\uCDA9(\uC1E0 \uC77C)\uC774 \uC808\uB300 \uD544\uC694\uD558\uB2E4. \uBD80\uB3D9\uC0B0 \uD589\uC6B4\uB3C4 \uC774 \uD569\uC5D0\uC11C \uC628\uB2E4. \uAC15\uD55C \uC5F4\uAE30\uB294 \uB098\uB97C \uB9D0\uB9B0\uB2E4. \uADF8\uB298(\uBB3C\uC744 \uB9CC\uB4DC\uB294 \uC1E0\uC758 \uD569)\uC774 \uC5C6\uC73C\uBA74 \uC7AC\uBB3C \uC55E\uC5D0\uC11C \uBB34\uB98E \uAFC7\uB294\uB2E4.",
+                tooLittle: "\uC81C\uBC29 \uC5C6\uC774 \uD758\uB7EC \uD754\uC801 \uC5C6\uC774 \uC0AC\uB77C\uC9C8 \uC218 \uC788\uB2E4. \uD574\uC678\xB7\uC678\uAD6D\uACC4\xB7\uC1E0 \uC77C\uB85C \uBB3C\uC744 \uCC44\uC6B0\uB294 \uCC98\uBC29\uC774 \uB9DE\uB2E4. \uC628\uAE30\uAC00 \uC5C6\uC5B4 \uC0DD\uBA85\uC744 \uAE30\uB974\uC9C0 \uBABB\uD55C\uB2E4.",
+                balance: "\uC54C\uB9DE\uC740 \uC791\uC740 \uC81C\uBC29\uC774 \uC0DD\uBA85\uC774\uB2E4. \uC81C\uBC29\uC774 \uC624\uB294 \uC2DC\uAE30\uAC00 \uACB0\uD63C\xB7\uC548\uC815\uC758 \uC2DC\uAE30\uB2E4. \uD070 \uC81C\uBC29\uC740 \uD759\uD0D5 \uB9AC\uC2A4\uD06C\uB85C \uAD00\uB9AC \uB300\uC0C1\uC774\uB2E4. \uC791\uC740 \uBE5B\uC740 \uC7AC\uBB3C\uC774\uC790 \uC815\uC2E0\uC138\uACC4\uC758 \uB3D9\uBC18\uC790\uB2E4. \uC778\uC7AC\uB97C \uD0A4\uC6CC \uAF43 \uD53C\uC6B0\uB294 \uACBD\uC601\uD615 \uAD6C\uC870\uC640 \uC798 \uB9DE\uB294\uB2E4."
+              },
+              sources: [
+                "T07-211",
+                "T07-213",
+                "T07-223",
+                "T07-224",
+                "T07-229",
+                "T07-215",
+                "T07-221",
+                "T07-222"
+              ],
+              unverified: false,
+              unverifiedSourceIds: []
+            }
+          ]
         },
         stems: {
           \u7532: {
@@ -12979,6 +13763,20 @@
         targetProfiles: SLOTS_SOURCE.targetProfiles || {},
         stems: {}
       };
+      SAJU_SLOTS.topicSections = (SLOTS_SOURCE.topicSections && SLOTS_SOURCE.topicSections.items ? SLOTS_SOURCE.topicSections.items : []).map((it) => ({
+        topic: it.topic,
+        dayStem: it.dayStem,
+        roles: it.roles.slice(),
+        stateElements: (it.stateElements || []).slice(),
+        states: {
+          tooMuch: it.states.tooMuch,
+          tooLittle: it.states.tooLittle,
+          balance: it.states.balance
+        },
+        sources: it.sources.slice(),
+        unverified: it.unverified === true,
+        unverifiedSourceIds: it.unverifiedSourceIds || []
+      }));
       Object.keys(SLOTS_SOURCE.stems).forEach((hanja) => {
         const data = SLOTS_SOURCE.stems[hanja];
         SAJU_SLOTS.stems[hanja] = {

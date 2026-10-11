@@ -28,8 +28,8 @@
 
 <section class="hero">
   <p class="eyebrow">열 개의 물상</p>
-  <h1 class="hero-line">나는 무엇으로<br>이루어져 있는가<span class="accent">.</span></h1>
-  <p class="hero-sub">생년월일에서 여덟 글자를 계산하고, 절기와 진태양시까지 그 계산 과정을 그대로 보여줍니다. SajuRoot는 자기이해를 위한 한국식 사주 읽기 도구입니다.</p>
+  <h1 class="hero-line" id="hero-title">나는 무엇으로<br>이루어져 있는가<span class="accent">.</span></h1>
+  <p class="hero-sub" id="hero-sub">생년월일에서 여덟 글자를 계산하고, 절기와 진태양시까지 그 계산 과정을 그대로 보여줍니다. SajuRoot는 자기이해를 위한 한국식 사주 읽기 도구입니다.</p>
   <a class="cta" id="cta-chart" href="chart.html" data-src-slot>무료로 내 패턴 보기</a>
 </section>
 
@@ -83,6 +83,8 @@
 
 </main>
 
+<!-- 주제별 진입 변형(?t=money|career|love): 데이터 주입 1파일. src 추적 인라인 스크립트와 독립 -->
+<script src="js/landing.js?v=20261011a"></script>
 <script>
 (function () {
   "use strict";
@@ -163,5 +165,6 @@
   }
 })();
 </script>
+<script src="js/streak.js?v=20261011a"></script>
 </body>
 </html>
