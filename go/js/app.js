@@ -118,14 +118,15 @@
     time: { key: "time", num: "Q07", title: "시간의 흐름은?" },
     dynamics: { key: "dynamics", num: "Q08", title: "내 글자들은 서로 어떻게 작동하나요?" },
     mind: { key: "mind", num: "Q09", title: "마음은 어떤가요?" },
-    relation: { key: "relation", num: "Q10", title: "다른 사람과 보기" }
+    relation: { key: "relation", num: "Q10", title: "다른 사람과 보기" },
+    ending: { key: "ending", num: "Q11", title: "마지막 한마디" }
   };
 
   /* 타겟 프로파일 상수(master-strategy §2-4 최소안). S1이 기본이고, 강조가 없으면
      기본 순서와 같다. CORE.view 등록이 이 선언보다 늦게 실행되지 않도록 상단에 둔다. */
   var DEFAULT_PROFILE_ID = "s1";
   var ACTIVE_PROFILE = null;   /* sectionAcc의 기본 펼침 판정에 쓰는 현재 프로파일 */
-  var DEFAULT_SECTION_ORDER = ["summary", "slot", "topics", "persona", "balance", "career", "danger", "time", "dynamics", "mind", "faq", "relation"];
+  var DEFAULT_SECTION_ORDER = ["summary", "slot", "topics", "persona", "balance", "career", "danger", "time", "dynamics", "mind", "faq", "relation", "ending"];
 
   var KIND_LABEL = {
     chung: "충", sanhap: "삼합", banhap: "반합", gonghyeop: "공협", banghap: "방합", yukhap: "육합"
@@ -815,6 +816,9 @@
         condition: b2.condition,
         slots: b2.slots.slice(),
         diagnosis: slotFill(b2.diagnosis, chart),
+        /* Q02 4단 확장(paid-reading-analysis §6.2): 확장된 일간만 필드가 있고, 없으면 줄 자체를 생략한다. */
+        confirmationQuestion: b2.confirmationQuestion ? slotFill(b2.confirmationQuestion, chart) : null,
+        shadow: b2.shadow ? slotFill(b2.shadow, chart) : null,
         prescription: slotPrescriptionText(b2.prescription, chart),
         sources: b2.source.slice()
       });
@@ -822,7 +826,9 @@
     return rows;
   }
 
-  /* 슬롯 리딩 섹션(Q02): 선택 가지 라벨 + 진단 + 처방 + 근거. 선택 0개면 안내 한 줄. */
+  /* 슬롯 리딩 섹션(Q02): 갈래마다 아코디언 1개, 안에 진단→확인 질문→그림자→처방 4단과 근거.
+     4단 블록(paid-reading-analysis §6.2) + 아코디언 기본 닫힘(§6.8 과유불급 대응)을 함께 유지한다.
+     선택 0개면 안내 한 줄. 확장 전 일간(확인 질문·그림자 미장착)은 진단→처방 2단으로 떨어진다. */
   function slotReadingSection(chart, preset) {
     var rows = preset || slotEngine(chart);
     var html = sectionOpen(SEC.slot);
@@ -831,12 +837,16 @@
       return html;
     }
     html += '<p class="lead-line">설계된 물상 갈래 중 이 명조에 해당하는 가지를 최대 두 개까지 읽습니다.</p>';
+    html += '<p class="lead-line">각 갈래는 진단, 확인 질문, 그림자, 처방 네 단으로 읽습니다.</p>';
     for (var i = 0; i < rows.length; i++) {
       var r = rows[i];
-      html += '<div class="slot-branch"><p class="sub-label">' + esc(r.stage + "단계 " + r.stageName + " · " + r.condition) + "</p>";
+      html += '<details class="slot-branch"><summary class="slot-head">' +
+        '<span class="slot-stage">' + esc(r.stage + "단계 " + r.stageName + " · " + r.condition) + "</span></summary>";
       html += '<p><span class="slot-k">진단</span> ' + esc(r.diagnosis) + "</p>";
+      if (r.confirmationQuestion) html += '<p><span class="slot-k">확인 질문</span> ' + esc(r.confirmationQuestion) + "</p>";
+      if (r.shadow) html += '<p><span class="slot-k">그림자</span> ' + esc(r.shadow) + "</p>";
       if (r.prescription) html += '<p><span class="slot-k">처방</span> ' + esc(r.prescription) + "</p>";
-      html += '<p class="gov">근거 ' + esc(r.sources.join(", ")) + "</p></div>";
+      html += '<p class="gov">근거 ' + esc(r.sources.join(", ")) + "</p></details>";
     }
     return html + "</section>";
   }
@@ -851,6 +861,14 @@
     { id: "job", label: "직업", roles: ["식상", "관성"] },
     { id: "love", label: "이성", roles: ["관성", "재성"] }
   ];
+
+  /* 고민 재귀(paid-reading-analysis §6.2-9): 주제 탭에서 고민을 문제 정의로 바꾸는 각도별 프레임.
+     문장 틀은 고정이고 물상 어휘만 쓴다(운세 어휘 0 · 이모지 0). */
+  var TOPIC_CONCERN_ANGLE = {
+    money: "돈의 언어로 바꾸면 새는 구멍과 담는 둑의 문제로 나뉩니다.",
+    job: "일의 언어로 바꾸면 땅의 크기와 씨앗의 문제로 나뉩니다.",
+    love: "관계의 언어로 바꾸면 흘려보낼 것과 담아 둘 것의 문제로 나뉩니다."
+  };
 
   function topicItemFor(dayHanja, topic) {
     var all = (SLOTS && SLOTS.topicSections) || [];
@@ -876,7 +894,7 @@
     return { status: VIEW.elementStatus(count), count: count, elementStates: found };
   }
 
-  function topicPanelHTML(chart, def, active) {
+  function topicPanelHTML(chart, def, active, concern) {
     var item = topicItemFor(chart.dayMaster.hanja, def.label);
     var html = '<div class="topic-panel" id="topic-panel-' + def.id + '" role="tabpanel" aria-labelledby="topic-tab-' + def.id + '" data-topic-panel="' + def.id + '"' + (active ? "" : " hidden") + ">";
     if (!item) {
@@ -884,6 +902,11 @@
       return html;
     }
     var st = topicState(chart, def.roles);
+    if (concern) {
+      /* 고민 재귀 각도 2(paid-reading-analysis §6.2-9): 주제 탭에서는 고민을 문제 정의로 수용한다.
+         훅(정체성 각도)·끝1(선언 각도)과 같은 문장을 재활용하지 않는다. */
+      html += '<p class="topic-concern">‘' + esc(concern) + '’라는 고민을 이 탭에서는 문제로 정의합니다. ' + esc(TOPIC_CONCERN_ANGLE[def.id] || "") + "</p>";
+    }
     for (var i = 0; i < st.elementStates.length; i++) {
       var es = st.elementStates[i];
       html += '<p class="estate-role">' + esc(VIEW.ROLE_DISPLAY[es.role]) + "(전통 용어: " + esc(es.role) + ")</p>";
@@ -897,7 +920,7 @@
     return html + "</div>";
   }
 
-  function topicReadingSection(chart) {
+  function topicReadingSection(chart, concern) {
     var html = sectionAcc(SEC.topics);
     html += '<p class="lead-line">슬롯 리딩을 돈, 직업, 이성 세 주제로 더 깊게 읽습니다. 각 주제의 기운 개수로 상태를 판정해 해당 문장을 보여줍니다.</p>';
     html += '<div class="topic-tabs" role="tablist" aria-label="주제 선택">';
@@ -910,9 +933,23 @@
     }
     html += "</div>";
     for (var j = 0; j < TOPIC_DEFS.length; j++) {
-      html += topicPanelHTML(chart, TOPIC_DEFS[j], j === 0);
+      html += topicPanelHTML(chart, TOPIC_DEFS[j], j === 0, concern);
     }
     return html + "</details>";
+  }
+
+  /* Q11 마지막 한마디(slots.json 끝1 · stems.json endingDeclaration).
+     §6.2-7: 물상 정체성 선언 → 오늘의 가장 작은 행동 → 재선언 3단. 고민 입력이 있으면
+     선언 각도로 한 줄을 더 건넨다(고민 재귀 각도 3). */
+  function endingSection(stem, concern) {
+    var html = sectionOpen(SEC.ending);
+    html += '<p class="lead-line">리딩을 오늘 실행할 한 걸음으로 닫는 한마디입니다.</p>';
+    html += '<div class="prose end-decl"><p>' + esc(stem.endingDeclaration) + "</p></div>";
+    if (concern) {
+      html += '<p class="end-concern">오늘의 한 걸음이 ‘' + esc(concern) + '’라는 고민의 첫 둑이 됩니다.</p>';
+    }
+    html += aggregateSrc([stem]);
+    return html + "</section>";
   }
 
   /* smoke.cjs 직접 검증용: 원국 판정 순수 함수를 뷰 레지스트리에 등록 */
@@ -921,6 +958,7 @@
   CORE.view.slotEngine = slotEngine;
   CORE.view.slotReadingSection = slotReadingSection;
   CORE.view.topicReadingSection = topicReadingSection;
+  CORE.view.endingSection = endingSection;
   CORE.view.resolveProfile = resolveProfile;
   CORE.view.orderedSections = orderedSections;
   CORE.view.DEFAULT_SECTION_ORDER = DEFAULT_SECTION_ORDER;
@@ -1576,6 +1614,7 @@
     }
     html += "</div></div>" +
       '<p class="catchphrase">' + esc(stem.catchphrase) + "</p>" +
+      (concern ? '<p class="concern-hook">‘' + esc(concern) + '’라는 고민은 성질을 고치는 일이 아니라, 당신이라는 물상이 어떤 자리에 뿌리내렸는지 읽는 일에서 시작합니다.</p>' : "") +
       '<h2 class="declaration">당신은 ' + esc(badge.name) + '입니다<span class="accent">.</span></h2>' +
       '<p class="one-liner">' + esc(badge.one) + "</p></article>";
 
@@ -1585,7 +1624,7 @@
     var secPairs = [
       { key: "summary", html: summarySection(chart, stem) },   /* Q01 한눈 요약 */
       { key: "slot", html: slotReadingSection(chart) },        /* Q02 슬롯 리딩(slots.json B 갈래 · 최대 2) */
-      { key: "topics", html: topicReadingSection(chart) },     /* Q02-1 주제별 깊이 읽기(slots.json topicSections · 탭 3) */
+      { key: "topics", html: topicReadingSection(chart, concern) },     /* Q02-1 주제별 깊이 읽기(slots.json topicSections · 탭 3) */
       { key: "persona", html: personaSection(stem) },          /* Q03 어떤 사람인가요? */
       { key: "balance", html: balanceSection(chart) },         /* Q04 무엇이 많고, 무엇이 부족한가요? */
       { key: "career", html: careerSection(stem) },            /* Q05 어떤 일이 어울리나요? */
@@ -1594,7 +1633,8 @@
       { key: "dynamics", html: dynamicsSection(chart) },       /* Q08 내 글자들은 서로 어떻게 작동하나요? */
       { key: "mind", html: ansimSection(chart) },              /* Q09 마음은 어떤가요?(조건부) */
       { key: "faq", html: faqSection() },                      /* FAQ 자주 묻는 질문(닫힘 details 1개) */
-      { key: "relation", html: relationSection() }             /* Q10 다른 사람과 보기 */
+      { key: "relation", html: relationSection() },             /* Q10 다른 사람과 보기 */
+      { key: "ending", html: endingSection(stem, concern) }    /* Q11 마지막 한마디(stems.json endingDeclaration) */
     ];
     var ordered = orderedSections(secPairs, ACTIVE_PROFILE);
     for (var oi = 0; oi < ordered.length; oi++) html += ordered[oi].html;

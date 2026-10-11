@@ -527,3 +527,40 @@ details.fold.faq .fold-body { margin-top: 0.6rem; }
 .topic-state { margin-top: 0.45rem; font-size: 0.8rem; color: var(--color-ink-soft); }
 .topic-state .state-chip { margin-right: 0.35rem; }
 .topic-text { color: var(--color-ink); margin-top: 0.3rem; line-height: 1.75; }
+
+/* Q02 4단 갈래 아코디언(paid-reading-analysis §6.2): 진단→확인 질문→그림자→처방.
+   아코디언 기본 닫힘(§6.8 과유불급 대응). 4단 라벨은 계산 근거 라인과 같은 모노 톤. */
+details.slot-branch {
+  border: 1px solid var(--color-hairline); border-radius: 6px;
+  margin: 0.55rem 0 0; padding: 0 0.85rem;
+}
+details.slot-branch > summary.slot-head {
+  cursor: pointer; list-style: none; padding: 0.6rem 0;
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em;
+  color: var(--color-ink-soft);
+}
+details.slot-branch > summary.slot-head::-webkit-details-marker { display: none; }
+details.slot-branch > summary.slot-head::after { content: "+"; float: right; color: var(--color-ink-mute); }
+details.slot-branch[open] > summary.slot-head::after { content: "\2212"; }
+.slot-branch p { margin: 0.4rem 0; font-size: 0.9rem; line-height: 1.78; color: var(--color-ink); }
+.slot-k {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em;
+  color: var(--color-ink-mute); border: 1px solid var(--color-hairline); border-radius: 4px;
+  padding: 0.12rem 0.4rem; margin-right: 0.45rem; vertical-align: 0.12em; white-space: nowrap;
+}
+
+/* 고민 입력 재귀 3각도(§6.2-9): 훅(정체성) · 주제 탭(문제 정의) · 끝1(선언) */
+.concern-hook {
+  font-size: 0.85rem; color: var(--color-ink-soft);
+  margin: 0.55rem 0 0; padding: 0.35rem 0 0.35rem 0.9rem;
+  border-left: 1px solid var(--color-hairline);
+}
+.topic-concern {
+  font-size: 0.85rem; color: var(--color-ink-soft);
+  margin: 0 0 0.55rem; padding: 0.45rem 0.6rem;
+  background: var(--color-bg-soft, #F6F4EF); border-radius: 6px;
+}
+.end-concern { font-size: 0.85rem; color: var(--color-ink-soft); margin: 0.55rem 0 0; }
+
+/* Q11 마지막 한마디(slots.json 끝1 · endingDeclaration 3단 선언) */
+.end-decl p { font-size: 0.98rem; font-weight: 500; line-height: 1.85; }
