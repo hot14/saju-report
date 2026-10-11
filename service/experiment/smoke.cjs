@@ -330,6 +330,12 @@ eq(doc.el("f-p-year").value, "1997", "칩 클릭 연도 자동 입력");
 eq(doc.el("f-p-month").value, "9", "칩 클릭 월 자동 입력");
 eq(doc.el("f-p-day").value, "1", "칩 클릭 일 자동 입력");
 
+/* 고민 입력 재귀 케이스(relHtml 캡처 뒤에 실행 — render가 rel-result를 초기화하기 때문):
+   폼 고민 한 줄이 훅(정체성)·주제 탭(문제 정의)·끝1(선언) 3각도로 돌아오는지 */
+doc.el("f-concern").value = "퇴사 후 무엇을 해야 할지 모르겠어요";
+const html4 = runCase("1985-03-21", "14:30", "male");
+doc.el("f-concern").value = "";
+
 // ---------------------------------------------------------------------------
 // 신규: 슬롯 리딩 엔진 (slots.json B 갈래 · wayfinder slot-system-design §4)
 // ---------------------------------------------------------------------------
@@ -399,12 +405,48 @@ eq(VIEW.orderedSections(fakePairs, TP.s3).map((p) => p.key).join(",").indexOf("m
 
 /* ④ 콘텐츠 대응 검사가 슬롯 문장도 커버(slots.json 원문이므로 자동 통과) */
 
+/* Q02 4단 확장(업그레이드): 갑목 29갈래 4단 필드 + 총량 280~380자 + 렌더 4단 순서 실측 */
+const gabB = global.SAJU_SLOTS.stems["甲"].B;
+if (gabB.length !== 29) fail("갑목 B 갈래 29개 아님: " + gabB.length);
+for (const b of gabB) {
+  if (!b.confirmationQuestion || !b.shadow) fail("갑목 " + b.code + " 4단 필드(확인 질문·그림자) 누락");
+  if (b.confirmationQuestion.indexOf("혹시") !== 0) fail("갑목 " + b.code + " 확인 질문이 추정형('혹시')으로 시작하지 않음");
+  if (b.diagnosis.indexOf("\u2014") !== -1 || b.shadow.indexOf("\u2014") !== -1 || b.confirmationQuestion.indexOf("\u2014") !== -1) {
+    fail("갑목 " + b.code + " 새 문장에 em-dash 포함");
+  }
+  const totalLen = (b.diagnosis + b.confirmationQuestion + b.shadow + (b.prescription || "")).length;
+  if (totalLen < 280 || totalLen > 380) fail("갑목 " + b.code + " 4단 총량 " + totalLen + "자(280~380 이탈)");
+}
+const gabQ = gabB.find((b) => b.code === "갑1-라");
+if (!gabQ.shadow.includes("떠 있는 것이 기본값")) fail("갑목 갑1-라 그림자 실측 문장 불일치(원문 복제 점검용 표식)");
+
+/* 캐치프레이즈 확장(90~130자 반전형) + endingDeclaration(80~110자 3단) 10일간 */
+for (const st of CORE.STEMS) {
+  const cLen = (st.catchphrase || "").length;
+  const eLen = (st.endingDeclaration || "").length;
+  if (cLen < 90 || cLen > 130) fail(st.stemHanja + " catchphrase " + cLen + "자(90~130 이탈)");
+  if (eLen < 80 || eLen > 110) fail(st.stemHanja + " endingDeclaration " + eLen + "자(80~110 이탈)");
+  if (!st.catchphrase.includes("겉으로") || !st.catchphrase.includes("계산해 보면")) fail(st.stemHanja + " catchphrase 반전형(겉→계산된 속) 구조 누락");
+  if (st.endingDeclaration.split(".").filter((x) => x.trim()).length < 3) fail(st.stemHanja + " endingDeclaration 3단(선언→행동→재선언) 구조 누락");
+  if (!/(오늘은|오늘,)/.test(st.endingDeclaration)) fail(st.stemHanja + " endingDeclaration 오늘의 작은 행동 단계 누락");
+}
+
+/* 렌더 4단 순서 실측: 갑목 케이스(gapSlotChart)에서 진단→확인 질문→그림자→처방 순서 확인 */
+const gapSlotHtml = VIEW.slotReadingSection(gapSlotChart);
+if ((gapSlotHtml.match(/<details class="slot-branch">/g) || []).length !== 2) fail("갑목 케이스 슬롯 갈래 아코디언 2개 아님");
+if (gapSlotHtml.indexOf('<span class="slot-k">확인 질문</span>') === -1 || gapSlotHtml.indexOf('<span class="slot-k">그림자</span>') === -1) fail("갑목 케이스 4단 라벨(확인 질문·그림자) 미노출");
+if (!(gapSlotHtml.indexOf("진단") < gapSlotHtml.indexOf("확인 질문") && gapSlotHtml.indexOf("확인 질문") < gapSlotHtml.indexOf("그림자") && gapSlotHtml.indexOf("그림자") < gapSlotHtml.indexOf("처방"))) {
+  fail("갑목 케이스 4단 순서(진단→확인 질문→그림자→처방) 이상");
+}
+if (/<details class="slot-branch" open>/.test(gapSlotHtml)) fail("갈래 아코디언이 기본 열림");
+
 /* 렌더: 슬롯 리딩 섹션이 한눈 요약(Q01) 뒤에 붙고, 근거·처방이 노출된다 */
 if (html1.indexOf('<p class="sec-label">Q02</p><h2 class="sec-q">슬롯 리딩</h2>') === -1) fail("슬롯 리딩 섹션(Q02) 미노출");
 if (!(html1.indexOf("한눈 요약") < html1.indexOf("슬롯 리딩") && html1.indexOf("슬롯 리딩") < html1.indexOf("어떤 사람인가요?"))) {
   fail("슬롯 리딩 섹션 위치 이상(한눈 요약 뒤, 어떤 사람인가요? 앞)");
 }
-if (html1.indexOf("5단계 같은 흙 · 작은 땅 둘") === -1) fail("기토 슬롯 가지 라벨 누락");
+if (html1.indexOf('5단계 같은 흙 · 작은 땅 둘') === -1) fail("기토 슬롯 가지 라벨 누락");
+if (html1.indexOf('<details class="slot-branch"><summary class="slot-head"><span class="slot-stage">5단계 같은 흙 · 작은 땅 둘</span>') === -1) fail("기토 슬롯 갈래 아코디언 라벨 누락");
 if (html1.indexOf("<span class=\"slot-k\">진단</span>") === -1 || html1.indexOf("<span class=\"slot-k\">처방</span>") === -1) fail("슬롯 진단·처방 라벨 누락");
 if (html1.indexOf("근거 R2.GI.060") === -1) fail("기토 슬롯 근거(source) 누락");
 
@@ -515,6 +557,9 @@ const DECLARED = [
   "이 명조는 설계된 갈래에 해당하지 않는 구성입니다.",
   // 주제별 깊이 읽기(Q02-1) 중립 리드 문구
   "슬롯 리딩을 돈, 직업, 이성 세 주제로 더 깊게 읽습니다. 각 주제의 기운 개수로 상태를 판정해 해당 문장을 보여줍니다.",
+  // Q02 4단 확장 · Q11 마지막 한마디 중립 리드 문구(업그레이드)
+  "각 갈래는 진단, 확인 질문, 그림자, 처방 네 단으로 읽습니다.",
+  "리딩을 오늘 실행할 한 걸음으로 닫는 한마디입니다.",
   // 고지·알림·이메일 카피
   "시각 미상으로 제외",
   "시각 미상은 정오 가정으로 계산되어 대운 시작 나이에 오차가 있을 수 있습니다.",
@@ -645,6 +690,11 @@ const TEMPLATES = [
   /^긴장이 움직임을 만드는 조합$/,
   /^또는 아이돌 생일로 빠르게$/,
   /^생일 출처: 공개 프로필$/,
+  // 고민 입력 재귀 3각도(paid-reading-analysis §6.2-9 · 각도별 프레임 · 사용자 입력은 ‘’ 안에만 들어감)
+  /^이 리딩은 ‘.+’[을를] 기준으로 읽었습니다\.$/,
+  /^‘.+’라는 고민은 성질을 고치는 일이 아니라, 당신이라는 물상이 어떤 자리에 뿌리내렸는지 읽는 일에서 시작합니다\.$/,
+  /^‘.+’라는 고민을 이 탭에서는 문제로 정의합니다\. .+ 나뉩니다\.$/,
+  /^오늘의 한 걸음이 ‘.+’라는 고민의 첫 둑이 됩니다\.$/
 ];
 
 /* 번들 뷰 함수가 JSON 조각+고정 연결어로 조립하는 문장형 */
@@ -712,6 +762,7 @@ function checkContentCorrespondence(label, html) {
 checkContentCorrespondence("1985 남자", html1WithRel);
 checkContentCorrespondence("1987 여자(DST)", html2);
 checkContentCorrespondence("시각 미상", html3);
+checkContentCorrespondence("고민 재귀", html4);
 checkContentCorrespondence("관계 궁합 甲己 합", relA);
 checkContentCorrespondence("관계 궁합 丑未 충", relD);
 
@@ -739,7 +790,8 @@ const SEC_TITLES = {
   s7: "시간의 흐름은?",
   s8: "내 글자들은 서로 어떻게 작동하나요?",
   s9: "마음은 어떤가요?",
-  s10: "다른 사람과 보기"
+  s10: "다른 사람과 보기",
+  s11: "마지막 한마디"
 };
 
 function secQuestions(html) {
@@ -756,7 +808,7 @@ function checkSectionOrder(label, html, chart) {
     SEC_TITLES.s6, SEC_TITLES.s7, SEC_TITLES.s8
   ];
   if (VIEW.matchAnsim(chart).length) expected.push(SEC_TITLES.s9);
-  expected.push(SEC_TITLES.s10);
+  expected.push(SEC_TITLES.s10, SEC_TITLES.s11);
   const actual = secQuestions(html);
   eq(JSON.stringify(actual), JSON.stringify(expected), `섹션 구조 스냅샷(${label})`);
   /* details: 변화 규칙(S8 안) + 계산 과정·용어집(S12, 순서 고정) */
@@ -767,12 +819,14 @@ function checkSectionOrder(label, html, chart) {
   if (calc === -1 || gloss === -1) fail(`S12 details 2종 누락(${label})`);
   if (!(calc < gloss)) fail(`S12 details 순서 이상(${label}): 계산 과정 → 용어집`);
   if (!(s8fold < calc)) fail(`S8 변화 규칙 details가 S12보다 앞에 와야 함(${label})`);
-  /* 아코디언 전환(Q03·Q04·Q05·Q07·Q08 + 조건부 Q09 · 축5 채택): fold details 4종 + 섹션 아코디언 수.
+  /* 아코디언 전환(Q03·Q04·Q05·Q07·Q08 + 조건부 Q09 · 축5 채택): fold details 4종 + 섹션 아코디언 수 +
+     Q02 갈래 아코디언(업그레이드: 갈래당 details 1개, 기본 닫힘).
      아코디언은 기본 닫힘( open 없음). 한눈 요약(Q01)·슬롯 리딩(Q02)·조심할 신호(Q06)는 plain section(열림 유지).
      Q02-1 주제별 깊이 읽기는 아코디언 1개가 추가돼 기준치가 5가 됐다. */
   const accCount = 5 + (VIEW.matchAnsim(chart).length ? 1 : 0);
+  const slotBranches = VIEW.slotEngine(chart).length;
   const gotDetails = (html.match(/<details/g) || []).length;
-  if (gotDetails !== 5 + accCount) fail(`details 개수 ${5 + accCount} 아님(${label}): ` + gotDetails);
+  if (gotDetails !== 5 + accCount + slotBranches) fail(`details 개수 ${5 + accCount + slotBranches} 아님(${label}): ` + gotDetails);
   if (/<details class="sec acc" open>/.test(html)) fail(`아코디언 섹션이 기본 열림(${label})`);
   if (html.indexOf('<details class="sec acc"><summary class="acc-head"><span class="sec-label">Q03</span><h2 class="sec-q">어떤 사람인가요?</h2></summary>') === -1) fail(`Q03 아코디언 전환 누락 또는 기본 열림(${label})`);
   for (const plainNum of ["Q01", "Q02", "Q06"]) {
@@ -795,6 +849,7 @@ function checkSectionOrder(label, html, chart) {
 checkSectionOrder("1985 남자", html1, fromBundle);
 checkSectionOrder("1987 여자(DST)", html2, dstCase);
 checkSectionOrder("시각 미상", html3, noHour);
+checkSectionOrder("고민 재귀", html4, fromBundle);
 
 // ---------------------------------------------------------------------------
 // 신규: 용어집 커버리지 (노출 전문 용어 ⊆ S12 용어집)
@@ -845,9 +900,22 @@ if (html1.indexOf('class="sec-label">서머타임 보정') !== -1) fail("1985 �
 if (html1.indexOf('class="luck-now"') === -1) fail("1985 남자: 대운 현재 구간 강조 누락");
 if (html1.indexOf("지금은 ") === -1 || !/지금은 \d+구간입니다\./.test(html1)) fail("1985 남자: '지금은 N구간입니다' 리드 문구 누락");
 
-/* 작업1: 캐치프레이즈 노출 (기토 기토 己 catchphrase · 일간 배지 아래) */
-if (html1.indexOf("당신의 무기는 심으면 살리는 다정함이에요.") === -1) fail("1985 남자: 결과 카드 헤더 캐치프레이즈 누락");
+/* 작업1: 캐치프레이즈 노출 (일간 배지 아래 · 확장판 90~130자 반전형 서사로 교체됨) */
+if (html1.indexOf(CORE.STEMS.find((s) => s.stemHanja === fromBundle.dayMaster.hanja).catchphrase) === -1) fail("1985 남자: 결과 카드 헤더 캐치프레이즈 누락");
 if (!html2.includes(CORE.STEMS.find((s) => s.stemHanja === dstCase.dayMaster.hanja).catchphrase)) fail("1987 여자: 캐치프레이즈 누락");
+
+/* 업그레이드: 고민 입력 재귀 3각도(훅·주제 탭·끝1) + Q11 마지막 한마디 */
+if (html4.indexOf('class="concern-hook"') === -1) fail("고민 재귀: 훅 각도(정체성 재해석) 미노출");
+if ((html4.match(/class="topic-concern"/g) || []).length !== 3) fail("고민 재귀: 주제 탭 각도(문제 정의) 3패널 아님");
+if (html4.indexOf('class="end-concern"') === -1) fail("고민 재귀: 끝1 각도(선언) 미노출");
+if ((html4.match(/‘퇴사 후 무엇을 해야 할지 모르겠어요’라는 고민/g) || []).length !== 5) {
+  fail("고민 재귀: 고민 문구 5회(훅1+탭3+끝1) 아님: " + (html4.match(/‘퇴사 후 무엇을 해야 할지 모르겠어요’라는 고민/g) || []).length);
+}
+if (html1.indexOf('class="concern-hook"') !== -1) fail("고민 미입력 케이스에 재귀 문구 노출됨");
+const endStem1 = CORE.STEMS.find((s) => s.stemHanja === fromBundle.dayMaster.hanja);
+if (html1.indexOf('<p class="sec-label">Q11</p><h2 class="sec-q">마지막 한마디</h2>') === -1) fail("Q11 마지막 한마디 섹션 미노출");
+if (html1.indexOf(endStem1.endingDeclaration) === -1) fail("기토 endingDeclaration 미노출");
+if (html3.indexOf(CORE.STEMS.find((s) => s.stemHanja === noHour.dayMaster.hanja).endingDeclaration) === -1) fail("시각 미상 endingDeclaration 미노출");
 
 /* 작업2: 대운 구간 서사 (2종 템플릿 · 천간·지지 역할 판정 · 현재 구간 지금 칩) */
 const narrRe = /<p class="luck-narr">[\s\S]*?<\/p>/g;
@@ -872,7 +940,7 @@ const FORBIDDEN = [
   "운명", "운세", "점술", "숙명", "천명", "포축", "천생연분", "영험", "신비한",
   "십신", "격국", "용신", "fortune", "destiny", "fate", "the stars say"
 ];
-for (const html of [html1WithRel, html2, html3]) {
+for (const html of [html1WithRel, html2, html3, html4]) {
   const vis = html.replace(/<details class="fold[\s\S]*?<\/details>/g, "").split(POLICY_BOUNDARY).join("").toLowerCase();
   if (html.indexOf("\u2014") !== -1 || html.indexOf("\u2013") !== -1) fail("em-dash(en/em dash) 노출");
   for (const word of FORBIDDEN) {
@@ -898,6 +966,7 @@ console.log(`  공망=${fromBundle.voidBranches.join("·")} / 관계(기토×임
 console.log(`  DST(1987-08-28 09:50)=${dstCase.fourPillarsHanja} · 되돌림 60분 · 고지+표 행 확인`);
 console.log(`  [일관성 검증] 콘텐츠 대응=5케이스 PASS(${ALLOWED.length}개 콘텐츠 문장 대조 · 관계 甲己·丑未충 포함) / 섹션 스냅샷=3케이스 PASS / 용어집 커버리지=${REQUIRED_TERMS.length}용어 PASS / FAQ 5문항+닫힘 PASS`);
 console.log(`  [보완 작업] 캐치프레이즈 노출 PASS / 대운 서사 10구간×2케이스(살림·누름 템플릿) PASS / iframe POST(entry.NNN) PASS`);
+console.log(`  [리딩 업그레이드] 갑목 29갈래 4단(총량 280~380) PASS / 캐치프레이즈 10건 90~130자·endingDeclaration 10건 80~110자 PASS / Q02 갈래 아코디언+4단 순서 PASS / 고민 재귀 3각도 PASS / Q11 마지막 한마디 PASS`);
 console.log(`  [S10 풀 궁합] 4단 카드(상대 일간·관계 서사·지지 궁합·오행 보완) 3+1케이스 PASS(甲己 합·乙庚 합+酉辰 육합·庚辰×壬子 반합·丑未 충) / 아이돌 칩 10개+클릭 자동입력 PASS`);
 console.log(`  [슬롯 리딩] Q02 섹션 PASS / 기토=${slotMe1.map((r) => r.code).join("+")} / 갑목=${slotGap.map((r) => r.code).join("+")}+戊=${slotMu.map((r) => r.code).join("+")} / 재현성·조건매핑 3건·미적용 4건·0갈래 경로 PASS`);
 console.log(`  [검증 모드] {{FORM_ENDPOINT}} 토큰 유지 · mailto 폴백 · src 추적(entry.NNN) · 금지어 0 · em-dash 0 · details 밖 CR/AP 0`);

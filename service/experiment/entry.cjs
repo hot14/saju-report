@@ -37,6 +37,7 @@ const KEEP_FIELDS = [
   "element",
   "yinyang",
   "catchphrase",
+  "endingDeclaration",
   "nature",
   "metaphor",
   "coreTraits",
@@ -252,6 +253,10 @@ Object.keys(SLOTS_SOURCE.stems).forEach((hanja) => {
       condition: b.condition,
       slots: b.slots.slice(),
       diagnosis: b.diagnosis,
+      /* Q02 4단 확장(paid-reading-analysis §6.2): 갑목부터 순차 확장. 미확장 일간은 undefined로 내려가고
+         app.js는 필드가 있을 때만 확인 질문·그림자 줄을 그린다. */
+      confirmationQuestion: b.confirmationQuestion,
+      shadow: b.shadow,
       prescription: b.prescription,
       source: b.source.slice(),
     })),
