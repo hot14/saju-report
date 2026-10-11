@@ -30,7 +30,12 @@
  * 1) 유입 경로 추적: URL 쿼리 src를 읽어 localStorage와 폼 숨은 필드에 기록
  * 2) 생년월일 폼 처리: 카피덱 v2-KR 문구로 검증 (성별은 선택, 대운 표시용)
  * 3) computeChart + CORE.view(원국 판정 순수 함수)로 전체 섹션 렌더
- * 4) 관계 읽기: 상대 생년월일 입력, 화면 안에서만 계산하고 저장하지 않음
+ * 4) 관계 읽기(풀 궁합 4단 카드): 상대 생년월일 입력, 화면 안에서만 계산하고
+ *    저장하지 않음. ①관계 서사(dayStemVsStems 규칙 문장 재구성 · 2인칭 서사 1줄
+ *    + 규칙 원문) ②지지 궁합(양쪽 일지 짝: 육합·반합=잘 흐르는 조합, 충=긴장이
+ *    움직임을 만드는 조합, branchDynamics 규칙 문장 1줄) ③오행 보완(기존
+ *    태극성취 로직 유지 + 내 빈 오행 칩 첫 줄 강조). 입력폼 위 아이돌 생일
+ *    프리셋 칩 10개(이름·생일 공개 사실만, honbit-archive/data/idols.json 참조).
  * 5) 결과 하단 이메일 수집: Google Form formResponse로 숨은 iframe POST(엔드포인트
  *    미설정 시 기존 mailto 폴백 안내 유지)
  *
@@ -84,11 +89,28 @@
   /* 오행 상태 칩: 전문 용어(과다·조화·과소) 대신 일반 문구 */
   var STATUS_CHIP = { tooMuch: "많음", balance: "적당함", tooLittle: "없음" };
 
+  /* K-pop 아이돌 생일 프리셋(honbit-archive/data/idols.json 참조).
+     이름·생년월일 공개 사실만 쓰고, 칩 클릭 시 상대 입력폼을 채운다.
+     일간 10종이 한 명씩 대표되도록 골랐다. 생일 출처: 공개 프로필. */
+  var IDOL_CHIPS = [
+    { name: "정국", group: "방탄소년단", y: "1997", m: "9", d: "1" },
+    { name: "뷔", group: "방탄소년단", y: "1995", m: "12", d: "30" },
+    { name: "진", group: "방탄소년단", y: "1992", m: "12", d: "4" },
+    { name: "RM", group: "방탄소년단", y: "1994", m: "9", d: "12" },
+    { name: "지민", group: "방탄소년단", y: "1995", m: "10", d: "13" },
+    { name: "제니", group: "블랙핑크", y: "1996", m: "1", d: "16" },
+    { name: "리사", group: "블랙핑크", y: "1997", m: "3", d: "27" },
+    { name: "카리나", group: "에스파", y: "2000", m: "4", d: "11" },
+    { name: "태양", group: "빅뱅", y: "1988", m: "5", d: "18" },
+    { name: "우영", group: "2PM", y: "1989", m: "4", d: "30" }
+  ];
+
   /* 섹션 번호(Q01~Q10)와 질문 제목. smoke.cjs 섹션 구조 스냅샷이 이 순서를 검증한다.
      Q02 슬롯 리딩은 slots.json B 갈래 트리(wayfinder slot-system-design §4)의 출력이다. */
   var SEC = {
     summary: { key: "summary", num: "Q01", title: "한눈 요약" },
     slot: { key: "slot", num: "Q02", title: "슬롯 리딩" },
+    topics: { key: "topics", num: "Q02-1", title: "주제별 깊이 읽기" },
     persona: { key: "persona", num: "Q03", title: "어떤 사람인가요?" },
     balance: { key: "balance", num: "Q04", title: "무엇이 많고, 무엇이 부족한가요?" },
     career: { key: "career", num: "Q05", title: "어떤 일이 어울리나요?" },
@@ -103,7 +125,7 @@
      기본 순서와 같다. CORE.view 등록이 이 선언보다 늦게 실행되지 않도록 상단에 둔다. */
   var DEFAULT_PROFILE_ID = "s1";
   var ACTIVE_PROFILE = null;   /* sectionAcc의 기본 펼침 판정에 쓰는 현재 프로파일 */
-  var DEFAULT_SECTION_ORDER = ["summary", "slot", "persona", "balance", "career", "danger", "time", "dynamics", "mind", "faq", "relation"];
+  var DEFAULT_SECTION_ORDER = ["summary", "slot", "topics", "persona", "balance", "career", "danger", "time", "dynamics", "mind", "faq", "relation"];
 
   var KIND_LABEL = {
     chung: "충", sanhap: "삼합", banhap: "반합", gonghyeop: "공협", banghap: "방합", yukhap: "육합"
@@ -819,11 +841,86 @@
     return html + "</section>";
   }
 
+  /* Q02-1 주제별 깊이 읽기(slots.json topicSections · 일간 10 × 주제 3 = 30항목).
+   * 문장은 relations.json dayStemVsElements 원문의 선별·재배치(돈=재성, 직업=식상·관성,
+   * 이성=관성·재성)이고, 상태 판정은 차트 오행 집계로 한다. 대상 역할 오행의 개수 합계를
+   * elementStatus에 그대로 통과시킨다(Q04 지형도와 같은 임계값: 3 이상 과다, 0 과소, 나머지 조화).
+   * 주제 탭 3개(돈·직업·이성)는 버튼 탭이며 기본 표시는 돈 탭이다. */
+  var TOPIC_DEFS = [
+    { id: "money", label: "돈", roles: ["재성"] },
+    { id: "job", label: "직업", roles: ["식상", "관성"] },
+    { id: "love", label: "이성", roles: ["관성", "재성"] }
+  ];
+
+  function topicItemFor(dayHanja, topic) {
+    var all = (SLOTS && SLOTS.topicSections) || [];
+    for (var i = 0; i < all.length; i++) {
+      if (all[i].dayStem === dayHanja && all[i].topic === topic) return all[i];
+    }
+    return null;
+  }
+
+  function topicState(chart, roles) {
+    var states = VIEW.elementStates(chart);
+    var count = 0;
+    var found = [];
+    for (var i = 0; i < roles.length; i++) {
+      for (var j = 0; j < states.length; j++) {
+        if (states[j].role === roles[i]) {
+          count += states[j].count;
+          found.push(states[j]);
+          break;
+        }
+      }
+    }
+    return { status: VIEW.elementStatus(count), count: count, elementStates: found };
+  }
+
+  function topicPanelHTML(chart, def, active) {
+    var item = topicItemFor(chart.dayMaster.hanja, def.label);
+    var html = '<div class="topic-panel" id="topic-panel-' + def.id + '" role="tabpanel" aria-labelledby="topic-tab-' + def.id + '" data-topic-panel="' + def.id + '"' + (active ? "" : " hidden") + ">";
+    if (!item) {
+      html += "</div>";
+      return html;
+    }
+    var st = topicState(chart, def.roles);
+    for (var i = 0; i < st.elementStates.length; i++) {
+      var es = st.elementStates[i];
+      html += '<p class="estate-role">' + esc(VIEW.ROLE_DISPLAY[es.role]) + "(전통 용어: " + esc(es.role) + ")</p>";
+    }
+    var roleNames = [];
+    for (var k = 0; k < st.elementStates.length; k++) roleNames.push(st.elementStates[k].role);
+    html += '<p class="topic-state"><span class="state-chip state-' + st.status + '">' + esc(STATUS_CHIP[st.status]) + "</span> " +
+      esc(roleNames.join(" + ")) + " 기운 " + st.count + "개</p>";
+    html += '<p class="topic-text">' + esc(item.states[st.status] || "") + "</p>";
+    html += aggregateSrc([item]);
+    return html + "</div>";
+  }
+
+  function topicReadingSection(chart) {
+    var html = sectionAcc(SEC.topics);
+    html += '<p class="lead-line">슬롯 리딩을 돈, 직업, 이성 세 주제로 더 깊게 읽습니다. 각 주제의 기운 개수로 상태를 판정해 해당 문장을 보여줍니다.</p>';
+    html += '<div class="topic-tabs" role="tablist" aria-label="주제 선택">';
+    for (var i = 0; i < TOPIC_DEFS.length; i++) {
+      var def = TOPIC_DEFS[i];
+      var active = i === 0;
+      html += '<button type="button" class="topic-tab' + (active ? " on" : "") + '" id="topic-tab-' + def.id +
+        '" role="tab" aria-selected="' + (active ? "true" : "false") + '" aria-controls="topic-panel-' + def.id +
+        '" data-topic-tab="' + def.id + '">' + esc(def.label) + "</button>";
+    }
+    html += "</div>";
+    for (var j = 0; j < TOPIC_DEFS.length; j++) {
+      html += topicPanelHTML(chart, TOPIC_DEFS[j], j === 0);
+    }
+    return html + "</details>";
+  }
+
   /* smoke.cjs 직접 검증용: 원국 판정 순수 함수를 뷰 레지스트리에 등록 */
   CORE.view.slotTable = slotTable;
   CORE.view.slotConditionEval = slotConditionEval;
   CORE.view.slotEngine = slotEngine;
   CORE.view.slotReadingSection = slotReadingSection;
+  CORE.view.topicReadingSection = topicReadingSection;
   CORE.view.resolveProfile = resolveProfile;
   CORE.view.orderedSections = orderedSections;
   CORE.view.DEFAULT_SECTION_ORDER = DEFAULT_SECTION_ORDER;
@@ -1143,6 +1240,16 @@
     html += '<p class="exp-chip">실험 기능</p>';
     html += '<p class="lead-line">상대 생년월일을 넣으면 두 일간의 관계를 읽어줍니다. ' +
       "상대 생년월일은 화면에서만 쓰이며 저장하지 않습니다.</p>";
+    /* 아이돌 생일 프리셋: 이름·생년월일 공개 사실만 사용(idols.json 참조). */
+    html += '<p class="idol-label">또는 아이돌 생일로 빠르게</p>';
+    html += '<div class="idol-chips" id="idol-chips" role="group" aria-label="아이돌 생일 프리셋">';
+    for (var ic = 0; ic < IDOL_CHIPS.length; ic++) {
+      var idol = IDOL_CHIPS[ic];
+      html += '<button type="button" class="idol-chip" data-y="' + idol.y + '" data-m="' + idol.m +
+        '" data-d="' + idol.d + '" title="' + esc(idol.group) + '">' + esc(idol.name) + "</button>";
+    }
+    html += "</div>";
+    html += '<p class="gov">생일 출처: 공개 프로필</p>';
     html += '<form id="rel-form" class="form rel-form" novalidate>' +
       '<div class="date-row" role="group" aria-label="상대 생년월일">' +
       '<div class="date-cell"><label for="f-p-year">상대 연도</label>' +
@@ -1184,6 +1291,63 @@
       }
       outEl.innerHTML = relationResultHTML(chart, partner);
     });
+    /* 아이돌 프리셋 칩: 클릭 시 상대 생년월일 입력폼을 채운다(제출은 사용자가). */
+    var chipWrap = document.getElementById("idol-chips");
+    if (chipWrap && typeof chipWrap.addEventListener === "function") {
+      chipWrap.addEventListener("click", function (ev) {
+        var t = ev && ev.target;
+        if (!t || typeof t.getAttribute !== "function" || t.className !== "idol-chip") return;
+        var cy = t.getAttribute("data-y"), cm = t.getAttribute("data-m"), cd = t.getAttribute("data-d");
+        if (!cy || !cm || !cd) return;
+        document.getElementById("f-p-year").value = cy;
+        document.getElementById("f-p-month").value = cm;
+        document.getElementById("f-p-day").value = cd;
+        var chipErr = document.getElementById("rel-error");
+        if (chipErr) chipErr.hidden = true;
+      });
+    }
+  }
+
+  /* 두 일지 짝 판정(dynamics.json branchDynamics 규칙).
+     충 6쌍 · 삼합 절반 8쌍(왕지 포함=반합) · 육합 실사용 2쌍(寅亥·辰酉)만 쓴다.
+     라벨·규칙 문장은 BRANCH_DYN(JSON) 그대로, 상태 라벨만 중립 문구로 띄운다. */
+  function branchPairReading(myBr, pBr) {
+    var BD = VIEW.BRANCH_DYN;
+    var chungDefs = [["寅申", "巳亥", 0], ["子午", "卯酉", 1], ["辰戌", "丑未", 2]];
+    var pair1 = myBr + pBr, pair2 = pBr + myBr;
+    for (var c = 0; c < chungDefs.length; c++) {
+      var def = chungDefs[c];
+      if (def[0] === pair1 || def[0] === pair2 || def[1] === pair1 || def[1] === pair2) {
+        return {
+          status: "긴장이 움직임을 만드는 조합",
+          pairLabel: myBr + pBr + " " + BD.chungs[def[2]].label,
+          text: BD.general.chungMeaning
+        };
+      }
+    }
+    for (var s = 0; s < BD.sanhabs.length; s++) {
+      var sh = BD.sanhabs[s];
+      if (sh.members.indexOf(myBr) > -1 && sh.members.indexOf(pBr) > -1) {
+        var withCore = myBr === sh.core || pBr === sh.core;
+        return {
+          status: "잘 흐르는 조합",
+          pairLabel: myBr + pBr + " " + sh.element + (withCore ? " 반합" : " 공협"),
+          text: withCore ? "왕지 " + sh.core + "를 포함한 반합이다. " + sh.note
+            : "왕지 " + sh.core + "가 없어 왕지를 끌어오려는 공협 상태로 본다."
+        };
+      }
+    }
+    for (var y = 0; y < BD.yukhabs.pairs.length; y++) {
+      var yp = BD.yukhabs.pairs[y];
+      if ((myBr === yp.a && pBr === yp.b) || (myBr === yp.b && pBr === yp.a)) {
+        return { status: "잘 흐르는 조합", pairLabel: myBr + pBr + " 육합", text: BD.yukhabs.rule };
+      }
+    }
+    return {
+      status: "해당 없음",
+      pairLabel: "실사용 쌍 없음",
+      text: "두 일지는 실사용 합·충 쌍에 해당하지 않습니다."
+    };
   }
 
   function relationResultHTML(me, partner) {
@@ -1192,30 +1356,49 @@
     var combo = VIEW.dayMasterCombo(myDm.hanja, pDm.hanja);
     var rel = VIEW.DAY_VS_STEMS[myDm.hanja][pDm.hanja];
     var fill = VIEW.fillCheck(VIEW.elementCounts(me), VIEW.elementCounts(partner));
+    var brRead = branchPairReading(me.pillars.day.branch.hanja, partner.pillars.day.branch.hanja);
     var html = "";
 
-    /* 상대 일간 요약 */
+    /* 단1 상대 일간 요약 */
     html += '<div class="partner-card"><p class="rel-pos">상대 일간</p>' +
       '<p class="partner-dm"><span class="rel-hanja">' + esc(pDm.hanja) + "</span> " +
       esc(pDm.hangul + pDm.element) + " · " + esc(BADGE[pDm.hanja].name) + "</p>" +
       '<p class="gov">상대 여섯 글자 <span>' + esc(partner.fourPillarsHanja) + "</span> <span>시각 미입력이라 정오 가정</span></p></div>";
 
-    /* ① 두 일간 합 쌍 여부 */
+    /* 단2 관계 서사: dayStemVsStems 규칙 문장 재구성(2인칭 서사 1줄 + 규칙 원문).
+       합이면 천간합 nature 문장과 쌍·결과 오행 근거를 함께 보여준다. */
+    html += '<div class="rel-item"><p class="dyn-head"><span class="dyn-kind">관계 서사</span> ' +
+      (combo ? "일간 합 성립" : "천간합 없음") + "</p>" +
+      '<p class="rel-image">당신 두 사람은 ' + esc(rel.image) + "의 그림입니다.</p>" +
+      '<p class="estate-text">' + esc(rel.rule) + "</p>";
     if (combo) {
-      html += '<div class="rel-item"><p class="dyn-head"><span class="dyn-kind">일간 합</span> ' +
-        '<span class="dyn-pair">' + esc(combo.pairing) + '</span> · 만들어지는 오행 ' + esc(combo.resultElement) + "</p>" +
-        '<p class="estate-text">' + esc(combo.nature) + "</p></div>";
+      html += '<p class="estate-text">' + esc(combo.nature) + "</p>" +
+        '<p class="gov">일간 합 ' + esc(combo.pairing) + " · 만들어지는 오행 " + esc(combo.resultElement) + "</p>";
     } else {
-      html += '<div class="rel-item"><p class="dyn-head"><span class="dyn-kind">일간 합</span> 해당 없음</p>' +
-        '<p class="estate-text">두 일간 <span>' + esc(myDm.hanja) + '</span>, <span>' + esc(pDm.hanja) +
-        "</span> 조합은 다섯 천간합 쌍에 해당하지 않습니다.</p></div>";
+      html += '<p class="estate-text">두 일간 <span>' + esc(myDm.hanja) + '</span>, <span>' + esc(pDm.hanja) +
+        "</span> 조합은 다섯 천간합 쌍에 해당하지 않습니다.</p>";
     }
+    html += "</div>";
 
-    /* ② 내 일간 × 상대 일간 관계 규칙 */
-    html += '<div class="rel-item"><p class="rel-image">' + esc(rel.image) + "</p>" +
-      '<p class="estate-text">' + esc(rel.rule) + "</p></div>";
+    /* 단3 띠·지지 궁합: 양쪽 일지 짝(삼합 절반·육합 실사용·충 6쌍) + branchDynamics 규칙 문장 1줄 */
+    html += '<div class="rel-item"><p class="dyn-head"><span class="dyn-kind">지지 궁합</span> ' +
+      esc(brRead.status) + "</p>" +
+      '<p class="gov">내 일지 ' + esc(me.pillars.day.branch.hanja) + " × 상대 일지 " +
+      esc(partner.pillars.day.branch.hanja) + " · " + esc(brRead.pairLabel) + "</p>" +
+      '<p class="estate-text">' + esc(brRead.text) + "</p></div>";
 
-    /* ③ 오행 보완 (태극성취 구조 · 근거 T08-001, T08-002) */
+    /* 단4 오행 보완 (태극성취 구조 · 기존 판정 로직 유지 · 근거 T08-001, T08-002).
+       내 부족 오행 중 상대가 가진 조합을 칩 첫 줄로 강조한다. */
+    var fillHead = fill.filled.length ? "채워지는 조합" : (fill.absent.length ? "보완 대기" : "보완 대상 아님");
+    html += '<div class="rel-item' + (fill.filled.length ? " rel-fill-on" : "") + '">' +
+      '<p class="dyn-head"><span class="dyn-kind">오행 보완</span> ' + fillHead + "</p>";
+    if (fill.filled.length) {
+      html += '<p class="fill-row"><span class="fill-label">내 빈 오행</span>';
+      for (var f = 0; f < fill.filled.length; f++) {
+        html += '<span class="fill-chip">' + CORE.ELEMENT_HANJA[fill.filled[f]] + "</span>";
+      }
+      html += "</p>";
+    }
     var fillText;
     if (!fill.absent.length) {
       fillText = "내 여덟 글자에 비어 있는 오행이 없어, 보완 판정 대상이 아닙니다.";
@@ -1232,8 +1415,7 @@
       fillText = "내가 부족한 오행은 " + fill.absent.join(", ") +
         "이지만, 상대 여섯 글자에는 이 오행이 없습니다.";
     }
-    html += '<div class="rel-item"><p class="dyn-head"><span class="dyn-kind">오행 보완</span> 태극성취 구조</p>' +
-      '<p class="estate-text">' + esc(fillText) + "</p>" +
+    html += '<p class="estate-text">' + esc(fillText) + "</p>" +
       '<p class="gov">근거 T08-001, T08-002 · 태극성취론을 필요한 오행을 채워가는 과정으로 정의한 판정 문서 기준</p></div>';
 
     return html;
@@ -1352,6 +1534,13 @@
 
     var html = '<span class="fig block-fig">도판 04 - 결과 카드</span>';
 
+    /* 방문 스트릭 미니 배지(무캐릭터 게이미피케이션 최소판): streak.js가 로드된
+       브라우저에서만 한 줄 추가된다. smoke.cjs 스텁에는 SajuStreak가 없어
+       렌더 출력이 변하지 않는다(smoke PASS 유지). */
+    if (typeof window !== "undefined" && window.SajuStreak && typeof window.SajuStreak.badgeHTML === "function") {
+      try { html += window.SajuStreak.badgeHTML(); } catch (e) {}
+    }
+
     if (st.nearSolarTermBoundary) {
       html += '<div class="warn"><p class="sec-label">절기 경계 주의</p><p>' + esc(st.riskNote) + "</p></div>";
     }
@@ -1396,6 +1585,7 @@
     var secPairs = [
       { key: "summary", html: summarySection(chart, stem) },   /* Q01 한눈 요약 */
       { key: "slot", html: slotReadingSection(chart) },        /* Q02 슬롯 리딩(slots.json B 갈래 · 최대 2) */
+      { key: "topics", html: topicReadingSection(chart) },     /* Q02-1 주제별 깊이 읽기(slots.json topicSections · 탭 3) */
       { key: "persona", html: personaSection(stem) },          /* Q03 어떤 사람인가요? */
       { key: "balance", html: balanceSection(chart) },         /* Q04 무엇이 많고, 무엇이 부족한가요? */
       { key: "career", html: careerSection(stem) },            /* Q05 어떤 일이 어울리나요? */
@@ -1448,6 +1638,23 @@
       var msg = resultSec.querySelector(win ? '#card-msg' : '#card-msg-blocked');
       if (msg) msg.hidden = false;
     });
+    /* 주제 탭(돈·직업·이성) 전환: aria-selected와 패널 hidden을 함께 바꾼다 */
+    var topicTabs = resultSec.querySelectorAll('[data-topic-tab]');
+    for (var tt = 0; tt < topicTabs.length; tt++) {
+      topicTabs[tt].addEventListener('click', function() {
+        var id = this.getAttribute('data-topic-tab');
+        var btns = resultSec.querySelectorAll('[data-topic-tab]');
+        var pans = resultSec.querySelectorAll('[data-topic-panel]');
+        for (var a = 0; a < btns.length; a++) {
+          var on = btns[a].getAttribute('data-topic-tab') === id;
+          btns[a].className = "topic-tab" + (on ? " on" : "");
+          btns[a].setAttribute("aria-selected", on ? "true" : "false");
+        }
+        for (var b = 0; b < pans.length; b++) {
+          pans[b].hidden = pans[b].getAttribute('data-topic-panel') !== id;
+        }
+      });
+    }
     entrySec.hidden = true;
     resultSec.hidden = false;
     resultSec.scrollIntoView({ behavior: "smooth", block: "start" });

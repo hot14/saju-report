@@ -492,3 +492,38 @@ details.fold.faq .fold-body { margin-top: 0.6rem; }
 
 /* 이메일 폼 숨은 iframe POST 대상 */
 .post-frame { display: none; }
+
+/* S10 다른 사람과 보기 고도화(풀 궁합 4단 카드): 아이돌 생일 프리셋 · 관계 서사 · 지지 궁합 · 오행 보완 강조 */
+.idol-label { margin-top: 0.8rem; font-size: 0.78rem; color: var(--color-ink-mute); }
+.idol-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.35rem; }
+.idol-chip {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  color: var(--color-ink); background: transparent;
+  border: 1px solid var(--color-hairline); padding: 0.2rem 0.55rem; cursor: pointer;
+}
+.idol-chip:hover, .idol-chip:focus-visible { border-color: var(--color-ink); }
+.rel-fill-on .dyn-kind { border-color: var(--color-accent); color: var(--color-accent); }
+.fill-row { display: flex; align-items: center; gap: 0.45rem; margin-top: 0.5rem; }
+.fill-label { font-size: 0.7rem; color: var(--color-ink-mute); }
+.fill-chip {
+  font-family: var(--font-display); font-weight: 900; font-size: 1.15rem;
+  border: var(--border-width) solid var(--color-ink); padding: 0.08rem 0.5rem; background: var(--color-bg);
+}
+.rel-fill-on .fill-chip { border-color: var(--color-accent); }
+
+/* Q02-1 주제별 깊이 읽기(slots.json topicSections): 주제 탭 3개(돈·직업·이성) */
+.topic-tabs { display: flex; gap: 0; margin-top: 0.9rem; border: 1px solid var(--color-hairline); }
+.topic-tab {
+  flex: 1 1 0; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em;
+  color: var(--color-ink-soft); background: var(--color-bg);
+  border: none; border-right: 1px solid var(--color-hairline);
+  padding: 0.5rem 0.6rem; cursor: pointer;
+}
+.topic-tab:last-child { border-right: none; }
+.topic-tab:hover, .topic-tab:focus-visible { color: var(--color-ink); }
+.topic-tab.on { background: var(--color-ink); color: #FFFFFF; }
+.topic-panel { padding-top: 0.7rem; }
+.topic-panel[hidden] { display: none; }
+.topic-state { margin-top: 0.45rem; font-size: 0.8rem; color: var(--color-ink-soft); }
+.topic-state .state-chip { margin-right: 0.35rem; }
+.topic-text { color: var(--color-ink); margin-top: 0.3rem; line-height: 1.75; }

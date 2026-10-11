@@ -14,7 +14,7 @@
  *     새 해석 문장이 섞이면 FAIL. (중립 연결어·라벨은 선언 목록으로만 허용)
  *  5) 섹션 구조 스냅샷: 3케이스(1985-03-21 14:30 male / 1987-08-28 09:50 female /
  *     시각 미상)의 기대 섹션 제목 목록과 순서 일치 + fold details 4종(계산 과정·용어집·
- *     변화 규칙 열림, FAQ 닫힘) + 아코디언 6종(Q03~Q05·Q07~Q09 · 기본 닫힘,
+ *     변화 규칙 열림, FAQ 닫힘) + 아코디언 7종(Q02-1·Q03~Q05·Q07~Q09 · 기본 닫힘,
  *     Q01·Q02·Q06은 plain section 유지)
  *  6) 용어집 커버리지: 노출 전문 용어가 S12 용어집에 있는지 검사
  *  7) 검증 모드: {{FORM_ENDPOINT}} 유지 · mailto 폴백 · em-dash 0 ·
@@ -79,6 +79,9 @@ if (!VIEW.ROLE_DISPLAY || !VIEW.ROLE_DISPLAY["재성"]) fail("ROLE_DISPLAY 미�
 if (!global.SAJU_SLOTS || !global.SAJU_SLOTS.stems || !global.SAJU_SLOTS.stems["甲"]) fail("globalThis.SAJU_SLOTS(slots.json 슬림) 번들 누락");
 if (global.SAJU_SLOTS.stems["甲"].D !== undefined) fail("D(출력 안 함) 가지가 번들에 포함됨");
 eq(global.SAJU_SLOTS.selectionOrder.length, 8, "선택 규칙 우선순위 8단계");
+if (!Array.isArray(global.SAJU_SLOTS.topicSections) || global.SAJU_SLOTS.topicSections.length !== 30) {
+  fail("topicSections(일간 10 × 주제 3) 30항목 아님: " + (global.SAJU_SLOTS.topicSections || []).length);
+}
 
 // ---------------------------------------------------------------------------
 // 기존 케이스: 엔진 정합 + 시각 미상 + 물상 필드
@@ -275,6 +278,59 @@ if (!relHtml) fail("관계 읽기(상대 입력) 출력 없음");
 const html1WithRel = html1.replace('<div id="rel-result"></div>', '<div id="rel-result">' + relHtml + "</div>");
 
 // ---------------------------------------------------------------------------
+// S10 풀 궁합 고도화: 3+1케이스 실측(甲己 합 · 乙庚 합+지지 육합 · 합 없음 · 지지 충)
+// ---------------------------------------------------------------------------
+
+function runRelPair(meDate, meTime, meGender, pDate) {
+  runCase(meDate, meTime, meGender);
+  const pp = pDate.split("-");
+  doc.el("f-p-year").value = pp[0];
+  doc.el("f-p-month").value = String(Number(pp[1]));
+  doc.el("f-p-day").value = String(Number(pp[2]));
+  doc.el("rel-form").handlers.submit({ preventDefault() {} });
+  return doc.el("rel-result").innerHTML;
+}
+
+/* 아이돌 프리셋 칩(정적 영역): 10개 · 라벨 · 출처 주석 */
+if (html1.indexOf('id="idol-chips"') === -1) fail("아이돌 프리셋 칩 영역 누락");
+if (html1.indexOf("또는 아이돌 생일로 빠르게") === -1) fail("아이돌 칩 라벨 문구 누락");
+if (html1.indexOf(">정국<") === -1 || html1.indexOf(">우영<") === -1) fail("아이돌 칩(정국·우영) 누락");
+eq((html1.match(/class="idol-chip"/g) || []).length, 10, "아이돌 칩 10개");
+if (html1.indexOf("생일 출처: 공개 프로필") === -1) fail("아이돌 칩 생일 출처 주석 누락");
+
+/* 케이스A 甲己 합: 기토(己未) × 갑목(甲戌) */
+const relA = runRelPair("1985-03-21", "14:30", "male", "1980-01-02");
+if (relA.indexOf("관계 서사") === -1 || relA.indexOf("일간 합 성립") === -1) fail("甲己 케이스 관계 서사·합 성립 라벨 누락");
+if (relA.indexOf("甲己") === -1 || relA.indexOf("만들어지는 오행") === -1) fail("甲己 케이스 합 쌍·결과 오행 미표시");
+if (relA.indexOf("당신 두 사람은 ") === -1) fail("甲己 케이스 2인칭 서사 문장 누락");
+if (relA.indexOf("지지 궁합") === -1 || relA.indexOf("오행 보완") === -1) fail("甲己 케이스 지지·보완 단 누락");
+if (relA.indexOf("실사용 쌍 없음") === -1) fail("甲己 케이스(未×戌) 지지 중립 판정 누락");
+
+/* 케이스B 乙庚 합 + 지지 육합: 을목(乙酉) × 경금(庚辰) */
+const relB = runRelPair("1980-01-13", "14:30", "female", "1980-01-08");
+if (relB.indexOf("일간 합 성립") === -1 || relB.indexOf("乙庚") === -1) fail("乙庚 케이스 합 성립·쌍 라벨 누락");
+if (relB.indexOf("잘 흐르는 조합") === -1) fail("乙庚 케이스 지지 육합 '잘 흐르는 조합' 라벨 누락");
+if (relB.indexOf("酉辰 육합") === -1) fail("乙庚 케이스(酉×辰) 육합 쌍 라벨 누락");
+if (relB.indexOf("보완 대상 아님") === -1) fail("乙庚 케이스(빈 오행 없음) '보완 대상 아님' 라벨 누락");
+
+/* 케이스C 합 없음(기존 relHtml = 경진(庚辰)×임수(壬子), 辰×子 삼합 절반 → 반합) */
+if (relHtml.indexOf("천간합 없음") === -1) fail("합 없는 조합 '천간합 없음' 라벨 누락");
+if (relHtml.indexOf("잘 흐르는 조합") === -1 || relHtml.indexOf("왕지 子를 포함한 반합이다.") === -1) fail("경진×임수(辰×子) 지지 반합 판정 누락");
+if (relHtml.indexOf("채워지는 조합") === -1 || relHtml.indexOf("내 빈 오행") === -1) fail("합 없는 조합 보완 강조 첫 줄(내 빈 오행 칩) 누락");
+if (relHtml.indexOf('class="fill-chip"') === -1) fail("보완 강조 오행 칩 미렌더");
+
+/* 케이스D 지지 충: 기토(己未) × 정화(丁丑) → 丑未 묘지 충 */
+const relD = runRelPair("1985-03-21", "14:30", "male", "1980-01-05");
+if (relD.indexOf("긴장이 움직임을 만드는 조합") === -1) fail("丑未 충 케이스 '긴장이 움직임을 만드는 조합' 라벨 누락");
+if (relD.indexOf("묘지 충") === -1) fail("丑未 충 케이스 묘지 충 라벨 누락");
+
+/* 칩 클릭 → 상대 생년월일 자동 입력 */
+doc.el("idol-chips").handlers.click({ target: { className: "idol-chip", getAttribute: (k) => ({ "data-y": "1997", "data-m": "9", "data-d": "1" }[k]) } });
+eq(doc.el("f-p-year").value, "1997", "칩 클릭 연도 자동 입력");
+eq(doc.el("f-p-month").value, "9", "칩 클릭 월 자동 입력");
+eq(doc.el("f-p-day").value, "1", "칩 클릭 일 자동 입력");
+
+// ---------------------------------------------------------------------------
 // 신규: 슬롯 리딩 엔진 (slots.json B 갈래 · wayfinder slot-system-design §4)
 // ---------------------------------------------------------------------------
 
@@ -352,6 +408,40 @@ if (html1.indexOf("5단계 같은 흙 · 작은 땅 둘") === -1) fail("기토 �
 if (html1.indexOf("<span class=\"slot-k\">진단</span>") === -1 || html1.indexOf("<span class=\"slot-k\">처방</span>") === -1) fail("슬롯 진단·처방 라벨 누락");
 if (html1.indexOf("근거 R2.GI.060") === -1) fail("기토 슬롯 근거(source) 누락");
 
+/* 주제별 깊이 읽기(Q02-1): 탭 3개 · 패널 3개 · 해당 일간 상태 문장 9종 전부 노출.
+   탭 패널은 hidden이어도 DOM에는 전부 렌더되므로 문자열 검증 대상이다. */
+if (html1.indexOf("슬롯 리딩을 돈, 직업, 이성 세 주제로 더 깊게 읽습니다.") === -1) fail("주제별 깊이 읽기 리드 문구 누락");
+if ((html1.match(/data-topic-tab=/g) || []).length !== 3) fail("주제 탭 3개 아님");
+if ((html1.match(/data-topic-panel=/g) || []).length !== 3) fail("주제 패널 3개 아님");
+if (html1.indexOf('data-topic-tab="money"') === -1 || html1.indexOf('data-topic-tab="job"') === -1 || html1.indexOf('data-topic-tab="love"') === -1) fail("주제 탭 id(돈·직업·이성) 누락");
+const topicItems1 = global.SAJU_SLOTS.topicSections.filter((it) => it.dayStem === fromBundle.dayMaster.hanja);
+if (topicItems1.length !== 3) fail("번들 topicSections 해당 일간 3항목 아님: " + topicItems1.length);
+/* 상태 판정 재현(VIEW 재사용): 대상 역할 오행 개수 합계 → elementStatus → 해당 문장만 노출돼야 한다 */
+const topicStates1 = VIEW.elementStates(fromBundle);
+const TOPIC_ROLES_CHECK = { "돈": ["재성"], "직업": ["식상", "관성"], "이성": ["관성", "재성"] };
+function topicStatusCheck(roles) {
+  let c = 0;
+  for (const role of roles) {
+    const s = topicStates1.find((x) => x.role === role);
+    c += s ? s.count : 0;
+  }
+  return VIEW.elementStatus(c);
+}
+const expectedByTopic1 = {};
+for (const it of topicItems1) expectedByTopic1[it.topic] = it.states[topicStatusCheck(TOPIC_ROLES_CHECK[it.topic])];
+for (const it of topicItems1) {
+  const expected = expectedByTopic1[it.topic];
+  if (html1.indexOf(expected) === -1) fail(`주제 문장(판정 상태) 미노출(${it.dayStem}/${it.topic})`);
+  for (const key of ["tooMuch", "tooLittle", "balance"]) {
+    const sent = it.states[key];
+    if (sent === expected) continue;
+    /* 복수 역할 주제(직업·이성)는 원문 나열 문장이므로, 다른 주제 판정 문장의 일부면 정상이다 */
+    const inOther = Object.keys(expectedByTopic1).some((tp) => expectedByTopic1[tp] !== sent && expectedByTopic1[tp].indexOf(sent) !== -1);
+    if (!inOther && html1.indexOf(sent) !== -1) fail(`판정 불일치 문장 독립 노출(${it.dayStem}/${it.topic}/${key})`);
+  }
+  if (html1.indexOf("근거 " + it.sources.join(", ")) === -1) fail(`주제 근거 미노출(${it.dayStem}/${it.topic})`);
+}
+
 /* 처방이 빈 가지("—")는 문째로 내보내지 않는다(em-dash 0 보장) */
 for (const rows of [slotMe1, slotGap, slotMu]) {
   for (const row of rows) {
@@ -423,6 +513,8 @@ const DECLARED = [
   // 슬롯 리딩 섹션(Q02) 중립 문구 (섹션 제목은 아래 섹션 질문 제목 목록에 포함)
   "설계된 물상 갈래 중 이 명조에 해당하는 가지를 최대 두 개까지 읽습니다.",
   "이 명조는 설계된 갈래에 해당하지 않는 구성입니다.",
+  // 주제별 깊이 읽기(Q02-1) 중립 리드 문구
+  "슬롯 리딩을 돈, 직업, 이성 세 주제로 더 깊게 읽습니다. 각 주제의 기운 개수로 상태를 판정해 해당 문장을 보여줍니다.",
   // 고지·알림·이메일 카피
   "시각 미상으로 제외",
   "시각 미상은 정오 가정으로 계산되어 대운 시작 나이에 오차가 있을 수 있습니다.",
@@ -523,6 +615,8 @@ const TEMPLATES = [
   /^월주 .{2} 기준 (순행|역행) · 대운수 = 출생에서 인접 절까지 일수 ÷ 3 \(역법 라이브러리 manseryeok\)$/,
   /^첫 대운 시작 전입니다\. \d+세부터 첫 구간이 열립니다\.$/,
   /^내가 부족한 오행은 [木火土金水](, [木火土金水])*이지만, 상대 여섯 글자에는 이 오행이 없습니다\.$/,
+  // 주제별 깊이 읽기(Q02-1) 역할 오행 개수 라벨(재성 기운 2개 · 식상+관성 기운 3개 형태)
+  /^[가-힣]{2}( \+ [가-힣]{2})* 기운 \d+개$/,
   /^왕지 .가 없어 왕지를 끌어오려는 공협 상태로 본다\.$/,
   /^[甲乙丙丁戊己庚辛壬癸]\([가-힣]\) · [甲乙丙丁戊己庚辛壬癸]\([가-힣]\) 조합은 다섯 천간합 쌍에 해당하지 않습니다\.$/,
   /^(나와 같은 성질|표현과 결실|재물·배우자|직장과 질서·명예|공부와 기억·어머니)의 기운\(전통 용어: (비동|식상|재성|관성|인성)\)$/
@@ -543,6 +637,14 @@ const TEMPLATES = [
   /^적용되면 결과 화면 상단에 서머타임 보정 고지가 함께 표시됩니다\.$/,
   /^이 결과는 운세인가요\?$/,
 /* 번들 뷰 함수가 JSON 조각+고정 연결어로 조립하는 문장형 (접두 제거 후 JSON 대조) */
+  // S10 풀 궁합 고도화(관계 서사 · 지지 궁합 · 오행 보완 강조 · 아이돌 프리셋) 조합 문장 선언 등록
+  /^당신 두 사람은 .+의 그림입니다\.$/,
+  /^일간 합 .. · 만들어지는 오행 .$/,
+  /^내 일지 . × 상대 일지 . · .+$/,
+  /^두 일지는 실사용 합·충 쌍에 해당하지 않습니다\.$/,
+  /^긴장이 움직임을 만드는 조합$/,
+  /^또는 아이돌 생일로 빠르게$/,
+  /^생일 출처: 공개 프로필$/,
 ];
 
 /* 번들 뷰 함수가 JSON 조각+고정 연결어로 조립하는 문장형 */
@@ -610,6 +712,8 @@ function checkContentCorrespondence(label, html) {
 checkContentCorrespondence("1985 남자", html1WithRel);
 checkContentCorrespondence("1987 여자(DST)", html2);
 checkContentCorrespondence("시각 미상", html3);
+checkContentCorrespondence("관계 궁합 甲己 합", relA);
+checkContentCorrespondence("관계 궁합 丑未 충", relD);
 
 /* ④ 슬롯 문장 대응: slots.json 원문이 대조 대상에 포함됐는지 확인 */
 if (!ALLOWED.some((s) => s.indexOf("넓은 땅에 제대로 뿌리를 내린 나무입니다") !== -1)) {
@@ -627,6 +731,7 @@ if (!slotSentence || !ALLOWED.some((s) => s.indexOf(slotSentence) !== -1)) {
 const SEC_TITLES = {
   s2: "한눈 요약",
   s2slot: "슬롯 리딩",
+  s2topic: "주제별 깊이 읽기",
   s3: "어떤 사람인가요?",
   s4: "무엇이 많고, 무엇이 부족한가요?",
   s5: "어떤 일이 어울리나요?",
@@ -647,7 +752,7 @@ function secQuestions(html) {
 
 function checkSectionOrder(label, html, chart) {
   const expected = [
-    SEC_TITLES.s2, SEC_TITLES.s2slot, SEC_TITLES.s3, SEC_TITLES.s4, SEC_TITLES.s5,
+    SEC_TITLES.s2, SEC_TITLES.s2slot, SEC_TITLES.s2topic, SEC_TITLES.s3, SEC_TITLES.s4, SEC_TITLES.s5,
     SEC_TITLES.s6, SEC_TITLES.s7, SEC_TITLES.s8
   ];
   if (VIEW.matchAnsim(chart).length) expected.push(SEC_TITLES.s9);
@@ -663,10 +768,11 @@ function checkSectionOrder(label, html, chart) {
   if (!(calc < gloss)) fail(`S12 details 순서 이상(${label}): 계산 과정 → 용어집`);
   if (!(s8fold < calc)) fail(`S8 변화 규칙 details가 S12보다 앞에 와야 함(${label})`);
   /* 아코디언 전환(Q03·Q04·Q05·Q07·Q08 + 조건부 Q09 · 축5 채택): fold details 4종 + 섹션 아코디언 수.
-     아코디언은 기본 닫힘( open 없음). 한눈 요약(Q01)·슬롯 리딩(Q02)·조심할 신호(Q06)는 plain section(열림 유지). */
+     아코디언은 기본 닫힘( open 없음). 한눈 요약(Q01)·슬롯 리딩(Q02)·조심할 신호(Q06)는 plain section(열림 유지).
+     Q02-1 주제별 깊이 읽기는 아코디언 1개가 추가돼 기준치가 5가 됐다. */
   const accCount = 5 + (VIEW.matchAnsim(chart).length ? 1 : 0);
   const gotDetails = (html.match(/<details/g) || []).length;
-  if (gotDetails !== 4 + accCount) fail(`details 개수 ${4 + accCount} 아님(${label}): ` + gotDetails);
+  if (gotDetails !== 5 + accCount) fail(`details 개수 ${5 + accCount} 아님(${label}): ` + gotDetails);
   if (/<details class="sec acc" open>/.test(html)) fail(`아코디언 섹션이 기본 열림(${label})`);
   if (html.indexOf('<details class="sec acc"><summary class="acc-head"><span class="sec-label">Q03</span><h2 class="sec-q">어떤 사람인가요?</h2></summary>') === -1) fail(`Q03 아코디언 전환 누락 또는 기본 열림(${label})`);
   for (const plainNum of ["Q01", "Q02", "Q06"]) {
@@ -790,8 +896,9 @@ console.log(`  대운 남=역행 ${luckM.rows[0].fromAge}세 ${luckM.rows[0].kor
 console.log(`  안심법(기토)=${ansimMe.map((p) => p.id).join("+")} / (갑목)=${ansimGap.map((p) => p.id).join("+")} / (庚辛 noHour)=0건`);
 console.log(`  공망=${fromBundle.voidBranches.join("·")} / 관계(기토×임수)=합없음·제방과큰물·보완${fill.filled.join("/")}`);
 console.log(`  DST(1987-08-28 09:50)=${dstCase.fourPillarsHanja} · 되돌림 60분 · 고지+표 행 확인`);
-console.log(`  [일관성 검증] 콘텐츠 대응=3케이스 PASS(${ALLOWED.length}개 콘텐츠 문장 대조) / 섹션 스냅샷=3케이스 PASS / 용어집 커버리지=${REQUIRED_TERMS.length}용어 PASS / FAQ 5문항+닫힘 PASS`);
+console.log(`  [일관성 검증] 콘텐츠 대응=5케이스 PASS(${ALLOWED.length}개 콘텐츠 문장 대조 · 관계 甲己·丑未충 포함) / 섹션 스냅샷=3케이스 PASS / 용어집 커버리지=${REQUIRED_TERMS.length}용어 PASS / FAQ 5문항+닫힘 PASS`);
 console.log(`  [보완 작업] 캐치프레이즈 노출 PASS / 대운 서사 10구간×2케이스(살림·누름 템플릿) PASS / iframe POST(entry.NNN) PASS`);
+console.log(`  [S10 풀 궁합] 4단 카드(상대 일간·관계 서사·지지 궁합·오행 보완) 3+1케이스 PASS(甲己 합·乙庚 합+酉辰 육합·庚辰×壬子 반합·丑未 충) / 아이돌 칩 10개+클릭 자동입력 PASS`);
 console.log(`  [슬롯 리딩] Q02 섹션 PASS / 기토=${slotMe1.map((r) => r.code).join("+")} / 갑목=${slotGap.map((r) => r.code).join("+")}+戊=${slotMu.map((r) => r.code).join("+")} / 재현성·조건매핑 3건·미적용 4건·0갈래 경로 PASS`);
 console.log(`  [검증 모드] {{FORM_ENDPOINT}} 토큰 유지 · mailto 폴백 · src 추적(entry.NNN) · 금지어 0 · em-dash 0 · details 밖 CR/AP 0`);
-console.log(`  bundle.js=${bundleKb}kb · 용어집 ${VIEW.GLOSSARY.length}항목 · fold details 4종(S8 1 + FAQ 1 + S12 2) + 섹션 아코디언 6종(Q03~Q05·Q07~Q09 · 기본 닫힘)`);
+console.log(`  bundle.js=${bundleKb}kb · 용어집 ${VIEW.GLOSSARY.length}항목 · fold details 4종(S8 1 + FAQ 1 + S12 2) + 섹션 아코디언 7종(Q02-1·Q03~Q05·Q07~Q09 · 기본 닫힘) · 주제 탭 3종(돈·직업·이성)`);

@@ -223,6 +223,24 @@ const SAJU_SLOTS = {
   targetProfiles: SLOTS_SOURCE.targetProfiles || {},
   stems: {},
 };
+/* 주제별 깊이 읽기(slots.json topicSections · 일간 10 × 주제 3 = 30항목). 문장은
+ * relations.json dayStemVsElements 원문의 선별·재배치라 상태 문장을 그대로 운반한다. */
+SAJU_SLOTS.topicSections = (SLOTS_SOURCE.topicSections && SLOTS_SOURCE.topicSections.items
+  ? SLOTS_SOURCE.topicSections.items
+  : []).map((it) => ({
+  topic: it.topic,
+  dayStem: it.dayStem,
+  roles: it.roles.slice(),
+  stateElements: (it.stateElements || []).slice(),
+  states: {
+    tooMuch: it.states.tooMuch,
+    tooLittle: it.states.tooLittle,
+    balance: it.states.balance,
+  },
+  sources: it.sources.slice(),
+  unverified: it.unverified === true,
+  unverifiedSourceIds: it.unverifiedSourceIds || [],
+}));
 Object.keys(SLOTS_SOURCE.stems).forEach((hanja) => {
   const data = SLOTS_SOURCE.stems[hanja];
   SAJU_SLOTS.stems[hanja] = {
