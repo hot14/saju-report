@@ -297,7 +297,7 @@ function checkFreeLocks(label, html, relHtml, chart) {
   const expectedOpens = 3 + (allRows.length > 1 ? 1 : 0);
   const opens = (html.match(/data-premium-open/g) || []).length;
   if (opens !== expectedOpens) fail(`${label}: 프리미엄 CTA ${expectedOpens}개 아님(실측 ${opens})`);
-  if (html.indexOf("프리미엄으로 열기 · $8, 1회 결제") === -1) fail(`${label}: CTA 가격 표기 누락`);
+  if (html.indexOf("프리미엄으로 열기 · 11,000원, 1회 결제") === -1) fail(`${label}: CTA 가격 표기 누락`);
   /* 잠긴 섹션은 제목만 보인다 */
   if (html.indexOf('<h2 class="sec-q">주제별 깊이 읽기</h2>') === -1) fail(`${label}: 잠긴 주제 섹션 제목 미노출`);
   if (html.indexOf('<h2 class="sec-q">마지막 한마디</h2>') === -1) fail(`${label}: 잠긴 마지막 섹션 제목 미노출`);
@@ -748,7 +748,7 @@ const DECLARED = [
   "오늘 실행할 한 걸음으로 닫는 선언은 프리미엄 항목입니다.",
   "관계 서사, 지지 궁합, 오행 보완 단은 프리미엄 항목입니다.",
   "카드 저장과 링크 복사는 프리미엄 항목입니다.",
-  "프리미엄으로 열기 · $8, 1회 결제",
+  "프리미엄으로 열기 · 11,000원, 1회 결제",
   "구매 후 받은 라이선스 키를 입력하면 이 브라우저에서 전체 리딩이 열립니다.",
   "키는 이 브라우저에만 저장되며 이후 방문에서 자동으로 적용됩니다.",
   "키는 이 브라우저에만 저장됩니다. 다른 기기에서는 같은 키를 다시 입력해야 합니다.",
