@@ -12,7 +12,7 @@
  */
 (function () {
   "use strict";
-  var STORE_URL = "https://PLACEHOLDER.lemonsqueezy.com";
+  var STORE_URL = "https://sajuroot.lemonsqueezy.com/checkout/buy/adbf35fc-0200-4b6e-a18c-78006893dd3b";
   var NS = window.SajuRoot || (window.SajuRoot = {});
 
   function enabled() { return STORE_URL.indexOf("PLACEHOLDER") === -1; }
