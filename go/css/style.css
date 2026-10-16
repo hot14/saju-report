@@ -564,3 +564,44 @@ details.slot-branch[open] > summary.slot-head::after { content: "\2212"; }
 
 /* Q11 마지막 한마디(slots.json 끝1 · endingDeclaration 3단 선언) */
 .end-decl p { font-size: 0.98rem; font-weight: 500; line-height: 1.85; }
+
+/* ============================================================
+   프리미엄 페이월 (Lemon Squeezy · $8 1회성 · js/license.js)
+   법칙 유지: 라운드 0 · 그림자 없음 · 잉크/헤어라인/뮤트만 · 다크 배경 0 · 운세 어휘 0
+   ============================================================ */
+
+/* 잠긴 전체 섹션(주제별 깊이 읽기 · 마지막 한마디): 제목만 보이고 본문 0.
+   흐림 표현은 뮤트 잉크 + 점선 헤어라인(그림자·투명도 낮춤 없음). */
+.lock-sec {
+  border: 1px dashed var(--color-hairline);
+  padding: 1.1rem 0.95rem 1.2rem;
+  margin-top: var(--space-section);
+}
+.lock-sec .sec-label { margin-bottom: 0.35rem; }
+.lock-sec .sec-q { color: var(--color-ink-mute); }
+
+/* 섹션 내부 잠금 상자(Q02 두 번째 갈래 · 궁합 단2~4 · 공유) */
+.lockbox {
+  border: 1px dashed var(--color-hairline);
+  padding: 0.95rem;
+  margin-top: 0.9rem;
+}
+.lock-note { font-size: 0.82rem; color: var(--color-ink-mute); margin-bottom: 0.75rem; }
+.lock-cta {
+  padding: 0.75rem 1.1rem;
+  font-size: 0.88rem;
+  background: transparent;
+  color: var(--color-ink);
+  border: var(--border-width) solid var(--color-ink);
+}
+.lock-cta:hover { opacity: 0.8; }
+
+/* 라이선스 패널(결과 하단) + 라이선스 입력 작은 링크 */
+.license-panel {
+  border: 1px solid var(--color-hairline);
+  padding: 0.95rem;
+  margin-top: var(--space-section);
+}
+.license-panel .form { margin-top: 0.4rem; }
+.license-panel .email-field input { width: 100%; }
+.license-panel .cta { margin-top: 0.4rem; }

@@ -38,6 +38,13 @@
  *    프리셋 칩 10개(이름·생일 공개 사실만, honbit-archive/data/idols.json 참조).
  * 5) 결과 하단 이메일 수집: Google Form formResponse로 숨은 iframe POST(엔드포인트
  *    미설정 시 기존 mailto 폴백 안내 유지)
+ * 6) 프리미엄 페이월(Lemon Squeezy · $8 1회성 · 검증 js/license.js):
+ *    무료 유지 = 랜딩 전체 · 차트 계산 · Q01 한눈 요약 · Q02 첫 갈래(진단+처방) ·
+ *    궁합 상대 일간 요약 1줄 · catchphrase · FAQ · 이메일 수집.
+ *    프리미엄 잠금 = Q02 두 번째 갈래와 4단 풀(확인 질문·그림자) · 주제별 깊이
+ *    읽기 3탭 · 궁합 4단(서사·지지·오행 보완) · endingDeclaration · 공유 카드.
+ *    잠긴 섹션은 흐린 잠금 상자(제목만 노출) + "프리미엄으로 열기" CTA로 대체하고,
+ *    언락 시 같은 render 경로로 전체 내용을 다시 그린다(onChange 재렌더).
  *
  * 콘텐츠 출처: service/content/{stems,relations,dynamics,regions}.json(재구성 물상,
  * 검증 통과분), policy.json(고지문), docs/copy-deck-v2-kr.md(문구 톤).
@@ -60,6 +67,113 @@
   var FORM_IFRAME = "sajuroot-post";
   /* Google Form 엔트리 매핑: 이메일 · src · page */
   var ENTRY = { email: "entry.1579324013", src: "entry.1312707957", page: "entry.221952772" };
+
+  /* ------------------------------------------------------------------
+   * 프리미엄 페이월 상태(js/license.js · Lemon Squeezy $8 1회성)
+   * 라이선스 모듈이 없는 환경(스모크 스텁 등)에서는 항상 무료 상태로 본다.
+   * ------------------------------------------------------------------ */
+  function license() {
+    return (typeof window !== "undefined" && window.SajuRoot && window.SajuRoot.license) || null;
+  }
+  function premiumUnlocked() {
+    var L = license();
+    return !!(L && typeof L.isUnlocked === "function" && L.isUnlocked());
+  }
+  var PREMIUM_CTA_LABEL = "프리미엄으로 열기 · 11,000원, 1회 결제";
+  var licensePanelOpen = false;   /* 라이선스 패널 펼침 상태(재렌더 후에도 유지) */
+  var lastRender = null;          /* onChange 재렌더용 마지막 렌더 입력 */
+
+  function lockCTAHTML() {
+    return '<button type="button" class="cta lock-cta" data-premium-open>' + esc(PREMIUM_CTA_LABEL) + "</button>";
+  }
+  /* 섹션 내부 잠금 상자(Q02 두 번째 갈래 · 궁합 단2~4): 제목 아래 흐린 상자 */
+  function lockBoxHTML(note) {
+    return '<div class="lockbox"><p class="lock-note">' + esc(note) + "</p>" + lockCTAHTML() + "</div>";
+  }
+  /* 잠긴 전체 섹션(주제별 깊이 읽기 · 마지막 한마디): 제목만 보이고 내용 0 */
+  function lockedSectionHTML(sec, note) {
+    return '<section class="sec lockbox lock-sec"><p class="sec-label">' + esc(sec.num) +
+      '</p><h2 class="sec-q">' + esc(sec.title) + "</h2>" +
+      '<p class="lock-note">' + esc(note) + "</p>" + lockCTAHTML() + "</section>";
+  }
+  /* 라이선스 패널(결과 하단): 무료는 키 입력 폼, 언락 상태는 상태 문구+해제 버튼 */
+  function licensePanelHTML() {
+    var L = license();
+    var st = L && typeof L.getState === "function" ? L.getState() : null;
+    var unlocked = premiumUnlocked();
+    var html = '<section class="sec license-panel" id="license-panel"' + (licensePanelOpen ? "" : " hidden") + ">";
+    html += '<p class="sec-label">라이선스</p>';
+    if (unlocked) {
+      html += '<p class="lead-line">이 브라우저에 라이선스가 적용되어 있어 전체 리딩이 열려 있습니다' +
+        (st && st.mode === "demo" ? " (데모 모드)" : "") + '.</p>' +
+        '<p class="helper">키는 이 브라우저에만 저장됩니다. 다른 기기에서는 같은 키를 다시 입력해야 합니다.</p>' +
+        '<button type="button" class="cta cta-ghost" id="license-lock-btn">라이선스 해제</button>';
+    } else {
+      html += '<p class="lead-line">구매 후 받은 라이선스 키를 입력하면 이 브라우저에서 전체 리딩이 열립니다.</p>' +
+        '<p class="helper">키는 이 브라우저에만 저장되며 이후 방문에서 자동으로 적용됩니다.</p>' +
+        '<form id="license-form" class="form" novalidate>' +
+        '<div class="email-field"><label for="license-key">라이선스 키</label>' +
+        '<input id="license-key" name="license-key" type="text" autocomplete="off" spellcheck="false" placeholder="SR-000000-0000..."></div>' +
+        '<p class="error" id="license-error" hidden></p>' +
+        '<button type="submit" class="cta">라이선스 적용</button></form>';
+    }
+    return html + "</section>";
+  }
+
+  /* 프리미엄 CTA: 체크아웃 활성(js/lemon.js · 스토어 URL 교체+주석 해제)이면
+     Lemon Squeezy overlay를 열고, 아니면 라이선스 입력 패널을 연다. */
+  function handlePremiumOpen() {
+    var P = (typeof window !== "undefined" && window.SajuRoot && window.SajuRoot.premium) || null;
+    if (P && P.checkout && P.checkout.enabled && typeof P.checkout.buy === "function") {
+      P.checkout.buy();
+      return;
+    }
+    licensePanelOpen = true;
+    var panel = resultSec ? resultSec.querySelector("#license-panel") : null;
+    if (panel) {
+      panel.hidden = false;
+      var keyInput = panel.querySelector ? panel.querySelector("#license-key") : null;
+      if (keyInput && typeof keyInput.focus === "function") keyInput.focus();
+    }
+  }
+
+  function wirePremiumUI(root) {
+    if (!root || typeof root.querySelectorAll !== "function") return;
+    var opens = root.querySelectorAll("[data-premium-open]");
+    for (var i = 0; i < opens.length; i++) {
+      if (typeof opens[i].addEventListener === "function") opens[i].addEventListener("click", handlePremiumOpen);
+    }
+    var link = root.querySelector ? root.querySelector("#license-open-link") : null;
+    if (link && typeof link.addEventListener === "function") {
+      link.addEventListener("click", function (ev) { ev.preventDefault(); handlePremiumOpen(); });
+    }
+    var lockBtn = root.querySelector ? root.querySelector("#license-lock-btn") : null;
+    if (lockBtn && typeof lockBtn.addEventListener === "function") {
+      lockBtn.addEventListener("click", function () {
+        var L = license();
+        if (L) { licensePanelOpen = true; L.lock(); }
+      });
+    }
+    var form = root.querySelector ? root.querySelector("#license-form") : null;
+    if (form && typeof form.addEventListener === "function") {
+      form.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        var input = root.querySelector("#license-key");
+        var err = root.querySelector("#license-error");
+        var L = license();
+        if (!L || !input) return;
+        if (err) { err.hidden = true; err.textContent = ""; }
+        L.unlock(input.value).then(function (r) {
+          if (r.ok) {
+            /* 성공: onChange 재렌더가 패널을 상태 문구로 다시 그린다 */
+            licensePanelOpen = true;
+            return;
+          }
+          if (err) { err.textContent = "라이선스 키를 확인해주세요."; err.hidden = false; }
+        });
+      });
+    }
+  }
 
   /* 배지명·영어명·한 줄: 카피덱 v2-KR §9 + docs/badge-naming-en.md (prototype과 동일) */
   var BADGE = {
@@ -828,25 +942,36 @@
 
   /* 슬롯 리딩 섹션(Q02): 갈래마다 아코디언 1개, 안에 진단→확인 질문→그림자→처방 4단과 근거.
      4단 블록(paid-reading-analysis §6.2) + 아코디언 기본 닫힘(§6.8 과유불급 대응)을 함께 유지한다.
-     선택 0개면 안내 한 줄. 확장 전 일간(확인 질문·그림자 미장착)은 진단→처방 2단으로 떨어진다. */
+     선택 0개면 안내 한 줄. 확장 전 일간(확인 질문·그림자 미장착)은 진단→처방 2단으로 떨어진다.
+     페이월: 무료는 첫 갈래 1개의 진단+처방만(4단 라벨 미노출), 두 번째 갈래와 4단 풀은
+     프리미엄. 잠금분은 잠금 상자(CTA 포함)로 대체하고 언락 시 전체를 다시 그린다. */
   function slotReadingSection(chart, preset) {
-    var rows = preset || slotEngine(chart);
+    var all = preset || slotEngine(chart);
+    var unlocked = premiumUnlocked();
+    var rows = unlocked ? all : all.slice(0, 1);
     var html = sectionOpen(SEC.slot);
-    if (!rows.length) {
+    if (!all.length) {
       html += '<p class="lead-line">이 명조는 설계된 갈래에 해당하지 않는 구성입니다.</p></section>';
       return html;
     }
-    html += '<p class="lead-line">설계된 물상 갈래 중 이 명조에 해당하는 가지를 최대 두 개까지 읽습니다.</p>';
-    html += '<p class="lead-line">각 갈래는 진단, 확인 질문, 그림자, 처방 네 단으로 읽습니다.</p>';
+    if (unlocked) {
+      html += '<p class="lead-line">설계된 물상 갈래 중 이 명조에 해당하는 가지를 최대 두 개까지 읽습니다.</p>';
+      html += '<p class="lead-line">각 갈래는 진단, 확인 질문, 그림자, 처방 네 단으로 읽습니다.</p>';
+    } else {
+      html += '<p class="lead-line">첫 갈래는 무료로 읽습니다. 진단과 처방 두 단이며, 나머지 단과 갈래는 프리미엄으로 열립니다.</p>';
+    }
     for (var i = 0; i < rows.length; i++) {
       var r = rows[i];
       html += '<details class="slot-branch"><summary class="slot-head">' +
         '<span class="slot-stage">' + esc(r.stage + "단계 " + r.stageName + " · " + r.condition) + "</span></summary>";
       html += '<p><span class="slot-k">진단</span> ' + esc(r.diagnosis) + "</p>";
-      if (r.confirmationQuestion) html += '<p><span class="slot-k">확인 질문</span> ' + esc(r.confirmationQuestion) + "</p>";
-      if (r.shadow) html += '<p><span class="slot-k">그림자</span> ' + esc(r.shadow) + "</p>";
+      if (unlocked && r.confirmationQuestion) html += '<p><span class="slot-k">확인 질문</span> ' + esc(r.confirmationQuestion) + "</p>";
+      if (unlocked && r.shadow) html += '<p><span class="slot-k">그림자</span> ' + esc(r.shadow) + "</p>";
       if (r.prescription) html += '<p><span class="slot-k">처방</span> ' + esc(r.prescription) + "</p>";
       html += '<p class="gov">근거 ' + esc(r.sources.join(", ")) + "</p></details>";
+    }
+    if (!unlocked && all.length > 1) {
+      html += lockBoxHTML("두 번째 갈래와 네 단 읽기(확인 질문 · 그림자)는 프리미엄 항목입니다.");
     }
     return html + "</section>";
   }
@@ -921,6 +1046,10 @@
   }
 
   function topicReadingSection(chart, concern) {
+    /* 페이월: 주제별 깊이 읽기 3탭 전체는 프리미엄. 무료는 제목만 보이는 잠금 섹션. */
+    if (!premiumUnlocked()) {
+      return lockedSectionHTML(SEC.topics, "돈, 직업, 이성 세 주제로 더 깊게 읽기는 프리미엄 항목입니다.");
+    }
     var html = sectionAcc(SEC.topics);
     html += '<p class="lead-line">슬롯 리딩을 돈, 직업, 이성 세 주제로 더 깊게 읽습니다. 각 주제의 기운 개수로 상태를 판정해 해당 문장을 보여줍니다.</p>';
     html += '<div class="topic-tabs" role="tablist" aria-label="주제 선택">';
@@ -942,6 +1071,10 @@
      §6.2-7: 물상 정체성 선언 → 오늘의 가장 작은 행동 → 재선언 3단. 고민 입력이 있으면
      선언 각도로 한 줄을 더 건넨다(고민 재귀 각도 3). */
   function endingSection(stem, concern) {
+    /* 페이월: endingDeclaration 선언은 프리미엄. 무료는 제목만 보이는 잠금 섹션. */
+    if (!premiumUnlocked()) {
+      return lockedSectionHTML(SEC.ending, "오늘 실행할 한 걸음으로 닫는 선언은 프리미엄 항목입니다.");
+    }
     var html = sectionOpen(SEC.ending);
     html += '<p class="lead-line">리딩을 오늘 실행할 한 걸음으로 닫는 한마디입니다.</p>';
     html += '<div class="prose end-decl"><p>' + esc(stem.endingDeclaration) + "</p></div>";
@@ -1403,6 +1536,12 @@
       esc(pDm.hangul + pDm.element) + " · " + esc(BADGE[pDm.hanja].name) + "</p>" +
       '<p class="gov">상대 여섯 글자 <span>' + esc(partner.fourPillarsHanja) + "</span> <span>시각 미입력이라 정오 가정</span></p></div>";
 
+    /* 페이월: 무료는 상대 일간 요약 1줄(단1)만. 서사·지지·보완 단2~4는 프리미엄. */
+    if (!premiumUnlocked()) {
+      html += lockBoxHTML("관계 서사, 지지 궁합, 오행 보완 단은 프리미엄 항목입니다.");
+      return html;
+    }
+
     /* 단2 관계 서사: dayStemVsStems 규칙 문장 재구성(2인칭 서사 1줄 + 규칙 원문).
        합이면 천간합 nature 문장과 쌍·결과 오행 근거를 함께 보여준다. */
     html += '<div class="rel-item"><p class="dyn-head"><span class="dyn-kind">관계 서사</span> ' +
@@ -1643,18 +1782,26 @@
        의존이 있어 채택하지 않음), 링크 복사는 기존대로(Web Share API 있으면 네이티브 공유).
        og.png(1200×630)는 링크 미리보기용으로 유지하고 저장용 카드는 별도다. */
     var shareCardUrl = buildShareCardUrl(chart, dm, st, src);
-    html += '<section class="sec share"><div class="part-divider"><span class="part-k">공유</span><span class="part-v">이 페이지 링크로 같은 리딩을 다시 볼 수 있습니다.</span></div>' +
-      '<div class="share-actions">' +
-      '<button type="button" class="cta share-btn" id="share-card-btn">카드 저장</button>' +
-      '<button type="button" class="cta cta-ghost share-btn" id="share-link-btn">링크 복사</button>' +
-      '</div>' +
-      '<p class="helper" id="card-msg" hidden>카드 저장 화면을 새 창으로 열었습니다. 화면의 저장 버튼으로 PDF 파일을 만들 수 있습니다.</p>' +
-      '<p class="helper" id="card-msg-blocked" hidden>브라우저가 새 창을 막았습니다. 팝업 허용 후 다시 시도해주세요.</p>' +
-      '<p class="helper" id="share-msg" hidden>링크가 복사되었습니다.</p></section>';
+    /* 페이월: 공유 카드(카드 저장 · 링크 복사)는 프리미엄. 무료는 잠금 상자로 대체. */
+    if (premiumUnlocked()) {
+      html += '<section class="sec share"><div class="part-divider"><span class="part-k">공유</span><span class="part-v">이 페이지 링크로 같은 리딩을 다시 볼 수 있습니다.</span></div>' +
+        '<div class="share-actions">' +
+        '<button type="button" class="cta share-btn" id="share-card-btn">카드 저장</button>' +
+        '<button type="button" class="cta cta-ghost share-btn" id="share-link-btn">링크 복사</button>' +
+        '</div>' +
+        '<p class="helper" id="card-msg" hidden>카드 저장 화면을 새 창으로 열었습니다. 화면의 저장 버튼으로 PDF 파일을 만들 수 있습니다.</p>' +
+        '<p class="helper" id="card-msg-blocked" hidden>브라우저가 새 창을 막았습니다. 팝업 허용 후 다시 시도해주세요.</p>' +
+        '<p class="helper" id="share-msg" hidden>링크가 복사되었습니다.</p></section>';
+    } else {
+      html += '<section class="sec share"><div class="part-divider"><span class="part-k">공유</span><span class="part-v">이 페이지 링크로 같은 리딩을 다시 볼 수 있습니다.</span></div>' +
+        lockBoxHTML("카드 저장과 링크 복사는 프리미엄 항목입니다.") + "</section>";
+    }
     html += policyNotice();
     html += emailBlock();                       /* S11 결과 받아두기 */
     html += referenceSection(chart);            /* S12 details 2종 */
-    html += '<nav class="foot-links" style="margin-top: 1.25rem;"><a href="chart.html">다시 입력하기</a><a href="index.html">처음으로</a></nav>';
+    html += licensePanelHTML();                 /* 라이선스 입력 · 상태(결과 하단) */
+    html += '<nav class="foot-links" style="margin-top: 1.25rem;"><a href="chart.html">다시 입력하기</a><a href="index.html">처음으로</a>' +
+      '<a href="#" id="license-open-link">' + (premiumUnlocked() ? "라이선스 상태" : "라이선스 입력") + "</a></nav>";
 
     resultSec.innerHTML = html;
     var shareBtn = resultSec.querySelector('#share-link-btn');
@@ -1700,6 +1847,8 @@
     resultSec.scrollIntoView({ behavior: "smooth", block: "start" });
     wireEmailForm(resultSec.querySelector("form[data-email-form]"));
     wireRelationForm(chart);
+    wirePremiumUI(resultSec);          /* 프리미엄 CTA · 라이선스 패널 배선 */
+    lastRender = { chart: chart, gender: gender, concern: concern };   /* onChange 재렌더용 */
   }
 
   // ---------------------------------------------------------------------------
@@ -1750,4 +1899,15 @@
       form2.submit();
     });
   }
+
+  /* 라이선스 상태 변화(검증 통과 · 해제 · 데모 언락) 시 현재 차트를 다시 렌더해
+     잠금/해제 화면을 전환한다. 라이선스 모듈(js/license.js)이 없는 환경에서는 생략. */
+  (function () {
+    var L = license();
+    if (L && typeof L.onChange === "function") {
+      L.onChange(function () {
+        if (lastRender) render(lastRender.chart, lastRender.gender, lastRender.concern);
+      });
+    }
+  })();
 })();
