@@ -22,6 +22,10 @@
  *  8) 슬롯 리딩 엔진(slots.json B 갈래): 갈래 선택 재현성 · 조건 매핑
  *     유닛(큰 땅=戊 / 물 없음=수 0 / 묶임=천간합) · 미적용 처리(추측 금지) ·
  *     슬롯 문장 콘텐츠 대응 자동 통과(slots.json 원문 대조)
+ *  9) 프리미엄 페이월(js/license.js · Lemon Squeezy): 무료 상태 잠금 섹션 내용 미노출
+ *     스냅샷(Q02 두번째 갈래·4단 · 주제 3탭 · 궁합 4단 · 선언 · 공유 카드) · 라이선스
+ *     HMAC 검증 실측(실제 키 통과 · 변조 거부 · PLACEHOLDER 시크릿 거부 · DEMO ·
+ *     localStorage 저장/해제) · 데모 언락 후 onChange 재렌더 전환 실측 · 언락 렌더 전체 노출
  *
  *   node smoke.cjs
  */
@@ -246,11 +250,24 @@ eq(sumNoHour, 6, "시각 미상 오행 합계 6글자");
 
 global.window = global;
 global.document = makeStubDocument();
-global.localStorage = { getItem: () => null, setItem: () => {} };
+/* 라이선스 저장 실측용 localStorage(맵 백업). 브라우저 계약과 같은 getItem·setItem·removeItem */
+const LS_STORE = new Map();
+global.localStorage = {
+  getItem: (k) => (LS_STORE.has(k) ? LS_STORE.get(k) : null),
+  setItem: (k, v) => { LS_STORE.set(String(k), String(v)); },
+  removeItem: (k) => { LS_STORE.delete(String(k)); }
+};
 global.location = { search: "" };
 global.SAJU_CONFIG = { mailto: "sajuroot@example.com" };
+require(path.join(__dirname, "js", "license-secret.js"));   // window.SAJU_LICENSE_SECRET = PLACEHOLDER
+require(path.join(__dirname, "js", "license.js"));           // window.SajuRoot.license (Web Crypto HMAC-SHA256)
 require(path.join(__dirname, "js", "app.js"));
 const doc = global.document;
+const LIC = global.SajuRoot.license;
+if (!LIC || typeof LIC.isUnlocked !== "function" || typeof LIC.unlock !== "function") {
+  fail("라이선스 모듈(window.SajuRoot.license) 미등록");
+}
+if (LIC.isUnlocked()) fail("저장 키 없는데 언락 상태(restore 오류)");
 
 function runCase(dateISO, timeISO, gender) {
   const parts = dateISO.split("-");
@@ -264,9 +281,131 @@ function runCase(dateISO, timeISO, gender) {
   return doc.el("result").innerHTML;
 }
 
-const html1 = runCase("1985-03-21", "14:30", "male");      // 기토 · 남자 · 대운 현재 강조
-const html2 = runCase("1987-08-28", "09:50", "female");   // DST · 여자 · 시주 戊辰
-const html3 = runCase("1990-05-15", null, "");            // 시각 미상 · 성별 미선택
+/* ===============================================================
+ * [무료 상태 렌더] 라이선스 미입력: 잠긴 섹션은 흐린 잠금 상자(제목+CTA)뿐이고
+ * 잠긴 내용(4단·탭·4단 궁합·선언·공유 카드)은 한 글자도 노출되지 않아야 한다.
+ * 언락 렌더 검증은 아래 데모 언락 후 runRenderChecks()에서 실측한다.
+ * =============================================================== */
+
+const html1Free = runCase("1985-03-21", "14:30", "male");
+const html2Free = runCase("1987-08-28", "09:50", "female");
+const html3Free = runCase("1990-05-15", null, "");
+
+/* 무료 상태 잠금 스냅샷: CTA · 제목만 노출 · 잠긴 내용 0 · 라이선스 UI 존재 */
+function checkFreeLocks(label, html, relHtml, chart) {
+  const allRows = VIEW.slotEngine(chart);
+  const expectedOpens = 3 + (allRows.length > 1 ? 1 : 0);
+  const opens = (html.match(/data-premium-open/g) || []).length;
+  if (opens !== expectedOpens) fail(`${label}: 프리미엄 CTA ${expectedOpens}개 아님(실측 ${opens})`);
+  if (html.indexOf("프리미엄으로 열기 · $8, 1회 결제") === -1) fail(`${label}: CTA 가격 표기 누락`);
+  /* 잠긴 섹션은 제목만 보인다 */
+  if (html.indexOf('<h2 class="sec-q">주제별 깊이 읽기</h2>') === -1) fail(`${label}: 잠긴 주제 섹션 제목 미노출`);
+  if (html.indexOf('<h2 class="sec-q">마지막 한마디</h2>') === -1) fail(`${label}: 잠긴 마지막 섹션 제목 미노출`);
+  /* Q02: 첫 갈래 진단+처방만, 4단 라벨·두 번째 갈래 미노출 */
+  if (allRows.length >= 1) {
+    if (html.indexOf('<span class="slot-k">진단</span>') === -1 || html.indexOf('<span class="slot-k">처방</span>') === -1) {
+      fail(`${label}: 무료 첫 갈래 진단·처방 미노출`);
+    }
+  }
+  if (html.indexOf('<span class="slot-k">확인 질문</span>') !== -1 || html.indexOf('<span class="slot-k">그림자</span>') !== -1) {
+    fail(`${label}: 무료 상태에 4단(확인 질문·그림자) 노출`);
+  }
+  if (allRows.length > 1 && html.indexOf(allRows[1].diagnosis.slice(0, 20)) !== -1) {
+    fail(`${label}: 무료 상태에 두 번째 갈래 진단 노출`);
+  }
+  const freeBranchAcc = (html.match(/<details class="slot-branch">/g) || []).length;
+  if (freeBranchAcc !== Math.min(allRows.length, 1)) fail(`${label}: 무료 갈래 아코디언 수 이상(${freeBranchAcc})`);
+  /* 주제별 깊이 읽기 3탭: 탭·패널·섹션 고유 리드 문구 미노출(상태 문장은 Q01·Q04 무료 섹션과 JSON 원문을 공유하므로 문장 단위 검사는 오탐) */
+  if (html.indexOf("data-topic-tab=") !== -1 || html.indexOf("data-topic-panel=") !== -1) fail(`${label}: 무료 상태에 주제 탭 노출`);
+  if (html.indexOf("슬롯 리딩을 돈, 직업, 이성 세 주제로 더 깊게 읽습니다") !== -1) fail(`${label}: 무료 상태에 주제 섹션 본문 노출`);
+  if (html.indexOf('class="topic-state"') !== -1 || html.indexOf('class="topic-text"') !== -1) fail(`${label}: 무료 상태에 주제 패널 본문 노출`);
+  /* endingDeclaration · 공유 카드 미노출 */
+  const endStemFree = CORE.STEMS.find((s) => s.stemHanja === chart.dayMaster.hanja);
+  if (html.indexOf(endStemFree.endingDeclaration) !== -1) fail(`${label}: 무료 상태에 endingDeclaration 노출`);
+  if (html.indexOf('id="share-card-btn"') !== -1 || html.indexOf('id="share-link-btn"') !== -1) fail(`${label}: 무료 상태에 공유 버튼 노출`);
+  /* 라이선스 UI: 패널(키 입력 폼) + 차트 하단 작은 링크 */
+  if (html.indexOf('id="license-form"') === -1 || html.indexOf('id="license-open-link"') === -1) fail(`${label}: 라이선스 패널·입력 링크 누락`);
+  if (html.indexOf("라이선스 입력") === -1) fail(`${label}: 라이선스 입력 링크 문구 누락`);
+  /* 궁합: 상대 일간 요약 1줄만, 단2~4는 잠금 */
+  if (relHtml) {
+    if (relHtml.indexOf('class="rel-pos">상대 일간') === -1) fail(`${label}: 무료 궁합 상대 일간 요약 미노출`);
+    for (const k of ['<span class="dyn-kind">관계 서사</span>', '<span class="dyn-kind">지지 궁합</span>', '<span class="dyn-kind">오행 보완</span>']) {
+      if (relHtml.indexOf(k) !== -1) fail(`${label}: 무료 상태에 궁합 4단 노출`);
+    }
+    if (relHtml.indexOf("프리미엄 항목입니다") === -1) fail(`${label}: 궁합 잠금 안내 누락`);
+  }
+}
+
+// 무료 관계 읽기: 상대 일간 요약 1줄만 렌더되는지
+doc.el("f-p-year").value = "1990";
+doc.el("f-p-month").value = "8";
+doc.el("f-p-day").value = "15";
+doc.el("rel-form").handlers.submit({ preventDefault() {} });
+const relHtmlFree = doc.el("rel-result").innerHTML;
+if (!relHtmlFree) fail("무료 관계 읽기(상대 입력) 출력 없음");
+
+checkFreeLocks("무료 1985 남자", html1Free, relHtmlFree, fromBundle);
+checkFreeLocks("무료 1987 여자(DST)", html2Free, null, dstCase);
+checkFreeLocks("무료 시각 미상", html3Free, null, noHour);
+
+/* ---------------------------------------------------------------
+ * 라이선스 검증 실측(js/license.js): 데모 · 실제 키 HMAC · 변조 · PLACEHOLDER 거부 ·
+ * localStorage 저장/해제. 통과 후 데모 언락으로 전환해 언락 렌더를 실측한다.
+ * --------------------------------------------------------------- */
+(async function main() {
+  const nodeCrypto = require("crypto");
+  /* ① 형식 불량 키 거부 */
+  let r = await LIC.unlock("SR-XXXXXX-deadbeef");
+  if (r.ok || LIC.isUnlocked()) fail("형식 불량 키가 통과됨");
+  /* ② 시크릿이 PLACEHOLDER인 동안 형식만 맞는 실제 키도 전부 거부(데모만 허용) */
+  r = await LIC.unlock("SR-ABC123-" + "0".repeat(64));
+  if (r.ok || LIC.isUnlocked()) fail("PLACEHOLDER 시크릿에서 실제 키 형식이 통과됨");
+  /* ③ 실제 키: 테스트 시크릿으로 발급한 HMAC-SHA256 키만 통과 + localStorage 저장 */
+  const TEST_SECRET = "TEST_SECRET_sajuroot_smoke";
+  global.SAJU_LICENSE_SECRET = TEST_SECRET;
+  const payload = "A1B2C3";
+  const mac = nodeCrypto.createHmac("sha256", TEST_SECRET).update(payload).digest("hex").toUpperCase();
+  const goodKey = "SR-" + payload + "-" + mac;
+  r = await LIC.unlock(goodKey);
+  if (!r.ok || r.mode !== "license" || !LIC.isUnlocked()) fail("올바른 HMAC 라이선스 키가 거부됨");
+  if (LS_STORE.get("sajuroot_license") !== goodKey) fail("라이선스 키 localStorage 저장 누락");
+  /* ④ 변조 거부: 시그니처 1글자 교체 · payload 불일치 */
+  const badSig = (mac[0] === "0" ? "1" : "0") + mac.slice(1);
+  r = await LIC.unlock("SR-" + payload + "-" + badSig);
+  if (r.ok) fail("변조된 시그니처 키가 통과됨");
+  const macOther = nodeCrypto.createHmac("sha256", TEST_SECRET).update("A1B2C3").digest("hex").toUpperCase();
+  r = await LIC.unlock("SR-A1B2C4-" + macOther);
+  if (r.ok) fail("payload 불일치 키가 통과됨");
+  /* ⑤ 입력 정규화: 소문자로 붙여넣은 키도 통과 */
+  r = await LIC.unlock(goodKey.toLowerCase());
+  if (!r.ok) fail("소문자 입력 키 정규화 실패");
+  /* ⑥ 해제: 메모리·저장 동시 정리 */
+  LIC.lock();
+  if (LIC.isUnlocked() || LS_STORE.has("sajuroot_license")) fail("lock() 후 상태·저장 잔존");
+  /* ⑦ 시크릿 복원(PLACEHOLDER) → 실제 키 재거부, 데모만 허용 */
+  global.SAJU_LICENSE_SECRET = "LS_SECRET_PLACEHOLDER";
+  r = await LIC.unlock(goodKey);
+  if (r.ok) fail("PLACEHOLDER 시크릿 복원 후 실제 키 통과");
+  r = await LIC.unlock("DEMO");
+  if (!r.ok || r.mode !== "demo" || !LIC.isUnlocked()) fail("데모 언락(SajuRoot.unlock('DEMO')) 실패");
+  if (LS_STORE.get("sajuroot_license") !== "DEMO") fail("데모 키 localStorage 저장 누락");
+
+  /* 언락 후 렌더 전환 실측: onChange 재렌더 경로(콘솔 SajuRoot.unlock('DEMO')와 동일).
+     마지막 무료 렌더(시각 미상 케이스)가 잠금 화면에서 전체 리딩으로 전환됐는지 확인. */
+  const rerendered = doc.el("result").innerHTML;
+  if (rerendered.indexOf("data-premium-open") !== -1) fail("데모 언락 후에도 잠금 CTA 잔존(onChange 재렌더 미동작)");
+  if (rerendered.indexOf("data-topic-tab=") === -1) fail("데모 언락 후 주제 탭 미노출(재렌더 전환 실패)");
+  if (rerendered.indexOf("(데모 모드)") === -1) fail("데모 언락 후 라이선스 패널 상태 문구 누락");
+
+  /* 언락 상태 전체 렌더 검증(기존 검증 전부 + 잠금 회귀 0 확인) */
+  runRenderChecks();
+})().catch((e) => fail(e && e.message ? e.message : String(e)));
+
+function runRenderChecks() {
+
+const html1 = runCase("1985-03-21", "14:30", "male");      // 기토 · 남자 · 대운 현재 강조 (언락 상태)
+const html2 = runCase("1987-08-28", "09:50", "female");   // DST · 여자 · 시주 戊辰 (언락 상태)
+const html3 = runCase("1990-05-15", null, "");            // 시각 미상 · 성별 미선택 (언락 상태)
 
 // 관계 읽기(상대 입력) 출력도 콘텐츠 대응 검사에 포함
 doc.el("f-p-year").value = "1990";
@@ -601,7 +740,19 @@ const DECLARED = [
   "시간의 흐름은?",
   "내 글자들은 서로 어떻게 작동하나요?",
   "마음은 어떤가요?",
-  "다른 사람과 보기"
+  "다른 사람과 보기",
+  // 프리미엄 페이월(Lemon Squeezy · license.js) 중립 안내 문구 · 잠금 상자
+  "첫 갈래는 무료로 읽습니다. 진단과 처방 두 단이며, 나머지 단과 갈래는 프리미엄으로 열립니다.",
+  "두 번째 갈래와 네 단 읽기(확인 질문 · 그림자)는 프리미엄 항목입니다.",
+  "돈, 직업, 이성 세 주제로 더 깊게 읽기는 프리미엄 항목입니다.",
+  "오늘 실행할 한 걸음으로 닫는 선언은 프리미엄 항목입니다.",
+  "관계 서사, 지지 궁합, 오행 보완 단은 프리미엄 항목입니다.",
+  "카드 저장과 링크 복사는 프리미엄 항목입니다.",
+  "프리미엄으로 열기 · $8, 1회 결제",
+  "구매 후 받은 라이선스 키를 입력하면 이 브라우저에서 전체 리딩이 열립니다.",
+  "키는 이 브라우저에만 저장되며 이후 방문에서 자동으로 적용됩니다.",
+  "키는 이 브라우저에만 저장됩니다. 다른 기기에서는 같은 키를 다시 입력해야 합니다.",
+  "라이선스 키를 확인해주세요."
 ];
 
 /* 중립 접두·접미 조합형 (접두+내용=JSON 문장+접미) */
@@ -694,7 +845,9 @@ const TEMPLATES = [
   /^이 리딩은 ‘.+’[을를] 기준으로 읽었습니다\.$/,
   /^‘.+’라는 고민은 성질을 고치는 일이 아니라, 당신이라는 물상이 어떤 자리에 뿌리내렸는지 읽는 일에서 시작합니다\.$/,
   /^‘.+’라는 고민을 이 탭에서는 문제로 정의합니다\. .+ 나뉩니다\.$/,
-  /^오늘의 한 걸음이 ‘.+’라는 고민의 첫 둑이 됩니다\.$/
+  /^오늘의 한 걸음이 ‘.+’라는 고민의 첫 둑이 됩니다\.$/,
+  // 프리미엄 페이월 라이선스 패널 상태 문구(데모 여부 조합)
+  /^이 브라우저에 라이선스가 적용되어 있어 전체 리딩이 열려 있습니다( \(데모 모드\))?\.$/
 ];
 
 /* 번들 뷰 함수가 JSON 조각+고정 연결어로 조립하는 문장형 */
@@ -765,6 +918,11 @@ checkContentCorrespondence("시각 미상", html3);
 checkContentCorrespondence("고민 재귀", html4);
 checkContentCorrespondence("관계 궁합 甲己 합", relA);
 checkContentCorrespondence("관계 궁합 丑未 충", relD);
+/* 무료(잠금) 렌더: 잠금 안내·CTA·라이선스 패널 문구도 선언 목록 대조를 통과해야 한다 */
+checkContentCorrespondence("무료 1985 남자(잠금)", html1Free);
+checkContentCorrespondence("무료 1987 여자(DST·잠금)", html2Free);
+checkContentCorrespondence("무료 시각 미상(잠금)", html3Free);
+checkContentCorrespondence("무료 관계 궁합(잠금)", relHtmlFree);
 
 /* ④ 슬롯 문장 대응: slots.json 원문이 대조 대상에 포함됐는지 확인 */
 if (!ALLOWED.some((s) => s.indexOf("넓은 땅에 제대로 뿌리를 내린 나무입니다") !== -1)) {
@@ -802,7 +960,7 @@ function secQuestions(html) {
   return out;
 }
 
-function checkSectionOrder(label, html, chart) {
+function checkSectionOrder(label, html, chart, locked) {
   const expected = [
     SEC_TITLES.s2, SEC_TITLES.s2slot, SEC_TITLES.s2topic, SEC_TITLES.s3, SEC_TITLES.s4, SEC_TITLES.s5,
     SEC_TITLES.s6, SEC_TITLES.s7, SEC_TITLES.s8
@@ -825,8 +983,15 @@ function checkSectionOrder(label, html, chart) {
      Q02-1 주제별 깊이 읽기는 아코디언 1개가 추가돼 기준치가 5가 됐다. */
   const accCount = 5 + (VIEW.matchAnsim(chart).length ? 1 : 0);
   const slotBranches = VIEW.slotEngine(chart).length;
+  /* 무료(locked): 주제 아코디언 → 잠금 상자(-1), 두 번째 갈래 아코디언 → 잠금 상자(최대 1개만 존재) */
+  const branchAcc = locked ? Math.min(slotBranches, 1) : slotBranches;
+  const expectedDetails = 5 + accCount + branchAcc - (locked ? 1 : 0);
   const gotDetails = (html.match(/<details/g) || []).length;
-  if (gotDetails !== 5 + accCount + slotBranches) fail(`details 개수 ${5 + accCount + slotBranches} 아님(${label}): ` + gotDetails);
+  if (gotDetails !== expectedDetails) fail(`details 개수 ${expectedDetails} 아님(${label}): ` + gotDetails);
+  if (locked) {
+    if ((html.match(/data-premium-open/g) || []).length === 0) fail(`무료 잠금 CTA 미노출(${label})`);
+    if (html.indexOf('class="lockbox') === -1) fail(`무료 잠금 상자 미노출(${label})`);
+  }
   if (/<details class="sec acc" open>/.test(html)) fail(`아코디언 섹션이 기본 열림(${label})`);
   if (html.indexOf('<details class="sec acc"><summary class="acc-head"><span class="sec-label">Q03</span><h2 class="sec-q">어떤 사람인가요?</h2></summary>') === -1) fail(`Q03 아코디언 전환 누락 또는 기본 열림(${label})`);
   for (const plainNum of ["Q01", "Q02", "Q06"]) {
@@ -846,10 +1011,13 @@ function checkSectionOrder(label, html, chart) {
   }
 }
 
-checkSectionOrder("1985 남자", html1, fromBundle);
-checkSectionOrder("1987 여자(DST)", html2, dstCase);
-checkSectionOrder("시각 미상", html3, noHour);
-checkSectionOrder("고민 재귀", html4, fromBundle);
+checkSectionOrder("1985 남자", html1, fromBundle, false);
+checkSectionOrder("1987 여자(DST)", html2, dstCase, false);
+checkSectionOrder("시각 미상", html3, noHour, false);
+checkSectionOrder("고민 재귀", html4, fromBundle, false);
+checkSectionOrder("무료 1985 남자", html1Free, fromBundle, true);
+checkSectionOrder("무료 1987 여자(DST)", html2Free, dstCase, true);
+checkSectionOrder("무료 시각 미상", html3Free, noHour, true);
 
 // ---------------------------------------------------------------------------
 // 신규: 용어집 커버리지 (노출 전문 용어 ⊆ S12 용어집)
@@ -940,7 +1108,7 @@ const FORBIDDEN = [
   "운명", "운세", "점술", "숙명", "천명", "포축", "천생연분", "영험", "신비한",
   "십신", "격국", "용신", "fortune", "destiny", "fate", "the stars say"
 ];
-for (const html of [html1WithRel, html2, html3, html4]) {
+for (const html of [html1WithRel, html2, html3, html4, html1Free, html2Free, html3Free, relHtmlFree]) {
   const vis = html.replace(/<details class="fold[\s\S]*?<\/details>/g, "").split(POLICY_BOUNDARY).join("").toLowerCase();
   if (html.indexOf("\u2014") !== -1 || html.indexOf("\u2013") !== -1) fail("em-dash(en/em dash) 노출");
   for (const word of FORBIDDEN) {
@@ -971,3 +1139,7 @@ console.log(`  [S10 풀 궁합] 4단 카드(상대 일간·관계 서사·지지
 console.log(`  [슬롯 리딩] Q02 섹션 PASS / 기토=${slotMe1.map((r) => r.code).join("+")} / 갑목=${slotGap.map((r) => r.code).join("+")}+戊=${slotMu.map((r) => r.code).join("+")} / 재현성·조건매핑 3건·미적용 4건·0갈래 경로 PASS`);
 console.log(`  [검증 모드] {{FORM_ENDPOINT}} 토큰 유지 · mailto 폴백 · src 추적(entry.NNN) · 금지어 0 · em-dash 0 · details 밖 CR/AP 0`);
 console.log(`  bundle.js=${bundleKb}kb · 용어집 ${VIEW.GLOSSARY.length}항목 · fold details 4종(S8 1 + FAQ 1 + S12 2) + 섹션 아코디언 7종(Q02-1·Q03~Q05·Q07~Q09 · 기본 닫힘) · 주제 탭 3종(돈·직업·이성)`);
+console.log(`  [프리미엄 페이월] 무료 잠금 스냅샷 3케이스(Q02 두번째 갈래·4단 · 주제 3탭 · 궁합 4단 · endingDeclaration · 공유 카드 미노출 + CTA 가격 표기) PASS / 라이선스 HMAC 실측(실제 키 통과+저장 · 변조·payload 불일치·PLACEHOLDER 거부 · 소문자 정규화 · lock 해제 · DEMO) PASS / 데모 언락 onChange 재렌더 전환 PASS / 언락 렌더 전체 노출 + 기존 검증 회귀 0 PASS`);
+
+}
+/* runRenderChecks 끝 (데모 언락 상태에서 호출됨) */
